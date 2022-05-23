@@ -12,4 +12,3 @@ class MapEntry {
   factory MapEntry.fromJson(Map<String, dynamic> json) => _$MapEntryFromJson(json);
   Map<String, dynamic> toJson() => _$MapEntryToJson(this);
 }
-
