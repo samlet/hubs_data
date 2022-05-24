@@ -1,0 +1,57 @@
+part of '../../messages.dart';
+
+/// domain_OrderStatusFlatData
+@JsonSerializable()
+class OrderStatus {
+    // String
+    final String? orderStatusId;
+    // String
+    final String? statusId;
+    // String
+    final String? orderId;
+    // String
+    final String? orderItemSeqId;
+    // String
+    final String? orderPaymentPreferenceId;
+    // google_protobuf_Timestamp
+    final TimestampValue? statusDatetime;
+    // String
+    final String? statusUserLogin;
+    // String
+    final String? changeReason;
+    // google_protobuf_Timestamp
+    final TimestampValue? lastUpdatedTxStamp;
+    // google_protobuf_Timestamp
+    final TimestampValue? createdTxStamp;
+    // String
+    final String? tenantId;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    OrderStatus({
+        this.orderStatusId,
+        this.statusId,
+        this.orderId,
+        this.orderItemSeqId,
+        this.orderPaymentPreferenceId,
+        this.statusDatetime,
+        this.statusUserLogin,
+        this.changeReason,
+        this.lastUpdatedTxStamp,
+        this.createdTxStamp,
+        this.tenantId,
+        this.orderHeader,
+        this.cats,
+        this.proto,
+        this.format,
+        this.userLogin, });
+    factory OrderStatus.fromJson(Map<String, dynamic> json) => _$OrderStatusFromJson(json);
+    Map<String, dynamic> toJson() => _$OrderStatusToJson(this);
+}
