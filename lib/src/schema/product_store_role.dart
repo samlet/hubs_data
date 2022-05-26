@@ -22,15 +22,15 @@ class ProductStoreRole {
     // String
     final String? id;
     // String
-    final String? format;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // String
     final String? proto;
     // domain_PartyFlatData
     final Party? party;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     ProductStoreRole({
         this.partyId,
         this.roleTypeId,
@@ -41,11 +41,11 @@ class ProductStoreRole {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.productStore,
         this.proto,
         this.party,
-        this.cats, });
+        this.cats,
+        this.format,
+        this.productStore, });
     factory ProductStoreRole.fromJson(Map<String, dynamic> json) => _$ProductStoreRoleFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreRoleToJson(this);
 }

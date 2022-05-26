@@ -46,11 +46,11 @@ class PostalAddress {
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // String
     final String? proto;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     PostalAddress({
@@ -75,9 +75,9 @@ class PostalAddress {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
         this.proto,
         this.contactMech,
+        this.format,
         this.cats, });
     factory PostalAddress.fromJson(Map<String, dynamic> json) => _$PostalAddressFromJson(json);
     Map<String, dynamic> toJson() => _$PostalAddressToJson(this);

@@ -17,14 +17,14 @@ class UserLoginPasswordHistory {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     UserLoginPasswordHistory({
         this.userLoginId,
         this.fromDate,
@@ -33,10 +33,10 @@ class UserLoginPasswordHistory {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.userLogin,
         this.cats,
-        this.proto, });
+        this.proto,
+        this.format,
+        this.userLogin, });
     factory UserLoginPasswordHistory.fromJson(Map<String, dynamic> json) => _$UserLoginPasswordHistoryFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginPasswordHistoryToJson(this);
 }

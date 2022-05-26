@@ -48,17 +48,19 @@ class Requirement {
     // String
     final String? tenantId;
     // String
+    final String? format;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // String
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // domain_ProductFlatData
-    final Product? product;
-    // String
-    final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     Requirement({
@@ -84,12 +86,13 @@ class Requirement {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.format,
+        this.product,
+        this.fixedAsset,
+        this.facility,
         this.proto,
         this.cats,
-        this.facility,
-        this.fixedAsset,
-        this.product,
-        this.format,
+        this.type,
         this.subview, });
     factory Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementToJson(this);

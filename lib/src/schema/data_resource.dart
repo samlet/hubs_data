@@ -47,26 +47,28 @@ class DataResource {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? format;
     // data_resource_ImageProto
     final DataResourceWithImage? asImage;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // data_resource_VideoProto
-    final DataResourceWithVideo? asVideo;
     // data_resource_TextProto
     final DataResourceWithText? asText;
-    // String
-    final String? format;
+    // data_resource_VideoProto
+    final DataResourceWithVideo? asVideo;
     // data_resource_AudioProto
     final DataResourceWithAudio? asAudio;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     DataResource({
         this.dataResourceId,
         this.dataResourceTypeId,
@@ -90,16 +92,17 @@ class DataResource {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.format,
         this.asImage,
         this.cats,
-        this.asVideo,
         this.asText,
-        this.format,
+        this.asVideo,
         this.asAudio,
-        this.createdbyuserlogin,
-        this.proto,
         this.subview,
-        this.lastmodifiedbyuserlogin, });
+        this.proto,
+        this.lastmodifiedbyuserlogin,
+        this.createdbyuserlogin,
+        this.type, });
     factory DataResource.fromJson(Map<String, dynamic> json) => _$DataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceToJson(this);
 }

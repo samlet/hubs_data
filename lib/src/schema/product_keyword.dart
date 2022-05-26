@@ -19,14 +19,14 @@ class ProductKeyword {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? format;
     ProductKeyword({
         this.productId,
         this.keyword,
@@ -36,10 +36,10 @@ class ProductKeyword {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.proto,
         this.cats,
-        this.product, });
+        this.proto,
+        this.product,
+        this.format, });
     factory ProductKeyword.fromJson(Map<String, dynamic> json) => _$ProductKeywordFromJson(json);
     Map<String, dynamic> toJson() => _$ProductKeywordToJson(this);
 }

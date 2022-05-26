@@ -39,18 +39,18 @@ class ContentAssoc {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
     // String
     final String? proto;
-    // domain_ContentFlatData
-    final Content? fromContent;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
     // domain_ContentFlatData
     final Content? toContent;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ContentFlatData
+    final Content? fromContent;
+    // String
+    final String? format;
     // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
     ContentAssoc({
@@ -72,12 +72,12 @@ class ContentAssoc {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.lastmodifiedbyuserlogin,
         this.proto,
-        this.fromContent,
+        this.lastmodifiedbyuserlogin,
         this.toContent,
-        this.format,
         this.cats,
+        this.fromContent,
+        this.format,
         this.createdbyuserlogin, });
     factory ContentAssoc.fromJson(Map<String, dynamic> json) => _$ContentAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAssocToJson(this);

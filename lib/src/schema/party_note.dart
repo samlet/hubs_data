@@ -14,26 +14,26 @@ class PartyNote {
     // String
     final String? id;
     // String
-    final String? proto;
+    final String? format;
     // domain_PartyFlatData
     final Party? party;
-    // domain_NoteDataData
-    final NoteData? noteData;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_NoteDataData
+    final NoteData? noteData;
     // String
-    final String? format;
+    final String? proto;
     PartyNote({
         this.partyId,
         this.noteId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
+        this.format,
         this.party,
-        this.noteData,
         this.cats,
-        this.format, });
+        this.noteData,
+        this.proto, });
     factory PartyNote.fromJson(Map<String, dynamic> json) => _$PartyNoteFromJson(json);
     Map<String, dynamic> toJson() => _$PartyNoteToJson(this);
 }

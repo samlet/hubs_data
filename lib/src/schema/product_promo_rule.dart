@@ -18,9 +18,9 @@ class ProductPromoRule {
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // String
     final String? format;
+    // String
+    final String? proto;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     ProductPromoRule({
@@ -31,8 +31,8 @@ class ProductPromoRule {
         this.createdTxStamp,
         this.id,
         this.cats,
-        this.proto,
         this.format,
+        this.proto,
         this.productPromo, });
     factory ProductPromoRule.fromJson(Map<String, dynamic> json) => _$ProductPromoRuleFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoRuleToJson(this);

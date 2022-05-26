@@ -27,16 +27,16 @@ class FixedAssetProduct {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFlatData
-    final Product? product;
     // String
     final String? format;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // domain_ProductFlatData
+    final Product? product;
     FixedAssetProduct({
         this.fixedAssetId,
         this.productId,
@@ -50,11 +50,11 @@ class FixedAssetProduct {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.product,
         this.format,
         this.fixedAsset,
-        this.proto, });
+        this.cats,
+        this.proto,
+        this.product, });
     factory FixedAssetProduct.fromJson(Map<String, dynamic> json) => _$FixedAssetProductFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetProductToJson(this);
 }

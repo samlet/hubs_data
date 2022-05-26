@@ -15,16 +15,16 @@ class AgreementRole {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_AgreementFlatData
+    final Agreement? agreement;
     // domain_PartyFlatData
     final Party? party;
     // String
     final String? format;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_AgreementFlatData
-    final Agreement? agreement;
     AgreementRole({
         this.agreementId,
         this.partyId,
@@ -32,11 +32,11 @@ class AgreementRole {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
+        this.agreement,
         this.party,
         this.format,
-        this.proto,
-        this.cats,
-        this.agreement, });
+        this.proto, });
     factory AgreementRole.fromJson(Map<String, dynamic> json) => _$AgreementRoleFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementRoleToJson(this);
 }

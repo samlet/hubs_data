@@ -15,18 +15,20 @@ class Blacklist {
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // domain_BlacklistItemList
+    final BlacklistItemCollection? blacklistItems;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // String
     final String? format;
     // String
     final String? proto;
-    // domain_BlacklistStatusList
-    final BlacklistStatusCollection? blacklistStatuses;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_BlacklistItemList
-    final BlacklistItemCollection? blacklistItems;
+    // domain_BlacklistStatusList
+    final BlacklistStatusCollection? blacklistStatuses;
     Blacklist({
         this.blacklistId,
         this.blacklistTypeId,
@@ -34,12 +36,13 @@ class Blacklist {
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.subview,
+        this.blacklistItems,
+        this.type,
         this.format,
         this.proto,
-        this.blacklistStatuses,
+        this.subview,
         this.cats,
-        this.blacklistItems, });
+        this.blacklistStatuses, });
     factory Blacklist.fromJson(Map<String, dynamic> json) => _$BlacklistFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistToJson(this);
 }

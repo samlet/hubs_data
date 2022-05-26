@@ -19,16 +19,14 @@ class ProductStoreFacility {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // String
     final String? proto;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_FacilityFlatData
     final Facility? facility;
     ProductStoreFacility({
@@ -40,11 +38,10 @@ class ProductStoreFacility {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
+        this.cats,
         this.format,
         this.proto,
         this.productStore,
-        this.cats,
         this.facility, });
     factory ProductStoreFacility.fromJson(Map<String, dynamic> json) => _$ProductStoreFacilityFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreFacilityToJson(this);

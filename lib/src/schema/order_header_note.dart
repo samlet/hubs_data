@@ -15,16 +15,16 @@ class OrderHeaderNote {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // domain_NoteDataData
     final NoteData? noteData;
+    // String
+    final String? format;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // String
+    final String? proto;
     OrderHeaderNote({
         this.orderId,
         this.noteId,
@@ -32,11 +32,11 @@ class OrderHeaderNote {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.format,
         this.cats,
+        this.noteData,
+        this.format,
         this.orderHeader,
-        this.noteData, });
+        this.proto, });
     factory OrderHeaderNote.fromJson(Map<String, dynamic> json) => _$OrderHeaderNoteFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderNoteToJson(this);
 }

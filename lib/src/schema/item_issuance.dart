@@ -37,18 +37,18 @@ class ItemIssuance {
     final String? tenantId;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
     // domain_UserLoginFlatData
     final UserLogin? issuedByUserLogin;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // String
+    final String? format;
     ItemIssuance({
         this.itemIssuanceId,
         this.orderId,
@@ -67,12 +67,12 @@ class ItemIssuance {
         this.createdTxStamp,
         this.tenantId,
         this.inventoryItem,
-        this.cats,
-        this.orderHeader,
         this.proto,
-        this.format,
+        this.issuedByUserLogin,
+        this.orderHeader,
+        this.cats,
         this.shipment,
-        this.issuedByUserLogin, });
+        this.format, });
     factory ItemIssuance.fromJson(Map<String, dynamic> json) => _$ItemIssuanceFromJson(json);
     Map<String, dynamic> toJson() => _$ItemIssuanceToJson(this);
 }

@@ -41,14 +41,14 @@ class ShipmentPackageRouteSeg {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     ShipmentPackageRouteSeg({
         this.shipmentId,
         this.shipmentPackageSeqId,
@@ -69,10 +69,10 @@ class ShipmentPackageRouteSeg {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.shipment,
         this.proto,
-        this.format,
-        this.cats, });
+        this.cats,
+        this.shipment,
+        this.format, });
     factory ShipmentPackageRouteSeg.fromJson(Map<String, dynamic> json) => _$ShipmentPackageRouteSegFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageRouteSegToJson(this);
 }

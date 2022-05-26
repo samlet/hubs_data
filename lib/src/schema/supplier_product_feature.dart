@@ -19,14 +19,14 @@ class SupplierProductFeature {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
+    // domain_ProductFeatureFlatData
+    final ProductFeature? productFeature;
     // String
     final String? format;
     // domain_PartyFlatData
     final Party? party;
-    // domain_ProductFeatureFlatData
-    final ProductFeature? productFeature;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     SupplierProductFeature({
@@ -38,10 +38,10 @@ class SupplierProductFeature {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
+        this.productFeature,
         this.format,
         this.party,
-        this.productFeature,
+        this.proto,
         this.cats, });
     factory SupplierProductFeature.fromJson(Map<String, dynamic> json) => _$SupplierProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$SupplierProductFeatureToJson(this);

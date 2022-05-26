@@ -29,14 +29,16 @@ class OrderFact {
     final TimestampValue? createdTxStamp;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
     // String
     final String? format;
     // domain_OrderFactStatusList
     final OrderFactStatusCollection? orderFactStatuses;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     OrderFact({
         this.orderId,
         this.invoiceId,
@@ -51,10 +53,11 @@ class OrderFact {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.subview,
-        this.format,
-        this.orderFactStatuses,
         this.cats,
-        this.proto, });
+        this.type,
+        this.proto,
+        this.format,
+        this.orderFactStatuses, });
     factory OrderFact.fromJson(Map<String, dynamic> json) => _$OrderFactFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactToJson(this);
 }

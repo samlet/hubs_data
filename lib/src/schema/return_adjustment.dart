@@ -69,18 +69,20 @@ class ReturnAdjustment {
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? tenantId;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     ReturnAdjustment({
         this.returnAdjustmentId,
         this.returnAdjustmentTypeId,
@@ -115,12 +117,13 @@ class ReturnAdjustment {
         this.lastModifiedByUserLogin,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.userLogin,
-        this.cats,
+        this.tenantId,
         this.productPromo,
-        this.format,
+        this.returnHeader,
+        this.cats,
         this.proto,
-        this.returnHeader, });
+        this.format,
+        this.userLogin, });
     factory ReturnAdjustment.fromJson(Map<String, dynamic> json) => _$ReturnAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnAdjustmentToJson(this);
 }

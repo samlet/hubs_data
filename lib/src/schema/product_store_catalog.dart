@@ -19,18 +19,16 @@ class ProductStoreCatalog {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? tenantId;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProdCatalogFlatData
-    final ProdCatalog? prodCatalog;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
+    // domain_ProdCatalogFlatData
+    final ProdCatalog? prodCatalog;
+    // String
+    final String? proto;
     ProductStoreCatalog({
         this.productStoreId,
         this.prodCatalogId,
@@ -40,12 +38,11 @@ class ProductStoreCatalog {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.proto,
-        this.cats,
-        this.prodCatalog,
         this.productStore,
-        this.format, });
+        this.cats,
+        this.format,
+        this.prodCatalog,
+        this.proto, });
     factory ProductStoreCatalog.fromJson(Map<String, dynamic> json) => _$ProductStoreCatalogFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreCatalogToJson(this);
 }

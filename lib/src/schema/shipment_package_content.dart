@@ -21,16 +21,16 @@ class ShipmentPackageContent {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? subProduct;
+    // String
+    final String? format;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // String
-    final String? format;
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
+    // domain_ProductFlatData
+    final Product? subProduct;
     ShipmentPackageContent({
         this.shipmentId,
         this.shipmentPackageSeqId,
@@ -41,11 +41,11 @@ class ShipmentPackageContent {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.subProduct,
-        this.shipment,
         this.format,
+        this.shipment,
+        this.proto,
         this.cats,
-        this.proto, });
+        this.subProduct, });
     factory ShipmentPackageContent.fromJson(Map<String, dynamic> json) => _$ShipmentPackageContentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageContentToJson(this);
 }

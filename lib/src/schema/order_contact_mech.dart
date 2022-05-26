@@ -15,14 +15,14 @@ class OrderContactMech {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? proto;
+    // String
     final String? format;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     OrderContactMech({
@@ -32,10 +32,10 @@ class OrderContactMech {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.orderHeader,
         this.cats,
+        this.proto,
         this.format,
+        this.orderHeader,
         this.contactMech, });
     factory OrderContactMech.fromJson(Map<String, dynamic> json) => _$OrderContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$OrderContactMechToJson(this);

@@ -18,15 +18,15 @@ class ShipmentItemBilling {
     // String
     final String? id;
     // String
+    final String? proto;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // String
     final String? format;
     // domain_InvoiceFlatData
     final Invoice? invoice;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
     ShipmentItemBilling({
         this.shipmentId,
         this.shipmentItemSeqId,
@@ -35,11 +35,11 @@ class ShipmentItemBilling {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.proto,
+        this.shipment,
         this.format,
         this.invoice,
-        this.shipment,
-        this.cats,
-        this.proto, });
+        this.cats, });
     factory ShipmentItemBilling.fromJson(Map<String, dynamic> json) => _$ShipmentItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentItemBillingToJson(this);
 }

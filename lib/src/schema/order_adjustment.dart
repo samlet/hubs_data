@@ -75,18 +75,18 @@ class OrderAdjustment {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
-    // String
-    final String? format;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     // String
-    final String? proto;
+    final String? format;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     OrderAdjustment({
         this.orderAdjustmentId,
         this.orderAdjustmentTypeId,
@@ -124,12 +124,12 @@ class OrderAdjustment {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.orderHeader,
-        this.format,
-        this.productPromo,
+        this.cats,
         this.proto,
-        this.userLogin,
-        this.cats, });
+        this.orderHeader,
+        this.productPromo,
+        this.format,
+        this.userLogin, });
     factory OrderAdjustment.fromJson(Map<String, dynamic> json) => _$OrderAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$OrderAdjustmentToJson(this);
 }

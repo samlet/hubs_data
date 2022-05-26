@@ -149,58 +149,60 @@ class Product {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? primaryProductCategory;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_WorkEffortGoodStandardList
+    final WorkEffortGoodStandardCollection? workEffortGoodStandards;
     // domain_ProductAssocList
     final ProductAssocCollection? assocProductAssocs;
     // String
-    final String? format;
-    // domain_ProductKeywordList
-    final ProductKeywordCollection? productKeywords;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? proto;
-    // domain_ProductPromoProductList
-    final ProductPromoProductCollection? productPromoProducts;
-    // String
     final String? defaultPrice;
-    // domain_ProductAssocList
-    final ProductAssocCollection? mainProductAssocs;
-    // domain_ProductContentList
-    final ProductContentCollection? productContents;
-    // fact_ProductView
-    final ProductView? asView;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // List<domain_ProductPriceData>
-    final List<ProductPrice>? matchProductPrice;
-    // domain_ProductPriceData
-    final ProductPrice? priceFilter;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? primaryProductCategory;
-    // domain_ProductFacilityList
-    final ProductFacilityCollection? productFacilities;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ProductPriceList
+    final ProductPriceCollection? productPrices;
+    // String
+    final String? listPrice;
+    // domain_ProductFacilityAssocList
+    final ProductFacilityAssocCollection? productFacilityAssocs;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // domain_ProductFeatureApplList
     final ProductFeatureApplCollection? productFeatureAppls;
-    // domain_ProductFacilityLocationList
-    final ProductFacilityLocationCollection? productFacilityLocations;
-    // String
-    final String? listPrice;
-    // domain_ProductPriceList
-    final ProductPriceCollection? productPrices;
-    // domain_ProductFacilityAssocList
-    final ProductFacilityAssocCollection? productFacilityAssocs;
-    // domain_WorkEffortGoodStandardList
-    final WorkEffortGoodStandardCollection? workEffortGoodStandards;
+    // domain_ProductPriceData
+    final ProductPrice? priceFilter;
     // domain_ProductConfigList
     final ProductConfigCollection? productProductConfigs;
+    // domain_ProductContentList
+    final ProductContentCollection? productContents;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ProductAssocList
+    final ProductAssocCollection? mainProductAssocs;
     // List<domain_ProductPriceData>
     final List<ProductPrice>? priceSelect;
+    // domain_ProductFacilityLocationList
+    final ProductFacilityLocationCollection? productFacilityLocations;
+    // domain_ProductPromoProductList
+    final ProductPromoProductCollection? productPromoProducts;
+    // String
+    final String? proto;
+    // fact_ProductView
+    final ProductView? asView;
+    // List<domain_ProductPriceData>
+    final List<ProductPrice>? matchProductPrice;
+    // String
+    final String? format;
+    // domain_ProductFacilityList
+    final ProductFacilityCollection? productFacilities;
+    // domain_ProductKeywordList
+    final ProductKeywordCollection? productKeywords;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     Product({
         this.productId,
         this.productTypeId,
@@ -275,32 +277,33 @@ class Product {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.assocProductAssocs,
-        this.format,
-        this.productKeywords,
         this.createdbyuserlogin,
-        this.proto,
-        this.productPromoProducts,
-        this.defaultPrice,
-        this.mainProductAssocs,
-        this.productContents,
-        this.asView,
-        this.cats,
-        this.matchProductPrice,
-        this.priceFilter,
         this.primaryProductCategory,
-        this.productFacilities,
         this.facility,
-        this.lastmodifiedbyuserlogin,
+        this.type,
+        this.workEffortGoodStandards,
+        this.assocProductAssocs,
+        this.defaultPrice,
+        this.productPrices,
+        this.listPrice,
+        this.productFacilityAssocs,
         this.subview,
         this.productFeatureAppls,
-        this.productFacilityLocations,
-        this.listPrice,
-        this.productPrices,
-        this.productFacilityAssocs,
-        this.workEffortGoodStandards,
+        this.priceFilter,
         this.productProductConfigs,
-        this.priceSelect, });
+        this.productContents,
+        this.lastmodifiedbyuserlogin,
+        this.mainProductAssocs,
+        this.priceSelect,
+        this.productFacilityLocations,
+        this.productPromoProducts,
+        this.proto,
+        this.asView,
+        this.matchProductPrice,
+        this.format,
+        this.productFacilities,
+        this.productKeywords,
+        this.cats, });
     factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductToJson(this);
 }

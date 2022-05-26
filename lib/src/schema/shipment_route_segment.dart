@@ -81,8 +81,10 @@ class ShipmentRouteSegment {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? destContactMech;
+    // domain_FacilityFlatData
+    final Facility? originFacility;
     // domain_FacilityFlatData
     final Facility? destFacility;
     // domain_PartyFlatData
@@ -90,15 +92,13 @@ class ShipmentRouteSegment {
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
+    final String? format;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
-    // domain_ContactMechFlatData
     final ContactMech? originContactMech;
-    // domain_FacilityFlatData
-    final Facility? originFacility;
+    // String
+    final String? proto;
     ShipmentRouteSegment({
         this.shipmentId,
         this.shipmentRouteSegmentId,
@@ -139,15 +139,15 @@ class ShipmentRouteSegment {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
+        this.destContactMech,
+        this.originFacility,
         this.destFacility,
         this.carrierParty,
         this.cats,
-        this.proto,
+        this.format,
         this.shipment,
-        this.destContactMech,
         this.originContactMech,
-        this.originFacility, });
+        this.proto, });
     factory ShipmentRouteSegment.fromJson(Map<String, dynamic> json) => _$ShipmentRouteSegmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentRouteSegmentToJson(this);
 }

@@ -17,14 +17,14 @@ class OrderAdjustmentBilling {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     OrderAdjustmentBilling({
         this.orderAdjustmentId,
         this.invoiceId,
@@ -33,10 +33,10 @@ class OrderAdjustmentBilling {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.invoice,
+        this.format,
         this.proto,
-        this.format, });
+        this.invoice,
+        this.cats, });
     factory OrderAdjustmentBilling.fromJson(Map<String, dynamic> json) => _$OrderAdjustmentBillingFromJson(json);
     Map<String, dynamic> toJson() => _$OrderAdjustmentBillingToJson(this);
 }

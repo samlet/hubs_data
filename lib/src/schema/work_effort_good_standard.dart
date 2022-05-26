@@ -31,10 +31,10 @@ class WorkEffortGoodStandard {
     final WorkEffort? workEffort;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? proto;
     WorkEffortGoodStandard({
         this.workEffortId,
         this.productId,
@@ -50,8 +50,8 @@ class WorkEffortGoodStandard {
         this.format,
         this.workEffort,
         this.cats,
-        this.proto,
-        this.product, });
+        this.product,
+        this.proto, });
     factory WorkEffortGoodStandard.fromJson(Map<String, dynamic> json) => _$WorkEffortGoodStandardFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortGoodStandardToJson(this);
 }

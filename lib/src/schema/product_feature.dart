@@ -39,6 +39,8 @@ class ProductFeature {
     final ProductFeatureCategory? productFeatureCategory;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     ProductFeature({
         this.productFeatureId,
         this.productFeatureTypeId,
@@ -57,7 +59,8 @@ class ProductFeature {
         this.proto,
         this.cats,
         this.productFeatureCategory,
-        this.subview, });
+        this.subview,
+        this.type, });
     factory ProductFeature.fromJson(Map<String, dynamic> json) => _$ProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureToJson(this);
 }

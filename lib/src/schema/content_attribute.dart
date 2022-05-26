@@ -17,12 +17,12 @@ class ContentAttribute {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContentFlatData
-    final Content? content;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? format;
+    // domain_ContentFlatData
+    final Content? content;
     // String
     final String? proto;
     ContentAttribute({
@@ -33,9 +33,9 @@ class ContentAttribute {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.content,
         this.cats,
         this.format,
+        this.content,
         this.proto, });
     factory ContentAttribute.fromJson(Map<String, dynamic> json) => _$ContentAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAttributeToJson(this);

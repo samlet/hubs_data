@@ -33,16 +33,16 @@ class ProductContent {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContentFlatData
-    final Content? content;
-    // String
-    final String? format;
-    // domain_ProductFlatData
-    final Product? product;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_ContentFlatData
+    final Content? content;
     ProductContent({
         this.productId,
         this.contentId,
@@ -59,11 +59,11 @@ class ProductContent {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.content,
+        this.cats,
         this.format,
-        this.product,
         this.proto,
-        this.cats, });
+        this.product,
+        this.content, });
     factory ProductContent.fromJson(Map<String, dynamic> json) => _$ProductContentFromJson(json);
     Map<String, dynamic> toJson() => _$ProductContentToJson(this);
 }

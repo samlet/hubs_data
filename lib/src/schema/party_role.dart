@@ -13,12 +13,12 @@ class PartyRole {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_PartyFlatData
     final Party? party;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     PartyRole({
@@ -27,9 +27,9 @@ class PartyRole {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.proto,
         this.party,
+        this.proto,
+        this.format,
         this.cats, });
     factory PartyRole.fromJson(Map<String, dynamic> json) => _$PartyRoleFromJson(json);
     Map<String, dynamic> toJson() => _$PartyRoleToJson(this);

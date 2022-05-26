@@ -31,22 +31,26 @@ class ProductCategory {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductPromoCategoryList
-    final ProductPromoCategoryCollection? productPromoCategories;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_ProductCategoryMemberList
-    final ProductCategoryMemberCollection? productCategoryMembers;
-    // String
-    final String? format;
     // domain_ProductCategoryFlatData
     final ProductCategory? primaryParentProductCategory;
     // String
-    final String? proto;
+    final String? format;
+    // domain_ProductPromoCategoryList
+    final ProductPromoCategoryCollection? productPromoCategories;
     // domain_ProductCategoryRollupList
     final ProductCategoryRollupCollection? currentProductCategoryRollups;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ProductList
+    final ProductCollection? primaryProducts;
+    // String
+    final String? proto;
+    // domain_ProductCategoryMemberList
+    final ProductCategoryMemberCollection? productCategoryMembers;
     ProductCategory({
         this.productCategoryId,
         this.productCategoryTypeId,
@@ -62,14 +66,16 @@ class ProductCategory {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.productPromoCategories,
-        this.subview,
-        this.productCategoryMembers,
-        this.format,
         this.primaryParentProductCategory,
+        this.format,
+        this.productPromoCategories,
+        this.currentProductCategoryRollups,
+        this.subview,
+        this.cats,
+        this.type,
+        this.primaryProducts,
         this.proto,
-        this.currentProductCategoryRollups, });
+        this.productCategoryMembers, });
     factory ProductCategory.fromJson(Map<String, dynamic> json) => _$ProductCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryToJson(this);
 }

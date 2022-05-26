@@ -27,18 +27,18 @@ class BlacklistItem {
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? login;
-    // domain_UserLoginFlatData
-    final UserLogin? blockByLogin;
-    // domain_BlacklistData
-    final Blacklist? blacklist;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? blockByLogin;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // domain_BlacklistData
+    final Blacklist? blacklist;
+    // domain_UserLoginFlatData
+    final UserLogin? login;
     BlacklistItem({
         this.blacklistItemId,
         this.blacklistId,
@@ -52,12 +52,12 @@ class BlacklistItem {
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.format,
-        this.login,
+        this.cats,
         this.blockByLogin,
-        this.blacklist,
+        this.format,
         this.proto,
-        this.cats, });
+        this.blacklist,
+        this.login, });
     factory BlacklistItem.fromJson(Map<String, dynamic> json) => _$BlacklistItemFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistItemToJson(this);
 }

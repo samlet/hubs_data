@@ -59,14 +59,14 @@ class OrderPaymentPreference {
     final String? tenantId;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
-    final String? format;
+    final String? proto;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? format;
     OrderPaymentPreference({
         this.orderPaymentPreferenceId,
         this.orderId,
@@ -96,10 +96,10 @@ class OrderPaymentPreference {
         this.createdTxStamp,
         this.tenantId,
         this.cats,
-        this.proto,
         this.userLogin,
-        this.format,
-        this.orderHeader, });
+        this.proto,
+        this.orderHeader,
+        this.format, });
     factory OrderPaymentPreference.fromJson(Map<String, dynamic> json) => _$OrderPaymentPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$OrderPaymentPreferenceToJson(this);
 }

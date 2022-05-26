@@ -17,16 +17,16 @@ class UserLoginSecurityGroup {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // String
     final String? format;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     UserLoginSecurityGroup({
         this.userLoginId,
         this.groupId,
@@ -35,11 +35,11 @@ class UserLoginSecurityGroup {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
         this.userLogin,
+        this.cats,
+        this.proto,
         this.format,
-        this.securityGroup,
-        this.cats, });
+        this.securityGroup, });
     factory UserLoginSecurityGroup.fromJson(Map<String, dynamic> json) => _$UserLoginSecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginSecurityGroupToJson(this);
 }

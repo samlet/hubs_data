@@ -61,16 +61,16 @@ class AcctgTransEntry {
     final String? id;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_PartyFlatData
     final Party? party;
     // String
     final String? format;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // domain_AcctgTransFlatData
     final AcctgTrans? acctgTrans;
-    // String
-    final String? proto;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     AcctgTransEntry({
         this.acctgTransId,
         this.acctgTransEntrySeqId,
@@ -101,11 +101,11 @@ class AcctgTransEntry {
         this.createdTxStamp,
         this.id,
         this.cats,
+        this.proto,
         this.party,
         this.format,
-        this.inventoryItem,
         this.acctgTrans,
-        this.proto, });
+        this.inventoryItem, });
     factory AcctgTransEntry.fromJson(Map<String, dynamic> json) => _$AcctgTransEntryFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgTransEntryToJson(this);
 }

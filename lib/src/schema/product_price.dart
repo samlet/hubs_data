@@ -51,24 +51,24 @@ class ProductPrice {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? format;
     // String
     final String? desc;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
     // domain_ProductFlatData
     final Product? product;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
     // String
     final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // String
+    final String? format;
     ProductPrice({
         this.productId,
         this.productPriceTypeId,
@@ -94,15 +94,15 @@ class ProductPrice {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.taxAuthorityParty,
-        this.lastmodifiedbyuserlogin,
-        this.cats,
-        this.createdbyuserlogin,
-        this.format,
         this.desc,
         this.productStoreGroup,
         this.product,
-        this.proto, });
+        this.createdbyuserlogin,
+        this.cats,
+        this.taxAuthorityParty,
+        this.proto,
+        this.lastmodifiedbyuserlogin,
+        this.format, });
     factory ProductPrice.fromJson(Map<String, dynamic> json) => _$ProductPriceFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPriceToJson(this);
 }

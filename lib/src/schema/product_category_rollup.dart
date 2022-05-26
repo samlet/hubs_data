@@ -20,15 +20,13 @@ class ProductCategoryRollup {
     // String
     final String? id;
     // String
-    final String? tenantId;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? parentProductCategory;
-    // String
     final String? proto;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? currentProductCategory;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_ProductCategoryFlatData
-    final ProductCategory? currentProductCategory;
+    final ProductCategory? parentProductCategory;
     // String
     final String? format;
     ProductCategoryRollup({
@@ -40,11 +38,10 @@ class ProductCategoryRollup {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.parentProductCategory,
         this.proto,
-        this.cats,
         this.currentProductCategory,
+        this.cats,
+        this.parentProductCategory,
         this.format, });
     factory ProductCategoryRollup.fromJson(Map<String, dynamic> json) => _$ProductCategoryRollupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryRollupToJson(this);

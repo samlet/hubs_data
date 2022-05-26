@@ -37,18 +37,16 @@ class PartyRelationship {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? fromParty;
     // String
     final String? format;
-    // domain_PartyFlatData
-    final Party? toParty;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
+    // domain_PartyFlatData
+    final Party? toParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     PartyRelationship({
@@ -69,12 +67,11 @@ class PartyRelationship {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.cats,
         this.fromParty,
         this.format,
-        this.toParty,
         this.securityGroup,
+        this.toParty,
+        this.cats,
         this.proto, });
     factory PartyRelationship.fromJson(Map<String, dynamic> json) => _$PartyRelationshipFromJson(json);
     Map<String, dynamic> toJson() => _$PartyRelationshipToJson(this);

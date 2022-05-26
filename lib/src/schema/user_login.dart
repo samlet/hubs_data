@@ -41,22 +41,22 @@ class UserLogin {
     final String? partyId;
     // String
     final String? tenantId;
-    // domain_UserLoginPasswordHistoryList
-    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_UserLoginSecurityGroupList
-    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_UserPreferenceList
-    final UserPreferenceCollection? userPreferences;
     // String
     final String? proto;
+    // domain_UserPreferenceList
+    final UserPreferenceCollection? userPreferences;
+    // domain_UserLoginSecurityGroupList
+    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
+    // domain_UserLoginPasswordHistoryList
+    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
     // String
     final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_PartyFlatData
+    final Party? party;
     UserLogin({
         this.userLoginId,
         this.currentPassword,
@@ -77,14 +77,14 @@ class UserLogin {
         this.createdTxStamp,
         this.partyId,
         this.tenantId,
-        this.userLoginPasswordHistories,
-        this.subview,
-        this.userLoginSecurityGroups,
         this.cats,
-        this.party,
-        this.userPreferences,
         this.proto,
-        this.format, });
+        this.userPreferences,
+        this.userLoginSecurityGroups,
+        this.userLoginPasswordHistories,
+        this.format,
+        this.subview,
+        this.party, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
 }

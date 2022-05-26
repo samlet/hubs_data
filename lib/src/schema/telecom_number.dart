@@ -19,14 +19,14 @@ class TelecomNumber {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // String
-    final String? proto;
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     TelecomNumber({
         this.contactMechId,
         this.countryCode,
@@ -36,10 +36,10 @@ class TelecomNumber {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.format,
+        this.proto,
         this.contactMech,
-        this.proto, });
+        this.format,
+        this.cats, });
     factory TelecomNumber.fromJson(Map<String, dynamic> json) => _$TelecomNumberFromJson(json);
     Map<String, dynamic> toJson() => _$TelecomNumberToJson(this);
 }

@@ -55,34 +55,34 @@ class Content {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_ContentFlatData
-    final Content? decoratorContent;
-    // domain_ContentFlatData
-    final Content? ownerContent;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
     // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_ContentAttributeList
-    final ContentAttributeCollection? contentAttributes;
-    // domain_ContentAssocList
-    final ContentAssocCollection? toContentAssocs;
-    // domain_DataResourceFlatData
-    final DataResource? templateDataResource;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ContentPurposeList
-    final ContentPurposeCollection? contentPurposes;
-    // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
     // domain_ContentFlatData
-    final Content? instanceOfContent;
+    final Content? decoratorContent;
+    // domain_DataResourceFlatData
+    final DataResource? templateDataResource;
+    // domain_ContentAssocList
+    final ContentAssocCollection? toContentAssocs;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // domain_ContentAttributeList
+    final ContentAttributeCollection? contentAttributes;
+    // domain_ContentPurposeList
+    final ContentPurposeCollection? contentPurposes;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ContentFlatData
+    final Content? ownerContent;
+    // domain_ContentFlatData
+    final Content? instanceOfContent;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -110,20 +110,20 @@ class Content {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.decoratorContent,
-        this.ownerContent,
-        this.dataResource,
         this.createdbyuserlogin,
-        this.contentAttributes,
-        this.toContentAssocs,
-        this.templateDataResource,
-        this.subview,
-        this.cats,
-        this.contentPurposes,
+        this.dataResource,
         this.lastmodifiedbyuserlogin,
-        this.instanceOfContent,
-        this.proto, });
+        this.decoratorContent,
+        this.templateDataResource,
+        this.toContentAssocs,
+        this.proto,
+        this.subview,
+        this.format,
+        this.contentAttributes,
+        this.contentPurposes,
+        this.cats,
+        this.ownerContent,
+        this.instanceOfContent, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
 }

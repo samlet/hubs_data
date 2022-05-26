@@ -19,14 +19,16 @@ class BillingAccountTerm {
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
+    // String
+    final String? tenantId;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
     // String
     final String? format;
     // String
     final String? proto;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
     BillingAccountTerm({
         this.billingAccountTermId,
         this.billingAccountId,
@@ -36,10 +38,11 @@ class BillingAccountTerm {
         this.uomId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
+        this.tenantId,
         this.cats,
-        this.billingAccount,
         this.format,
-        this.proto, });
+        this.proto,
+        this.billingAccount, });
     factory BillingAccountTerm.fromJson(Map<String, dynamic> json) => _$BillingAccountTermFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountTermToJson(this);
 }

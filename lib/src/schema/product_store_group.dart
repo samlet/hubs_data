@@ -18,15 +18,21 @@ class ProductStoreGroup {
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
     // String
+    final String? tenantId;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductStoreList
+    final ProductStoreCollection? primaryProductStores;
+    // String
     final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? primaryParentProductStoreGroup;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     ProductStoreGroup({
         this.productStoreGroupId,
         this.productStoreGroupTypeId,
@@ -35,11 +41,14 @@ class ProductStoreGroup {
         this.description,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
+        this.tenantId,
+        this.format,
+        this.cats,
+        this.primaryProductStores,
         this.proto,
         this.subview,
-        this.cats,
-        this.format,
-        this.primaryParentProductStoreGroup, });
+        this.primaryParentProductStoreGroup,
+        this.type, });
     factory ProductStoreGroup.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupToJson(this);
 }

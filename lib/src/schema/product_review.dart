@@ -27,20 +27,20 @@ class ProductReview {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
     // String
     final String? format;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ProductFlatData
-    final Product? product;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductReview({
         this.productReviewId,
         this.productStoreId,
@@ -54,13 +54,13 @@ class ProductReview {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.userLogin,
+        this.product,
         this.productStore,
-        this.cats,
         this.proto,
         this.format,
         this.subview,
-        this.product, });
+        this.userLogin,
+        this.cats, });
     factory ProductReview.fromJson(Map<String, dynamic> json) => _$ProductReviewFromJson(json);
     Map<String, dynamic> toJson() => _$ProductReviewToJson(this);
 }

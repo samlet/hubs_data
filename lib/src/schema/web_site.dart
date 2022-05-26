@@ -45,14 +45,14 @@ class WebSite {
     final String? tenantId;
     // String
     final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     WebSite({
         this.webSiteId,
         this.siteName,
@@ -75,10 +75,10 @@ class WebSite {
         this.displayMaintenancePage,
         this.tenantId,
         this.proto,
+        this.productStore,
         this.subview,
-        this.cats,
         this.format,
-        this.productStore, });
+        this.cats, });
     factory WebSite.fromJson(Map<String, dynamic> json) => _$WebSiteFromJson(json);
     Map<String, dynamic> toJson() => _$WebSiteToJson(this);
 }

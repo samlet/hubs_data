@@ -29,10 +29,10 @@ class ShoppingListItem {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ShoppingListFlatData
     final ShoppingList? shoppingList;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ProductFlatData
     final Product? product;
     // String
@@ -53,8 +53,8 @@ class ShoppingListItem {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.shoppingList,
+        this.cats,
         this.product,
         this.format,
         this.proto, });

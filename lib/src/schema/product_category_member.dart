@@ -24,17 +24,15 @@ class ProductCategoryMember {
     // String
     final String? id;
     // String
-    final String? tenantId;
+    final String? proto;
     // domain_ProductCategoryFlatData
     final ProductCategory? productCategory;
-    // domain_ProductFlatData
-    final Product? product;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
     ProductCategoryMember({
         this.productCategoryId,
         this.productId,
@@ -46,12 +44,11 @@ class ProductCategoryMember {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.productCategory,
-        this.product,
         this.proto,
+        this.productCategory,
+        this.format,
         this.cats,
-        this.format, });
+        this.product, });
     factory ProductCategoryMember.fromJson(Map<String, dynamic> json) => _$ProductCategoryMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryMemberToJson(this);
 }

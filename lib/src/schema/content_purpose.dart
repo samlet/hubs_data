@@ -15,14 +15,14 @@ class ContentPurpose {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // String
     final String? format;
     // domain_ContentFlatData
     final Content? content;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     ContentPurpose({
         this.contentId,
         this.contentPurposeTypeId,
@@ -30,10 +30,10 @@ class ContentPurpose {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.proto,
         this.format,
-        this.content, });
+        this.content,
+        this.cats,
+        this.proto, });
     factory ContentPurpose.fromJson(Map<String, dynamic> json) => _$ContentPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentPurposeToJson(this);
 }

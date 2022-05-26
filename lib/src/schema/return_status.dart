@@ -20,15 +20,17 @@ class ReturnStatus {
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
     // String
+    final String? tenantId;
+    // String
+    final String? proto;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? returnHeader;
+    // String
     final String? format;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? returnHeader;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
     ReturnStatus({
         this.returnStatusId,
         this.statusId,
@@ -38,11 +40,12 @@ class ReturnStatus {
         this.statusDatetime,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
+        this.tenantId,
+        this.proto,
+        this.returnHeader,
         this.format,
         this.changeByUserLogin,
-        this.returnHeader,
-        this.cats,
-        this.proto, });
+        this.cats, });
     factory ReturnStatus.fromJson(Map<String, dynamic> json) => _$ReturnStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnStatusToJson(this);
 }

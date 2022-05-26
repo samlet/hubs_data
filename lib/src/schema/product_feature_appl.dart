@@ -27,14 +27,14 @@ class ProductFeatureAppl {
     final String? id;
     // domain_ProductFeatureFlatData
     final ProductFeature? productFeature;
-    // String
-    final String? format;
     // domain_ProductFlatData
     final Product? product;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     ProductFeatureAppl({
         this.productId,
         this.productFeatureId,
@@ -48,10 +48,10 @@ class ProductFeatureAppl {
         this.createdTxStamp,
         this.id,
         this.productFeature,
-        this.format,
         this.product,
-        this.proto,
-        this.cats, });
+        this.format,
+        this.cats,
+        this.proto, });
     factory ProductFeatureAppl.fromJson(Map<String, dynamic> json) => _$ProductFeatureApplFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureApplToJson(this);
 }

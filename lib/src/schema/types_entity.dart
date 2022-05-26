@@ -613,14 +613,18 @@ class TypesEntity {
     final TimestampValue? createdTxStamp;
     // String
     final String? format;
-    // String
-    final String? proto;
+    // domain_ProductTypeData
+    final ProductType? asProductType;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_TypesEntityStatusList
     final TypesEntityStatusCollection? typesEntityStatuses;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     TypesEntity({
         this.entityId,
         this.entity,
@@ -927,10 +931,12 @@ class TypesEntity {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.format,
-        this.proto,
+        this.asProductType,
         this.cats,
+        this.typesEntityStatuses,
+        this.type,
         this.subview,
-        this.typesEntityStatuses, });
+        this.proto, });
     factory TypesEntity.fromJson(Map<String, dynamic> json) => _$TypesEntityFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityToJson(this);
 }

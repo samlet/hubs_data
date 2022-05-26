@@ -23,16 +23,18 @@ class NoteData {
     final String? moreInfoItemId;
     // String
     final String? moreInfoItemName;
-    // domain_PartyFlatData
-    final Party? noteparty;
     // String
-    final String? format;
+    final String? tenantId;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_PartyFlatData
+    final Party? noteparty;
     NoteData({
         this.noteId,
         this.noteName,
@@ -44,11 +46,12 @@ class NoteData {
         this.moreInfoUrl,
         this.moreInfoItemId,
         this.moreInfoItemName,
-        this.noteparty,
-        this.format,
+        this.tenantId,
         this.subview,
+        this.format,
+        this.cats,
         this.proto,
-        this.cats, });
+        this.noteparty, });
     factory NoteData.fromJson(Map<String, dynamic> json) => _$NoteDataFromJson(json);
     Map<String, dynamic> toJson() => _$NoteDataToJson(this);
 }

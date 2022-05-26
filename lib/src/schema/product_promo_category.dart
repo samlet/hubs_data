@@ -26,13 +26,13 @@ class ProductPromoCategory {
     // String
     final String? id;
     // String
-    final String? proto;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? productCategory;
-    // String
     final String? format;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? productCategory;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     ProductPromoCategory({
@@ -47,10 +47,10 @@ class ProductPromoCategory {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.productCategory,
         this.format,
         this.productPromo,
+        this.productCategory,
+        this.proto,
         this.cats, });
     factory ProductPromoCategory.fromJson(Map<String, dynamic> json) => _$ProductPromoCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoCategoryToJson(this);

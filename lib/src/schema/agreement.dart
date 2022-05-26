@@ -33,26 +33,26 @@ class Agreement {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_AgreementTermList
-    final AgreementTermCollection? agreementTerms;
-    // domain_AgreementProductApplList
-    final AgreementProductApplCollection? agreementProductAppls;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // String
-    final String? format;
     // domain_AgreementItemList
     final AgreementItemCollection? agreementItems;
+    // domain_AgreementTermList
+    final AgreementTermCollection? agreementTerms;
     // domain_PartyFlatData
-    final Party? fromParty;
+    final Party? toParty;
     // domain_ProductFlatData
     final Product? product;
+    // domain_PartyFlatData
+    final Party? fromParty;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? proto;
+    // domain_AgreementProductApplList
+    final AgreementProductApplCollection? agreementProductAppls;
     Agreement({
         this.agreementId,
         this.productId,
@@ -69,16 +69,16 @@ class Agreement {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.agreementTerms,
-        this.agreementProductAppls,
-        this.proto,
-        this.subview,
-        this.toParty,
-        this.format,
         this.agreementItems,
-        this.fromParty,
+        this.agreementTerms,
+        this.toParty,
         this.product,
-        this.cats, });
+        this.fromParty,
+        this.cats,
+        this.format,
+        this.subview,
+        this.proto,
+        this.agreementProductAppls, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
 }

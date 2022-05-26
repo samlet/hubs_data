@@ -165,38 +165,40 @@ class ProductStore {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductStorePaymentSettingList
-    final ProductStorePaymentSettingCollection? productStorePaymentSettings;
-    // domain_TelecomNumberFlatData
-    final TelecomNumber? primaryPhone;
-    // domain_ProductStoreEmailSettingList
-    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
-    // domain_ProductStoreRoleList
-    final ProductStoreRoleCollection? productStoreRoles;
-    // domain_FacilityFlatData
-    final Facility? facility;
     // domain_ProductStoreCatalogList
     final ProductStoreCatalogCollection? productStoreCatalogs;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductStoreFacilityList
-    final ProductStoreFacilityCollection? productStoreFacilities;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? primaryProductStoreGroup;
+    // String
+    final String? format;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ProductStoreRoleList
+    final ProductStoreRoleCollection? productStoreRoles;
+    // domain_WebSiteList
+    final WebSiteCollection? webSites;
+    // domain_ProductStorePromoApplList
+    final ProductStorePromoApplCollection? productStorePromoAppls;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_ProductStorePaymentSettingList
+    final ProductStorePaymentSettingCollection? productStorePaymentSettings;
+    // domain_ProductStoreEmailSettingList
+    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
     // String
     final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_PostalAddressFlatData
-    final PostalAddress? primaryAddress;
-    // String
-    final String? format;
-    // domain_ProductStorePromoApplList
-    final ProductStorePromoApplCollection? productStorePromoAppls;
     // domain_PartyFlatData
     final Party? party;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
+    // domain_ProductStoreFacilityList
+    final ProductStoreFacilityCollection? productStoreFacilities;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? primaryProductStoreGroup;
+    // domain_PostalAddressFlatData
+    final PostalAddress? primaryAddress;
+    // domain_TelecomNumberFlatData
+    final TelecomNumber? primaryPhone;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductStore({
         this.productStoreId,
         this.primaryStoreGroupId,
@@ -279,22 +281,23 @@ class ProductStore {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productStorePaymentSettings,
-        this.primaryPhone,
-        this.productStoreEmailSettings,
-        this.productStoreRoles,
-        this.facility,
         this.productStoreCatalogs,
-        this.cats,
-        this.productStoreFacilities,
-        this.primaryProductStoreGroup,
+        this.format,
+        this.facility,
+        this.productStoreRoles,
+        this.webSites,
+        this.productStorePromoAppls,
+        this.contactMech,
+        this.productStorePaymentSettings,
+        this.productStoreEmailSettings,
         this.proto,
         this.subview,
-        this.primaryAddress,
-        this.format,
-        this.productStorePromoAppls,
         this.party,
-        this.contactMech, });
+        this.productStoreFacilities,
+        this.primaryProductStoreGroup,
+        this.primaryAddress,
+        this.primaryPhone,
+        this.cats, });
     factory ProductStore.fromJson(Map<String, dynamic> json) => _$ProductStoreFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreToJson(this);
 }

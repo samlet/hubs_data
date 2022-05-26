@@ -17,16 +17,16 @@ class ShipmentStatus {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
     ShipmentStatus({
         this.statusId,
         this.shipmentId,
@@ -35,11 +35,11 @@ class ShipmentStatus {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.shipment,
-        this.proto,
-        this.changeByUserLogin,
         this.format,
-        this.cats, });
+        this.cats,
+        this.proto,
+        this.shipment,
+        this.changeByUserLogin, });
     factory ShipmentStatus.fromJson(Map<String, dynamic> json) => _$ShipmentStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentStatusToJson(this);
 }

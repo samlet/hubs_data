@@ -9,16 +9,16 @@ class OrderHeaderCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
-    // List<order_SalesOrderProto>
-    final List<OrderWithSalesOrder>? matchSalesOrder;
     // List<order_PurchaseOrderProto>
     final List<OrderWithPurchaseOrder>? matchPurchaseOrder;
+    // List<order_SalesOrderProto>
+    final List<OrderWithSalesOrder>? matchSalesOrder;
     OrderHeaderCollection({
         this.values,
         this.nextPageToken,
         this.regionId,
-        this.matchSalesOrder,
-        this.matchPurchaseOrder, });
+        this.matchPurchaseOrder,
+        this.matchSalesOrder, });
     factory OrderHeaderCollection.fromJson(Map<String, dynamic> json) => _$OrderHeaderCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderCollectionToJson(this);
 }

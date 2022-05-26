@@ -18,15 +18,17 @@ class FactProto {
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
     // String
+    final String? format;
+    // String
     final String? proto;
-    // domain_FactProtoStatusList
-    final FactProtoStatusCollection? factProtoStatuses;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_FactProtoStatusList
+    final FactProtoStatusCollection? factProtoStatuses;
     FactProto({
         this.factId,
         this.data,
@@ -35,11 +37,12 @@ class FactProto {
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
+        this.format,
         this.proto,
-        this.factProtoStatuses,
-        this.subview,
         this.cats,
-        this.format, });
+        this.type,
+        this.subview,
+        this.factProtoStatuses, });
     factory FactProto.fromJson(Map<String, dynamic> json) => _$FactProtoFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoToJson(this);
 }

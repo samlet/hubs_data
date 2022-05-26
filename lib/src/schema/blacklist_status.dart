@@ -21,14 +21,14 @@ class BlacklistStatus {
     final String? id;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_BlacklistData
-    final Blacklist? blacklist;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_BlacklistData
+    final Blacklist? blacklist;
     BlacklistStatus({
         this.blacklistId,
         this.statusDate,
@@ -39,10 +39,10 @@ class BlacklistStatus {
         this.createdTxStamp,
         this.id,
         this.userLogin,
-        this.cats,
         this.proto,
-        this.blacklist,
-        this.format, });
+        this.format,
+        this.cats,
+        this.blacklist, });
     factory BlacklistStatus.fromJson(Map<String, dynamic> json) => _$BlacklistStatusFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistStatusToJson(this);
 }

@@ -27,16 +27,16 @@ class ProductFacilityAssoc {
     final String? id;
     // domain_ProductFlatData
     final Product? product;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_FacilityFlatData
     final Facility? fromFacility;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_FacilityFlatData
     final Facility? toFacility;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     ProductFacilityAssoc({
         this.productId,
         this.facilityId,
@@ -50,11 +50,11 @@ class ProductFacilityAssoc {
         this.createdTxStamp,
         this.id,
         this.product,
-        this.format,
-        this.proto,
         this.fromFacility,
         this.cats,
-        this.toFacility, });
+        this.toFacility,
+        this.format,
+        this.proto, });
     factory ProductFacilityAssoc.fromJson(Map<String, dynamic> json) => _$ProductFacilityAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFacilityAssocToJson(this);
 }

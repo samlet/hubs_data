@@ -49,24 +49,26 @@ class ShoppingList {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
     // domain_ShoppingListFlatData
     final ShoppingList? parentShoppingList;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // String
-    final String? proto;
     // domain_ShoppingListItemList
     final ShoppingListItemCollection? shoppingListItems;
     // String
+    final String? proto;
+    // String
     final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // domain_PartyFlatData
     final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -91,15 +93,16 @@ class ShoppingList {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.contactMech,
         this.parentShoppingList,
-        this.subview,
-        this.cats,
         this.productStore,
-        this.proto,
         this.shoppingListItems,
+        this.proto,
         this.format,
-        this.party, });
+        this.type,
+        this.contactMech,
+        this.subview,
+        this.party,
+        this.cats, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
 }

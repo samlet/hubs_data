@@ -23,10 +23,10 @@ class UserPreference {
     final FieldCatsValue? cats;
     // String
     final String? proto;
-    // String
-    final String? format;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // String
+    final String? format;
     UserPreference({
         this.userLoginId,
         this.userPrefTypeId,
@@ -38,8 +38,8 @@ class UserPreference {
         this.id,
         this.cats,
         this.proto,
-        this.format,
-        this.userLogin, });
+        this.userLogin,
+        this.format, });
     factory UserPreference.fromJson(Map<String, dynamic> json) => _$UserPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$UserPreferenceToJson(this);
 }

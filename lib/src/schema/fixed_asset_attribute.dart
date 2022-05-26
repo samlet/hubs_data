@@ -17,14 +17,14 @@ class FixedAssetAttribute {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // String
+    final String? format;
     FixedAssetAttribute({
         this.fixedAssetId,
         this.attrName,
@@ -33,10 +33,10 @@ class FixedAssetAttribute {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fixedAsset,
         this.cats,
-        this.format,
-        this.proto, });
+        this.proto,
+        this.fixedAsset,
+        this.format, });
     factory FixedAssetAttribute.fromJson(Map<String, dynamic> json) => _$FixedAssetAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetAttributeToJson(this);
 }

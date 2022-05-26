@@ -33,16 +33,18 @@ class InventoryTransfer {
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // domain_FacilityFlatData
-    final Facility? facility;
     // String
-    final String? proto;
+    final String? tenantId;
+    // domain_FacilityFlatData
+    final Facility? toFacility;
     // String
     final String? format;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
+    // String
+    final String? proto;
     // domain_FacilityFlatData
-    final Facility? toFacility;
+    final Facility? facility;
     // proto_FieldCats
     final FieldCatsValue? cats;
     InventoryTransfer({
@@ -61,11 +63,12 @@ class InventoryTransfer {
         this.comments,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.facility,
-        this.proto,
+        this.tenantId,
+        this.toFacility,
         this.format,
         this.inventoryItem,
-        this.toFacility,
+        this.proto,
+        this.facility,
         this.cats, });
     factory InventoryTransfer.fromJson(Map<String, dynamic> json) => _$InventoryTransferFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryTransferToJson(this);

@@ -30,15 +30,19 @@ class Example {
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
     // String
+    final String? tenantId;
+    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ExampleStatusList
     final ExampleStatusCollection? exampleStatuses;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // String
     final String? format;
     // domain_ExampleItemList
     final ExampleItemCollection? exampleItems;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     Example({
@@ -55,11 +59,13 @@ class Example {
         this.anotherText,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
+        this.tenantId,
         this.proto,
-        this.cats,
         this.exampleStatuses,
+        this.type,
         this.format,
         this.exampleItems,
+        this.cats,
         this.subview, });
     factory Example.fromJson(Map<String, dynamic> json) => _$ExampleFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleToJson(this);

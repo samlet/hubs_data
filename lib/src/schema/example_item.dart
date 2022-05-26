@@ -20,13 +20,13 @@ class ExampleItem {
     // String
     final String? id;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_ExampleData
     final Example? example;
+    // String
+    final String? proto;
     ExampleItem({
         this.exampleId,
         this.exampleItemSeqId,
@@ -36,10 +36,10 @@ class ExampleItem {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.cats,
         this.format,
-        this.example, });
+        this.cats,
+        this.example,
+        this.proto, });
     factory ExampleItem.fromJson(Map<String, dynamic> json) => _$ExampleItemFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleItemToJson(this);
 }

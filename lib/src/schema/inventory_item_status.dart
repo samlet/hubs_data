@@ -25,14 +25,14 @@ class InventoryItemStatus {
     final String? id;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     InventoryItemStatus({
         this.inventoryItemId,
         this.statusId,
@@ -45,10 +45,10 @@ class InventoryItemStatus {
         this.createdTxStamp,
         this.id,
         this.inventoryItem,
-        this.userLogin,
-        this.format,
         this.proto,
-        this.cats, });
+        this.userLogin,
+        this.cats,
+        this.format, });
     factory InventoryItemStatus.fromJson(Map<String, dynamic> json) => _$InventoryItemStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemStatusToJson(this);
 }

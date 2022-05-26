@@ -17,14 +17,14 @@ class PartyGeoPoint {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // domain_PartyFlatData
+    final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     PartyGeoPoint({
         this.partyId,
         this.geoPointId,
@@ -33,10 +33,10 @@ class PartyGeoPoint {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.party,
+        this.format,
         this.proto,
-        this.cats,
-        this.format, });
+        this.party,
+        this.cats, });
     factory PartyGeoPoint.fromJson(Map<String, dynamic> json) => _$PartyGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$PartyGeoPointToJson(this);
 }

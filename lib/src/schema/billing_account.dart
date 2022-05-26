@@ -26,19 +26,19 @@ class BillingAccount {
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
+    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_BillingAccountRoleList
     final BillingAccountRoleCollection? billingAccountRoles;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // String
+    final String? format;
     // domain_BillingAccountTermList
     final BillingAccountTermCollection? billingAccountTerms;
-    // String
-    final String? proto;
     BillingAccount({
         this.billingAccountId,
         this.accountLimit,
@@ -51,13 +51,13 @@ class BillingAccount {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.cats,
-        this.contactMech,
+        this.proto,
         this.subview,
+        this.cats,
         this.billingAccountRoles,
-        this.billingAccountTerms,
-        this.proto, });
+        this.contactMech,
+        this.format,
+        this.billingAccountTerms, });
     factory BillingAccount.fromJson(Map<String, dynamic> json) => _$BillingAccountFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountToJson(this);
 }

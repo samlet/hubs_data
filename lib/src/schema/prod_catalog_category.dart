@@ -21,18 +21,16 @@ class ProdCatalogCategory {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ProdCatalogFlatData
     final ProdCatalog? prodCatalog;
     // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? proto;
     // domain_ProductCategoryFlatData
     final ProductCategory? productCategory;
     // String
-    final String? proto;
+    final String? format;
     ProdCatalogCategory({
         this.prodCatalogId,
         this.productCategoryId,
@@ -43,12 +41,11 @@ class ProdCatalogCategory {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.prodCatalog,
-        this.format,
         this.cats,
+        this.prodCatalog,
+        this.proto,
         this.productCategory,
-        this.proto, });
+        this.format, });
     factory ProdCatalogCategory.fromJson(Map<String, dynamic> json) => _$ProdCatalogCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProdCatalogCategoryToJson(this);
 }

@@ -17,16 +17,16 @@ class AgreementProductAppl {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? product;
     // String
-    final String? format;
+    final String? proto;
     // domain_AgreementFlatData
     final Agreement? agreement;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
     AgreementProductAppl({
         this.agreementId,
         this.agreementItemSeqId,
@@ -35,11 +35,11 @@ class AgreementProductAppl {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.product,
-        this.format,
-        this.agreement,
         this.proto,
-        this.cats, });
+        this.agreement,
+        this.format,
+        this.cats,
+        this.product, });
     factory AgreementProductAppl.fromJson(Map<String, dynamic> json) => _$AgreementProductApplFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementProductApplToJson(this);
 }

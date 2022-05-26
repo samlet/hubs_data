@@ -21,16 +21,16 @@ class WorkEffortAssoc {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_WorkEffortFlatData
-    final WorkEffort? fromWorkEffort;
-    // domain_WorkEffortFlatData
-    final WorkEffort? toWorkEffort;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // domain_WorkEffortFlatData
+    final WorkEffort? toWorkEffort;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_WorkEffortFlatData
+    final WorkEffort? fromWorkEffort;
     WorkEffortAssoc({
         this.workEffortIdFrom,
         this.workEffortIdTo,
@@ -41,11 +41,11 @@ class WorkEffortAssoc {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fromWorkEffort,
-        this.toWorkEffort,
-        this.format,
         this.proto,
-        this.cats, });
+        this.format,
+        this.toWorkEffort,
+        this.cats,
+        this.fromWorkEffort, });
     factory WorkEffortAssoc.fromJson(Map<String, dynamic> json) => _$WorkEffortAssocFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortAssocToJson(this);
 }

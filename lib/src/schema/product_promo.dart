@@ -39,24 +39,24 @@ class ProductPromo {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductPromoActionList
-    final ProductPromoActionCollection? productPromoActions;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_ProductPromoRuleList
-    final ProductPromoRuleCollection? productPromoRules;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
     // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
     // domain_PartyFlatData
     final Party? party;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ProductPromoRuleList
+    final ProductPromoRuleCollection? productPromoRules;
+    // domain_ProductPromoActionList
+    final ProductPromoActionCollection? productPromoActions;
     // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductPromo({
         this.productPromoId,
         this.promoName,
@@ -76,15 +76,15 @@ class ProductPromo {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productPromoActions,
-        this.subview,
-        this.productPromoRules,
-        this.lastmodifiedbyuserlogin,
         this.createdbyuserlogin,
         this.party,
+        this.lastmodifiedbyuserlogin,
+        this.productPromoRules,
+        this.productPromoActions,
         this.format,
-        this.cats,
-        this.proto, });
+        this.subview,
+        this.proto,
+        this.cats, });
     factory ProductPromo.fromJson(Map<String, dynamic> json) => _$ProductPromoFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoToJson(this);
 }

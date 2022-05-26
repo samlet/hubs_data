@@ -17,16 +17,16 @@ class SecurityGroupPermission {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // domain_SecurityPermissionFlatData
     final SecurityPermission? securityPermission;
-    // domain_SecurityGroupFlatData
-    final SecurityGroup? securityGroup;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_SecurityGroupFlatData
+    final SecurityGroup? securityGroup;
     SecurityGroupPermission({
         this.groupId,
         this.permissionId,
@@ -35,11 +35,11 @@ class SecurityGroupPermission {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
         this.format,
         this.securityPermission,
-        this.securityGroup,
         this.proto,
-        this.cats, });
+        this.securityGroup, });
     factory SecurityGroupPermission.fromJson(Map<String, dynamic> json) => _$SecurityGroupPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupPermissionToJson(this);
 }

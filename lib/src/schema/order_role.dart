@@ -15,16 +15,16 @@ class OrderRole {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // domain_PartyFlatData
+    final Party? party;
     OrderRole({
         this.orderId,
         this.partyId,
@@ -32,11 +32,11 @@ class OrderRole {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.party,
-        this.format,
-        this.proto,
         this.cats,
-        this.orderHeader, });
+        this.proto,
+        this.format,
+        this.orderHeader,
+        this.party, });
     factory OrderRole.fromJson(Map<String, dynamic> json) => _$OrderRoleFromJson(json);
     Map<String, dynamic> toJson() => _$OrderRoleToJson(this);
 }

@@ -30,17 +30,17 @@ class FixedAssetMaint {
     // String
     final String? id;
     // String
-    final String? format;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? purchaseOrderHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? proto;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
-    // String
-    final String? proto;
     // domain_WorkEffortFlatData
     final WorkEffort? scheduleWorkEffort;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? purchaseOrderHeader;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     FixedAssetMaint({
         this.fixedAssetId,
         this.maintHistSeqId,
@@ -55,12 +55,12 @@ class FixedAssetMaint {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.purchaseOrderHeader,
-        this.cats,
-        this.fixedAsset,
         this.proto,
-        this.scheduleWorkEffort, });
+        this.fixedAsset,
+        this.scheduleWorkEffort,
+        this.purchaseOrderHeader,
+        this.format,
+        this.cats, });
     factory FixedAssetMaint.fromJson(Map<String, dynamic> json) => _$FixedAssetMaintFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetMaintToJson(this);
 }

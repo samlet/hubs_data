@@ -23,16 +23,16 @@ class ReturnItemBilling {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
     ReturnItemBilling({
         this.returnId,
         this.returnItemSeqId,
@@ -44,11 +44,11 @@ class ReturnItemBilling {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.invoice,
         this.returnHeader,
-        this.cats,
+        this.format,
         this.proto,
-        this.format, });
+        this.cats,
+        this.invoice, });
     factory ReturnItemBilling.fromJson(Map<String, dynamic> json) => _$ReturnItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemBillingToJson(this);
 }

@@ -41,16 +41,16 @@ class ReturnItem {
     final String? id;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductFlatData
     final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // String
+    final String? format;
     ReturnItem({
         this.returnId,
         this.returnItemSeqId,
@@ -71,11 +71,11 @@ class ReturnItem {
         this.createdTxStamp,
         this.id,
         this.returnHeader,
-        this.cats,
         this.product,
+        this.cats,
         this.orderHeader,
-        this.format,
-        this.proto, });
+        this.proto,
+        this.format, });
     factory ReturnItem.fromJson(Map<String, dynamic> json) => _$ReturnItemFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemToJson(this);
 }

@@ -28,19 +28,19 @@ class PaymentApplication {
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // String
     final String? proto;
-    // domain_PaymentFlatData
-    final Payment? payment;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_InvoiceFlatData
     final Invoice? invoice;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // domain_PaymentFlatData
+    final Payment? payment;
     // domain_PaymentFlatData
     final Payment? toPayment;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     PaymentApplication({
         this.paymentApplicationId,
         this.paymentId,
@@ -54,13 +54,13 @@ class PaymentApplication {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.billingAccount,
         this.proto,
-        this.payment,
-        this.cats,
         this.invoice,
-        this.toPayment, });
+        this.billingAccount,
+        this.payment,
+        this.toPayment,
+        this.cats,
+        this.format, });
     factory PaymentApplication.fromJson(Map<String, dynamic> json) => _$PaymentApplicationFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentApplicationToJson(this);
 }

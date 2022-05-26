@@ -15,14 +15,14 @@ class SecurityGroup {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_SecurityGroupPermissionList
     final SecurityGroupPermissionCollection? securityGroupPermissions;
     SecurityGroup({
@@ -32,10 +32,10 @@ class SecurityGroup {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.subview,
+        this.format,
         this.cats,
         this.proto,
-        this.format,
-        this.subview,
         this.securityGroupPermissions, });
     factory SecurityGroup.fromJson(Map<String, dynamic> json) => _$SecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupToJson(this);

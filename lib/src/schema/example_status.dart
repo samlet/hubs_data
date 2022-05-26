@@ -21,14 +21,14 @@ class ExampleStatus {
     final String? id;
     // domain_ExampleData
     final Example? example;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // String
     final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     ExampleStatus({
         this.exampleId,
         this.statusDate,
@@ -39,10 +39,10 @@ class ExampleStatus {
         this.createdTxStamp,
         this.id,
         this.example,
+        this.cats,
         this.format,
         this.proto,
-        this.userLogin,
-        this.cats, });
+        this.userLogin, });
     factory ExampleStatus.fromJson(Map<String, dynamic> json) => _$ExampleStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleStatusToJson(this);
 }

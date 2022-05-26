@@ -18,9 +18,11 @@ class ShippingDocument {
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
     // String
-    final String? proto;
+    final String? tenantId;
     // String
     final String? format;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     ShippingDocument({
@@ -31,8 +33,9 @@ class ShippingDocument {
         this.description,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.proto,
+        this.tenantId,
         this.format,
+        this.proto,
         this.cats, });
     factory ShippingDocument.fromJson(Map<String, dynamic> json) => _$ShippingDocumentFromJson(json);
     Map<String, dynamic> toJson() => _$ShippingDocumentToJson(this);

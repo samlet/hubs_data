@@ -19,16 +19,16 @@ class OrderFactStatus {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_OrderFactData
     final OrderFact? orderFact;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // String
+    final String? format;
     OrderFactStatus({
         this.orderFactId,
         this.statusDate,
@@ -38,11 +38,11 @@ class OrderFactStatus {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.proto,
         this.orderFact,
+        this.proto,
         this.cats,
-        this.userLogin, });
+        this.userLogin,
+        this.format, });
     factory OrderFactStatus.fromJson(Map<String, dynamic> json) => _$OrderFactStatusFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactStatusToJson(this);
 }

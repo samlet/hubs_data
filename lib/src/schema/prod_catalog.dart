@@ -27,16 +27,16 @@ class ProdCatalog {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_ProdCatalogCategoryList
     final ProdCatalogCategoryCollection? prodCatalogCategories;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     ProdCatalog({
         this.prodCatalogId,
         this.catalogName,
@@ -50,11 +50,11 @@ class ProdCatalog {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.format,
-        this.proto,
         this.prodCatalogCategories,
-        this.cats, });
+        this.proto,
+        this.format,
+        this.cats,
+        this.subview, });
     factory ProdCatalog.fromJson(Map<String, dynamic> json) => _$ProdCatalogFromJson(json);
     Map<String, dynamic> toJson() => _$ProdCatalogToJson(this);
 }

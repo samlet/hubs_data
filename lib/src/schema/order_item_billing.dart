@@ -25,16 +25,16 @@ class OrderItemBilling {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_InvoiceFlatData
     final Invoice? invoice;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     OrderItemBilling({
         this.orderId,
         this.orderItemSeqId,
@@ -47,11 +47,11 @@ class OrderItemBilling {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.orderHeader,
         this.proto,
-        this.format,
+        this.invoice,
+        this.orderHeader,
         this.cats,
-        this.invoice, });
+        this.format, });
     factory OrderItemBilling.fromJson(Map<String, dynamic> json) => _$OrderItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemBillingToJson(this);
 }

@@ -21,16 +21,16 @@ class ProductStorePromoAppl {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // String
     final String? proto;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
+    // String
+    final String? format;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     ProductStorePromoAppl({
         this.productStoreId,
         this.productPromoId,
@@ -41,11 +41,11 @@ class ProductStorePromoAppl {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
         this.cats,
+        this.proto,
         this.productPromo,
-        this.productStore,
-        this.proto, });
+        this.format,
+        this.productStore, });
     factory ProductStorePromoAppl.fromJson(Map<String, dynamic> json) => _$ProductStorePromoApplFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePromoApplToJson(this);
 }

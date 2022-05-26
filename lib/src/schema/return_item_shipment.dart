@@ -19,16 +19,16 @@ class ReturnItemShipment {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ReturnItemShipment({
         this.returnId,
         this.returnItemSeqId,
@@ -38,11 +38,11 @@ class ReturnItemShipment {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.proto,
         this.shipment,
         this.returnHeader,
-        this.format, });
+        this.format,
+        this.proto,
+        this.cats, });
     factory ReturnItemShipment.fromJson(Map<String, dynamic> json) => _$ReturnItemShipmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemShipmentToJson(this);
 }

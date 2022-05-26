@@ -15,16 +15,20 @@ class ProductFeatureCategory {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? proto;
-    // domain_ProductFeatureCategoryFlatData
-    final ProductFeatureCategory? parentProductFeatureCategory;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductFeatureCategoryFlatData
+    final ProductFeatureCategory? parentProductFeatureCategory;
+    // String
+    final String? proto;
+    // domain_ProductFeatureList
+    final ProductFeatureCollection? productFeatures;
+    // domain_ProductFeatureCategoryList
+    final ProductFeatureCategoryCollection? childProductFeatureCategories;
     ProductFeatureCategory({
         this.productFeatureCategoryId,
         this.parentCategoryId,
@@ -32,11 +36,13 @@ class ProductFeatureCategory {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.proto,
-        this.parentProductFeatureCategory,
         this.cats,
-        this.format, });
+        this.format,
+        this.subview,
+        this.parentProductFeatureCategory,
+        this.proto,
+        this.productFeatures,
+        this.childProductFeatureCategories, });
     factory ProductFeatureCategory.fromJson(Map<String, dynamic> json) => _$ProductFeatureCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureCategoryToJson(this);
 }

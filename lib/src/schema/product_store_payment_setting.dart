@@ -25,10 +25,10 @@ class ProductStorePaymentSetting {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // String
@@ -45,8 +45,8 @@ class ProductStorePaymentSetting {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.productStore,
+        this.cats,
         this.format,
         this.proto, });
     factory ProductStorePaymentSetting.fromJson(Map<String, dynamic> json) => _$ProductStorePaymentSettingFromJson(json);

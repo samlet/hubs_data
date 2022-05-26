@@ -17,16 +17,16 @@ class InvoiceStatus {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
     // String
     final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
     // String
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
     InvoiceStatus({
         this.statusId,
         this.invoiceId,
@@ -35,11 +35,11 @@ class InvoiceStatus {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.invoice,
         this.format,
-        this.changeByUserLogin,
         this.proto,
-        this.cats, });
+        this.cats,
+        this.changeByUserLogin,
+        this.invoice, });
     factory InvoiceStatus.fromJson(Map<String, dynamic> json) => _$InvoiceStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceStatusToJson(this);
 }

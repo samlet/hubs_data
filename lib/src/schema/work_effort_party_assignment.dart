@@ -37,20 +37,20 @@ class WorkEffortPartyAssignment {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? assignedByUserLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
     // domain_FacilityFlatData
     final Facility? facility;
+    // String
+    final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? assignedByUserLogin;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
     WorkEffortPartyAssignment({
         this.workEffortId,
         this.partyId,
@@ -69,13 +69,13 @@ class WorkEffortPartyAssignment {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.assignedByUserLogin,
-        this.cats,
         this.party,
+        this.facility,
         this.proto,
+        this.assignedByUserLogin,
         this.format,
-        this.workEffort,
-        this.facility, });
+        this.cats,
+        this.workEffort, });
     factory WorkEffortPartyAssignment.fromJson(Map<String, dynamic> json) => _$WorkEffortPartyAssignmentFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortPartyAssignmentToJson(this);
 }

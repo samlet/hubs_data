@@ -113,24 +113,24 @@ class WorkEffort {
     final int? sequenceNum;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_WorkEffortFlatData
-    final WorkEffort? parentWorkEffort;
-    // domain_NoteDataData
-    final NoteData? noteData;
     // domain_WorkEffortAssocList
     final WorkEffortAssocCollection? fromWorkEffortAssocs;
     // String
     final String? format;
-    // domain_WorkEffortPartyAssignmentList
-    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
+    // domain_NoteDataData
+    final NoteData? noteData;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // domain_WorkEffortFlatData
+    final WorkEffort? parentWorkEffort;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_WorkEffortPartyAssignmentList
+    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
     // domain_WorkEffortAssocList
     final WorkEffortAssocCollection? toWorkEffortAssocs;
     // proto_ListItemProto
@@ -191,15 +191,15 @@ class WorkEffort {
         this.createdTxStamp,
         this.sequenceNum,
         this.tenantId,
-        this.proto,
-        this.facility,
-        this.parentWorkEffort,
-        this.noteData,
         this.fromWorkEffortAssocs,
         this.format,
-        this.workEffortPartyAssignments,
-        this.fixedAsset,
+        this.noteData,
+        this.proto,
         this.cats,
+        this.fixedAsset,
+        this.parentWorkEffort,
+        this.facility,
+        this.workEffortPartyAssignments,
         this.toWorkEffortAssocs,
         this.subview, });
     factory WorkEffort.fromJson(Map<String, dynamic> json) => _$WorkEffortFromJson(json);

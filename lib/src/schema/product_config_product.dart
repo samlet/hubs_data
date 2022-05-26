@@ -25,10 +25,10 @@ class ProductConfigProduct {
     final FieldCatsValue? cats;
     // String
     final String? format;
-    // domain_ProductFlatData
-    final Product? productProduct;
     // String
     final String? proto;
+    // domain_ProductFlatData
+    final Product? productProduct;
     ProductConfigProduct({
         this.configItemId,
         this.configOptionId,
@@ -41,8 +41,8 @@ class ProductConfigProduct {
         this.configItemProductConfigItem,
         this.cats,
         this.format,
-        this.productProduct,
-        this.proto, });
+        this.proto,
+        this.productProduct, });
     factory ProductConfigProduct.fromJson(Map<String, dynamic> json) => _$ProductConfigProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigProductToJson(this);
 }

@@ -35,18 +35,18 @@ class ProductAssoc {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? mainProduct;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_WorkEffortFlatData
     final WorkEffort? routingWorkEffort;
+    // String
+    final String? format;
+    // domain_ProductFlatData
+    final Product? mainProduct;
+    // String
+    final String? proto;
     // domain_ProductFlatData
     final Product? assocProduct;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductAssoc({
         this.productId,
         this.productIdTo,
@@ -64,12 +64,12 @@ class ProductAssoc {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.mainProduct,
-        this.cats,
-        this.format,
-        this.proto,
         this.routingWorkEffort,
-        this.assocProduct, });
+        this.format,
+        this.mainProduct,
+        this.proto,
+        this.assocProduct,
+        this.cats, });
     factory ProductAssoc.fromJson(Map<String, dynamic> json) => _$ProductAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductAssocToJson(this);
 }

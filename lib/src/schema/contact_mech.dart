@@ -15,20 +15,22 @@ class ContactMech {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // contact_mech_TelecomNumberProto
-    final ContactMechWithTelecomNumber? asTelecomNumber;
-    // contact_mech_EmailAddressProto
-    final ContactMechWithEmailAddress? asEmailAddress;
-    // contact_mech_PostalAddressProto
-    final ContactMechWithPostalAddress? asPostalAddress;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? format;
+    // contact_mech_TelecomNumberProto
+    final ContactMechWithTelecomNumber? asTelecomNumber;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // contact_mech_EmailAddressProto
+    final ContactMechWithEmailAddress? asEmailAddress;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // contact_mech_PostalAddressProto
+    final ContactMechWithPostalAddress? asPostalAddress;
     ContactMech({
         this.contactMechId,
         this.contactMechTypeId,
@@ -36,13 +38,14 @@ class ContactMech {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.asTelecomNumber,
-        this.asEmailAddress,
-        this.asPostalAddress,
-        this.cats,
-        this.subview,
         this.format,
-        this.proto, });
+        this.asTelecomNumber,
+        this.proto,
+        this.cats,
+        this.asEmailAddress,
+        this.type,
+        this.subview,
+        this.asPostalAddress, });
     factory ContactMech.fromJson(Map<String, dynamic> json) => _$ContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechToJson(this);
 }

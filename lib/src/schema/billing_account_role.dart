@@ -20,15 +20,15 @@ class BillingAccountRole {
     // String
     final String? id;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_BillingAccountFlatData
     final BillingAccount? billingAccount;
     // domain_PartyFlatData
     final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     BillingAccountRole({
         this.billingAccountId,
         this.partyId,
@@ -38,11 +38,11 @@ class BillingAccountRole {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
         this.format,
-        this.cats,
         this.billingAccount,
-        this.party, });
+        this.party,
+        this.cats,
+        this.proto, });
     factory BillingAccountRole.fromJson(Map<String, dynamic> json) => _$BillingAccountRoleFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountRoleToJson(this);
 }

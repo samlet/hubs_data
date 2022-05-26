@@ -19,14 +19,14 @@ class PartyStatus {
     final String? id;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     PartyStatus({
         this.statusId,
         this.partyId,
@@ -36,10 +36,10 @@ class PartyStatus {
         this.createdTxStamp,
         this.id,
         this.changeByUserLogin,
+        this.cats,
         this.party,
-        this.format,
         this.proto,
-        this.cats, });
+        this.format, });
     factory PartyStatus.fromJson(Map<String, dynamic> json) => _$PartyStatusFromJson(json);
     Map<String, dynamic> toJson() => _$PartyStatusToJson(this);
 }

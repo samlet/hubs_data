@@ -48,9 +48,7 @@ class InvoiceItem {
     // String
     final String? id;
     // String
-    final String? tenantId;
-    // String
-    final String? proto;
+    final String? format;
     // domain_InvoiceFlatData
     final Invoice? invoice;
     // domain_InventoryItemFlatData
@@ -59,14 +57,14 @@ class InvoiceItem {
     final ProductFeature? productFeature;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_PartyFlatData
     final Party? overrideOrgParty;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // String
-    final String? format;
     // domain_ProductFlatData
     final Product? product;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
     InvoiceItem({
         this.invoiceId,
         this.invoiceItemSeqId,
@@ -90,16 +88,15 @@ class InvoiceItem {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.proto,
+        this.format,
         this.invoice,
         this.inventoryItem,
         this.productFeature,
         this.cats,
+        this.proto,
         this.overrideOrgParty,
-        this.taxAuthorityParty,
-        this.format,
-        this.product, });
+        this.product,
+        this.taxAuthorityParty, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
 }

@@ -49,28 +49,28 @@ class OrderItemShipGroup {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ContactMechFlatData
+    final ContactMech? telecomContactMech;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // domain_PartyFlatData
-    final Party? vendorParty;
-    // domain_AgreementFlatData
-    final Agreement? supplierAgreement;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // domain_PartyFlatData
-    final Party? supplierParty;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
     // domain_PartyFlatData
+    final Party? supplierParty;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // String
+    final String? proto;
+    // domain_PartyFlatData
     final Party? carrierParty;
-    // domain_ContactMechFlatData
-    final ContactMech? telecomContactMech;
-    // domain_FacilityFlatData
-    final Facility? facility;
+    // domain_PartyFlatData
+    final Party? vendorParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_AgreementFlatData
+    final Agreement? supplierAgreement;
     OrderItemShipGroup({
         this.orderId,
         this.shipGroupSeqId,
@@ -95,17 +95,17 @@ class OrderItemShipGroup {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.contactMech,
-        this.vendorParty,
-        this.supplierAgreement,
-        this.orderHeader,
-        this.supplierParty,
-        this.proto,
-        this.cats,
-        this.format,
-        this.carrierParty,
+        this.facility,
         this.telecomContactMech,
-        this.facility, });
+        this.contactMech,
+        this.format,
+        this.supplierParty,
+        this.orderHeader,
+        this.proto,
+        this.carrierParty,
+        this.vendorParty,
+        this.cats,
+        this.supplierAgreement, });
     factory OrderItemShipGroup.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupToJson(this);
 }

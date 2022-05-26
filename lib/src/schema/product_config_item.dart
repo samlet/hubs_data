@@ -21,18 +21,18 @@ class ProductConfigItem {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductConfigProductList
     final ProductConfigProductCollection? configItemProductConfigProducts;
-    // domain_ProductConfigOptionList
-    final ProductConfigOptionCollection? configItemProductConfigOptions;
-    // String
-    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // domain_ProductConfigOptionList
+    final ProductConfigOptionCollection? configItemProductConfigOptions;
     ProductConfigItem({
         this.configItemId,
         this.configItemTypeId,
@@ -43,12 +43,12 @@ class ProductConfigItem {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.cats,
         this.configItemProductConfigProducts,
-        this.configItemProductConfigOptions,
+        this.cats,
+        this.subview,
+        this.format,
         this.proto,
-        this.subview, });
+        this.configItemProductConfigOptions, });
     factory ProductConfigItem.fromJson(Map<String, dynamic> json) => _$ProductConfigItemFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemToJson(this);
 }

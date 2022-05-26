@@ -73,14 +73,14 @@ class Person {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
     // String
-    final String? proto;
-    // String
     final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     Person({
         this.partyId,
         this.salutation,
@@ -117,10 +117,10 @@ class Person {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.party,
+        this.format,
         this.proto,
-        this.format, });
+        this.cats, });
     factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
     Map<String, dynamic> toJson() => _$PersonToJson(this);
 }

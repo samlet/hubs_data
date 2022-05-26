@@ -19,16 +19,16 @@ class FactProtoStatus {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // domain_FactProtoData
-    final FactProto? factProto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_FactProtoData
+    final FactProto? factProto;
+    // String
+    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // String
+    final String? format;
     FactProtoStatus({
         this.factProtoId,
         this.statusDate,
@@ -38,11 +38,11 @@ class FactProtoStatus {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.proto,
-        this.factProto,
         this.cats,
-        this.userLogin, });
+        this.factProto,
+        this.proto,
+        this.userLogin,
+        this.format, });
     factory FactProtoStatus.fromJson(Map<String, dynamic> json) => _$FactProtoStatusFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoStatusToJson(this);
 }

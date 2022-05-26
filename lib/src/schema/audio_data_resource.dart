@@ -12,22 +12,25 @@ class AudioDataResource {
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
     // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? tenantId;
+    // String
+    final String? proto;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
     // String
-    final String? proto;
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     AudioDataResource({
         this.dataResourceId,
         this.audioData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.format,
-        this.cats,
+        this.tenantId,
+        this.proto,
         this.dataResource,
-        this.proto, });
+        this.format,
+        this.cats, });
     factory AudioDataResource.fromJson(Map<String, dynamic> json) => _$AudioDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$AudioDataResourceToJson(this);
 }

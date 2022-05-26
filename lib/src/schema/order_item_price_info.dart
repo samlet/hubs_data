@@ -27,12 +27,12 @@ class OrderItemPriceInfo {
     final String? tenantId;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     OrderItemPriceInfo({
         this.orderItemPriceInfoId,
         this.orderId,
@@ -46,9 +46,9 @@ class OrderItemPriceInfo {
         this.createdTxStamp,
         this.tenantId,
         this.orderHeader,
-        this.cats,
+        this.format,
         this.proto,
-        this.format, });
+        this.cats, });
     factory OrderItemPriceInfo.fromJson(Map<String, dynamic> json) => _$OrderItemPriceInfoFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemPriceInfoToJson(this);
 }

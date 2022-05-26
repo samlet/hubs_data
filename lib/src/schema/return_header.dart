@@ -39,36 +39,36 @@ class ReturnHeader {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // String
+    final String? format;
     // domain_FacilityFlatData
     final Facility? facility;
+    // domain_ReturnItemList
+    final ReturnItemCollection? returnItems;
+    // domain_PartyFlatData
+    final Party? party;
     // domain_PartyFlatData
     final Party? toParty;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_ReturnItemBillingList
+    final ReturnItemBillingCollection? returnItemBillings;
+    // domain_ReturnItemShipmentList
+    final ReturnItemShipmentCollection? returnItemShipments;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // domain_ReturnStatusList
     final ReturnStatusCollection? returnStatuses;
     // domain_ReturnAdjustmentList
     final ReturnAdjustmentCollection? returnAdjustments;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // domain_ReturnItemBillingList
-    final ReturnItemBillingCollection? returnItemBillings;
-    // domain_ReturnItemList
-    final ReturnItemCollection? returnItems;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? format;
-    // domain_ReturnItemShipmentList
-    final ReturnItemShipmentCollection? returnItemShipments;
     ReturnHeader({
         this.returnId,
         this.returnHeaderTypeId,
@@ -88,21 +88,21 @@ class ReturnHeader {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.facility,
-        this.toParty,
-        this.returnStatuses,
-        this.returnAdjustments,
-        this.proto,
-        this.userLogin,
-        this.cats,
-        this.party,
-        this.billingAccount,
         this.contactMech,
-        this.returnItemBillings,
-        this.returnItems,
-        this.subview,
         this.format,
-        this.returnItemShipments, });
+        this.facility,
+        this.returnItems,
+        this.party,
+        this.toParty,
+        this.billingAccount,
+        this.cats,
+        this.proto,
+        this.returnItemBillings,
+        this.returnItemShipments,
+        this.subview,
+        this.userLogin,
+        this.returnStatuses,
+        this.returnAdjustments, });
     factory ReturnHeader.fromJson(Map<String, dynamic> json) => _$ReturnHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnHeaderToJson(this);
 }

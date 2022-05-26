@@ -69,50 +69,52 @@ class OrderHeader {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // order_SalesOrderProto
-    final OrderWithSalesOrder? asSalesOrder;
-    // domain_OrderPaymentPreferenceList
-    final OrderPaymentPreferenceCollection? orderPaymentPreferences;
-    // domain_OrderRoleList
-    final OrderRoleCollection? orderRoles;
     // String
     final String? proto;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // domain_OrderItemShipGroupList
-    final OrderItemShipGroupCollection? orderItemShipGroups;
-    // domain_OrderItemPriceInfoList
-    final OrderItemPriceInfoCollection? orderItemPriceInfos;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_OrderItemList
-    final OrderItemCollection? orderItems;
-    // String
-    final String? format;
-    // domain_OrderItemShipGroupAssocList
-    final OrderItemShipGroupAssocCollection? orderItemShipGroupAssocs;
-    // domain_FacilityFlatData
-    final Facility? originFacility;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // domain_OrderRoleList
+    final OrderRoleCollection? orderRoles;
     // domain_OrderStatusList
     final OrderStatusCollection? orderStatuses;
-    // domain_OrderAdjustmentList
-    final OrderAdjustmentCollection? orderAdjustments;
-    // order_PurchaseOrderProto
-    final OrderWithPurchaseOrder? asPurchaseOrder;
-    // domain_OrderHeaderNoteList
-    final OrderHeaderNoteCollection? orderHeaderNotes;
-    // domain_UserLoginFlatData
-    final UserLogin? createdByUserLogin;
-    // domain_WebSiteFlatData
-    final WebSite? webSite;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // domain_OrderPaymentPreferenceList
+    final OrderPaymentPreferenceCollection? orderPaymentPreferences;
+    // domain_OrderAdjustmentList
+    final OrderAdjustmentCollection? orderAdjustments;
     // domain_OrderContactMechList
     final OrderContactMechCollection? orderContactMeches;
+    // domain_UserLoginFlatData
+    final UserLogin? createdByUserLogin;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_OrderItemPriceInfoList
+    final OrderItemPriceInfoCollection? orderItemPriceInfos;
+    // domain_OrderItemList
+    final OrderItemCollection? orderItems;
+    // order_PurchaseOrderProto
+    final OrderWithPurchaseOrder? asPurchaseOrder;
+    // String
+    final String? format;
+    // domain_FacilityFlatData
+    final Facility? originFacility;
     // domain_ShoppingListFlatData
     final ShoppingList? autoOrderShoppingList;
+    // domain_OrderItemShipGroupList
+    final OrderItemShipGroupCollection? orderItemShipGroups;
+    // order_SalesOrderProto
+    final OrderWithSalesOrder? asSalesOrder;
+    // domain_OrderHeaderNoteList
+    final OrderHeaderNoteCollection? orderHeaderNotes;
+    // domain_OrderItemShipGroupAssocList
+    final OrderItemShipGroupAssocCollection? orderItemShipGroupAssocs;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // domain_WebSiteFlatData
+    final WebSite? webSite;
     OrderHeader({
         this.orderId,
         this.orderTypeId,
@@ -147,28 +149,29 @@ class OrderHeader {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.asSalesOrder,
-        this.orderPaymentPreferences,
-        this.orderRoles,
         this.proto,
-        this.billingAccount,
-        this.orderItemShipGroups,
-        this.orderItemPriceInfos,
-        this.cats,
-        this.orderItems,
-        this.format,
-        this.orderItemShipGroupAssocs,
-        this.originFacility,
-        this.subview,
+        this.orderRoles,
         this.orderStatuses,
-        this.orderAdjustments,
-        this.asPurchaseOrder,
-        this.orderHeaderNotes,
-        this.createdByUserLogin,
-        this.webSite,
         this.productStore,
+        this.orderPaymentPreferences,
+        this.orderAdjustments,
         this.orderContactMeches,
-        this.autoOrderShoppingList, });
+        this.createdByUserLogin,
+        this.type,
+        this.subview,
+        this.orderItemPriceInfos,
+        this.orderItems,
+        this.asPurchaseOrder,
+        this.format,
+        this.originFacility,
+        this.autoOrderShoppingList,
+        this.orderItemShipGroups,
+        this.asSalesOrder,
+        this.orderHeaderNotes,
+        this.orderItemShipGroupAssocs,
+        this.cats,
+        this.billingAccount,
+        this.webSite, });
     factory OrderHeader.fromJson(Map<String, dynamic> json) => _$OrderHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderToJson(this);
 }

@@ -19,8 +19,6 @@ class TypesEntityStatus {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // domain_TypesEntityData
     final TypesEntity? typesEntity;
     // proto_FieldCats
@@ -29,6 +27,8 @@ class TypesEntityStatus {
     final String? format;
     // String
     final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     TypesEntityStatus({
         this.typesEntityId,
         this.statusDate,
@@ -38,11 +38,11 @@ class TypesEntityStatus {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
         this.typesEntity,
         this.cats,
         this.format,
-        this.proto, });
+        this.proto,
+        this.userLogin, });
     factory TypesEntityStatus.fromJson(Map<String, dynamic> json) => _$TypesEntityStatusFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityStatusToJson(this);
 }

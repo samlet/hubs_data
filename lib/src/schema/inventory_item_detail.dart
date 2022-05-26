@@ -53,14 +53,14 @@ class InventoryItemDetail {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
-    // String
-    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
+    // String
+    final String? proto;
     // domain_WorkEffortFlatData
     final WorkEffort? workEffort;
     InventoryItemDetail({
@@ -89,10 +89,10 @@ class InventoryItemDetail {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.format,
-        this.proto,
+        this.cats,
         this.inventoryItem,
+        this.proto,
         this.workEffort, });
     factory InventoryItemDetail.fromJson(Map<String, dynamic> json) => _$InventoryItemDetailFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemDetailToJson(this);

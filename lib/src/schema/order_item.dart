@@ -103,26 +103,24 @@ class OrderItem {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_InventoryItemFlatData
     final InventoryItem? fromInventoryItem;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
+    // domain_ShoppingListFlatData
+    final ShoppingList? addSuggestionsToShoppingList;
+    // domain_UserLoginFlatData
+    final UserLogin? dontcancelsetuserlogin;
     // domain_ProductFlatData
     final Product? product;
     // String
-    final String? proto;
-    // domain_ShoppingListFlatData
-    final ShoppingList? addSuggestionsToShoppingList;
-    // String
     final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? dontcancelsetuserlogin;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     OrderItem({
         this.orderId,
         this.orderItemSeqId,
@@ -174,16 +172,15 @@ class OrderItem {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.tenantId,
-        this.cats,
         this.fromInventoryItem,
+        this.orderHeader,
         this.changeByUserLogin,
-        this.product,
-        this.proto,
         this.addSuggestionsToShoppingList,
-        this.format,
         this.dontcancelsetuserlogin,
-        this.orderHeader, });
+        this.product,
+        this.format,
+        this.cats,
+        this.proto, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);
 }

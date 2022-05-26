@@ -41,22 +41,22 @@ class ShipmentReceipt {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // domain_ProductFlatData
     final Product? product;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // domain_ShipmentFlatData
     final Shipment? shipment;
+    // String
+    final String? proto;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // String
+    final String? format;
     ShipmentReceipt({
         this.receiptId,
         this.inventoryItemId,
@@ -77,14 +77,14 @@ class ShipmentReceipt {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.inventoryItem,
-        this.orderHeader,
-        this.cats,
-        this.proto,
-        this.userLogin,
         this.product,
-        this.shipment, });
+        this.inventoryItem,
+        this.cats,
+        this.userLogin,
+        this.shipment,
+        this.proto,
+        this.orderHeader,
+        this.format, });
     factory ShipmentReceipt.fromJson(Map<String, dynamic> json) => _$ShipmentReceiptFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentReceiptToJson(this);
 }

@@ -7,15 +7,15 @@ class CurrencyValue {
     final String? currencyUomId;
     // String
     final String? value;
-    // Float
-    final double? floatValue;
     // String
     final String? decimal;
+    // Float
+    final double? floatValue;
     CurrencyValue({
         this.currencyUomId,
         this.value,
-        this.floatValue,
-        this.decimal, });
+        this.decimal,
+        this.floatValue, });
     factory CurrencyValue.fromJson(Map<String, dynamic> json) => _$CurrencyValueFromJson(json);
     Map<String, dynamic> toJson() => _$CurrencyValueToJson(this);
 }

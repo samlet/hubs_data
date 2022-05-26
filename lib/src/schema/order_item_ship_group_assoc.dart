@@ -19,14 +19,14 @@ class OrderItemShipGroupAssoc {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     OrderItemShipGroupAssoc({
         this.orderId,
         this.orderItemSeqId,
@@ -36,10 +36,10 @@ class OrderItemShipGroupAssoc {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
+        this.cats,
         this.proto,
-        this.orderHeader,
-        this.cats, });
+        this.format,
+        this.orderHeader, });
     factory OrderItemShipGroupAssoc.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupAssocFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupAssocToJson(this);
 }

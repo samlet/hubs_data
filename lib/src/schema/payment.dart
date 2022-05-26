@@ -47,16 +47,18 @@ class Payment {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PaymentApplicationList
+    final PaymentApplicationCollection? paymentApplications;
     // domain_PartyFlatData
     final Party? toParty;
     // domain_PartyFlatData
     final Party? fromParty;
-    // domain_PaymentApplicationList
-    final PaymentApplicationCollection? paymentApplications;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // String
     final String? proto;
     // String
@@ -84,11 +86,12 @@ class Payment {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.cats,
+        this.paymentApplications,
         this.toParty,
         this.fromParty,
-        this.paymentApplications,
         this.subview,
-        this.cats,
+        this.type,
         this.proto,
         this.format, });
     factory Payment.fromJson(Map<String, dynamic> json) => _$PaymentFromJson(json);

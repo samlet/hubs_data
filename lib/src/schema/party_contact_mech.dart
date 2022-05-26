@@ -31,16 +31,16 @@ class PartyContactMech {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
+    // String
+    final String? format;
     PartyContactMech({
         this.partyId,
         this.contactMechId,
@@ -56,11 +56,11 @@ class PartyContactMech {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
+        this.cats,
         this.proto,
         this.contactMech,
-        this.cats,
-        this.party, });
+        this.party,
+        this.format, });
     factory PartyContactMech.fromJson(Map<String, dynamic> json) => _$PartyContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$PartyContactMechToJson(this);
 }

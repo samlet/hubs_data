@@ -17,14 +17,14 @@ class FixedAssetGeoPoint {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
-    // String
-    final String? format;
     FixedAssetGeoPoint({
         this.fixedAssetId,
         this.geoPointId,
@@ -33,10 +33,10 @@ class FixedAssetGeoPoint {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.format,
         this.cats,
         this.proto,
-        this.fixedAsset,
-        this.format, });
+        this.fixedAsset, });
     factory FixedAssetGeoPoint.fromJson(Map<String, dynamic> json) => _$FixedAssetGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetGeoPointToJson(this);
 }

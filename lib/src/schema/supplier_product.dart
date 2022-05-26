@@ -49,16 +49,16 @@ class SupplierProduct {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? party;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // domain_ProductFlatData
     final Product? product;
     // String
+    final String? proto;
+    // String
     final String? format;
+    // domain_PartyFlatData
+    final Party? party;
     SupplierProduct({
         this.productId,
         this.partyId,
@@ -83,11 +83,11 @@ class SupplierProduct {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.party,
         this.cats,
-        this.proto,
         this.product,
-        this.format, });
+        this.proto,
+        this.format,
+        this.party, });
     factory SupplierProduct.fromJson(Map<String, dynamic> json) => _$SupplierProductFromJson(json);
     Map<String, dynamic> toJson() => _$SupplierProductToJson(this);
 }
