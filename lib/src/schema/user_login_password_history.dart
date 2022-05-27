@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginPasswordHistoryData
 @JsonSerializable()
-class UserLoginPasswordHistory {
+class UserLoginPasswordHistory extends Equatable{
     // String
     final String? userLoginId;
     // google_protobuf_Timestamp
@@ -39,4 +39,6 @@ class UserLoginPasswordHistory {
         this.userLogin, });
     factory UserLoginPasswordHistory.fromJson(Map<String, dynamic> json) => _$UserLoginPasswordHistoryFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginPasswordHistoryToJson(this);
+    @override
+    List<Object?> get props => [userLoginId, fromDate];
 }

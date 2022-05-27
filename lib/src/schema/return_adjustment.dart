@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnAdjustmentData
 @JsonSerializable()
-class ReturnAdjustment {
+class ReturnAdjustment extends Equatable{
     // String
     final String? returnAdjustmentId;
     // String
@@ -126,4 +126,6 @@ class ReturnAdjustment {
         this.userLogin, });
     factory ReturnAdjustment.fromJson(Map<String, dynamic> json) => _$ReturnAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnAdjustmentToJson(this);
+    @override
+    List<Object?> get props => [returnAdjustmentId];
 }

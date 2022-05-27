@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductConfigProductData
 @JsonSerializable()
-class ProductConfigProduct {
+class ProductConfigProduct extends Equatable{
     // String
     final String? configItemId;
     // String
@@ -45,4 +45,6 @@ class ProductConfigProduct {
         this.productProduct, });
     factory ProductConfigProduct.fromJson(Map<String, dynamic> json) => _$ProductConfigProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigProductToJson(this);
+    @override
+    List<Object?> get props => [configItemId, configOptionId, productId];
 }

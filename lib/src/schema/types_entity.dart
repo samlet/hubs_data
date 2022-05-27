@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TypesEntityData
 @JsonSerializable()
-class TypesEntity {
+class TypesEntity extends Equatable{
     // String
     final String? entityId;
     // String
@@ -939,4 +939,6 @@ class TypesEntity {
         this.proto, });
     factory TypesEntity.fromJson(Map<String, dynamic> json) => _$TypesEntityFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityToJson(this);
+    @override
+    List<Object?> get props => [entityId];
 }

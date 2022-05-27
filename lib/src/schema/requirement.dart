@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_RequirementFlatData
 @JsonSerializable()
-class Requirement {
+class Requirement extends Equatable{
     // String
     final String? requirementId;
     // String
@@ -96,4 +96,6 @@ class Requirement {
         this.subview, });
     factory Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementToJson(this);
+    @override
+    List<Object?> get props => [requirementId];
 }

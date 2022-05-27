@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentAttributeData
 @JsonSerializable()
-class ContentAttribute {
+class ContentAttribute extends Equatable{
     // String
     final String? contentId;
     // String
@@ -39,4 +39,6 @@ class ContentAttribute {
         this.proto, });
     factory ContentAttribute.fromJson(Map<String, dynamic> json) => _$ContentAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAttributeToJson(this);
+    @override
+    List<Object?> get props => [contentId, attrName];
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortGoodStandardData
 @JsonSerializable()
-class WorkEffortGoodStandard {
+class WorkEffortGoodStandard extends Equatable{
     // String
     final String? workEffortId;
     // String
@@ -54,4 +54,6 @@ class WorkEffortGoodStandard {
         this.proto, });
     factory WorkEffortGoodStandard.fromJson(Map<String, dynamic> json) => _$WorkEffortGoodStandardFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortGoodStandardToJson(this);
+    @override
+    List<Object?> get props => [workEffortId, productId, workEffortGoodStdTypeId, fromDate];
 }

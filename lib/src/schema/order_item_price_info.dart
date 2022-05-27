@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderItemPriceInfoFlatData
 @JsonSerializable()
-class OrderItemPriceInfo {
+class OrderItemPriceInfo extends Equatable{
     // String
     final String? orderItemPriceInfoId;
     // String
@@ -51,4 +51,6 @@ class OrderItemPriceInfo {
         this.cats, });
     factory OrderItemPriceInfo.fromJson(Map<String, dynamic> json) => _$OrderItemPriceInfoFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemPriceInfoToJson(this);
+    @override
+    List<Object?> get props => [orderItemPriceInfoId];
 }

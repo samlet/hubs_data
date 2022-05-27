@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FacilityFlatData
 @JsonSerializable()
-class Facility {
+class Facility extends Equatable{
     // String
     final String? facilityId;
     // String
@@ -102,4 +102,6 @@ class Facility {
         this.pickInventory, });
     factory Facility.fromJson(Map<String, dynamic> json) => _$FacilityFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityToJson(this);
+    @override
+    List<Object?> get props => [facilityId];
 }

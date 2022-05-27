@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PaymentApplicationFlatData
 @JsonSerializable()
-class PaymentApplication {
+class PaymentApplication extends Equatable{
     // String
     final String? paymentApplicationId;
     // String
@@ -63,4 +63,6 @@ class PaymentApplication {
         this.format, });
     factory PaymentApplication.fromJson(Map<String, dynamic> json) => _$PaymentApplicationFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentApplicationToJson(this);
+    @override
+    List<Object?> get props => [paymentApplicationId];
 }

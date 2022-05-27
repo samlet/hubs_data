@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AcctgTransEntryData
 @JsonSerializable()
-class AcctgTransEntry {
+class AcctgTransEntry extends Equatable{
     // String
     final String? acctgTransId;
     // String
@@ -108,4 +108,6 @@ class AcctgTransEntry {
         this.inventoryItem, });
     factory AcctgTransEntry.fromJson(Map<String, dynamic> json) => _$AcctgTransEntryFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgTransEntryToJson(this);
+    @override
+    List<Object?> get props => [acctgTransId, acctgTransEntrySeqId];
 }

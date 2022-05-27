@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderItemBillingData
 @JsonSerializable()
-class OrderItemBilling {
+class OrderItemBilling extends Equatable{
     // String
     final String? orderId;
     // String
@@ -54,4 +54,6 @@ class OrderItemBilling {
         this.format, });
     factory OrderItemBilling.fromJson(Map<String, dynamic> json) => _$OrderItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemBillingToJson(this);
+    @override
+    List<Object?> get props => [orderId, orderItemSeqId, invoiceId, invoiceItemSeqId];
 }

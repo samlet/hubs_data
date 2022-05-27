@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentAssocData
 @JsonSerializable()
-class ContentAssoc {
+class ContentAssoc extends Equatable{
     // String
     final String? contentId;
     // String
@@ -81,4 +81,6 @@ class ContentAssoc {
         this.createdbyuserlogin, });
     factory ContentAssoc.fromJson(Map<String, dynamic> json) => _$ContentAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAssocToJson(this);
+    @override
+    List<Object?> get props => [contentId, contentIdTo, contentAssocTypeId, fromDate];
 }

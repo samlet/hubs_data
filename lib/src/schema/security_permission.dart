@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityPermissionFlatData
 @JsonSerializable()
-class SecurityPermission {
+class SecurityPermission extends Equatable{
     // String
     final String? permissionId;
     // String
@@ -33,4 +33,6 @@ class SecurityPermission {
         this.proto, });
     factory SecurityPermission.fromJson(Map<String, dynamic> json) => _$SecurityPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityPermissionToJson(this);
+    @override
+    List<Object?> get props => [permissionId];
 }

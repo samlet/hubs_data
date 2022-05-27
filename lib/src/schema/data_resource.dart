@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_DataResourceFlatData
 @JsonSerializable()
-class DataResource {
+class DataResource extends Equatable{
     // String
     final String? dataResourceId;
     // String
@@ -105,4 +105,6 @@ class DataResource {
         this.type, });
     factory DataResource.fromJson(Map<String, dynamic> json) => _$DataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceToJson(this);
+    @override
+    List<Object?> get props => [dataResourceId];
 }

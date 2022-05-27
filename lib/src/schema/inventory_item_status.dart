@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InventoryItemStatusData
 @JsonSerializable()
-class InventoryItemStatus {
+class InventoryItemStatus extends Equatable{
     // String
     final String? inventoryItemId;
     // String
@@ -51,4 +51,6 @@ class InventoryItemStatus {
         this.format, });
     factory InventoryItemStatus.fromJson(Map<String, dynamic> json) => _$InventoryItemStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemStatusToJson(this);
+    @override
+    List<Object?> get props => [inventoryItemId, statusId, statusDatetime];
 }

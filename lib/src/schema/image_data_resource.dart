@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ImageDataResourceData
 @JsonSerializable()
-class ImageDataResource {
+class ImageDataResource extends Equatable{
     // String
     final String? dataResourceId;
     // String
@@ -33,4 +33,6 @@ class ImageDataResource {
         this.proto, });
     factory ImageDataResource.fromJson(Map<String, dynamic> json) => _$ImageDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$ImageDataResourceToJson(this);
+    @override
+    List<Object?> get props => [dataResourceId];
 }

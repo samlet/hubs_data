@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BillingAccountTermData
 @JsonSerializable()
-class BillingAccountTerm {
+class BillingAccountTerm extends Equatable{
     // String
     final String? billingAccountTermId;
     // String
@@ -45,4 +45,6 @@ class BillingAccountTerm {
         this.billingAccount, });
     factory BillingAccountTerm.fromJson(Map<String, dynamic> json) => _$BillingAccountTermFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountTermToJson(this);
+    @override
+    List<Object?> get props => [billingAccountTermId];
 }

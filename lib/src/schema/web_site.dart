@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WebSiteFlatData
 @JsonSerializable()
-class WebSite {
+class WebSite extends Equatable{
     // String
     final String? webSiteId;
     // String
@@ -81,4 +81,6 @@ class WebSite {
         this.cats, });
     factory WebSite.fromJson(Map<String, dynamic> json) => _$WebSiteFromJson(json);
     Map<String, dynamic> toJson() => _$WebSiteToJson(this);
+    @override
+    List<Object?> get props => [webSiteId];
 }

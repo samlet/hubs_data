@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BlacklistData
 @JsonSerializable()
-class Blacklist {
+class Blacklist extends Equatable{
     // String
     final String? blacklistId;
     // String
@@ -45,4 +45,6 @@ class Blacklist {
         this.blacklistStatuses, });
     factory Blacklist.fromJson(Map<String, dynamic> json) => _$BlacklistFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistToJson(this);
+    @override
+    List<Object?> get props => [blacklistId];
 }

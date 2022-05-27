@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortAssocData
 @JsonSerializable()
-class WorkEffortAssoc {
+class WorkEffortAssoc extends Equatable{
     // String
     final String? workEffortIdFrom;
     // String
@@ -48,4 +48,6 @@ class WorkEffortAssoc {
         this.fromWorkEffort, });
     factory WorkEffortAssoc.fromJson(Map<String, dynamic> json) => _$WorkEffortAssocFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortAssocToJson(this);
+    @override
+    List<Object?> get props => [workEffortIdFrom, workEffortIdTo, workEffortAssocTypeId, fromDate];
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TelecomNumberFlatData
 @JsonSerializable()
-class TelecomNumber {
+class TelecomNumber extends Equatable{
     // String
     final String? contactMechId;
     // String
@@ -42,4 +42,6 @@ class TelecomNumber {
         this.cats, });
     factory TelecomNumber.fromJson(Map<String, dynamic> json) => _$TelecomNumberFromJson(json);
     Map<String, dynamic> toJson() => _$TelecomNumberToJson(this);
+    @override
+    List<Object?> get props => [contactMechId];
 }

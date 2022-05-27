@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStorePaymentSettingData
 @JsonSerializable()
-class ProductStorePaymentSetting {
+class ProductStorePaymentSetting extends Equatable{
     // String
     final String? productStoreId;
     // String
@@ -51,4 +51,6 @@ class ProductStorePaymentSetting {
         this.proto, });
     factory ProductStorePaymentSetting.fromJson(Map<String, dynamic> json) => _$ProductStorePaymentSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePaymentSettingToJson(this);
+    @override
+    List<Object?> get props => [productStoreId, paymentMethodTypeId, paymentServiceTypeEnumId];
 }

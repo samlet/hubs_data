@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShippingDocumentData
 @JsonSerializable()
-class ShippingDocument {
+class ShippingDocument extends Equatable{
     // String
     final String? documentId;
     // String
@@ -39,4 +39,6 @@ class ShippingDocument {
         this.cats, });
     factory ShippingDocument.fromJson(Map<String, dynamic> json) => _$ShippingDocumentFromJson(json);
     Map<String, dynamic> toJson() => _$ShippingDocumentToJson(this);
+    @override
+    List<Object?> get props => [documentId];
 }

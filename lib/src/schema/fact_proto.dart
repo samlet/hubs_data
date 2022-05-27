@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FactProtoData
 @JsonSerializable()
-class FactProto {
+class FactProto extends Equatable{
     // String
     final String? factId;
     // String
@@ -45,4 +45,6 @@ class FactProto {
         this.factProtoStatuses, });
     factory FactProto.fromJson(Map<String, dynamic> json) => _$FactProtoFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoToJson(this);
+    @override
+    List<Object?> get props => [factId];
 }

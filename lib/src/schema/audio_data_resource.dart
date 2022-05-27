@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AudioDataResourceData
 @JsonSerializable()
-class AudioDataResource {
+class AudioDataResource extends Equatable{
     // String
     final String? dataResourceId;
     // String
@@ -33,4 +33,6 @@ class AudioDataResource {
         this.cats, });
     factory AudioDataResource.fromJson(Map<String, dynamic> json) => _$AudioDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$AudioDataResourceToJson(this);
+    @override
+    List<Object?> get props => [dataResourceId];
 }

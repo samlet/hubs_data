@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentPurposeData
 @JsonSerializable()
-class ContentPurpose {
+class ContentPurpose extends Equatable{
     // String
     final String? contentId;
     // String
@@ -36,4 +36,6 @@ class ContentPurpose {
         this.proto, });
     factory ContentPurpose.fromJson(Map<String, dynamic> json) => _$ContentPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentPurposeToJson(this);
+    @override
+    List<Object?> get props => [contentId, contentPurposeTypeId];
 }

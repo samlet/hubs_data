@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnItemData
 @JsonSerializable()
-class ReturnItem {
+class ReturnItem extends Equatable{
     // String
     final String? returnId;
     // String
@@ -78,4 +78,6 @@ class ReturnItem {
         this.format, });
     factory ReturnItem.fromJson(Map<String, dynamic> json) => _$ReturnItemFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemToJson(this);
+    @override
+    List<Object?> get props => [returnId, returnItemSeqId];
 }

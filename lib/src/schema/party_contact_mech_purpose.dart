@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyContactMechPurposeData
 @JsonSerializable()
-class PartyContactMechPurpose {
+class PartyContactMechPurpose extends Equatable{
     // String
     final String? partyId;
     // String
@@ -45,4 +45,6 @@ class PartyContactMechPurpose {
         this.contactMech, });
     factory PartyContactMechPurpose.fromJson(Map<String, dynamic> json) => _$PartyContactMechPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$PartyContactMechPurposeToJson(this);
+    @override
+    List<Object?> get props => [partyId, contactMechId, contactMechPurposeTypeId, fromDate];
 }

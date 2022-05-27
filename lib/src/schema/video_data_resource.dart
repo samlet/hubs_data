@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_VideoDataResourceData
 @JsonSerializable()
-class VideoDataResource {
+class VideoDataResource extends Equatable{
     // String
     final String? dataResourceId;
     // String
@@ -33,4 +33,6 @@ class VideoDataResource {
         this.proto, });
     factory VideoDataResource.fromJson(Map<String, dynamic> json) => _$VideoDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$VideoDataResourceToJson(this);
+    @override
+    List<Object?> get props => [dataResourceId];
 }

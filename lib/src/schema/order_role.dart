@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderRoleData
 @JsonSerializable()
-class OrderRole {
+class OrderRole extends Equatable{
     // String
     final String? orderId;
     // String
@@ -39,4 +39,6 @@ class OrderRole {
         this.party, });
     factory OrderRole.fromJson(Map<String, dynamic> json) => _$OrderRoleFromJson(json);
     Map<String, dynamic> toJson() => _$OrderRoleToJson(this);
+    @override
+    List<Object?> get props => [orderId, partyId, roleTypeId];
 }

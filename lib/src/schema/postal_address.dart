@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PostalAddressFlatData
 @JsonSerializable()
-class PostalAddress {
+class PostalAddress extends Equatable{
     // String
     final String? contactMechId;
     // String
@@ -81,4 +81,6 @@ class PostalAddress {
         this.cats, });
     factory PostalAddress.fromJson(Map<String, dynamic> json) => _$PostalAddressFromJson(json);
     Map<String, dynamic> toJson() => _$PostalAddressToJson(this);
+    @override
+    List<Object?> get props => [contactMechId];
 }

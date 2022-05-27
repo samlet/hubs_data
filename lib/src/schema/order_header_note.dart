@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderHeaderNoteData
 @JsonSerializable()
-class OrderHeaderNote {
+class OrderHeaderNote extends Equatable{
     // String
     final String? orderId;
     // String
@@ -39,4 +39,6 @@ class OrderHeaderNote {
         this.proto, });
     factory OrderHeaderNote.fromJson(Map<String, dynamic> json) => _$OrderHeaderNoteFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderNoteToJson(this);
+    @override
+    List<Object?> get props => [orderId, noteId];
 }

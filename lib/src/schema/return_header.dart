@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnHeaderFlatData
 @JsonSerializable()
-class ReturnHeader {
+class ReturnHeader extends Equatable{
     // String
     final String? returnId;
     // String
@@ -105,4 +105,6 @@ class ReturnHeader {
         this.returnAdjustments, });
     factory ReturnHeader.fromJson(Map<String, dynamic> json) => _$ReturnHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnHeaderToJson(this);
+    @override
+    List<Object?> get props => [returnId];
 }

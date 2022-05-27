@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_NoteDataData
 @JsonSerializable()
-class NoteData {
+class NoteData extends Equatable{
     // String
     final String? noteId;
     // String
@@ -54,4 +54,6 @@ class NoteData {
         this.noteparty, });
     factory NoteData.fromJson(Map<String, dynamic> json) => _$NoteDataFromJson(json);
     Map<String, dynamic> toJson() => _$NoteDataToJson(this);
+    @override
+    List<Object?> get props => [noteId];
 }

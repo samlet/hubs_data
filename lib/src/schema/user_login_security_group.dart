@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginSecurityGroupData
 @JsonSerializable()
-class UserLoginSecurityGroup {
+class UserLoginSecurityGroup extends Equatable{
     // String
     final String? userLoginId;
     // String
@@ -42,4 +42,6 @@ class UserLoginSecurityGroup {
         this.securityGroup, });
     factory UserLoginSecurityGroup.fromJson(Map<String, dynamic> json) => _$UserLoginSecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginSecurityGroupToJson(this);
+    @override
+    List<Object?> get props => [userLoginId, groupId, fromDate];
 }

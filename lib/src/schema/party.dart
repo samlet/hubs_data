@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyFlatData
 @JsonSerializable()
-class Party {
+class Party extends Equatable{
     // String
     final String? partyId;
     // String
@@ -117,4 +117,6 @@ class Party {
         this.subview, });
     factory Party.fromJson(Map<String, dynamic> json) => _$PartyFromJson(json);
     Map<String, dynamic> toJson() => _$PartyToJson(this);
+    @override
+    List<Object?> get props => [partyId];
 }

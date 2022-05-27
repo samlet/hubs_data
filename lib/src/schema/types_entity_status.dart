@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TypesEntityStatusData
 @JsonSerializable()
-class TypesEntityStatus {
+class TypesEntityStatus extends Equatable{
     // String
     final String? typesEntityId;
     // google_protobuf_Timestamp
@@ -45,4 +45,6 @@ class TypesEntityStatus {
         this.userLogin, });
     factory TypesEntityStatus.fromJson(Map<String, dynamic> json) => _$TypesEntityStatusFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityStatusToJson(this);
+    @override
+    List<Object?> get props => [typesEntityId, statusDate];
 }

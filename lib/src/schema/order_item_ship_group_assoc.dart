@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderItemShipGroupAssocData
 @JsonSerializable()
-class OrderItemShipGroupAssoc {
+class OrderItemShipGroupAssoc extends Equatable{
     // String
     final String? orderId;
     // String
@@ -42,4 +42,6 @@ class OrderItemShipGroupAssoc {
         this.orderHeader, });
     factory OrderItemShipGroupAssoc.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupAssocFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupAssocToJson(this);
+    @override
+    List<Object?> get props => [orderId, orderItemSeqId, shipGroupSeqId];
 }

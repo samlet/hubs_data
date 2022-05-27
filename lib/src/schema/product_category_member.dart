@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductCategoryMemberFlatData
 @JsonSerializable()
-class ProductCategoryMember {
+class ProductCategoryMember extends Equatable{
     // String
     final String? productCategoryId;
     // String
@@ -51,4 +51,6 @@ class ProductCategoryMember {
         this.product, });
     factory ProductCategoryMember.fromJson(Map<String, dynamic> json) => _$ProductCategoryMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryMemberToJson(this);
+    @override
+    List<Object?> get props => [productCategoryId, productId, fromDate];
 }

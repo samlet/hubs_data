@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreEmailSettingData
 @JsonSerializable()
-class ProductStoreEmailSetting {
+class ProductStoreEmailSetting extends Equatable{
     // String
     final String? productStoreId;
     // String
@@ -54,4 +54,6 @@ class ProductStoreEmailSetting {
         this.format, });
     factory ProductStoreEmailSetting.fromJson(Map<String, dynamic> json) => _$ProductStoreEmailSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreEmailSettingToJson(this);
+    @override
+    List<Object?> get props => [productStoreId, emailType];
 }

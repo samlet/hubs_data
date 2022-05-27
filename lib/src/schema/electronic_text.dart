@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ElectronicTextFlatData
 @JsonSerializable()
-class ElectronicText {
+class ElectronicText extends Equatable{
     // String
     final String? dataResourceId;
     // String
@@ -33,4 +33,6 @@ class ElectronicText {
         this.cats, });
     factory ElectronicText.fromJson(Map<String, dynamic> json) => _$ElectronicTextFromJson(json);
     Map<String, dynamic> toJson() => _$ElectronicTextToJson(this);
+    @override
+    List<Object?> get props => [dataResourceId];
 }

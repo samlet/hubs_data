@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContactMechFlatData
 @JsonSerializable()
-class ContactMech {
+class ContactMech extends Equatable{
     // String
     final String? contactMechId;
     // String
@@ -48,4 +48,6 @@ class ContactMech {
         this.asPostalAddress, });
     factory ContactMech.fromJson(Map<String, dynamic> json) => _$ContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechToJson(this);
+    @override
+    List<Object?> get props => [contactMechId];
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityGroupPermissionData
 @JsonSerializable()
-class SecurityGroupPermission {
+class SecurityGroupPermission extends Equatable{
     // String
     final String? groupId;
     // String
@@ -42,4 +42,6 @@ class SecurityGroupPermission {
         this.securityGroup, });
     factory SecurityGroupPermission.fromJson(Map<String, dynamic> json) => _$SecurityGroupPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupPermissionToJson(this);
+    @override
+    List<Object?> get props => [groupId, permissionId, fromDate];
 }

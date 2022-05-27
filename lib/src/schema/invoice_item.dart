@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InvoiceItemFlatData
 @JsonSerializable()
-class InvoiceItem {
+class InvoiceItem extends Equatable{
     // String
     final String? invoiceId;
     // String
@@ -99,4 +99,6 @@ class InvoiceItem {
         this.taxAuthorityParty, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
+    @override
+    List<Object?> get props => [invoiceId, invoiceItemSeqId];
 }

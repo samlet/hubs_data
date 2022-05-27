@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginFlatData
 @JsonSerializable()
-class UserLogin {
+class UserLogin extends Equatable{
     // String
     final String? userLoginId;
     // String
@@ -87,4 +87,6 @@ class UserLogin {
         this.party, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
+    @override
+    List<Object?> get props => [userLoginId];
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderPaymentPreferenceFlatData
 @JsonSerializable()
-class OrderPaymentPreference {
+class OrderPaymentPreference extends Equatable{
     // String
     final String? orderPaymentPreferenceId;
     // String
@@ -102,4 +102,6 @@ class OrderPaymentPreference {
         this.format, });
     factory OrderPaymentPreference.fromJson(Map<String, dynamic> json) => _$OrderPaymentPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$OrderPaymentPreferenceToJson(this);
+    @override
+    List<Object?> get props => [orderPaymentPreferenceId];
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortPartyAssignmentData
 @JsonSerializable()
-class WorkEffortPartyAssignment {
+class WorkEffortPartyAssignment extends Equatable{
     // String
     final String? workEffortId;
     // String
@@ -78,4 +78,6 @@ class WorkEffortPartyAssignment {
         this.workEffort, });
     factory WorkEffortPartyAssignment.fromJson(Map<String, dynamic> json) => _$WorkEffortPartyAssignmentFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortPartyAssignmentToJson(this);
+    @override
+    List<Object?> get props => [workEffortId, partyId, roleTypeId, fromDate];
 }

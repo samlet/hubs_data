@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AgreementFlatData
 @JsonSerializable()
-class Agreement {
+class Agreement extends Equatable{
     // String
     final String? agreementId;
     // String
@@ -81,4 +81,6 @@ class Agreement {
         this.agreementProductAppls, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
+    @override
+    List<Object?> get props => [agreementId];
 }

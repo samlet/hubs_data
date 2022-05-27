@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderHeaderFlatData
 @JsonSerializable()
-class OrderHeader {
+class OrderHeader extends Equatable{
     // String
     final String? orderId;
     // String
@@ -174,4 +174,6 @@ class OrderHeader {
         this.webSite, });
     factory OrderHeader.fromJson(Map<String, dynamic> json) => _$OrderHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderToJson(this);
+    @override
+    List<Object?> get props => [orderId];
 }

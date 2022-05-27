@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentPackageData
 @JsonSerializable()
-class ShipmentPackage {
+class ShipmentPackage extends Equatable{
     // String
     final String? shipmentId;
     // String
@@ -60,4 +60,6 @@ class ShipmentPackage {
         this.shipment, });
     factory ShipmentPackage.fromJson(Map<String, dynamic> json) => _$ShipmentPackageFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageToJson(this);
+    @override
+    List<Object?> get props => [shipmentId, shipmentPackageSeqId];
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AcctgTransFlatData
 @JsonSerializable()
-class AcctgTrans {
+class AcctgTrans extends Equatable{
     // String
     final String? acctgTransId;
     // String
@@ -105,4 +105,6 @@ class AcctgTrans {
         this.subview, });
     factory AcctgTrans.fromJson(Map<String, dynamic> json) => _$AcctgTransFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgTransToJson(this);
+    @override
+    List<Object?> get props => [acctgTransId];
 }

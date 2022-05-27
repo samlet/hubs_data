@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InventoryTransferData
 @JsonSerializable()
-class InventoryTransfer {
+class InventoryTransfer extends Equatable{
     // String
     final String? inventoryTransferId;
     // String
@@ -72,4 +72,6 @@ class InventoryTransfer {
         this.cats, });
     factory InventoryTransfer.fromJson(Map<String, dynamic> json) => _$InventoryTransferFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryTransferToJson(this);
+    @override
+    List<Object?> get props => [inventoryTransferId];
 }

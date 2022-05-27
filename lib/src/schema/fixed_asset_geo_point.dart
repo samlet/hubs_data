@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetGeoPointData
 @JsonSerializable()
-class FixedAssetGeoPoint {
+class FixedAssetGeoPoint extends Equatable{
     // String
     final String? fixedAssetId;
     // String
@@ -39,4 +39,6 @@ class FixedAssetGeoPoint {
         this.fixedAsset, });
     factory FixedAssetGeoPoint.fromJson(Map<String, dynamic> json) => _$FixedAssetGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetGeoPointToJson(this);
+    @override
+    List<Object?> get props => [fixedAssetId, geoPointId, fromDate];
 }

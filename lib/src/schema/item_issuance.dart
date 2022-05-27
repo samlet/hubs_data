@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ItemIssuanceFlatData
 @JsonSerializable()
-class ItemIssuance {
+class ItemIssuance extends Equatable{
     // String
     final String? itemIssuanceId;
     // String
@@ -75,4 +75,6 @@ class ItemIssuance {
         this.format, });
     factory ItemIssuance.fromJson(Map<String, dynamic> json) => _$ItemIssuanceFromJson(json);
     Map<String, dynamic> toJson() => _$ItemIssuanceToJson(this);
+    @override
+    List<Object?> get props => [itemIssuanceId];
 }

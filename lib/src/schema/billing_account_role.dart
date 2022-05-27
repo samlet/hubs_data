@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BillingAccountRoleData
 @JsonSerializable()
-class BillingAccountRole {
+class BillingAccountRole extends Equatable{
     // String
     final String? billingAccountId;
     // String
@@ -45,4 +45,6 @@ class BillingAccountRole {
         this.proto, });
     factory BillingAccountRole.fromJson(Map<String, dynamic> json) => _$BillingAccountRoleFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountRoleToJson(this);
+    @override
+    List<Object?> get props => [billingAccountId, partyId, roleTypeId, fromDate];
 }

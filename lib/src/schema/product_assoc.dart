@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductAssocData
 @JsonSerializable()
-class ProductAssoc {
+class ProductAssoc extends Equatable{
     // String
     final String? productId;
     // String
@@ -72,4 +72,6 @@ class ProductAssoc {
         this.cats, });
     factory ProductAssoc.fromJson(Map<String, dynamic> json) => _$ProductAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductAssocToJson(this);
+    @override
+    List<Object?> get props => [productId, productIdTo, productAssocTypeId, fromDate];
 }

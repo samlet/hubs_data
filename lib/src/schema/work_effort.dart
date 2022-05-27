@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortFlatData
 @JsonSerializable()
-class WorkEffort {
+class WorkEffort extends Equatable{
     // String
     final String? workEffortId;
     // String
@@ -204,4 +204,6 @@ class WorkEffort {
         this.subview, });
     factory WorkEffort.fromJson(Map<String, dynamic> json) => _$WorkEffortFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortToJson(this);
+    @override
+    List<Object?> get props => [workEffortId];
 }

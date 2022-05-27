@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ExampleData
 @JsonSerializable()
-class Example {
+class Example extends Equatable{
     // String
     final String? exampleId;
     // String
@@ -69,4 +69,6 @@ class Example {
         this.subview, });
     factory Example.fromJson(Map<String, dynamic> json) => _$ExampleFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleToJson(this);
+    @override
+    List<Object?> get props => [exampleId];
 }

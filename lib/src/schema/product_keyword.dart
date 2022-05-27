@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductKeywordData
 @JsonSerializable()
-class ProductKeyword {
+class ProductKeyword extends Equatable{
     // String
     final String? productId;
     // String
@@ -42,4 +42,6 @@ class ProductKeyword {
         this.format, });
     factory ProductKeyword.fromJson(Map<String, dynamic> json) => _$ProductKeywordFromJson(json);
     Map<String, dynamic> toJson() => _$ProductKeywordToJson(this);
+    @override
+    List<Object?> get props => [productId, keyword, keywordTypeId];
 }
