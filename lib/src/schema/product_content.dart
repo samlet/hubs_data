@@ -33,16 +33,16 @@ class ProductContent extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_ProductFlatData
+    final Product? product;
+    // String
+    final String? format;
+    // domain_ContentFlatData
+    final Content? content;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_ContentFlatData
-    final Content? content;
     ProductContent({
         this.productId,
         this.contentId,
@@ -59,11 +59,11 @@ class ProductContent extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.format,
-        this.proto,
         this.product,
-        this.content, });
+        this.format,
+        this.content,
+        this.cats,
+        this.proto, });
     factory ProductContent.fromJson(Map<String, dynamic> json) => _$ProductContentFromJson(json);
     Map<String, dynamic> toJson() => _$ProductContentToJson(this);
     @override

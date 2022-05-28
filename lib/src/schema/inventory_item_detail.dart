@@ -53,16 +53,16 @@ class InventoryItemDetail extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // String
     final String? proto;
     // domain_WorkEffortFlatData
     final WorkEffort? workEffort;
+    // String
+    final String? format;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     InventoryItemDetail({
         this.inventoryItemId,
         this.inventoryItemDetailSeqId,
@@ -89,11 +89,11 @@ class InventoryItemDetail extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
         this.cats,
-        this.inventoryItem,
         this.proto,
-        this.workEffort, });
+        this.workEffort,
+        this.format,
+        this.inventoryItem, });
     factory InventoryItemDetail.fromJson(Map<String, dynamic> json) => _$InventoryItemDetailFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemDetailToJson(this);
     @override

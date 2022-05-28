@@ -9,10 +9,13 @@ class FacilityCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_FacilityList
+    final FacilityCollection? filter;
     FacilityCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory FacilityCollection.fromJson(Map<String, dynamic> json) => _$FacilityCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityCollectionToJson(this);
 }

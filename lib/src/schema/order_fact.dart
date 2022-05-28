@@ -27,18 +27,18 @@ class OrderFact extends Equatable{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // String
-    final String? proto;
     // String
     final String? format;
     // domain_OrderFactStatusList
     final OrderFactStatusCollection? orderFactStatuses;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     OrderFact({
         this.orderId,
         this.invoiceId,
@@ -52,12 +52,12 @@ class OrderFact extends Equatable{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.subview,
-        this.cats,
         this.type,
-        this.proto,
         this.format,
-        this.orderFactStatuses, });
+        this.orderFactStatuses,
+        this.proto,
+        this.subview,
+        this.cats, });
     factory OrderFact.fromJson(Map<String, dynamic> json) => _$OrderFactFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactToJson(this);
     @override

@@ -41,32 +41,32 @@ class Invoice extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
-    final String? format;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_OrderItemBillingList
-    final OrderItemBillingCollection? orderItemBillings;
-    // domain_InvoiceItemList
-    final InvoiceItemCollection? invoiceItems;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // domain_InvoiceStatusList
-    final InvoiceStatusCollection? invoiceStatuses;
-    // domain_PartyFlatData
-    final Party? fromParty;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_InvoiceItemList
+    final InvoiceItemCollection? invoiceItems;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
     // domain_OrderAdjustmentBillingList
     final OrderAdjustmentBillingCollection? orderAdjustmentBillings;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_InvoiceStatusList
+    final InvoiceStatusCollection? invoiceStatuses;
+    // domain_OrderItemBillingList
+    final OrderItemBillingCollection? orderItemBillings;
+    // domain_PartyFlatData
+    final Party? fromParty;
     Invoice({
         this.invoiceId,
         this.invoiceTypeId,
@@ -87,19 +87,19 @@ class Invoice extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.party,
-        this.format,
-        this.contactMech,
-        this.type,
-        this.orderItemBillings,
-        this.invoiceItems,
-        this.cats,
-        this.billingAccount,
-        this.invoiceStatuses,
-        this.fromParty,
-        this.proto,
         this.subview,
-        this.orderAdjustmentBillings, });
+        this.proto,
+        this.contactMech,
+        this.invoiceItems,
+        this.billingAccount,
+        this.orderAdjustmentBillings,
+        this.party,
+        this.type,
+        this.cats,
+        this.format,
+        this.invoiceStatuses,
+        this.orderItemBillings,
+        this.fromParty, });
     factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceToJson(this);
     @override

@@ -9,10 +9,13 @@ class RequirementCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_RequirementList
+    final RequirementCollection? filter;
     RequirementCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory RequirementCollection.fromJson(Map<String, dynamic> json) => _$RequirementCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementCollectionToJson(this);
 }

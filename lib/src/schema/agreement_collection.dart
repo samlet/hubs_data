@@ -9,10 +9,13 @@ class AgreementCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_AgreementList
+    final AgreementCollection? filter;
     AgreementCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory AgreementCollection.fromJson(Map<String, dynamic> json) => _$AgreementCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementCollectionToJson(this);
 }

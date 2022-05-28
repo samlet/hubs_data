@@ -19,16 +19,16 @@ class ProductCategoryRollup extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? parentProductCategory;
     // String
     final String? proto;
+    // String
+    final String? format;
     // domain_ProductCategoryFlatData
     final ProductCategory? currentProductCategory;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? parentProductCategory;
-    // String
-    final String? format;
     ProductCategoryRollup({
         this.productCategoryId,
         this.parentProductCategoryId,
@@ -38,11 +38,11 @@ class ProductCategoryRollup extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.currentProductCategory,
-        this.cats,
         this.parentProductCategory,
-        this.format, });
+        this.proto,
+        this.format,
+        this.currentProductCategory,
+        this.cats, });
     factory ProductCategoryRollup.fromJson(Map<String, dynamic> json) => _$ProductCategoryRollupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryRollupToJson(this);
     @override

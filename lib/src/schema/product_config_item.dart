@@ -25,14 +25,14 @@ class ProductConfigItem extends Equatable{
     final ProductConfigProductCollection? configItemProductConfigProducts;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductConfigOptionList
+    final ProductConfigOptionCollection? configItemProductConfigOptions;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
     final String? format;
     // String
     final String? proto;
-    // domain_ProductConfigOptionList
-    final ProductConfigOptionCollection? configItemProductConfigOptions;
     ProductConfigItem({
         this.configItemId,
         this.configItemTypeId,
@@ -45,10 +45,10 @@ class ProductConfigItem extends Equatable{
         this.tenantId,
         this.configItemProductConfigProducts,
         this.cats,
+        this.configItemProductConfigOptions,
         this.subview,
         this.format,
-        this.proto,
-        this.configItemProductConfigOptions, });
+        this.proto, });
     factory ProductConfigItem.fromJson(Map<String, dynamic> json) => _$ProductConfigItemFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemToJson(this);
     @override

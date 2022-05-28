@@ -21,16 +21,16 @@ class ProdCatalogCategory extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProdCatalogFlatData
     final ProdCatalog? prodCatalog;
     // String
-    final String? proto;
+    final String? format;
     // domain_ProductCategoryFlatData
     final ProductCategory? productCategory;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
     ProdCatalogCategory({
         this.prodCatalogId,
         this.productCategoryId,
@@ -41,11 +41,11 @@ class ProdCatalogCategory extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.prodCatalog,
-        this.proto,
+        this.format,
         this.productCategory,
-        this.format, });
+        this.cats,
+        this.proto, });
     factory ProdCatalogCategory.fromJson(Map<String, dynamic> json) => _$ProdCatalogCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProdCatalogCategoryToJson(this);
     @override

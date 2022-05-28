@@ -22,9 +22,9 @@ class OrderItemShipGroupAssoc extends Equatable{
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // String
     final String? format;
+    // String
+    final String? proto;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     OrderItemShipGroupAssoc({
@@ -37,8 +37,8 @@ class OrderItemShipGroupAssoc extends Equatable{
         this.createdTxStamp,
         this.id,
         this.cats,
-        this.proto,
         this.format,
+        this.proto,
         this.orderHeader, });
     factory OrderItemShipGroupAssoc.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupAssocFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupAssocToJson(this);

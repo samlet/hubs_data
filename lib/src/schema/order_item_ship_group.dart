@@ -51,26 +51,26 @@ class OrderItemShipGroup extends Equatable{
     final String? id;
     // domain_FacilityFlatData
     final Facility? facility;
-    // domain_ContactMechFlatData
-    final ContactMech? telecomContactMech;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? supplierParty;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // String
-    final String? proto;
-    // domain_PartyFlatData
-    final Party? carrierParty;
-    // domain_PartyFlatData
-    final Party? vendorParty;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_AgreementFlatData
     final Agreement? supplierAgreement;
+    // domain_PartyFlatData
+    final Party? vendorParty;
+    // String
+    final String? proto;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_PartyFlatData
+    final Party? carrierParty;
+    // String
+    final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? telecomContactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? supplierParty;
     OrderItemShipGroup({
         this.orderId,
         this.shipGroupSeqId,
@@ -96,16 +96,16 @@ class OrderItemShipGroup extends Equatable{
         this.createdTxStamp,
         this.id,
         this.facility,
-        this.telecomContactMech,
-        this.contactMech,
-        this.format,
-        this.supplierParty,
-        this.orderHeader,
-        this.proto,
-        this.carrierParty,
+        this.supplierAgreement,
         this.vendorParty,
+        this.proto,
+        this.orderHeader,
+        this.contactMech,
+        this.carrierParty,
+        this.format,
+        this.telecomContactMech,
         this.cats,
-        this.supplierAgreement, });
+        this.supplierParty, });
     factory OrderItemShipGroup.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupToJson(this);
     @override

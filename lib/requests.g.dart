@@ -134,6 +134,127 @@ Map<String, dynamic> _$ListValueToJson(ListValue instance) {
   return val;
 }
 
+ShipmentFlatData _$ShipmentFlatDataFromJson(Map<String, dynamic> json) =>
+    ShipmentFlatData(
+      shipmentId: json['shipmentId'] as String?,
+      shipmentTypeId: json['shipmentTypeId'] as String?,
+      statusId: json['statusId'] as String?,
+      primaryOrderId: json['primaryOrderId'] as String?,
+      primaryReturnId: json['primaryReturnId'] as String?,
+      primaryShipGroupSeqId: json['primaryShipGroupSeqId'] as String?,
+      picklistBinId: json['picklistBinId'] as String?,
+      estimatedReadyDate: json['estimatedReadyDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedReadyDate'] as Map<String, dynamic>),
+      estimatedShipDate: json['estimatedShipDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedShipDate'] as Map<String, dynamic>),
+      estimatedShipWorkEffId: json['estimatedShipWorkEffId'] as String?,
+      estimatedArrivalDate: json['estimatedArrivalDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedArrivalDate'] as Map<String, dynamic>),
+      estimatedArrivalWorkEffId: json['estimatedArrivalWorkEffId'] as String?,
+      latestCancelDate: json['latestCancelDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['latestCancelDate'] as Map<String, dynamic>),
+      estimatedShipCost: json['estimatedShipCost'] == null
+          ? null
+          : Currency.fromJson(
+              json['estimatedShipCost'] as Map<String, dynamic>),
+      currencyUomId: json['currencyUomId'] as String?,
+      handlingInstructions: json['handlingInstructions'] as String?,
+      originFacilityId: json['originFacilityId'] as String?,
+      destinationFacilityId: json['destinationFacilityId'] as String?,
+      originContactMechId: json['originContactMechId'] as String?,
+      originTelecomNumberId: json['originTelecomNumberId'] as String?,
+      destinationContactMechId: json['destinationContactMechId'] as String?,
+      destinationTelecomNumberId: json['destinationTelecomNumberId'] as String?,
+      partyIdTo: json['partyIdTo'] as String?,
+      partyIdFrom: json['partyIdFrom'] as String?,
+      additionalShippingCharge: json['additionalShippingCharge'] == null
+          ? null
+          : Currency.fromJson(
+              json['additionalShippingCharge'] as Map<String, dynamic>),
+      addtlShippingChargeDesc: json['addtlShippingChargeDesc'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ShipmentFlatDataToJson(ShipmentFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('shipmentTypeId', instance.shipmentTypeId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('primaryOrderId', instance.primaryOrderId);
+  writeNotNull('primaryReturnId', instance.primaryReturnId);
+  writeNotNull('primaryShipGroupSeqId', instance.primaryShipGroupSeqId);
+  writeNotNull('picklistBinId', instance.picklistBinId);
+  writeNotNull('estimatedReadyDate', instance.estimatedReadyDate?.toJson());
+  writeNotNull('estimatedShipDate', instance.estimatedShipDate?.toJson());
+  writeNotNull('estimatedShipWorkEffId', instance.estimatedShipWorkEffId);
+  writeNotNull('estimatedArrivalDate', instance.estimatedArrivalDate?.toJson());
+  writeNotNull('estimatedArrivalWorkEffId', instance.estimatedArrivalWorkEffId);
+  writeNotNull('latestCancelDate', instance.latestCancelDate?.toJson());
+  writeNotNull('estimatedShipCost', instance.estimatedShipCost?.toJson());
+  writeNotNull('currencyUomId', instance.currencyUomId);
+  writeNotNull('handlingInstructions', instance.handlingInstructions);
+  writeNotNull('originFacilityId', instance.originFacilityId);
+  writeNotNull('destinationFacilityId', instance.destinationFacilityId);
+  writeNotNull('originContactMechId', instance.originContactMechId);
+  writeNotNull('originTelecomNumberId', instance.originTelecomNumberId);
+  writeNotNull('destinationContactMechId', instance.destinationContactMechId);
+  writeNotNull(
+      'destinationTelecomNumberId', instance.destinationTelecomNumberId);
+  writeNotNull('partyIdTo', instance.partyIdTo);
+  writeNotNull('partyIdFrom', instance.partyIdFrom);
+  writeNotNull(
+      'additionalShippingCharge', instance.additionalShippingCharge?.toJson());
+  writeNotNull('addtlShippingChargeDesc', instance.addtlShippingChargeDesc);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
 Timestamp _$TimestampFromJson(Map<String, dynamic> json) => Timestamp(
       seconds: json['seconds'] as int?,
       nanos: json['nanos'] as int?,
@@ -195,6 +316,34 @@ Map<String, dynamic> _$StringsToJson(Strings instance) {
   return val;
 }
 
+CreateShipmentParams _$CreateShipmentParamsFromJson(
+        Map<String, dynamic> json) =>
+    CreateShipmentParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      shipment: json['shipment'] == null
+          ? null
+          : ShipmentFlatData.fromJson(json['shipment'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateShipmentParamsToJson(
+    CreateShipmentParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
 DecimalMap _$DecimalMapFromJson(Map<String, dynamic> json) => DecimalMap(
       values: (json['values'] as List<dynamic>?)
           ?.map(
@@ -243,6 +392,29 @@ Map<String, dynamic> _$ValueToJson(Value instance) {
   writeNotNull('boolValue', instance.boolValue);
   writeNotNull('structValue', instance.structValue?.toJson());
   writeNotNull('listValue', instance.listValue?.toJson());
+  return val;
+}
+
+BundleHandle _$BundleHandleFromJson(Map<String, dynamic> json) => BundleHandle(
+      bundleName: json['bundleName'] as String?,
+      regionId: json['regionId'] as String?,
+      data: json['data'] == null
+          ? null
+          : Any.fromJson(json['data'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$BundleHandleToJson(BundleHandle instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('bundleName', instance.bundleName);
+  writeNotNull('regionId', instance.regionId);
+  writeNotNull('data', instance.data?.toJson());
   return val;
 }
 

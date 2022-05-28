@@ -49,16 +49,16 @@ class SupplierProduct extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
+    // String
+    final String? format;
     // domain_ProductFlatData
     final Product? product;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     SupplierProduct({
         this.productId,
         this.partyId,
@@ -83,11 +83,11 @@ class SupplierProduct extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
+        this.party,
+        this.format,
         this.product,
         this.proto,
-        this.format,
-        this.party, });
+        this.cats, });
     factory SupplierProduct.fromJson(Map<String, dynamic> json) => _$SupplierProductFromJson(json);
     Map<String, dynamic> toJson() => _$SupplierProductToJson(this);
     @override

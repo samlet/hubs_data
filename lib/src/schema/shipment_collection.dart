@@ -9,10 +9,13 @@ class ShipmentCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_ShipmentList
+    final ShipmentCollection? filter;
     ShipmentCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory ShipmentCollection.fromJson(Map<String, dynamic> json) => _$ShipmentCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentCollectionToJson(this);
 }

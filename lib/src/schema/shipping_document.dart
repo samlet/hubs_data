@@ -20,9 +20,9 @@ class ShippingDocument extends Equatable{
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     ShippingDocument({
@@ -34,8 +34,8 @@ class ShippingDocument extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
         this.proto,
+        this.format,
         this.cats, });
     factory ShippingDocument.fromJson(Map<String, dynamic> json) => _$ShippingDocumentFromJson(json);
     Map<String, dynamic> toJson() => _$ShippingDocumentToJson(this);

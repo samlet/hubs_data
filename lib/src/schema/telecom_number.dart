@@ -20,13 +20,13 @@ class TelecomNumber extends Equatable{
     // String
     final String? tenantId;
     // String
-    final String? proto;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
     final String? format;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     TelecomNumber({
         this.contactMechId,
         this.countryCode,
@@ -36,10 +36,10 @@ class TelecomNumber extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.contactMech,
         this.format,
-        this.cats, });
+        this.proto,
+        this.cats,
+        this.contactMech, });
     factory TelecomNumber.fromJson(Map<String, dynamic> json) => _$TelecomNumberFromJson(json);
     Map<String, dynamic> toJson() => _$TelecomNumberToJson(this);
     @override

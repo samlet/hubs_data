@@ -9,10 +9,13 @@ class WebSiteCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_WebSiteList
+    final WebSiteCollection? filter;
     WebSiteCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory WebSiteCollection.fromJson(Map<String, dynamic> json) => _$WebSiteCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$WebSiteCollectionToJson(this);
 }

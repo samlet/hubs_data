@@ -9,10 +9,13 @@ class InvoiceCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_InvoiceList
+    final InvoiceCollection? filter;
     InvoiceCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory InvoiceCollection.fromJson(Map<String, dynamic> json) => _$InvoiceCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceCollectionToJson(this);
 }

@@ -611,20 +611,20 @@ class TypesEntity extends Equatable{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // String
-    final String? format;
-    // domain_ProductTypeData
-    final ProductType? asProductType;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_TypesEntityStatusList
-    final TypesEntityStatusCollection? typesEntityStatuses;
-    // domain_TypesEntityData
-    final TypesEntity? type;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
+    final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
     final String? proto;
+    // domain_TypesEntityStatusList
+    final TypesEntityStatusCollection? typesEntityStatuses;
+    // domain_ProductTypeData
+    final ProductType? asProductType;
     TypesEntity({
         this.entityId,
         this.entity,
@@ -930,13 +930,13 @@ class TypesEntity extends Equatable{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.format,
-        this.asProductType,
-        this.cats,
-        this.typesEntityStatuses,
-        this.type,
         this.subview,
-        this.proto, });
+        this.format,
+        this.type,
+        this.cats,
+        this.proto,
+        this.typesEntityStatuses,
+        this.asProductType, });
     factory TypesEntity.fromJson(Map<String, dynamic> json) => _$TypesEntityFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityToJson(this);
     @override

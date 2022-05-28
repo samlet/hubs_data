@@ -18,15 +18,15 @@ class ShipmentStatus extends Equatable{
     // String
     final String? id;
     // String
-    final String? format;
+    final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
+    final String? format;
     ShipmentStatus({
         this.statusId,
         this.shipmentId,
@@ -35,11 +35,11 @@ class ShipmentStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.cats,
         this.proto,
+        this.changeByUserLogin,
         this.shipment,
-        this.changeByUserLogin, });
+        this.cats,
+        this.format, });
     factory ShipmentStatus.fromJson(Map<String, dynamic> json) => _$ShipmentStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentStatusToJson(this);
     @override

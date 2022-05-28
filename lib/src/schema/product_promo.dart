@@ -39,24 +39,24 @@ class ProductPromo extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
     // domain_ProductPromoRuleList
     final ProductPromoRuleCollection? productPromoRules;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // domain_ProductPromoActionList
     final ProductPromoActionCollection? productPromoActions;
     // String
     final String? format;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_PartyFlatData
+    final Party? party;
     ProductPromo({
         this.productPromoId,
         this.promoName,
@@ -76,15 +76,15 @@ class ProductPromo extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.createdbyuserlogin,
-        this.party,
-        this.lastmodifiedbyuserlogin,
         this.productPromoRules,
+        this.lastmodifiedbyuserlogin,
+        this.subview,
         this.productPromoActions,
         this.format,
-        this.subview,
+        this.createdbyuserlogin,
+        this.cats,
         this.proto,
-        this.cats, });
+        this.party, });
     factory ProductPromo.fromJson(Map<String, dynamic> json) => _$ProductPromoFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoToJson(this);
     @override

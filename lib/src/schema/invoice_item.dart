@@ -47,10 +47,6 @@ class InvoiceItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
     // domain_ProductFeatureFlatData
@@ -65,6 +61,10 @@ class InvoiceItem extends Equatable{
     final Product? product;
     // domain_PartyFlatData
     final Party? taxAuthorityParty;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
+    // String
+    final String? format;
     InvoiceItem({
         this.invoiceId,
         this.invoiceItemSeqId,
@@ -88,15 +88,15 @@ class InvoiceItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.invoice,
         this.inventoryItem,
         this.productFeature,
         this.cats,
         this.proto,
         this.overrideOrgParty,
         this.product,
-        this.taxAuthorityParty, });
+        this.taxAuthorityParty,
+        this.invoice,
+        this.format, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
     @override

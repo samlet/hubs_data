@@ -65,28 +65,28 @@ class InventoryItem extends Equatable{
     final Party? party;
     // domain_InventoryTransferList
     final InventoryTransferCollection? inventoryTransfers;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_PartyFlatData
-    final Party? ownerParty;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_FacilityFlatData
-    final Facility? facility;
     // domain_InventoryItemDetailList
     final InventoryItemDetailCollection? inventoryItemDetails;
-    // domain_InventoryItemStatusList
-    final InventoryItemStatusCollection? inventoryItemStatuses;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? proto;
-    // String
-    final String? format;
+    // domain_PartyFlatData
+    final Party? ownerParty;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAssetFixedAsset;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_InventoryItemStatusList
+    final InventoryItemStatusCollection? inventoryItemStatuses;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // String
+    final String? format;
     InventoryItem({
         this.inventoryItemId,
         this.inventoryItemTypeId,
@@ -119,17 +119,17 @@ class InventoryItem extends Equatable{
         this.tenantId,
         this.party,
         this.inventoryTransfers,
-        this.product,
-        this.ownerParty,
         this.cats,
-        this.facility,
         this.inventoryItemDetails,
+        this.ownerParty,
+        this.fixedAssetFixedAsset,
+        this.product,
         this.inventoryItemStatuses,
-        this.type,
         this.subview,
+        this.type,
         this.proto,
-        this.format,
-        this.fixedAssetFixedAsset, });
+        this.facility,
+        this.format, });
     factory InventoryItem.fromJson(Map<String, dynamic> json) => _$InventoryItemFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemToJson(this);
     @override

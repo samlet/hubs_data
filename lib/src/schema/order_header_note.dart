@@ -15,16 +15,16 @@ class OrderHeaderNote extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_NoteDataData
-    final NoteData? noteData;
     // String
     final String? format;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // domain_NoteDataData
+    final NoteData? noteData;
     OrderHeaderNote({
         this.orderId,
         this.noteId,
@@ -32,11 +32,11 @@ class OrderHeaderNote extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.noteData,
         this.format,
         this.orderHeader,
-        this.proto, });
+        this.cats,
+        this.proto,
+        this.noteData, });
     factory OrderHeaderNote.fromJson(Map<String, dynamic> json) => _$OrderHeaderNoteFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderNoteToJson(this);
     @override

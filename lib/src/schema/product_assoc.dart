@@ -35,18 +35,18 @@ class ProductAssoc extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_WorkEffortFlatData
-    final WorkEffort? routingWorkEffort;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // domain_ProductFlatData
     final Product? mainProduct;
-    // String
-    final String? proto;
+    // domain_WorkEffortFlatData
+    final WorkEffort? routingWorkEffort;
     // domain_ProductFlatData
     final Product? assocProduct;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     ProductAssoc({
         this.productId,
         this.productIdTo,
@@ -64,12 +64,12 @@ class ProductAssoc extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.routingWorkEffort,
+        this.cats,
         this.format,
         this.mainProduct,
-        this.proto,
+        this.routingWorkEffort,
         this.assocProduct,
-        this.cats, });
+        this.proto, });
     factory ProductAssoc.fromJson(Map<String, dynamic> json) => _$ProductAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductAssocToJson(this);
     @override

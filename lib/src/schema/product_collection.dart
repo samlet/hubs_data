@@ -9,10 +9,13 @@ class ProductCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_ProductList
+    final ProductCollection? filter;
     ProductCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory ProductCollection.fromJson(Map<String, dynamic> json) => _$ProductCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCollectionToJson(this);
 }

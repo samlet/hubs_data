@@ -17,10 +17,10 @@ class ModelEntity {
     final List<ModelEntityRelationsEntry>? relations;
     // String
     final String? pkg;
-    // List<facade_ModelRelation>
-    final List<ModelRelation>? nonAutoRels;
     // routines_Strings
     final StringsValue? keys;
+    // List<facade_ModelRelation>
+    final List<ModelRelation>? nonAutoRels;
     // String
     final String? proto;
     ModelEntity({
@@ -31,8 +31,8 @@ class ModelEntity {
         this.fields,
         this.relations,
         this.pkg,
-        this.nonAutoRels,
         this.keys,
+        this.nonAutoRels,
         this.proto, });
     factory ModelEntity.fromJson(Map<String, dynamic> json) => _$ModelEntityFromJson(json);
     Map<String, dynamic> toJson() => _$ModelEntityToJson(this);

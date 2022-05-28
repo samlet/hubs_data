@@ -9,10 +9,13 @@ class BlacklistCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_BlacklistList
+    final BlacklistCollection? filter;
     BlacklistCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory BlacklistCollection.fromJson(Map<String, dynamic> json) => _$BlacklistCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistCollectionToJson(this);
 }

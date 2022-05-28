@@ -19,16 +19,16 @@ class BlacklistStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_BlacklistData
     final Blacklist? blacklist;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     BlacklistStatus({
         this.blacklistId,
         this.statusDate,
@@ -38,11 +38,11 @@ class BlacklistStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
-        this.proto,
-        this.format,
         this.cats,
-        this.blacklist, });
+        this.blacklist,
+        this.userLogin,
+        this.format,
+        this.proto, });
     factory BlacklistStatus.fromJson(Map<String, dynamic> json) => _$BlacklistStatusFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistStatusToJson(this);
     @override

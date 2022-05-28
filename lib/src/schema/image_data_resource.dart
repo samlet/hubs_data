@@ -13,24 +13,24 @@ class ImageDataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // String
+    final String? format;
     ImageDataResource({
         this.dataResourceId,
         this.imageData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.dataResource,
         this.cats,
-        this.format,
-        this.proto, });
+        this.proto,
+        this.dataResource,
+        this.format, });
     factory ImageDataResource.fromJson(Map<String, dynamic> json) => _$ImageDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$ImageDataResourceToJson(this);
     @override

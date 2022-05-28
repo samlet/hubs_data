@@ -25,20 +25,20 @@ class BillingAccount extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_BillingAccountRoleList
-    final BillingAccountRoleCollection? billingAccountRoles;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // String
-    final String? format;
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_BillingAccountTermList
     final BillingAccountTermCollection? billingAccountTerms;
+    // String
+    final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_BillingAccountRoleList
+    final BillingAccountRoleCollection? billingAccountRoles;
     BillingAccount({
         this.billingAccountId,
         this.accountLimit,
@@ -51,13 +51,13 @@ class BillingAccount extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.subview,
-        this.cats,
-        this.billingAccountRoles,
         this.contactMech,
+        this.proto,
+        this.cats,
+        this.billingAccountTerms,
         this.format,
-        this.billingAccountTerms, });
+        this.subview,
+        this.billingAccountRoles, });
     factory BillingAccount.fromJson(Map<String, dynamic> json) => _$BillingAccountFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountToJson(this);
     @override

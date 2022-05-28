@@ -9,10 +9,13 @@ class ProductReviewCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_ProductReviewList
+    final ProductReviewCollection? filter;
     ProductReviewCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory ProductReviewCollection.fromJson(Map<String, dynamic> json) => _$ProductReviewCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$ProductReviewCollectionToJson(this);
 }

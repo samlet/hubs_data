@@ -9,16 +9,16 @@ class PartyWithCorporation {
     final Party? party;
     // domain_PartyGroupFlatData
     final PartyGroup? partyGroup;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     PartyWithCorporation({
         this.id,
         this.party,
         this.partyGroup,
-        this.proto,
-        this.subview, });
+        this.subview,
+        this.proto, });
     factory PartyWithCorporation.fromJson(Map<String, dynamic> json) => _$PartyWithCorporationFromJson(json);
     Map<String, dynamic> toJson() => _$PartyWithCorporationToJson(this);
 }

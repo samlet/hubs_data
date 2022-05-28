@@ -39,36 +39,36 @@ class ReturnHeader extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
-    final String? format;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_ReturnItemList
-    final ReturnItemCollection? returnItems;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_PartyFlatData
-    final Party? toParty;
     // domain_BillingAccountFlatData
     final BillingAccount? billingAccount;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // domain_ReturnItemBillingList
-    final ReturnItemBillingCollection? returnItemBillings;
-    // domain_ReturnItemShipmentList
-    final ReturnItemShipmentCollection? returnItemShipments;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     // domain_ReturnStatusList
     final ReturnStatusCollection? returnStatuses;
+    // String
+    final String? format;
+    // domain_ReturnItemList
+    final ReturnItemCollection? returnItems;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ReturnItemShipmentList
+    final ReturnItemShipmentCollection? returnItemShipments;
+    // String
+    final String? proto;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ReturnItemBillingList
+    final ReturnItemBillingCollection? returnItemBillings;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // domain_PartyFlatData
+    final Party? toParty;
     // domain_ReturnAdjustmentList
     final ReturnAdjustmentCollection? returnAdjustments;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ReturnHeader({
         this.returnId,
         this.returnHeaderTypeId,
@@ -88,21 +88,21 @@ class ReturnHeader extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.contactMech,
-        this.format,
-        this.facility,
-        this.returnItems,
-        this.party,
-        this.toParty,
         this.billingAccount,
-        this.cats,
-        this.proto,
-        this.returnItemBillings,
-        this.returnItemShipments,
-        this.subview,
-        this.userLogin,
+        this.contactMech,
         this.returnStatuses,
-        this.returnAdjustments, });
+        this.format,
+        this.returnItems,
+        this.subview,
+        this.returnItemShipments,
+        this.proto,
+        this.party,
+        this.facility,
+        this.returnItemBillings,
+        this.userLogin,
+        this.toParty,
+        this.returnAdjustments,
+        this.cats, });
     factory ReturnHeader.fromJson(Map<String, dynamic> json) => _$ReturnHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnHeaderToJson(this);
     @override

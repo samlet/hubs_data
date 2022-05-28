@@ -13,24 +13,24 @@ class AudioDataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     AudioDataResource({
         this.dataResourceId,
         this.audioData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
         this.dataResource,
+        this.cats,
         this.format,
-        this.cats, });
+        this.proto, });
     factory AudioDataResource.fromJson(Map<String, dynamic> json) => _$AudioDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$AudioDataResourceToJson(this);
     @override

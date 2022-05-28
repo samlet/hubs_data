@@ -69,50 +69,50 @@ class OrderHeader extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // domain_OrderRoleList
-    final OrderRoleCollection? orderRoles;
     // domain_OrderStatusList
     final OrderStatusCollection? orderStatuses;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
+    // domain_OrderItemShipGroupAssocList
+    final OrderItemShipGroupAssocCollection? orderItemShipGroupAssocs;
     // domain_OrderPaymentPreferenceList
     final OrderPaymentPreferenceCollection? orderPaymentPreferences;
-    // domain_OrderAdjustmentList
-    final OrderAdjustmentCollection? orderAdjustments;
     // domain_OrderContactMechList
     final OrderContactMechCollection? orderContactMeches;
-    // domain_UserLoginFlatData
-    final UserLogin? createdByUserLogin;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_OrderItemPriceInfoList
-    final OrderItemPriceInfoCollection? orderItemPriceInfos;
+    // order_SalesOrderProto
+    final OrderWithSalesOrder? asSalesOrder;
+    // domain_OrderRoleList
+    final OrderRoleCollection? orderRoles;
+    // domain_OrderAdjustmentList
+    final OrderAdjustmentCollection? orderAdjustments;
+    // domain_OrderItemShipGroupList
+    final OrderItemShipGroupCollection? orderItemShipGroups;
     // domain_OrderItemList
     final OrderItemCollection? orderItems;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? createdByUserLogin;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // domain_ShoppingListFlatData
+    final ShoppingList? autoOrderShoppingList;
+    // domain_OrderHeaderNoteList
+    final OrderHeaderNoteCollection? orderHeaderNotes;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // order_PurchaseOrderProto
     final OrderWithPurchaseOrder? asPurchaseOrder;
     // String
-    final String? format;
+    final String? proto;
     // domain_FacilityFlatData
     final Facility? originFacility;
-    // domain_ShoppingListFlatData
-    final ShoppingList? autoOrderShoppingList;
-    // domain_OrderItemShipGroupList
-    final OrderItemShipGroupCollection? orderItemShipGroups;
-    // order_SalesOrderProto
-    final OrderWithSalesOrder? asSalesOrder;
-    // domain_OrderHeaderNoteList
-    final OrderHeaderNoteCollection? orderHeaderNotes;
-    // domain_OrderItemShipGroupAssocList
-    final OrderItemShipGroupAssocCollection? orderItemShipGroupAssocs;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_BillingAccountFlatData
     final BillingAccount? billingAccount;
+    // domain_OrderItemPriceInfoList
+    final OrderItemPriceInfoCollection? orderItemPriceInfos;
     // domain_WebSiteFlatData
     final WebSite? webSite;
     OrderHeader({
@@ -149,28 +149,28 @@ class OrderHeader extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.orderRoles,
         this.orderStatuses,
-        this.productStore,
-        this.orderPaymentPreferences,
-        this.orderAdjustments,
-        this.orderContactMeches,
-        this.createdByUserLogin,
-        this.type,
-        this.subview,
-        this.orderItemPriceInfos,
-        this.orderItems,
-        this.asPurchaseOrder,
-        this.format,
-        this.originFacility,
-        this.autoOrderShoppingList,
-        this.orderItemShipGroups,
-        this.asSalesOrder,
-        this.orderHeaderNotes,
         this.orderItemShipGroupAssocs,
+        this.orderPaymentPreferences,
+        this.orderContactMeches,
+        this.asSalesOrder,
+        this.orderRoles,
+        this.orderAdjustments,
+        this.orderItemShipGroups,
+        this.orderItems,
+        this.format,
+        this.createdByUserLogin,
+        this.subview,
+        this.type,
+        this.productStore,
+        this.autoOrderShoppingList,
+        this.orderHeaderNotes,
         this.cats,
+        this.asPurchaseOrder,
+        this.proto,
+        this.originFacility,
         this.billingAccount,
+        this.orderItemPriceInfos,
         this.webSite, });
     factory OrderHeader.fromJson(Map<String, dynamic> json) => _$OrderHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderToJson(this);

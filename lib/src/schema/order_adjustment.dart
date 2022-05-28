@@ -75,18 +75,18 @@ class OrderAdjustment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
+    final String? format;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    final String? proto;
     OrderAdjustment({
         this.orderAdjustmentId,
         this.orderAdjustmentTypeId,
@@ -124,12 +124,12 @@ class OrderAdjustment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.proto,
         this.orderHeader,
-        this.productPromo,
+        this.userLogin,
+        this.cats,
         this.format,
-        this.userLogin, });
+        this.productPromo,
+        this.proto, });
     factory OrderAdjustment.fromJson(Map<String, dynamic> json) => _$OrderAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$OrderAdjustmentToJson(this);
     @override

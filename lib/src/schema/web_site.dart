@@ -43,10 +43,10 @@ class WebSite extends Equatable{
     final String? displayMaintenancePage;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // String
+    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
@@ -74,8 +74,8 @@ class WebSite extends Equatable{
         this.isDefault,
         this.displayMaintenancePage,
         this.tenantId,
-        this.proto,
         this.productStore,
+        this.proto,
         this.subview,
         this.format,
         this.cats, });

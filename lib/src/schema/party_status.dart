@@ -19,10 +19,10 @@ class PartyStatus extends Equatable{
     final String? id;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // String
@@ -36,8 +36,8 @@ class PartyStatus extends Equatable{
         this.createdTxStamp,
         this.id,
         this.changeByUserLogin,
-        this.cats,
         this.party,
+        this.cats,
         this.proto,
         this.format, });
     factory PartyStatus.fromJson(Map<String, dynamic> json) => _$PartyStatusFromJson(json);

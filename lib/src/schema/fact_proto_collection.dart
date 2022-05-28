@@ -9,10 +9,13 @@ class FactProtoCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_FactProtoList
+    final FactProtoCollection? filter;
     FactProtoCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory FactProtoCollection.fromJson(Map<String, dynamic> json) => _$FactProtoCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoCollectionToJson(this);
 }

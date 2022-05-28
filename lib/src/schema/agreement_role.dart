@@ -15,6 +15,8 @@ class AgreementRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_AgreementFlatData
@@ -23,8 +25,6 @@ class AgreementRole extends Equatable{
     final Party? party;
     // String
     final String? format;
-    // String
-    final String? proto;
     AgreementRole({
         this.agreementId,
         this.partyId,
@@ -32,11 +32,11 @@ class AgreementRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.proto,
         this.cats,
         this.agreement,
         this.party,
-        this.format,
-        this.proto, });
+        this.format, });
     factory AgreementRole.fromJson(Map<String, dynamic> json) => _$AgreementRoleFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementRoleToJson(this);
     @override

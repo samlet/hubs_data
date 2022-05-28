@@ -23,16 +23,16 @@ class ReturnItemBilling extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? returnHeader;
-    // String
-    final String? format;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // domain_InvoiceFlatData
     final Invoice? invoice;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? returnHeader;
     ReturnItemBilling({
         this.returnId,
         this.returnItemSeqId,
@@ -44,11 +44,11 @@ class ReturnItemBilling extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.returnHeader,
-        this.format,
         this.proto,
+        this.format,
+        this.invoice,
         this.cats,
-        this.invoice, });
+        this.returnHeader, });
     factory ReturnItemBilling.fromJson(Map<String, dynamic> json) => _$ReturnItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemBillingToJson(this);
     @override

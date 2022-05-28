@@ -9,10 +9,13 @@ class ReturnHeaderCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_ReturnHeaderList
+    final ReturnHeaderCollection? filter;
     ReturnHeaderCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory ReturnHeaderCollection.fromJson(Map<String, dynamic> json) => _$ReturnHeaderCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnHeaderCollectionToJson(this);
 }

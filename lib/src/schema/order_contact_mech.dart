@@ -21,10 +21,10 @@ class OrderContactMech extends Equatable{
     final String? proto;
     // String
     final String? format;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     OrderContactMech({
         this.orderId,
         this.contactMechPurposeTypeId,
@@ -35,8 +35,8 @@ class OrderContactMech extends Equatable{
         this.cats,
         this.proto,
         this.format,
-        this.orderHeader,
-        this.contactMech, });
+        this.contactMech,
+        this.orderHeader, });
     factory OrderContactMech.fromJson(Map<String, dynamic> json) => _$OrderContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$OrderContactMechToJson(this);
     @override

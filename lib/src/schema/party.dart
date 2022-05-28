@@ -33,50 +33,50 @@ class Party extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // party_CorporationProto
-    final PartyWithCorporation? asCorporation;
-    // domain_PartyRelationshipList
-    final PartyRelationshipCollection? fromPartyRelationships;
-    // domain_PartyStatusList
-    final PartyStatusCollection? partyStatuses;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_PartyContactMechList
-    final PartyContactMechCollection? partyContactMeches;
-    // domain_SupplierProductFeatureList
-    final SupplierProductFeatureCollection? supplierProductFeatures;
-    // party_PartyGroupProto
-    final PartyWithPartyGroup? asPartyGroup;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // party_SupplierProto
-    final PartyWithSupplier? asSupplier;
-    // domain_SupplierProductList
-    final SupplierProductCollection? supplierProducts;
-    // String
-    final String? format;
-    // party_PersonProto
-    final PartyWithPerson? asPerson;
-    // domain_PartyContactMechPurposeList
-    final PartyContactMechPurposeCollection? partyContactMechPurposes;
-    // domain_PartyGeoPointList
-    final PartyGeoPointCollection? partyGeoPoints;
-    // domain_AgreementRoleList
-    final AgreementRoleCollection? agreementRoles;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_PartyRoleList
-    final PartyRoleCollection? partyRoles;
     // domain_PartyNoteList
     final PartyNoteCollection? partyNotes;
     // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_AgreementRoleList
+    final AgreementRoleCollection? agreementRoles;
+    // party_PartyGroupProto
+    final PartyWithPartyGroup? asPartyGroup;
+    // String
+    final String? format;
+    // domain_SupplierProductFeatureList
+    final SupplierProductFeatureCollection? supplierProductFeatures;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_PartyContactMechPurposeList
+    final PartyContactMechPurposeCollection? partyContactMechPurposes;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // party_SupplierProto
+    final PartyWithSupplier? asSupplier;
+    // party_CorporationProto
+    final PartyWithCorporation? asCorporation;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_PartyStatusList
+    final PartyStatusCollection? partyStatuses;
+    // domain_SupplierProductList
+    final SupplierProductCollection? supplierProducts;
+    // domain_PartyRoleList
+    final PartyRoleCollection? partyRoles;
+    // domain_PartyGeoPointList
+    final PartyGeoPointCollection? partyGeoPoints;
+    // domain_PartyRelationshipList
+    final PartyRelationshipCollection? fromPartyRelationships;
+    // domain_PartyContactMechList
+    final PartyContactMechCollection? partyContactMeches;
+    // party_PersonProto
+    final PartyWithPerson? asPerson;
     Party({
         this.partyId,
         this.partyTypeId,
@@ -93,28 +93,28 @@ class Party extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.asCorporation,
-        this.fromPartyRelationships,
-        this.partyStatuses,
-        this.lastmodifiedbyuserlogin,
-        this.partyContactMeches,
-        this.supplierProductFeatures,
-        this.asPartyGroup,
-        this.type,
-        this.asSupplier,
-        this.supplierProducts,
-        this.format,
-        this.asPerson,
-        this.partyContactMechPurposes,
-        this.partyGeoPoints,
-        this.agreementRoles,
-        this.contactMech,
-        this.proto,
-        this.cats,
-        this.partyRoles,
         this.partyNotes,
         this.createdbyuserlogin,
-        this.subview, });
+        this.lastmodifiedbyuserlogin,
+        this.subview,
+        this.agreementRoles,
+        this.asPartyGroup,
+        this.format,
+        this.supplierProductFeatures,
+        this.type,
+        this.partyContactMechPurposes,
+        this.contactMech,
+        this.asSupplier,
+        this.asCorporation,
+        this.cats,
+        this.proto,
+        this.partyStatuses,
+        this.supplierProducts,
+        this.partyRoles,
+        this.partyGeoPoints,
+        this.fromPartyRelationships,
+        this.partyContactMeches,
+        this.asPerson, });
     factory Party.fromJson(Map<String, dynamic> json) => _$PartyFromJson(json);
     Map<String, dynamic> toJson() => _$PartyToJson(this);
     @override

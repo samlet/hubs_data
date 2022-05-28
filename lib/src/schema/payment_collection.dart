@@ -9,10 +9,13 @@ class PaymentCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
+    // domain_PaymentList
+    final PaymentCollection? filter;
     PaymentCollection({
         this.values,
         this.nextPageToken,
-        this.regionId, });
+        this.regionId,
+        this.filter, });
     factory PaymentCollection.fromJson(Map<String, dynamic> json) => _$PaymentCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentCollectionToJson(this);
 }

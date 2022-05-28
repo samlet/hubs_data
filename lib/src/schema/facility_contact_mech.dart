@@ -22,15 +22,15 @@ class FacilityContactMech extends Equatable{
     // String
     final String? id;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // domain_FacilityFlatData
     final Facility? facility;
+    // String
+    final String? proto;
     FacilityContactMech({
         this.facilityId,
         this.contactMechId,
@@ -41,11 +41,11 @@ class FacilityContactMech extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.cats,
         this.format,
+        this.cats,
         this.contactMech,
-        this.facility, });
+        this.facility,
+        this.proto, });
     factory FacilityContactMech.fromJson(Map<String, dynamic> json) => _$FacilityContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityContactMechToJson(this);
     @override

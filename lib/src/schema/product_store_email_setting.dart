@@ -27,12 +27,12 @@ class ProductStoreEmailSetting extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
     ProductStoreEmailSetting({
@@ -48,9 +48,9 @@ class ProductStoreEmailSetting extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
         this.productStore,
         this.proto,
-        this.cats,
         this.format, });
     factory ProductStoreEmailSetting.fromJson(Map<String, dynamic> json) => _$ProductStoreEmailSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreEmailSettingToJson(this);

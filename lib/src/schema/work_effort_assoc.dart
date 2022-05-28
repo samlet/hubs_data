@@ -21,16 +21,16 @@ class WorkEffortAssoc extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // domain_WorkEffortFlatData
     final WorkEffort? toWorkEffort;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_WorkEffortFlatData
     final WorkEffort? fromWorkEffort;
+    // String
+    final String? proto;
     WorkEffortAssoc({
         this.workEffortIdFrom,
         this.workEffortIdTo,
@@ -41,11 +41,11 @@ class WorkEffortAssoc extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.format,
         this.toWorkEffort,
+        this.format,
         this.cats,
-        this.fromWorkEffort, });
+        this.fromWorkEffort,
+        this.proto, });
     factory WorkEffortAssoc.fromJson(Map<String, dynamic> json) => _$WorkEffortAssocFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortAssocToJson(this);
     @override

@@ -25,8 +25,6 @@ class NoteData extends Equatable{
     final String? moreInfoItemName;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? format;
     // proto_FieldCats
@@ -35,6 +33,8 @@ class NoteData extends Equatable{
     final String? proto;
     // domain_PartyFlatData
     final Party? noteparty;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     NoteData({
         this.noteId,
         this.noteName,
@@ -47,11 +47,11 @@ class NoteData extends Equatable{
         this.moreInfoItemId,
         this.moreInfoItemName,
         this.tenantId,
-        this.subview,
         this.format,
         this.cats,
         this.proto,
-        this.noteparty, });
+        this.noteparty,
+        this.subview, });
     factory NoteData.fromJson(Map<String, dynamic> json) => _$NoteDataFromJson(json);
     Map<String, dynamic> toJson() => _$NoteDataToJson(this);
     @override
