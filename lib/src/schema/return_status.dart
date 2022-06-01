@@ -27,6 +27,8 @@ class ReturnStatus extends Equatable{
     final FieldCatsValue? cats;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
     // String
@@ -44,6 +46,7 @@ class ReturnStatus extends Equatable{
         this.changeByUserLogin,
         this.cats,
         this.format,
+        this.model,
         this.returnHeader,
         this.proto, });
     factory ReturnStatus.fromJson(Map<String, dynamic> json) => _$ReturnStatusFromJson(json);

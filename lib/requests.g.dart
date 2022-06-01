@@ -298,6 +298,56 @@ Map<String, dynamic> _$DecimalMapValuesEntryToJson(
   return val;
 }
 
+FixedAssetGeoPointData _$FixedAssetGeoPointDataFromJson(
+        Map<String, dynamic> json) =>
+    FixedAssetGeoPointData(
+      fixedAssetId: json['fixedAssetId'] as String?,
+      geoPointId: json['geoPointId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$FixedAssetGeoPointDataToJson(
+    FixedAssetGeoPointData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('geoPointId', instance.geoPointId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
 Strings _$StringsFromJson(Map<String, dynamic> json) => Strings(
       value:
           (json['value'] as List<dynamic>?)?.map((e) => e as String).toList(),

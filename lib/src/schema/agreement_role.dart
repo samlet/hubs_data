@@ -19,12 +19,14 @@ class AgreementRole extends Equatable{
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_AgreementFlatData
-    final Agreement? agreement;
-    // domain_PartyFlatData
-    final Party? party;
     // String
     final String? format;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_AgreementFlatData
+    final Agreement? agreement;
+    // facade_ModelEntity
+    final ModelEntity? model;
     AgreementRole({
         this.agreementId,
         this.partyId,
@@ -34,9 +36,10 @@ class AgreementRole extends Equatable{
         this.id,
         this.proto,
         this.cats,
-        this.agreement,
+        this.format,
         this.party,
-        this.format, });
+        this.agreement,
+        this.model, });
     factory AgreementRole.fromJson(Map<String, dynamic> json) => _$AgreementRoleFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementRoleToJson(this);
     @override

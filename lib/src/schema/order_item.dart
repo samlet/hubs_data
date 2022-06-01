@@ -103,24 +103,26 @@ class OrderItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
     // domain_InventoryItemFlatData
     final InventoryItem? fromInventoryItem;
     // domain_UserLoginFlatData
     final UserLogin? dontcancelsetuserlogin;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // String
-    final String? format;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_ShoppingListFlatData
     final ShoppingList? addSuggestionsToShoppingList;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // String
+    final String? proto;
     OrderItem({
         this.orderId,
         this.orderItemSeqId,
@@ -172,15 +174,16 @@ class OrderItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.product,
+        this.model,
+        this.changeByUserLogin,
         this.fromInventoryItem,
         this.dontcancelsetuserlogin,
-        this.orderHeader,
-        this.format,
+        this.product,
         this.addSuggestionsToShoppingList,
-        this.proto,
+        this.format,
         this.cats,
-        this.changeByUserLogin, });
+        this.orderHeader,
+        this.proto, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);
     @override

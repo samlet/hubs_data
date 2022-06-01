@@ -113,28 +113,30 @@ class WorkEffort extends Equatable{
     final int? sequenceNum;
     // String
     final String? tenantId;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_WorkEffortFlatData
     final WorkEffort? parentWorkEffort;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_WorkEffortPartyAssignmentList
-    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
+    // String
+    final String? format;
+    // domain_NoteDataData
+    final NoteData? noteData;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
     // domain_FacilityFlatData
     final Facility? facility;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_WorkEffortAssocList
-    final WorkEffortAssocCollection? fromWorkEffortAssocs;
-    // domain_NoteDataData
-    final NoteData? noteData;
     // String
     final String? proto;
     // domain_WorkEffortAssocList
+    final WorkEffortAssocCollection? fromWorkEffortAssocs;
+    // domain_WorkEffortAssocList
     final WorkEffortAssocCollection? toWorkEffortAssocs;
-    // String
-    final String? format;
+    // domain_WorkEffortPartyAssignmentList
+    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
     WorkEffort({
         this.workEffortId,
         this.workEffortTypeId,
@@ -191,17 +193,18 @@ class WorkEffort extends Equatable{
         this.createdTxStamp,
         this.sequenceNum,
         this.tenantId,
+        this.model,
         this.parentWorkEffort,
         this.subview,
-        this.workEffortPartyAssignments,
+        this.format,
+        this.noteData,
         this.fixedAsset,
         this.facility,
         this.cats,
-        this.fromWorkEffortAssocs,
-        this.noteData,
         this.proto,
+        this.fromWorkEffortAssocs,
         this.toWorkEffortAssocs,
-        this.format, });
+        this.workEffortPartyAssignments, });
     factory WorkEffort.fromJson(Map<String, dynamic> json) => _$WorkEffortFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortToJson(this);
     @override

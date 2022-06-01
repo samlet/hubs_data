@@ -15,16 +15,18 @@ class ProductStoreGroupRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
-    // domain_PartyFlatData
-    final Party? party;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // domain_PartyFlatData
+    final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductStoreGroupRole({
         this.productStoreGroupId,
         this.partyId,
@@ -32,11 +34,12 @@ class ProductStoreGroupRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.format,
+        this.model,
         this.productStoreGroup,
+        this.proto,
+        this.format,
         this.party,
-        this.proto, });
+        this.cats, });
     factory ProductStoreGroupRole.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupRoleFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupRoleToJson(this);
     @override

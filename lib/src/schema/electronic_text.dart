@@ -13,24 +13,27 @@ class ElectronicText extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ElectronicText({
         this.dataResourceId,
         this.textData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.dataResource,
+        this.cats,
         this.format,
         this.proto,
-        this.dataResource,
-        this.cats, });
+        this.model, });
     factory ElectronicText.fromJson(Map<String, dynamic> json) => _$ElectronicTextFromJson(json);
     Map<String, dynamic> toJson() => _$ElectronicTextToJson(this);
     @override

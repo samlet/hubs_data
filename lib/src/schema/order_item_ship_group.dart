@@ -49,28 +49,30 @@ class OrderItemShipGroup extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_AgreementFlatData
-    final Agreement? supplierAgreement;
     // domain_PartyFlatData
-    final Party? vendorParty;
-    // String
-    final String? proto;
+    final Party? carrierParty;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // domain_PartyFlatData
-    final Party? carrierParty;
-    // String
-    final String? format;
     // domain_ContactMechFlatData
     final ContactMech? telecomContactMech;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_PartyFlatData
     final Party? supplierParty;
+    // String
+    final String? format;
+    // domain_AgreementFlatData
+    final Agreement? supplierAgreement;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? vendorParty;
+    // domain_FacilityFlatData
+    final Facility? facility;
     OrderItemShipGroup({
         this.orderId,
         this.shipGroupSeqId,
@@ -95,17 +97,18 @@ class OrderItemShipGroup extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.facility,
-        this.supplierAgreement,
-        this.vendorParty,
-        this.proto,
+        this.carrierParty,
         this.orderHeader,
         this.contactMech,
-        this.carrierParty,
-        this.format,
         this.telecomContactMech,
         this.cats,
-        this.supplierParty, });
+        this.proto,
+        this.supplierParty,
+        this.format,
+        this.supplierAgreement,
+        this.model,
+        this.vendorParty,
+        this.facility, });
     factory OrderItemShipGroup.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupToJson(this);
     @override

@@ -19,16 +19,18 @@ class PartyContactMechPurpose extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
-    // String
-    final String? proto;
     // domain_PartyFlatData
     final Party? party;
+    // String
+    final String? proto;
     PartyContactMechPurpose({
         this.partyId,
         this.contactMechId,
@@ -38,11 +40,12 @@ class PartyContactMechPurpose extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.contactMech,
+        this.cats,
+        this.model,
         this.format,
-        this.proto,
-        this.party, });
+        this.party,
+        this.proto, });
     factory PartyContactMechPurpose.fromJson(Map<String, dynamic> json) => _$PartyContactMechPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$PartyContactMechPurposeToJson(this);
     @override

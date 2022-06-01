@@ -35,20 +35,22 @@ class ItemIssuance extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? issuedByUserLogin;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ItemIssuance({
         this.itemIssuanceId,
         this.orderId,
@@ -66,13 +68,14 @@ class ItemIssuance extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.issuedByUserLogin,
-        this.format,
         this.proto,
-        this.shipment,
         this.inventoryItem,
-        this.orderHeader, });
+        this.orderHeader,
+        this.shipment,
+        this.cats,
+        this.format,
+        this.model, });
     factory ItemIssuance.fromJson(Map<String, dynamic> json) => _$ItemIssuanceFromJson(json);
     Map<String, dynamic> toJson() => _$ItemIssuanceToJson(this);
     @override

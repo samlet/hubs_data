@@ -42,13 +42,15 @@ class ShipmentPackageRouteSeg extends Equatable{
     // String
     final String? id;
     // String
-    final String? proto;
+    final String? format;
     // domain_ShipmentFlatData
     final Shipment? shipment;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     ShipmentPackageRouteSeg({
         this.shipmentId,
         this.shipmentPackageSeqId,
@@ -69,10 +71,11 @@ class ShipmentPackageRouteSeg extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.shipment,
         this.format,
-        this.cats, });
+        this.shipment,
+        this.cats,
+        this.model,
+        this.proto, });
     factory ShipmentPackageRouteSeg.fromJson(Map<String, dynamic> json) => _$ShipmentPackageRouteSegFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageRouteSegToJson(this);
     @override

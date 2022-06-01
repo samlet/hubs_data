@@ -9,19 +9,19 @@ class OrderHeaderCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
-    // domain_OrderHeaderList
-    final OrderHeaderCollection? filter;
-    // List<order_SalesOrderProto>
-    final List<OrderWithSalesOrder>? matchSalesOrder;
     // List<order_PurchaseOrderProto>
     final List<OrderWithPurchaseOrder>? matchPurchaseOrder;
+    // List<order_SalesOrderProto>
+    final List<OrderWithSalesOrder>? matchSalesOrder;
+    // domain_OrderHeaderList
+    final OrderHeaderCollection? filter;
     OrderHeaderCollection({
         this.values,
         this.nextPageToken,
         this.regionId,
-        this.filter,
+        this.matchPurchaseOrder,
         this.matchSalesOrder,
-        this.matchPurchaseOrder, });
+        this.filter, });
     factory OrderHeaderCollection.fromJson(Map<String, dynamic> json) => _$OrderHeaderCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderCollectionToJson(this);
 }

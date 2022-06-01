@@ -9,16 +9,16 @@ class DataResourceWithImage {
     final DataResource? dataResource;
     // domain_ImageDataResourceData
     final ImageDataResource? imageDataResource;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     DataResourceWithImage({
         this.id,
         this.dataResource,
         this.imageDataResource,
-        this.subview,
-        this.proto, });
+        this.proto,
+        this.subview, });
     factory DataResourceWithImage.fromJson(Map<String, dynamic> json) => _$DataResourceWithImageFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceWithImageToJson(this);
 }

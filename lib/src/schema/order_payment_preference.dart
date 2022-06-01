@@ -58,13 +58,15 @@ class OrderPaymentPreference extends Equatable{
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     OrderPaymentPreference({
@@ -95,10 +97,11 @@ class OrderPaymentPreference extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
         this.proto,
-        this.cats,
+        this.model,
         this.orderHeader,
+        this.format,
+        this.cats,
         this.userLogin, });
     factory OrderPaymentPreference.fromJson(Map<String, dynamic> json) => _$OrderPaymentPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$OrderPaymentPreferenceToJson(this);

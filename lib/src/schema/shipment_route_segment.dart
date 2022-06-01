@@ -82,23 +82,25 @@ class ShipmentRouteSegment extends Equatable{
     // String
     final String? id;
     // domain_ContactMechFlatData
-    final ContactMech? originContactMech;
+    final ContactMech? destContactMech;
+    // domain_FacilityFlatData
+    final Facility? originFacility;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // String
-    final String? proto;
-    // String
     final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? originContactMech;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_FacilityFlatData
     final Facility? destFacility;
     // domain_PartyFlatData
     final Party? carrierParty;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
-    // domain_FacilityFlatData
-    final Facility? originFacility;
     ShipmentRouteSegment({
         this.shipmentId,
         this.shipmentRouteSegmentId,
@@ -139,15 +141,16 @@ class ShipmentRouteSegment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.originContactMech,
+        this.destContactMech,
+        this.originFacility,
         this.shipment,
-        this.proto,
         this.format,
+        this.originContactMech,
+        this.model,
         this.destFacility,
         this.carrierParty,
-        this.cats,
-        this.destContactMech,
-        this.originFacility, });
+        this.proto,
+        this.cats, });
     factory ShipmentRouteSegment.fromJson(Map<String, dynamic> json) => _$ShipmentRouteSegmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentRouteSegmentToJson(this);
     @override

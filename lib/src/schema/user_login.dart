@@ -41,22 +41,24 @@ class UserLogin extends Equatable{
     final String? partyId;
     // String
     final String? tenantId;
-    // domain_UserLoginPasswordHistoryList
-    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // domain_UserLoginPasswordHistoryList
+    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
+    // domain_UserPreferenceList
+    final UserPreferenceCollection? userPreferences;
+    // String
+    final String? format;
+    // domain_UserLoginSecurityGroupList
+    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
     // domain_PartyFlatData
     final Party? party;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_UserPreferenceList
-    final UserPreferenceCollection? userPreferences;
-    // domain_UserLoginSecurityGroupList
-    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     UserLogin({
         this.userLoginId,
         this.currentPassword,
@@ -77,14 +79,15 @@ class UserLogin extends Equatable{
         this.createdTxStamp,
         this.partyId,
         this.tenantId,
-        this.userLoginPasswordHistories,
-        this.cats,
-        this.format,
         this.proto,
+        this.userLoginPasswordHistories,
+        this.userPreferences,
+        this.format,
+        this.userLoginSecurityGroups,
         this.party,
         this.subview,
-        this.userPreferences,
-        this.userLoginSecurityGroups, });
+        this.cats,
+        this.model, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
     @override

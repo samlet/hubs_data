@@ -13,24 +13,27 @@ class VideoDataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // String
+    final String? proto;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
     VideoDataResource({
         this.dataResourceId,
         this.videoData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.cats,
+        this.model,
+        this.dataResource,
         this.proto,
-        this.dataResource, });
+        this.format,
+        this.cats, });
     factory VideoDataResource.fromJson(Map<String, dynamic> json) => _$VideoDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$VideoDataResourceToJson(this);
     @override

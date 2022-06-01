@@ -25,14 +25,16 @@ class ProductPromoCategory extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? proto;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? productCategory;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? productCategory;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     ProductPromoCategory({
@@ -47,10 +49,11 @@ class ProductPromoCategory extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.model,
         this.proto,
-        this.productCategory,
         this.format,
         this.cats,
+        this.productCategory,
         this.productPromo, });
     factory ProductPromoCategory.fromJson(Map<String, dynamic> json) => _$ProductPromoCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoCategoryToJson(this);

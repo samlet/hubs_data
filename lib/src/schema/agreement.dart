@@ -33,26 +33,28 @@ class Agreement extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_AgreementProductApplList
-    final AgreementProductApplCollection? agreementProductAppls;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_PartyFlatData
     final Party? fromParty;
-    // domain_ProductFlatData
-    final Product? product;
     // String
     final String? proto;
     // domain_AgreementTermList
     final AgreementTermCollection? agreementTerms;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_AgreementItemList
     final AgreementItemCollection? agreementItems;
+    // domain_PartyFlatData
+    final Party? toParty;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_AgreementProductApplList
+    final AgreementProductApplCollection? agreementProductAppls;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     Agreement({
         this.agreementId,
         this.productId,
@@ -69,16 +71,17 @@ class Agreement extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.agreementProductAppls,
-        this.subview,
         this.fromParty,
-        this.product,
         this.proto,
         this.agreementTerms,
+        this.model,
+        this.product,
+        this.agreementItems,
         this.toParty,
-        this.cats,
-        this.agreementItems, });
+        this.subview,
+        this.agreementProductAppls,
+        this.format,
+        this.cats, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
     @override

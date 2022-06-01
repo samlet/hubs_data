@@ -9,16 +9,16 @@ class DataResourceWithAudio {
     final DataResource? dataResource;
     // domain_AudioDataResourceData
     final AudioDataResource? audioDataResource;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     DataResourceWithAudio({
         this.id,
         this.dataResource,
         this.audioDataResource,
-        this.proto,
-        this.subview, });
+        this.subview,
+        this.proto, });
     factory DataResourceWithAudio.fromJson(Map<String, dynamic> json) => _$DataResourceWithAudioFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceWithAudioToJson(this);
 }

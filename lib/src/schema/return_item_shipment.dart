@@ -19,16 +19,18 @@ class ReturnItemShipment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? returnHeader;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? returnHeader;
     ReturnItemShipment({
         this.returnId,
         this.returnItemSeqId,
@@ -38,11 +40,12 @@ class ReturnItemShipment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.shipment,
         this.cats,
         this.proto,
-        this.returnHeader,
+        this.model,
         this.format,
-        this.shipment, });
+        this.returnHeader, });
     factory ReturnItemShipment.fromJson(Map<String, dynamic> json) => _$ReturnItemShipmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemShipmentToJson(this);
     @override

@@ -51,24 +51,26 @@ class ProductPrice extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? desc;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // String
     final String? proto;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
+    // String
+    final String? format;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
-    // String
-    final String? desc;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     ProductPrice({
         this.productId,
         this.productPriceTypeId,
@@ -94,15 +96,16 @@ class ProductPrice extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.product,
-        this.cats,
-        this.format,
-        this.lastmodifiedbyuserlogin,
-        this.proto,
         this.taxAuthorityParty,
-        this.createdbyuserlogin,
+        this.product,
+        this.desc,
+        this.model,
+        this.lastmodifiedbyuserlogin,
+        this.cats,
+        this.proto,
+        this.format,
         this.productStoreGroup,
-        this.desc, });
+        this.createdbyuserlogin, });
     factory ProductPrice.fromJson(Map<String, dynamic> json) => _$ProductPriceFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPriceToJson(this);
     @override

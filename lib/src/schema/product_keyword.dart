@@ -19,14 +19,16 @@ class ProductKeyword extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
+    final String? format;
     // domain_ProductFlatData
     final Product? product;
-    // String
-    final String? format;
     ProductKeyword({
         this.productId,
         this.keyword,
@@ -36,10 +38,11 @@ class ProductKeyword extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
+        this.model,
         this.proto,
-        this.product,
-        this.format, });
+        this.cats,
+        this.format,
+        this.product, });
     factory ProductKeyword.fromJson(Map<String, dynamic> json) => _$ProductKeywordFromJson(json);
     Map<String, dynamic> toJson() => _$ProductKeywordToJson(this);
     @override

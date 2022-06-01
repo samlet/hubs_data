@@ -47,28 +47,30 @@ class DataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // data_resource_ImageProto
-    final DataResourceWithImage? asImage;
+    // data_resource_VideoProto
+    final DataResourceWithVideo? asVideo;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_TypesEntityData
-    final TypesEntity? type;
+    // data_resource_ImageProto
+    final DataResourceWithImage? asImage;
     // String
     final String? format;
-    // data_resource_TextProto
-    final DataResourceWithText? asText;
-    // data_resource_AudioProto
-    final DataResourceWithAudio? asAudio;
-    // data_resource_VideoProto
-    final DataResourceWithVideo? asVideo;
     // String
     final String? proto;
+    // data_resource_TextProto
+    final DataResourceWithText? asText;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // data_resource_AudioProto
+    final DataResourceWithAudio? asAudio;
     DataResource({
         this.dataResourceId,
         this.dataResourceTypeId,
@@ -92,17 +94,18 @@ class DataResource extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.createdbyuserlogin,
-        this.cats,
-        this.asImage,
+        this.asVideo,
+        this.model,
         this.lastmodifiedbyuserlogin,
         this.subview,
-        this.type,
+        this.asImage,
         this.format,
+        this.proto,
         this.asText,
-        this.asAudio,
-        this.asVideo,
-        this.proto, });
+        this.cats,
+        this.createdbyuserlogin,
+        this.type,
+        this.asAudio, });
     factory DataResource.fromJson(Map<String, dynamic> json) => _$DataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceToJson(this);
     @override

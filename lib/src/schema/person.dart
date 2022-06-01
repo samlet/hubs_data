@@ -73,14 +73,16 @@ class Person extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_PartyFlatData
-    final Party? party;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // domain_PartyFlatData
+    final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     Person({
         this.partyId,
         this.salutation,
@@ -117,10 +119,11 @@ class Person extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.party,
+        this.model,
         this.proto,
-        this.cats,
-        this.format, });
+        this.format,
+        this.party,
+        this.cats, });
     factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
     Map<String, dynamic> toJson() => _$PersonToJson(this);
     @override

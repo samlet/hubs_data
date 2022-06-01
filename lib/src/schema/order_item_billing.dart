@@ -31,10 +31,12 @@ class OrderItemBilling extends Equatable{
     final Invoice? invoice;
     // String
     final String? format;
-    // String
-    final String? proto;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderItemBilling({
         this.orderId,
         this.orderItemSeqId,
@@ -50,8 +52,9 @@ class OrderItemBilling extends Equatable{
         this.cats,
         this.invoice,
         this.format,
+        this.orderHeader,
         this.proto,
-        this.orderHeader, });
+        this.model, });
     factory OrderItemBilling.fromJson(Map<String, dynamic> json) => _$OrderItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemBillingToJson(this);
     @override

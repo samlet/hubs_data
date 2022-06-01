@@ -55,34 +55,36 @@ class Content extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_ContentFlatData
+    final Content? instanceOfContent;
+    // String
+    final String? format;
     // domain_ContentFlatData
     final Content? ownerContent;
-    // domain_ContentAttributeList
-    final ContentAttributeCollection? contentAttributes;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
     // domain_ContentFlatData
-    final Content? instanceOfContent;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_ContentFlatData
     final Content? decoratorContent;
-    // String
-    final String? format;
-    // domain_ContentPurposeList
-    final ContentPurposeCollection? contentPurposes;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_ContentAssocList
     final ContentAssocCollection? toContentAssocs;
     // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_ContentPurposeList
+    final ContentPurposeCollection? contentPurposes;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_DataResourceFlatData
     final DataResource? templateDataResource;
+    // domain_ContentAttributeList
+    final ContentAttributeCollection? contentAttributes;
+    // facade_ModelEntity
+    final ModelEntity? model;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -110,20 +112,21 @@ class Content extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.ownerContent,
-        this.contentAttributes,
-        this.lastmodifiedbyuserlogin,
-        this.instanceOfContent,
-        this.dataResource,
-        this.createdbyuserlogin,
-        this.decoratorContent,
-        this.format,
-        this.contentPurposes,
         this.proto,
-        this.subview,
+        this.instanceOfContent,
+        this.format,
+        this.ownerContent,
+        this.lastmodifiedbyuserlogin,
+        this.decoratorContent,
         this.toContentAssocs,
-        this.templateDataResource, });
+        this.dataResource,
+        this.subview,
+        this.createdbyuserlogin,
+        this.contentPurposes,
+        this.cats,
+        this.templateDataResource,
+        this.contentAttributes,
+        this.model, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
     @override

@@ -26,9 +26,11 @@ class ProductConfigOption extends Equatable{
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     // domain_ProductConfigItemFlatData
     final ProductConfigItem? configItemProductConfigItem;
     ProductConfigOption({
@@ -43,8 +45,9 @@ class ProductConfigOption extends Equatable{
         this.createdTxStamp,
         this.id,
         this.cats,
-        this.format,
         this.proto,
+        this.model,
+        this.format,
         this.configItemProductConfigItem, });
     factory ProductConfigOption.fromJson(Map<String, dynamic> json) => _$ProductConfigOptionFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigOptionToJson(this);

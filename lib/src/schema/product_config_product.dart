@@ -19,16 +19,18 @@ class ProductConfigProduct extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_ProductConfigItemFlatData
-    final ProductConfigItem? configItemProductConfigItem;
     // domain_ProductFlatData
     final Product? productProduct;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // domain_ProductConfigItemFlatData
+    final ProductConfigItem? configItemProductConfigItem;
     ProductConfigProduct({
         this.configItemId,
         this.configOptionId,
@@ -38,11 +40,12 @@ class ProductConfigProduct extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.format,
-        this.configItemProductConfigItem,
         this.productProduct,
-        this.cats, });
+        this.format,
+        this.cats,
+        this.model,
+        this.proto,
+        this.configItemProductConfigItem, });
     factory ProductConfigProduct.fromJson(Map<String, dynamic> json) => _$ProductConfigProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigProductToJson(this);
     @override

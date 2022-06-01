@@ -25,14 +25,16 @@ class ProductStorePaymentSetting extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     ProductStorePaymentSetting({
         this.productStoreId,
         this.paymentMethodTypeId,
@@ -45,10 +47,11 @@ class ProductStorePaymentSetting extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
         this.cats,
-        this.productStore,
-        this.format, });
+        this.format,
+        this.model,
+        this.proto,
+        this.productStore, });
     factory ProductStorePaymentSetting.fromJson(Map<String, dynamic> json) => _$ProductStorePaymentSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePaymentSettingToJson(this);
     @override

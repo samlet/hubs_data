@@ -21,12 +21,14 @@ class ProductType {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductType({
         this.productTypeId,
         this.parentTypeId,
@@ -37,9 +39,10 @@ class ProductType {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
+        this.proto,
         this.format,
-        this.proto, });
+        this.model,
+        this.cats, });
     factory ProductType.fromJson(Map<String, dynamic> json) => _$ProductTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ProductTypeToJson(this);
 }

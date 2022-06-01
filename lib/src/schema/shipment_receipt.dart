@@ -41,22 +41,24 @@ class ShipmentReceipt extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // String
     final String? format;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
-    // domain_ProductFlatData
-    final Product? product;
     // String
     final String? proto;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ShipmentReceipt({
         this.receiptId,
         this.inventoryItemId,
@@ -77,14 +79,15 @@ class ShipmentReceipt extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.userLogin,
-        this.inventoryItem,
         this.format,
         this.orderHeader,
-        this.product,
         this.proto,
+        this.cats,
+        this.product,
+        this.inventoryItem,
         this.shipment,
-        this.cats, });
+        this.userLogin,
+        this.model, });
     factory ShipmentReceipt.fromJson(Map<String, dynamic> json) => _$ShipmentReceiptFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentReceiptToJson(this);
     @override

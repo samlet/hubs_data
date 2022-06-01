@@ -252,18 +252,16 @@ Map<String, dynamic> _$PartyContactMechCollectionToJson(
   return val;
 }
 
-ProductPromoCategoryCollection _$ProductPromoCategoryCollectionFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoCategoryCollection(
+OrderRoleCollection _$OrderRoleCollectionFromJson(Map<String, dynamic> json) =>
+    OrderRoleCollection(
       values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductPromoCategory.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => OrderRole.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
     );
 
-Map<String, dynamic> _$ProductPromoCategoryCollectionToJson(
-    ProductPromoCategoryCollection instance) {
+Map<String, dynamic> _$OrderRoleCollectionToJson(OrderRoleCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -278,16 +276,18 @@ Map<String, dynamic> _$ProductPromoCategoryCollectionToJson(
   return val;
 }
 
-OrderRoleCollection _$OrderRoleCollectionFromJson(Map<String, dynamic> json) =>
-    OrderRoleCollection(
+ProductPromoCategoryCollection _$ProductPromoCategoryCollectionFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoCategoryCollection(
       values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderRole.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ProductPromoCategory.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
     );
 
-Map<String, dynamic> _$OrderRoleCollectionToJson(OrderRoleCollection instance) {
+Map<String, dynamic> _$ProductPromoCategoryCollectionToJson(
+    ProductPromoCategoryCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -383,14 +383,17 @@ PartyGeoPoint _$PartyGeoPointFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      party: json['party'] == null
+      model: json['model'] == null
           ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PartyGeoPointToJson(PartyGeoPoint instance) {
@@ -409,10 +412,11 @@ Map<String, dynamic> _$PartyGeoPointToJson(PartyGeoPoint instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('party', instance.party?.toJson());
   return val;
 }
 
@@ -439,15 +443,18 @@ ProdCatalog _$ProdCatalogFromJson(Map<String, dynamic> json) => ProdCatalog(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       prodCatalogCategories: json['prodCatalogCategories'] == null
           ? null
           : ProdCatalogCategoryCollection.fromJson(
               json['prodCatalogCategories'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProdCatalogToJson(ProdCatalog instance) {
@@ -472,11 +479,12 @@ Map<String, dynamic> _$ProdCatalogToJson(ProdCatalog instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull(
       'prodCatalogCategories', instance.prodCatalogCategories?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -511,18 +519,11 @@ ItemIssuance _$ItemIssuanceFromJson(Map<String, dynamic> json) => ItemIssuance(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       issuedByUserLogin: json['issuedByUserLogin'] == null
           ? null
           : UserLogin.fromJson(
               json['issuedByUserLogin'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
-      shipment: json['shipment'] == null
-          ? null
-          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
       inventoryItem: json['inventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
@@ -530,6 +531,16 @@ ItemIssuance _$ItemIssuanceFromJson(Map<String, dynamic> json) => ItemIssuance(
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      shipment: json['shipment'] == null
+          ? null
+          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ItemIssuanceToJson(ItemIssuance instance) {
@@ -557,13 +568,14 @@ Map<String, dynamic> _$ItemIssuanceToJson(ItemIssuance instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('issuedByUserLogin', instance.issuedByUserLogin?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
-  writeNotNull('shipment', instance.shipment?.toJson());
   writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -597,14 +609,17 @@ AgreementTerm _$AgreementTermFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      agreement: json['agreement'] == null
-          ? null
-          : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      agreement: json['agreement'] == null
+          ? null
+          : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$AgreementTermToJson(AgreementTerm instance) {
@@ -632,10 +647,11 @@ Map<String, dynamic> _$AgreementTermToJson(AgreementTerm instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('agreement', instance.agreement?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('agreement', instance.agreement?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -787,17 +803,20 @@ WorkEffortAssoc _$WorkEffortAssocFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       toWorkEffort: json['toWorkEffort'] == null
           ? null
           : WorkEffort.fromJson(json['toWorkEffort'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       fromWorkEffort: json['fromWorkEffort'] == null
           ? null
           : WorkEffort.fromJson(json['fromWorkEffort'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$WorkEffortAssocToJson(WorkEffortAssoc instance) {
@@ -818,11 +837,12 @@ Map<String, dynamic> _$WorkEffortAssocToJson(WorkEffortAssoc instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('toWorkEffort', instance.toWorkEffort?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('fromWorkEffort', instance.fromWorkEffort?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -890,17 +910,20 @@ ShoppingListItem _$ShoppingListItemFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      product: json['product'] == null
+      model: json['model'] == null
           ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       shoppingList: json['shoppingList'] == null
           ? null
           : ShoppingList.fromJson(json['shoppingList'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ShoppingListItemToJson(ShoppingListItem instance) {
@@ -925,146 +948,11 @@ Map<String, dynamic> _$ShoppingListItemToJson(ShoppingListItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('product', instance.product?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('shoppingList', instance.shoppingList?.toJson());
-  return val;
-}
-
-ContentAttribute _$ContentAttributeFromJson(Map<String, dynamic> json) =>
-    ContentAttribute(
-      contentId: json['contentId'] as String?,
-      attrName: json['attrName'] as String?,
-      attrValue: json['attrValue'] as String?,
-      attrDescription: json['attrDescription'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
-      content: json['content'] == null
-          ? null
-          : Content.fromJson(json['content'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$ContentAttributeToJson(ContentAttribute instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contentId', instance.contentId);
-  writeNotNull('attrName', instance.attrName);
-  writeNotNull('attrValue', instance.attrValue);
-  writeNotNull('attrDescription', instance.attrDescription);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
+  writeNotNull('product', instance.product?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('format', instance.format);
-  writeNotNull('content', instance.content?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  return val;
-}
-
-ElectronicText _$ElectronicTextFromJson(Map<String, dynamic> json) =>
-    ElectronicText(
-      dataResourceId: json['dataResourceId'] as String?,
-      textData: json['textData'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      dataResource: json['dataResource'] == null
-          ? null
-          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$ElectronicTextToJson(ElectronicText instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('dataResourceId', instance.dataResourceId);
-  writeNotNull('textData', instance.textData);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('dataResource', instance.dataResource?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  return val;
-}
-
-ImageDataResource _$ImageDataResourceFromJson(Map<String, dynamic> json) =>
-    ImageDataResource(
-      dataResourceId: json['dataResourceId'] as String?,
-      imageData: json['imageData'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      dataResource: json['dataResource'] == null
-          ? null
-          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-    );
-
-Map<String, dynamic> _$ImageDataResourceToJson(ImageDataResource instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('dataResourceId', instance.dataResourceId);
-  writeNotNull('imageData', instance.imageData);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('dataResource', instance.dataResource?.toJson());
   writeNotNull('format', instance.format);
   return val;
 }
@@ -1083,17 +971,20 @@ OrderContactMech _$OrderContactMechFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      format: json['format'] as String?,
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderContactMechToJson(OrderContactMech instance) {
@@ -1111,11 +1002,108 @@ Map<String, dynamic> _$OrderContactMechToJson(OrderContactMech instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('format', instance.format);
   writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  return val;
+}
+
+ElectronicText _$ElectronicTextFromJson(Map<String, dynamic> json) =>
+    ElectronicText(
+      dataResourceId: json['dataResourceId'] as String?,
+      textData: json['textData'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      dataResource: json['dataResource'] == null
+          ? null
+          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ElectronicTextToJson(ElectronicText instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('dataResourceId', instance.dataResourceId);
+  writeNotNull('textData', instance.textData);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('dataResource', instance.dataResource?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  return val;
+}
+
+ImageDataResource _$ImageDataResourceFromJson(Map<String, dynamic> json) =>
+    ImageDataResource(
+      dataResourceId: json['dataResourceId'] as String?,
+      imageData: json['imageData'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      dataResource: json['dataResource'] == null
+          ? null
+          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ImageDataResourceToJson(ImageDataResource instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('dataResourceId', instance.dataResourceId);
+  writeNotNull('imageData', instance.imageData);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('dataResource', instance.dataResource?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -1139,18 +1127,21 @@ BillingAccountRole _$BillingAccountRoleFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
       billingAccount: json['billingAccount'] == null
           ? null
           : BillingAccount.fromJson(
               json['billingAccount'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$BillingAccountRoleToJson(BillingAccountRole instance) {
@@ -1170,11 +1161,64 @@ Map<String, dynamic> _$BillingAccountRoleToJson(BillingAccountRole instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('billingAccount', instance.billingAccount?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('party', instance.party?.toJson());
+  writeNotNull('billingAccount', instance.billingAccount?.toJson());
+  return val;
+}
+
+ContentAttribute _$ContentAttributeFromJson(Map<String, dynamic> json) =>
+    ContentAttribute(
+      contentId: json['contentId'] as String?,
+      attrName: json['attrName'] as String?,
+      attrValue: json['attrValue'] as String?,
+      attrDescription: json['attrDescription'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      content: json['content'] == null
+          ? null
+          : Content.fromJson(json['content'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+    );
+
+Map<String, dynamic> _$ContentAttributeToJson(ContentAttribute instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('contentId', instance.contentId);
+  writeNotNull('attrName', instance.attrName);
+  writeNotNull('attrValue', instance.attrValue);
+  writeNotNull('attrDescription', instance.attrDescription);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('content', instance.content?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -1214,27 +1258,30 @@ ShipmentReceipt _$ShipmentReceiptFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      userLogin: json['userLogin'] == null
-          ? null
-          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      inventoryItem: json['inventoryItem'] == null
-          ? null
-          : InventoryItem.fromJson(
-              json['inventoryItem'] as Map<String, dynamic>),
       format: json['format'] as String?,
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      shipment: json['shipment'] == null
-          ? null
-          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      inventoryItem: json['inventoryItem'] == null
+          ? null
+          : InventoryItem.fromJson(
+              json['inventoryItem'] as Map<String, dynamic>),
+      shipment: json['shipment'] == null
+          ? null
+          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+      userLogin: json['userLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentReceiptToJson(ShipmentReceipt instance) {
@@ -1265,14 +1312,15 @@ Map<String, dynamic> _$ShipmentReceiptToJson(ShipmentReceipt instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('shipment', instance.shipment?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
+  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -1332,14 +1380,14 @@ ContactMechCollection _$ContactMechCollectionFromJson(
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
-      matchPostalAddress: (json['matchPostalAddress'] as List<dynamic>?)
-          ?.map((e) =>
-              ContactMechWithPostalAddress.fromJson(e as Map<String, dynamic>))
-          .toList(),
       filter: json['filter'] == null
           ? null
           : ContactMechCollection.fromJson(
               json['filter'] as Map<String, dynamic>),
+      matchPostalAddress: (json['matchPostalAddress'] as List<dynamic>?)
+          ?.map((e) =>
+              ContactMechWithPostalAddress.fromJson(e as Map<String, dynamic>))
+          .toList(),
       matchEmailAddress: (json['matchEmailAddress'] as List<dynamic>?)
           ?.map((e) =>
               ContactMechWithEmailAddress.fromJson(e as Map<String, dynamic>))
@@ -1363,9 +1411,9 @@ Map<String, dynamic> _$ContactMechCollectionToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
+  writeNotNull('filter', instance.filter?.toJson());
   writeNotNull('matchPostalAddress',
       instance.matchPostalAddress?.map((e) => e.toJson()).toList());
-  writeNotNull('filter', instance.filter?.toJson());
   writeNotNull('matchEmailAddress',
       instance.matchEmailAddress?.map((e) => e.toJson()).toList());
   writeNotNull('matchTelecomNumber',
@@ -1542,15 +1590,18 @@ UserLoginSecurityGroup _$UserLoginSecurityGroupFromJson(
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       securityGroup: json['securityGroup'] == null
           ? null
           : SecurityGroup.fromJson(
               json['securityGroup'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserLoginSecurityGroupToJson(
@@ -1571,10 +1622,11 @@ Map<String, dynamic> _$UserLoginSecurityGroupToJson(
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
-  writeNotNull('securityGroup', instance.securityGroup?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('securityGroup', instance.securityGroup?.toJson());
   return val;
 }
 
@@ -1607,21 +1659,24 @@ InventoryTransfer _$InventoryTransferFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      facility: json['facility'] == null
-          ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       toFacility: json['toFacility'] == null
           ? null
           : Facility.fromJson(json['toFacility'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       inventoryItem: json['inventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
               json['inventoryItem'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      facility: json['facility'] == null
+          ? null
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$InventoryTransferToJson(InventoryTransfer instance) {
@@ -1649,12 +1704,13 @@ Map<String, dynamic> _$InventoryTransferToJson(InventoryTransfer instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('toFacility', instance.toFacility?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('facility', instance.facility?.toJson());
   return val;
 }
 
@@ -1743,47 +1799,50 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      contactMech: json['contactMech'] == null
-          ? null
-          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
-      invoiceItems: json['invoiceItems'] == null
-          ? null
-          : InvoiceItemCollection.fromJson(
-              json['invoiceItems'] as Map<String, dynamic>),
-      billingAccount: json['billingAccount'] == null
-          ? null
-          : BillingAccount.fromJson(
-              json['billingAccount'] as Map<String, dynamic>),
-      orderAdjustmentBillings: json['orderAdjustmentBillings'] == null
-          ? null
-          : OrderAdjustmentBillingCollection.fromJson(
-              json['orderAdjustmentBillings'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       invoiceStatuses: json['invoiceStatuses'] == null
           ? null
           : InvoiceStatusCollection.fromJson(
               json['invoiceStatuses'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      fromParty: json['fromParty'] == null
+          ? null
+          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      orderAdjustmentBillings: json['orderAdjustmentBillings'] == null
+          ? null
+          : OrderAdjustmentBillingCollection.fromJson(
+              json['orderAdjustmentBillings'] as Map<String, dynamic>),
       orderItemBillings: json['orderItemBillings'] == null
           ? null
           : OrderItemBillingCollection.fromJson(
               json['orderItemBillings'] as Map<String, dynamic>),
-      fromParty: json['fromParty'] == null
+      proto: json['proto'] as String?,
+      model: json['model'] == null
           ? null
-          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      contactMech: json['contactMech'] == null
+          ? null
+          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      billingAccount: json['billingAccount'] == null
+          ? null
+          : BillingAccount.fromJson(
+              json['billingAccount'] as Map<String, dynamic>),
+      invoiceItems: json['invoiceItems'] == null
+          ? null
+          : InvoiceItemCollection.fromJson(
+              json['invoiceItems'] as Map<String, dynamic>),
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$InvoiceToJson(Invoice instance) {
@@ -1814,20 +1873,21 @@ Map<String, dynamic> _$InvoiceToJson(Invoice instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('invoiceStatuses', instance.invoiceStatuses?.toJson());
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('fromParty', instance.fromParty?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('invoiceItems', instance.invoiceItems?.toJson());
-  writeNotNull('billingAccount', instance.billingAccount?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull(
       'orderAdjustmentBillings', instance.orderAdjustmentBillings?.toJson());
-  writeNotNull('party', instance.party?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('invoiceStatuses', instance.invoiceStatuses?.toJson());
   writeNotNull('orderItemBillings', instance.orderItemBillings?.toJson());
-  writeNotNull('fromParty', instance.fromParty?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('billingAccount', instance.billingAccount?.toJson());
+  writeNotNull('invoiceItems', instance.invoiceItems?.toJson());
+  writeNotNull('party', instance.party?.toJson());
   return val;
 }
 
@@ -1865,20 +1925,20 @@ PartyCollection _$PartyCollectionFromJson(Map<String, dynamic> json) =>
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
-      filter: json['filter'] == null
-          ? null
-          : PartyCollection.fromJson(json['filter'] as Map<String, dynamic>),
       matchSupplier: (json['matchSupplier'] as List<dynamic>?)
           ?.map((e) => PartyWithSupplier.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchPerson: (json['matchPerson'] as List<dynamic>?)
-          ?.map((e) => PartyWithPerson.fromJson(e as Map<String, dynamic>))
+      matchPartyGroup: (json['matchPartyGroup'] as List<dynamic>?)
+          ?.map((e) => PartyWithPartyGroup.fromJson(e as Map<String, dynamic>))
           .toList(),
+      filter: json['filter'] == null
+          ? null
+          : PartyCollection.fromJson(json['filter'] as Map<String, dynamic>),
       matchCorporation: (json['matchCorporation'] as List<dynamic>?)
           ?.map((e) => PartyWithCorporation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchPartyGroup: (json['matchPartyGroup'] as List<dynamic>?)
-          ?.map((e) => PartyWithPartyGroup.fromJson(e as Map<String, dynamic>))
+      matchPerson: (json['matchPerson'] as List<dynamic>?)
+          ?.map((e) => PartyWithPerson.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -1894,15 +1954,15 @@ Map<String, dynamic> _$PartyCollectionToJson(PartyCollection instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  writeNotNull('filter', instance.filter?.toJson());
   writeNotNull(
       'matchSupplier', instance.matchSupplier?.map((e) => e.toJson()).toList());
-  writeNotNull(
-      'matchPerson', instance.matchPerson?.map((e) => e.toJson()).toList());
-  writeNotNull('matchCorporation',
-      instance.matchCorporation?.map((e) => e.toJson()).toList());
   writeNotNull('matchPartyGroup',
       instance.matchPartyGroup?.map((e) => e.toJson()).toList());
+  writeNotNull('filter', instance.filter?.toJson());
+  writeNotNull('matchCorporation',
+      instance.matchCorporation?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'matchPerson', instance.matchPerson?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -1969,11 +2029,11 @@ OrderWithPurchaseOrder _$OrderWithPurchaseOrderFromJson(
           ? null
           : OrderHeaderNoteCollection.fromJson(
               json['orderHeaderNotes'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$OrderWithPurchaseOrderToJson(
@@ -1989,8 +2049,8 @@ Map<String, dynamic> _$OrderWithPurchaseOrderToJson(
   writeNotNull('id', instance.id);
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
   writeNotNull('orderHeaderNotes', instance.orderHeaderNotes?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -2004,11 +2064,11 @@ PartyWithCorporation _$PartyWithCorporationFromJson(
       partyGroup: json['partyGroup'] == null
           ? null
           : PartyGroup.fromJson(json['partyGroup'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$PartyWithCorporationToJson(
@@ -2024,8 +2084,8 @@ Map<String, dynamic> _$PartyWithCorporationToJson(
   writeNotNull('id', instance.id);
   writeNotNull('party', instance.party?.toJson());
   writeNotNull('partyGroup', instance.partyGroup?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -2055,6 +2115,53 @@ Map<String, dynamic> _$FixedAssetProductCollectionToJson(
   return val;
 }
 
+PartyRole _$PartyRoleFromJson(Map<String, dynamic> json) => PartyRole(
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$PartyRoleToJson(PartyRole instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  return val;
+}
+
 PartyGroup _$PartyGroupFromJson(Map<String, dynamic> json) => PartyGroup(
       partyId: json['partyId'] as String?,
       groupName: json['groupName'] as String?,
@@ -2077,14 +2184,17 @@ PartyGroup _$PartyGroupFromJson(Map<String, dynamic> json) => PartyGroup(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$PartyGroupToJson(PartyGroup instance) {
@@ -2108,53 +2218,11 @@ Map<String, dynamic> _$PartyGroupToJson(PartyGroup instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('party', instance.party?.toJson());
   writeNotNull('format', instance.format);
-  return val;
-}
-
-PartyRole _$PartyRoleFromJson(Map<String, dynamic> json) => PartyRole(
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      format: json['format'] as String?,
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$PartyRoleToJson(PartyRole instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('party', instance.party?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('party', instance.party?.toJson());
   return val;
 }
 
@@ -2170,6 +2238,32 @@ ExampleStatusCollection _$ExampleStatusCollectionFromJson(
 
 Map<String, dynamic> _$ExampleStatusCollectionToJson(
     ExampleStatusCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+AgreementRoleCollection _$AgreementRoleCollectionFromJson(
+        Map<String, dynamic> json) =>
+    AgreementRoleCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => AgreementRole.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AgreementRoleCollectionToJson(
+    AgreementRoleCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -2213,15 +2307,20 @@ UserLogin _$UserLoginFromJson(Map<String, dynamic> json) => UserLogin(
               json['createdTxStamp'] as Map<String, dynamic>),
       partyId: json['partyId'] as String?,
       tenantId: json['tenantId'] as String?,
+      proto: json['proto'] as String?,
       userLoginPasswordHistories: json['userLoginPasswordHistories'] == null
           ? null
           : UserLoginPasswordHistoryCollection.fromJson(
               json['userLoginPasswordHistories'] as Map<String, dynamic>),
-      cats: json['cats'] == null
+      userPreferences: json['userPreferences'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : UserPreferenceCollection.fromJson(
+              json['userPreferences'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      proto: json['proto'] as String?,
+      userLoginSecurityGroups: json['userLoginSecurityGroups'] == null
+          ? null
+          : UserLoginSecurityGroupCollection.fromJson(
+              json['userLoginSecurityGroups'] as Map<String, dynamic>),
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
@@ -2229,14 +2328,12 @@ UserLogin _$UserLoginFromJson(Map<String, dynamic> json) => UserLogin(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      userPreferences: json['userPreferences'] == null
+      cats: json['cats'] == null
           ? null
-          : UserPreferenceCollection.fromJson(
-              json['userPreferences'] as Map<String, dynamic>),
-      userLoginSecurityGroups: json['userLoginSecurityGroups'] == null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
           ? null
-          : UserLoginSecurityGroupCollection.fromJson(
-              json['userLoginSecurityGroups'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserLoginToJson(UserLogin instance) {
@@ -2267,42 +2364,17 @@ Map<String, dynamic> _$UserLoginToJson(UserLogin instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('partyId', instance.partyId);
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('proto', instance.proto);
   writeNotNull('userLoginPasswordHistories',
       instance.userLoginPasswordHistories?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('party', instance.party?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('userPreferences', instance.userPreferences?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull(
       'userLoginSecurityGroups', instance.userLoginSecurityGroups?.toJson());
-  return val;
-}
-
-AgreementRoleCollection _$AgreementRoleCollectionFromJson(
-        Map<String, dynamic> json) =>
-    AgreementRoleCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => AgreementRole.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$AgreementRoleCollectionToJson(
-    AgreementRoleCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -2332,19 +2404,18 @@ Map<String, dynamic> _$ProductConfigCollectionToJson(
   return val;
 }
 
-SecurityGroupPermissionCollection _$SecurityGroupPermissionCollectionFromJson(
+OrderItemPriceInfoCollection _$OrderItemPriceInfoCollectionFromJson(
         Map<String, dynamic> json) =>
-    SecurityGroupPermissionCollection(
+    OrderItemPriceInfoCollection(
       values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              SecurityGroupPermission.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => OrderItemPriceInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
     );
 
-Map<String, dynamic> _$SecurityGroupPermissionCollectionToJson(
-    SecurityGroupPermissionCollection instance) {
+Map<String, dynamic> _$OrderItemPriceInfoCollectionToJson(
+    OrderItemPriceInfoCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -2359,18 +2430,19 @@ Map<String, dynamic> _$SecurityGroupPermissionCollectionToJson(
   return val;
 }
 
-OrderItemPriceInfoCollection _$OrderItemPriceInfoCollectionFromJson(
+SecurityGroupPermissionCollection _$SecurityGroupPermissionCollectionFromJson(
         Map<String, dynamic> json) =>
-    OrderItemPriceInfoCollection(
+    SecurityGroupPermissionCollection(
       values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderItemPriceInfo.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              SecurityGroupPermission.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
     );
 
-Map<String, dynamic> _$OrderItemPriceInfoCollectionToJson(
-    OrderItemPriceInfoCollection instance) {
+Map<String, dynamic> _$SecurityGroupPermissionCollectionToJson(
+    SecurityGroupPermissionCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -2458,17 +2530,20 @@ OrderFactStatus _$OrderFactStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      orderFact: json['orderFact'] == null
+      model: json['model'] == null
           ? null
-          : OrderFact.fromJson(json['orderFact'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      orderFact: json['orderFact'] == null
+          ? null
+          : OrderFact.fromJson(json['orderFact'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$OrderFactStatusToJson(OrderFactStatus instance) {
@@ -2488,11 +2563,12 @@ Map<String, dynamic> _$OrderFactStatusToJson(OrderFactStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('orderFact', instance.orderFact?.toJson());
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('orderFact', instance.orderFact?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -2518,14 +2594,17 @@ OrderItemPriceInfo _$OrderItemPriceInfoFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
       proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderItemPriceInfoToJson(OrderItemPriceInfo instance) {
@@ -2548,10 +2627,11 @@ Map<String, dynamic> _$OrderItemPriceInfoToJson(OrderItemPriceInfo instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -2698,24 +2778,6 @@ ShipmentRouteSegment _$ShipmentRouteSegmentFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      originContactMech: json['originContactMech'] == null
-          ? null
-          : ContactMech.fromJson(
-              json['originContactMech'] as Map<String, dynamic>),
-      shipment: json['shipment'] == null
-          ? null
-          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
-      destFacility: json['destFacility'] == null
-          ? null
-          : Facility.fromJson(json['destFacility'] as Map<String, dynamic>),
-      carrierParty: json['carrierParty'] == null
-          ? null
-          : Party.fromJson(json['carrierParty'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       destContactMech: json['destContactMech'] == null
           ? null
           : ContactMech.fromJson(
@@ -2723,6 +2785,27 @@ ShipmentRouteSegment _$ShipmentRouteSegmentFromJson(
       originFacility: json['originFacility'] == null
           ? null
           : Facility.fromJson(json['originFacility'] as Map<String, dynamic>),
+      shipment: json['shipment'] == null
+          ? null
+          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      originContactMech: json['originContactMech'] == null
+          ? null
+          : ContactMech.fromJson(
+              json['originContactMech'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      destFacility: json['destFacility'] == null
+          ? null
+          : Facility.fromJson(json['destFacility'] as Map<String, dynamic>),
+      carrierParty: json['carrierParty'] == null
+          ? null
+          : Party.fromJson(json['carrierParty'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentRouteSegmentToJson(
@@ -2774,15 +2857,16 @@ Map<String, dynamic> _$ShipmentRouteSegmentToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('originContactMech', instance.originContactMech?.toJson());
-  writeNotNull('shipment', instance.shipment?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('format', instance.format);
-  writeNotNull('destFacility', instance.destFacility?.toJson());
-  writeNotNull('carrierParty', instance.carrierParty?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('destContactMech', instance.destContactMech?.toJson());
   writeNotNull('originFacility', instance.originFacility?.toJson());
+  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('originContactMech', instance.originContactMech?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('destFacility', instance.destFacility?.toJson());
+  writeNotNull('carrierParty', instance.carrierParty?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -2868,17 +2952,20 @@ ProductFacility _$ProductFacilityFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       facility: json['facility'] == null
           ? null
           : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      product: json['product'] == null
+      model: json['model'] == null
           ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductFacilityToJson(ProductFacility instance) {
@@ -2901,11 +2988,12 @@ Map<String, dynamic> _$ProductFacilityToJson(ProductFacility instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('product', instance.product?.toJson());
   return val;
 }
 
@@ -2930,14 +3018,17 @@ ProdCatalogCategory _$ProdCatalogCategoryFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      prodCatalog: json['prodCatalog'] == null
-          ? null
-          : ProdCatalog.fromJson(json['prodCatalog'] as Map<String, dynamic>),
       format: json['format'] as String?,
       productCategory: json['productCategory'] == null
           ? null
           : ProductCategory.fromJson(
               json['productCategory'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      prodCatalog: json['prodCatalog'] == null
+          ? null
+          : ProdCatalog.fromJson(json['prodCatalog'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
@@ -2962,9 +3053,10 @@ Map<String, dynamic> _$ProdCatalogCategoryToJson(ProdCatalogCategory instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('prodCatalog', instance.prodCatalog?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('productCategory', instance.productCategory?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('prodCatalog', instance.prodCatalog?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
   return val;
@@ -2984,19 +3076,22 @@ SecurityGroup _$SecurityGroupFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       securityGroupPermissions: json['securityGroupPermissions'] == null
           ? null
           : SecurityGroupPermissionCollection.fromJson(
               json['securityGroupPermissions'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SecurityGroupToJson(SecurityGroup instance) {
@@ -3014,12 +3109,13 @@ Map<String, dynamic> _$SecurityGroupToJson(SecurityGroup instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull(
       'securityGroupPermissions', instance.securityGroupPermissions?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -3048,8 +3144,11 @@ ProductConfigOption _$ProductConfigOptionFromJson(Map<String, dynamic> json) =>
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       configItemProductConfigItem: json['configItemProductConfigItem'] == null
           ? null
           : ProductConfigItem.fromJson(
@@ -3076,8 +3175,9 @@ Map<String, dynamic> _$ProductConfigOptionToJson(ProductConfigOption instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('configItemProductConfigItem',
       instance.configItemProductConfigItem?.toJson());
   return val;
@@ -3104,9 +3204,9 @@ TypesEntityStatus _$TypesEntityStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      userLogin: json['userLogin'] == null
+      model: json['model'] == null
           ? null
-          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       typesEntity: json['typesEntity'] == null
           ? null
@@ -3115,6 +3215,9 @@ TypesEntityStatus _$TypesEntityStatusFromJson(Map<String, dynamic> json) =>
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      userLogin: json['userLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TypesEntityStatusToJson(TypesEntityStatus instance) {
@@ -3134,11 +3237,12 @@ Map<String, dynamic> _$TypesEntityStatusToJson(TypesEntityStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('typesEntity', instance.typesEntity?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('userLogin', instance.userLogin?.toJson());
   return val;
 }
 
@@ -3175,17 +3279,20 @@ ProductContent _$ProductContentFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
       format: json['format'] as String?,
       content: json['content'] == null
           ? null
           : Content.fromJson(json['content'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductContentToJson(ProductContent instance) {
@@ -3212,11 +3319,12 @@ Map<String, dynamic> _$ProductContentToJson(ProductContent instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('content', instance.content?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -3260,17 +3368,20 @@ OrderHeaderNote _$OrderHeaderNoteFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
-      orderHeader: json['orderHeader'] == null
-          ? null
-          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       noteData: json['noteData'] == null
           ? null
           : NoteData.fromJson(json['noteData'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      orderHeader: json['orderHeader'] == null
+          ? null
+          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderHeaderNoteToJson(OrderHeaderNote instance) {
@@ -3288,11 +3399,12 @@ Map<String, dynamic> _$OrderHeaderNoteToJson(OrderHeaderNote instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('orderHeader', instance.orderHeader?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('noteData', instance.noteData?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('orderHeader', instance.orderHeader?.toJson());
   return val;
 }
 
@@ -3324,18 +3436,21 @@ ProductFeatureAppl _$ProductFeatureApplFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      productFeature: json['productFeature'] == null
-          ? null
-          : ProductFeature.fromJson(
-              json['productFeature'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      productFeature: json['productFeature'] == null
+          ? null
+          : ProductFeature.fromJson(
+              json['productFeature'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductFeatureApplToJson(ProductFeatureAppl instance) {
@@ -3358,11 +3473,12 @@ Map<String, dynamic> _$ProductFeatureApplToJson(ProductFeatureAppl instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('productFeature', instance.productFeature?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('product', instance.product?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('productFeature', instance.productFeature?.toJson());
   return val;
 }
 
@@ -3419,14 +3535,17 @@ OrderItemShipGroupAssoc _$OrderItemShipGroupAssocFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderItemShipGroupAssocToJson(
@@ -3447,10 +3566,11 @@ Map<String, dynamic> _$OrderItemShipGroupAssocToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -3508,17 +3628,20 @@ SupplierProduct _$SupplierProductFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SupplierProductToJson(SupplierProduct instance) {
@@ -3553,11 +3676,12 @@ Map<String, dynamic> _$SupplierProductToJson(SupplierProduct instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('party', instance.party?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('party', instance.party?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -3595,11 +3719,11 @@ ContactMechWithEmailAddress _$ContactMechWithEmailAddressFromJson(
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ContactMechWithEmailAddressToJson(
@@ -3614,8 +3738,8 @@ Map<String, dynamic> _$ContactMechWithEmailAddressToJson(
 
   writeNotNull('id', instance.id);
   writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -3722,15 +3846,18 @@ InvoiceStatus _$InvoiceStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       changeByUserLogin: json['changeByUserLogin'] == null
           ? null
           : UserLogin.fromJson(
               json['changeByUserLogin'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       invoice: json['invoice'] == null
           ? null
           : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
@@ -3752,10 +3879,11 @@ Map<String, dynamic> _$InvoiceStatusToJson(InvoiceStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('invoice', instance.invoice?.toJson());
   return val;
 }
@@ -3798,11 +3926,14 @@ ProductType _$ProductTypeFromJson(Map<String, dynamic> json) => ProductType(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ProductTypeToJson(ProductType instance) {
@@ -3823,9 +3954,10 @@ Map<String, dynamic> _$ProductTypeToJson(ProductType instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -3907,11 +4039,11 @@ DataResourceWithAudio _$DataResourceWithAudioFromJson(
           ? null
           : AudioDataResource.fromJson(
               json['audioDataResource'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$DataResourceWithAudioToJson(
@@ -3927,8 +4059,8 @@ Map<String, dynamic> _$DataResourceWithAudioToJson(
   writeNotNull('id', instance.id);
   writeNotNull('dataResource', instance.dataResource?.toJson());
   writeNotNull('audioDataResource', instance.audioDataResource?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -3962,10 +4094,13 @@ OrderItemBilling _$OrderItemBillingFromJson(Map<String, dynamic> json) =>
           ? null
           : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      proto: json['proto'] as String?,
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderItemBillingToJson(OrderItemBilling instance) {
@@ -3991,8 +4126,9 @@ Map<String, dynamic> _$OrderItemBillingToJson(OrderItemBilling instance) {
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('invoice', instance.invoice?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -4020,18 +4156,21 @@ InventoryItemStatus _$InventoryItemStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       inventoryItem: json['inventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
               json['inventoryItem'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$InventoryItemStatusToJson(InventoryItemStatus instance) {
@@ -4053,11 +4192,12 @@ Map<String, dynamic> _$InventoryItemStatusToJson(InventoryItemStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('userLogin', instance.userLogin?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -4119,6 +4259,13 @@ WebSite _$WebSiteFromJson(Map<String, dynamic> json) => WebSite(
       isDefault: json['isDefault'] as String?,
       displayMaintenancePage: json['displayMaintenancePage'] as String?,
       tenantId: json['tenantId'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
@@ -4127,10 +4274,6 @@ WebSite _$WebSiteFromJson(Map<String, dynamic> json) => WebSite(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$WebSiteToJson(WebSite instance) {
@@ -4162,11 +4305,12 @@ Map<String, dynamic> _$WebSiteToJson(WebSite instance) {
   writeNotNull('isDefault', instance.isDefault);
   writeNotNull('displayMaintenancePage', instance.displayMaintenancePage);
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -4303,6 +4447,9 @@ WorkEffort _$WorkEffortFromJson(Map<String, dynamic> json) => WorkEffort(
               json['createdTxStamp'] as Map<String, dynamic>),
       sequenceNum: json['sequenceNum'] as int?,
       tenantId: json['tenantId'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       parentWorkEffort: json['parentWorkEffort'] == null
           ? null
           : WorkEffort.fromJson(
@@ -4311,10 +4458,10 @@ WorkEffort _$WorkEffortFromJson(Map<String, dynamic> json) => WorkEffort(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      workEffortPartyAssignments: json['workEffortPartyAssignments'] == null
+      format: json['format'] as String?,
+      noteData: json['noteData'] == null
           ? null
-          : WorkEffortPartyAssignmentCollection.fromJson(
-              json['workEffortPartyAssignments'] as Map<String, dynamic>),
+          : NoteData.fromJson(json['noteData'] as Map<String, dynamic>),
       fixedAsset: json['fixedAsset'] == null
           ? null
           : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
@@ -4324,19 +4471,19 @@ WorkEffort _$WorkEffortFromJson(Map<String, dynamic> json) => WorkEffort(
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       fromWorkEffortAssocs: json['fromWorkEffortAssocs'] == null
           ? null
           : WorkEffortAssocCollection.fromJson(
               json['fromWorkEffortAssocs'] as Map<String, dynamic>),
-      noteData: json['noteData'] == null
-          ? null
-          : NoteData.fromJson(json['noteData'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       toWorkEffortAssocs: json['toWorkEffortAssocs'] == null
           ? null
           : WorkEffortAssocCollection.fromJson(
               json['toWorkEffortAssocs'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      workEffortPartyAssignments: json['workEffortPartyAssignments'] == null
+          ? null
+          : WorkEffortPartyAssignmentCollection.fromJson(
+              json['workEffortPartyAssignments'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$WorkEffortToJson(WorkEffort instance) {
@@ -4404,18 +4551,19 @@ Map<String, dynamic> _$WorkEffortToJson(WorkEffort instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('sequenceNum', instance.sequenceNum);
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('parentWorkEffort', instance.parentWorkEffort?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('workEffortPartyAssignments',
-      instance.workEffortPartyAssignments?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('noteData', instance.noteData?.toJson());
   writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
   writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('fromWorkEffortAssocs', instance.fromWorkEffortAssocs?.toJson());
-  writeNotNull('noteData', instance.noteData?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('fromWorkEffortAssocs', instance.fromWorkEffortAssocs?.toJson());
   writeNotNull('toWorkEffortAssocs', instance.toWorkEffortAssocs?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('workEffortPartyAssignments',
+      instance.workEffortPartyAssignments?.toJson());
   return val;
 }
 
@@ -4431,17 +4579,20 @@ PartyNote _$PartyNoteFromJson(Map<String, dynamic> json) => PartyNote(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      noteData: json['noteData'] == null
+      cats: json['cats'] == null
           ? null
-          : NoteData.fromJson(json['noteData'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      cats: json['cats'] == null
+      noteData: json['noteData'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : NoteData.fromJson(json['noteData'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$PartyNoteToJson(PartyNote instance) {
@@ -4458,11 +4609,12 @@ Map<String, dynamic> _$PartyNoteToJson(PartyNote instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('noteData', instance.noteData?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('party', instance.party?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('noteData', instance.noteData?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -4524,56 +4676,6 @@ Map<String, dynamic> _$ExampleCollectionToJson(ExampleCollection instance) {
   return val;
 }
 
-TelecomNumber _$TelecomNumberFromJson(Map<String, dynamic> json) =>
-    TelecomNumber(
-      contactMechId: json['contactMechId'] as String?,
-      countryCode: json['countryCode'] as String?,
-      areaCode: json['areaCode'] as String?,
-      contactNumber: json['contactNumber'] as String?,
-      askForName: json['askForName'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      contactMech: json['contactMech'] == null
-          ? null
-          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$TelecomNumberToJson(TelecomNumber instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contactMechId', instance.contactMechId);
-  writeNotNull('countryCode', instance.countryCode);
-  writeNotNull('areaCode', instance.areaCode);
-  writeNotNull('contactNumber', instance.contactNumber);
-  writeNotNull('askForName', instance.askForName);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('contactMech', instance.contactMech?.toJson());
-  return val;
-}
-
 SecurityGroupCollection _$SecurityGroupCollectionFromJson(
         Map<String, dynamic> json) =>
     SecurityGroupCollection(
@@ -4602,6 +4704,60 @@ Map<String, dynamic> _$SecurityGroupCollectionToJson(
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
   writeNotNull('filter', instance.filter?.toJson());
+  return val;
+}
+
+TelecomNumber _$TelecomNumberFromJson(Map<String, dynamic> json) =>
+    TelecomNumber(
+      contactMechId: json['contactMechId'] as String?,
+      countryCode: json['countryCode'] as String?,
+      areaCode: json['areaCode'] as String?,
+      contactNumber: json['contactNumber'] as String?,
+      askForName: json['askForName'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      contactMech: json['contactMech'] == null
+          ? null
+          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$TelecomNumberToJson(TelecomNumber instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('contactMechId', instance.contactMechId);
+  writeNotNull('countryCode', instance.countryCode);
+  writeNotNull('areaCode', instance.areaCode);
+  writeNotNull('contactNumber', instance.contactNumber);
+  writeNotNull('askForName', instance.askForName);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('contactMech', instance.contactMech?.toJson());
   return val;
 }
 
@@ -4650,14 +4806,17 @@ ShipmentItemBilling _$ShipmentItemBillingFromJson(Map<String, dynamic> json) =>
       shipment: json['shipment'] == null
           ? null
           : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       invoice: json['invoice'] == null
           ? null
           : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentItemBillingToJson(ShipmentItemBilling instance) {
@@ -4677,10 +4836,11 @@ Map<String, dynamic> _$ShipmentItemBillingToJson(ShipmentItemBilling instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('shipment', instance.shipment?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('invoice', instance.invoice?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -4733,17 +4893,20 @@ FacilityContactMech _$FacilityContactMechFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       facility: json['facility'] == null
           ? null
           : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FacilityContactMechToJson(FacilityContactMech instance) {
@@ -4764,11 +4927,12 @@ Map<String, dynamic> _$FacilityContactMechToJson(FacilityContactMech instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -4799,14 +4963,17 @@ ProductPromoAction _$ProductPromoActionFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ProductPromoActionToJson(ProductPromoAction instance) {
@@ -4833,10 +5000,11 @@ Map<String, dynamic> _$ProductPromoActionToJson(ProductPromoAction instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('productPromo', instance.productPromo?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -5214,25 +5382,28 @@ TypesEntity _$TypesEntityFromJson(Map<String, dynamic> json) => TypesEntity(
           ? null
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      cats: json['cats'] == null
+      asProductType: json['asProductType'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+          : ProductType.fromJson(json['asProductType'] as Map<String, dynamic>),
       typesEntityStatuses: json['typesEntityStatuses'] == null
           ? null
           : TypesEntityStatusCollection.fromJson(
               json['typesEntityStatuses'] as Map<String, dynamic>),
-      asProductType: json['asProductType'] == null
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
           ? null
-          : ProductType.fromJson(json['asProductType'] as Map<String, dynamic>),
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TypesEntityToJson(TypesEntity instance) {
@@ -5551,13 +5722,14 @@ Map<String, dynamic> _$TypesEntityToJson(TypesEntity instance) {
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('typesEntityStatuses', instance.typesEntityStatuses?.toJson());
   writeNotNull('asProductType', instance.asProductType?.toJson());
+  writeNotNull('typesEntityStatuses', instance.typesEntityStatuses?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -5590,36 +5762,39 @@ Agreement _$AgreementFromJson(Map<String, dynamic> json) => Agreement(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
-      agreementProductAppls: json['agreementProductAppls'] == null
-          ? null
-          : AgreementProductApplCollection.fromJson(
-              json['agreementProductAppls'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
       fromParty: json['fromParty'] == null
           ? null
           : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       agreementTerms: json['agreementTerms'] == null
           ? null
           : AgreementTermCollection.fromJson(
               json['agreementTerms'] as Map<String, dynamic>),
-      toParty: json['toParty'] == null
+      model: json['model'] == null
           ? null
-          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
-      cats: json['cats'] == null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      product: json['product'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
       agreementItems: json['agreementItems'] == null
           ? null
           : AgreementItemCollection.fromJson(
               json['agreementItems'] as Map<String, dynamic>),
+      toParty: json['toParty'] == null
+          ? null
+          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      agreementProductAppls: json['agreementProductAppls'] == null
+          ? null
+          : AgreementProductApplCollection.fromJson(
+              json['agreementProductAppls'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AgreementToJson(Agreement instance) {
@@ -5646,17 +5821,151 @@ Map<String, dynamic> _$AgreementToJson(Agreement instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
-  writeNotNull(
-      'agreementProductAppls', instance.agreementProductAppls?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('fromParty', instance.fromParty?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('agreementTerms', instance.agreementTerms?.toJson());
-  writeNotNull('toParty', instance.toParty?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('product', instance.product?.toJson());
   writeNotNull('agreementItems', instance.agreementItems?.toJson());
+  writeNotNull('toParty', instance.toParty?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull(
+      'agreementProductAppls', instance.agreementProductAppls?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  return val;
+}
+
+FixedAssetBlueprint _$FixedAssetBlueprintFromJson(Map<String, dynamic> json) =>
+    FixedAssetBlueprint(
+      id: json['id'] as String?,
+      startTs: json['startTs'] == null
+          ? null
+          : TimestampValue.fromJson(json['startTs'] as Map<String, dynamic>),
+      token: json['token'] == null
+          ? null
+          : ExtractedTokenValue.fromJson(json['token'] as Map<String, dynamic>),
+      entity: json['entity'] == null
+          ? null
+          : FixedAsset.fromJson(json['entity'] as Map<String, dynamic>),
+      response: (json['response'] as List<dynamic>?)
+          ?.map((e) => ResponseValue.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      updateFixedAssetProduct: json['updateFixedAssetProduct'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['updateFixedAssetProduct'] as Map<String, dynamic>),
+      updateFixedAssetMaint: json['updateFixedAssetMaint'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['updateFixedAssetMaint'] as Map<String, dynamic>),
+      updateFixedAssetAttribute: json['updateFixedAssetAttribute'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['updateFixedAssetAttribute'] as Map<String, dynamic>),
+      addFixedAssetAttribute: json['addFixedAssetAttribute'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetAttribute'] as Map<String, dynamic>),
+      removeFixedAssetMaint: json['removeFixedAssetMaint'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['removeFixedAssetMaint'] as Map<String, dynamic>),
+      modifyFixedAssetType: json['modifyFixedAssetType'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['modifyFixedAssetType'] as Map<String, dynamic>),
+      addFixedAssetProduct: json['addFixedAssetProduct'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetProduct'] as Map<String, dynamic>),
+      updateFixedAssetGeoPoint: json['updateFixedAssetGeoPoint'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['updateFixedAssetGeoPoint'] as Map<String, dynamic>),
+      addFixedAssetMaintList: json['addFixedAssetMaintList'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetMaintList'] as Map<String, dynamic>),
+      addFixedAssetMaint: json['addFixedAssetMaint'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetMaint'] as Map<String, dynamic>),
+      removeFixedAssetAttribute: json['removeFixedAssetAttribute'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['removeFixedAssetAttribute'] as Map<String, dynamic>),
+      addFixedAssetAttributeList: json['addFixedAssetAttributeList'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetAttributeList'] as Map<String, dynamic>),
+      addFixedAssetProductList: json['addFixedAssetProductList'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetProductList'] as Map<String, dynamic>),
+      addFixedAssetGeoPointList: json['addFixedAssetGeoPointList'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetGeoPointList'] as Map<String, dynamic>),
+      removeFixedAssetGeoPoint: json['removeFixedAssetGeoPoint'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['removeFixedAssetGeoPoint'] as Map<String, dynamic>),
+      addFixedAssetGeoPoint: json['addFixedAssetGeoPoint'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['addFixedAssetGeoPoint'] as Map<String, dynamic>),
+      removeFixedAssetProduct: json['removeFixedAssetProduct'] == null
+          ? null
+          : FixedAssetBlueprint.fromJson(
+              json['removeFixedAssetProduct'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$FixedAssetBlueprintToJson(FixedAssetBlueprint instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull('startTs', instance.startTs?.toJson());
+  writeNotNull('token', instance.token?.toJson());
+  writeNotNull('entity', instance.entity?.toJson());
+  writeNotNull('response', instance.response?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'updateFixedAssetProduct', instance.updateFixedAssetProduct?.toJson());
+  writeNotNull(
+      'updateFixedAssetMaint', instance.updateFixedAssetMaint?.toJson());
+  writeNotNull('updateFixedAssetAttribute',
+      instance.updateFixedAssetAttribute?.toJson());
+  writeNotNull(
+      'addFixedAssetAttribute', instance.addFixedAssetAttribute?.toJson());
+  writeNotNull(
+      'removeFixedAssetMaint', instance.removeFixedAssetMaint?.toJson());
+  writeNotNull('modifyFixedAssetType', instance.modifyFixedAssetType?.toJson());
+  writeNotNull('addFixedAssetProduct', instance.addFixedAssetProduct?.toJson());
+  writeNotNull(
+      'updateFixedAssetGeoPoint', instance.updateFixedAssetGeoPoint?.toJson());
+  writeNotNull(
+      'addFixedAssetMaintList', instance.addFixedAssetMaintList?.toJson());
+  writeNotNull('addFixedAssetMaint', instance.addFixedAssetMaint?.toJson());
+  writeNotNull('removeFixedAssetAttribute',
+      instance.removeFixedAssetAttribute?.toJson());
+  writeNotNull('addFixedAssetAttributeList',
+      instance.addFixedAssetAttributeList?.toJson());
+  writeNotNull(
+      'addFixedAssetProductList', instance.addFixedAssetProductList?.toJson());
+  writeNotNull('addFixedAssetGeoPointList',
+      instance.addFixedAssetGeoPointList?.toJson());
+  writeNotNull(
+      'removeFixedAssetGeoPoint', instance.removeFixedAssetGeoPoint?.toJson());
+  writeNotNull(
+      'addFixedAssetGeoPoint', instance.addFixedAssetGeoPoint?.toJson());
+  writeNotNull(
+      'removeFixedAssetProduct', instance.removeFixedAssetProduct?.toJson());
   return val;
 }
 
@@ -5702,14 +6011,17 @@ ProductKeyword _$ProductKeywordFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductKeywordToJson(ProductKeyword instance) {
@@ -5729,10 +6041,11 @@ Map<String, dynamic> _$ProductKeywordToJson(ProductKeyword instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('product', instance.product?.toJson());
   return val;
 }
 
@@ -5788,73 +6101,6 @@ OrderHeader _$OrderHeaderFromJson(Map<String, dynamic> json) => OrderHeader(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      orderStatuses: json['orderStatuses'] == null
-          ? null
-          : OrderStatusCollection.fromJson(
-              json['orderStatuses'] as Map<String, dynamic>),
-      orderItemShipGroupAssocs: json['orderItemShipGroupAssocs'] == null
-          ? null
-          : OrderItemShipGroupAssocCollection.fromJson(
-              json['orderItemShipGroupAssocs'] as Map<String, dynamic>),
-      orderPaymentPreferences: json['orderPaymentPreferences'] == null
-          ? null
-          : OrderPaymentPreferenceCollection.fromJson(
-              json['orderPaymentPreferences'] as Map<String, dynamic>),
-      orderContactMeches: json['orderContactMeches'] == null
-          ? null
-          : OrderContactMechCollection.fromJson(
-              json['orderContactMeches'] as Map<String, dynamic>),
-      asSalesOrder: json['asSalesOrder'] == null
-          ? null
-          : OrderWithSalesOrder.fromJson(
-              json['asSalesOrder'] as Map<String, dynamic>),
-      orderRoles: json['orderRoles'] == null
-          ? null
-          : OrderRoleCollection.fromJson(
-              json['orderRoles'] as Map<String, dynamic>),
-      orderAdjustments: json['orderAdjustments'] == null
-          ? null
-          : OrderAdjustmentCollection.fromJson(
-              json['orderAdjustments'] as Map<String, dynamic>),
-      orderItemShipGroups: json['orderItemShipGroups'] == null
-          ? null
-          : OrderItemShipGroupCollection.fromJson(
-              json['orderItemShipGroups'] as Map<String, dynamic>),
-      orderItems: json['orderItems'] == null
-          ? null
-          : OrderItemCollection.fromJson(
-              json['orderItems'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      createdByUserLogin: json['createdByUserLogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['createdByUserLogin'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      productStore: json['productStore'] == null
-          ? null
-          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      autoOrderShoppingList: json['autoOrderShoppingList'] == null
-          ? null
-          : ShoppingList.fromJson(
-              json['autoOrderShoppingList'] as Map<String, dynamic>),
-      orderHeaderNotes: json['orderHeaderNotes'] == null
-          ? null
-          : OrderHeaderNoteCollection.fromJson(
-              json['orderHeaderNotes'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      asPurchaseOrder: json['asPurchaseOrder'] == null
-          ? null
-          : OrderWithPurchaseOrder.fromJson(
-              json['asPurchaseOrder'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       originFacility: json['originFacility'] == null
           ? null
           : Facility.fromJson(json['originFacility'] as Map<String, dynamic>),
@@ -5862,13 +6108,83 @@ OrderHeader _$OrderHeaderFromJson(Map<String, dynamic> json) => OrderHeader(
           ? null
           : BillingAccount.fromJson(
               json['billingAccount'] as Map<String, dynamic>),
+      orderAdjustments: json['orderAdjustments'] == null
+          ? null
+          : OrderAdjustmentCollection.fromJson(
+              json['orderAdjustments'] as Map<String, dynamic>),
+      productStore: json['productStore'] == null
+          ? null
+          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
+      orderItemShipGroupAssocs: json['orderItemShipGroupAssocs'] == null
+          ? null
+          : OrderItemShipGroupAssocCollection.fromJson(
+              json['orderItemShipGroupAssocs'] as Map<String, dynamic>),
+      asPurchaseOrder: json['asPurchaseOrder'] == null
+          ? null
+          : OrderWithPurchaseOrder.fromJson(
+              json['asPurchaseOrder'] as Map<String, dynamic>),
       orderItemPriceInfos: json['orderItemPriceInfos'] == null
           ? null
           : OrderItemPriceInfoCollection.fromJson(
               json['orderItemPriceInfos'] as Map<String, dynamic>),
+      asSalesOrder: json['asSalesOrder'] == null
+          ? null
+          : OrderWithSalesOrder.fromJson(
+              json['asSalesOrder'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      orderItemShipGroups: json['orderItemShipGroups'] == null
+          ? null
+          : OrderItemShipGroupCollection.fromJson(
+              json['orderItemShipGroups'] as Map<String, dynamic>),
+      orderRoles: json['orderRoles'] == null
+          ? null
+          : OrderRoleCollection.fromJson(
+              json['orderRoles'] as Map<String, dynamic>),
+      orderPaymentPreferences: json['orderPaymentPreferences'] == null
+          ? null
+          : OrderPaymentPreferenceCollection.fromJson(
+              json['orderPaymentPreferences'] as Map<String, dynamic>),
       webSite: json['webSite'] == null
           ? null
           : WebSite.fromJson(json['webSite'] as Map<String, dynamic>),
+      autoOrderShoppingList: json['autoOrderShoppingList'] == null
+          ? null
+          : ShoppingList.fromJson(
+              json['autoOrderShoppingList'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['createdByUserLogin'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      orderContactMeches: json['orderContactMeches'] == null
+          ? null
+          : OrderContactMechCollection.fromJson(
+              json['orderContactMeches'] as Map<String, dynamic>),
+      orderStatuses: json['orderStatuses'] == null
+          ? null
+          : OrderStatusCollection.fromJson(
+              json['orderStatuses'] as Map<String, dynamic>),
+      orderHeaderNotes: json['orderHeaderNotes'] == null
+          ? null
+          : OrderHeaderNoteCollection.fromJson(
+              json['orderHeaderNotes'] as Map<String, dynamic>),
+      orderItems: json['orderItems'] == null
+          ? null
+          : OrderItemCollection.fromJson(
+              json['orderItems'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderHeaderToJson(OrderHeader instance) {
@@ -5913,32 +6229,33 @@ Map<String, dynamic> _$OrderHeaderToJson(OrderHeader instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('orderStatuses', instance.orderStatuses?.toJson());
-  writeNotNull(
-      'orderItemShipGroupAssocs', instance.orderItemShipGroupAssocs?.toJson());
-  writeNotNull(
-      'orderPaymentPreferences', instance.orderPaymentPreferences?.toJson());
-  writeNotNull('orderContactMeches', instance.orderContactMeches?.toJson());
-  writeNotNull('asSalesOrder', instance.asSalesOrder?.toJson());
-  writeNotNull('orderRoles', instance.orderRoles?.toJson());
-  writeNotNull('orderAdjustments', instance.orderAdjustments?.toJson());
-  writeNotNull('orderItemShipGroups', instance.orderItemShipGroups?.toJson());
-  writeNotNull('orderItems', instance.orderItems?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('productStore', instance.productStore?.toJson());
-  writeNotNull(
-      'autoOrderShoppingList', instance.autoOrderShoppingList?.toJson());
-  writeNotNull('orderHeaderNotes', instance.orderHeaderNotes?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('asPurchaseOrder', instance.asPurchaseOrder?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('originFacility', instance.originFacility?.toJson());
   writeNotNull('billingAccount', instance.billingAccount?.toJson());
+  writeNotNull('orderAdjustments', instance.orderAdjustments?.toJson());
+  writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull(
+      'orderItemShipGroupAssocs', instance.orderItemShipGroupAssocs?.toJson());
+  writeNotNull('asPurchaseOrder', instance.asPurchaseOrder?.toJson());
   writeNotNull('orderItemPriceInfos', instance.orderItemPriceInfos?.toJson());
+  writeNotNull('asSalesOrder', instance.asSalesOrder?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('orderItemShipGroups', instance.orderItemShipGroups?.toJson());
+  writeNotNull('orderRoles', instance.orderRoles?.toJson());
+  writeNotNull(
+      'orderPaymentPreferences', instance.orderPaymentPreferences?.toJson());
   writeNotNull('webSite', instance.webSite?.toJson());
+  writeNotNull(
+      'autoOrderShoppingList', instance.autoOrderShoppingList?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('orderContactMeches', instance.orderContactMeches?.toJson());
+  writeNotNull('orderStatuses', instance.orderStatuses?.toJson());
+  writeNotNull('orderHeaderNotes', instance.orderHeaderNotes?.toJson());
+  writeNotNull('orderItems', instance.orderItems?.toJson());
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -5988,14 +6305,17 @@ FixedAssetAttribute _$FixedAssetAttributeFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      fixedAsset: json['fixedAsset'] == null
-          ? null
-          : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
       format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      fixedAsset: json['fixedAsset'] == null
+          ? null
+          : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FixedAssetAttributeToJson(FixedAssetAttribute instance) {
@@ -6014,10 +6334,11 @@ Map<String, dynamic> _$FixedAssetAttributeToJson(FixedAssetAttribute instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -6034,20 +6355,10 @@ ContactMech _$ContactMechFromJson(Map<String, dynamic> json) => ContactMech(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      asEmailAddress: json['asEmailAddress'] == null
-          ? null
-          : ContactMechWithEmailAddress.fromJson(
-              json['asEmailAddress'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
       asTelecomNumber: json['asTelecomNumber'] == null
           ? null
           : ContactMechWithTelecomNumber.fromJson(
               json['asTelecomNumber'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
@@ -6056,8 +6367,21 @@ ContactMech _$ContactMechFromJson(Map<String, dynamic> json) => ContactMech(
           ? null
           : ContactMechWithPostalAddress.fromJson(
               json['asPostalAddress'] as Map<String, dynamic>),
+      asEmailAddress: json['asEmailAddress'] == null
+          ? null
+          : ContactMechWithEmailAddress.fromJson(
+              json['asEmailAddress'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ContactMechToJson(ContactMech instance) {
@@ -6075,14 +6399,15 @@ Map<String, dynamic> _$ContactMechToJson(ContactMech instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('asEmailAddress', instance.asEmailAddress?.toJson());
-  writeNotNull('type', instance.type?.toJson());
   writeNotNull('asTelecomNumber', instance.asTelecomNumber?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('asPostalAddress', instance.asPostalAddress?.toJson());
+  writeNotNull('asEmailAddress', instance.asEmailAddress?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -6102,18 +6427,21 @@ PartyStatus _$PartyStatusFromJson(Map<String, dynamic> json) => PartyStatus(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
       changeByUserLogin: json['changeByUserLogin'] == null
           ? null
           : UserLogin.fromJson(
               json['changeByUserLogin'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$PartyStatusToJson(PartyStatus instance) {
@@ -6132,11 +6460,12 @@ Map<String, dynamic> _$PartyStatusToJson(PartyStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
-  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -6161,56 +6490,6 @@ Map<String, dynamic> _$CurrencyValueToJson(CurrencyValue instance) {
   writeNotNull('value', instance.value);
   writeNotNull('floatValue', instance.floatValue);
   writeNotNull('decimal', instance.decimal);
-  return val;
-}
-
-UserPreference _$UserPreferenceFromJson(Map<String, dynamic> json) =>
-    UserPreference(
-      userLoginId: json['userLoginId'] as String?,
-      userPrefTypeId: json['userPrefTypeId'] as String?,
-      userPrefGroupTypeId: json['userPrefGroupTypeId'] as String?,
-      userPrefValue: json['userPrefValue'] as String?,
-      userPrefDataType: json['userPrefDataType'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      userLogin: json['userLogin'] == null
-          ? null
-          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-    );
-
-Map<String, dynamic> _$UserPreferenceToJson(UserPreference instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('userLoginId', instance.userLoginId);
-  writeNotNull('userPrefTypeId', instance.userPrefTypeId);
-  writeNotNull('userPrefGroupTypeId', instance.userPrefGroupTypeId);
-  writeNotNull('userPrefValue', instance.userPrefValue);
-  writeNotNull('userPrefDataType', instance.userPrefDataType);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -6245,6 +6524,60 @@ Map<String, dynamic> _$ProductStoreGroupCollectionToJson(
   return val;
 }
 
+UserPreference _$UserPreferenceFromJson(Map<String, dynamic> json) =>
+    UserPreference(
+      userLoginId: json['userLoginId'] as String?,
+      userPrefTypeId: json['userPrefTypeId'] as String?,
+      userPrefGroupTypeId: json['userPrefGroupTypeId'] as String?,
+      userPrefValue: json['userPrefValue'] as String?,
+      userPrefDataType: json['userPrefDataType'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      userLogin: json['userLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$UserPreferenceToJson(UserPreference instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('userLoginId', instance.userLoginId);
+  writeNotNull('userPrefTypeId', instance.userPrefTypeId);
+  writeNotNull('userPrefGroupTypeId', instance.userPrefGroupTypeId);
+  writeNotNull('userPrefValue', instance.userPrefValue);
+  writeNotNull('userPrefDataType', instance.userPrefDataType);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  return val;
+}
+
 ShipmentItem _$ShipmentItemFromJson(Map<String, dynamic> json) => ShipmentItem(
       shipmentId: json['shipmentId'] as String?,
       shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
@@ -6262,17 +6595,20 @@ ShipmentItem _$ShipmentItemFromJson(Map<String, dynamic> json) => ShipmentItem(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       shipment: json['shipment'] == null
           ? null
           : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentItemToJson(ShipmentItem instance) {
@@ -6293,11 +6629,12 @@ Map<String, dynamic> _$ShipmentItemToJson(ShipmentItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -6425,22 +6762,25 @@ FactProto _$FactProtoFromJson(Map<String, dynamic> json) => FactProto(
           ? null
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
       factProtoStatuses: json['factProtoStatuses'] == null
           ? null
           : FactProtoStatusCollection.fromJson(
               json['factProtoStatuses'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$FactProtoToJson(FactProto instance) {
@@ -6459,56 +6799,13 @@ Map<String, dynamic> _$FactProtoToJson(FactProto instance) {
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('factProtoStatuses', instance.factProtoStatuses?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  return val;
-}
-
-AudioDataResource _$AudioDataResourceFromJson(Map<String, dynamic> json) =>
-    AudioDataResource(
-      dataResourceId: json['dataResourceId'] as String?,
-      audioData: json['audioData'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      dataResource: json['dataResource'] == null
-          ? null
-          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-    );
-
-Map<String, dynamic> _$AudioDataResourceToJson(AudioDataResource instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('dataResourceId', instance.dataResourceId);
-  writeNotNull('audioData', instance.audioData);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('dataResource', instance.dataResource?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -6536,22 +6833,25 @@ FixedAssetMaint _$FixedAssetMaintFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      fixedAsset: json['fixedAsset'] == null
+      proto: json['proto'] as String?,
+      model: json['model'] == null
           ? null
-          : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      purchaseOrderHeader: json['purchaseOrderHeader'] == null
-          ? null
-          : OrderHeader.fromJson(
-              json['purchaseOrderHeader'] as Map<String, dynamic>),
       scheduleWorkEffort: json['scheduleWorkEffort'] == null
           ? null
           : WorkEffort.fromJson(
               json['scheduleWorkEffort'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      purchaseOrderHeader: json['purchaseOrderHeader'] == null
+          ? null
+          : OrderHeader.fromJson(
+              json['purchaseOrderHeader'] as Map<String, dynamic>),
+      fixedAsset: json['fixedAsset'] == null
+          ? null
+          : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FixedAssetMaintToJson(FixedAssetMaint instance) {
@@ -6576,12 +6876,61 @@ Map<String, dynamic> _$FixedAssetMaintToJson(FixedAssetMaint instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('purchaseOrderHeader', instance.purchaseOrderHeader?.toJson());
-  writeNotNull('scheduleWorkEffort', instance.scheduleWorkEffort?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('scheduleWorkEffort', instance.scheduleWorkEffort?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('purchaseOrderHeader', instance.purchaseOrderHeader?.toJson());
+  writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
+  return val;
+}
+
+AudioDataResource _$AudioDataResourceFromJson(Map<String, dynamic> json) =>
+    AudioDataResource(
+      dataResourceId: json['dataResourceId'] as String?,
+      audioData: json['audioData'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      dataResource: json['dataResource'] == null
+          ? null
+          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+    );
+
+Map<String, dynamic> _$AudioDataResourceToJson(AudioDataResource instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('dataResourceId', instance.dataResourceId);
+  writeNotNull('audioData', instance.audioData);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('dataResource', instance.dataResource?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -6601,8 +6950,11 @@ ShippingDocument _$ShippingDocumentFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      proto: json['proto'] as String?,
       format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
@@ -6625,8 +6977,9 @@ Map<String, dynamic> _$ShippingDocumentToJson(ShippingDocument instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
@@ -6648,18 +7001,21 @@ ShipmentStatus _$ShipmentStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       changeByUserLogin: json['changeByUserLogin'] == null
           ? null
           : UserLogin.fromJson(
               json['changeByUserLogin'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       shipment: json['shipment'] == null
           ? null
           : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ShipmentStatusToJson(ShipmentStatus instance) {
@@ -6678,11 +7034,12 @@ Map<String, dynamic> _$ShipmentStatusToJson(ShipmentStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('shipment', instance.shipment?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -6711,15 +7068,18 @@ ProductCategoryRollup _$ProductCategoryRollupFromJson(
           ? null
           : ProductCategory.fromJson(
               json['parentProductCategory'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
       currentProductCategory: json['currentProductCategory'] == null
           ? null
           : ProductCategory.fromJson(
               json['currentProductCategory'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductCategoryRollupToJson(
@@ -6742,11 +7102,12 @@ Map<String, dynamic> _$ProductCategoryRollupToJson(
   writeNotNull('id', instance.id);
   writeNotNull(
       'parentProductCategory', instance.parentProductCategory?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('format', instance.format);
   writeNotNull(
       'currentProductCategory', instance.currentProductCategory?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -6799,14 +7160,17 @@ ProductStoreEmailSetting _$ProductStoreEmailSettingFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductStoreEmailSettingToJson(
@@ -6831,10 +7195,11 @@ Map<String, dynamic> _$ProductStoreEmailSettingToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('productStore', instance.productStore?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -6860,12 +7225,14 @@ OrderFact _$OrderFactFromJson(Map<String, dynamic> json) => OrderFact(
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       orderFactStatuses: json['orderFactStatuses'] == null
           ? null
           : OrderFactStatusCollection.fromJson(
               json['orderFactStatuses'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
@@ -6873,6 +7240,7 @@ OrderFact _$OrderFactFromJson(Map<String, dynamic> json) => OrderFact(
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$OrderFactToJson(OrderFact instance) {
@@ -6897,11 +7265,12 @@ Map<String, dynamic> _$OrderFactToJson(OrderFact instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('orderFactStatuses', instance.orderFactStatuses?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -6923,17 +7292,20 @@ ReturnItemShipment _$ReturnItemShipmentFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      shipment: json['shipment'] == null
+          ? null
+          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       returnHeader: json['returnHeader'] == null
           ? null
           : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      shipment: json['shipment'] == null
-          ? null
-          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ReturnItemShipmentToJson(ReturnItemShipment instance) {
@@ -6953,11 +7325,38 @@ Map<String, dynamic> _$ReturnItemShipmentToJson(ReturnItemShipment instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('shipment', instance.shipment?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('returnHeader', instance.returnHeader?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('returnHeader', instance.returnHeader?.toJson());
+  return val;
+}
+
+ShipmentPackageCollection _$ShipmentPackageCollectionFromJson(
+        Map<String, dynamic> json) =>
+    ShipmentPackageCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ShipmentPackage.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShipmentPackageCollectionToJson(
+    ShipmentPackageCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -6996,16 +7395,6 @@ ContentAssoc _$ContentAssocFromJson(Map<String, dynamic> json) => ContentAssoc(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
-      fromContent: json['fromContent'] == null
-          ? null
-          : Content.fromJson(json['fromContent'] as Map<String, dynamic>),
       createdbyuserlogin: json['createdbyuserlogin'] == null
           ? null
           : UserLogin.fromJson(
@@ -7014,7 +7403,20 @@ ContentAssoc _$ContentAssocFromJson(Map<String, dynamic> json) => ContentAssoc(
       toContent: json['toContent'] == null
           ? null
           : Content.fromJson(json['toContent'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      fromContent: json['fromContent'] == null
+          ? null
+          : Content.fromJson(json['fromContent'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ContentAssocToJson(ContentAssoc instance) {
@@ -7044,40 +7446,15 @@ Map<String, dynamic> _$ContentAssocToJson(ContentAssoc instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull(
-      'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
-  writeNotNull('fromContent', instance.fromContent?.toJson());
   writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('toContent', instance.toContent?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('fromContent', instance.fromContent?.toJson());
   writeNotNull('proto', instance.proto);
-  return val;
-}
-
-ShipmentPackageCollection _$ShipmentPackageCollectionFromJson(
-        Map<String, dynamic> json) =>
-    ShipmentPackageCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ShipmentPackage.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShipmentPackageCollectionToJson(
-    ShipmentPackageCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull(
+      'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
   return val;
 }
 
@@ -7226,28 +7603,31 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) => Payment(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      fromParty: json['fromParty'] == null
+      model: json['model'] == null
           ? null
-          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      toParty: json['toParty'] == null
-          ? null
-          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
-      paymentApplications: json['paymentApplications'] == null
-          ? null
-          : PaymentApplicationCollection.fromJson(
-              json['paymentApplications'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      paymentApplications: json['paymentApplications'] == null
+          ? null
+          : PaymentApplicationCollection.fromJson(
+              json['paymentApplications'] as Map<String, dynamic>),
+      fromParty: json['fromParty'] == null
+          ? null
+          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      toParty: json['toParty'] == null
+          ? null
+          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PaymentToJson(Payment instance) {
@@ -7281,14 +7661,15 @@ Map<String, dynamic> _$PaymentToJson(Payment instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('fromParty', instance.fromParty?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('toParty', instance.toParty?.toJson());
-  writeNotNull('paymentApplications', instance.paymentApplications?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('paymentApplications', instance.paymentApplications?.toJson());
+  writeNotNull('fromParty', instance.fromParty?.toJson());
   writeNotNull('type', instance.type?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('toParty', instance.toParty?.toJson());
   return val;
 }
 
@@ -7312,14 +7693,17 @@ UserLoginPasswordHistory _$UserLoginPasswordHistoryFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserLoginPasswordHistoryToJson(
@@ -7339,10 +7723,11 @@ Map<String, dynamic> _$UserLoginPasswordHistoryToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
   writeNotNull('userLogin', instance.userLogin?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -7402,20 +7787,23 @@ ReturnAdjustment _$ReturnAdjustmentFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      returnHeader: json['returnHeader'] == null
+          ? null
+          : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      cats: json['cats'] == null
+      model: json['model'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      returnHeader: json['returnHeader'] == null
-          ? null
-          : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ReturnAdjustmentToJson(ReturnAdjustment instance) {
@@ -7461,12 +7849,13 @@ Map<String, dynamic> _$ReturnAdjustmentToJson(ReturnAdjustment instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('returnHeader', instance.returnHeader?.toJson());
   writeNotNull('productPromo', instance.productPromo?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('userLogin', instance.userLogin?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('returnHeader', instance.returnHeader?.toJson());
   return val;
 }
 
@@ -7578,6 +7967,32 @@ Map<String, dynamic> _$ProductPromoCollectionToJson(
   return val;
 }
 
+ExtractedTokenValue _$ExtractedTokenValueFromJson(Map<String, dynamic> json) =>
+    ExtractedTokenValue(
+      tokenString: json['tokenString'] as String?,
+      regionId: json['regionId'] as String?,
+      jwtId: json['jwtId'] as String?,
+      loginId: json['loginId'] as String?,
+      ownerId: json['ownerId'] as String?,
+    );
+
+Map<String, dynamic> _$ExtractedTokenValueToJson(ExtractedTokenValue instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('tokenString', instance.tokenString);
+  writeNotNull('regionId', instance.regionId);
+  writeNotNull('jwtId', instance.jwtId);
+  writeNotNull('loginId', instance.loginId);
+  writeNotNull('ownerId', instance.ownerId);
+  return val;
+}
+
 UserLoginCollection _$UserLoginCollectionFromJson(Map<String, dynamic> json) =>
     UserLoginCollection(
       values: (json['values'] as List<dynamic>?)
@@ -7627,17 +8042,20 @@ ProductStoreCatalog _$ProductStoreCatalogFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      prodCatalog: json['prodCatalog'] == null
-          ? null
-          : ProdCatalog.fromJson(json['prodCatalog'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      prodCatalog: json['prodCatalog'] == null
+          ? null
+          : ProdCatalog.fromJson(json['prodCatalog'] as Map<String, dynamic>),
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductStoreCatalogToJson(ProductStoreCatalog instance) {
@@ -7657,11 +8075,12 @@ Map<String, dynamic> _$ProductStoreCatalogToJson(ProductStoreCatalog instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('prodCatalog', instance.prodCatalog?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('prodCatalog', instance.prodCatalog?.toJson());
   writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -7722,6 +8141,87 @@ Map<String, dynamic> _$OrderWithSalesOrderToJson(OrderWithSalesOrder instance) {
   writeNotNull('orderHeaderNotes', instance.orderHeaderNotes?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
+  return val;
+}
+
+ProductReview _$ProductReviewFromJson(Map<String, dynamic> json) =>
+    ProductReview(
+      productReviewId: json['productReviewId'] as String?,
+      productStoreId: json['productStoreId'] as String?,
+      productId: json['productId'] as String?,
+      userLoginId: json['userLoginId'] as String?,
+      statusId: json['statusId'] as String?,
+      postedAnonymous: json['postedAnonymous'] as String?,
+      postedDateTime: json['postedDateTime'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['postedDateTime'] as Map<String, dynamic>),
+      productRating: json['productRating'] == null
+          ? null
+          : FixedPointValue.fromJson(
+              json['productRating'] as Map<String, dynamic>),
+      productReview: json['productReview'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      userLogin: json['userLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      productStore: json['productStore'] == null
+          ? null
+          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ProductReviewToJson(ProductReview instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productReviewId', instance.productReviewId);
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('userLoginId', instance.userLoginId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('postedAnonymous', instance.postedAnonymous);
+  writeNotNull('postedDateTime', instance.postedDateTime?.toJson());
+  writeNotNull('productRating', instance.productRating?.toJson());
+  writeNotNull('productReview', instance.productReview);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -7789,50 +8289,33 @@ Shipment _$ShipmentFromJson(Map<String, dynamic> json) => Shipment(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      fromParty: json['fromParty'] == null
-          ? null
-          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
-      originFacility: json['originFacility'] == null
-          ? null
-          : Facility.fromJson(json['originFacility'] as Map<String, dynamic>),
-      estimatedArrivalWorkEffort: json['estimatedArrivalWorkEffort'] == null
-          ? null
-          : WorkEffort.fromJson(
-              json['estimatedArrivalWorkEffort'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      primaryOrderHeader: json['primaryOrderHeader'] == null
-          ? null
-          : OrderHeader.fromJson(
-              json['primaryOrderHeader'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      shipmentReceipts: json['shipmentReceipts'] == null
-          ? null
-          : ShipmentReceiptCollection.fromJson(
-              json['shipmentReceipts'] as Map<String, dynamic>),
-      shipmentRouteSegments: json['shipmentRouteSegments'] == null
-          ? null
-          : ShipmentRouteSegmentCollection.fromJson(
-              json['shipmentRouteSegments'] as Map<String, dynamic>),
       shippingDocuments: json['shippingDocuments'] == null
           ? null
           : ShippingDocumentCollection.fromJson(
               json['shippingDocuments'] as Map<String, dynamic>),
-      toParty: json['toParty'] == null
-          ? null
-          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
-      shipmentStatuses: json['shipmentStatuses'] == null
-          ? null
-          : ShipmentStatusCollection.fromJson(
-              json['shipmentStatuses'] as Map<String, dynamic>),
       originContactMech: json['originContactMech'] == null
           ? null
           : ContactMech.fromJson(
               json['originContactMech'] as Map<String, dynamic>),
+      toParty: json['toParty'] == null
+          ? null
+          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
+      primaryOrderHeader: json['primaryOrderHeader'] == null
+          ? null
+          : OrderHeader.fromJson(
+              json['primaryOrderHeader'] as Map<String, dynamic>),
+      originFacility: json['originFacility'] == null
+          ? null
+          : Facility.fromJson(json['originFacility'] as Map<String, dynamic>),
+      shipmentStatuses: json['shipmentStatuses'] == null
+          ? null
+          : ShipmentStatusCollection.fromJson(
+              json['shipmentStatuses'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      estimatedShipWorkEffort: json['estimatedShipWorkEffort'] == null
+          ? null
+          : WorkEffort.fromJson(
+              json['estimatedShipWorkEffort'] as Map<String, dynamic>),
       destinationFacility: json['destinationFacility'] == null
           ? null
           : Facility.fromJson(
@@ -7841,40 +8324,60 @@ Shipment _$ShipmentFromJson(Map<String, dynamic> json) => Shipment(
           ? null
           : ShipmentPackageRouteSegCollection.fromJson(
               json['shipmentPackageRouteSegs'] as Map<String, dynamic>),
-      shipmentPackageContents: json['shipmentPackageContents'] == null
-          ? null
-          : ShipmentPackageContentCollection.fromJson(
-              json['shipmentPackageContents'] as Map<String, dynamic>),
-      shipmentPackages: json['shipmentPackages'] == null
-          ? null
-          : ShipmentPackageCollection.fromJson(
-              json['shipmentPackages'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       shipmentItems: json['shipmentItems'] == null
           ? null
           : ShipmentItemCollection.fromJson(
               json['shipmentItems'] as Map<String, dynamic>),
-      itemIssuances: json['itemIssuances'] == null
+      shipmentReceipts: json['shipmentReceipts'] == null
           ? null
-          : ItemIssuanceCollection.fromJson(
-              json['itemIssuances'] as Map<String, dynamic>),
-      primaryReturnHeader: json['primaryReturnHeader'] == null
-          ? null
-          : ReturnHeader.fromJson(
-              json['primaryReturnHeader'] as Map<String, dynamic>),
+          : ShipmentReceiptCollection.fromJson(
+              json['shipmentReceipts'] as Map<String, dynamic>),
       shipmentItemBillings: json['shipmentItemBillings'] == null
           ? null
           : ShipmentItemBillingCollection.fromJson(
               json['shipmentItemBillings'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      estimatedShipWorkEffort: json['estimatedShipWorkEffort'] == null
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      shipmentPackages: json['shipmentPackages'] == null
+          ? null
+          : ShipmentPackageCollection.fromJson(
+              json['shipmentPackages'] as Map<String, dynamic>),
+      estimatedArrivalWorkEffort: json['estimatedArrivalWorkEffort'] == null
           ? null
           : WorkEffort.fromJson(
-              json['estimatedShipWorkEffort'] as Map<String, dynamic>),
+              json['estimatedArrivalWorkEffort'] as Map<String, dynamic>),
+      shipmentRouteSegments: json['shipmentRouteSegments'] == null
+          ? null
+          : ShipmentRouteSegmentCollection.fromJson(
+              json['shipmentRouteSegments'] as Map<String, dynamic>),
+      primaryReturnHeader: json['primaryReturnHeader'] == null
+          ? null
+          : ReturnHeader.fromJson(
+              json['primaryReturnHeader'] as Map<String, dynamic>),
+      shipmentPackageContents: json['shipmentPackageContents'] == null
+          ? null
+          : ShipmentPackageContentCollection.fromJson(
+              json['shipmentPackageContents'] as Map<String, dynamic>),
+      fromParty: json['fromParty'] == null
+          ? null
+          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
+      itemIssuances: json['itemIssuances'] == null
+          ? null
+          : ItemIssuanceCollection.fromJson(
+              json['itemIssuances'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       destContactMech: json['destContactMech'] == null
           ? null
           : ContactMech.fromJson(
               json['destContactMech'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentToJson(Shipment instance) {
@@ -7921,111 +8424,35 @@ Map<String, dynamic> _$ShipmentToJson(Shipment instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('fromParty', instance.fromParty?.toJson());
-  writeNotNull('originFacility', instance.originFacility?.toJson());
-  writeNotNull('estimatedArrivalWorkEffort',
-      instance.estimatedArrivalWorkEffort?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('primaryOrderHeader', instance.primaryOrderHeader?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('shipmentReceipts', instance.shipmentReceipts?.toJson());
-  writeNotNull(
-      'shipmentRouteSegments', instance.shipmentRouteSegments?.toJson());
   writeNotNull('shippingDocuments', instance.shippingDocuments?.toJson());
-  writeNotNull('toParty', instance.toParty?.toJson());
-  writeNotNull('shipmentStatuses', instance.shipmentStatuses?.toJson());
   writeNotNull('originContactMech', instance.originContactMech?.toJson());
+  writeNotNull('toParty', instance.toParty?.toJson());
+  writeNotNull('primaryOrderHeader', instance.primaryOrderHeader?.toJson());
+  writeNotNull('originFacility', instance.originFacility?.toJson());
+  writeNotNull('shipmentStatuses', instance.shipmentStatuses?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull(
+      'estimatedShipWorkEffort', instance.estimatedShipWorkEffort?.toJson());
   writeNotNull('destinationFacility', instance.destinationFacility?.toJson());
   writeNotNull(
       'shipmentPackageRouteSegs', instance.shipmentPackageRouteSegs?.toJson());
+  writeNotNull('shipmentItems', instance.shipmentItems?.toJson());
+  writeNotNull('shipmentReceipts', instance.shipmentReceipts?.toJson());
+  writeNotNull('shipmentItemBillings', instance.shipmentItemBillings?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('shipmentPackages', instance.shipmentPackages?.toJson());
+  writeNotNull('estimatedArrivalWorkEffort',
+      instance.estimatedArrivalWorkEffort?.toJson());
+  writeNotNull(
+      'shipmentRouteSegments', instance.shipmentRouteSegments?.toJson());
+  writeNotNull('primaryReturnHeader', instance.primaryReturnHeader?.toJson());
   writeNotNull(
       'shipmentPackageContents', instance.shipmentPackageContents?.toJson());
-  writeNotNull('shipmentPackages', instance.shipmentPackages?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('shipmentItems', instance.shipmentItems?.toJson());
+  writeNotNull('fromParty', instance.fromParty?.toJson());
   writeNotNull('itemIssuances', instance.itemIssuances?.toJson());
-  writeNotNull('primaryReturnHeader', instance.primaryReturnHeader?.toJson());
-  writeNotNull('shipmentItemBillings', instance.shipmentItemBillings?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull(
-      'estimatedShipWorkEffort', instance.estimatedShipWorkEffort?.toJson());
   writeNotNull('destContactMech', instance.destContactMech?.toJson());
-  return val;
-}
-
-ProductReview _$ProductReviewFromJson(Map<String, dynamic> json) =>
-    ProductReview(
-      productReviewId: json['productReviewId'] as String?,
-      productStoreId: json['productStoreId'] as String?,
-      productId: json['productId'] as String?,
-      userLoginId: json['userLoginId'] as String?,
-      statusId: json['statusId'] as String?,
-      postedAnonymous: json['postedAnonymous'] as String?,
-      postedDateTime: json['postedDateTime'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['postedDateTime'] as Map<String, dynamic>),
-      productRating: json['productRating'] == null
-          ? null
-          : FixedPointValue.fromJson(
-              json['productRating'] as Map<String, dynamic>),
-      productReview: json['productReview'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      userLogin: json['userLogin'] == null
-          ? null
-          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      productStore: json['productStore'] == null
-          ? null
-          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$ProductReviewToJson(ProductReview instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productReviewId', instance.productReviewId);
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('userLoginId', instance.userLoginId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('postedAnonymous', instance.postedAnonymous);
-  writeNotNull('postedDateTime', instance.postedDateTime?.toJson());
-  writeNotNull('productRating', instance.productRating?.toJson());
-  writeNotNull('productReview', instance.productReview);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('format', instance.format);
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
@@ -8104,18 +8531,21 @@ ProductStoreGroupMember _$ProductStoreGroupMemberFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
       productStoreGroup: json['productStoreGroup'] == null
           ? null
           : ProductStoreGroup.fromJson(
               json['productStoreGroup'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductStoreGroupMemberToJson(
@@ -8136,67 +8566,12 @@ Map<String, dynamic> _$ProductStoreGroupMemberToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
   writeNotNull('productStoreGroup', instance.productStoreGroup?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('productStore', instance.productStore?.toJson());
-  return val;
-}
-
-AgreementProductAppl _$AgreementProductApplFromJson(
-        Map<String, dynamic> json) =>
-    AgreementProductAppl(
-      agreementId: json['agreementId'] as String?,
-      agreementItemSeqId: json['agreementItemSeqId'] as String?,
-      productId: json['productId'] as String?,
-      price: json['price'] == null
-          ? null
-          : CurrencyValue.fromJson(json['price'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      agreement: json['agreement'] == null
-          ? null
-          : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$AgreementProductApplToJson(
-    AgreementProductAppl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('agreementId', instance.agreementId);
-  writeNotNull('agreementItemSeqId', instance.agreementItemSeqId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('price', instance.price?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('agreement', instance.agreement?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   return val;
 }
 
@@ -8235,17 +8610,13 @@ DataResource _$DataResourceFromJson(Map<String, dynamic> json) => DataResource(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      createdbyuserlogin: json['createdbyuserlogin'] == null
+      asVideo: json['asVideo'] == null
           ? null
-          : UserLogin.fromJson(
-              json['createdbyuserlogin'] as Map<String, dynamic>),
-      cats: json['cats'] == null
+          : DataResourceWithVideo.fromJson(
+              json['asVideo'] as Map<String, dynamic>),
+      model: json['model'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      asImage: json['asImage'] == null
-          ? null
-          : DataResourceWithImage.fromJson(
-              json['asImage'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
           ? null
           : UserLogin.fromJson(
@@ -8254,23 +8625,30 @@ DataResource _$DataResourceFromJson(Map<String, dynamic> json) => DataResource(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      type: json['type'] == null
+      asImage: json['asImage'] == null
           ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+          : DataResourceWithImage.fromJson(
+              json['asImage'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      proto: json['proto'] as String?,
       asText: json['asText'] == null
           ? null
           : DataResourceWithText.fromJson(
               json['asText'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      createdbyuserlogin: json['createdbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['createdbyuserlogin'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
       asAudio: json['asAudio'] == null
           ? null
           : DataResourceWithAudio.fromJson(
               json['asAudio'] as Map<String, dynamic>),
-      asVideo: json['asVideo'] == null
-          ? null
-          : DataResourceWithVideo.fromJson(
-              json['asVideo'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$DataResourceToJson(DataResource instance) {
@@ -8304,18 +8682,19 @@ Map<String, dynamic> _$DataResourceToJson(DataResource instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('asImage', instance.asImage?.toJson());
+  writeNotNull('asVideo', instance.asVideo?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull(
       'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('asImage', instance.asImage?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('asText', instance.asText?.toJson());
-  writeNotNull('asAudio', instance.asAudio?.toJson());
-  writeNotNull('asVideo', instance.asVideo?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('asText', instance.asText?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('asAudio', instance.asAudio?.toJson());
   return val;
 }
 
@@ -8340,17 +8719,20 @@ OrderStatus _$OrderStatusFromJson(Map<String, dynamic> json) => OrderStatus(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      proto: json['proto'] as String?,
-      userLogin: json['userLogin'] == null
-          ? null
-          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      userLogin: json['userLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderStatusToJson(OrderStatus instance) {
@@ -8373,11 +8755,72 @@ Map<String, dynamic> _$OrderStatusToJson(OrderStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  return val;
+}
+
+AgreementProductAppl _$AgreementProductApplFromJson(
+        Map<String, dynamic> json) =>
+    AgreementProductAppl(
+      agreementId: json['agreementId'] as String?,
+      agreementItemSeqId: json['agreementItemSeqId'] as String?,
+      productId: json['productId'] as String?,
+      price: json['price'] == null
+          ? null
+          : CurrencyValue.fromJson(json['price'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      agreement: json['agreement'] == null
+          ? null
+          : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$AgreementProductApplToJson(
+    AgreementProductAppl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('agreementId', instance.agreementId);
+  writeNotNull('agreementItemSeqId', instance.agreementItemSeqId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('price', instance.price?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('agreement', instance.agreement?.toJson());
   return val;
 }
 
@@ -8424,26 +8867,29 @@ ProductConfigItem _$ProductConfigItemFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      configItemProductConfigOptions: json['configItemProductConfigOptions'] ==
+              null
+          ? null
+          : ProductConfigOptionCollection.fromJson(
+              json['configItemProductConfigOptions'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       configItemProductConfigProducts:
           json['configItemProductConfigProducts'] == null
               ? null
               : ProductConfigProductCollection.fromJson(
                   json['configItemProductConfigProducts']
                       as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      configItemProductConfigOptions: json['configItemProductConfigOptions'] ==
-              null
-          ? null
-          : ProductConfigOptionCollection.fromJson(
-              json['configItemProductConfigOptions'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ProductConfigItemToJson(ProductConfigItem instance) {
@@ -8464,14 +8910,15 @@ Map<String, dynamic> _$ProductConfigItemToJson(ProductConfigItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('configItemProductConfigProducts',
-      instance.configItemProductConfigProducts?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('configItemProductConfigOptions',
       instance.configItemProductConfigOptions?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('configItemProductConfigProducts',
+      instance.configItemProductConfigProducts?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -8521,17 +8968,20 @@ ProductStorePromoAppl _$ProductStorePromoApplFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductStorePromoApplToJson(
@@ -8553,11 +9003,12 @@ Map<String, dynamic> _$ProductStorePromoApplToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('productPromo', instance.productPromo?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -8689,14 +9140,17 @@ FixedAssetGeoPoint _$FixedAssetGeoPointFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       fixedAsset: json['fixedAsset'] == null
           ? null
           : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$FixedAssetGeoPointToJson(FixedAssetGeoPoint instance) {
@@ -8715,10 +9169,11 @@ Map<String, dynamic> _$FixedAssetGeoPointToJson(FixedAssetGeoPoint instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -8748,17 +9203,20 @@ PartyContactMech _$PartyContactMechFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$PartyContactMechToJson(PartyContactMech instance) {
@@ -8784,11 +9242,12 @@ Map<String, dynamic> _$PartyContactMechToJson(PartyContactMech instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('party', instance.party?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -8949,7 +9408,6 @@ NoteData _$NoteDataFromJson(Map<String, dynamic> json) => NoteData(
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       noteparty: json['noteparty'] == null
           ? null
           : Party.fromJson(json['noteparty'] as Map<String, dynamic>),
@@ -8957,6 +9415,10 @@ NoteData _$NoteDataFromJson(Map<String, dynamic> json) => NoteData(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$NoteDataToJson(NoteData instance) {
@@ -8981,9 +9443,10 @@ Map<String, dynamic> _$NoteDataToJson(NoteData instance) {
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('noteparty', instance.noteparty?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -9129,16 +9592,43 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      primaryProductCategory: json['primaryProductCategory'] == null
+      priceFilter: json['priceFilter'] == null
           ? null
-          : ProductCategory.fromJson(
-              json['primaryProductCategory'] as Map<String, dynamic>),
-      type: json['type'] == null
+          : ProductPrice.fromJson(json['priceFilter'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      productPromoProducts: json['productPromoProducts'] == null
           ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      priceSelect: (json['priceSelect'] as List<dynamic>?)
+          : ProductPromoProductCollection.fromJson(
+              json['productPromoProducts'] as Map<String, dynamic>),
+      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
+      matchProductPrice: (json['matchProductPrice'] as List<dynamic>?)
           ?.map((e) => ProductPrice.fromJson(e as Map<String, dynamic>))
           .toList(),
+      productProductConfigs: json['productProductConfigs'] == null
+          ? null
+          : ProductConfigCollection.fromJson(
+              json['productProductConfigs'] as Map<String, dynamic>),
+      workEffortGoodStandards: json['workEffortGoodStandards'] == null
+          ? null
+          : WorkEffortGoodStandardCollection.fromJson(
+              json['workEffortGoodStandards'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      listPrice: json['listPrice'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      asView: json['asView'] == null
+          ? null
+          : ProductView.fromJson(json['asView'] as Map<String, dynamic>),
+      facility: json['facility'] == null
+          ? null
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
       mainProductAssocs: json['mainProductAssocs'] == null
           ? null
           : ProductAssocCollection.fromJson(
@@ -9147,77 +9637,53 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
           ? null
           : ProductFeatureApplCollection.fromJson(
               json['productFeatureAppls'] as Map<String, dynamic>),
-      productProductConfigs: json['productProductConfigs'] == null
+      assocProductAssocs: json['assocProductAssocs'] == null
           ? null
-          : ProductConfigCollection.fromJson(
-              json['productProductConfigs'] as Map<String, dynamic>),
-      productFacilityAssocs: json['productFacilityAssocs'] == null
+          : ProductAssocCollection.fromJson(
+              json['assocProductAssocs'] as Map<String, dynamic>),
+      priceSelect: (json['priceSelect'] as List<dynamic>?)
+          ?.map((e) => ProductPrice.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      subview: json['subview'] == null
           ? null
-          : ProductFacilityAssocCollection.fromJson(
-              json['productFacilityAssocs'] as Map<String, dynamic>),
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      primaryProductCategory: json['primaryProductCategory'] == null
+          ? null
+          : ProductCategory.fromJson(
+              json['primaryProductCategory'] as Map<String, dynamic>),
       productContents: json['productContents'] == null
           ? null
           : ProductContentCollection.fromJson(
               json['productContents'] as Map<String, dynamic>),
-      createdbyuserlogin: json['createdbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['createdbyuserlogin'] as Map<String, dynamic>),
-      productPrices: json['productPrices'] == null
-          ? null
-          : ProductPriceCollection.fromJson(
-              json['productPrices'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       productKeywords: json['productKeywords'] == null
           ? null
           : ProductKeywordCollection.fromJson(
               json['productKeywords'] as Map<String, dynamic>),
       defaultPrice: json['defaultPrice'] as String?,
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      priceFilter: json['priceFilter'] == null
-          ? null
-          : ProductPrice.fromJson(json['priceFilter'] as Map<String, dynamic>),
-      workEffortGoodStandards: json['workEffortGoodStandards'] == null
-          ? null
-          : WorkEffortGoodStandardCollection.fromJson(
-              json['workEffortGoodStandards'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      listPrice: json['listPrice'] as String?,
-      facility: json['facility'] == null
-          ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      asView: json['asView'] == null
-          ? null
-          : ProductView.fromJson(json['asView'] as Map<String, dynamic>),
-      productFacilityLocations: json['productFacilityLocations'] == null
-          ? null
-          : ProductFacilityLocationCollection.fromJson(
-              json['productFacilityLocations'] as Map<String, dynamic>),
-      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
+      createdbyuserlogin: json['createdbyuserlogin'] == null
           ? null
           : UserLogin.fromJson(
-              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
+              json['createdbyuserlogin'] as Map<String, dynamic>),
       productFacilities: json['productFacilities'] == null
           ? null
           : ProductFacilityCollection.fromJson(
               json['productFacilities'] as Map<String, dynamic>),
-      productPromoProducts: json['productPromoProducts'] == null
+      productFacilityLocations: json['productFacilityLocations'] == null
           ? null
-          : ProductPromoProductCollection.fromJson(
-              json['productPromoProducts'] as Map<String, dynamic>),
-      assocProductAssocs: json['assocProductAssocs'] == null
+          : ProductFacilityLocationCollection.fromJson(
+              json['productFacilityLocations'] as Map<String, dynamic>),
+      productPrices: json['productPrices'] == null
           ? null
-          : ProductAssocCollection.fromJson(
-              json['assocProductAssocs'] as Map<String, dynamic>),
-      matchProductPrice: (json['matchProductPrice'] as List<dynamic>?)
-          ?.map((e) => ProductPrice.fromJson(e as Map<String, dynamic>))
-          .toList(),
+          : ProductPriceCollection.fromJson(
+              json['productPrices'] as Map<String, dynamic>),
+      productFacilityAssocs: json['productFacilityAssocs'] == null
+          ? null
+          : ProductFacilityAssocCollection.fromJson(
+              json['productFacilityAssocs'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductToJson(Product instance) {
@@ -9304,41 +9770,42 @@ Map<String, dynamic> _$ProductToJson(Product instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('priceFilter', instance.priceFilter?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('productPromoProducts', instance.productPromoProducts?.toJson());
   writeNotNull(
-      'primaryProductCategory', instance.primaryProductCategory?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull(
-      'priceSelect', instance.priceSelect?.map((e) => e.toJson()).toList());
-  writeNotNull('mainProductAssocs', instance.mainProductAssocs?.toJson());
-  writeNotNull('productFeatureAppls', instance.productFeatureAppls?.toJson());
+      'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
+  writeNotNull('matchProductPrice',
+      instance.matchProductPrice?.map((e) => e.toJson()).toList());
   writeNotNull(
       'productProductConfigs', instance.productProductConfigs?.toJson());
   writeNotNull(
-      'productFacilityAssocs', instance.productFacilityAssocs?.toJson());
-  writeNotNull('productContents', instance.productContents?.toJson());
-  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
-  writeNotNull('productPrices', instance.productPrices?.toJson());
-  writeNotNull('proto', instance.proto);
+      'workEffortGoodStandards', instance.workEffortGoodStandards?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('listPrice', instance.listPrice);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('asView', instance.asView?.toJson());
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('mainProductAssocs', instance.mainProductAssocs?.toJson());
+  writeNotNull('productFeatureAppls', instance.productFeatureAppls?.toJson());
+  writeNotNull('assocProductAssocs', instance.assocProductAssocs?.toJson());
+  writeNotNull(
+      'priceSelect', instance.priceSelect?.map((e) => e.toJson()).toList());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull(
+      'primaryProductCategory', instance.primaryProductCategory?.toJson());
+  writeNotNull('productContents', instance.productContents?.toJson());
   writeNotNull('productKeywords', instance.productKeywords?.toJson());
   writeNotNull('defaultPrice', instance.defaultPrice);
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('priceFilter', instance.priceFilter?.toJson());
-  writeNotNull(
-      'workEffortGoodStandards', instance.workEffortGoodStandards?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('listPrice', instance.listPrice);
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('asView', instance.asView?.toJson());
+  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
+  writeNotNull('productFacilities', instance.productFacilities?.toJson());
   writeNotNull(
       'productFacilityLocations', instance.productFacilityLocations?.toJson());
+  writeNotNull('productPrices', instance.productPrices?.toJson());
   writeNotNull(
-      'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
-  writeNotNull('productFacilities', instance.productFacilities?.toJson());
-  writeNotNull('productPromoProducts', instance.productPromoProducts?.toJson());
-  writeNotNull('assocProductAssocs', instance.assocProductAssocs?.toJson());
-  writeNotNull('matchProductPrice',
-      instance.matchProductPrice?.map((e) => e.toJson()).toList());
+      'productFacilityAssocs', instance.productFacilityAssocs?.toJson());
   return val;
 }
 
@@ -9389,14 +9856,17 @@ InventoryItemDetail _$InventoryItemDetailFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       workEffort: json['workEffort'] == null
           ? null
           : WorkEffort.fromJson(json['workEffort'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      proto: json['proto'] as String?,
       inventoryItem: json['inventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
@@ -9439,10 +9909,11 @@ Map<String, dynamic> _$InventoryItemDetailToJson(InventoryItemDetail instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('workEffort', instance.workEffort?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
   writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
   return val;
 }
@@ -9465,14 +9936,17 @@ OrderAdjustmentBilling _$OrderAdjustmentBillingFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      proto: json['proto'] as String?,
       invoice: json['invoice'] == null
           ? null
           : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderAdjustmentBillingToJson(
@@ -9492,10 +9966,11 @@ Map<String, dynamic> _$OrderAdjustmentBillingToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   writeNotNull('invoice', instance.invoice?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -9541,21 +10016,24 @@ AcctgTransEntry _$AcctgTransEntryFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       format: json['format'] as String?,
       acctgTrans: json['acctgTrans'] == null
           ? null
           : AcctgTrans.fromJson(json['acctgTrans'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
       inventoryItem: json['inventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
               json['inventoryItem'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$AcctgTransEntryToJson(AcctgTransEntry instance) {
@@ -9595,12 +10073,13 @@ Map<String, dynamic> _$AcctgTransEntryToJson(AcctgTransEntry instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('acctgTrans', instance.acctgTrans?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('party', instance.party?.toJson());
   writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -9656,84 +10135,87 @@ Party _$PartyFromJson(Map<String, dynamic> json) => Party(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      partyNotes: json['partyNotes'] == null
+      asPerson: json['asPerson'] == null
           ? null
-          : PartyNoteCollection.fromJson(
-              json['partyNotes'] as Map<String, dynamic>),
-      createdbyuserlogin: json['createdbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['createdbyuserlogin'] as Map<String, dynamic>),
-      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
+          : PartyWithPerson.fromJson(json['asPerson'] as Map<String, dynamic>),
       agreementRoles: json['agreementRoles'] == null
           ? null
           : AgreementRoleCollection.fromJson(
               json['agreementRoles'] as Map<String, dynamic>),
-      asPartyGroup: json['asPartyGroup'] == null
+      partyNotes: json['partyNotes'] == null
           ? null
-          : PartyWithPartyGroup.fromJson(
-              json['asPartyGroup'] as Map<String, dynamic>),
+          : PartyNoteCollection.fromJson(
+              json['partyNotes'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      supplierProductFeatures: json['supplierProductFeatures'] == null
-          ? null
-          : SupplierProductFeatureCollection.fromJson(
-              json['supplierProductFeatures'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      partyContactMechPurposes: json['partyContactMechPurposes'] == null
-          ? null
-          : PartyContactMechPurposeCollection.fromJson(
-              json['partyContactMechPurposes'] as Map<String, dynamic>),
-      contactMech: json['contactMech'] == null
-          ? null
-          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
-      asSupplier: json['asSupplier'] == null
-          ? null
-          : PartyWithSupplier.fromJson(
-              json['asSupplier'] as Map<String, dynamic>),
-      asCorporation: json['asCorporation'] == null
-          ? null
-          : PartyWithCorporation.fromJson(
-              json['asCorporation'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      partyStatuses: json['partyStatuses'] == null
-          ? null
-          : PartyStatusCollection.fromJson(
-              json['partyStatuses'] as Map<String, dynamic>),
-      supplierProducts: json['supplierProducts'] == null
-          ? null
-          : SupplierProductCollection.fromJson(
-              json['supplierProducts'] as Map<String, dynamic>),
       partyRoles: json['partyRoles'] == null
           ? null
           : PartyRoleCollection.fromJson(
               json['partyRoles'] as Map<String, dynamic>),
-      partyGeoPoints: json['partyGeoPoints'] == null
+      partyContactMechPurposes: json['partyContactMechPurposes'] == null
           ? null
-          : PartyGeoPointCollection.fromJson(
-              json['partyGeoPoints'] as Map<String, dynamic>),
+          : PartyContactMechPurposeCollection.fromJson(
+              json['partyContactMechPurposes'] as Map<String, dynamic>),
+      partyStatuses: json['partyStatuses'] == null
+          ? null
+          : PartyStatusCollection.fromJson(
+              json['partyStatuses'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      contactMech: json['contactMech'] == null
+          ? null
+          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
       fromPartyRelationships: json['fromPartyRelationships'] == null
           ? null
           : PartyRelationshipCollection.fromJson(
               json['fromPartyRelationships'] as Map<String, dynamic>),
+      supplierProductFeatures: json['supplierProductFeatures'] == null
+          ? null
+          : SupplierProductFeatureCollection.fromJson(
+              json['supplierProductFeatures'] as Map<String, dynamic>),
+      asCorporation: json['asCorporation'] == null
+          ? null
+          : PartyWithCorporation.fromJson(
+              json['asCorporation'] as Map<String, dynamic>),
+      asPartyGroup: json['asPartyGroup'] == null
+          ? null
+          : PartyWithPartyGroup.fromJson(
+              json['asPartyGroup'] as Map<String, dynamic>),
+      asSupplier: json['asSupplier'] == null
+          ? null
+          : PartyWithSupplier.fromJson(
+              json['asSupplier'] as Map<String, dynamic>),
+      supplierProducts: json['supplierProducts'] == null
+          ? null
+          : SupplierProductCollection.fromJson(
+              json['supplierProducts'] as Map<String, dynamic>),
+      createdbyuserlogin: json['createdbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['createdbyuserlogin'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       partyContactMeches: json['partyContactMeches'] == null
           ? null
           : PartyContactMechCollection.fromJson(
               json['partyContactMeches'] as Map<String, dynamic>),
-      asPerson: json['asPerson'] == null
+      type: json['type'] == null
           ? null
-          : PartyWithPerson.fromJson(json['asPerson'] as Map<String, dynamic>),
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      partyGeoPoints: json['partyGeoPoints'] == null
+          ? null
+          : PartyGeoPointCollection.fromJson(
+              json['partyGeoPoints'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PartyToJson(Party instance) {
@@ -9760,32 +10242,33 @@ Map<String, dynamic> _$PartyToJson(Party instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('partyNotes', instance.partyNotes?.toJson());
-  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
-  writeNotNull(
-      'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('asPerson', instance.asPerson?.toJson());
   writeNotNull('agreementRoles', instance.agreementRoles?.toJson());
-  writeNotNull('asPartyGroup', instance.asPartyGroup?.toJson());
+  writeNotNull('partyNotes', instance.partyNotes?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull(
-      'supplierProductFeatures', instance.supplierProductFeatures?.toJson());
-  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('partyRoles', instance.partyRoles?.toJson());
   writeNotNull(
       'partyContactMechPurposes', instance.partyContactMechPurposes?.toJson());
-  writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('asSupplier', instance.asSupplier?.toJson());
-  writeNotNull('asCorporation', instance.asCorporation?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('partyStatuses', instance.partyStatuses?.toJson());
-  writeNotNull('supplierProducts', instance.supplierProducts?.toJson());
-  writeNotNull('partyRoles', instance.partyRoles?.toJson());
-  writeNotNull('partyGeoPoints', instance.partyGeoPoints?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull(
+      'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
   writeNotNull(
       'fromPartyRelationships', instance.fromPartyRelationships?.toJson());
+  writeNotNull(
+      'supplierProductFeatures', instance.supplierProductFeatures?.toJson());
+  writeNotNull('asCorporation', instance.asCorporation?.toJson());
+  writeNotNull('asPartyGroup', instance.asPartyGroup?.toJson());
+  writeNotNull('asSupplier', instance.asSupplier?.toJson());
+  writeNotNull('supplierProducts', instance.supplierProducts?.toJson());
+  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('partyContactMeches', instance.partyContactMeches?.toJson());
-  writeNotNull('asPerson', instance.asPerson?.toJson());
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('partyGeoPoints', instance.partyGeoPoints?.toJson());
   return val;
 }
 
@@ -9833,17 +10316,17 @@ OrderHeaderCollection _$OrderHeaderCollectionFromJson(
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
-      filter: json['filter'] == null
-          ? null
-          : OrderHeaderCollection.fromJson(
-              json['filter'] as Map<String, dynamic>),
-      matchSalesOrder: (json['matchSalesOrder'] as List<dynamic>?)
-          ?.map((e) => OrderWithSalesOrder.fromJson(e as Map<String, dynamic>))
-          .toList(),
       matchPurchaseOrder: (json['matchPurchaseOrder'] as List<dynamic>?)
           ?.map(
               (e) => OrderWithPurchaseOrder.fromJson(e as Map<String, dynamic>))
           .toList(),
+      matchSalesOrder: (json['matchSalesOrder'] as List<dynamic>?)
+          ?.map((e) => OrderWithSalesOrder.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      filter: json['filter'] == null
+          ? null
+          : OrderHeaderCollection.fromJson(
+              json['filter'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderHeaderCollectionToJson(
@@ -9859,11 +10342,11 @@ Map<String, dynamic> _$OrderHeaderCollectionToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  writeNotNull('filter', instance.filter?.toJson());
-  writeNotNull('matchSalesOrder',
-      instance.matchSalesOrder?.map((e) => e.toJson()).toList());
   writeNotNull('matchPurchaseOrder',
       instance.matchPurchaseOrder?.map((e) => e.toJson()).toList());
+  writeNotNull('matchSalesOrder',
+      instance.matchSalesOrder?.map((e) => e.toJson()).toList());
+  writeNotNull('filter', instance.filter?.toJson());
   return val;
 }
 
@@ -9893,13 +10376,7 @@ PaymentApplication _$PaymentApplicationFromJson(Map<String, dynamic> json) =>
       invoice: json['invoice'] == null
           ? null
           : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
-      toPayment: json['toPayment'] == null
-          ? null
-          : Payment.fromJson(json['toPayment'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      payment: json['payment'] == null
-          ? null
-          : Payment.fromJson(json['payment'] as Map<String, dynamic>),
       format: json['format'] as String?,
       billingAccount: json['billingAccount'] == null
           ? null
@@ -9908,6 +10385,15 @@ PaymentApplication _$PaymentApplicationFromJson(Map<String, dynamic> json) =>
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      payment: json['payment'] == null
+          ? null
+          : Payment.fromJson(json['payment'] as Map<String, dynamic>),
+      toPayment: json['toPayment'] == null
+          ? null
+          : Payment.fromJson(json['toPayment'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PaymentApplicationToJson(PaymentApplication instance) {
@@ -9932,12 +10418,39 @@ Map<String, dynamic> _$PaymentApplicationToJson(PaymentApplication instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('invoice', instance.invoice?.toJson());
-  writeNotNull('toPayment', instance.toPayment?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('payment', instance.payment?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('billingAccount', instance.billingAccount?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('payment', instance.payment?.toJson());
+  writeNotNull('toPayment', instance.toPayment?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  return val;
+}
+
+OrderStatusCollection _$OrderStatusCollectionFromJson(
+        Map<String, dynamic> json) =>
+    OrderStatusCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderStatus.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderStatusCollectionToJson(
+    OrderStatusCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -9980,51 +10493,54 @@ Content _$ContentFromJson(Map<String, dynamic> json) => Content(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      cats: json['cats'] == null
+      proto: json['proto'] as String?,
+      instanceOfContent: json['instanceOfContent'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : Content.fromJson(json['instanceOfContent'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       ownerContent: json['ownerContent'] == null
           ? null
           : Content.fromJson(json['ownerContent'] as Map<String, dynamic>),
-      contentAttributes: json['contentAttributes'] == null
-          ? null
-          : ContentAttributeCollection.fromJson(
-              json['contentAttributes'] as Map<String, dynamic>),
       lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
           ? null
           : UserLogin.fromJson(
               json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
-      instanceOfContent: json['instanceOfContent'] == null
-          ? null
-          : Content.fromJson(json['instanceOfContent'] as Map<String, dynamic>),
-      dataResource: json['dataResource'] == null
-          ? null
-          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
-      createdbyuserlogin: json['createdbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['createdbyuserlogin'] as Map<String, dynamic>),
       decoratorContent: json['decoratorContent'] == null
           ? null
           : Content.fromJson(json['decoratorContent'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      contentPurposes: json['contentPurposes'] == null
-          ? null
-          : ContentPurposeCollection.fromJson(
-              json['contentPurposes'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
       toContentAssocs: json['toContentAssocs'] == null
           ? null
           : ContentAssocCollection.fromJson(
               json['toContentAssocs'] as Map<String, dynamic>),
+      dataResource: json['dataResource'] == null
+          ? null
+          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      createdbyuserlogin: json['createdbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['createdbyuserlogin'] as Map<String, dynamic>),
+      contentPurposes: json['contentPurposes'] == null
+          ? null
+          : ContentPurposeCollection.fromJson(
+              json['contentPurposes'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       templateDataResource: json['templateDataResource'] == null
           ? null
           : DataResource.fromJson(
               json['templateDataResource'] as Map<String, dynamic>),
+      contentAttributes: json['contentAttributes'] == null
+          ? null
+          : ContentAttributeCollection.fromJson(
+              json['contentAttributes'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ContentToJson(Content instance) {
@@ -10062,47 +10578,22 @@ Map<String, dynamic> _$ContentToJson(Content instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('instanceOfContent', instance.instanceOfContent?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('ownerContent', instance.ownerContent?.toJson());
-  writeNotNull('contentAttributes', instance.contentAttributes?.toJson());
   writeNotNull(
       'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
-  writeNotNull('instanceOfContent', instance.instanceOfContent?.toJson());
-  writeNotNull('dataResource', instance.dataResource?.toJson());
-  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
   writeNotNull('decoratorContent', instance.decoratorContent?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('contentPurposes', instance.contentPurposes?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('toContentAssocs', instance.toContentAssocs?.toJson());
+  writeNotNull('dataResource', instance.dataResource?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
+  writeNotNull('contentPurposes', instance.contentPurposes?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('templateDataResource', instance.templateDataResource?.toJson());
-  return val;
-}
-
-OrderStatusCollection _$OrderStatusCollectionFromJson(
-        Map<String, dynamic> json) =>
-    OrderStatusCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderStatus.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderStatusCollectionToJson(
-    OrderStatusCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('contentAttributes', instance.contentAttributes?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -10121,14 +10612,17 @@ ExampleItem _$ExampleItemFromJson(Map<String, dynamic> json) => ExampleItem(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       example: json['example'] == null
           ? null
           : Example.fromJson(json['example'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ExampleItemToJson(ExampleItem instance) {
@@ -10148,10 +10642,11 @@ Map<String, dynamic> _$ExampleItemToJson(ExampleItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('example', instance.example?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('example', instance.example?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -10230,17 +10725,20 @@ PartyContactMechPurpose _$PartyContactMechPurposeFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      proto: json['proto'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$PartyContactMechPurposeToJson(
@@ -10261,11 +10759,12 @@ Map<String, dynamic> _$PartyContactMechPurposeToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   writeNotNull('party', instance.party?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -10309,14 +10808,17 @@ ProductPromoRule _$ProductPromoRuleFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductPromoRuleToJson(ProductPromoRule instance) {
@@ -10334,36 +10836,11 @@ Map<String, dynamic> _$ProductPromoRuleToJson(ProductPromoRule instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('productPromo', instance.productPromo?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('productPromo', instance.productPromo?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  return val;
-}
-
-InventoryTransferCollection _$InventoryTransferCollectionFromJson(
-        Map<String, dynamic> json) =>
-    InventoryTransferCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => InventoryTransfer.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$InventoryTransferCollectionToJson(
-    InventoryTransferCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -10393,18 +10870,18 @@ Map<String, dynamic> _$BillingAccountRoleCollectionToJson(
   return val;
 }
 
-AgreementTermCollection _$AgreementTermCollectionFromJson(
+InventoryTransferCollection _$InventoryTransferCollectionFromJson(
         Map<String, dynamic> json) =>
-    AgreementTermCollection(
+    InventoryTransferCollection(
       values: (json['values'] as List<dynamic>?)
-          ?.map((e) => AgreementTerm.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => InventoryTransfer.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
       regionId: json['regionId'] as String?,
     );
 
-Map<String, dynamic> _$AgreementTermCollectionToJson(
-    AgreementTermCollection instance) {
+Map<String, dynamic> _$InventoryTransferCollectionToJson(
+    InventoryTransferCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -10432,15 +10909,18 @@ SecurityPermission _$SecurityPermissionFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      cats: json['cats'] == null
+      proto: json['proto'] as String?,
+      model: json['model'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SecurityPermissionToJson(SecurityPermission instance) {
@@ -10457,10 +10937,37 @@ Map<String, dynamic> _$SecurityPermissionToJson(SecurityPermission instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  return val;
+}
+
+AgreementTermCollection _$AgreementTermCollectionFromJson(
+        Map<String, dynamic> json) =>
+    AgreementTermCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => AgreementTerm.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AgreementTermCollectionToJson(
+    AgreementTermCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -10518,30 +11025,33 @@ ProductPrice _$ProductPriceFromJson(Map<String, dynamic> json) => ProductPrice(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      taxAuthorityParty: json['taxAuthorityParty'] == null
+          ? null
+          : Party.fromJson(json['taxAuthorityParty'] as Map<String, dynamic>),
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
-      cats: json['cats'] == null
+      desc: json['desc'] as String?,
+      model: json['model'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
           ? null
           : UserLogin.fromJson(
               json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      taxAuthorityParty: json['taxAuthorityParty'] == null
-          ? null
-          : Party.fromJson(json['taxAuthorityParty'] as Map<String, dynamic>),
-      createdbyuserlogin: json['createdbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['createdbyuserlogin'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       productStoreGroup: json['productStoreGroup'] == null
           ? null
           : ProductStoreGroup.fromJson(
               json['productStoreGroup'] as Map<String, dynamic>),
-      desc: json['desc'] as String?,
+      createdbyuserlogin: json['createdbyuserlogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['createdbyuserlogin'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductPriceToJson(ProductPrice instance) {
@@ -10577,16 +11087,17 @@ Map<String, dynamic> _$ProductPriceToJson(ProductPrice instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('taxAuthorityParty', instance.taxAuthorityParty?.toJson());
   writeNotNull('product', instance.product?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('desc', instance.desc);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull(
       'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('taxAuthorityParty', instance.taxAuthorityParty?.toJson());
-  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('productStoreGroup', instance.productStoreGroup?.toJson());
-  writeNotNull('desc', instance.desc);
+  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
   return val;
 }
 
@@ -10605,18 +11116,21 @@ ProductStoreGroupRole _$ProductStoreGroupRoleFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
+      model: json['model'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       productStoreGroup: json['productStoreGroup'] == null
           ? null
           : ProductStoreGroup.fromJson(
               json['productStoreGroup'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductStoreGroupRoleToJson(
@@ -10635,11 +11149,12 @@ Map<String, dynamic> _$ProductStoreGroupRoleToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('productStoreGroup', instance.productStoreGroup?.toJson());
-  writeNotNull('party', instance.party?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -10668,13 +11183,16 @@ ProductStoreRole _$ProductStoreRoleFromJson(Map<String, dynamic> json) =>
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductStoreRoleToJson(ProductStoreRole instance) {
@@ -10697,9 +11215,10 @@ Map<String, dynamic> _$ProductStoreRoleToJson(ProductStoreRole instance) {
   writeNotNull('id', instance.id);
   writeNotNull('proto', instance.proto);
   writeNotNull('productStore', instance.productStore?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('party', instance.party?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -10759,21 +11278,24 @@ PartyRelationship _$PartyRelationshipFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      fromParty: json['fromParty'] == null
-          ? null
-          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      toParty: json['toParty'] == null
-          ? null
-          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       securityGroup: json['securityGroup'] == null
           ? null
           : SecurityGroup.fromJson(
               json['securityGroup'] as Map<String, dynamic>),
+      fromParty: json['fromParty'] == null
+          ? null
+          : Party.fromJson(json['fromParty'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      toParty: json['toParty'] == null
+          ? null
+          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PartyRelationshipToJson(PartyRelationship instance) {
@@ -10802,12 +11324,39 @@ Map<String, dynamic> _$PartyRelationshipToJson(PartyRelationship instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('securityGroup', instance.securityGroup?.toJson());
   writeNotNull('fromParty', instance.fromParty?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('toParty', instance.toParty?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('securityGroup', instance.securityGroup?.toJson());
+  writeNotNull('toParty', instance.toParty?.toJson());
+  return val;
+}
+
+OrderContactMechCollection _$OrderContactMechCollectionFromJson(
+        Map<String, dynamic> json) =>
+    OrderContactMechCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderContactMech.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderContactMechCollectionToJson(
+    OrderContactMechCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -10840,14 +11389,17 @@ PostalAddress _$PostalAddressFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$PostalAddressToJson(PostalAddress instance) {
@@ -10880,36 +11432,11 @@ Map<String, dynamic> _$PostalAddressToJson(PostalAddress instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('contactMech', instance.contactMech?.toJson());
-  return val;
-}
-
-OrderContactMechCollection _$OrderContactMechCollectionFromJson(
-        Map<String, dynamic> json) =>
-    OrderContactMechCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderContactMech.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderContactMechCollectionToJson(
-    OrderContactMechCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -10949,25 +11476,31 @@ ShoppingList _$ShoppingListFromJson(Map<String, dynamic> json) => ShoppingList(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      productStore: json['productStore'] == null
+      model: json['model'] == null
           ? null
-          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      contactMech: json['contactMech'] == null
-          ? null
-          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       shoppingListItems: json['shoppingListItems'] == null
           ? null
           : ShoppingListItemCollection.fromJson(
               json['shoppingListItems'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      contactMech: json['contactMech'] == null
+          ? null
+          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      productStore: json['productStore'] == null
+          ? null
+          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
@@ -10975,9 +11508,6 @@ ShoppingList _$ShoppingListFromJson(Map<String, dynamic> json) => ShoppingList(
           ? null
           : ShoppingList.fromJson(
               json['parentShoppingList'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShoppingListToJson(ShoppingList instance) {
@@ -11012,16 +11542,17 @@ Map<String, dynamic> _$ShoppingListToJson(ShoppingList instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('productStore', instance.productStore?.toJson());
-  writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('shoppingListItems', instance.shoppingListItems?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('type', instance.type?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull('party', instance.party?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('parentShoppingList', instance.parentShoppingList?.toJson());
-  writeNotNull('party', instance.party?.toJson());
   return val;
 }
 
@@ -11052,6 +11583,9 @@ ReturnStatus _$ReturnStatusFromJson(Map<String, dynamic> json) => ReturnStatus(
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       returnHeader: json['returnHeader'] == null
           ? null
           : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
@@ -11079,6 +11613,7 @@ Map<String, dynamic> _$ReturnStatusToJson(ReturnStatus instance) {
   writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('returnHeader', instance.returnHeader?.toJson());
   writeNotNull('proto', instance.proto);
   return val;
@@ -11134,18 +11669,21 @@ ProductConfigProduct _$ProductConfigProductFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
+      productProduct: json['productProduct'] == null
+          ? null
+          : Product.fromJson(json['productProduct'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       configItemProductConfigItem: json['configItemProductConfigItem'] == null
           ? null
           : ProductConfigItem.fromJson(
               json['configItemProductConfigItem'] as Map<String, dynamic>),
-      productProduct: json['productProduct'] == null
-          ? null
-          : Product.fromJson(json['productProduct'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductConfigProductToJson(
@@ -11166,12 +11704,13 @@ Map<String, dynamic> _$ProductConfigProductToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('productProduct', instance.productProduct?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('configItemProductConfigItem',
       instance.configItemProductConfigItem?.toJson());
-  writeNotNull('productProduct', instance.productProduct?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -11184,11 +11723,11 @@ PartyWithPerson _$PartyWithPersonFromJson(Map<String, dynamic> json) =>
       person: json['person'] == null
           ? null
           : Person.fromJson(json['person'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$PartyWithPersonToJson(PartyWithPerson instance) {
@@ -11203,8 +11742,8 @@ Map<String, dynamic> _$PartyWithPersonToJson(PartyWithPerson instance) {
   writeNotNull('id', instance.id);
   writeNotNull('party', instance.party?.toJson());
   writeNotNull('person', instance.person?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -11233,32 +11772,6 @@ Map<String, dynamic> _$InvoiceCollectionToJson(InvoiceCollection instance) {
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
   writeNotNull('filter', instance.filter?.toJson());
-  return val;
-}
-
-OrderFactStatusCollection _$OrderFactStatusCollectionFromJson(
-        Map<String, dynamic> json) =>
-    OrderFactStatusCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderFactStatus.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderFactStatusCollectionToJson(
-    OrderFactStatusCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -11362,9 +11875,13 @@ OrderItem _$OrderItemFromJson(Map<String, dynamic> json) => OrderItem(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      product: json['product'] == null
+      model: json['model'] == null
           ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      changeByUserLogin: json['changeByUserLogin'] == null
+          ? null
+          : UserLogin.fromJson(
+              json['changeByUserLogin'] as Map<String, dynamic>),
       fromInventoryItem: json['fromInventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
@@ -11373,22 +11890,21 @@ OrderItem _$OrderItemFromJson(Map<String, dynamic> json) => OrderItem(
           ? null
           : UserLogin.fromJson(
               json['dontcancelsetuserlogin'] as Map<String, dynamic>),
-      orderHeader: json['orderHeader'] == null
+      product: json['product'] == null
           ? null
-          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
       addSuggestionsToShoppingList: json['addSuggestionsToShoppingList'] == null
           ? null
           : ShoppingList.fromJson(
               json['addSuggestionsToShoppingList'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      changeByUserLogin: json['changeByUserLogin'] == null
+      orderHeader: json['orderHeader'] == null
           ? null
-          : UserLogin.fromJson(
-              json['changeByUserLogin'] as Map<String, dynamic>),
+          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$OrderItemToJson(OrderItem instance) {
@@ -11451,17 +11967,44 @@ Map<String, dynamic> _$OrderItemToJson(OrderItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
   writeNotNull('fromInventoryItem', instance.fromInventoryItem?.toJson());
   writeNotNull(
       'dontcancelsetuserlogin', instance.dontcancelsetuserlogin?.toJson());
-  writeNotNull('orderHeader', instance.orderHeader?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('product', instance.product?.toJson());
   writeNotNull('addSuggestionsToShoppingList',
       instance.addSuggestionsToShoppingList?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('changeByUserLogin', instance.changeByUserLogin?.toJson());
+  writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('proto', instance.proto);
+  return val;
+}
+
+OrderFactStatusCollection _$OrderFactStatusCollectionFromJson(
+        Map<String, dynamic> json) =>
+    OrderFactStatusCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderFactStatus.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderFactStatusCollectionToJson(
+    OrderFactStatusCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -11482,14 +12025,17 @@ AgreementItem _$AgreementItemFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       agreement: json['agreement'] == null
           ? null
           : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AgreementItemToJson(AgreementItem instance) {
@@ -11510,10 +12056,11 @@ Map<String, dynamic> _$AgreementItemToJson(AgreementItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('agreement', instance.agreement?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('agreement', instance.agreement?.toJson());
   return val;
 }
 
@@ -11599,39 +12146,42 @@ ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      productPromoCategories: json['productPromoCategories'] == null
+          ? null
+          : ProductPromoCategoryCollection.fromJson(
+              json['productPromoCategories'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      productCategoryMembers: json['productCategoryMembers'] == null
-          ? null
-          : ProductCategoryMemberCollection.fromJson(
-              json['productCategoryMembers'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      primaryParentProductCategory: json['primaryParentProductCategory'] == null
-          ? null
-          : ProductCategory.fromJson(
-              json['primaryParentProductCategory'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       primaryProducts: json['primaryProducts'] == null
           ? null
           : ProductCollection.fromJson(
               json['primaryProducts'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      productCategoryMembers: json['productCategoryMembers'] == null
+          ? null
+          : ProductCategoryMemberCollection.fromJson(
+              json['productCategoryMembers'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       currentProductCategoryRollups: json['currentProductCategoryRollups'] ==
               null
           ? null
           : ProductCategoryRollupCollection.fromJson(
               json['currentProductCategoryRollups'] as Map<String, dynamic>),
-      productPromoCategories: json['productPromoCategories'] == null
+      primaryParentProductCategory: json['primaryParentProductCategory'] == null
           ? null
-          : ProductPromoCategoryCollection.fromJson(
-              json['productPromoCategories'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+          : ProductCategory.fromJson(
+              json['primaryParentProductCategory'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) {
@@ -11657,20 +12207,21 @@ Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull(
-      'productCategoryMembers', instance.productCategoryMembers?.toJson());
+      'productPromoCategories', instance.productPromoCategories?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('primaryParentProductCategory',
-      instance.primaryParentProductCategory?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('primaryProducts', instance.primaryProducts?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull(
+      'productCategoryMembers', instance.productCategoryMembers?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('currentProductCategoryRollups',
       instance.currentProductCategoryRollups?.toJson());
-  writeNotNull(
-      'productPromoCategories', instance.productPromoCategories?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('primaryParentProductCategory',
+      instance.primaryParentProductCategory?.toJson());
   return val;
 }
 
@@ -11720,27 +12271,30 @@ Requirement _$RequirementFromJson(Map<String, dynamic> json) => Requirement(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      fixedAsset: json['fixedAsset'] == null
+      product: json['product'] == null
           ? null
-          : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      type: json['type'] == null
+      model: json['model'] == null
           ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      product: json['product'] == null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      fixedAsset: json['fixedAsset'] == null
           ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
+          : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
       facility: json['facility'] == null
           ? null
           : Facility.fromJson(json['facility'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$RequirementToJson(Requirement instance) {
@@ -11774,14 +12328,15 @@ Map<String, dynamic> _$RequirementToJson(Requirement instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('product', instance.product?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
   writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('type', instance.type?.toJson());
   return val;
 }
 
@@ -11829,13 +12384,16 @@ AgreementRole _$AgreementRoleFromJson(Map<String, dynamic> json) =>
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      agreement: json['agreement'] == null
-          ? null
-          : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      agreement: json['agreement'] == null
+          ? null
+          : Agreement.fromJson(json['agreement'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AgreementRoleToJson(AgreementRole instance) {
@@ -11855,9 +12413,10 @@ Map<String, dynamic> _$AgreementRoleToJson(AgreementRole instance) {
   writeNotNull('id', instance.id);
   writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('agreement', instance.agreement?.toJson());
-  writeNotNull('party', instance.party?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('agreement', instance.agreement?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -11881,19 +12440,22 @@ SecurityGroupPermission _$SecurityGroupPermissionFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       securityPermission: json['securityPermission'] == null
           ? null
           : SecurityPermission.fromJson(
               json['securityPermission'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       securityGroup: json['securityGroup'] == null
           ? null
           : SecurityGroup.fromJson(
               json['securityGroup'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$SecurityGroupPermissionToJson(
@@ -11913,11 +12475,12 @@ Map<String, dynamic> _$SecurityGroupPermissionToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('securityPermission', instance.securityPermission?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('securityGroup', instance.securityGroup?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -11944,17 +12507,20 @@ ProductFacilityLocation _$ProductFacilityLocationFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      format: json['format'] as String?,
       facility: json['facility'] == null
           ? null
           : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductFacilityLocationToJson(
@@ -11975,11 +12541,12 @@ Map<String, dynamic> _$ProductFacilityLocationToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('product', instance.product?.toJson());
   return val;
 }
 
@@ -12004,14 +12571,17 @@ VendorProduct _$VendorProductFromJson(Map<String, dynamic> json) =>
           ? null
           : ProductStoreGroup.fromJson(
               json['productStoreGroup'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$VendorProductToJson(VendorProduct instance) {
@@ -12031,10 +12601,11 @@ Map<String, dynamic> _$VendorProductToJson(VendorProduct instance) {
   writeNotNull('id', instance.id);
   writeNotNull('vendorParty', instance.vendorParty?.toJson());
   writeNotNull('productStoreGroup', instance.productStoreGroup?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('product', instance.product?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -12134,17 +12705,20 @@ ExampleStatus _$ExampleStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      example: json['example'] == null
+      model: json['model'] == null
           ? null
-          : Example.fromJson(json['example'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      example: json['example'] == null
+          ? null
+          : Example.fromJson(json['example'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ExampleStatusToJson(ExampleStatus instance) {
@@ -12164,11 +12738,12 @@ Map<String, dynamic> _$ExampleStatusToJson(ExampleStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('example', instance.example?.toJson());
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('userLogin', instance.userLogin?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('example', instance.example?.toJson());
   return val;
 }
 
@@ -12240,27 +12815,15 @@ OrderItemShipGroup _$OrderItemShipGroupFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      facility: json['facility'] == null
+      carrierParty: json['carrierParty'] == null
           ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      supplierAgreement: json['supplierAgreement'] == null
-          ? null
-          : Agreement.fromJson(
-              json['supplierAgreement'] as Map<String, dynamic>),
-      vendorParty: json['vendorParty'] == null
-          ? null
-          : Party.fromJson(json['vendorParty'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+          : Party.fromJson(json['carrierParty'] as Map<String, dynamic>),
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
-      carrierParty: json['carrierParty'] == null
-          ? null
-          : Party.fromJson(json['carrierParty'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       telecomContactMech: json['telecomContactMech'] == null
           ? null
           : ContactMech.fromJson(
@@ -12268,9 +12831,24 @@ OrderItemShipGroup _$OrderItemShipGroupFromJson(Map<String, dynamic> json) =>
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       supplierParty: json['supplierParty'] == null
           ? null
           : Party.fromJson(json['supplierParty'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      supplierAgreement: json['supplierAgreement'] == null
+          ? null
+          : Agreement.fromJson(
+              json['supplierAgreement'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      vendorParty: json['vendorParty'] == null
+          ? null
+          : Party.fromJson(json['vendorParty'] as Map<String, dynamic>),
+      facility: json['facility'] == null
+          ? null
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderItemShipGroupToJson(OrderItemShipGroup instance) {
@@ -12306,17 +12884,18 @@ Map<String, dynamic> _$OrderItemShipGroupToJson(OrderItemShipGroup instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('supplierAgreement', instance.supplierAgreement?.toJson());
-  writeNotNull('vendorParty', instance.vendorParty?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('carrierParty', instance.carrierParty?.toJson());
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
   writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('carrierParty', instance.carrierParty?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('telecomContactMech', instance.telecomContactMech?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('supplierParty', instance.supplierParty?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('supplierAgreement', instance.supplierAgreement?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('vendorParty', instance.vendorParty?.toJson());
+  writeNotNull('facility', instance.facility?.toJson());
   return val;
 }
 
@@ -12366,33 +12945,6 @@ Map<String, dynamic> _$PartyGeoPointCollectionToJson(
   return val;
 }
 
-ProductCategoryRollupCollection _$ProductCategoryRollupCollectionFromJson(
-        Map<String, dynamic> json) =>
-    ProductCategoryRollupCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => ProductCategoryRollup.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductCategoryRollupCollectionToJson(
-    ProductCategoryRollupCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 BillingAccount _$BillingAccountFromJson(Map<String, dynamic> json) =>
     BillingAccount(
       billingAccountId: json['billingAccountId'] as String?,
@@ -12419,26 +12971,29 @@ BillingAccount _$BillingAccountFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      billingAccountRoles: json['billingAccountRoles'] == null
+          ? null
+          : BillingAccountRoleCollection.fromJson(
+              json['billingAccountRoles'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       billingAccountTerms: json['billingAccountTerms'] == null
           ? null
           : BillingAccountTermCollection.fromJson(
               json['billingAccountTerms'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      subview: json['subview'] == null
+      model: json['model'] == null
           ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      billingAccountRoles: json['billingAccountRoles'] == null
-          ? null
-          : BillingAccountRoleCollection.fromJson(
-              json['billingAccountRoles'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$BillingAccountToJson(BillingAccount instance) {
@@ -12461,13 +13016,41 @@ Map<String, dynamic> _$BillingAccountToJson(BillingAccount instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('billingAccountRoles', instance.billingAccountRoles?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('contactMech', instance.contactMech?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('billingAccountTerms', instance.billingAccountTerms?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('billingAccountRoles', instance.billingAccountRoles?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  return val;
+}
+
+ProductCategoryRollupCollection _$ProductCategoryRollupCollectionFromJson(
+        Map<String, dynamic> json) =>
+    ProductCategoryRollupCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => ProductCategoryRollup.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductCategoryRollupCollectionToJson(
+    ProductCategoryRollupCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -12504,63 +13087,6 @@ Map<String, dynamic> _$DataResourceWithTextToJson(
   writeNotNull('electronicText', instance.electronicText?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
-  return val;
-}
-
-SupplierProductFeature _$SupplierProductFeatureFromJson(
-        Map<String, dynamic> json) =>
-    SupplierProductFeature(
-      partyId: json['partyId'] as String?,
-      productFeatureId: json['productFeatureId'] as String?,
-      description: json['description'] as String?,
-      uomId: json['uomId'] as String?,
-      idCode: json['idCode'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      productFeature: json['productFeature'] == null
-          ? null
-          : ProductFeature.fromJson(
-              json['productFeature'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$SupplierProductFeatureToJson(
-    SupplierProductFeature instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('productFeatureId', instance.productFeatureId);
-  writeNotNull('description', instance.description);
-  writeNotNull('uomId', instance.uomId);
-  writeNotNull('idCode', instance.idCode);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('party', instance.party?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('productFeature', instance.productFeature?.toJson());
   return val;
 }
 
@@ -12614,14 +13140,17 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$PersonToJson(Person instance) {
@@ -12668,10 +13197,72 @@ Map<String, dynamic> _$PersonToJson(Person instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  return val;
+}
+
+SupplierProductFeature _$SupplierProductFeatureFromJson(
+        Map<String, dynamic> json) =>
+    SupplierProductFeature(
+      partyId: json['partyId'] as String?,
+      productFeatureId: json['productFeatureId'] as String?,
+      description: json['description'] as String?,
+      uomId: json['uomId'] as String?,
+      idCode: json['idCode'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      productFeature: json['productFeature'] == null
+          ? null
+          : ProductFeature.fromJson(
+              json['productFeature'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+    );
+
+Map<String, dynamic> _$SupplierProductFeatureToJson(
+    SupplierProductFeature instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('productFeatureId', instance.productFeatureId);
+  writeNotNull('description', instance.description);
+  writeNotNull('uomId', instance.uomId);
+  writeNotNull('idCode', instance.idCode);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('productFeature', instance.productFeature?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -12709,34 +13300,37 @@ ProductPromo _$ProductPromoFromJson(Map<String, dynamic> json) => ProductPromo(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      productPromoRules: json['productPromoRules'] == null
+      party: json['party'] == null
           ? null
-          : ProductPromoRuleCollection.fromJson(
-              json['productPromoRules'] as Map<String, dynamic>),
-      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
-          ? null
-          : UserLogin.fromJson(
-              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
       productPromoActions: json['productPromoActions'] == null
           ? null
           : ProductPromoActionCollection.fromJson(
               json['productPromoActions'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      productPromoRules: json['productPromoRules'] == null
+          ? null
+          : ProductPromoRuleCollection.fromJson(
+              json['productPromoRules'] as Map<String, dynamic>),
       createdbyuserlogin: json['createdbyuserlogin'] == null
           ? null
           : UserLogin.fromJson(
               json['createdbyuserlogin'] as Map<String, dynamic>),
-      cats: json['cats'] == null
+      lastmodifiedbyuserlogin: json['lastmodifiedbyuserlogin'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      party: json['party'] == null
+          : UserLogin.fromJson(
+              json['lastmodifiedbyuserlogin'] as Map<String, dynamic>),
+      model: json['model'] == null
           ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductPromoToJson(ProductPromo instance) {
@@ -12766,16 +13360,17 @@ Map<String, dynamic> _$ProductPromoToJson(ProductPromo instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('productPromoActions', instance.productPromoActions?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('productPromoRules', instance.productPromoRules?.toJson());
+  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
   writeNotNull(
       'lastmodifiedbyuserlogin', instance.lastmodifiedbyuserlogin?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('productPromoActions', instance.productPromoActions?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('createdbyuserlogin', instance.createdbyuserlogin?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('party', instance.party?.toJson());
   return val;
 }
 
@@ -12844,16 +13439,19 @@ OrderRole _$OrderRoleFromJson(Map<String, dynamic> json) => OrderRole(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      orderHeader: json['orderHeader'] == null
-          ? null
-          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      orderHeader: json['orderHeader'] == null
+          ? null
+          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
     );
 
@@ -12872,10 +13470,11 @@ Map<String, dynamic> _$OrderRoleToJson(OrderRole instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('orderHeader', instance.orderHeader?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('party', instance.party?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('orderHeader', instance.orderHeader?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
   return val;
 }
@@ -12955,14 +13554,17 @@ OrderPaymentPreference _$OrderPaymentPreferenceFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
-      cats: json['cats'] == null
+      model: json['model'] == null
           ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
@@ -13005,10 +13607,11 @@ Map<String, dynamic> _$OrderPaymentPreferenceToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('userLogin', instance.userLogin?.toJson());
   return val;
 }
@@ -13034,17 +13637,20 @@ FactProtoStatus _$FactProtoStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      factProto: json['factProto'] == null
-          ? null
-          : FactProto.fromJson(json['factProto'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      factProto: json['factProto'] == null
+          ? null
+          : FactProto.fromJson(json['factProto'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FactProtoStatusToJson(FactProtoStatus instance) {
@@ -13064,11 +13670,12 @@ Map<String, dynamic> _$FactProtoStatusToJson(FactProtoStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('factProto', instance.factProto?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('factProto', instance.factProto?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -13092,14 +13699,17 @@ ProductStorePaymentSetting _$ProductStorePaymentSettingFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductStorePaymentSettingToJson(
@@ -13123,10 +13733,11 @@ Map<String, dynamic> _$ProductStorePaymentSettingToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('productStore', instance.productStore?.toJson());
   return val;
 }
 
@@ -13161,6 +13772,7 @@ StringMapValue _$StringMapValueFromJson(Map<String, dynamic> json) =>
       values: (json['values'] as List<dynamic>?)
           ?.map((e) => MapEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$StringMapValueToJson(StringMapValue instance) {
@@ -13173,6 +13785,7 @@ Map<String, dynamic> _$StringMapValueToJson(StringMapValue instance) {
   }
 
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -13198,14 +13811,17 @@ ProductStoreKeywordOvrd _$ProductStoreKeywordOvrdFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      format: json['format'] as String?,
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductStoreKeywordOvrdToJson(
@@ -13227,10 +13843,11 @@ Map<String, dynamic> _$ProductStoreKeywordOvrdToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
   writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -13292,16 +13909,19 @@ FixedAssetProduct _$FixedAssetProductFromJson(Map<String, dynamic> json) =>
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
       format: json['format'] as String?,
-      product: json['product'] == null
+      model: json['model'] == null
           ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       fixedAsset: json['fixedAsset'] == null
           ? null
           : FixedAsset.fromJson(json['fixedAsset'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$FixedAssetProductToJson(FixedAssetProduct instance) {
@@ -13326,36 +13946,11 @@ Map<String, dynamic> _$FixedAssetProductToJson(FixedAssetProduct instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('format', instance.format);
-  writeNotNull('product', instance.product?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('fixedAsset', instance.fixedAsset?.toJson());
-  return val;
-}
-
-ProductConfigOptionCollection _$ProductConfigOptionCollectionFromJson(
-        Map<String, dynamic> json) =>
-    ProductConfigOptionCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductConfigOption.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductConfigOptionCollectionToJson(
-    ProductConfigOptionCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -13371,6 +13966,32 @@ ReturnItemBillingCollection _$ReturnItemBillingCollectionFromJson(
 
 Map<String, dynamic> _$ReturnItemBillingCollectionToJson(
     ReturnItemBillingCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductConfigOptionCollection _$ProductConfigOptionCollectionFromJson(
+        Map<String, dynamic> json) =>
+    ProductConfigOptionCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductConfigOption.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductConfigOptionCollectionToJson(
+    ProductConfigOptionCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -13473,20 +14094,23 @@ OrderAdjustment _$OrderAdjustmentFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      orderHeader: json['orderHeader'] == null
-          ? null
-          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
-      userLogin: json['userLogin'] == null
-          ? null
-          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      userLogin: json['userLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      orderHeader: json['orderHeader'] == null
+          ? null
+          : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OrderAdjustmentToJson(OrderAdjustment instance) {
@@ -13535,12 +14159,13 @@ Map<String, dynamic> _$OrderAdjustmentToJson(OrderAdjustment instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('orderHeader', instance.orderHeader?.toJson());
-  writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('productPromo', instance.productPromo?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('userLogin', instance.userLogin?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('productPromo', instance.productPromo?.toJson());
+  writeNotNull('orderHeader', instance.orderHeader?.toJson());
   return val;
 }
 
@@ -13583,14 +14208,17 @@ VideoDataResource _$VideoDataResourceFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      dataResource: json['dataResource'] == null
+          ? null
+          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      dataResource: json['dataResource'] == null
-          ? null
-          : DataResource.fromJson(json['dataResource'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$VideoDataResourceToJson(VideoDataResource instance) {
@@ -13607,10 +14235,11 @@ Map<String, dynamic> _$VideoDataResourceToJson(VideoDataResource instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('dataResource', instance.dataResource?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('dataResource', instance.dataResource?.toJson());
   return val;
 }
 
@@ -13683,11 +14312,11 @@ DataResourceWithImage _$DataResourceWithImageFromJson(
           ? null
           : ImageDataResource.fromJson(
               json['imageDataResource'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$DataResourceWithImageToJson(
@@ -13703,8 +14332,8 @@ Map<String, dynamic> _$DataResourceWithImageToJson(
   writeNotNull('id', instance.id);
   writeNotNull('dataResource', instance.dataResource?.toJson());
   writeNotNull('imageDataResource', instance.imageDataResource?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -13851,26 +14480,29 @@ Blacklist _$BlacklistFromJson(Map<String, dynamic> json) => Blacklist(
           ? null
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      blacklistItems: json['blacklistItems'] == null
-          ? null
-          : BlacklistItemCollection.fromJson(
-              json['blacklistItems'] as Map<String, dynamic>),
       blacklistStatuses: json['blacklistStatuses'] == null
           ? null
           : BlacklistStatusCollection.fromJson(
               json['blacklistStatuses'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      blacklistItems: json['blacklistItems'] == null
+          ? null
+          : BlacklistItemCollection.fromJson(
+              json['blacklistItems'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$BlacklistToJson(Blacklist instance) {
@@ -13888,13 +14520,14 @@ Map<String, dynamic> _$BlacklistToJson(Blacklist instance) {
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('blacklistItems', instance.blacklistItems?.toJson());
   writeNotNull('blacklistStatuses', instance.blacklistStatuses?.toJson());
-  writeNotNull('type', instance.type?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('blacklistItems', instance.blacklistItems?.toJson());
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -13971,14 +14604,17 @@ ShipmentPackageRouteSeg _$ShipmentPackageRouteSegFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
+      format: json['format'] as String?,
       shipment: json['shipment'] == null
           ? null
           : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ShipmentPackageRouteSegToJson(
@@ -14010,10 +14646,11 @@ Map<String, dynamic> _$ShipmentPackageRouteSegToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('shipment', instance.shipment?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('shipment', instance.shipment?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -14078,18 +14715,21 @@ ProductAssoc _$ProductAssocFromJson(Map<String, dynamic> json) => ProductAssoc(
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      mainProduct: json['mainProduct'] == null
+      assocProduct: json['assocProduct'] == null
           ? null
-          : Product.fromJson(json['mainProduct'] as Map<String, dynamic>),
+          : Product.fromJson(json['assocProduct'] as Map<String, dynamic>),
       routingWorkEffort: json['routingWorkEffort'] == null
           ? null
           : WorkEffort.fromJson(
               json['routingWorkEffort'] as Map<String, dynamic>),
-      assocProduct: json['assocProduct'] == null
-          ? null
-          : Product.fromJson(json['assocProduct'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      mainProduct: json['mainProduct'] == null
+          ? null
+          : Product.fromJson(json['mainProduct'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ProductAssocToJson(ProductAssoc instance) {
@@ -14118,11 +14758,12 @@ Map<String, dynamic> _$ProductAssocToJson(ProductAssoc instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('mainProduct', instance.mainProduct?.toJson());
-  writeNotNull('routingWorkEffort', instance.routingWorkEffort?.toJson());
   writeNotNull('assocProduct', instance.assocProduct?.toJson());
+  writeNotNull('routingWorkEffort', instance.routingWorkEffort?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('mainProduct', instance.mainProduct?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -14174,17 +14815,20 @@ ReturnItemBilling _$ReturnItemBillingFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      format: json['format'] as String?,
-      invoice: json['invoice'] == null
-          ? null
-          : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       returnHeader: json['returnHeader'] == null
           ? null
           : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
+      invoice: json['invoice'] == null
+          ? null
+          : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ReturnItemBillingToJson(ReturnItemBilling instance) {
@@ -14206,11 +14850,12 @@ Map<String, dynamic> _$ReturnItemBillingToJson(ReturnItemBilling instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('format', instance.format);
-  writeNotNull('invoice', instance.invoice?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('returnHeader', instance.returnHeader?.toJson());
+  writeNotNull('invoice', instance.invoice?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -14353,29 +14998,59 @@ ProductStore _$ProductStoreFromJson(Map<String, dynamic> json) => ProductStore(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      productStorePromoAppls: json['productStorePromoAppls'] == null
+      productStoreEmailSettings: json['productStoreEmailSettings'] == null
           ? null
-          : ProductStorePromoApplCollection.fromJson(
-              json['productStorePromoAppls'] as Map<String, dynamic>),
-      facility: json['facility'] == null
+          : ProductStoreEmailSettingCollection.fromJson(
+              json['productStoreEmailSettings'] as Map<String, dynamic>),
+      webSites: json['webSites'] == null
           ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      productStoreRoles: json['productStoreRoles'] == null
+          : WebSiteCollection.fromJson(
+              json['webSites'] as Map<String, dynamic>),
+      party: json['party'] == null
           ? null
-          : ProductStoreRoleCollection.fromJson(
-              json['productStoreRoles'] as Map<String, dynamic>),
-      primaryProductStoreGroup: json['primaryProductStoreGroup'] == null
-          ? null
-          : ProductStoreGroup.fromJson(
-              json['primaryProductStoreGroup'] as Map<String, dynamic>),
-      primaryAddress: json['primaryAddress'] == null
-          ? null
-          : PostalAddress.fromJson(
-              json['primaryAddress'] as Map<String, dynamic>),
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      contactMech: json['contactMech'] == null
+          ? null
+          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      productStoreCatalogs: json['productStoreCatalogs'] == null
+          ? null
+          : ProductStoreCatalogCollection.fromJson(
+              json['productStoreCatalogs'] as Map<String, dynamic>),
+      productStorePaymentSettings: json['productStorePaymentSettings'] == null
+          ? null
+          : ProductStorePaymentSettingCollection.fromJson(
+              json['productStorePaymentSettings'] as Map<String, dynamic>),
+      primaryProductStoreGroup: json['primaryProductStoreGroup'] == null
+          ? null
+          : ProductStoreGroup.fromJson(
+              json['primaryProductStoreGroup'] as Map<String, dynamic>),
+      productStoreRoles: json['productStoreRoles'] == null
+          ? null
+          : ProductStoreRoleCollection.fromJson(
+              json['productStoreRoles'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      primaryAddress: json['primaryAddress'] == null
+          ? null
+          : PostalAddress.fromJson(
+              json['primaryAddress'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      productStoreKeywordOvrds: json['productStoreKeywordOvrds'] == null
+          ? null
+          : ProductStoreKeywordOvrdCollection.fromJson(
+              json['productStoreKeywordOvrds'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      productStorePromoAppls: json['productStorePromoAppls'] == null
+          ? null
+          : ProductStorePromoApplCollection.fromJson(
+              json['productStorePromoAppls'] as Map<String, dynamic>),
       productStoreFacilities: json['productStoreFacilities'] == null
           ? null
           : ProductStoreFacilityCollection.fromJson(
@@ -14384,37 +15059,10 @@ ProductStore _$ProductStoreFromJson(Map<String, dynamic> json) => ProductStore(
           ? null
           : TelecomNumber.fromJson(
               json['primaryPhone'] as Map<String, dynamic>),
-      productStorePaymentSettings: json['productStorePaymentSettings'] == null
+      facility: json['facility'] == null
           ? null
-          : ProductStorePaymentSettingCollection.fromJson(
-              json['productStorePaymentSettings'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      contactMech: json['contactMech'] == null
-          ? null
-          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      webSites: json['webSites'] == null
-          ? null
-          : WebSiteCollection.fromJson(
-              json['webSites'] as Map<String, dynamic>),
-      productStoreCatalogs: json['productStoreCatalogs'] == null
-          ? null
-          : ProductStoreCatalogCollection.fromJson(
-              json['productStoreCatalogs'] as Map<String, dynamic>),
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
       format: json['format'] as String?,
-      productStoreEmailSettings: json['productStoreEmailSettings'] == null
-          ? null
-          : ProductStoreEmailSettingCollection.fromJson(
-              json['productStoreEmailSettings'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      productStoreKeywordOvrds: json['productStoreKeywordOvrds'] == null
-          ? null
-          : ProductStoreKeywordOvrdCollection.fromJson(
-              json['productStoreKeywordOvrds'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductStoreToJson(ProductStore instance) {
@@ -14507,30 +15155,31 @@ Map<String, dynamic> _$ProductStoreToJson(ProductStore instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull(
-      'productStorePromoAppls', instance.productStorePromoAppls?.toJson());
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('productStoreRoles', instance.productStoreRoles?.toJson());
-  writeNotNull(
-      'primaryProductStoreGroup', instance.primaryProductStoreGroup?.toJson());
-  writeNotNull('primaryAddress', instance.primaryAddress?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull(
-      'productStoreFacilities', instance.productStoreFacilities?.toJson());
-  writeNotNull('primaryPhone', instance.primaryPhone?.toJson());
-  writeNotNull('productStorePaymentSettings',
-      instance.productStorePaymentSettings?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('party', instance.party?.toJson());
-  writeNotNull('webSites', instance.webSites?.toJson());
-  writeNotNull('productStoreCatalogs', instance.productStoreCatalogs?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('productStoreEmailSettings',
       instance.productStoreEmailSettings?.toJson());
+  writeNotNull('webSites', instance.webSites?.toJson());
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('productStoreCatalogs', instance.productStoreCatalogs?.toJson());
+  writeNotNull('productStorePaymentSettings',
+      instance.productStorePaymentSettings?.toJson());
+  writeNotNull(
+      'primaryProductStoreGroup', instance.primaryProductStoreGroup?.toJson());
+  writeNotNull('productStoreRoles', instance.productStoreRoles?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('primaryAddress', instance.primaryAddress?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull(
       'productStoreKeywordOvrds', instance.productStoreKeywordOvrds?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull(
+      'productStorePromoAppls', instance.productStorePromoAppls?.toJson());
+  writeNotNull(
+      'productStoreFacilities', instance.productStoreFacilities?.toJson());
+  writeNotNull('primaryPhone', instance.primaryPhone?.toJson());
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -14593,46 +15242,49 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      inventoryTransfers: json['inventoryTransfers'] == null
-          ? null
-          : InventoryTransferCollection.fromJson(
-              json['inventoryTransfers'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      inventoryItemDetails: json['inventoryItemDetails'] == null
-          ? null
-          : InventoryItemDetailCollection.fromJson(
-              json['inventoryItemDetails'] as Map<String, dynamic>),
-      ownerParty: json['ownerParty'] == null
-          ? null
-          : Party.fromJson(json['ownerParty'] as Map<String, dynamic>),
-      fixedAssetFixedAsset: json['fixedAssetFixedAsset'] == null
-          ? null
-          : FixedAsset.fromJson(
-              json['fixedAssetFixedAsset'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
       inventoryItemStatuses: json['inventoryItemStatuses'] == null
           ? null
           : InventoryItemStatusCollection.fromJson(
               json['inventoryItemStatuses'] as Map<String, dynamic>),
+      fixedAssetFixedAsset: json['fixedAssetFixedAsset'] == null
+          ? null
+          : FixedAsset.fromJson(
+              json['fixedAssetFixedAsset'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      inventoryItemDetails: json['inventoryItemDetails'] == null
+          ? null
+          : InventoryItemDetailCollection.fromJson(
+              json['inventoryItemDetails'] as Map<String, dynamic>),
+      facility: json['facility'] == null
+          ? null
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      inventoryTransfers: json['inventoryTransfers'] == null
+          ? null
+          : InventoryTransferCollection.fromJson(
+              json['inventoryTransfers'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      type: json['type'] == null
+      ownerParty: json['ownerParty'] == null
           ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      facility: json['facility'] == null
+          : Party.fromJson(json['ownerParty'] as Map<String, dynamic>),
+      party: json['party'] == null
           ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) {
@@ -14675,20 +15327,21 @@ Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('party', instance.party?.toJson());
-  writeNotNull('inventoryTransfers', instance.inventoryTransfers?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('inventoryItemDetails', instance.inventoryItemDetails?.toJson());
-  writeNotNull('ownerParty', instance.ownerParty?.toJson());
-  writeNotNull('fixedAssetFixedAsset', instance.fixedAssetFixedAsset?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull(
       'inventoryItemStatuses', instance.inventoryItemStatuses?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('fixedAssetFixedAsset', instance.fixedAssetFixedAsset?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('inventoryItemDetails', instance.inventoryItemDetails?.toJson());
   writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('inventoryTransfers', instance.inventoryTransfers?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('ownerParty', instance.ownerParty?.toJson());
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -14717,14 +15370,17 @@ ProductConfig _$ProductConfigFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       productProduct: json['productProduct'] == null
           ? null
           : Product.fromJson(json['productProduct'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       configItemProductConfigItem: json['configItemProductConfigItem'] == null
           ? null
           : ProductConfigItem.fromJson(
@@ -14753,10 +15409,11 @@ Map<String, dynamic> _$ProductConfigToJson(ProductConfig instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('productProduct', instance.productProduct?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('configItemProductConfigItem',
       instance.configItemProductConfigItem?.toJson());
   return val;
@@ -14806,162 +15463,162 @@ ResponseValue _$ResponseValueFromJson(Map<String, dynamic> json) =>
       ts: json['ts'] == null
           ? null
           : TimestampValue.fromJson(json['ts'] as Map<String, dynamic>),
-      asOrderHeaderList: json['asOrderHeaderList'] == null
-          ? null
-          : OrderHeaderCollection.fromJson(
-              json['asOrderHeaderList'] as Map<String, dynamic>),
-      asRequirementList: json['asRequirementList'] == null
-          ? null
-          : RequirementCollection.fromJson(
-              json['asRequirementList'] as Map<String, dynamic>),
-      asUserLoginList: json['asUserLoginList'] == null
-          ? null
-          : UserLoginCollection.fromJson(
-              json['asUserLoginList'] as Map<String, dynamic>),
-      asTypesEntityList: json['asTypesEntityList'] == null
-          ? null
-          : TypesEntityCollection.fromJson(
-              json['asTypesEntityList'] as Map<String, dynamic>),
-      asProductFeatureList: json['asProductFeatureList'] == null
-          ? null
-          : ProductFeatureCollection.fromJson(
-              json['asProductFeatureList'] as Map<String, dynamic>),
-      asFactProtoList: json['asFactProtoList'] == null
-          ? null
-          : FactProtoCollection.fromJson(
-              json['asFactProtoList'] as Map<String, dynamic>),
-      asProductStoreList: json['asProductStoreList'] == null
-          ? null
-          : ProductStoreCollection.fromJson(
-              json['asProductStoreList'] as Map<String, dynamic>),
-      asContentList: json['asContentList'] == null
-          ? null
-          : ContentCollection.fromJson(
-              json['asContentList'] as Map<String, dynamic>),
-      asProductStoreGroupList: json['asProductStoreGroupList'] == null
-          ? null
-          : ProductStoreGroupCollection.fromJson(
-              json['asProductStoreGroupList'] as Map<String, dynamic>),
-      asNoteDataList: json['asNoteDataList'] == null
-          ? null
-          : NoteDataCollection.fromJson(
-              json['asNoteDataList'] as Map<String, dynamic>),
-      asFacilityList: json['asFacilityList'] == null
-          ? null
-          : FacilityCollection.fromJson(
-              json['asFacilityList'] as Map<String, dynamic>),
-      extractStrings: json['extractStrings'] == null
-          ? null
-          : StringsValue.fromJson(
-              json['extractStrings'] as Map<String, dynamic>),
-      asShipmentList: json['asShipmentList'] == null
-          ? null
-          : ShipmentCollection.fromJson(
-              json['asShipmentList'] as Map<String, dynamic>),
-      asOrderFactList: json['asOrderFactList'] == null
-          ? null
-          : OrderFactCollection.fromJson(
-              json['asOrderFactList'] as Map<String, dynamic>),
-      asProductFeatureCategoryList: json['asProductFeatureCategoryList'] == null
-          ? null
-          : ProductFeatureCategoryCollection.fromJson(
-              json['asProductFeatureCategoryList'] as Map<String, dynamic>),
-      asProductConfigItemList: json['asProductConfigItemList'] == null
-          ? null
-          : ProductConfigItemCollection.fromJson(
-              json['asProductConfigItemList'] as Map<String, dynamic>),
-      asSecurityGroupList: json['asSecurityGroupList'] == null
-          ? null
-          : SecurityGroupCollection.fromJson(
-              json['asSecurityGroupList'] as Map<String, dynamic>),
-      asPartyList: json['asPartyList'] == null
-          ? null
-          : PartyCollection.fromJson(
-              json['asPartyList'] as Map<String, dynamic>),
-      asSecurityPermissionList: json['asSecurityPermissionList'] == null
-          ? null
-          : SecurityPermissionCollection.fromJson(
-              json['asSecurityPermissionList'] as Map<String, dynamic>),
-      asProductReviewList: json['asProductReviewList'] == null
-          ? null
-          : ProductReviewCollection.fromJson(
-              json['asProductReviewList'] as Map<String, dynamic>),
-      asContactMechList: json['asContactMechList'] == null
-          ? null
-          : ContactMechCollection.fromJson(
-              json['asContactMechList'] as Map<String, dynamic>),
-      asShoppingListList: json['asShoppingListList'] == null
-          ? null
-          : ShoppingListCollection.fromJson(
-              json['asShoppingListList'] as Map<String, dynamic>),
-      asAgreementList: json['asAgreementList'] == null
-          ? null
-          : AgreementCollection.fromJson(
-              json['asAgreementList'] as Map<String, dynamic>),
-      asWebSiteList: json['asWebSiteList'] == null
-          ? null
-          : WebSiteCollection.fromJson(
-              json['asWebSiteList'] as Map<String, dynamic>),
       asInvoiceList: json['asInvoiceList'] == null
           ? null
           : InvoiceCollection.fromJson(
               json['asInvoiceList'] as Map<String, dynamic>),
-      asPaymentList: json['asPaymentList'] == null
+      asShoppingListList: json['asShoppingListList'] == null
           ? null
-          : PaymentCollection.fromJson(
-              json['asPaymentList'] as Map<String, dynamic>),
-      asBlacklistList: json['asBlacklistList'] == null
-          ? null
-          : BlacklistCollection.fromJson(
-              json['asBlacklistList'] as Map<String, dynamic>),
-      asProductPromoList: json['asProductPromoList'] == null
-          ? null
-          : ProductPromoCollection.fromJson(
-              json['asProductPromoList'] as Map<String, dynamic>),
-      asProductCategoryList: json['asProductCategoryList'] == null
-          ? null
-          : ProductCategoryCollection.fromJson(
-              json['asProductCategoryList'] as Map<String, dynamic>),
-      asWorkEffortList: json['asWorkEffortList'] == null
-          ? null
-          : WorkEffortCollection.fromJson(
-              json['asWorkEffortList'] as Map<String, dynamic>),
-      asAcctgTransList: json['asAcctgTransList'] == null
-          ? null
-          : AcctgTransCollection.fromJson(
-              json['asAcctgTransList'] as Map<String, dynamic>),
-      asExampleList: json['asExampleList'] == null
-          ? null
-          : ExampleCollection.fromJson(
-              json['asExampleList'] as Map<String, dynamic>),
-      asInventoryItemList: json['asInventoryItemList'] == null
-          ? null
-          : InventoryItemCollection.fromJson(
-              json['asInventoryItemList'] as Map<String, dynamic>),
-      asDataResourceList: json['asDataResourceList'] == null
-          ? null
-          : DataResourceCollection.fromJson(
-              json['asDataResourceList'] as Map<String, dynamic>),
-      asReturnHeaderList: json['asReturnHeaderList'] == null
-          ? null
-          : ReturnHeaderCollection.fromJson(
-              json['asReturnHeaderList'] as Map<String, dynamic>),
-      asBillingAccountList: json['asBillingAccountList'] == null
-          ? null
-          : BillingAccountCollection.fromJson(
-              json['asBillingAccountList'] as Map<String, dynamic>),
-      asProdCatalogList: json['asProdCatalogList'] == null
-          ? null
-          : ProdCatalogCollection.fromJson(
-              json['asProdCatalogList'] as Map<String, dynamic>),
-      asProductList: json['asProductList'] == null
-          ? null
-          : ProductCollection.fromJson(
-              json['asProductList'] as Map<String, dynamic>),
+          : ShoppingListCollection.fromJson(
+              json['asShoppingListList'] as Map<String, dynamic>),
       asFixedAssetList: json['asFixedAssetList'] == null
           ? null
           : FixedAssetCollection.fromJson(
               json['asFixedAssetList'] as Map<String, dynamic>),
+      asBillingAccountList: json['asBillingAccountList'] == null
+          ? null
+          : BillingAccountCollection.fromJson(
+              json['asBillingAccountList'] as Map<String, dynamic>),
+      asProductList: json['asProductList'] == null
+          ? null
+          : ProductCollection.fromJson(
+              json['asProductList'] as Map<String, dynamic>),
+      asProductReviewList: json['asProductReviewList'] == null
+          ? null
+          : ProductReviewCollection.fromJson(
+              json['asProductReviewList'] as Map<String, dynamic>),
+      asProductStoreGroupList: json['asProductStoreGroupList'] == null
+          ? null
+          : ProductStoreGroupCollection.fromJson(
+              json['asProductStoreGroupList'] as Map<String, dynamic>),
+      asAgreementList: json['asAgreementList'] == null
+          ? null
+          : AgreementCollection.fromJson(
+              json['asAgreementList'] as Map<String, dynamic>),
+      asFactProtoList: json['asFactProtoList'] == null
+          ? null
+          : FactProtoCollection.fromJson(
+              json['asFactProtoList'] as Map<String, dynamic>),
+      asExampleList: json['asExampleList'] == null
+          ? null
+          : ExampleCollection.fromJson(
+              json['asExampleList'] as Map<String, dynamic>),
+      asProductPromoList: json['asProductPromoList'] == null
+          ? null
+          : ProductPromoCollection.fromJson(
+              json['asProductPromoList'] as Map<String, dynamic>),
+      asNoteDataList: json['asNoteDataList'] == null
+          ? null
+          : NoteDataCollection.fromJson(
+              json['asNoteDataList'] as Map<String, dynamic>),
+      asWorkEffortList: json['asWorkEffortList'] == null
+          ? null
+          : WorkEffortCollection.fromJson(
+              json['asWorkEffortList'] as Map<String, dynamic>),
+      asProductStoreList: json['asProductStoreList'] == null
+          ? null
+          : ProductStoreCollection.fromJson(
+              json['asProductStoreList'] as Map<String, dynamic>),
+      asAcctgTransList: json['asAcctgTransList'] == null
+          ? null
+          : AcctgTransCollection.fromJson(
+              json['asAcctgTransList'] as Map<String, dynamic>),
+      asContentList: json['asContentList'] == null
+          ? null
+          : ContentCollection.fromJson(
+              json['asContentList'] as Map<String, dynamic>),
+      asProductCategoryList: json['asProductCategoryList'] == null
+          ? null
+          : ProductCategoryCollection.fromJson(
+              json['asProductCategoryList'] as Map<String, dynamic>),
+      asFacilityList: json['asFacilityList'] == null
+          ? null
+          : FacilityCollection.fromJson(
+              json['asFacilityList'] as Map<String, dynamic>),
+      asPaymentList: json['asPaymentList'] == null
+          ? null
+          : PaymentCollection.fromJson(
+              json['asPaymentList'] as Map<String, dynamic>),
+      asSecurityGroupList: json['asSecurityGroupList'] == null
+          ? null
+          : SecurityGroupCollection.fromJson(
+              json['asSecurityGroupList'] as Map<String, dynamic>),
+      asReturnHeaderList: json['asReturnHeaderList'] == null
+          ? null
+          : ReturnHeaderCollection.fromJson(
+              json['asReturnHeaderList'] as Map<String, dynamic>),
+      asProdCatalogList: json['asProdCatalogList'] == null
+          ? null
+          : ProdCatalogCollection.fromJson(
+              json['asProdCatalogList'] as Map<String, dynamic>),
+      asUserLoginList: json['asUserLoginList'] == null
+          ? null
+          : UserLoginCollection.fromJson(
+              json['asUserLoginList'] as Map<String, dynamic>),
+      asProductFeatureCategoryList: json['asProductFeatureCategoryList'] == null
+          ? null
+          : ProductFeatureCategoryCollection.fromJson(
+              json['asProductFeatureCategoryList'] as Map<String, dynamic>),
+      asOrderHeaderList: json['asOrderHeaderList'] == null
+          ? null
+          : OrderHeaderCollection.fromJson(
+              json['asOrderHeaderList'] as Map<String, dynamic>),
+      asDataResourceList: json['asDataResourceList'] == null
+          ? null
+          : DataResourceCollection.fromJson(
+              json['asDataResourceList'] as Map<String, dynamic>),
+      asRequirementList: json['asRequirementList'] == null
+          ? null
+          : RequirementCollection.fromJson(
+              json['asRequirementList'] as Map<String, dynamic>),
+      asWebSiteList: json['asWebSiteList'] == null
+          ? null
+          : WebSiteCollection.fromJson(
+              json['asWebSiteList'] as Map<String, dynamic>),
+      asContactMechList: json['asContactMechList'] == null
+          ? null
+          : ContactMechCollection.fromJson(
+              json['asContactMechList'] as Map<String, dynamic>),
+      asBlacklistList: json['asBlacklistList'] == null
+          ? null
+          : BlacklistCollection.fromJson(
+              json['asBlacklistList'] as Map<String, dynamic>),
+      extractStrings: json['extractStrings'] == null
+          ? null
+          : StringsValue.fromJson(
+              json['extractStrings'] as Map<String, dynamic>),
+      asTypesEntityList: json['asTypesEntityList'] == null
+          ? null
+          : TypesEntityCollection.fromJson(
+              json['asTypesEntityList'] as Map<String, dynamic>),
+      asProductConfigItemList: json['asProductConfigItemList'] == null
+          ? null
+          : ProductConfigItemCollection.fromJson(
+              json['asProductConfigItemList'] as Map<String, dynamic>),
+      asProductFeatureList: json['asProductFeatureList'] == null
+          ? null
+          : ProductFeatureCollection.fromJson(
+              json['asProductFeatureList'] as Map<String, dynamic>),
+      asPartyList: json['asPartyList'] == null
+          ? null
+          : PartyCollection.fromJson(
+              json['asPartyList'] as Map<String, dynamic>),
+      asInventoryItemList: json['asInventoryItemList'] == null
+          ? null
+          : InventoryItemCollection.fromJson(
+              json['asInventoryItemList'] as Map<String, dynamic>),
+      asShipmentList: json['asShipmentList'] == null
+          ? null
+          : ShipmentCollection.fromJson(
+              json['asShipmentList'] as Map<String, dynamic>),
+      asSecurityPermissionList: json['asSecurityPermissionList'] == null
+          ? null
+          : SecurityPermissionCollection.fromJson(
+              json['asSecurityPermissionList'] as Map<String, dynamic>),
+      asOrderFactList: json['asOrderFactList'] == null
+          ? null
+          : OrderFactCollection.fromJson(
+              json['asOrderFactList'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ResponseValueToJson(ResponseValue instance) {
@@ -14980,50 +15637,50 @@ Map<String, dynamic> _$ResponseValueToJson(ResponseValue instance) {
   writeNotNull('resultData', instance.resultData?.toJson());
   writeNotNull('resultObject', instance.resultObject?.toJson());
   writeNotNull('ts', instance.ts?.toJson());
-  writeNotNull('asOrderHeaderList', instance.asOrderHeaderList?.toJson());
-  writeNotNull('asRequirementList', instance.asRequirementList?.toJson());
-  writeNotNull('asUserLoginList', instance.asUserLoginList?.toJson());
-  writeNotNull('asTypesEntityList', instance.asTypesEntityList?.toJson());
-  writeNotNull('asProductFeatureList', instance.asProductFeatureList?.toJson());
-  writeNotNull('asFactProtoList', instance.asFactProtoList?.toJson());
-  writeNotNull('asProductStoreList', instance.asProductStoreList?.toJson());
-  writeNotNull('asContentList', instance.asContentList?.toJson());
+  writeNotNull('asInvoiceList', instance.asInvoiceList?.toJson());
+  writeNotNull('asShoppingListList', instance.asShoppingListList?.toJson());
+  writeNotNull('asFixedAssetList', instance.asFixedAssetList?.toJson());
+  writeNotNull('asBillingAccountList', instance.asBillingAccountList?.toJson());
+  writeNotNull('asProductList', instance.asProductList?.toJson());
+  writeNotNull('asProductReviewList', instance.asProductReviewList?.toJson());
   writeNotNull(
       'asProductStoreGroupList', instance.asProductStoreGroupList?.toJson());
-  writeNotNull('asNoteDataList', instance.asNoteDataList?.toJson());
-  writeNotNull('asFacilityList', instance.asFacilityList?.toJson());
-  writeNotNull('extractStrings', instance.extractStrings?.toJson());
-  writeNotNull('asShipmentList', instance.asShipmentList?.toJson());
-  writeNotNull('asOrderFactList', instance.asOrderFactList?.toJson());
-  writeNotNull('asProductFeatureCategoryList',
-      instance.asProductFeatureCategoryList?.toJson());
-  writeNotNull(
-      'asProductConfigItemList', instance.asProductConfigItemList?.toJson());
-  writeNotNull('asSecurityGroupList', instance.asSecurityGroupList?.toJson());
-  writeNotNull('asPartyList', instance.asPartyList?.toJson());
-  writeNotNull(
-      'asSecurityPermissionList', instance.asSecurityPermissionList?.toJson());
-  writeNotNull('asProductReviewList', instance.asProductReviewList?.toJson());
-  writeNotNull('asContactMechList', instance.asContactMechList?.toJson());
-  writeNotNull('asShoppingListList', instance.asShoppingListList?.toJson());
   writeNotNull('asAgreementList', instance.asAgreementList?.toJson());
-  writeNotNull('asWebSiteList', instance.asWebSiteList?.toJson());
-  writeNotNull('asInvoiceList', instance.asInvoiceList?.toJson());
-  writeNotNull('asPaymentList', instance.asPaymentList?.toJson());
-  writeNotNull('asBlacklistList', instance.asBlacklistList?.toJson());
+  writeNotNull('asFactProtoList', instance.asFactProtoList?.toJson());
+  writeNotNull('asExampleList', instance.asExampleList?.toJson());
   writeNotNull('asProductPromoList', instance.asProductPromoList?.toJson());
+  writeNotNull('asNoteDataList', instance.asNoteDataList?.toJson());
+  writeNotNull('asWorkEffortList', instance.asWorkEffortList?.toJson());
+  writeNotNull('asProductStoreList', instance.asProductStoreList?.toJson());
+  writeNotNull('asAcctgTransList', instance.asAcctgTransList?.toJson());
+  writeNotNull('asContentList', instance.asContentList?.toJson());
   writeNotNull(
       'asProductCategoryList', instance.asProductCategoryList?.toJson());
-  writeNotNull('asWorkEffortList', instance.asWorkEffortList?.toJson());
-  writeNotNull('asAcctgTransList', instance.asAcctgTransList?.toJson());
-  writeNotNull('asExampleList', instance.asExampleList?.toJson());
-  writeNotNull('asInventoryItemList', instance.asInventoryItemList?.toJson());
-  writeNotNull('asDataResourceList', instance.asDataResourceList?.toJson());
+  writeNotNull('asFacilityList', instance.asFacilityList?.toJson());
+  writeNotNull('asPaymentList', instance.asPaymentList?.toJson());
+  writeNotNull('asSecurityGroupList', instance.asSecurityGroupList?.toJson());
   writeNotNull('asReturnHeaderList', instance.asReturnHeaderList?.toJson());
-  writeNotNull('asBillingAccountList', instance.asBillingAccountList?.toJson());
   writeNotNull('asProdCatalogList', instance.asProdCatalogList?.toJson());
-  writeNotNull('asProductList', instance.asProductList?.toJson());
-  writeNotNull('asFixedAssetList', instance.asFixedAssetList?.toJson());
+  writeNotNull('asUserLoginList', instance.asUserLoginList?.toJson());
+  writeNotNull('asProductFeatureCategoryList',
+      instance.asProductFeatureCategoryList?.toJson());
+  writeNotNull('asOrderHeaderList', instance.asOrderHeaderList?.toJson());
+  writeNotNull('asDataResourceList', instance.asDataResourceList?.toJson());
+  writeNotNull('asRequirementList', instance.asRequirementList?.toJson());
+  writeNotNull('asWebSiteList', instance.asWebSiteList?.toJson());
+  writeNotNull('asContactMechList', instance.asContactMechList?.toJson());
+  writeNotNull('asBlacklistList', instance.asBlacklistList?.toJson());
+  writeNotNull('extractStrings', instance.extractStrings?.toJson());
+  writeNotNull('asTypesEntityList', instance.asTypesEntityList?.toJson());
+  writeNotNull(
+      'asProductConfigItemList', instance.asProductConfigItemList?.toJson());
+  writeNotNull('asProductFeatureList', instance.asProductFeatureList?.toJson());
+  writeNotNull('asPartyList', instance.asPartyList?.toJson());
+  writeNotNull('asInventoryItemList', instance.asInventoryItemList?.toJson());
+  writeNotNull('asShipmentList', instance.asShipmentList?.toJson());
+  writeNotNull(
+      'asSecurityPermissionList', instance.asSecurityPermissionList?.toJson());
+  writeNotNull('asOrderFactList', instance.asOrderFactList?.toJson());
   return val;
 }
 
@@ -15072,8 +15729,6 @@ BillingAccountTerm _$BillingAccountTermFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
       billingAccount: json['billingAccount'] == null
           ? null
           : BillingAccount.fromJson(
@@ -15081,6 +15736,11 @@ BillingAccountTerm _$BillingAccountTermFromJson(Map<String, dynamic> json) =>
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$BillingAccountTermToJson(BillingAccountTerm instance) {
@@ -15101,10 +15761,11 @@ Map<String, dynamic> _$BillingAccountTermToJson(BillingAccountTerm instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   writeNotNull('billingAccount', instance.billingAccount?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -15120,17 +15781,17 @@ DataResourceCollection _$DataResourceCollectionFromJson(
           ?.map(
               (e) => DataResourceWithAudio.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchText: (json['matchText'] as List<dynamic>?)
-          ?.map((e) => DataResourceWithText.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      matchVideo: (json['matchVideo'] as List<dynamic>?)
-          ?.map(
-              (e) => DataResourceWithVideo.fromJson(e as Map<String, dynamic>))
-          .toList(),
       filter: json['filter'] == null
           ? null
           : DataResourceCollection.fromJson(
               json['filter'] as Map<String, dynamic>),
+      matchVideo: (json['matchVideo'] as List<dynamic>?)
+          ?.map(
+              (e) => DataResourceWithVideo.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      matchText: (json['matchText'] as List<dynamic>?)
+          ?.map((e) => DataResourceWithText.fromJson(e as Map<String, dynamic>))
+          .toList(),
       matchImage: (json['matchImage'] as List<dynamic>?)
           ?.map(
               (e) => DataResourceWithImage.fromJson(e as Map<String, dynamic>))
@@ -15152,11 +15813,11 @@ Map<String, dynamic> _$DataResourceCollectionToJson(
   writeNotNull('regionId', instance.regionId);
   writeNotNull(
       'matchAudio', instance.matchAudio?.map((e) => e.toJson()).toList());
-  writeNotNull(
-      'matchText', instance.matchText?.map((e) => e.toJson()).toList());
+  writeNotNull('filter', instance.filter?.toJson());
   writeNotNull(
       'matchVideo', instance.matchVideo?.map((e) => e.toJson()).toList());
-  writeNotNull('filter', instance.filter?.toJson());
+  writeNotNull(
+      'matchText', instance.matchText?.map((e) => e.toJson()).toList());
   writeNotNull(
       'matchImage', instance.matchImage?.map((e) => e.toJson()).toList());
   return val;
@@ -15237,17 +15898,20 @@ ShipmentPackageContent _$ShipmentPackageContentFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      shipment: json['shipment'] == null
-          ? null
-          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       subProduct: json['subProduct'] == null
           ? null
           : Product.fromJson(json['subProduct'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      shipment: json['shipment'] == null
+          ? null
+          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentPackageContentToJson(
@@ -15269,11 +15933,12 @@ Map<String, dynamic> _$ShipmentPackageContentToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('shipment', instance.shipment?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('subProduct', instance.subProduct?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('format', instance.format);
+  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -15362,17 +16027,20 @@ WorkEffortPartyAssignment _$WorkEffortPartyAssignmentFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
+      proto: json['proto'] as String?,
       facility: json['facility'] == null
           ? null
           : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       workEffort: json['workEffort'] == null
           ? null
           : WorkEffort.fromJson(json['workEffort'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      party: json['party'] == null
+          ? null
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
@@ -15409,11 +16077,12 @@ Map<String, dynamic> _$WorkEffortPartyAssignmentToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('party', instance.party?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('workEffort', instance.workEffort?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('party', instance.party?.toJson());
+  writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('assignedByUserLogin', instance.assignedByUserLogin?.toJson());
   return val;
@@ -15475,22 +16144,25 @@ ProductFeature _$ProductFeatureFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      productFeatureCategory: json['productFeatureCategory'] == null
-          ? null
-          : ProductFeatureCategory.fromJson(
-              json['productFeatureCategory'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
+      productFeatureCategory: json['productFeatureCategory'] == null
+          ? null
+          : ProductFeatureCategory.fromJson(
+              json['productFeatureCategory'] as Map<String, dynamic>),
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductFeatureToJson(ProductFeature instance) {
@@ -15515,13 +16187,14 @@ Map<String, dynamic> _$ProductFeatureToJson(ProductFeature instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull(
       'productFeatureCategory', instance.productFeatureCategory?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('type', instance.type?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -15546,17 +16219,20 @@ BlacklistStatus _$BlacklistStatusFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       blacklist: json['blacklist'] == null
           ? null
           : Blacklist.fromJson(json['blacklist'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$BlacklistStatusToJson(BlacklistStatus instance) {
@@ -15576,11 +16252,12 @@ Map<String, dynamic> _$BlacklistStatusToJson(BlacklistStatus instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('blacklist', instance.blacklist?.toJson());
-  writeNotNull('userLogin', instance.userLogin?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
+  writeNotNull('userLogin', instance.userLogin?.toJson());
   return val;
 }
 
@@ -15588,11 +16265,11 @@ StructValue _$StructValueFromJson(Map<String, dynamic> json) => StructValue(
       fields: (json['fields'] as List<dynamic>?)
           ?.map((e) => FieldsEntryValue.fromJson(e as Map<String, dynamic>))
           .toList(),
-      proto: json['proto'] as String?,
       asStringMap: json['asStringMap'] == null
           ? null
           : StringMapValue.fromJson(
               json['asStringMap'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$StructValueToJson(StructValue instance) {
@@ -15605,8 +16282,8 @@ Map<String, dynamic> _$StructValueToJson(StructValue instance) {
   }
 
   writeNotNull('fields', instance.fields?.map((e) => e.toJson()).toList());
-  writeNotNull('proto', instance.proto);
   writeNotNull('asStringMap', instance.asStringMap?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -15653,17 +16330,20 @@ FacilityContactMechPurpose _$FacilityContactMechPurposeFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      facility: json['facility'] == null
-          ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       contactMech: json['contactMech'] == null
           ? null
           : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      facility: json['facility'] == null
+          ? null
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$FacilityContactMechPurposeToJson(
@@ -15684,11 +16364,12 @@ Map<String, dynamic> _$FacilityContactMechPurposeToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('facility', instance.facility?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('facility', instance.facility?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -15834,9 +16515,23 @@ FixedAsset _$FixedAssetFromJson(Map<String, dynamic> json) => FixedAsset(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      fixedAssetGeoPoints: json['fixedAssetGeoPoints'] == null
+          ? null
+          : FixedAssetGeoPointCollection.fromJson(
+              json['fixedAssetGeoPoints'] as Map<String, dynamic>),
+      fixedAssetAttributes: json['fixedAssetAttributes'] == null
+          ? null
+          : FixedAssetAttributeCollection.fromJson(
+              json['fixedAssetAttributes'] as Map<String, dynamic>),
       party: json['party'] == null
           ? null
           : Party.fromJson(json['party'] as Map<String, dynamic>),
+      instanceOfProduct: json['instanceOfProduct'] == null
+          ? null
+          : Product.fromJson(json['instanceOfProduct'] as Map<String, dynamic>),
       acquireOrderHeader: json['acquireOrderHeader'] == null
           ? null
           : OrderHeader.fromJson(
@@ -15845,41 +16540,30 @@ FixedAsset _$FixedAssetFromJson(Map<String, dynamic> json) => FixedAsset(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      fixedAssetAttributes: json['fixedAssetAttributes'] == null
-          ? null
-          : FixedAssetAttributeCollection.fromJson(
-              json['fixedAssetAttributes'] as Map<String, dynamic>),
-      fixedAssetProducts: json['fixedAssetProducts'] == null
-          ? null
-          : FixedAssetProductCollection.fromJson(
-              json['fixedAssetProducts'] as Map<String, dynamic>),
       parentFixedAsset: json['parentFixedAsset'] == null
           ? null
           : FixedAsset.fromJson(
               json['parentFixedAsset'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       fixedAssetMaints: json['fixedAssetMaints'] == null
           ? null
           : FixedAssetMaintCollection.fromJson(
               json['fixedAssetMaints'] as Map<String, dynamic>),
-      instanceOfProduct: json['instanceOfProduct'] == null
+      fixedAssetProducts: json['fixedAssetProducts'] == null
           ? null
-          : Product.fromJson(json['instanceOfProduct'] as Map<String, dynamic>),
+          : FixedAssetProductCollection.fromJson(
+              json['fixedAssetProducts'] as Map<String, dynamic>),
       locatedAtFacility: json['locatedAtFacility'] == null
           ? null
           : Facility.fromJson(
               json['locatedAtFacility'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      fixedAssetGeoPoints: json['fixedAssetGeoPoints'] == null
+      model: json['model'] == null
           ? null
-          : FixedAssetGeoPointCollection.fromJson(
-              json['fixedAssetGeoPoints'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$FixedAssetToJson(FixedAsset instance) {
@@ -15919,20 +16603,21 @@ Map<String, dynamic> _$FixedAssetToJson(FixedAsset instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('fixedAssetGeoPoints', instance.fixedAssetGeoPoints?.toJson());
+  writeNotNull('fixedAssetAttributes', instance.fixedAssetAttributes?.toJson());
   writeNotNull('party', instance.party?.toJson());
+  writeNotNull('instanceOfProduct', instance.instanceOfProduct?.toJson());
   writeNotNull('acquireOrderHeader', instance.acquireOrderHeader?.toJson());
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('fixedAssetAttributes', instance.fixedAssetAttributes?.toJson());
-  writeNotNull('fixedAssetProducts', instance.fixedAssetProducts?.toJson());
   writeNotNull('parentFixedAsset', instance.parentFixedAsset?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('fixedAssetMaints', instance.fixedAssetMaints?.toJson());
-  writeNotNull('instanceOfProduct', instance.instanceOfProduct?.toJson());
+  writeNotNull('fixedAssetProducts', instance.fixedAssetProducts?.toJson());
   writeNotNull('locatedAtFacility', instance.locatedAtFacility?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
-  writeNotNull('fixedAssetGeoPoints', instance.fixedAssetGeoPoints?.toJson());
+  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -15993,9 +16678,7 @@ Example _$ExampleFromJson(Map<String, dynamic> json) => Example(
           ? null
           : ExampleStatusCollection.fromJson(
               json['exampleStatuses'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
@@ -16003,12 +16686,17 @@ Example _$ExampleFromJson(Map<String, dynamic> json) => Example(
           ? null
           : ExampleItemCollection.fromJson(
               json['exampleItems'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$ExampleToJson(Example instance) {
@@ -16035,12 +16723,13 @@ Map<String, dynamic> _$ExampleToJson(Example instance) {
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('exampleStatuses', instance.exampleStatuses?.toJson());
-  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('exampleItems', instance.exampleItems?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('format', instance.format);
   return val;
 }
 
@@ -16068,20 +16757,23 @@ BlacklistItem _$BlacklistItemFromJson(Map<String, dynamic> json) =>
           ? null
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
+      blockByLogin: json['blockByLogin'] == null
+          ? null
+          : UserLogin.fromJson(json['blockByLogin'] as Map<String, dynamic>),
       format: json['format'] as String?,
       login: json['login'] == null
           ? null
           : UserLogin.fromJson(json['login'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      blacklist: json['blacklist'] == null
-          ? null
-          : Blacklist.fromJson(json['blacklist'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      blockByLogin: json['blockByLogin'] == null
+      blacklist: json['blacklist'] == null
           ? null
-          : UserLogin.fromJson(json['blockByLogin'] as Map<String, dynamic>),
+          : Blacklist.fromJson(json['blacklist'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$BlacklistItemToJson(BlacklistItem instance) {
@@ -16105,12 +16797,13 @@ Map<String, dynamic> _$BlacklistItemToJson(BlacklistItem instance) {
   writeNotNull('tenantId', instance.tenantId);
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('blockByLogin', instance.blockByLogin?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('login', instance.login?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('blacklist', instance.blacklist?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('blockByLogin', instance.blockByLogin?.toJson());
+  writeNotNull('blacklist', instance.blacklist?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }
 
@@ -16119,8 +16812,8 @@ TimestampValue _$TimestampValueFromJson(Map<String, dynamic> json) =>
       seconds: json['seconds'] as int?,
       nanos: json['nanos'] as int?,
       iso: json['iso'] as String?,
-      afterNow: json['afterNow'] as bool?,
       localTime: json['localTime'] as String?,
+      afterNow: json['afterNow'] as bool?,
       china: json['china'] as String?,
     );
 
@@ -16136,8 +16829,8 @@ Map<String, dynamic> _$TimestampValueToJson(TimestampValue instance) {
   writeNotNull('seconds', instance.seconds);
   writeNotNull('nanos', instance.nanos);
   writeNotNull('iso', instance.iso);
-  writeNotNull('afterNow', instance.afterNow);
   writeNotNull('localTime', instance.localTime);
+  writeNotNull('afterNow', instance.afterNow);
   writeNotNull('china', instance.china);
   return val;
 }
@@ -16185,17 +16878,20 @@ ProductPromoProduct _$ProductPromoProductFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
     );
 
 Map<String, dynamic> _$ProductPromoProductToJson(ProductPromoProduct instance) {
@@ -16216,11 +16912,12 @@ Map<String, dynamic> _$ProductPromoProductToJson(ProductPromoProduct instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('product', instance.product?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('productPromo', instance.productPromo?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('proto', instance.proto);
   return val;
 }
 
@@ -16274,20 +16971,23 @@ ProductFacilityAssoc _$ProductFacilityAssocFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       fromFacility: json['fromFacility'] == null
           ? null
           : Facility.fromJson(json['fromFacility'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       toFacility: json['toFacility'] == null
           ? null
           : Facility.fromJson(json['toFacility'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductFacilityAssocToJson(
@@ -16311,12 +17011,13 @@ Map<String, dynamic> _$ProductFacilityAssocToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('fromFacility', instance.fromFacility?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('fromFacility', instance.fromFacility?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('product', instance.product?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('toFacility', instance.toFacility?.toJson());
-  writeNotNull('product', instance.product?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -16421,17 +17122,20 @@ ProductStoreFacility _$ProductStoreFacilityFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
       productStore: json['productStore'] == null
           ? null
           : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       facility: json['facility'] == null
           ? null
           : Facility.fromJson(json['facility'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductStoreFacilityToJson(
@@ -16452,11 +17156,12 @@ Map<String, dynamic> _$ProductStoreFacilityToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -16496,14 +17201,17 @@ ShipmentPackage _$ShipmentPackageFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      shipment: json['shipment'] == null
+      proto: json['proto'] as String?,
+      model: json['model'] == null
           ? null
-          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      shipment: json['shipment'] == null
+          ? null
+          : Shipment.fromJson(json['shipment'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShipmentPackageToJson(ShipmentPackage instance) {
@@ -16529,10 +17237,11 @@ Map<String, dynamic> _$ShipmentPackageToJson(ShipmentPackage instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('shipment', instance.shipment?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
+  writeNotNull('shipment', instance.shipment?.toJson());
   return val;
 }
 
@@ -16596,20 +17305,23 @@ ReturnItem _$ReturnItemFromJson(Map<String, dynamic> json) => ReturnItem(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      format: json['format'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      returnHeader: json['returnHeader'] == null
-          ? null
-          : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
       orderHeader: json['orderHeader'] == null
           ? null
           : OrderHeader.fromJson(json['orderHeader'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      returnHeader: json['returnHeader'] == null
+          ? null
+          : ReturnHeader.fromJson(json['returnHeader'] as Map<String, dynamic>),
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
+      format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ReturnItemToJson(ReturnItem instance) {
@@ -16639,12 +17351,13 @@ Map<String, dynamic> _$ReturnItemToJson(ReturnItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('format', instance.format);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('returnHeader', instance.returnHeader?.toJson());
   writeNotNull('orderHeader', instance.orderHeader?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('proto', instance.proto);
+  writeNotNull('returnHeader', instance.returnHeader?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -16683,39 +17396,42 @@ Facility _$FacilityFromJson(Map<String, dynamic> json) => Facility(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      facilityContactMeches: json['facilityContactMeches'] == null
-          ? null
-          : FacilityContactMechCollection.fromJson(
-              json['facilityContactMeches'] as Map<String, dynamic>),
       type: json['type'] == null
           ? null
           : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      pickInventory: json['pickInventory'] == null
-          ? null
-          : ResponseValue.fromJson(
-              json['pickInventory'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
       facilityContactMechPurposes: json['facilityContactMechPurposes'] == null
           ? null
           : FacilityContactMechPurposeCollection.fromJson(
               json['facilityContactMechPurposes'] as Map<String, dynamic>),
-      productStore: json['productStore'] == null
-          ? null
-          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
       ownerParty: json['ownerParty'] == null
           ? null
           : Party.fromJson(json['ownerParty'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      facilityContactMeches: json['facilityContactMeches'] == null
+          ? null
+          : FacilityContactMechCollection.fromJson(
+              json['facilityContactMeches'] as Map<String, dynamic>),
       parentFacility: json['parentFacility'] == null
           ? null
           : Facility.fromJson(json['parentFacility'] as Map<String, dynamic>),
-      format: json['format'] as String?,
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
+      pickInventory: json['pickInventory'] == null
+          ? null
+          : ResponseValue.fromJson(
+              json['pickInventory'] as Map<String, dynamic>),
+      productStore: json['productStore'] == null
+          ? null
+          : ProductStore.fromJson(json['productStore'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FacilityToJson(Facility instance) {
@@ -16749,19 +17465,20 @@ Map<String, dynamic> _$FacilityToJson(Facility instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull(
-      'facilityContactMeches', instance.facilityContactMeches?.toJson());
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('pickInventory', instance.pickInventory?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('facilityContactMechPurposes',
       instance.facilityContactMechPurposes?.toJson());
-  writeNotNull('productStore', instance.productStore?.toJson());
   writeNotNull('ownerParty', instance.ownerParty?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('parentFacility', instance.parentFacility?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull(
+      'facilityContactMeches', instance.facilityContactMeches?.toJson());
+  writeNotNull('parentFacility', instance.parentFacility?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('pickInventory', instance.pickInventory?.toJson());
+  writeNotNull('productStore', instance.productStore?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
   return val;
 }
 
@@ -16807,39 +17524,42 @@ ProductStoreGroup _$ProductStoreGroupFromJson(Map<String, dynamic> json) =>
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      proto: json['proto'] as String?,
-      productStoreGroupMembers: json['productStoreGroupMembers'] == null
-          ? null
-          : ProductStoreGroupMemberCollection.fromJson(
-              json['productStoreGroupMembers'] as Map<String, dynamic>),
-      primaryProductStores: json['primaryProductStores'] == null
-          ? null
-          : ProductStoreCollection.fromJson(
-              json['primaryProductStores'] as Map<String, dynamic>),
-      type: json['type'] == null
-          ? null
-          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
-      vendorProducts: json['vendorProducts'] == null
-          ? null
-          : VendorProductCollection.fromJson(
-              json['vendorProducts'] as Map<String, dynamic>),
       productStoreGroupRoles: json['productStoreGroupRoles'] == null
           ? null
           : ProductStoreGroupRoleCollection.fromJson(
               json['productStoreGroupRoles'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
       format: json['format'] as String?,
+      primaryProductStores: json['primaryProductStores'] == null
+          ? null
+          : ProductStoreCollection.fromJson(
+              json['primaryProductStores'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       primaryParentProductStoreGroup: json['primaryParentProductStoreGroup'] ==
               null
           ? null
           : ProductStoreGroup.fromJson(
               json['primaryParentProductStoreGroup'] as Map<String, dynamic>),
+      vendorProducts: json['vendorProducts'] == null
+          ? null
+          : VendorProductCollection.fromJson(
+              json['vendorProducts'] as Map<String, dynamic>),
+      productStoreGroupMembers: json['productStoreGroupMembers'] == null
+          ? null
+          : ProductStoreGroupMemberCollection.fromJson(
+              json['productStoreGroupMembers'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      type: json['type'] == null
+          ? null
+          : TypesEntity.fromJson(json['type'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductStoreGroupToJson(ProductStoreGroup instance) {
@@ -16859,19 +17579,20 @@ Map<String, dynamic> _$ProductStoreGroupToJson(ProductStoreGroup instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('proto', instance.proto);
-  writeNotNull(
-      'productStoreGroupMembers', instance.productStoreGroupMembers?.toJson());
-  writeNotNull('primaryProductStores', instance.primaryProductStores?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('vendorProducts', instance.vendorProducts?.toJson());
   writeNotNull(
       'productStoreGroupRoles', instance.productStoreGroupRoles?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('primaryProductStores', instance.primaryProductStores?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('primaryParentProductStoreGroup',
       instance.primaryParentProductStoreGroup?.toJson());
+  writeNotNull('vendorProducts', instance.vendorProducts?.toJson());
+  writeNotNull(
+      'productStoreGroupMembers', instance.productStoreGroupMembers?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('type', instance.type?.toJson());
   return val;
 }
 
@@ -16921,6 +17642,18 @@ ProductFeatureCategory _$ProductFeatureCategoryFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      parentProductFeatureCategory: json['parentProductFeatureCategory'] == null
+          ? null
+          : ProductFeatureCategory.fromJson(
+              json['parentProductFeatureCategory'] as Map<String, dynamic>),
       productFeatures: json['productFeatures'] == null
           ? null
           : ProductFeatureCollection.fromJson(
@@ -16929,15 +17662,6 @@ ProductFeatureCategory _$ProductFeatureCategoryFromJson(
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      parentProductFeatureCategory: json['parentProductFeatureCategory'] == null
-          ? null
-          : ProductFeatureCategory.fromJson(
-              json['parentProductFeatureCategory'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       childProductFeatureCategories: json['childProductFeatureCategories'] ==
               null
           ? null
@@ -16961,41 +17685,16 @@ Map<String, dynamic> _$ProductFeatureCategoryToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('productFeatures', instance.productFeatures?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('parentProductFeatureCategory',
-      instance.parentProductFeatureCategory?.toJson());
-  writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('parentProductFeatureCategory',
+      instance.parentProductFeatureCategory?.toJson());
+  writeNotNull('productFeatures', instance.productFeatures?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('childProductFeatureCategories',
       instance.childProductFeatureCategories?.toJson());
-  return val;
-}
-
-WorkEffortAssocCollection _$WorkEffortAssocCollectionFromJson(
-        Map<String, dynamic> json) =>
-    WorkEffortAssocCollection(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => WorkEffortAssoc.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$WorkEffortAssocCollectionToJson(
-    WorkEffortAssocCollection instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -17012,6 +17711,32 @@ OrderAdjustmentBillingCollection _$OrderAdjustmentBillingCollectionFromJson(
 
 Map<String, dynamic> _$OrderAdjustmentBillingCollectionToJson(
     OrderAdjustmentBillingCollection instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+WorkEffortAssocCollection _$WorkEffortAssocCollectionFromJson(
+        Map<String, dynamic> json) =>
+    WorkEffortAssocCollection(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => WorkEffortAssoc.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$WorkEffortAssocCollectionToJson(
+    WorkEffortAssocCollection instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -17112,14 +17837,14 @@ AcctgTrans _$AcctgTransFromJson(Map<String, dynamic> json) => AcctgTrans(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      subview: json['subview'] == null
-          ? null
-          : ListItemProtoValue.fromJson(
-              json['subview'] as Map<String, dynamic>),
       acctgTransEntries: json['acctgTransEntries'] == null
           ? null
           : AcctgTransEntryCollection.fromJson(
               json['acctgTransEntries'] as Map<String, dynamic>),
+      subview: json['subview'] == null
+          ? null
+          : ListItemProtoValue.fromJson(
+              json['subview'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AcctgTransToJson(AcctgTrans instance) {
@@ -17162,8 +17887,8 @@ Map<String, dynamic> _$AcctgTransToJson(AcctgTrans instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('subview', instance.subview?.toJson());
   writeNotNull('acctgTransEntries', instance.acctgTransEntries?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
   return val;
 }
 
@@ -17376,15 +18101,18 @@ ProductPromoCategory _$ProductPromoCategoryFromJson(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
-      proto: json['proto'] as String?,
-      productCategory: json['productCategory'] == null
+      model: json['model'] == null
           ? null
-          : ProductCategory.fromJson(
-              json['productCategory'] as Map<String, dynamic>),
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       format: json['format'] as String?,
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      productCategory: json['productCategory'] == null
+          ? null
+          : ProductCategory.fromJson(
+              json['productCategory'] as Map<String, dynamic>),
       productPromo: json['productPromo'] == null
           ? null
           : ProductPromo.fromJson(json['productPromo'] as Map<String, dynamic>),
@@ -17411,10 +18139,11 @@ Map<String, dynamic> _$ProductPromoCategoryToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('proto', instance.proto);
-  writeNotNull('productCategory', instance.productCategory?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('productCategory', instance.productCategory?.toJson());
   writeNotNull('productPromo', instance.productPromo?.toJson());
   return val;
 }
@@ -17448,14 +18177,17 @@ ProductCategoryMember _$ProductCategoryMemberFromJson(
           ? null
           : ProductCategory.fromJson(
               json['productCategory'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      format: json['format'] as String?,
       proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductCategoryMemberToJson(
@@ -17479,79 +18211,11 @@ Map<String, dynamic> _$ProductCategoryMemberToJson(
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('productCategory', instance.productCategory?.toJson());
-  writeNotNull('product', instance.product?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('format', instance.format);
   writeNotNull('proto', instance.proto);
-  return val;
-}
-
-WorkEffortGoodStandard _$WorkEffortGoodStandardFromJson(
-        Map<String, dynamic> json) =>
-    WorkEffortGoodStandard(
-      workEffortId: json['workEffortId'] as String?,
-      productId: json['productId'] as String?,
-      workEffortGoodStdTypeId: json['workEffortGoodStdTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : TimestampValue.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : TimestampValue.fromJson(json['thruDate'] as Map<String, dynamic>),
-      statusId: json['statusId'] as String?,
-      estimatedQuantity: (json['estimatedQuantity'] as num?)?.toDouble(),
-      estimatedCost: json['estimatedCost'] == null
-          ? null
-          : CurrencyValue.fromJson(
-              json['estimatedCost'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : TimestampValue.fromJson(
-              json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      format: json['format'] as String?,
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      workEffort: json['workEffort'] == null
-          ? null
-          : WorkEffort.fromJson(json['workEffort'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$WorkEffortGoodStandardToJson(
-    WorkEffortGoodStandard instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('workEffortId', instance.workEffortId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('workEffortGoodStdTypeId', instance.workEffortGoodStdTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('estimatedQuantity', instance.estimatedQuantity);
-  writeNotNull('estimatedCost', instance.estimatedCost?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('format', instance.format);
   writeNotNull('product', instance.product?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('workEffort', instance.workEffort?.toJson());
   return val;
 }
 
@@ -17582,47 +18246,28 @@ ReturnHeader _$ReturnHeaderFromJson(Map<String, dynamic> json) => ReturnHeader(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       tenantId: json['tenantId'] as String?,
-      billingAccount: json['billingAccount'] == null
+      party: json['party'] == null
           ? null
-          : BillingAccount.fromJson(
-              json['billingAccount'] as Map<String, dynamic>),
-      contactMech: json['contactMech'] == null
-          ? null
-          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
-      returnStatuses: json['returnStatuses'] == null
-          ? null
-          : ReturnStatusCollection.fromJson(
-              json['returnStatuses'] as Map<String, dynamic>),
-      format: json['format'] as String?,
-      returnItems: json['returnItems'] == null
-          ? null
-          : ReturnItemCollection.fromJson(
-              json['returnItems'] as Map<String, dynamic>),
+          : Party.fromJson(json['party'] as Map<String, dynamic>),
       subview: json['subview'] == null
           ? null
           : ListItemProtoValue.fromJson(
               json['subview'] as Map<String, dynamic>),
-      returnItemShipments: json['returnItemShipments'] == null
+      returnItems: json['returnItems'] == null
           ? null
-          : ReturnItemShipmentCollection.fromJson(
-              json['returnItemShipments'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      party: json['party'] == null
-          ? null
-          : Party.fromJson(json['party'] as Map<String, dynamic>),
-      facility: json['facility'] == null
-          ? null
-          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
+          : ReturnItemCollection.fromJson(
+              json['returnItems'] as Map<String, dynamic>),
       returnItemBillings: json['returnItemBillings'] == null
           ? null
           : ReturnItemBillingCollection.fromJson(
               json['returnItemBillings'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
       userLogin: json['userLogin'] == null
           ? null
           : UserLogin.fromJson(json['userLogin'] as Map<String, dynamic>),
-      toParty: json['toParty'] == null
-          ? null
-          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       returnAdjustments: json['returnAdjustments'] == null
           ? null
           : ReturnAdjustmentCollection.fromJson(
@@ -17630,6 +18275,28 @@ ReturnHeader _$ReturnHeaderFromJson(Map<String, dynamic> json) => ReturnHeader(
       cats: json['cats'] == null
           ? null
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      facility: json['facility'] == null
+          ? null
+          : Facility.fromJson(json['facility'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      returnStatuses: json['returnStatuses'] == null
+          ? null
+          : ReturnStatusCollection.fromJson(
+              json['returnStatuses'] as Map<String, dynamic>),
+      billingAccount: json['billingAccount'] == null
+          ? null
+          : BillingAccount.fromJson(
+              json['billingAccount'] as Map<String, dynamic>),
+      toParty: json['toParty'] == null
+          ? null
+          : Party.fromJson(json['toParty'] as Map<String, dynamic>),
+      contactMech: json['contactMech'] == null
+          ? null
+          : ContactMech.fromJson(json['contactMech'] as Map<String, dynamic>),
+      returnItemShipments: json['returnItemShipments'] == null
+          ? null
+          : ReturnItemShipmentCollection.fromJson(
+              json['returnItemShipments'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ReturnHeaderToJson(ReturnHeader instance) {
@@ -17659,21 +18326,95 @@ Map<String, dynamic> _$ReturnHeaderToJson(ReturnHeader instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('billingAccount', instance.billingAccount?.toJson());
-  writeNotNull('contactMech', instance.contactMech?.toJson());
-  writeNotNull('returnStatuses', instance.returnStatuses?.toJson());
-  writeNotNull('format', instance.format);
-  writeNotNull('returnItems', instance.returnItems?.toJson());
-  writeNotNull('subview', instance.subview?.toJson());
-  writeNotNull('returnItemShipments', instance.returnItemShipments?.toJson());
-  writeNotNull('proto', instance.proto);
   writeNotNull('party', instance.party?.toJson());
-  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('subview', instance.subview?.toJson());
+  writeNotNull('returnItems', instance.returnItems?.toJson());
   writeNotNull('returnItemBillings', instance.returnItemBillings?.toJson());
+  writeNotNull('model', instance.model?.toJson());
   writeNotNull('userLogin', instance.userLogin?.toJson());
-  writeNotNull('toParty', instance.toParty?.toJson());
+  writeNotNull('proto', instance.proto);
   writeNotNull('returnAdjustments', instance.returnAdjustments?.toJson());
   writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('returnStatuses', instance.returnStatuses?.toJson());
+  writeNotNull('billingAccount', instance.billingAccount?.toJson());
+  writeNotNull('toParty', instance.toParty?.toJson());
+  writeNotNull('contactMech', instance.contactMech?.toJson());
+  writeNotNull('returnItemShipments', instance.returnItemShipments?.toJson());
+  return val;
+}
+
+WorkEffortGoodStandard _$WorkEffortGoodStandardFromJson(
+        Map<String, dynamic> json) =>
+    WorkEffortGoodStandard(
+      workEffortId: json['workEffortId'] as String?,
+      productId: json['productId'] as String?,
+      workEffortGoodStdTypeId: json['workEffortGoodStdTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : TimestampValue.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : TimestampValue.fromJson(json['thruDate'] as Map<String, dynamic>),
+      statusId: json['statusId'] as String?,
+      estimatedQuantity: (json['estimatedQuantity'] as num?)?.toDouble(),
+      estimatedCost: json['estimatedCost'] == null
+          ? null
+          : CurrencyValue.fromJson(
+              json['estimatedCost'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : TimestampValue.fromJson(
+              json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      format: json['format'] as String?,
+      proto: json['proto'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      workEffort: json['workEffort'] == null
+          ? null
+          : WorkEffort.fromJson(json['workEffort'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$WorkEffortGoodStandardToJson(
+    WorkEffortGoodStandard instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('workEffortId', instance.workEffortId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('workEffortGoodStdTypeId', instance.workEffortGoodStdTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('estimatedQuantity', instance.estimatedQuantity);
+  writeNotNull('estimatedCost', instance.estimatedCost?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('format', instance.format);
+  writeNotNull('proto', instance.proto);
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('workEffort', instance.workEffort?.toJson());
   return val;
 }
 
@@ -17710,31 +18451,34 @@ InvoiceItem _$InvoiceItemFromJson(Map<String, dynamic> json) => InvoiceItem(
           : TimestampValue.fromJson(
               json['createdTxStamp'] as Map<String, dynamic>),
       id: json['id'] as String?,
+      format: json['format'] as String?,
       inventoryItem: json['inventoryItem'] == null
           ? null
           : InventoryItem.fromJson(
               json['inventoryItem'] as Map<String, dynamic>),
+      overrideOrgParty: json['overrideOrgParty'] == null
+          ? null
+          : Party.fromJson(json['overrideOrgParty'] as Map<String, dynamic>),
+      cats: json['cats'] == null
+          ? null
+          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
+      taxAuthorityParty: json['taxAuthorityParty'] == null
+          ? null
+          : Party.fromJson(json['taxAuthorityParty'] as Map<String, dynamic>),
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
+      invoice: json['invoice'] == null
+          ? null
+          : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      proto: json['proto'] as String?,
       productFeature: json['productFeature'] == null
           ? null
           : ProductFeature.fromJson(
               json['productFeature'] as Map<String, dynamic>),
-      cats: json['cats'] == null
-          ? null
-          : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
-      proto: json['proto'] as String?,
-      overrideOrgParty: json['overrideOrgParty'] == null
-          ? null
-          : Party.fromJson(json['overrideOrgParty'] as Map<String, dynamic>),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      taxAuthorityParty: json['taxAuthorityParty'] == null
-          ? null
-          : Party.fromJson(json['taxAuthorityParty'] as Map<String, dynamic>),
-      invoice: json['invoice'] == null
-          ? null
-          : Invoice.fromJson(json['invoice'] as Map<String, dynamic>),
-      format: json['format'] as String?,
     );
 
 Map<String, dynamic> _$InvoiceItemToJson(InvoiceItem instance) {
@@ -17768,15 +18512,16 @@ Map<String, dynamic> _$InvoiceItemToJson(InvoiceItem instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
-  writeNotNull('productFeature', instance.productFeature?.toJson());
-  writeNotNull('cats', instance.cats?.toJson());
-  writeNotNull('proto', instance.proto);
-  writeNotNull('overrideOrgParty', instance.overrideOrgParty?.toJson());
-  writeNotNull('product', instance.product?.toJson());
-  writeNotNull('taxAuthorityParty', instance.taxAuthorityParty?.toJson());
-  writeNotNull('invoice', instance.invoice?.toJson());
   writeNotNull('format', instance.format);
+  writeNotNull('inventoryItem', instance.inventoryItem?.toJson());
+  writeNotNull('overrideOrgParty', instance.overrideOrgParty?.toJson());
+  writeNotNull('cats', instance.cats?.toJson());
+  writeNotNull('taxAuthorityParty', instance.taxAuthorityParty?.toJson());
+  writeNotNull('model', instance.model?.toJson());
+  writeNotNull('invoice', instance.invoice?.toJson());
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('proto', instance.proto);
+  writeNotNull('productFeature', instance.productFeature?.toJson());
   return val;
 }
 
@@ -17802,6 +18547,9 @@ ContentPurpose _$ContentPurposeFromJson(Map<String, dynamic> json) =>
           : FieldCatsValue.fromJson(json['cats'] as Map<String, dynamic>),
       proto: json['proto'] as String?,
       format: json['format'] as String?,
+      model: json['model'] == null
+          ? null
+          : ModelEntity.fromJson(json['model'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ContentPurposeToJson(ContentPurpose instance) {
@@ -17823,5 +18571,6 @@ Map<String, dynamic> _$ContentPurposeToJson(ContentPurpose instance) {
   writeNotNull('cats', instance.cats?.toJson());
   writeNotNull('proto', instance.proto);
   writeNotNull('format', instance.format);
+  writeNotNull('model', instance.model?.toJson());
   return val;
 }

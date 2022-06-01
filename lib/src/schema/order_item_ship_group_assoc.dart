@@ -19,14 +19,16 @@ class OrderItemShipGroupAssoc extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderItemShipGroupAssoc({
         this.orderId,
         this.orderItemSeqId,
@@ -36,10 +38,11 @@ class OrderItemShipGroupAssoc extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.orderHeader,
         this.cats,
-        this.format,
         this.proto,
-        this.orderHeader, });
+        this.format,
+        this.model, });
     factory OrderItemShipGroupAssoc.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupAssocFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupAssocToJson(this);
     @override

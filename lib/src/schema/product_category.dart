@@ -31,26 +31,28 @@ class ProductCategory extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductCategoryMemberList
-    final ProductCategoryMemberCollection? productCategoryMembers;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? primaryParentProductCategory;
-    // String
-    final String? format;
-    // domain_ProductList
-    final ProductCollection? primaryProducts;
-    // domain_ProductCategoryRollupList
-    final ProductCategoryRollupCollection? currentProductCategoryRollups;
-    // domain_ProductPromoCategoryList
-    final ProductPromoCategoryCollection? productPromoCategories;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductPromoCategoryList
+    final ProductPromoCategoryCollection? productPromoCategories;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductList
+    final ProductCollection? primaryProducts;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductCategoryMemberList
+    final ProductCategoryMemberCollection? productCategoryMembers;
+    // String
+    final String? format;
+    // domain_ProductCategoryRollupList
+    final ProductCategoryRollupCollection? currentProductCategoryRollups;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? primaryParentProductCategory;
     ProductCategory({
         this.productCategoryId,
         this.productCategoryTypeId,
@@ -66,16 +68,17 @@ class ProductCategory extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
+        this.proto,
         this.cats,
-        this.productCategoryMembers,
-        this.type,
-        this.primaryParentProductCategory,
-        this.format,
-        this.primaryProducts,
-        this.currentProductCategoryRollups,
         this.productPromoCategories,
-        this.proto, });
+        this.type,
+        this.subview,
+        this.primaryProducts,
+        this.model,
+        this.productCategoryMembers,
+        this.format,
+        this.currentProductCategoryRollups,
+        this.primaryParentProductCategory, });
     factory ProductCategory.fromJson(Map<String, dynamic> json) => _$ProductCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryToJson(this);
     @override
