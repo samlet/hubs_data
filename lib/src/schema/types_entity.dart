@@ -611,22 +611,22 @@ class TypesEntity extends Equatable{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // String
-    final String? format;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // domain_ProductTypeData
-    final ProductType? asProductType;
-    // domain_TypesEntityStatusList
-    final TypesEntityStatusCollection? typesEntityStatuses;
-    // String
-    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_TypesEntityStatusList
+    final TypesEntityStatusCollection? typesEntityStatuses;
+    // domain_ProductTypeData
+    final ProductType? asProductType;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
     TypesEntity({
         this.entityId,
         this.entity,
@@ -932,14 +932,14 @@ class TypesEntity extends Equatable{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.format,
-        this.subview,
-        this.model,
         this.type,
-        this.asProductType,
+        this.model,
+        this.cats,
         this.typesEntityStatuses,
+        this.asProductType,
         this.proto,
-        this.cats, });
+        this.subview,
+        this.format, });
     factory TypesEntity.fromJson(Map<String, dynamic> json) => _$TypesEntityFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityToJson(this);
     @override

@@ -81,26 +81,26 @@ class ShipmentRouteSegment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
-    // domain_FacilityFlatData
-    final Facility? originFacility;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // String
-    final String? format;
-    // domain_ContactMechFlatData
-    final ContactMech? originContactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_FacilityFlatData
     final Facility? destFacility;
     // domain_PartyFlatData
     final Party? carrierParty;
+    // domain_ContactMechFlatData
+    final ContactMech? originContactMech;
     // String
-    final String? proto;
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ContactMechFlatData
+    final ContactMech? destContactMech;
+    // String
+    final String? proto;
+    // domain_FacilityFlatData
+    final Facility? originFacility;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
     ShipmentRouteSegment({
         this.shipmentId,
         this.shipmentRouteSegmentId,
@@ -141,16 +141,16 @@ class ShipmentRouteSegment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.destContactMech,
-        this.originFacility,
-        this.shipment,
-        this.format,
-        this.originContactMech,
-        this.model,
         this.destFacility,
         this.carrierParty,
+        this.originContactMech,
+        this.format,
+        this.model,
+        this.cats,
+        this.destContactMech,
         this.proto,
-        this.cats, });
+        this.originFacility,
+        this.shipment, });
     factory ShipmentRouteSegment.fromJson(Map<String, dynamic> json) => _$ShipmentRouteSegmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentRouteSegmentToJson(this);
     @override

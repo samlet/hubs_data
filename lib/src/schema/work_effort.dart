@@ -113,30 +113,30 @@ class WorkEffort extends Equatable{
     final int? sequenceNum;
     // String
     final String? tenantId;
+    // domain_WorkEffortPartyAssignmentList
+    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_WorkEffortFlatData
     final WorkEffort? parentWorkEffort;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? format;
     // domain_NoteDataData
     final NoteData? noteData;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
     // domain_FacilityFlatData
     final Facility? facility;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
-    final String? proto;
+    final String? format;
     // domain_WorkEffortAssocList
     final WorkEffortAssocCollection? fromWorkEffortAssocs;
     // domain_WorkEffortAssocList
     final WorkEffortAssocCollection? toWorkEffortAssocs;
-    // domain_WorkEffortPartyAssignmentList
-    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
+    // String
+    final String? proto;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     WorkEffort({
         this.workEffortId,
         this.workEffortTypeId,
@@ -193,18 +193,18 @@ class WorkEffort extends Equatable{
         this.createdTxStamp,
         this.sequenceNum,
         this.tenantId,
+        this.workEffortPartyAssignments,
         this.model,
         this.parentWorkEffort,
-        this.subview,
-        this.format,
         this.noteData,
-        this.fixedAsset,
         this.facility,
-        this.cats,
-        this.proto,
+        this.format,
         this.fromWorkEffortAssocs,
         this.toWorkEffortAssocs,
-        this.workEffortPartyAssignments, });
+        this.proto,
+        this.fixedAsset,
+        this.cats,
+        this.subview, });
     factory WorkEffort.fromJson(Map<String, dynamic> json) => _$WorkEffortFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortToJson(this);
     @override

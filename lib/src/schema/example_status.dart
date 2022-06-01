@@ -19,16 +19,16 @@ class ExampleStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_ExampleData
     final Example? example;
     ExampleStatus({
@@ -40,11 +40,11 @@ class ExampleStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.proto,
         this.format,
+        this.model,
         this.userLogin,
         this.cats,
+        this.proto,
         this.example, });
     factory ExampleStatus.fromJson(Map<String, dynamic> json) => _$ExampleStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleStatusToJson(this);

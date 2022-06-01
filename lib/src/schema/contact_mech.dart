@@ -15,24 +15,24 @@ class ContactMech extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // contact_mech_TelecomNumberProto
-    final ContactMechWithTelecomNumber? asTelecomNumber;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // contact_mech_PostalAddressProto
-    final ContactMechWithPostalAddress? asPostalAddress;
-    // contact_mech_EmailAddressProto
-    final ContactMechWithEmailAddress? asEmailAddress;
-    // String
-    final String? proto;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // contact_mech_TelecomNumberProto
+    final ContactMechWithTelecomNumber? asTelecomNumber;
+    // contact_mech_EmailAddressProto
+    final ContactMechWithEmailAddress? asEmailAddress;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // contact_mech_PostalAddressProto
+    final ContactMechWithPostalAddress? asPostalAddress;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
     ContactMech({
         this.contactMechId,
         this.contactMechTypeId,
@@ -40,15 +40,15 @@ class ContactMech extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.cats,
         this.asTelecomNumber,
-        this.subview,
-        this.asPostalAddress,
         this.asEmailAddress,
-        this.proto,
         this.type,
+        this.proto,
         this.model,
-        this.format,
-        this.cats, });
+        this.asPostalAddress,
+        this.subview,
+        this.format, });
     factory ContactMech.fromJson(Map<String, dynamic> json) => _$ContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechToJson(this);
     @override

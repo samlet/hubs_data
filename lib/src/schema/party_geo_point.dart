@@ -17,16 +17,16 @@ class PartyGeoPoint extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
     // String
     final String? proto;
     // String
     final String? format;
-    // domain_PartyFlatData
-    final Party? party;
+    // facade_ModelEntity
+    final ModelEntity? model;
     PartyGeoPoint({
         this.partyId,
         this.geoPointId,
@@ -35,11 +35,11 @@ class PartyGeoPoint extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.cats,
+        this.party,
         this.proto,
         this.format,
-        this.party, });
+        this.model, });
     factory PartyGeoPoint.fromJson(Map<String, dynamic> json) => _$PartyGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$PartyGeoPointToJson(this);
     @override

@@ -15,18 +15,18 @@ class OrderRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_PartyFlatData
     final Party? party;
     // String
     final String? format;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     OrderRole({
         this.orderId,
         this.partyId,
@@ -34,12 +34,12 @@ class OrderRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
+        this.proto,
         this.party,
         this.format,
-        this.orderHeader,
-        this.cats,
         this.model,
-        this.proto, });
+        this.orderHeader, });
     factory OrderRole.fromJson(Map<String, dynamic> json) => _$OrderRoleFromJson(json);
     Map<String, dynamic> toJson() => _$OrderRoleToJson(this);
     @override

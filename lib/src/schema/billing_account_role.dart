@@ -19,18 +19,18 @@ class BillingAccountRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
     final String? proto;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
+    // String
+    final String? format;
     BillingAccountRole({
         this.billingAccountId,
         this.partyId,
@@ -40,12 +40,12 @@ class BillingAccountRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.format,
+        this.billingAccount,
         this.cats,
-        this.proto,
         this.party,
-        this.billingAccount, });
+        this.model,
+        this.proto,
+        this.format, });
     factory BillingAccountRole.fromJson(Map<String, dynamic> json) => _$BillingAccountRoleFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountRoleToJson(this);
     @override

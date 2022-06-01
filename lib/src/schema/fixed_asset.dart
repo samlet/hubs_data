@@ -59,36 +59,36 @@ class FixedAsset extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_FixedAssetGeoPointList
-    final FixedAssetGeoPointCollection? fixedAssetGeoPoints;
-    // domain_FixedAssetAttributeList
-    final FixedAssetAttributeCollection? fixedAssetAttributes;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_ProductFlatData
-    final Product? instanceOfProduct;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_OrderHeaderFlatData
     final OrderHeader? acquireOrderHeader;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_FixedAssetGeoPointList
+    final FixedAssetGeoPointCollection? fixedAssetGeoPoints;
+    // domain_FacilityFlatData
+    final Facility? locatedAtFacility;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_FixedAssetFlatData
-    final FixedAsset? parentFixedAsset;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_FixedAssetMaintList
     final FixedAssetMaintCollection? fixedAssetMaints;
+    // domain_ProductFlatData
+    final Product? instanceOfProduct;
     // domain_FixedAssetProductList
     final FixedAssetProductCollection? fixedAssetProducts;
-    // domain_FacilityFlatData
-    final Facility? locatedAtFacility;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_FixedAssetAttributeList
+    final FixedAssetAttributeCollection? fixedAssetAttributes;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // String
     final String? format;
-    // String
-    final String? proto;
+    // domain_FixedAssetFlatData
+    final FixedAsset? parentFixedAsset;
     FixedAsset({
         this.fixedAssetId,
         this.fixedAssetTypeId,
@@ -118,21 +118,21 @@ class FixedAsset extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.type,
-        this.fixedAssetGeoPoints,
-        this.fixedAssetAttributes,
-        this.party,
-        this.instanceOfProduct,
+        this.proto,
+        this.model,
         this.acquireOrderHeader,
+        this.party,
+        this.fixedAssetGeoPoints,
+        this.locatedAtFacility,
         this.subview,
-        this.parentFixedAsset,
         this.cats,
         this.fixedAssetMaints,
+        this.instanceOfProduct,
         this.fixedAssetProducts,
-        this.locatedAtFacility,
-        this.model,
+        this.fixedAssetAttributes,
+        this.type,
         this.format,
-        this.proto, });
+        this.parentFixedAsset, });
     factory FixedAsset.fromJson(Map<String, dynamic> json) => _$FixedAssetFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetToJson(this);
     @override

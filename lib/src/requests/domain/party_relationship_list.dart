@@ -1,0 +1,18 @@
+part of '../../../requests.dart';
+
+/// Input_domain_PartyRelationshipList
+@JsonSerializable()
+class PartyRelationshipList {
+    // List<Input_domain_PartyRelationshipFlatData>
+    final List<PartyRelationshipFlatData>? values;
+    // String
+    final String? nextPageToken;
+    // String
+    final String? regionId;
+    PartyRelationshipList({
+        this.values,
+        this.nextPageToken,
+        this.regionId, });
+    factory PartyRelationshipList.fromJson(Map<String, dynamic> json) => _$PartyRelationshipListFromJson(json);
+    Map<String, dynamic> toJson() => _$PartyRelationshipListToJson(this);
+}

@@ -19,16 +19,16 @@ class UserPreference {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     UserPreference({
         this.userLoginId,
         this.userPrefTypeId,
@@ -38,11 +38,11 @@ class UserPreference {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.cats,
-        this.userLogin,
+        this.model,
         this.format,
-        this.model, });
+        this.cats,
+        this.proto,
+        this.userLogin, });
     factory UserPreference.fromJson(Map<String, dynamic> json) => _$UserPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$UserPreferenceToJson(this);
 }

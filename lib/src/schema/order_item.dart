@@ -103,26 +103,26 @@ class OrderItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
+    final UserLogin? dontcancelsetuserlogin;
+    // String
+    final String? proto;
+    // domain_ShoppingListFlatData
+    final ShoppingList? addSuggestionsToShoppingList;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_InventoryItemFlatData
     final InventoryItem? fromInventoryItem;
     // domain_UserLoginFlatData
-    final UserLogin? dontcancelsetuserlogin;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_ShoppingListFlatData
-    final ShoppingList? addSuggestionsToShoppingList;
-    // String
-    final String? format;
+    final UserLogin? changeByUserLogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
-    // String
-    final String? proto;
     OrderItem({
         this.orderId,
         this.orderItemSeqId,
@@ -174,16 +174,16 @@ class OrderItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.changeByUserLogin,
-        this.fromInventoryItem,
         this.dontcancelsetuserlogin,
-        this.product,
+        this.proto,
         this.addSuggestionsToShoppingList,
-        this.format,
+        this.product,
+        this.fromInventoryItem,
+        this.changeByUserLogin,
         this.cats,
-        this.orderHeader,
-        this.proto, });
+        this.model,
+        this.format,
+        this.orderHeader, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);
     @override

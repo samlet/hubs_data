@@ -31,22 +31,22 @@ class Example extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ExampleStatusList
-    final ExampleStatusCollection? exampleStatuses;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ExampleItemList
     final ExampleItemCollection? exampleItems;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? proto;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ExampleStatusList
+    final ExampleStatusCollection? exampleStatuses;
     Example({
         this.exampleId,
         this.exampleTypeId,
@@ -62,14 +62,14 @@ class Example extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.exampleStatuses,
-        this.proto,
-        this.cats,
         this.exampleItems,
-        this.subview,
-        this.type,
+        this.format,
+        this.cats,
         this.model,
-        this.format, });
+        this.subview,
+        this.proto,
+        this.type,
+        this.exampleStatuses, });
     factory Example.fromJson(Map<String, dynamic> json) => _$ExampleFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleToJson(this);
     @override

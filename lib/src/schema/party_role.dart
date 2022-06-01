@@ -13,14 +13,14 @@ class PartyRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
     // domain_PartyFlatData
     final Party? party;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     PartyRole({
@@ -29,10 +29,10 @@ class PartyRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.proto,
         this.party,
         this.format,
         this.cats,
-        this.proto,
         this.model, });
     factory PartyRole.fromJson(Map<String, dynamic> json) => _$PartyRoleFromJson(json);
     Map<String, dynamic> toJson() => _$PartyRoleToJson(this);

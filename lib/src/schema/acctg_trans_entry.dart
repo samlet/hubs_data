@@ -63,16 +63,16 @@ class AcctgTransEntry extends Equatable{
     final Party? party;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_AcctgTransFlatData
     final AcctgTrans? acctgTrans;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     AcctgTransEntry({
         this.acctgTransId,
         this.acctgTransEntrySeqId,
@@ -104,11 +104,11 @@ class AcctgTransEntry extends Equatable{
         this.id,
         this.party,
         this.cats,
-        this.format,
         this.acctgTrans,
-        this.inventoryItem,
         this.model,
-        this.proto, });
+        this.proto,
+        this.format,
+        this.inventoryItem, });
     factory AcctgTransEntry.fromJson(Map<String, dynamic> json) => _$AcctgTransEntryFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgTransEntryToJson(this);
     @override

@@ -19,18 +19,18 @@ class ProductStoreFacility extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? format;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // String
-    final String? proto;
     // domain_FacilityFlatData
     final Facility? facility;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     ProductStoreFacility({
         this.productStoreId,
         this.facilityId,
@@ -40,12 +40,12 @@ class ProductStoreFacility extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.format,
-        this.productStore,
-        this.proto,
         this.facility,
-        this.cats, });
+        this.cats,
+        this.productStore,
+        this.model,
+        this.proto, });
     factory ProductStoreFacility.fromJson(Map<String, dynamic> json) => _$ProductStoreFacilityFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreFacilityToJson(this);
     @override

@@ -19,18 +19,18 @@ class FacilityContactMechPurpose extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_FacilityFlatData
     final Facility? facility;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     // String
     final String? proto;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     FacilityContactMechPurpose({
         this.facilityId,
         this.contactMechId,
@@ -40,12 +40,12 @@ class FacilityContactMechPurpose extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.contactMech,
-        this.model,
-        this.cats,
         this.facility,
+        this.model,
         this.format,
-        this.proto, });
+        this.proto,
+        this.contactMech,
+        this.cats, });
     factory FacilityContactMechPurpose.fromJson(Map<String, dynamic> json) => _$FacilityContactMechPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityContactMechPurposeToJson(this);
     @override

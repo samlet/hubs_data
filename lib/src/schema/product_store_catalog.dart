@@ -19,18 +19,18 @@ class ProductStoreCatalog extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProdCatalogFlatData
-    final ProdCatalog? prodCatalog;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // domain_ProdCatalogFlatData
+    final ProdCatalog? prodCatalog;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ProductStoreCatalog({
         this.productStoreId,
         this.prodCatalogId,
@@ -40,12 +40,12 @@ class ProductStoreCatalog extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.cats,
-        this.model,
-        this.prodCatalog,
         this.productStore,
-        this.format, });
+        this.format,
+        this.proto,
+        this.prodCatalog,
+        this.cats,
+        this.model, });
     factory ProductStoreCatalog.fromJson(Map<String, dynamic> json) => _$ProductStoreCatalogFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreCatalogToJson(this);
     @override

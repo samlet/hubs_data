@@ -39,38 +39,38 @@ class ReturnHeader extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_PartyFlatData
-    final Party? party;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_ReturnItemList
-    final ReturnItemCollection? returnItems;
-    // domain_ReturnItemBillingList
-    final ReturnItemBillingCollection? returnItemBillings;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // String
     final String? proto;
-    // domain_ReturnAdjustmentList
-    final ReturnAdjustmentCollection? returnAdjustments;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ReturnItemBillingList
+    final ReturnItemBillingCollection? returnItemBillings;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // String
-    final String? format;
+    // domain_ReturnItemShipmentList
+    final ReturnItemShipmentCollection? returnItemShipments;
     // domain_ReturnStatusList
     final ReturnStatusCollection? returnStatuses;
     // domain_BillingAccountFlatData
     final BillingAccount? billingAccount;
     // domain_PartyFlatData
     final Party? toParty;
+    // domain_ReturnAdjustmentList
+    final ReturnAdjustmentCollection? returnAdjustments;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // domain_ReturnItemShipmentList
-    final ReturnItemShipmentCollection? returnItemShipments;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // domain_ReturnItemList
+    final ReturnItemCollection? returnItems;
+    // domain_FacilityFlatData
+    final Facility? facility;
     ReturnHeader({
         this.returnId,
         this.returnHeaderTypeId,
@@ -90,22 +90,22 @@ class ReturnHeader extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.party,
-        this.subview,
-        this.returnItems,
-        this.returnItemBillings,
-        this.model,
-        this.userLogin,
         this.proto,
-        this.returnAdjustments,
+        this.model,
+        this.returnItemBillings,
         this.cats,
-        this.facility,
-        this.format,
+        this.returnItemShipments,
         this.returnStatuses,
         this.billingAccount,
         this.toParty,
+        this.returnAdjustments,
+        this.party,
+        this.userLogin,
         this.contactMech,
-        this.returnItemShipments, });
+        this.subview,
+        this.format,
+        this.returnItems,
+        this.facility, });
     factory ReturnHeader.fromJson(Map<String, dynamic> json) => _$ReturnHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnHeaderToJson(this);
     @override

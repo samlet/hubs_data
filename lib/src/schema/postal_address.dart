@@ -47,14 +47,14 @@ class PostalAddress extends Equatable{
     final String? tenantId;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     PostalAddress({
         this.contactMechId,
         this.toName,
@@ -78,10 +78,10 @@ class PostalAddress extends Equatable{
         this.createdTxStamp,
         this.tenantId,
         this.cats,
-        this.contactMech,
-        this.model,
         this.proto,
-        this.format, });
+        this.format,
+        this.model,
+        this.contactMech, });
     factory PostalAddress.fromJson(Map<String, dynamic> json) => _$PostalAddressFromJson(json);
     Map<String, dynamic> toJson() => _$PostalAddressToJson(this);
     @override

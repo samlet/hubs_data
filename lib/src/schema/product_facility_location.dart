@@ -22,15 +22,15 @@ class ProductFacilityLocation extends Equatable{
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? proto;
-    // String
     final String? format;
     // domain_FacilityFlatData
     final Facility? facility;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductFacilityLocation({
         this.productId,
         this.facilityId,
@@ -41,11 +41,11 @@ class ProductFacilityLocation extends Equatable{
         this.createdTxStamp,
         this.id,
         this.model,
-        this.proto,
         this.format,
         this.facility,
-        this.cats,
-        this.product, });
+        this.product,
+        this.proto,
+        this.cats, });
     factory ProductFacilityLocation.fromJson(Map<String, dynamic> json) => _$ProductFacilityLocationFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFacilityLocationToJson(this);
     @override

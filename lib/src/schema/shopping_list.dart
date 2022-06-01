@@ -49,28 +49,28 @@ class ShoppingList extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ShoppingListItemList
-    final ShoppingListItemCollection? shoppingListItems;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_ShoppingListItemList
+    final ShoppingListItemCollection? shoppingListItems;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // String
+    final String? format;
+    // domain_ShoppingListFlatData
+    final ShoppingList? parentShoppingList;
     // String
     final String? proto;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // domain_PartyFlatData
-    final Party? party;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ShoppingListFlatData
-    final ShoppingList? parentShoppingList;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -95,17 +95,17 @@ class ShoppingList extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.model,
-        this.shoppingListItems,
         this.contactMech,
         this.subview,
+        this.cats,
+        this.party,
+        this.shoppingListItems,
         this.type,
+        this.format,
+        this.parentShoppingList,
         this.proto,
         this.productStore,
-        this.party,
-        this.cats,
-        this.parentShoppingList, });
+        this.model, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
     @override

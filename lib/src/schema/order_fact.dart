@@ -31,14 +31,14 @@ class OrderFact extends Equatable{
     final TypesEntity? type;
     // domain_OrderFactStatusList
     final OrderFactStatusCollection? orderFactStatuses;
-    // String
-    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // String
     final String? format;
     OrderFact({
@@ -56,10 +56,10 @@ class OrderFact extends Equatable{
         this.createdTxStamp,
         this.type,
         this.orderFactStatuses,
-        this.proto,
         this.model,
-        this.subview,
         this.cats,
+        this.proto,
+        this.subview,
         this.format, });
     factory OrderFact.fromJson(Map<String, dynamic> json) => _$OrderFactFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactToJson(this);

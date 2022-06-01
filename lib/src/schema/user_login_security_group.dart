@@ -17,18 +17,18 @@ class UserLoginSecurityGroup extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     UserLoginSecurityGroup({
         this.userLoginId,
         this.groupId,
@@ -37,12 +37,12 @@ class UserLoginSecurityGroup extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
-        this.proto,
-        this.model,
+        this.securityGroup,
         this.cats,
-        this.format,
-        this.securityGroup, });
+        this.userLogin,
+        this.model,
+        this.proto,
+        this.format, });
     factory UserLoginSecurityGroup.fromJson(Map<String, dynamic> json) => _$UserLoginSecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginSecurityGroupToJson(this);
     @override
