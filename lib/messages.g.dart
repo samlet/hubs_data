@@ -888,6 +888,30 @@ Map<String, dynamic> _$WorkEffortAssocToJson(WorkEffortAssoc instance) {
   return val;
 }
 
+TimeOfDayValue _$TimeOfDayValueFromJson(Map<String, dynamic> json) =>
+    TimeOfDayValue(
+      hours: json['hours'] as int?,
+      minutes: json['minutes'] as int?,
+      seconds: json['seconds'] as int?,
+      nanos: json['nanos'] as int?,
+    );
+
+Map<String, dynamic> _$TimeOfDayValueToJson(TimeOfDayValue instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('hours', instance.hours);
+  writeNotNull('minutes', instance.minutes);
+  writeNotNull('seconds', instance.seconds);
+  writeNotNull('nanos', instance.nanos);
+  return val;
+}
+
 PaymentApplicationCollection _$PaymentApplicationCollectionFromJson(
         Map<String, dynamic> json) =>
     PaymentApplicationCollection(

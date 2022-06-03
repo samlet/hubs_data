@@ -1948,6 +1948,29 @@ Map<String, dynamic> _$ShoppingListItemListToJson(
   return val;
 }
 
+TimeOfDay _$TimeOfDayFromJson(Map<String, dynamic> json) => TimeOfDay(
+      hours: json['hours'] as int?,
+      minutes: json['minutes'] as int?,
+      seconds: json['seconds'] as int?,
+      nanos: json['nanos'] as int?,
+    );
+
+Map<String, dynamic> _$TimeOfDayToJson(TimeOfDay instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('hours', instance.hours);
+  writeNotNull('minutes', instance.minutes);
+  writeNotNull('seconds', instance.seconds);
+  writeNotNull('nanos', instance.nanos);
+  return val;
+}
+
 ShipmentReceiptFlatData _$ShipmentReceiptFlatDataFromJson(
         Map<String, dynamic> json) =>
     ShipmentReceiptFlatData(
@@ -5144,6 +5167,27 @@ Map<String, dynamic> _$ProductStoreListToJson(ProductStoreList instance) {
   return val;
 }
 
+Date _$DateFromJson(Map<String, dynamic> json) => Date(
+      year: json['year'] as int?,
+      month: json['month'] as int?,
+      day: json['day'] as int?,
+    );
+
+Map<String, dynamic> _$DateToJson(Date instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('year', instance.year);
+  writeNotNull('month', instance.month);
+  writeNotNull('day', instance.day);
+  return val;
+}
+
 ProductFacilityLocationList _$ProductFacilityLocationListFromJson(
         Map<String, dynamic> json) =>
     ProductFacilityLocationList(
@@ -5168,27 +5212,6 @@ Map<String, dynamic> _$ProductFacilityLocationListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-Date _$DateFromJson(Map<String, dynamic> json) => Date(
-      year: json['year'] as int?,
-      month: json['month'] as int?,
-      day: json['day'] as int?,
-    );
-
-Map<String, dynamic> _$DateToJson(Date instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('year', instance.year);
-  writeNotNull('month', instance.month);
-  writeNotNull('day', instance.day);
   return val;
 }
 

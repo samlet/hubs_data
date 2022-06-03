@@ -29,6 +29,7 @@ part 'src/schema/acctg_trans_entry_collection.dart';
 part 'src/schema/inventory_item_detail_collection.dart';
 part 'src/schema/strings_value.dart';
 part 'src/schema/work_effort_assoc.dart';
+part 'src/schema/time_of_day_value.dart';
 part 'src/schema/payment_application_collection.dart';
 part 'src/schema/shopping_list_item.dart';
 part 'src/schema/billing_account_role.dart';
