@@ -41,24 +41,24 @@ class UserLogin extends Equatable{
     final String? partyId;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserLoginSecurityGroupList
-    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserPreferenceList
-    final UserPreferenceCollection? userPreferences;
-    // domain_UserLoginPasswordHistoryList
-    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
     // domain_PartyFlatData
     final Party? party;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserPreferenceList
+    final UserPreferenceCollection? userPreferences;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginPasswordHistoryList
+    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_UserLoginSecurityGroupList
+    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
     UserLogin({
         this.userLoginId,
         this.currentPassword,
@@ -79,15 +79,15 @@ class UserLogin extends Equatable{
         this.createdTxStamp,
         this.partyId,
         this.tenantId,
-        this.format,
+        this.party,
         this.proto,
+        this.format,
         this.model,
-        this.userLoginSecurityGroups,
-        this.subview,
-        this.cats,
         this.userPreferences,
+        this.cats,
         this.userLoginPasswordHistories,
-        this.party, });
+        this.subview,
+        this.userLoginSecurityGroups, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
     @override

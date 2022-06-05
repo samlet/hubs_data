@@ -19,6 +19,8 @@ class ProductCategoryRollupFlatData {
     final Timestamp? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? tenantId;
     // Input_google_protobuf_Struct
     final Struct? extra;
     // List<Input_domain_ProductCategoryRollupFlatData_AttachmentsEntry>
@@ -32,6 +34,7 @@ class ProductCategoryRollupFlatData {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.tenantId,
         this.extra,
         this.attachments, });
     factory ProductCategoryRollupFlatData.fromJson(Map<String, dynamic> json) => _$ProductCategoryRollupFlatDataFromJson(json);

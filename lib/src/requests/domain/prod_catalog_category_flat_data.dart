@@ -21,6 +21,8 @@ class ProdCatalogCategoryFlatData {
     final Timestamp? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? tenantId;
     // Input_google_protobuf_Struct
     final Struct? extra;
     // List<Input_domain_ProdCatalogCategoryFlatData_AttachmentsEntry>
@@ -35,6 +37,7 @@ class ProdCatalogCategoryFlatData {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.tenantId,
         this.extra,
         this.attachments, });
     factory ProdCatalogCategoryFlatData.fromJson(Map<String, dynamic> json) => _$ProdCatalogCategoryFlatDataFromJson(json);

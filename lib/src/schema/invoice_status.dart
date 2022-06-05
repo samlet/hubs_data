@@ -17,18 +17,18 @@ class InvoiceStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? format;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
+    // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
     InvoiceStatus({
         this.statusId,
         this.invoiceId,
@@ -37,12 +37,12 @@ class InvoiceStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.changeByUserLogin,
-        this.invoice,
-        this.format,
-        this.model,
         this.cats,
-        this.proto, });
+        this.format,
+        this.invoice,
+        this.proto,
+        this.model,
+        this.changeByUserLogin, });
     factory InvoiceStatus.fromJson(Map<String, dynamic> json) => _$InvoiceStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceStatusToJson(this);
     @override

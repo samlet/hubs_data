@@ -9,16 +9,16 @@ class ExampleCollection {
     final String? nextPageToken;
     // String
     final String? regionId;
-    // google_protobuf_Struct
-    final StructValue? groupBy;
     // domain_ExampleList
     final ExampleCollection? filter;
+    // google_protobuf_Struct
+    final StructValue? groupBy;
     ExampleCollection({
         this.values,
         this.nextPageToken,
         this.regionId,
-        this.groupBy,
-        this.filter, });
+        this.filter,
+        this.groupBy, });
     factory ExampleCollection.fromJson(Map<String, dynamic> json) => _$ExampleCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleCollectionToJson(this);
 }

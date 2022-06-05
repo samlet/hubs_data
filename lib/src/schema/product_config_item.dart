@@ -21,20 +21,20 @@ class ProductConfigItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_ProductConfigProductList
-    final ProductConfigProductCollection? configItemProductConfigProducts;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_ProductConfigOptionList
-    final ProductConfigOptionCollection? configItemProductConfigOptions;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductConfigOptionList
+    final ProductConfigOptionCollection? configItemProductConfigOptions;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductConfigProductList
+    final ProductConfigProductCollection? configItemProductConfigProducts;
+    // String
+    final String? format;
     ProductConfigItem({
         this.configItemId,
         this.configItemTypeId,
@@ -45,13 +45,13 @@ class ProductConfigItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.configItemProductConfigProducts,
-        this.cats,
-        this.format,
-        this.configItemProductConfigOptions,
+        this.proto,
         this.model,
-        this.proto, });
+        this.configItemProductConfigOptions,
+        this.subview,
+        this.cats,
+        this.configItemProductConfigProducts,
+        this.format, });
     factory ProductConfigItem.fromJson(Map<String, dynamic> json) => _$ProductConfigItemFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemToJson(this);
     @override

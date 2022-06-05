@@ -51,26 +51,26 @@ class ProductPrice extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? desc;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // domain_ProductFlatData
+    final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // String
+    final String? desc;
+    // String
+    final String? format;
     ProductPrice({
         this.productId,
         this.productPriceTypeId,
@@ -96,16 +96,16 @@ class ProductPrice extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.desc,
-        this.product,
-        this.lastmodifiedbyuserlogin,
-        this.model,
+        this.productStoreGroup,
         this.createdbyuserlogin,
-        this.format,
-        this.cats,
-        this.proto,
         this.taxAuthorityParty,
-        this.productStoreGroup, });
+        this.model,
+        this.proto,
+        this.product,
+        this.cats,
+        this.lastmodifiedbyuserlogin,
+        this.desc,
+        this.format, });
     factory ProductPrice.fromJson(Map<String, dynamic> json) => _$ProductPriceFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPriceToJson(this);
     @override

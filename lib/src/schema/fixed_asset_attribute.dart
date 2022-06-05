@@ -17,16 +17,16 @@ class FixedAssetAttribute extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? proto;
+    // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
     FixedAssetAttribute({
         this.fixedAssetId,
         this.attrName,
@@ -35,11 +35,11 @@ class FixedAssetAttribute extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fixedAsset,
-        this.model,
-        this.proto,
         this.cats,
-        this.format, });
+        this.proto,
+        this.format,
+        this.model,
+        this.fixedAsset, });
     factory FixedAssetAttribute.fromJson(Map<String, dynamic> json) => _$FixedAssetAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetAttributeToJson(this);
     @override

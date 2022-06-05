@@ -21,18 +21,18 @@ class ReturnStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? returnHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? returnHeader;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ReturnStatus({
         this.returnStatusId,
         this.statusId,
@@ -43,12 +43,12 @@ class ReturnStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.returnHeader,
-        this.cats,
-        this.proto,
-        this.format,
         this.model,
-        this.changeByUserLogin, });
+        this.changeByUserLogin,
+        this.returnHeader,
+        this.format,
+        this.proto,
+        this.cats, });
     factory ReturnStatus.fromJson(Map<String, dynamic> json) => _$ReturnStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnStatusToJson(this);
     @override

@@ -103,6 +103,8 @@ class OrderItemFlatData {
     final Timestamp? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? tenantId;
     // Input_google_protobuf_Struct
     final Struct? extra;
     // List<Input_domain_OrderItemFlatData_AttachmentsEntry>
@@ -158,6 +160,7 @@ class OrderItemFlatData {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.tenantId,
         this.extra,
         this.attachments, });
     factory OrderItemFlatData.fromJson(Map<String, dynamic> json) => _$OrderItemFlatDataFromJson(json);

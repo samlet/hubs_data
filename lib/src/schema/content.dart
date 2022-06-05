@@ -55,36 +55,36 @@ class Content extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ContentPurposeList
-    final ContentPurposeCollection? contentPurposes;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ContentFlatData
+    final Content? decoratorContent;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ContentFlatData
+    final Content? ownerContent;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // String
+    final String? proto;
+    // domain_ContentAttributeList
+    final ContentAttributeCollection? contentAttributes;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_DataResourceFlatData
     final DataResource? templateDataResource;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ContentFlatData
-    final Content? ownerContent;
-    // domain_ContentAttributeList
-    final ContentAttributeCollection? contentAttributes;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ContentFlatData
-    final Content? decoratorContent;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
-    // domain_ContentFlatData
-    final Content? instanceOfContent;
-    // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
+    // domain_ContentPurposeList
+    final ContentPurposeCollection? contentPurposes;
     // domain_ContentAssocList
     final ContentAssocCollection? toContentAssocs;
+    // domain_ContentFlatData
+    final Content? instanceOfContent;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -112,21 +112,21 @@ class Content extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.contentPurposes,
+        this.lastmodifiedbyuserlogin,
+        this.decoratorContent,
+        this.format,
+        this.model,
+        this.ownerContent,
+        this.dataResource,
+        this.proto,
+        this.contentAttributes,
+        this.createdbyuserlogin,
+        this.cats,
         this.templateDataResource,
         this.subview,
-        this.ownerContent,
-        this.contentAttributes,
-        this.model,
-        this.cats,
-        this.decoratorContent,
-        this.proto,
-        this.lastmodifiedbyuserlogin,
-        this.dataResource,
-        this.instanceOfContent,
-        this.format,
-        this.createdbyuserlogin,
-        this.toContentAssocs, });
+        this.contentPurposes,
+        this.toContentAssocs,
+        this.instanceOfContent, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
     @override

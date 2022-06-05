@@ -59,36 +59,36 @@ class FixedAsset extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? acquireOrderHeader;
-    // domain_PartyFlatData
-    final Party? party;
     // domain_FixedAssetGeoPointList
     final FixedAssetGeoPointCollection? fixedAssetGeoPoints;
-    // domain_FacilityFlatData
-    final Facility? locatedAtFacility;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_FixedAssetMaintList
-    final FixedAssetMaintCollection? fixedAssetMaints;
-    // domain_ProductFlatData
-    final Product? instanceOfProduct;
-    // domain_FixedAssetProductList
-    final FixedAssetProductCollection? fixedAssetProducts;
-    // domain_FixedAssetAttributeList
-    final FixedAssetAttributeCollection? fixedAssetAttributes;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // String
-    final String? format;
     // domain_FixedAssetFlatData
     final FixedAsset? parentFixedAsset;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_FixedAssetAttributeList
+    final FixedAssetAttributeCollection? fixedAssetAttributes;
+    // String
+    final String? format;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? acquireOrderHeader;
+    // domain_FixedAssetMaintList
+    final FixedAssetMaintCollection? fixedAssetMaints;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_FacilityFlatData
+    final Facility? locatedAtFacility;
+    // domain_FixedAssetProductList
+    final FixedAssetProductCollection? fixedAssetProducts;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_ProductFlatData
+    final Product? instanceOfProduct;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     FixedAsset({
         this.fixedAssetId,
         this.fixedAssetTypeId,
@@ -118,21 +118,21 @@ class FixedAsset extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.model,
-        this.acquireOrderHeader,
-        this.party,
         this.fixedAssetGeoPoints,
-        this.locatedAtFacility,
-        this.subview,
-        this.cats,
-        this.fixedAssetMaints,
-        this.instanceOfProduct,
-        this.fixedAssetProducts,
+        this.parentFixedAsset,
+        this.model,
         this.fixedAssetAttributes,
-        this.type,
         this.format,
-        this.parentFixedAsset, });
+        this.acquireOrderHeader,
+        this.fixedAssetMaints,
+        this.subview,
+        this.locatedAtFacility,
+        this.fixedAssetProducts,
+        this.type,
+        this.party,
+        this.instanceOfProduct,
+        this.cats,
+        this.proto, });
     factory FixedAsset.fromJson(Map<String, dynamic> json) => _$FixedAssetFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetToJson(this);
     @override

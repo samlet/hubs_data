@@ -27,16 +27,16 @@ class PartyGroup extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
     PartyGroup({
         this.partyId,
         this.groupName,
@@ -50,11 +50,11 @@ class PartyGroup extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.proto,
-        this.cats,
         this.party,
-        this.model, });
+        this.cats,
+        this.proto,
+        this.model,
+        this.format, });
     factory PartyGroup.fromJson(Map<String, dynamic> json) => _$PartyGroupFromJson(json);
     Map<String, dynamic> toJson() => _$PartyGroupToJson(this);
     @override

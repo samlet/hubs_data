@@ -149,62 +149,62 @@ class Product extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductAssocList
-    final ProductAssocCollection? mainProductAssocs;
-    // domain_ProductKeywordList
-    final ProductKeywordCollection? productKeywords;
-    // String
-    final String? defaultPrice;
-    // domain_ProductConfigList
-    final ProductConfigCollection? productProductConfigs;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // fact_ProductView
-    final ProductView? asView;
-    // domain_ProductPriceList
-    final ProductPriceCollection? productPrices;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? listPrice;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
     // domain_ProductPromoProductList
     final ProductPromoProductCollection? productPromoProducts;
-    // domain_WorkEffortGoodStandardList
-    final WorkEffortGoodStandardCollection? workEffortGoodStandards;
-    // domain_ProductFacilityList
-    final ProductFacilityCollection? productFacilities;
-    // domain_ProductFeatureApplList
-    final ProductFeatureApplCollection? productFeatureAppls;
-    // domain_ProductContentList
-    final ProductContentCollection? productContents;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? primaryProductCategory;
-    // domain_ProductFacilityLocationList
-    final ProductFacilityLocationCollection? productFacilityLocations;
-    // domain_ProductAssocList
-    final ProductAssocCollection? assocProductAssocs;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_ProductPriceData
-    final ProductPrice? priceFilter;
-    // List<domain_ProductPriceData>
-    final List<ProductPrice>? priceSelect;
-    // domain_ProductFacilityAssocList
-    final ProductFacilityAssocCollection? productFacilityAssocs;
+    // domain_WorkEffortGoodStandardList
+    final WorkEffortGoodStandardCollection? workEffortGoodStandards;
     // String
     final String? format;
+    // domain_ProductContentList
+    final ProductContentCollection? productContents;
+    // domain_ProductFacilityAssocList
+    final ProductFacilityAssocCollection? productFacilityAssocs;
+    // domain_ProductFacilityLocationList
+    final ProductFacilityLocationCollection? productFacilityLocations;
+    // domain_ProductFacilityList
+    final ProductFacilityCollection? productFacilities;
+    // domain_ProductAssocList
+    final ProductAssocCollection? assocProductAssocs;
+    // domain_ProductConfigList
+    final ProductConfigCollection? productProductConfigs;
+    // domain_ProductPriceList
+    final ProductPriceCollection? productPrices;
     // List<domain_ProductPriceData>
     final List<ProductPrice>? matchProductPrice;
+    // List<domain_ProductPriceData>
+    final List<ProductPrice>? priceSelect;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? primaryProductCategory;
+    // domain_ProductFeatureApplList
+    final ProductFeatureApplCollection? productFeatureAppls;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? defaultPrice;
+    // String
+    final String? listPrice;
+    // fact_ProductView
+    final ProductView? asView;
+    // domain_ProductAssocList
+    final ProductAssocCollection? mainProductAssocs;
+    // domain_ProductPriceData
+    final ProductPrice? priceFilter;
+    // String
+    final String? proto;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ProductKeywordList
+    final ProductKeywordCollection? productKeywords;
     Product({
         this.productId,
         this.productTypeId,
@@ -279,34 +279,34 @@ class Product extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.mainProductAssocs,
-        this.productKeywords,
-        this.defaultPrice,
-        this.productProductConfigs,
-        this.cats,
-        this.proto,
-        this.subview,
-        this.facility,
-        this.type,
-        this.asView,
-        this.productPrices,
-        this.createdbyuserlogin,
-        this.listPrice,
         this.lastmodifiedbyuserlogin,
         this.productPromoProducts,
-        this.workEffortGoodStandards,
-        this.productFacilities,
-        this.productFeatureAppls,
-        this.productContents,
-        this.primaryProductCategory,
-        this.productFacilityLocations,
-        this.assocProductAssocs,
+        this.cats,
+        this.createdbyuserlogin,
         this.model,
-        this.priceFilter,
-        this.priceSelect,
-        this.productFacilityAssocs,
+        this.workEffortGoodStandards,
         this.format,
-        this.matchProductPrice, });
+        this.productContents,
+        this.productFacilityAssocs,
+        this.productFacilityLocations,
+        this.productFacilities,
+        this.assocProductAssocs,
+        this.productProductConfigs,
+        this.productPrices,
+        this.matchProductPrice,
+        this.priceSelect,
+        this.primaryProductCategory,
+        this.productFeatureAppls,
+        this.subview,
+        this.type,
+        this.defaultPrice,
+        this.listPrice,
+        this.asView,
+        this.mainProductAssocs,
+        this.priceFilter,
+        this.proto,
+        this.facility,
+        this.productKeywords, });
     factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductToJson(this);
     @override

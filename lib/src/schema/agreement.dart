@@ -33,28 +33,28 @@ class Agreement extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_AgreementTermList
-    final AgreementTermCollection? agreementTerms;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? proto;
     // domain_AgreementProductApplList
     final AgreementProductApplCollection? agreementProductAppls;
-    // domain_AgreementItemList
-    final AgreementItemCollection? agreementItems;
-    // String
-    final String? format;
     // domain_PartyFlatData
-    final Party? toParty;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final Party? fromParty;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ProductFlatData
     final Product? product;
     // domain_PartyFlatData
-    final Party? fromParty;
+    final Party? toParty;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_AgreementItemList
+    final AgreementItemCollection? agreementItems;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_AgreementTermList
+    final AgreementTermCollection? agreementTerms;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     Agreement({
         this.agreementId,
         this.productId,
@@ -71,17 +71,17 @@ class Agreement extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.agreementTerms,
-        this.model,
-        this.subview,
-        this.proto,
         this.agreementProductAppls,
-        this.agreementItems,
-        this.format,
-        this.toParty,
-        this.cats,
+        this.fromParty,
+        this.model,
         this.product,
-        this.fromParty, });
+        this.toParty,
+        this.subview,
+        this.agreementItems,
+        this.cats,
+        this.agreementTerms,
+        this.proto,
+        this.format, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
     @override

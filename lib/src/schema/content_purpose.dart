@@ -19,12 +19,12 @@ class ContentPurpose extends Equatable{
     final ModelEntity? model;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // domain_ContentFlatData
     final Content? content;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     ContentPurpose({
         this.contentId,
         this.contentPurposeTypeId,
@@ -34,9 +34,9 @@ class ContentPurpose extends Equatable{
         this.id,
         this.model,
         this.format,
+        this.cats,
         this.proto,
-        this.content,
-        this.cats, });
+        this.content, });
     factory ContentPurpose.fromJson(Map<String, dynamic> json) => _$ContentPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentPurposeToJson(this);
     @override

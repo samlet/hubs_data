@@ -27,16 +27,16 @@ class FixedAssetProduct extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? format;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
     // domain_ProductFlatData
     final Product? product;
     FixedAssetProduct({
@@ -52,11 +52,11 @@ class FixedAssetProduct extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fixedAsset,
-        this.model,
         this.format,
-        this.proto,
         this.cats,
+        this.proto,
+        this.model,
+        this.fixedAsset,
         this.product, });
     factory FixedAssetProduct.fromJson(Map<String, dynamic> json) => _$FixedAssetProductFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetProductToJson(this);

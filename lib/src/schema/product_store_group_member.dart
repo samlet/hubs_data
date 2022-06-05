@@ -22,15 +22,15 @@ class ProductStoreGroupMember extends Equatable{
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
     // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final String? format;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ProductStoreGroupMember({
         this.productStoreId,
         this.productStoreGroupId,
@@ -41,11 +41,11 @@ class ProductStoreGroupMember extends Equatable{
         this.createdTxStamp,
         this.id,
         this.productStoreGroup,
-        this.proto,
-        this.model,
+        this.format,
         this.productStore,
         this.cats,
-        this.format, });
+        this.proto,
+        this.model, });
     factory ProductStoreGroupMember.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupMemberToJson(this);
     @override

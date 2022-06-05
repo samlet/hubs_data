@@ -49,28 +49,28 @@ class ShoppingList extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
-    // domain_ShoppingListItemList
-    final ShoppingListItemCollection? shoppingListItems;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // String
-    final String? format;
-    // domain_ShoppingListFlatData
-    final ShoppingList? parentShoppingList;
-    // String
-    final String? proto;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ShoppingListFlatData
+    final ShoppingList? parentShoppingList;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ShoppingListItemList
+    final ShoppingListItemCollection? shoppingListItems;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -95,17 +95,17 @@ class ShoppingList extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.contactMech,
-        this.subview,
-        this.cats,
         this.party,
-        this.shoppingListItems,
-        this.type,
-        this.format,
-        this.parentShoppingList,
-        this.proto,
         this.productStore,
-        this.model, });
+        this.proto,
+        this.format,
+        this.subview,
+        this.parentShoppingList,
+        this.type,
+        this.shoppingListItems,
+        this.model,
+        this.cats,
+        this.contactMech, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
     @override

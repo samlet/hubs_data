@@ -47,22 +47,22 @@ class Requirement extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // domain_ProductFlatData
-    final Product? product;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_ProductFlatData
+    final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // String
+    final String? proto;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? format;
     // domain_FacilityFlatData
     final Facility? facility;
     Requirement({
@@ -88,14 +88,14 @@ class Requirement extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.type,
-        this.fixedAsset,
-        this.product,
         this.model,
-        this.proto,
-        this.format,
         this.subview,
+        this.product,
+        this.cats,
+        this.fixedAsset,
+        this.proto,
+        this.type,
+        this.format,
         this.facility, });
     factory Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementToJson(this);

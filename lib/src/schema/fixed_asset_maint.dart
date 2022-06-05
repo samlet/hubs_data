@@ -29,20 +29,20 @@ class FixedAssetMaint extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
     // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_WorkEffortFlatData
-    final WorkEffort? scheduleWorkEffort;
     // domain_OrderHeaderFlatData
     final OrderHeader? purchaseOrderHeader;
+    // String
+    final String? proto;
+    // domain_WorkEffortFlatData
+    final WorkEffort? scheduleWorkEffort;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     FixedAssetMaint({
         this.fixedAssetId,
         this.maintHistSeqId,
@@ -57,13 +57,13 @@ class FixedAssetMaint extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fixedAsset,
-        this.proto,
         this.model,
+        this.fixedAsset,
         this.format,
-        this.cats,
+        this.purchaseOrderHeader,
+        this.proto,
         this.scheduleWorkEffort,
-        this.purchaseOrderHeader, });
+        this.cats, });
     factory FixedAssetMaint.fromJson(Map<String, dynamic> json) => _$FixedAssetMaintFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetMaintToJson(this);
     @override

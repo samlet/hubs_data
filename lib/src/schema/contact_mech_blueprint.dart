@@ -14,9 +14,9 @@ class ContactMechBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ContactMechBlueprintData
-    final ContactMechBlueprint? modifyContactMechType;
-    // blueprint_ContactMechBlueprintData
     final ContactMechBlueprint? modifyPostalAddress;
+    // blueprint_ContactMechBlueprintData
+    final ContactMechBlueprint? modifyContactMechType;
     // blueprint_ContactMechBlueprintData
     final ContactMechBlueprint? modifyTelecomNumber;
     ContactMechBlueprint({
@@ -25,8 +25,8 @@ class ContactMechBlueprint {
         this.token,
         this.entity,
         this.response,
-        this.modifyContactMechType,
         this.modifyPostalAddress,
+        this.modifyContactMechType,
         this.modifyTelecomNumber, });
     factory ContactMechBlueprint.fromJson(Map<String, dynamic> json) => _$ContactMechBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechBlueprintToJson(this);

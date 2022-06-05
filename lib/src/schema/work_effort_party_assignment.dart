@@ -37,22 +37,22 @@ class WorkEffortPartyAssignment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
     // domain_FacilityFlatData
     final Facility? facility;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? party;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_UserLoginFlatData
     final UserLogin? assignedByUserLogin;
     // String
-    final String? proto;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? format;
+    // domain_PartyFlatData
+    final Party? party;
     WorkEffortPartyAssignment({
         this.workEffortId,
         this.partyId,
@@ -71,14 +71,14 @@ class WorkEffortPartyAssignment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.proto,
+        this.cats,
+        this.workEffort,
         this.facility,
-        this.format,
-        this.party,
         this.model,
         this.assignedByUserLogin,
-        this.proto,
-        this.workEffort,
-        this.cats, });
+        this.format,
+        this.party, });
     factory WorkEffortPartyAssignment.fromJson(Map<String, dynamic> json) => _$WorkEffortPartyAssignmentFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortPartyAssignmentToJson(this);
     @override

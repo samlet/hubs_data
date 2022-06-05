@@ -38,9 +38,9 @@ class ShipmentPackage extends Equatable{
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // String
+    final String? format;
     ShipmentPackage({
         this.shipmentId,
         this.shipmentPackageSeqId,
@@ -59,8 +59,8 @@ class ShipmentPackage extends Equatable{
         this.model,
         this.cats,
         this.shipment,
-        this.format,
-        this.proto, });
+        this.proto,
+        this.format, });
     factory ShipmentPackage.fromJson(Map<String, dynamic> json) => _$ShipmentPackageFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageToJson(this);
     @override

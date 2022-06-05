@@ -14,47 +14,47 @@ class WorkEffortBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? addToWorkEffortAssocList;
+    final WorkEffortBlueprint? addToWorkEffortAssoc;
     // blueprint_WorkEffortBlueprintData
     final WorkEffortBlueprint? updateToWorkEffortAssoc;
+    // blueprint_WorkEffortBlueprintData
+    final WorkEffortBlueprint? addWorkEffortPartyAssignmentList;
+    // blueprint_WorkEffortBlueprintData
+    final WorkEffortBlueprint? removeWorkEffortPartyAssignment;
+    // blueprint_WorkEffortBlueprintData
+    final WorkEffortBlueprint? addWorkEffortPartyAssignment;
+    // blueprint_WorkEffortBlueprintData
+    final WorkEffortBlueprint? addFromWorkEffortAssocList;
+    // blueprint_WorkEffortBlueprintData
+    final WorkEffortBlueprint? addFromWorkEffortAssoc;
     // blueprint_WorkEffortBlueprintData
     final WorkEffortBlueprint? removeToWorkEffortAssoc;
     // blueprint_WorkEffortBlueprintData
     final WorkEffortBlueprint? updateWorkEffortPartyAssignment;
     // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? removeWorkEffortPartyAssignment;
-    // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? updateFromWorkEffortAssoc;
-    // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? addToWorkEffortAssoc;
-    // blueprint_WorkEffortBlueprintData
     final WorkEffortBlueprint? removeFromWorkEffortAssoc;
     // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? addWorkEffortPartyAssignmentList;
+    final WorkEffortBlueprint? addToWorkEffortAssocList;
     // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? addFromWorkEffortAssoc;
-    // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? addFromWorkEffortAssocList;
-    // blueprint_WorkEffortBlueprintData
-    final WorkEffortBlueprint? addWorkEffortPartyAssignment;
+    final WorkEffortBlueprint? updateFromWorkEffortAssoc;
     WorkEffortBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addToWorkEffortAssocList,
+        this.addToWorkEffortAssoc,
         this.updateToWorkEffortAssoc,
+        this.addWorkEffortPartyAssignmentList,
+        this.removeWorkEffortPartyAssignment,
+        this.addWorkEffortPartyAssignment,
+        this.addFromWorkEffortAssocList,
+        this.addFromWorkEffortAssoc,
         this.removeToWorkEffortAssoc,
         this.updateWorkEffortPartyAssignment,
-        this.removeWorkEffortPartyAssignment,
-        this.updateFromWorkEffortAssoc,
-        this.addToWorkEffortAssoc,
         this.removeFromWorkEffortAssoc,
-        this.addWorkEffortPartyAssignmentList,
-        this.addFromWorkEffortAssoc,
-        this.addFromWorkEffortAssocList,
-        this.addWorkEffortPartyAssignment, });
+        this.addToWorkEffortAssocList,
+        this.updateFromWorkEffortAssoc, });
     factory WorkEffortBlueprint.fromJson(Map<String, dynamic> json) => _$WorkEffortBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortBlueprintToJson(this);
 }

@@ -13,10 +13,10 @@ class VideoDataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
@@ -29,8 +29,8 @@ class VideoDataResource extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.dataResource,
+        this.cats,
         this.model,
         this.proto,
         this.format, });

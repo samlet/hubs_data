@@ -45,28 +45,28 @@ class Facility extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_FacilityContactMechList
-    final FacilityContactMechCollection? facilityContactMeches;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_FacilityContactMechPurposeList
-    final FacilityContactMechPurposeCollection? facilityContactMechPurposes;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // routines_Response
-    final ResponseValue? pickInventory;
-    // domain_PartyFlatData
-    final Party? ownerParty;
     // domain_FacilityFlatData
     final Facility? parentFacility;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // facade_ModelEntity
     final ModelEntity? model;
+    // routines_Response
+    final ResponseValue? pickInventory;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_PartyFlatData
+    final Party? ownerParty;
+    // String
+    final String? format;
+    // domain_FacilityContactMechList
+    final FacilityContactMechCollection? facilityContactMeches;
+    // domain_FacilityContactMechPurposeList
+    final FacilityContactMechPurposeCollection? facilityContactMechPurposes;
     // String
     final String? proto;
     Facility({
@@ -91,17 +91,17 @@ class Facility extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.facilityContactMeches,
-        this.type,
-        this.facilityContactMechPurposes,
-        this.subview,
-        this.cats,
-        this.format,
-        this.productStore,
-        this.pickInventory,
-        this.ownerParty,
         this.parentFacility,
+        this.type,
+        this.cats,
+        this.productStore,
         this.model,
+        this.pickInventory,
+        this.subview,
+        this.ownerParty,
+        this.format,
+        this.facilityContactMeches,
+        this.facilityContactMechPurposes,
         this.proto, });
     factory Facility.fromJson(Map<String, dynamic> json) => _$FacilityFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityToJson(this);

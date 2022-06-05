@@ -15,6 +15,8 @@ class PartyNote extends Equatable{
     final String? id;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_NoteDataData
+    final NoteData? noteData;
     // String
     final String? format;
     // proto_FieldCats
@@ -23,8 +25,6 @@ class PartyNote extends Equatable{
     final String? proto;
     // domain_PartyFlatData
     final Party? party;
-    // domain_NoteDataData
-    final NoteData? noteData;
     PartyNote({
         this.partyId,
         this.noteId,
@@ -32,11 +32,11 @@ class PartyNote extends Equatable{
         this.createdTxStamp,
         this.id,
         this.model,
+        this.noteData,
         this.format,
         this.cats,
         this.proto,
-        this.party,
-        this.noteData, });
+        this.party, });
     factory PartyNote.fromJson(Map<String, dynamic> json) => _$PartyNoteFromJson(json);
     Map<String, dynamic> toJson() => _$PartyNoteToJson(this);
     @override

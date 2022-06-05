@@ -21,12 +21,12 @@ class FixedAssetGeoPoint extends Equatable{
     final String? format;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     FixedAssetGeoPoint({
         this.fixedAssetId,
         this.geoPointId,
@@ -37,9 +37,9 @@ class FixedAssetGeoPoint extends Equatable{
         this.id,
         this.format,
         this.proto,
-        this.model,
         this.fixedAsset,
-        this.cats, });
+        this.cats,
+        this.model, });
     factory FixedAssetGeoPoint.fromJson(Map<String, dynamic> json) => _$FixedAssetGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetGeoPointToJson(this);
     @override

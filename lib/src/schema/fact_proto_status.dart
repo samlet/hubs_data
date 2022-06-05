@@ -19,16 +19,16 @@ class FactProtoStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_FactProtoData
-    final FactProto? factProto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_FactProtoData
+    final FactProto? factProto;
     // String
     final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     FactProtoStatus({
@@ -40,11 +40,11 @@ class FactProtoStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.factProto,
         this.cats,
+        this.factProto,
         this.proto,
         this.userLogin,
+        this.model,
         this.format, });
     factory FactProtoStatus.fromJson(Map<String, dynamic> json) => _$FactProtoStatusFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoStatusToJson(this);

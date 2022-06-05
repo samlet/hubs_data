@@ -29,18 +29,18 @@ class ShoppingListItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? product;
+    // domain_ShoppingListFlatData
+    final ShoppingList? shoppingList;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
     // String
     final String? format;
-    // domain_ShoppingListFlatData
-    final ShoppingList? shoppingList;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_ProductFlatData
+    final Product? product;
     ShoppingListItem({
         this.shoppingListId,
         this.shoppingListItemSeqId,
@@ -55,12 +55,12 @@ class ShoppingListItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.product,
+        this.shoppingList,
         this.cats,
         this.proto,
         this.format,
-        this.shoppingList,
-        this.model, });
+        this.model,
+        this.product, });
     factory ShoppingListItem.fromJson(Map<String, dynamic> json) => _$ShoppingListItemFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListItemToJson(this);
     @override

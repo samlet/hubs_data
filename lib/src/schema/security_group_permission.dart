@@ -17,18 +17,18 @@ class SecurityGroupPermission extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
-    // domain_SecurityPermissionFlatData
-    final SecurityPermission? securityPermission;
     // String
     final String? proto;
+    // domain_SecurityPermissionFlatData
+    final SecurityPermission? securityPermission;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     SecurityGroupPermission({
         this.groupId,
         this.permissionId,
@@ -37,12 +37,12 @@ class SecurityGroupPermission extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.cats,
-        this.format,
         this.securityGroup,
+        this.proto,
         this.securityPermission,
-        this.proto, });
+        this.model,
+        this.format, });
     factory SecurityGroupPermission.fromJson(Map<String, dynamic> json) => _$SecurityGroupPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupPermissionToJson(this);
     @override

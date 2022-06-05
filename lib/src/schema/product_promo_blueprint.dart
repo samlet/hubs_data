@@ -14,35 +14,35 @@ class ProductPromoBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? updateProductPromoRule;
+    final ProductPromoBlueprint? addProductPromoAction;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? removeProductPromoAction;
+    final ProductPromoBlueprint? addProductPromoRule;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? updateProductPromoAction;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? removeProductPromoRule;
-    // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? addProductPromoAction;
-    // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? addProductPromoActionList;
+    // blueprint_ProductPromoBlueprintData
+    final ProductPromoBlueprint? updateProductPromoRule;
+    // blueprint_ProductPromoBlueprintData
+    final ProductPromoBlueprint? removeProductPromoRule;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? addProductPromoRuleList;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? addProductPromoRule;
+    final ProductPromoBlueprint? removeProductPromoAction;
     ProductPromoBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateProductPromoRule,
-        this.removeProductPromoAction,
-        this.updateProductPromoAction,
-        this.removeProductPromoRule,
         this.addProductPromoAction,
+        this.addProductPromoRule,
+        this.updateProductPromoAction,
         this.addProductPromoActionList,
+        this.updateProductPromoRule,
+        this.removeProductPromoRule,
         this.addProductPromoRuleList,
-        this.addProductPromoRule, });
+        this.removeProductPromoAction, });
     factory ProductPromoBlueprint.fromJson(Map<String, dynamic> json) => _$ProductPromoBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoBlueprintToJson(this);
 }

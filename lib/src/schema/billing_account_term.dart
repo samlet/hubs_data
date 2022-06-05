@@ -21,16 +21,16 @@ class BillingAccountTerm extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     BillingAccountTerm({
         this.billingAccountTermId,
         this.billingAccountId,
@@ -41,11 +41,11 @@ class BillingAccountTerm extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.billingAccount,
-        this.model,
-        this.cats,
+        this.proto,
         this.format,
-        this.proto, });
+        this.model,
+        this.billingAccount,
+        this.cats, });
     factory BillingAccountTerm.fromJson(Map<String, dynamic> json) => _$BillingAccountTermFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountTermToJson(this);
     @override

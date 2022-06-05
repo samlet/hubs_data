@@ -21,10 +21,10 @@ class PartyContactMechPurpose extends Equatable{
     final String? id;
     // String
     final String? proto;
-    // domain_PartyFlatData
-    final Party? party;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
     // String
     final String? format;
     // domain_ContactMechFlatData
@@ -41,8 +41,8 @@ class PartyContactMechPurpose extends Equatable{
         this.createdTxStamp,
         this.id,
         this.proto,
-        this.party,
         this.cats,
+        this.party,
         this.format,
         this.contactMech,
         this.model, });

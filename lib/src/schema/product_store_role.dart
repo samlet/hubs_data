@@ -21,18 +21,18 @@ class ProductStoreRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // String
+    final String? format;
     // String
     final String? proto;
     // domain_PartyFlatData
     final Party? party;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductStoreRole({
         this.partyId,
         this.roleTypeId,
@@ -43,12 +43,12 @@ class ProductStoreRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
         this.productStore,
+        this.format,
         this.proto,
         this.party,
-        this.cats,
-        this.model, });
+        this.model,
+        this.cats, });
     factory ProductStoreRole.fromJson(Map<String, dynamic> json) => _$ProductStoreRoleFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreRoleToJson(this);
     @override

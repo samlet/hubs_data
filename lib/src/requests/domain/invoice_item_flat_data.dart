@@ -47,6 +47,8 @@ class InvoiceItemFlatData {
     final Timestamp? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? tenantId;
     // Input_google_protobuf_Struct
     final Struct? extra;
     // List<Input_domain_InvoiceItemFlatData_AttachmentsEntry>
@@ -74,6 +76,7 @@ class InvoiceItemFlatData {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.tenantId,
         this.extra,
         this.attachments, });
     factory InvoiceItemFlatData.fromJson(Map<String, dynamic> json) => _$InvoiceItemFlatDataFromJson(json);

@@ -19,18 +19,18 @@ class ProductFeatureCategory extends Equatable{
     final ModelEntity? model;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // String
     final String? format;
-    // domain_ProductFeatureCategoryFlatData
-    final ProductFeatureCategory? parentProductFeatureCategory;
     // domain_ProductFeatureCategoryList
     final ProductFeatureCategoryCollection? childProductFeatureCategories;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductFeatureList
     final ProductFeatureCollection? productFeatures;
+    // domain_ProductFeatureCategoryFlatData
+    final ProductFeatureCategory? parentProductFeatureCategory;
     ProductFeatureCategory({
         this.productFeatureCategoryId,
         this.parentCategoryId,
@@ -40,12 +40,12 @@ class ProductFeatureCategory extends Equatable{
         this.tenantId,
         this.model,
         this.subview,
+        this.cats,
         this.proto,
         this.format,
-        this.parentProductFeatureCategory,
         this.childProductFeatureCategories,
-        this.cats,
-        this.productFeatures, });
+        this.productFeatures,
+        this.parentProductFeatureCategory, });
     factory ProductFeatureCategory.fromJson(Map<String, dynamic> json) => _$ProductFeatureCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureCategoryToJson(this);
     @override

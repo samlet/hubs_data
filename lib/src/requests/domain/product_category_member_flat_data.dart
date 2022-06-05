@@ -23,6 +23,8 @@ class ProductCategoryMemberFlatData {
     final Timestamp? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? tenantId;
     // Input_google_protobuf_Struct
     final Struct? extra;
     // List<Input_domain_ProductCategoryMemberFlatData_AttachmentsEntry>
@@ -38,6 +40,7 @@ class ProductCategoryMemberFlatData {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.tenantId,
         this.extra,
         this.attachments, });
     factory ProductCategoryMemberFlatData.fromJson(Map<String, dynamic> json) => _$ProductCategoryMemberFlatDataFromJson(json);

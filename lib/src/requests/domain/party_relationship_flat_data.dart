@@ -37,6 +37,8 @@ class PartyRelationshipFlatData {
     final Timestamp? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? tenantId;
     // Input_google_protobuf_Struct
     final Struct? extra;
     // List<Input_domain_PartyRelationshipFlatData_AttachmentsEntry>
@@ -59,6 +61,7 @@ class PartyRelationshipFlatData {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.tenantId,
         this.extra,
         this.attachments, });
     factory PartyRelationshipFlatData.fromJson(Map<String, dynamic> json) => _$PartyRelationshipFlatDataFromJson(json);

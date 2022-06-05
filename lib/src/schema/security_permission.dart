@@ -13,27 +13,27 @@ class SecurityPermission extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     SecurityPermission({
         this.permissionId,
         this.description,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.subview,
         this.format,
-        this.proto,
         this.model,
-        this.cats,
-        this.subview, });
+        this.proto,
+        this.cats, });
     factory SecurityPermission.fromJson(Map<String, dynamic> json) => _$SecurityPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityPermissionToJson(this);
     @override

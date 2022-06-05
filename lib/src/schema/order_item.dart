@@ -103,26 +103,28 @@ class OrderItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? dontcancelsetuserlogin;
     // String
-    final String? proto;
-    // domain_ShoppingListFlatData
-    final ShoppingList? addSuggestionsToShoppingList;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_InventoryItemFlatData
-    final InventoryItem? fromInventoryItem;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? tenantId;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? dontcancelsetuserlogin;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
     // String
     final String? format;
+    // String
+    final String? proto;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ShoppingListFlatData
+    final ShoppingList? addSuggestionsToShoppingList;
+    // domain_InventoryItemFlatData
+    final InventoryItem? fromInventoryItem;
     OrderItem({
         this.orderId,
         this.orderItemSeqId,
@@ -174,16 +176,17 @@ class OrderItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.dontcancelsetuserlogin,
-        this.proto,
-        this.addSuggestionsToShoppingList,
-        this.product,
-        this.fromInventoryItem,
-        this.changeByUserLogin,
-        this.cats,
+        this.tenantId,
         this.model,
+        this.dontcancelsetuserlogin,
+        this.product,
+        this.changeByUserLogin,
         this.format,
-        this.orderHeader, });
+        this.proto,
+        this.orderHeader,
+        this.cats,
+        this.addSuggestionsToShoppingList,
+        this.fromInventoryItem, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);
     @override
