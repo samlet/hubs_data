@@ -5,14 +5,14 @@ part of '../../messages.dart';
 class StructValue {
     // List<google_protobuf_Struct_FieldsEntry>
     final List<FieldsEntryValue>? fields;
-    // proto_StringMap
-    final StringMapValue? asStringMap;
     // String
     final String? proto;
+    // proto_StringMap
+    final StringMapValue? asStringMap;
     StructValue({
         this.fields,
-        this.asStringMap,
-        this.proto, });
+        this.proto,
+        this.asStringMap, });
     factory StructValue.fromJson(Map<String, dynamic> json) => _$StructValueFromJson(json);
     Map<String, dynamic> toJson() => _$StructValueToJson(this);
 }

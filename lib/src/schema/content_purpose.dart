@@ -15,16 +15,16 @@ class ContentPurpose extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // domain_ContentFlatData
     final Content? content;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ContentPurpose({
         this.contentId,
         this.contentPurposeTypeId,
@@ -32,11 +32,11 @@ class ContentPurpose extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.proto,
         this.model,
         this.format,
-        this.cats,
-        this.proto,
-        this.content, });
+        this.content,
+        this.cats, });
     factory ContentPurpose.fromJson(Map<String, dynamic> json) => _$ContentPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentPurposeToJson(this);
     @override

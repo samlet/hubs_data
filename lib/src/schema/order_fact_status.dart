@@ -19,18 +19,18 @@ class OrderFactStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // domain_OrderFactData
+    final OrderFact? orderFact;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? format;
-    // domain_OrderFactData
-    final OrderFact? orderFact;
-    // String
-    final String? proto;
     OrderFactStatus({
         this.orderFactId,
         this.statusDate,
@@ -40,12 +40,12 @@ class OrderFactStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
+        this.proto,
         this.cats,
-        this.model,
-        this.format,
+        this.userLogin,
         this.orderFact,
-        this.proto, });
+        this.model,
+        this.format, });
     factory OrderFactStatus.fromJson(Map<String, dynamic> json) => _$OrderFactStatusFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactStatusToJson(this);
     @override

@@ -25,18 +25,18 @@ class NoteData extends Equatable{
     final String? moreInfoItemName;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // domain_PartyFlatData
     final Party? noteparty;
     // String
+    final String? proto;
+    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     NoteData({
         this.noteId,
         this.noteName,
@@ -49,12 +49,12 @@ class NoteData extends Equatable{
         this.moreInfoItemId,
         this.moreInfoItemName,
         this.tenantId,
-        this.model,
-        this.proto,
+        this.cats,
         this.subview,
         this.noteparty,
+        this.proto,
         this.format,
-        this.cats, });
+        this.model, });
     factory NoteData.fromJson(Map<String, dynamic> json) => _$NoteDataFromJson(json);
     Map<String, dynamic> toJson() => _$NoteDataToJson(this);
     @override

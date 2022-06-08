@@ -49,30 +49,30 @@ class OrderItemShipGroup extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
-    // domain_ContactMechFlatData
-    final ContactMech? telecomContactMech;
-    // String
-    final String? proto;
-    // domain_PartyFlatData
-    final Party? vendorParty;
     // domain_PartyFlatData
     final Party? carrierParty;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
+    // String
+    final String? proto;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_PartyFlatData
     final Party? supplierParty;
     // domain_FacilityFlatData
     final Facility? facility;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // domain_AgreementFlatData
     final Agreement? supplierAgreement;
+    // domain_ContactMechFlatData
+    final ContactMech? telecomContactMech;
+    // domain_PartyFlatData
+    final Party? vendorParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderItemShipGroup({
         this.orderId,
         this.shipGroupSeqId,
@@ -97,18 +97,18 @@ class OrderItemShipGroup extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.model,
-        this.format,
-        this.telecomContactMech,
-        this.proto,
-        this.vendorParty,
         this.carrierParty,
-        this.contactMech,
+        this.proto,
+        this.orderHeader,
         this.supplierParty,
         this.facility,
-        this.orderHeader,
-        this.supplierAgreement, });
+        this.supplierAgreement,
+        this.telecomContactMech,
+        this.vendorParty,
+        this.cats,
+        this.contactMech,
+        this.format,
+        this.model, });
     factory OrderItemShipGroup.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupToJson(this);
     @override

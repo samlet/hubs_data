@@ -27,22 +27,22 @@ class PaymentApplication extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_PaymentFlatData
+    final Payment? toPayment;
     // String
     final String? proto;
     // domain_InvoiceFlatData
     final Invoice? invoice;
-    // String
-    final String? format;
-    // domain_PaymentFlatData
-    final Payment? toPayment;
     // domain_PaymentFlatData
     final Payment? payment;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
     PaymentApplication({
         this.paymentApplicationId,
         this.paymentId,
@@ -56,14 +56,14 @@ class PaymentApplication extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.toPayment,
         this.proto,
         this.invoice,
-        this.format,
-        this.toPayment,
         this.payment,
-        this.billingAccount,
         this.cats,
-        this.model, });
+        this.billingAccount,
+        this.model,
+        this.format, });
     factory PaymentApplication.fromJson(Map<String, dynamic> json) => _$PaymentApplicationFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentApplicationToJson(this);
     @override

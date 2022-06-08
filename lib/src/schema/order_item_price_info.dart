@@ -25,16 +25,16 @@ class OrderItemPriceInfo extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     // String
+    final String? proto;
+    // String
     final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     OrderItemPriceInfo({
         this.orderItemPriceInfoId,
         this.orderId,
@@ -47,11 +47,11 @@ class OrderItemPriceInfo extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
+        this.model,
         this.cats,
         this.orderHeader,
-        this.format,
-        this.model, });
+        this.proto,
+        this.format, });
     factory OrderItemPriceInfo.fromJson(Map<String, dynamic> json) => _$OrderItemPriceInfoFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemPriceInfoToJson(this);
     @override

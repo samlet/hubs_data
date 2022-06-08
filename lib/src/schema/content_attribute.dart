@@ -17,16 +17,16 @@ class ContentAttribute extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
+    // domain_ContentFlatData
+    final Content? content;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
     final String? format;
-    // domain_ContentFlatData
-    final Content? content;
     ContentAttribute({
         this.contentId,
         this.attrName,
@@ -35,11 +35,11 @@ class ContentAttribute extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.proto,
+        this.content,
         this.model,
-        this.format,
-        this.content, });
+        this.proto,
+        this.cats,
+        this.format, });
     factory ContentAttribute.fromJson(Map<String, dynamic> json) => _$ContentAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAttributeToJson(this);
     @override

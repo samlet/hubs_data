@@ -25,22 +25,22 @@ class BillingAccount extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_BillingAccountRoleList
-    final BillingAccountRoleCollection? billingAccountRoles;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? format;
+    // domain_BillingAccountTermList
+    final BillingAccountTermCollection? billingAccountTerms;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_BillingAccountRoleList
+    final BillingAccountRoleCollection? billingAccountRoles;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
-    final String? format;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_BillingAccountTermList
-    final BillingAccountTermCollection? billingAccountTerms;
+    final String? proto;
     BillingAccount({
         this.billingAccountId,
         this.accountLimit,
@@ -53,14 +53,14 @@ class BillingAccount extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.billingAccountRoles,
-        this.proto,
-        this.cats,
+        this.subview,
+        this.format,
+        this.billingAccountTerms,
         this.contactMech,
         this.model,
-        this.format,
-        this.subview,
-        this.billingAccountTerms, });
+        this.billingAccountRoles,
+        this.cats,
+        this.proto, });
     factory BillingAccount.fromJson(Map<String, dynamic> json) => _$BillingAccountFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountToJson(this);
     @override

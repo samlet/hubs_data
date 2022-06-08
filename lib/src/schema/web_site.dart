@@ -43,18 +43,18 @@ class WebSite extends Equatable{
     final String? displayMaintenancePage;
     // String
     final String? tenantId;
+    // String
+    final String? proto;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // String
-    final String? proto;
     WebSite({
         this.webSiteId,
         this.siteName,
@@ -76,12 +76,12 @@ class WebSite extends Equatable{
         this.isDefault,
         this.displayMaintenancePage,
         this.tenantId,
-        this.model,
-        this.format,
-        this.subview,
-        this.cats,
+        this.proto,
         this.productStore,
-        this.proto, });
+        this.model,
+        this.cats,
+        this.format,
+        this.subview, });
     factory WebSite.fromJson(Map<String, dynamic> json) => _$WebSiteFromJson(json);
     Map<String, dynamic> toJson() => _$WebSiteToJson(this);
     @override

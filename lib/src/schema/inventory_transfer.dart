@@ -35,18 +35,18 @@ class InventoryTransfer extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
-    // domain_FacilityFlatData
-    final Facility? toFacility;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_FacilityFlatData
+    final Facility? toFacility;
+    // String
+    final String? format;
     // String
     final String? proto;
     InventoryTransfer({
@@ -66,12 +66,12 @@ class InventoryTransfer extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.facility,
-        this.model,
-        this.format,
-        this.toFacility,
-        this.inventoryItem,
         this.cats,
+        this.inventoryItem,
+        this.model,
+        this.facility,
+        this.toFacility,
+        this.format,
         this.proto, });
     factory InventoryTransfer.fromJson(Map<String, dynamic> json) => _$InventoryTransferFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryTransferToJson(this);

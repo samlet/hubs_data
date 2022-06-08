@@ -75,16 +75,16 @@ class ReturnAdjustment extends Equatable{
     final ReturnHeader? returnHeader;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ReturnAdjustment({
         this.returnAdjustmentId,
         this.returnAdjustmentTypeId,
@@ -122,11 +122,11 @@ class ReturnAdjustment extends Equatable{
         this.tenantId,
         this.returnHeader,
         this.model,
-        this.cats,
+        this.userLogin,
+        this.proto,
         this.format,
         this.productPromo,
-        this.userLogin,
-        this.proto, });
+        this.cats, });
     factory ReturnAdjustment.fromJson(Map<String, dynamic> json) => _$ReturnAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnAdjustmentToJson(this);
     @override

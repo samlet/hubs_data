@@ -14,38 +14,38 @@ class BlacklistBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? modifyBlacklistType;
-    // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? removeBlacklistItem;
+    final BlacklistBlueprint? addBlacklistItem;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? addBlacklistItemList;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistItem;
+    final BlacklistBlueprint? modifyBlacklistType;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? removeBlacklistStatus;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? addBlacklistStatus;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? updateBlacklistStatus;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? updateBlacklistItem;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistStatus;
-    // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? addBlacklistStatusList;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? removeBlacklistStatus;
+    final BlacklistBlueprint? removeBlacklistItem;
     BlacklistBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.modifyBlacklistType,
-        this.removeBlacklistItem,
-        this.addBlacklistItemList,
         this.addBlacklistItem,
+        this.addBlacklistItemList,
+        this.modifyBlacklistType,
+        this.removeBlacklistStatus,
+        this.addBlacklistStatus,
         this.updateBlacklistStatus,
         this.updateBlacklistItem,
-        this.addBlacklistStatus,
         this.addBlacklistStatusList,
-        this.removeBlacklistStatus, });
+        this.removeBlacklistItem, });
     factory BlacklistBlueprint.fromJson(Map<String, dynamic> json) => _$BlacklistBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistBlueprintToJson(this);
 }

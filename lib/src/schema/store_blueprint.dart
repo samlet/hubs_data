@@ -14,95 +14,95 @@ class StoreBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStorePaymentSetting;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreCatalog;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? removeProductStoreCatalog;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStoreKeywordOvrd;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreRoleList;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? removeProductStoreKeywordOvrd;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreFacility;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStorePromoAppl;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStoreCatalog;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStorePaymentSetting;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreKeywordOvrd;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStoreEmailSetting;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? removeProductStoreRole;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreKeywordOvrdList;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStoreFacility;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStorePaymentSettingList;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStoreRole;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreEmailSettingList;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? updateProductStorePromoAppl;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreEmailSetting;
-    // blueprint_StoreBlueprintData
-    final StoreBlueprint? removeProductStoreFacility;
+    final StoreBlueprint? addProductStoreCatalogList;
     // blueprint_StoreBlueprintData
     final StoreBlueprint? addProductStorePromoApplList;
     // blueprint_StoreBlueprintData
-    final StoreBlueprint? removeProductStoreEmailSetting;
+    final StoreBlueprint? addProductStoreFacility;
     // blueprint_StoreBlueprintData
-    final StoreBlueprint? removeProductStorePaymentSetting;
+    final StoreBlueprint? removeProductStoreEmailSetting;
     // blueprint_StoreBlueprintData
     final StoreBlueprint? addProductStoreFacilityList;
     // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStorePromoAppl;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? removeProductStoreFacility;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? removeProductStorePaymentSetting;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStorePaymentSetting;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStoreRole;
+    // blueprint_StoreBlueprintData
     final StoreBlueprint? addProductStoreRole;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStoreCatalog;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStoreEmailSetting;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? removeProductStoreRole;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStoreCatalog;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStoreKeywordOvrdList;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStoreRoleList;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? removeProductStoreCatalog;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStoreKeywordOvrd;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStoreFacility;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStorePromoAppl;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStorePaymentSettingList;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStoreKeywordOvrd;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? updateProductStoreEmailSetting;
     // blueprint_StoreBlueprintData
     final StoreBlueprint? removeProductStorePromoAppl;
     // blueprint_StoreBlueprintData
-    final StoreBlueprint? addProductStoreCatalogList;
+    final StoreBlueprint? addProductStoreEmailSettingList;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? addProductStorePaymentSetting;
+    // blueprint_StoreBlueprintData
+    final StoreBlueprint? removeProductStoreKeywordOvrd;
     StoreBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateProductStorePaymentSetting,
-        this.addProductStoreCatalog,
-        this.removeProductStoreCatalog,
-        this.updateProductStoreKeywordOvrd,
-        this.addProductStoreRoleList,
-        this.removeProductStoreKeywordOvrd,
-        this.addProductStoreFacility,
-        this.addProductStorePromoAppl,
-        this.updateProductStoreCatalog,
-        this.addProductStorePaymentSetting,
-        this.addProductStoreKeywordOvrd,
-        this.updateProductStoreEmailSetting,
-        this.removeProductStoreRole,
-        this.addProductStoreKeywordOvrdList,
-        this.updateProductStoreFacility,
-        this.addProductStorePaymentSettingList,
-        this.updateProductStoreRole,
-        this.addProductStoreEmailSettingList,
-        this.updateProductStorePromoAppl,
-        this.addProductStoreEmailSetting,
-        this.removeProductStoreFacility,
+        this.addProductStoreCatalogList,
         this.addProductStorePromoApplList,
+        this.addProductStoreFacility,
         this.removeProductStoreEmailSetting,
-        this.removeProductStorePaymentSetting,
         this.addProductStoreFacilityList,
+        this.addProductStorePromoAppl,
+        this.removeProductStoreFacility,
+        this.removeProductStorePaymentSetting,
+        this.updateProductStorePaymentSetting,
+        this.updateProductStoreRole,
         this.addProductStoreRole,
+        this.updateProductStoreCatalog,
+        this.addProductStoreEmailSetting,
+        this.removeProductStoreRole,
+        this.addProductStoreCatalog,
+        this.addProductStoreKeywordOvrdList,
+        this.addProductStoreRoleList,
+        this.removeProductStoreCatalog,
+        this.addProductStoreKeywordOvrd,
+        this.updateProductStoreFacility,
+        this.updateProductStorePromoAppl,
+        this.addProductStorePaymentSettingList,
+        this.updateProductStoreKeywordOvrd,
+        this.updateProductStoreEmailSetting,
         this.removeProductStorePromoAppl,
-        this.addProductStoreCatalogList, });
+        this.addProductStoreEmailSettingList,
+        this.addProductStorePaymentSetting,
+        this.removeProductStoreKeywordOvrd, });
     factory StoreBlueprint.fromJson(Map<String, dynamic> json) => _$StoreBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$StoreBlueprintToJson(this);
 }

@@ -21,18 +21,18 @@ class ProductStorePromoAppl extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // String
+    final String? format;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     ProductStorePromoAppl({
         this.productStoreId,
         this.productPromoId,
@@ -43,12 +43,12 @@ class ProductStorePromoAppl extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.productPromo,
+        this.productStore,
         this.format,
-        this.proto,
-        this.cats,
+        this.productPromo,
         this.model,
-        this.productStore, });
+        this.cats,
+        this.proto, });
     factory ProductStorePromoAppl.fromJson(Map<String, dynamic> json) => _$ProductStorePromoApplFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePromoApplToJson(this);
     @override

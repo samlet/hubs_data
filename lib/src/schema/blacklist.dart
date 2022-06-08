@@ -17,20 +17,20 @@ class Blacklist extends Equatable{
     final TimestampValue? createdTxStamp;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_BlacklistItemList
     final BlacklistItemCollection? blacklistItems;
-    // domain_BlacklistStatusList
-    final BlacklistStatusCollection? blacklistStatuses;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_BlacklistStatusList
+    final BlacklistStatusCollection? blacklistStatuses;
     Blacklist({
         this.blacklistId,
         this.blacklistTypeId,
@@ -39,13 +39,13 @@ class Blacklist extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.type,
-        this.model,
         this.proto,
         this.format,
+        this.model,
         this.blacklistItems,
-        this.blacklistStatuses,
+        this.cats,
         this.subview,
-        this.cats, });
+        this.blacklistStatuses, });
     factory Blacklist.fromJson(Map<String, dynamic> json) => _$BlacklistFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistToJson(this);
     @override

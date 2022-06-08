@@ -55,36 +55,36 @@ class Content extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_ContentFlatData
-    final Content? decoratorContent;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ContentFlatData
-    final Content? ownerContent;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
-    // String
-    final String? proto;
-    // domain_ContentAttributeList
-    final ContentAttributeCollection? contentAttributes;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_DataResourceFlatData
-    final DataResource? templateDataResource;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ContentPurposeList
-    final ContentPurposeCollection? contentPurposes;
-    // domain_ContentAssocList
-    final ContentAssocCollection? toContentAssocs;
     // domain_ContentFlatData
     final Content? instanceOfContent;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ContentFlatData
+    final Content? decoratorContent;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // domain_ContentAttributeList
+    final ContentAttributeCollection? contentAttributes;
+    // domain_ContentFlatData
+    final Content? ownerContent;
+    // String
+    final String? proto;
+    // domain_ContentAssocList
+    final ContentAssocCollection? toContentAssocs;
+    // domain_ContentPurposeList
+    final ContentPurposeCollection? contentPurposes;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_DataResourceFlatData
+    final DataResource? templateDataResource;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -112,21 +112,21 @@ class Content extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.lastmodifiedbyuserlogin,
-        this.decoratorContent,
-        this.format,
-        this.model,
-        this.ownerContent,
-        this.dataResource,
-        this.proto,
-        this.contentAttributes,
-        this.createdbyuserlogin,
-        this.cats,
-        this.templateDataResource,
         this.subview,
-        this.contentPurposes,
+        this.instanceOfContent,
+        this.cats,
+        this.decoratorContent,
+        this.dataResource,
+        this.contentAttributes,
+        this.ownerContent,
+        this.proto,
         this.toContentAssocs,
-        this.instanceOfContent, });
+        this.contentPurposes,
+        this.format,
+        this.createdbyuserlogin,
+        this.lastmodifiedbyuserlogin,
+        this.model,
+        this.templateDataResource, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
     @override

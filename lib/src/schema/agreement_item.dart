@@ -21,16 +21,16 @@ class AgreementItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_AgreementFlatData
-    final Agreement? agreement;
-    // String
-    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_AgreementFlatData
+    final Agreement? agreement;
     AgreementItem({
         this.agreementId,
         this.agreementItemSeqId,
@@ -41,11 +41,11 @@ class AgreementItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.proto,
-        this.agreement,
+        this.model,
         this.format,
-        this.model, });
+        this.cats,
+        this.agreement, });
     factory AgreementItem.fromJson(Map<String, dynamic> json) => _$AgreementItemFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementItemToJson(this);
     @override

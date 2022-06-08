@@ -16,11 +16,11 @@ class OrderFactBlueprint {
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? addOrderFactStatusList;
     // blueprint_OrderFactBlueprintData
+    final OrderFactBlueprint? updateOrderFactStatus;
+    // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? addOrderFactStatus;
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? removeOrderFactStatus;
-    // blueprint_OrderFactBlueprintData
-    final OrderFactBlueprint? updateOrderFactStatus;
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? modifyOrderFactType;
     OrderFactBlueprint({
@@ -30,9 +30,9 @@ class OrderFactBlueprint {
         this.entity,
         this.response,
         this.addOrderFactStatusList,
+        this.updateOrderFactStatus,
         this.addOrderFactStatus,
         this.removeOrderFactStatus,
-        this.updateOrderFactStatus,
         this.modifyOrderFactType, });
     factory OrderFactBlueprint.fromJson(Map<String, dynamic> json) => _$OrderFactBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactBlueprintToJson(this);

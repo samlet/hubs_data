@@ -9,16 +9,16 @@ class ContactMechWithPostalAddress {
     final ContactMech? contactMech;
     // domain_PostalAddressFlatData
     final PostalAddress? postalAddress;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     ContactMechWithPostalAddress({
         this.id,
         this.contactMech,
         this.postalAddress,
-        this.subview,
-        this.proto, });
+        this.proto,
+        this.subview, });
     factory ContactMechWithPostalAddress.fromJson(Map<String, dynamic> json) => _$ContactMechWithPostalAddressFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechWithPostalAddressToJson(this);
 }

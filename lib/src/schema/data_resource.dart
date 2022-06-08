@@ -50,27 +50,27 @@ class DataResource extends Equatable{
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
     // data_resource_ImageProto
     final DataResourceWithImage? asImage;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // data_resource_VideoProto
-    final DataResourceWithVideo? asVideo;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // data_resource_TextProto
-    final DataResourceWithText? asText;
     // String
     final String? format;
+    // data_resource_TextProto
+    final DataResourceWithText? asText;
+    // data_resource_VideoProto
+    final DataResourceWithVideo? asVideo;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
     // data_resource_AudioProto
     final DataResourceWithAudio? asAudio;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     DataResource({
         this.dataResourceId,
         this.dataResourceTypeId,
@@ -95,17 +95,17 @@ class DataResource extends Equatable{
         this.createdTxStamp,
         this.tenantId,
         this.cats,
-        this.lastmodifiedbyuserlogin,
-        this.subview,
-        this.proto,
         this.createdbyuserlogin,
         this.asImage,
-        this.type,
-        this.asVideo,
-        this.model,
-        this.asText,
         this.format,
-        this.asAudio, });
+        this.asText,
+        this.asVideo,
+        this.subview,
+        this.lastmodifiedbyuserlogin,
+        this.asAudio,
+        this.type,
+        this.proto,
+        this.model, });
     factory DataResource.fromJson(Map<String, dynamic> json) => _$DataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceToJson(this);
     @override

@@ -14,71 +14,71 @@ class OrderReturnBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? updateReturnItemBilling;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? removeReturnItemShipment;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? updateReturnStatus;
+    final OrderReturnBlueprint? removeReturnAdjustment;
     // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? addReturnItemList;
     // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? addReturnAdjustment;
+    // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? addReturnItemBillingList;
+    // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? updateReturnItemShipment;
+    // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? updateReturnAdjustment;
+    // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? addReturnItem;
+    // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? addReturnStatus;
     // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? addReturnItemShipmentList;
     // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? addReturnItemShipment;
     // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? removeReturnItemBilling;
+    final OrderReturnBlueprint? updateReturnItemBilling;
+    // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? updateReturnStatus;
+    // blueprint_OrderReturnBlueprintData
+    final OrderReturnBlueprint? addReturnAdjustmentList;
     // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? removeReturnStatus;
     // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? updateReturnItem;
+    final OrderReturnBlueprint? removeReturnItemShipment;
     // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? addReturnItem;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? addReturnAdjustment;
+    final OrderReturnBlueprint? removeReturnItem;
     // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? addReturnStatusList;
     // blueprint_OrderReturnBlueprintData
     final OrderReturnBlueprint? addReturnItemBilling;
     // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? updateReturnItemShipment;
+    final OrderReturnBlueprint? removeReturnItemBilling;
     // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? removeReturnItem;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? addReturnItemBillingList;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? addReturnStatus;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? removeReturnAdjustment;
-    // blueprint_OrderReturnBlueprintData
-    final OrderReturnBlueprint? addReturnAdjustmentList;
+    final OrderReturnBlueprint? updateReturnItem;
     OrderReturnBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateReturnItemBilling,
-        this.removeReturnItemShipment,
-        this.updateReturnStatus,
+        this.removeReturnAdjustment,
         this.addReturnItemList,
+        this.addReturnAdjustment,
+        this.addReturnItemBillingList,
+        this.updateReturnItemShipment,
         this.updateReturnAdjustment,
+        this.addReturnItem,
+        this.addReturnStatus,
         this.addReturnItemShipmentList,
         this.addReturnItemShipment,
-        this.removeReturnItemBilling,
+        this.updateReturnItemBilling,
+        this.updateReturnStatus,
+        this.addReturnAdjustmentList,
         this.removeReturnStatus,
-        this.updateReturnItem,
-        this.addReturnItem,
-        this.addReturnAdjustment,
+        this.removeReturnItemShipment,
+        this.removeReturnItem,
         this.addReturnStatusList,
         this.addReturnItemBilling,
-        this.updateReturnItemShipment,
-        this.removeReturnItem,
-        this.addReturnItemBillingList,
-        this.addReturnStatus,
-        this.removeReturnAdjustment,
-        this.addReturnAdjustmentList, });
+        this.removeReturnItemBilling,
+        this.updateReturnItem, });
     factory OrderReturnBlueprint.fromJson(Map<String, dynamic> json) => _$OrderReturnBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$OrderReturnBlueprintToJson(this);
 }

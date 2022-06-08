@@ -14,50 +14,50 @@ class InventoryBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? addInventoryItemDetailList;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? updateInventoryItemStatus;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? addInventoryTransfer;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? addInventoryItemStatus;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? updateInventoryItemDetail;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? removeInventoryTransfer;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? addInventoryTransferList;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? modifyInventoryItemType;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? addInventoryItemDetail;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? removeInventoryItemDetail;
-    // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? addInventoryItemStatusList;
+    final InventoryBlueprint? updateInventoryTransfer;
     // blueprint_InventoryBlueprintData
     final InventoryBlueprint? removeInventoryItemStatus;
     // blueprint_InventoryBlueprintData
-    final InventoryBlueprint? updateInventoryTransfer;
+    final InventoryBlueprint? addInventoryItemDetailList;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? removeInventoryItemDetail;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? removeInventoryTransfer;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? modifyInventoryItemType;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? updateInventoryItemStatus;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? addInventoryItemStatus;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? addInventoryTransfer;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? addInventoryItemDetail;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? addInventoryTransferList;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? updateInventoryItemDetail;
+    // blueprint_InventoryBlueprintData
+    final InventoryBlueprint? addInventoryItemStatusList;
     InventoryBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addInventoryItemDetailList,
-        this.updateInventoryItemStatus,
-        this.addInventoryTransfer,
-        this.addInventoryItemStatus,
-        this.updateInventoryItemDetail,
-        this.removeInventoryTransfer,
-        this.addInventoryTransferList,
-        this.modifyInventoryItemType,
-        this.addInventoryItemDetail,
-        this.removeInventoryItemDetail,
-        this.addInventoryItemStatusList,
+        this.updateInventoryTransfer,
         this.removeInventoryItemStatus,
-        this.updateInventoryTransfer, });
+        this.addInventoryItemDetailList,
+        this.removeInventoryItemDetail,
+        this.removeInventoryTransfer,
+        this.modifyInventoryItemType,
+        this.updateInventoryItemStatus,
+        this.addInventoryItemStatus,
+        this.addInventoryTransfer,
+        this.addInventoryItemDetail,
+        this.addInventoryTransferList,
+        this.updateInventoryItemDetail,
+        this.addInventoryItemStatusList, });
     factory InventoryBlueprint.fromJson(Map<String, dynamic> json) => _$InventoryBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryBlueprintToJson(this);
 }

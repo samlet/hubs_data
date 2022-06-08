@@ -14,47 +14,47 @@ class ContentBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ContentBlueprintData
-    final ContentBlueprint? addContentAttributeList;
-    // blueprint_ContentBlueprintData
-    final ContentBlueprint? removeToContentAssoc;
-    // blueprint_ContentBlueprintData
     final ContentBlueprint? updateContentAttribute;
-    // blueprint_ContentBlueprintData
-    final ContentBlueprint? addContentPurposeList;
-    // blueprint_ContentBlueprintData
-    final ContentBlueprint? addContentPurpose;
     // blueprint_ContentBlueprintData
     final ContentBlueprint? removeContentAttribute;
     // blueprint_ContentBlueprintData
-    final ContentBlueprint? removeContentPurpose;
+    final ContentBlueprint? addToContentAssoc;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? addContentPurpose;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? removeToContentAssoc;
     // blueprint_ContentBlueprintData
     final ContentBlueprint? addToContentAssocList;
     // blueprint_ContentBlueprintData
-    final ContentBlueprint? updateToContentAssoc;
-    // blueprint_ContentBlueprintData
-    final ContentBlueprint? addToContentAssoc;
-    // blueprint_ContentBlueprintData
     final ContentBlueprint? updateContentPurpose;
     // blueprint_ContentBlueprintData
+    final ContentBlueprint? updateToContentAssoc;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? addContentPurposeList;
+    // blueprint_ContentBlueprintData
     final ContentBlueprint? addContentAttribute;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? addContentAttributeList;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? removeContentPurpose;
     ContentBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addContentAttributeList,
-        this.removeToContentAssoc,
         this.updateContentAttribute,
-        this.addContentPurposeList,
-        this.addContentPurpose,
         this.removeContentAttribute,
-        this.removeContentPurpose,
-        this.addToContentAssocList,
-        this.updateToContentAssoc,
         this.addToContentAssoc,
+        this.addContentPurpose,
+        this.removeToContentAssoc,
+        this.addToContentAssocList,
         this.updateContentPurpose,
-        this.addContentAttribute, });
+        this.updateToContentAssoc,
+        this.addContentPurposeList,
+        this.addContentAttribute,
+        this.addContentAttributeList,
+        this.removeContentPurpose, });
     factory ContentBlueprint.fromJson(Map<String, dynamic> json) => _$ContentBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ContentBlueprintToJson(this);
 }

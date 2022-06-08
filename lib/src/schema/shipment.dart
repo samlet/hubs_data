@@ -69,56 +69,56 @@ class Shipment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ShipmentPackageContentList
-    final ShipmentPackageContentCollection? shipmentPackageContents;
-    // domain_ShipmentStatusList
-    final ShipmentStatusCollection? shipmentStatuses;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
-    // domain_ShipmentItemBillingList
-    final ShipmentItemBillingCollection? shipmentItemBillings;
-    // domain_FacilityFlatData
-    final Facility? destinationFacility;
-    // domain_PartyFlatData
-    final Party? fromParty;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? primaryReturnHeader;
     // domain_ShipmentReceiptList
     final ShipmentReceiptCollection? shipmentReceipts;
-    // domain_ShipmentItemList
-    final ShipmentItemCollection? shipmentItems;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_FacilityFlatData
-    final Facility? originFacility;
+    // domain_ContactMechFlatData
+    final ContactMech? originContactMech;
+    // domain_ShipmentRouteSegmentList
+    final ShipmentRouteSegmentCollection? shipmentRouteSegments;
     // domain_ShipmentPackageList
     final ShipmentPackageCollection? shipmentPackages;
-    // String
-    final String? proto;
-    // domain_ShipmentPackageRouteSegList
-    final ShipmentPackageRouteSegCollection? shipmentPackageRouteSegs;
-    // domain_WorkEffortFlatData
-    final WorkEffort? estimatedShipWorkEffort;
-    // domain_ItemIssuanceList
-    final ItemIssuanceCollection? itemIssuances;
-    // domain_ShippingDocumentList
-    final ShippingDocumentCollection? shippingDocuments;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_WorkEffortFlatData
     final WorkEffort? estimatedArrivalWorkEffort;
     // String
     final String? format;
+    // domain_ShipmentStatusList
+    final ShipmentStatusCollection? shipmentStatuses;
+    // domain_FacilityFlatData
+    final Facility? destinationFacility;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // String
+    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ShipmentRouteSegmentList
-    final ShipmentRouteSegmentCollection? shipmentRouteSegments;
+    // domain_ItemIssuanceList
+    final ItemIssuanceCollection? itemIssuances;
     // domain_ContactMechFlatData
-    final ContactMech? originContactMech;
+    final ContactMech? destContactMech;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ShippingDocumentList
+    final ShippingDocumentCollection? shippingDocuments;
     // domain_OrderHeaderFlatData
     final OrderHeader? primaryOrderHeader;
+    // domain_ShipmentPackageContentList
+    final ShipmentPackageContentCollection? shipmentPackageContents;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ShipmentItemList
+    final ShipmentItemCollection? shipmentItems;
+    // domain_PartyFlatData
+    final Party? toParty;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? primaryReturnHeader;
+    // domain_FacilityFlatData
+    final Facility? originFacility;
+    // domain_ShipmentPackageRouteSegList
+    final ShipmentPackageRouteSegCollection? shipmentPackageRouteSegs;
+    // domain_ShipmentItemBillingList
+    final ShipmentItemBillingCollection? shipmentItemBillings;
+    // domain_WorkEffortFlatData
+    final WorkEffort? estimatedShipWorkEffort;
     Shipment({
         this.shipmentId,
         this.shipmentTypeId,
@@ -153,31 +153,31 @@ class Shipment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.shipmentPackageContents,
-        this.shipmentStatuses,
-        this.destContactMech,
-        this.shipmentItemBillings,
-        this.destinationFacility,
-        this.fromParty,
-        this.primaryReturnHeader,
         this.shipmentReceipts,
-        this.shipmentItems,
-        this.toParty,
-        this.model,
-        this.originFacility,
+        this.originContactMech,
+        this.shipmentRouteSegments,
         this.shipmentPackages,
-        this.proto,
-        this.shipmentPackageRouteSegs,
-        this.estimatedShipWorkEffort,
-        this.itemIssuances,
-        this.shippingDocuments,
-        this.cats,
         this.estimatedArrivalWorkEffort,
         this.format,
+        this.shipmentStatuses,
+        this.destinationFacility,
+        this.fromParty,
+        this.proto,
         this.subview,
-        this.shipmentRouteSegments,
-        this.originContactMech,
-        this.primaryOrderHeader, });
+        this.itemIssuances,
+        this.destContactMech,
+        this.model,
+        this.shippingDocuments,
+        this.primaryOrderHeader,
+        this.shipmentPackageContents,
+        this.cats,
+        this.shipmentItems,
+        this.toParty,
+        this.primaryReturnHeader,
+        this.originFacility,
+        this.shipmentPackageRouteSegs,
+        this.shipmentItemBillings,
+        this.estimatedShipWorkEffort, });
     factory Shipment.fromJson(Map<String, dynamic> json) => _$ShipmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentToJson(this);
     @override

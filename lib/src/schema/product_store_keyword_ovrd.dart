@@ -22,15 +22,15 @@ class ProductStoreKeywordOvrd extends Equatable{
     // String
     final String? id;
     // String
-    final String? proto;
-    // String
     final String? format;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
+    // String
+    final String? proto;
     ProductStoreKeywordOvrd({
         this.productStoreId,
         this.keyword,
@@ -41,11 +41,11 @@ class ProductStoreKeywordOvrd extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
         this.format,
+        this.productStore,
         this.cats,
         this.model,
-        this.productStore, });
+        this.proto, });
     factory ProductStoreKeywordOvrd.fromJson(Map<String, dynamic> json) => _$ProductStoreKeywordOvrdFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreKeywordOvrdToJson(this);
     @override

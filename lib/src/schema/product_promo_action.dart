@@ -33,12 +33,12 @@ class ProductPromoAction extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     // facade_ModelEntity
@@ -59,9 +59,9 @@ class ProductPromoAction extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.format,
         this.cats,
+        this.format,
+        this.proto,
         this.productPromo,
         this.model, });
     factory ProductPromoAction.fromJson(Map<String, dynamic> json) => _$ProductPromoActionFromJson(json);

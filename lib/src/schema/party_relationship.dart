@@ -39,20 +39,20 @@ class PartyRelationship extends Equatable{
     final String? id;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // String
+    final String? format;
     // domain_PartyFlatData
     final Party? toParty;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
-    // domain_PartyFlatData
-    final Party? fromParty;
+    // String
+    final String? proto;
     PartyRelationship({
         this.partyIdFrom,
         this.partyIdTo,
@@ -72,13 +72,13 @@ class PartyRelationship extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.proto,
-        this.cats,
-        this.format,
         this.model,
+        this.cats,
+        this.fromParty,
+        this.format,
         this.toParty,
         this.securityGroup,
-        this.fromParty, });
+        this.proto, });
     factory PartyRelationship.fromJson(Map<String, dynamic> json) => _$PartyRelationshipFromJson(json);
     Map<String, dynamic> toJson() => _$PartyRelationshipToJson(this);
     @override

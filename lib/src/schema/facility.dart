@@ -45,30 +45,30 @@ class Facility extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_FacilityFlatData
-    final Facility? parentFacility;
-    // domain_TypesEntityData
-    final TypesEntity? type;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // routines_Response
-    final ResponseValue? pickInventory;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // domain_FacilityFlatData
+    final Facility? parentFacility;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_PartyFlatData
     final Party? ownerParty;
     // String
-    final String? format;
-    // domain_FacilityContactMechList
-    final FacilityContactMechCollection? facilityContactMeches;
+    final String? proto;
     // domain_FacilityContactMechPurposeList
     final FacilityContactMechPurposeCollection? facilityContactMechPurposes;
-    // String
-    final String? proto;
+    // domain_FacilityContactMechList
+    final FacilityContactMechCollection? facilityContactMeches;
+    // routines_Response
+    final ResponseValue? pickInventory;
     Facility({
         this.facilityId,
         this.facilityTypeId,
@@ -91,18 +91,18 @@ class Facility extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.parentFacility,
-        this.type,
         this.cats,
-        this.productStore,
-        this.model,
-        this.pickInventory,
+        this.type,
         this.subview,
-        this.ownerParty,
         this.format,
-        this.facilityContactMeches,
+        this.productStore,
+        this.parentFacility,
+        this.model,
+        this.ownerParty,
+        this.proto,
         this.facilityContactMechPurposes,
-        this.proto, });
+        this.facilityContactMeches,
+        this.pickInventory, });
     factory Facility.fromJson(Map<String, dynamic> json) => _$FacilityFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityToJson(this);
     @override

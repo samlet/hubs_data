@@ -29,10 +29,10 @@ class ProductStoreFacility extends Equatable{
     final String? proto;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // String
-    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
     ProductStoreFacility({
         this.productStoreId,
         this.facilityId,
@@ -47,8 +47,8 @@ class ProductStoreFacility extends Equatable{
         this.cats,
         this.proto,
         this.productStore,
-        this.format,
-        this.model, });
+        this.model,
+        this.format, });
     factory ProductStoreFacility.fromJson(Map<String, dynamic> json) => _$ProductStoreFacilityFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreFacilityToJson(this);
     @override

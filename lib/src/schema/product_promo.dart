@@ -39,26 +39,26 @@ class ProductPromo extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_ProductPromoRuleList
-    final ProductPromoRuleCollection? productPromoRules;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductPromoActionList
-    final ProductPromoActionCollection? productPromoActions;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
     final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ProductPromoRuleList
+    final ProductPromoRuleCollection? productPromoRules;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_ProductPromoActionList
+    final ProductPromoActionCollection? productPromoActions;
+    // domain_PartyFlatData
+    final Party? party;
     ProductPromo({
         this.productPromoId,
         this.promoName,
@@ -78,16 +78,16 @@ class ProductPromo extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.party,
-        this.createdbyuserlogin,
-        this.productPromoRules,
-        this.cats,
-        this.productPromoActions,
         this.subview,
         this.format,
+        this.proto,
         this.lastmodifiedbyuserlogin,
+        this.productPromoRules,
         this.model,
-        this.proto, });
+        this.cats,
+        this.createdbyuserlogin,
+        this.productPromoActions,
+        this.party, });
     factory ProductPromo.fromJson(Map<String, dynamic> json) => _$ProductPromoFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoToJson(this);
     @override

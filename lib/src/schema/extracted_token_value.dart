@@ -8,17 +8,20 @@ class ExtractedTokenValue {
     // String
     final String? regionId;
     // String
-    final String? jwtId;
+    final String? zoneId;
     // String
     final String? loginId;
     // String
     final String? ownerId;
+    // String
+    final String? jwtId;
     ExtractedTokenValue({
         this.tokenString,
         this.regionId,
-        this.jwtId,
+        this.zoneId,
         this.loginId,
-        this.ownerId, });
+        this.ownerId,
+        this.jwtId, });
     factory ExtractedTokenValue.fromJson(Map<String, dynamic> json) => _$ExtractedTokenValueFromJson(json);
     Map<String, dynamic> toJson() => _$ExtractedTokenValueToJson(this);
 }

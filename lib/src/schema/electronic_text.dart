@@ -18,11 +18,11 @@ class ElectronicText extends Equatable{
     // domain_DataResourceFlatData
     final DataResource? dataResource;
     // String
-    final String? proto;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
     ElectronicText({
         this.dataResourceId,
         this.textData,
@@ -31,9 +31,9 @@ class ElectronicText extends Equatable{
         this.tenantId,
         this.model,
         this.dataResource,
-        this.proto,
+        this.format,
         this.cats,
-        this.format, });
+        this.proto, });
     factory ElectronicText.fromJson(Map<String, dynamic> json) => _$ElectronicTextFromJson(json);
     Map<String, dynamic> toJson() => _$ElectronicTextToJson(this);
     @override

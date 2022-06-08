@@ -29,12 +29,12 @@ class InventoryItemStatus extends Equatable{
     final InventoryItem? inventoryItem;
     // String
     final String? proto;
-    // String
-    final String? format;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     InventoryItemStatus({
         this.inventoryItemId,
         this.statusId,
@@ -49,9 +49,9 @@ class InventoryItemStatus extends Equatable{
         this.model,
         this.inventoryItem,
         this.proto,
-        this.format,
         this.userLogin,
-        this.cats, });
+        this.cats,
+        this.format, });
     factory InventoryItemStatus.fromJson(Map<String, dynamic> json) => _$InventoryItemStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemStatusToJson(this);
     @override

@@ -25,18 +25,18 @@ class ProductCategoryMember extends Equatable{
     final String? id;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? productCategory;
-    // String
-    final String? format;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? productCategory;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductCategoryMember({
         this.productCategoryId,
         this.productId,
@@ -49,12 +49,12 @@ class ProductCategoryMember extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
+        this.product,
         this.proto,
-        this.model,
-        this.cats,
-        this.productCategory,
         this.format,
-        this.product, });
+        this.model,
+        this.productCategory,
+        this.cats, });
     factory ProductCategoryMember.fromJson(Map<String, dynamic> json) => _$ProductCategoryMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryMemberToJson(this);
     @override

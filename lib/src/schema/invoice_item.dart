@@ -51,24 +51,24 @@ class InvoiceItem extends Equatable{
     final String? tenantId;
     // String
     final String? proto;
-    // domain_ProductFeatureFlatData
-    final ProductFeature? productFeature;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // domain_ProductFlatData
     final Product? product;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
     // domain_PartyFlatData
     final Party? taxAuthorityParty;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? overrideOrgParty;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // domain_ProductFeatureFlatData
+    final ProductFeature? productFeature;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? overrideOrgParty;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
     InvoiceItem({
         this.invoiceId,
         this.invoiceItemSeqId,
@@ -94,15 +94,15 @@ class InvoiceItem extends Equatable{
         this.id,
         this.tenantId,
         this.proto,
-        this.productFeature,
-        this.inventoryItem,
         this.product,
-        this.invoice,
         this.taxAuthorityParty,
-        this.cats,
+        this.model,
         this.format,
+        this.inventoryItem,
+        this.productFeature,
+        this.cats,
         this.overrideOrgParty,
-        this.model, });
+        this.invoice, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
     @override

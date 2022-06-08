@@ -3025,6 +3025,37 @@ Map<String, dynamic> _$ProductStoreGroupRoleDataToJson(
   return val;
 }
 
+AddSecurityGroupPermissionParams _$AddSecurityGroupPermissionParamsFromJson(
+        Map<String, dynamic> json) =>
+    AddSecurityGroupPermissionParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : SecurityGroupPermissionData.fromJson(
+              json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$AddSecurityGroupPermissionParamsToJson(
+    AddSecurityGroupPermissionParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
 ProductPromoList _$ProductPromoListFromJson(Map<String, dynamic> json) =>
     ProductPromoList(
       values: (json['values'] as List<dynamic>?)
@@ -3753,6 +3784,32 @@ Map<String, dynamic> _$ContentAssocDataToJson(ContentAssocData instance) {
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+CreateNoteParams _$CreateNoteParamsFromJson(Map<String, dynamic> json) =>
+    CreateNoteParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      noteData: json['noteData'] == null
+          ? null
+          : NoteDataData.fromJson(json['noteData'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateNoteParamsToJson(CreateNoteParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('noteData', instance.noteData?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -8935,6 +8992,34 @@ Map<String, dynamic> _$ProductCategoryTypeListToJson(
   return val;
 }
 
+UpdateNoteParams _$UpdateNoteParamsFromJson(Map<String, dynamic> json) =>
+    UpdateNoteParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      noteData: json['noteData'] == null
+          ? null
+          : NoteDataData.fromJson(json['noteData'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$UpdateNoteParamsToJson(UpdateNoteParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('noteData', instance.noteData?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
 PartyStatusList _$PartyStatusListFromJson(Map<String, dynamic> json) =>
     PartyStatusList(
       values: (json['values'] as List<dynamic>?)
@@ -9454,6 +9539,37 @@ Map<String, dynamic> _$SupplierProductDataToJson(SupplierProductData instance) {
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+UpdateSecurityGroupPermissionParams
+    _$UpdateSecurityGroupPermissionParamsFromJson(Map<String, dynamic> json) =>
+        UpdateSecurityGroupPermissionParams(
+          handle: json['handle'] == null
+              ? null
+              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+          mainId: json['mainId'] as String?,
+          data: json['data'] == null
+              ? null
+              : SecurityGroupPermissionData.fromJson(
+                  json['data'] as Map<String, dynamic>),
+          comment: json['comment'] as String?,
+        );
+
+Map<String, dynamic> _$UpdateSecurityGroupPermissionParamsToJson(
+    UpdateSecurityGroupPermissionParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -11558,6 +11674,35 @@ Map<String, dynamic> _$ProductConfigOptionListToJson(
   return val;
 }
 
+CreateSecurityGroupParams _$CreateSecurityGroupParamsFromJson(
+        Map<String, dynamic> json) =>
+    CreateSecurityGroupParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      securityGroup: json['securityGroup'] == null
+          ? null
+          : SecurityGroupFlatData.fromJson(
+              json['securityGroup'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateSecurityGroupParamsToJson(
+    CreateSecurityGroupParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('securityGroup', instance.securityGroup?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
 ProductContentList _$ProductContentListFromJson(Map<String, dynamic> json) =>
     ProductContentList(
       values: (json['values'] as List<dynamic>?)
@@ -11603,6 +11748,37 @@ Map<String, dynamic> _$ShoppingListListToJson(ShoppingListList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+UpdateSecurityGroupParams _$UpdateSecurityGroupParamsFromJson(
+        Map<String, dynamic> json) =>
+    UpdateSecurityGroupParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      securityGroup: json['securityGroup'] == null
+          ? null
+          : SecurityGroupFlatData.fromJson(
+              json['securityGroup'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$UpdateSecurityGroupParamsToJson(
+    UpdateSecurityGroupParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('securityGroup', instance.securityGroup?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -12146,6 +12322,34 @@ Map<String, dynamic> _$FixedPointToJson(FixedPoint instance) {
 
   writeNotNull('value', instance.value);
   writeNotNull('scalingPosition', instance.scalingPosition);
+  return val;
+}
+
+RemoveSecurityGroupPermissionParams
+    _$RemoveSecurityGroupPermissionParamsFromJson(Map<String, dynamic> json) =>
+        RemoveSecurityGroupPermissionParams(
+          handle: json['handle'] == null
+              ? null
+              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+          mainId: json['mainId'] as String?,
+          itemId: json['itemId'] as String?,
+          comment: json['comment'] as String?,
+        );
+
+Map<String, dynamic> _$RemoveSecurityGroupPermissionParamsToJson(
+    RemoveSecurityGroupPermissionParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('itemId', instance.itemId);
+  writeNotNull('comment', instance.comment);
   return val;
 }
 

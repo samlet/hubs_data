@@ -39,20 +39,20 @@ class ReturnItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // String
     final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
+    // String
+    final String? format;
+    // domain_ProductFlatData
+    final Product? product;
     ReturnItem({
         this.returnId,
         this.returnItemSeqId,
@@ -72,13 +72,13 @@ class ReturnItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.format,
-        this.model,
-        this.orderHeader,
         this.proto,
-        this.product,
-        this.returnHeader, });
+        this.cats,
+        this.orderHeader,
+        this.model,
+        this.returnHeader,
+        this.format,
+        this.product, });
     factory ReturnItem.fromJson(Map<String, dynamic> json) => _$ReturnItemFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemToJson(this);
     @override
