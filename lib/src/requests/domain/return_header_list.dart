@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ReturnHeaderList
 @JsonSerializable()
-class ReturnHeaderList {
+class ReturnHeaderList  {
     // List<Input_domain_ReturnHeaderFlatData>
-    final List<ReturnHeaderFlatData>? values;
+    List<ReturnHeaderFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ReturnHeaderList({
         this.values,
         this.nextPageToken,

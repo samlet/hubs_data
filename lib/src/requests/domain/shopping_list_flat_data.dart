@@ -2,57 +2,57 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShoppingListFlatData
 @JsonSerializable()
-class ShoppingListFlatData {
+class ShoppingListFlatData  {
     // String
-    final String? shoppingListId;
+    String? shoppingListId;
     // String
-    final String? shoppingListTypeId;
+    String? shoppingListTypeId;
     // String
-    final String? parentShoppingListId;
+    String? parentShoppingListId;
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? visitorId;
+    String? visitorId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? listName;
+    String? listName;
     // String
-    final String? description;
+    String? description;
     // routines_Indicator
-    final String? isPublic;
+    String? isPublic;
     // routines_Indicator
-    final String? isActive;
+    String? isActive;
     // String
-    final String? currencyUom;
+    String? currencyUom;
     // String
-    final String? shipmentMethodTypeId;
+    String? shipmentMethodTypeId;
     // String
-    final String? carrierPartyId;
+    String? carrierPartyId;
     // String
-    final String? carrierRoleTypeId;
+    String? carrierRoleTypeId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? paymentMethodId;
+    String? paymentMethodId;
     // String
-    final String? recurrenceInfoId;
+    String? recurrenceInfoId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastOrderedDate;
+    Timestamp? lastOrderedDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastAdminModified;
+    Timestamp? lastAdminModified;
     // String
-    final String? productPromoCodeId;
+    String? productPromoCodeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShoppingListFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShoppingListFlatData({
         this.shoppingListId,
         this.shoppingListTypeId,

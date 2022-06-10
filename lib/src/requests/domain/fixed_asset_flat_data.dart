@@ -2,67 +2,67 @@ part of '../../../requests.dart';
 
 /// Input_domain_FixedAssetFlatData
 @JsonSerializable()
-class FixedAssetFlatData {
+class FixedAssetFlatData  {
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? fixedAssetTypeId;
+    String? fixedAssetTypeId;
     // String
-    final String? parentFixedAssetId;
+    String? parentFixedAssetId;
     // String
-    final String? instanceOfProductId;
+    String? instanceOfProductId;
     // String
-    final String? classEnumId;
+    String? classEnumId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // String
-    final String? fixedAssetName;
+    String? fixedAssetName;
     // String
-    final String? acquireOrderId;
+    String? acquireOrderId;
     // String
-    final String? acquireOrderItemSeqId;
+    String? acquireOrderItemSeqId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? dateAcquired;
+    Timestamp? dateAcquired;
     // Input_google_protobuf_Timestamp
-    final Timestamp? dateLastServiced;
+    Timestamp? dateLastServiced;
     // Input_google_protobuf_Timestamp
-    final Timestamp? dateNextService;
+    Timestamp? dateNextService;
     // Input_google_type_Date
-    final Date? expectedEndOfLife;
+    Date? expectedEndOfLife;
     // Input_google_type_Date
-    final Date? actualEndOfLife;
+    Date? actualEndOfLife;
     // Input_routines_FixedPoint
-    final FixedPoint? productionCapacity;
+    FixedPoint? productionCapacity;
     // String
-    final String? uomId;
+    String? uomId;
     // String
-    final String? calendarId;
+    String? calendarId;
     // String
-    final String? serialNumber;
+    String? serialNumber;
     // String
-    final String? locatedAtFacilityId;
+    String? locatedAtFacilityId;
     // String
-    final String? locatedAtLocationSeqId;
+    String? locatedAtLocationSeqId;
     // Input_routines_Currency
-    final Currency? salvageValue;
+    Currency? salvageValue;
     // Input_routines_Currency
-    final Currency? depreciation;
+    Currency? depreciation;
     // Input_routines_Currency
-    final Currency? purchaseCost;
+    Currency? purchaseCost;
     // String
-    final String? purchaseCostUomId;
+    String? purchaseCostUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FixedAssetFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FixedAssetFlatData({
         this.fixedAssetId,
         this.fixedAssetTypeId,

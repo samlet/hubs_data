@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreGroupMemberList
 @JsonSerializable()
-class ProductStoreGroupMemberCollection {
+class ProductStoreGroupMemberCollection  {
     // List<domain_ProductStoreGroupMemberData>
     final List<ProductStoreGroupMember>? values;
     // String

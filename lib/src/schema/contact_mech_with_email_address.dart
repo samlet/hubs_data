@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// contact_mech_EmailAddressProto
 @JsonSerializable()
-class ContactMechWithEmailAddress {
+class ContactMechWithEmailAddress  {
     // String
     final String? id;
     // domain_ContactMechFlatData

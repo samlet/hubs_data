@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_PermissionBlueprintData
 @JsonSerializable()
-class PermissionBlueprint {
+class PermissionBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp

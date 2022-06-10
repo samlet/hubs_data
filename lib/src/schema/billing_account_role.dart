@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BillingAccountRoleData
 @JsonSerializable()
-class BillingAccountRole extends Equatable{
+class BillingAccountRole extends Equatable implements WithKey{
     // String
     final String? billingAccountId;
     // String
@@ -19,18 +19,18 @@ class BillingAccountRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? party;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
     // String
     final String? proto;
+    // domain_PartyFlatData
+    final Party? party;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
     BillingAccountRole({
         this.billingAccountId,
         this.partyId,
@@ -40,14 +40,16 @@ class BillingAccountRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.party,
+        this.billingAccount,
         this.proto,
+        this.party,
         this.format,
         this.cats,
-        this.model,
-        this.billingAccount, });
+        this.model, });
     factory BillingAccountRole.fromJson(Map<String, dynamic> json) => _$BillingAccountRoleFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountRoleToJson(this);
     @override
     List<Object?> get props => [billingAccountId, partyId, roleTypeId, fromDate];
+    @override
+    String get key => id!;
 }

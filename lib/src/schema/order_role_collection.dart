@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderRoleList
 @JsonSerializable()
-class OrderRoleCollection {
+class OrderRoleCollection  {
     // List<domain_OrderRoleData>
     final List<OrderRole>? values;
     // String

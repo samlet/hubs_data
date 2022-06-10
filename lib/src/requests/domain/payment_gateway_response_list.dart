@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_PaymentGatewayResponseList
 @JsonSerializable()
-class PaymentGatewayResponseList {
+class PaymentGatewayResponseList  {
     // List<Input_domain_PaymentGatewayResponseFlatData>
-    final List<PaymentGatewayResponseFlatData>? values;
+    List<PaymentGatewayResponseFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     PaymentGatewayResponseList({
         this.values,
         this.nextPageToken,

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_PostalAddressList
 @JsonSerializable()
-class PostalAddressList {
+class PostalAddressList  {
     // List<Input_domain_PostalAddressFlatData>
-    final List<PostalAddressFlatData>? values;
+    List<PostalAddressFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     PostalAddressList({
         this.values,
         this.nextPageToken,

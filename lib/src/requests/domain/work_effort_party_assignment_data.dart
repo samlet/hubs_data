@@ -2,45 +2,45 @@ part of '../../../requests.dart';
 
 /// Input_domain_WorkEffortPartyAssignmentData
 @JsonSerializable()
-class WorkEffortPartyAssignmentData {
+class WorkEffortPartyAssignmentData  {
     // String
-    final String? workEffortId;
+    String? workEffortId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? assignedByUserLoginId;
+    String? assignedByUserLoginId;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusDateTime;
+    Timestamp? statusDateTime;
     // String
-    final String? expectationEnumId;
+    String? expectationEnumId;
     // String
-    final String? delegateReasonEnumId;
+    String? delegateReasonEnumId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? comments;
+    String? comments;
     // routines_Indicator
-    final String? mustRsvp;
+    String? mustRsvp;
     // String
-    final String? availabilityStatusId;
+    String? availabilityStatusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_WorkEffortPartyAssignmentData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     WorkEffortPartyAssignmentData({
         this.workEffortId,
         this.partyId,

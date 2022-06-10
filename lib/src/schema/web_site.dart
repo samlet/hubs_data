@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WebSiteFlatData
 @JsonSerializable()
-class WebSite extends Equatable{
+class WebSite extends Equatable implements WithKey{
     // String
     final String? webSiteId;
     // String
@@ -45,16 +45,16 @@ class WebSite extends Equatable{
     final String? tenantId;
     // String
     final String? proto;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     WebSite({
         this.webSiteId,
         this.siteName,
@@ -77,13 +77,15 @@ class WebSite extends Equatable{
         this.displayMaintenancePage,
         this.tenantId,
         this.proto,
-        this.productStore,
+        this.format,
         this.model,
         this.cats,
-        this.format,
-        this.subview, });
+        this.subview,
+        this.productStore, });
     factory WebSite.fromJson(Map<String, dynamic> json) => _$WebSiteFromJson(json);
     Map<String, dynamic> toJson() => _$WebSiteToJson(this);
     @override
     List<Object?> get props => [webSiteId];
+    @override
+    String get key => webSiteId!;
 }

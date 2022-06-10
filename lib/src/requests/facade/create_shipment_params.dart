@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_facade_CreateShipmentParams
 @JsonSerializable()
-class CreateShipmentParams {
+class CreateShipmentParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // Input_domain_ShipmentFlatData
-    final ShipmentFlatData? shipment;
+    ShipmentFlatData? shipment;
     // String
-    final String? comment;
+    String? comment;
     CreateShipmentParams({
         this.handle,
         this.shipment,

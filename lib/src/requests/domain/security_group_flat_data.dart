@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_SecurityGroupFlatData
 @JsonSerializable()
-class SecurityGroupFlatData {
+class SecurityGroupFlatData  {
     // String
-    final String? groupId;
+    String? groupId;
     // String
-    final String? groupName;
+    String? groupName;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_SecurityGroupFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     SecurityGroupFlatData({
         this.groupId,
         this.groupName,

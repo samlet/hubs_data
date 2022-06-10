@@ -2,39 +2,39 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentPackageData
 @JsonSerializable()
-class ShipmentPackageData {
+class ShipmentPackageData  {
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentPackageSeqId;
+    String? shipmentPackageSeqId;
     // String
-    final String? shipmentBoxTypeId;
+    String? shipmentBoxTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? dateCreated;
+    Timestamp? dateCreated;
     // Input_routines_FixedPoint
-    final FixedPoint? boxLength;
+    FixedPoint? boxLength;
     // Input_routines_FixedPoint
-    final FixedPoint? boxHeight;
+    FixedPoint? boxHeight;
     // Input_routines_FixedPoint
-    final FixedPoint? boxWidth;
+    FixedPoint? boxWidth;
     // String
-    final String? dimensionUomId;
+    String? dimensionUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? weight;
+    FixedPoint? weight;
     // String
-    final String? weightUomId;
+    String? weightUomId;
     // Input_routines_Currency
-    final Currency? insuredValue;
+    Currency? insuredValue;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShipmentPackageData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShipmentPackageData({
         this.shipmentId,
         this.shipmentPackageSeqId,

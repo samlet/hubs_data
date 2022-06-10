@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_CatalogBlueprintData
 @JsonSerializable()
-class CatalogBlueprint {
+class CatalogBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp
@@ -16,9 +16,9 @@ class CatalogBlueprint {
     // blueprint_CatalogBlueprintData
     final CatalogBlueprint? removeProdCatalogCategory;
     // blueprint_CatalogBlueprintData
-    final CatalogBlueprint? updateProdCatalogCategory;
-    // blueprint_CatalogBlueprintData
     final CatalogBlueprint? addProdCatalogCategoryList;
+    // blueprint_CatalogBlueprintData
+    final CatalogBlueprint? updateProdCatalogCategory;
     // blueprint_CatalogBlueprintData
     final CatalogBlueprint? addProdCatalogCategory;
     CatalogBlueprint({
@@ -28,8 +28,8 @@ class CatalogBlueprint {
         this.entity,
         this.response,
         this.removeProdCatalogCategory,
-        this.updateProdCatalogCategory,
         this.addProdCatalogCategoryList,
+        this.updateProdCatalogCategory,
         this.addProdCatalogCategory, });
     factory CatalogBlueprint.fromJson(Map<String, dynamic> json) => _$CatalogBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$CatalogBlueprintToJson(this);

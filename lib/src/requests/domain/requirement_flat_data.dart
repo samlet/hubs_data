@@ -2,55 +2,55 @@ part of '../../../requests.dart';
 
 /// Input_domain_RequirementFlatData
 @JsonSerializable()
-class RequirementFlatData {
+class RequirementFlatData  {
     // String
-    final String? requirementId;
+    String? requirementId;
     // String
-    final String? requirementTypeId;
+    String? requirementTypeId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? deliverableId;
+    String? deliverableId;
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? requirementStartDate;
+    Timestamp? requirementStartDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? requiredByDate;
+    Timestamp? requiredByDate;
     // Input_routines_Currency
-    final Currency? estimatedBudget;
+    Currency? estimatedBudget;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // String
-    final String? useCase;
+    String? useCase;
     // String
-    final String? reason;
+    String? reason;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // String
-    final String? facilityIdTo;
+    String? facilityIdTo;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_RequirementFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     RequirementFlatData({
         this.requirementId,
         this.requirementTypeId,

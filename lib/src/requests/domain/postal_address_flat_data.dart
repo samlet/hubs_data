@@ -2,53 +2,53 @@ part of '../../../requests.dart';
 
 /// Input_domain_PostalAddressFlatData
 @JsonSerializable()
-class PostalAddressFlatData {
+class PostalAddressFlatData  {
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? toName;
+    String? toName;
     // String
-    final String? attnName;
+    String? attnName;
     // String
-    final String? address1;
+    String? address1;
     // String
-    final String? address2;
+    String? address2;
     // Long
-    final int? houseNumber;
+    int? houseNumber;
     // String
-    final String? houseNumberExt;
+    String? houseNumberExt;
     // String
-    final String? directions;
+    String? directions;
     // String
-    final String? city;
+    String? city;
     // String
-    final String? cityGeoId;
+    String? cityGeoId;
     // String
-    final String? postalCode;
+    String? postalCode;
     // String
-    final String? postalCodeExt;
+    String? postalCodeExt;
     // String
-    final String? countryGeoId;
+    String? countryGeoId;
     // String
-    final String? stateProvinceGeoId;
+    String? stateProvinceGeoId;
     // String
-    final String? countyGeoId;
+    String? countyGeoId;
     // String
-    final String? municipalityGeoId;
+    String? municipalityGeoId;
     // String
-    final String? postalCodeGeoId;
+    String? postalCodeGeoId;
     // String
-    final String? geoPointId;
+    String? geoPointId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PostalAddressFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PostalAddressFlatData({
         this.contactMechId,
         this.toName,

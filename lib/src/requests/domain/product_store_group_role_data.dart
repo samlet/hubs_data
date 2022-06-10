@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStoreGroupRoleData
 @JsonSerializable()
-class ProductStoreGroupRoleData {
+class ProductStoreGroupRoleData  {
     // String
-    final String? productStoreGroupId;
+    String? productStoreGroupId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductStoreGroupRoleData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductStoreGroupRoleData({
         this.productStoreGroupId,
         this.partyId,

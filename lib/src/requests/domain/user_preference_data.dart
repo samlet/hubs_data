@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserPreferenceData
 @JsonSerializable()
-class UserPreferenceData {
+class UserPreferenceData  {
     // String
-    final String? userLoginId;
+    String? userLoginId;
     // String
-    final String? userPrefTypeId;
+    String? userPrefTypeId;
     // String
-    final String? userPrefGroupTypeId;
+    String? userPrefGroupTypeId;
     // String
-    final String? userPrefValue;
+    String? userPrefValue;
     // String
-    final String? userPrefDataType;
+    String? userPrefDataType;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_UserPreferenceData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     UserPreferenceData({
         this.userLoginId,
         this.userPrefTypeId,

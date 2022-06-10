@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentStatusData
 @JsonSerializable()
-class ShipmentStatus extends Equatable{
+class ShipmentStatus extends Equatable implements WithKey{
     // String
     final String? statusId;
     // String
@@ -17,18 +17,18 @@ class ShipmentStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     ShipmentStatus({
         this.statusId,
         this.shipmentId,
@@ -37,14 +37,16 @@ class ShipmentStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.format,
-        this.proto,
-        this.changeByUserLogin,
         this.shipment,
-        this.model, });
+        this.model,
+        this.changeByUserLogin,
+        this.proto,
+        this.cats,
+        this.format, });
     factory ShipmentStatus.fromJson(Map<String, dynamic> json) => _$ShipmentStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentStatusToJson(this);
     @override
     List<Object?> get props => [statusId, shipmentId];
+    @override
+    String get key => id!;
 }

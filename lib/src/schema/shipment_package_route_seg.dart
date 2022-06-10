@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentPackageRouteSegData
 @JsonSerializable()
-class ShipmentPackageRouteSeg extends Equatable{
+class ShipmentPackageRouteSeg extends Equatable implements WithKey{
     // String
     final String? shipmentId;
     // String
@@ -41,16 +41,16 @@ class ShipmentPackageRouteSeg extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
+    // String
+    final String? format;
     // String
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
     ShipmentPackageRouteSeg({
         this.shipmentId,
         this.shipmentPackageSeqId,
@@ -71,13 +71,15 @@ class ShipmentPackageRouteSeg extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.shipment,
+        this.format,
         this.proto,
         this.cats,
-        this.format, });
+        this.model,
+        this.shipment, });
     factory ShipmentPackageRouteSeg.fromJson(Map<String, dynamic> json) => _$ShipmentPackageRouteSegFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageRouteSegToJson(this);
     @override
     List<Object?> get props => [shipmentId, shipmentPackageSeqId, shipmentRouteSegmentId];
+    @override
+    String get key => id!;
 }

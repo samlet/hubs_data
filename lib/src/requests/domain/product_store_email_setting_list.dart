@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStoreEmailSettingList
 @JsonSerializable()
-class ProductStoreEmailSettingList {
+class ProductStoreEmailSettingList  {
     // List<Input_domain_ProductStoreEmailSettingData>
-    final List<ProductStoreEmailSettingData>? values;
+    List<ProductStoreEmailSettingData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ProductStoreEmailSettingList({
         this.values,
         this.nextPageToken,

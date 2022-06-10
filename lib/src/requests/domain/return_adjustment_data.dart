@@ -2,79 +2,79 @@ part of '../../../requests.dart';
 
 /// Input_domain_ReturnAdjustmentData
 @JsonSerializable()
-class ReturnAdjustmentData {
+class ReturnAdjustmentData  {
     // String
-    final String? returnAdjustmentId;
+    String? returnAdjustmentId;
     // String
-    final String? returnAdjustmentTypeId;
+    String? returnAdjustmentTypeId;
     // String
-    final String? returnId;
+    String? returnId;
     // String
-    final String? returnItemSeqId;
+    String? returnItemSeqId;
     // String
-    final String? shipGroupSeqId;
+    String? shipGroupSeqId;
     // String
-    final String? comments;
+    String? comments;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? returnTypeId;
+    String? returnTypeId;
     // String
-    final String? orderAdjustmentId;
+    String? orderAdjustmentId;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // String
-    final String? productPromoId;
+    String? productPromoId;
     // String
-    final String? productPromoRuleId;
+    String? productPromoRuleId;
     // String
-    final String? productPromoActionSeqId;
+    String? productPromoActionSeqId;
     // String
-    final String? productFeatureId;
+    String? productFeatureId;
     // String
-    final String? correspondingProductId;
+    String? correspondingProductId;
     // String
-    final String? taxAuthorityRateSeqId;
+    String? taxAuthorityRateSeqId;
     // String
-    final String? sourceReferenceId;
+    String? sourceReferenceId;
     // Input_routines_FixedPoint
-    final FixedPoint? sourcePercentage;
+    FixedPoint? sourcePercentage;
     // String
-    final String? customerReferenceId;
+    String? customerReferenceId;
     // String
-    final String? primaryGeoId;
+    String? primaryGeoId;
     // String
-    final String? secondaryGeoId;
+    String? secondaryGeoId;
     // Input_routines_Currency
-    final Currency? exemptAmount;
+    Currency? exemptAmount;
     // String
-    final String? taxAuthGeoId;
+    String? taxAuthGeoId;
     // String
-    final String? taxAuthPartyId;
+    String? taxAuthPartyId;
     // String
-    final String? overrideGlAccountId;
+    String? overrideGlAccountId;
     // routines_Indicator
-    final String? includeInTax;
+    String? includeInTax;
     // routines_Indicator
-    final String? includeInShipping;
+    String? includeInShipping;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ReturnAdjustmentData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ReturnAdjustmentData({
         this.returnAdjustmentId,
         this.returnAdjustmentTypeId,

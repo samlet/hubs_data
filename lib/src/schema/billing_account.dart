@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BillingAccountFlatData
 @JsonSerializable()
-class BillingAccount extends Equatable{
+class BillingAccount extends Equatable implements WithKey{
     // String
     final String? billingAccountId;
     // routines_Currency
@@ -25,22 +25,22 @@ class BillingAccount extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_BillingAccountTermList
     final BillingAccountTermCollection? billingAccountTerms;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_BillingAccountRoleList
     final BillingAccountRoleCollection? billingAccountRoles;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     BillingAccount({
         this.billingAccountId,
         this.accountLimit,
@@ -53,16 +53,18 @@ class BillingAccount extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.format,
+        this.cats,
         this.billingAccountTerms,
         this.contactMech,
-        this.model,
         this.billingAccountRoles,
-        this.cats,
-        this.proto, });
+        this.proto,
+        this.subview,
+        this.format,
+        this.model, });
     factory BillingAccount.fromJson(Map<String, dynamic> json) => _$BillingAccountFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountToJson(this);
     @override
     List<Object?> get props => [billingAccountId];
+    @override
+    String get key => billingAccountId!;
 }

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_google_type_Date
 @JsonSerializable()
-class Date {
+class Date  {
     // Int
-    final int? year;
+    int? year;
     // Int
-    final int? month;
+    int? month;
     // Int
-    final int? day;
+    int? day;
     Date({
         this.year,
         this.month,

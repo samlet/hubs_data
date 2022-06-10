@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProdCatalogFlatData
 @JsonSerializable()
-class ProdCatalog extends Equatable{
+class ProdCatalog extends Equatable implements WithKey{
     // String
     final String? prodCatalogId;
     // String
@@ -27,18 +27,18 @@ class ProdCatalog extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProdCatalogCategoryList
-    final ProdCatalogCategoryCollection? prodCatalogCategories;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_ProdCatalogCategoryList
+    final ProdCatalogCategoryCollection? prodCatalogCategories;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
     final String? format;
-    // String
-    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ProdCatalog({
         this.prodCatalogId,
         this.catalogName,
@@ -52,14 +52,16 @@ class ProdCatalog extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.prodCatalogCategories,
-        this.model,
         this.cats,
+        this.proto,
+        this.prodCatalogCategories,
         this.subview,
         this.format,
-        this.proto, });
+        this.model, });
     factory ProdCatalog.fromJson(Map<String, dynamic> json) => _$ProdCatalogFromJson(json);
     Map<String, dynamic> toJson() => _$ProdCatalogToJson(this);
     @override
     List<Object?> get props => [prodCatalogId];
+    @override
+    String get key => prodCatalogId!;
 }

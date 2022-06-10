@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_facade_CreateSecurityGroupParams
 @JsonSerializable()
-class CreateSecurityGroupParams {
+class CreateSecurityGroupParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // Input_domain_SecurityGroupFlatData
-    final SecurityGroupFlatData? securityGroup;
+    SecurityGroupFlatData? securityGroup;
     // String
-    final String? comment;
+    String? comment;
     CreateSecurityGroupParams({
         this.handle,
         this.securityGroup,

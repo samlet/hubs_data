@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_VendorProductData
 @JsonSerializable()
-class VendorProduct extends Equatable{
+class VendorProduct extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -15,20 +15,20 @@ class VendorProduct extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? vendorParty;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_ProductFlatData
     final Product? product;
+    // domain_PartyFlatData
+    final Party? vendorParty;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     VendorProduct({
         this.productId,
         this.vendorPartyId,
@@ -36,15 +36,17 @@ class VendorProduct extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.proto,
-        this.format,
-        this.vendorParty,
         this.model,
         this.product,
-        this.productStoreGroup, });
+        this.vendorParty,
+        this.productStoreGroup,
+        this.format,
+        this.cats,
+        this.proto, });
     factory VendorProduct.fromJson(Map<String, dynamic> json) => _$VendorProductFromJson(json);
     Map<String, dynamic> toJson() => _$VendorProductToJson(this);
     @override
     List<Object?> get props => [productId, vendorPartyId, productStoreGroupId];
+    @override
+    String get key => id!;
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductFlatData
 @JsonSerializable()
-class Product extends Equatable{
+class Product extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -149,62 +149,62 @@ class Product extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductPromoProductList
-    final ProductPromoProductCollection? productPromoProducts;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_ProductPriceData
-    final ProductPrice? priceFilter;
-    // domain_ProductFacilityList
-    final ProductFacilityCollection? productFacilities;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductFacilityLocationList
-    final ProductFacilityLocationCollection? productFacilityLocations;
-    // List<domain_ProductPriceData>
-    final List<ProductPrice>? priceSelect;
-    // domain_ProductFeatureApplList
-    final ProductFeatureApplCollection? productFeatureAppls;
-    // String
-    final String? format;
-    // domain_ProductAssocList
-    final ProductAssocCollection? mainProductAssocs;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_WorkEffortGoodStandardList
-    final WorkEffortGoodStandardCollection? workEffortGoodStandards;
-    // domain_ProductConfigList
-    final ProductConfigCollection? productProductConfigs;
-    // domain_ProductContentList
-    final ProductContentCollection? productContents;
-    // domain_ProductAssocList
-    final ProductAssocCollection? assocProductAssocs;
+    // domain_ProductFacilityAssocList
+    final ProductFacilityAssocCollection? productFacilityAssocs;
     // domain_FacilityFlatData
     final Facility? facility;
+    // domain_ProductFacilityLocationList
+    final ProductFacilityLocationCollection? productFacilityLocations;
+    // domain_ProductPriceData
+    final ProductPrice? priceFilter;
+    // domain_WorkEffortGoodStandardList
+    final WorkEffortGoodStandardCollection? workEffortGoodStandards;
+    // List<domain_ProductPriceData>
+    final List<ProductPrice>? matchProductPrice;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ProductKeywordList
     final ProductKeywordCollection? productKeywords;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductPromoProductList
+    final ProductPromoProductCollection? productPromoProducts;
+    // domain_ProductContentList
+    final ProductContentCollection? productContents;
     // String
     final String? listPrice;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? primaryProductCategory;
     // String
     final String? proto;
     // String
     final String? defaultPrice;
+    // domain_ProductAssocList
+    final ProductAssocCollection? assocProductAssocs;
     // List<domain_ProductPriceData>
-    final List<ProductPrice>? matchProductPrice;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
+    final List<ProductPrice>? priceSelect;
+    // domain_ProductAssocList
+    final ProductAssocCollection? mainProductAssocs;
     // domain_ProductPriceList
     final ProductPriceCollection? productPrices;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? format;
     // fact_ProductView
     final ProductView? asView;
-    // domain_ProductFacilityAssocList
-    final ProductFacilityAssocCollection? productFacilityAssocs;
+    // domain_ProductFeatureApplList
+    final ProductFeatureApplCollection? productFeatureAppls;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_ProductFacilityList
+    final ProductFacilityCollection? productFacilities;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ProductConfigList
+    final ProductConfigCollection? productProductConfigs;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? primaryProductCategory;
     Product({
         this.productId,
         this.productTypeId,
@@ -279,36 +279,38 @@ class Product extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productPromoProducts,
-        this.lastmodifiedbyuserlogin,
-        this.priceFilter,
-        this.productFacilities,
-        this.model,
-        this.productFacilityLocations,
-        this.priceSelect,
-        this.productFeatureAppls,
-        this.format,
-        this.mainProductAssocs,
-        this.subview,
         this.cats,
-        this.type,
-        this.workEffortGoodStandards,
-        this.productProductConfigs,
-        this.productContents,
-        this.assocProductAssocs,
+        this.productFacilityAssocs,
         this.facility,
+        this.productFacilityLocations,
+        this.priceFilter,
+        this.workEffortGoodStandards,
+        this.matchProductPrice,
+        this.model,
         this.productKeywords,
+        this.subview,
+        this.productPromoProducts,
+        this.productContents,
         this.listPrice,
-        this.primaryProductCategory,
         this.proto,
         this.defaultPrice,
-        this.matchProductPrice,
-        this.createdbyuserlogin,
+        this.assocProductAssocs,
+        this.priceSelect,
+        this.mainProductAssocs,
         this.productPrices,
+        this.type,
+        this.format,
         this.asView,
-        this.productFacilityAssocs, });
+        this.productFeatureAppls,
+        this.createdbyuserlogin,
+        this.productFacilities,
+        this.lastmodifiedbyuserlogin,
+        this.productProductConfigs,
+        this.primaryProductCategory, });
     factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductToJson(this);
     @override
     List<Object?> get props => [productId];
+    @override
+    String get key => productId!;
 }

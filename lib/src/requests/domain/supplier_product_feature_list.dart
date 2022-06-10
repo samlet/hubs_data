@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_SupplierProductFeatureList
 @JsonSerializable()
-class SupplierProductFeatureList {
+class SupplierProductFeatureList  {
     // List<Input_domain_SupplierProductFeatureData>
-    final List<SupplierProductFeatureData>? values;
+    List<SupplierProductFeatureData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     SupplierProductFeatureList({
         this.values,
         this.nextPageToken,

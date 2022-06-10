@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_TelecomNumberList
 @JsonSerializable()
-class TelecomNumberList {
+class TelecomNumberList  {
     // List<Input_domain_TelecomNumberFlatData>
-    final List<TelecomNumberFlatData>? values;
+    List<TelecomNumberFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     TelecomNumberList({
         this.values,
         this.nextPageToken,

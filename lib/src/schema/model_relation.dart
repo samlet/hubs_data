@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// facade_ModelRelation
 @JsonSerializable()
-class ModelRelation {
+class ModelRelation  {
     // String
     final String? name;
     // String

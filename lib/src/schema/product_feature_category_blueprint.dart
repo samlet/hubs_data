@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_ProductFeatureCategoryBlueprintData
 @JsonSerializable()
-class ProductFeatureCategoryBlueprint {
+class ProductFeatureCategoryBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp

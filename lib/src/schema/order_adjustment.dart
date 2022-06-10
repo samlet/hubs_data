@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderAdjustmentFlatData
 @JsonSerializable()
-class OrderAdjustment extends Equatable{
+class OrderAdjustment extends Equatable implements WithKey{
     // String
     final String? orderAdjustmentId;
     // String
@@ -75,20 +75,20 @@ class OrderAdjustment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? format;
     OrderAdjustment({
         this.orderAdjustmentId,
         this.orderAdjustmentTypeId,
@@ -126,15 +126,17 @@ class OrderAdjustment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.productPromo,
         this.cats,
-        this.userLogin,
         this.model,
         this.proto,
-        this.format,
-        this.productPromo,
-        this.orderHeader, });
+        this.userLogin,
+        this.orderHeader,
+        this.format, });
     factory OrderAdjustment.fromJson(Map<String, dynamic> json) => _$OrderAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$OrderAdjustmentToJson(this);
     @override
     List<Object?> get props => [orderAdjustmentId];
+    @override
+    String get key => orderAdjustmentId!;
 }

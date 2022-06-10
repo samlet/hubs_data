@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreGroupRoleList
 @JsonSerializable()
-class ProductStoreGroupRoleCollection {
+class ProductStoreGroupRoleCollection  {
     // List<domain_ProductStoreGroupRoleData>
     final List<ProductStoreGroupRole>? values;
     // String

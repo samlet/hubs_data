@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_TypesEntityStatusData
 @JsonSerializable()
-class TypesEntityStatusData {
+class TypesEntityStatusData  {
     // String
-    final String? typesEntityId;
+    String? typesEntityId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusDate;
+    Timestamp? statusDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusEndDate;
+    Timestamp? statusEndDate;
     // String
-    final String? changeByUserLoginId;
+    String? changeByUserLoginId;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_TypesEntityStatusData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     TypesEntityStatusData({
         this.typesEntityId,
         this.statusDate,

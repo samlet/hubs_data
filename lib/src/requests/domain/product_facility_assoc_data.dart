@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductFacilityAssocData
 @JsonSerializable()
-class ProductFacilityAssocData {
+class ProductFacilityAssocData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? facilityIdTo;
+    String? facilityIdTo;
     // String
-    final String? facilityAssocTypeId;
+    String? facilityAssocTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Long
-    final int? transitTime;
+    int? transitTime;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductFacilityAssocData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductFacilityAssocData({
         this.productId,
         this.facilityId,

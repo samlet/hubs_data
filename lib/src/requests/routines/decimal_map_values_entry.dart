@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_routines_DecimalMap_ValuesEntry
 @JsonSerializable()
-class DecimalMapValuesEntry {
+class DecimalMapValuesEntry  {
     // String
-    final String? key;
+    String? key;
     // Input_routines_FixedPoint
-    final FixedPoint? value;
+    FixedPoint? value;
     DecimalMapValuesEntry({
         this.key,
         this.value, });

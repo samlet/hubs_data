@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShoppingListItemData
 @JsonSerializable()
-class ShoppingListItem extends Equatable{
+class ShoppingListItem extends Equatable implements WithKey{
     // String
     final String? shoppingListId;
     // String
@@ -29,18 +29,18 @@ class ShoppingListItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_ProductFlatData
-    final Product? product;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
+    // String
+    final String? format;
     // domain_ShoppingListFlatData
     final ShoppingList? shoppingList;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ShoppingListItem({
         this.shoppingListId,
         this.shoppingListItemSeqId,
@@ -55,14 +55,16 @@ class ShoppingListItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.format,
-        this.product,
-        this.model,
         this.cats,
-        this.shoppingList, });
+        this.product,
+        this.format,
+        this.shoppingList,
+        this.proto,
+        this.model, });
     factory ShoppingListItem.fromJson(Map<String, dynamic> json) => _$ShoppingListItemFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListItemToJson(this);
     @override
     List<Object?> get props => [shoppingListId, shoppingListItemSeqId];
+    @override
+    String get key => id!;
 }

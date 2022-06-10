@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnAdjustmentData
 @JsonSerializable()
-class ReturnAdjustment extends Equatable{
+class ReturnAdjustment extends Equatable implements WithKey{
     // String
     final String? returnAdjustmentId;
     // String
@@ -71,20 +71,20 @@ class ReturnAdjustment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? returnHeader;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? returnHeader;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
+    // String
+    final String? format;
     ReturnAdjustment({
         this.returnAdjustmentId,
         this.returnAdjustmentTypeId,
@@ -120,15 +120,17 @@ class ReturnAdjustment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.returnHeader,
         this.model,
+        this.returnHeader,
         this.userLogin,
+        this.cats,
         this.proto,
-        this.format,
         this.productPromo,
-        this.cats, });
+        this.format, });
     factory ReturnAdjustment.fromJson(Map<String, dynamic> json) => _$ReturnAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnAdjustmentToJson(this);
     @override
     List<Object?> get props => [returnAdjustmentId];
+    @override
+    String get key => returnAdjustmentId!;
 }

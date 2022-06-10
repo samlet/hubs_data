@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginPasswordHistoryData
 @JsonSerializable()
-class UserLoginPasswordHistory extends Equatable{
+class UserLoginPasswordHistory extends Equatable implements WithKey{
     // String
     final String? userLoginId;
     // google_protobuf_Timestamp
@@ -17,16 +17,16 @@ class UserLoginPasswordHistory extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
     // String
     final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     UserLoginPasswordHistory({
         this.userLoginId,
         this.fromDate,
@@ -35,13 +35,15 @@ class UserLoginPasswordHistory extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.userLogin,
-        this.model,
         this.proto,
-        this.format, });
+        this.format,
+        this.userLogin,
+        this.cats,
+        this.model, });
     factory UserLoginPasswordHistory.fromJson(Map<String, dynamic> json) => _$UserLoginPasswordHistoryFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginPasswordHistoryToJson(this);
     @override
     List<Object?> get props => [userLoginId, fromDate];
+    @override
+    String get key => id!;
 }

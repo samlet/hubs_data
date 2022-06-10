@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_ContactMechBlueprintData
 @JsonSerializable()
-class ContactMechBlueprint {
+class ContactMechBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp

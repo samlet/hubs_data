@@ -2,9 +2,9 @@ part of '../../../requests.dart';
 
 /// Input_routines_Strings
 @JsonSerializable()
-class Strings {
+class Strings  {
     // List<String>
-    final List<String>? value;
+    List<String>? value;
     Strings({
         this.value, });
     factory Strings.fromJson(Map<String, dynamic> json) => _$StringsFromJson(json);

@@ -2,37 +2,37 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductFeatureFlatData
 @JsonSerializable()
-class ProductFeatureFlatData {
+class ProductFeatureFlatData  {
     // String
-    final String? productFeatureId;
+    String? productFeatureId;
     // String
-    final String? productFeatureTypeId;
+    String? productFeatureTypeId;
     // String
-    final String? productFeatureCategoryId;
+    String? productFeatureCategoryId;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? uomId;
+    String? uomId;
     // Input_routines_FixedPoint
-    final FixedPoint? numberSpecified;
+    FixedPoint? numberSpecified;
     // Input_routines_Currency
-    final Currency? defaultAmount;
+    Currency? defaultAmount;
     // Long
-    final int? defaultSequenceNum;
+    int? defaultSequenceNum;
     // String
-    final String? abbrev;
+    String? abbrev;
     // String
-    final String? idCode;
+    String? idCode;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductFeatureFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductFeatureFlatData({
         this.productFeatureId,
         this.productFeatureTypeId,

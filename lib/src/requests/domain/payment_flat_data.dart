@@ -2,55 +2,55 @@ part of '../../../requests.dart';
 
 /// Input_domain_PaymentFlatData
 @JsonSerializable()
-class PaymentFlatData {
+class PaymentFlatData  {
     // String
-    final String? paymentId;
+    String? paymentId;
     // String
-    final String? paymentTypeId;
+    String? paymentTypeId;
     // String
-    final String? paymentMethodTypeId;
+    String? paymentMethodTypeId;
     // String
-    final String? paymentMethodId;
+    String? paymentMethodId;
     // String
-    final String? paymentGatewayResponseId;
+    String? paymentGatewayResponseId;
     // String
-    final String? paymentPreferenceId;
+    String? paymentPreferenceId;
     // String
-    final String? partyIdFrom;
+    String? partyIdFrom;
     // String
-    final String? partyIdTo;
+    String? partyIdTo;
     // String
-    final String? roleTypeIdTo;
+    String? roleTypeIdTo;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? effectiveDate;
+    Timestamp? effectiveDate;
     // String
-    final String? paymentRefNum;
+    String? paymentRefNum;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? comments;
+    String? comments;
     // String
-    final String? finAccountTransId;
+    String? finAccountTransId;
     // String
-    final String? overrideGlAccountId;
+    String? overrideGlAccountId;
     // Input_routines_Currency
-    final Currency? actualCurrencyAmount;
+    Currency? actualCurrencyAmount;
     // String
-    final String? actualCurrencyUomId;
+    String? actualCurrencyUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PaymentFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PaymentFlatData({
         this.paymentId,
         this.paymentTypeId,

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_AcctgTransEntryList
 @JsonSerializable()
-class AcctgTransEntryList {
+class AcctgTransEntryList  {
     // List<Input_domain_AcctgTransEntryData>
-    final List<AcctgTransEntryData>? values;
+    List<AcctgTransEntryData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     AcctgTransEntryList({
         this.values,
         this.nextPageToken,

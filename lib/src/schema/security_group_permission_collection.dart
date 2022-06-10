@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityGroupPermissionList
 @JsonSerializable()
-class SecurityGroupPermissionCollection {
+class SecurityGroupPermissionCollection  {
     // List<domain_SecurityGroupPermissionData>
     final List<SecurityGroupPermission>? values;
     // String

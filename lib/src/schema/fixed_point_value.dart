@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// routines_FixedPoint
 @JsonSerializable()
-class FixedPointValue {
+class FixedPointValue  {
     // Long
     final int? value;
     // Int

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderHeaderNoteData
 @JsonSerializable()
-class OrderHeaderNote extends Equatable{
+class OrderHeaderNote extends Equatable implements WithKey{
     // String
     final String? orderId;
     // String
@@ -16,17 +16,17 @@ class OrderHeaderNote extends Equatable{
     // String
     final String? id;
     // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // domain_NoteDataData
-    final NoteData? noteData;
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_NoteDataData
+    final NoteData? noteData;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
-    final String? proto;
+    final String? format;
     OrderHeaderNote({
         this.orderId,
         this.noteId,
@@ -34,14 +34,16 @@ class OrderHeaderNote extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.model,
-        this.orderHeader,
-        this.noteData,
+        this.proto,
         this.cats,
-        this.proto, });
+        this.noteData,
+        this.orderHeader,
+        this.model,
+        this.format, });
     factory OrderHeaderNote.fromJson(Map<String, dynamic> json) => _$OrderHeaderNoteFromJson(json);
     Map<String, dynamic> toJson() => _$OrderHeaderNoteToJson(this);
     @override
     List<Object?> get props => [orderId, noteId];
+    @override
+    String get key => id!;
 }

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_DataResourceTypeList
 @JsonSerializable()
-class DataResourceTypeList {
+class DataResourceTypeList  {
     // List<Input_domain_DataResourceTypeData>
-    final List<DataResourceTypeData>? values;
+    List<DataResourceTypeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     DataResourceTypeList({
         this.values,
         this.nextPageToken,

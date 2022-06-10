@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentPackageContentData
 @JsonSerializable()
-class ShipmentPackageContent extends Equatable{
+class ShipmentPackageContent extends Equatable implements WithKey{
     // String
     final String? shipmentId;
     // String
@@ -23,16 +23,16 @@ class ShipmentPackageContent extends Equatable{
     final String? id;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // String
-    final String? format;
     // domain_ProductFlatData
     final Product? subProduct;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // String
     final String? proto;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ShipmentPackageContent({
         this.shipmentId,
         this.shipmentPackageSeqId,
@@ -44,13 +44,15 @@ class ShipmentPackageContent extends Equatable{
         this.createdTxStamp,
         this.id,
         this.model,
-        this.shipment,
-        this.format,
         this.subProduct,
-        this.cats,
-        this.proto, });
+        this.format,
+        this.proto,
+        this.shipment,
+        this.cats, });
     factory ShipmentPackageContent.fromJson(Map<String, dynamic> json) => _$ShipmentPackageContentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentPackageContentToJson(this);
     @override
     List<Object?> get props => [shipmentId, shipmentPackageSeqId, shipmentItemSeqId];
+    @override
+    String get key => id!;
 }

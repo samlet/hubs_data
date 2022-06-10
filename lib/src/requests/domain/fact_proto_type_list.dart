@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_FactProtoTypeList
 @JsonSerializable()
-class FactProtoTypeList {
+class FactProtoTypeList  {
     // List<Input_domain_FactProtoTypeData>
-    final List<FactProtoTypeData>? values;
+    List<FactProtoTypeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     FactProtoTypeList({
         this.values,
         this.nextPageToken,

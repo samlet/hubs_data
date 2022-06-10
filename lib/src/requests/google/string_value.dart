@@ -2,9 +2,9 @@ part of '../../../requests.dart';
 
 /// Input_google_protobuf_StringValue
 @JsonSerializable()
-class StringValue {
+class StringValue  {
     // String
-    final String? value;
+    String? value;
     StringValue({
         this.value, });
     factory StringValue.fromJson(Map<String, dynamic> json) => _$StringValueFromJson(json);

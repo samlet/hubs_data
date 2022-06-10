@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_AgreementProductApplData
 @JsonSerializable()
-class AgreementProductApplData {
+class AgreementProductApplData  {
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? agreementItemSeqId;
+    String? agreementItemSeqId;
     // String
-    final String? productId;
+    String? productId;
     // Input_routines_Currency
-    final Currency? price;
+    Currency? price;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AgreementProductApplData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AgreementProductApplData({
         this.agreementId,
         this.agreementItemSeqId,

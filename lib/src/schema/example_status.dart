@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ExampleStatusData
 @JsonSerializable()
-class ExampleStatus extends Equatable{
+class ExampleStatus extends Equatable implements WithKey{
     // String
     final String? exampleId;
     // google_protobuf_Timestamp
@@ -19,18 +19,18 @@ class ExampleStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
+    final String? format;
     // domain_ExampleData
     final Example? example;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // String
+    final String? proto;
     ExampleStatus({
         this.exampleId,
         this.statusDate,
@@ -40,14 +40,16 @@ class ExampleStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
-        this.format,
         this.cats,
-        this.proto,
+        this.format,
         this.example,
-        this.model, });
+        this.model,
+        this.userLogin,
+        this.proto, });
     factory ExampleStatus.fromJson(Map<String, dynamic> json) => _$ExampleStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleStatusToJson(this);
     @override
     List<Object?> get props => [exampleId, statusDate];
+    @override
+    String get key => id!;
 }

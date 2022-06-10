@@ -2,73 +2,73 @@ part of '../../../requests.dart';
 
 /// Input_domain_AcctgTransFlatData
 @JsonSerializable()
-class AcctgTransFlatData {
+class AcctgTransFlatData  {
     // String
-    final String? acctgTransId;
+    String? acctgTransId;
     // String
-    final String? acctgTransTypeId;
+    String? acctgTransTypeId;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? transactionDate;
+    Timestamp? transactionDate;
     // routines_Indicator
-    final String? isPosted;
+    String? isPosted;
     // Input_google_protobuf_Timestamp
-    final Timestamp? postedDate;
+    Timestamp? postedDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? scheduledPostingDate;
+    Timestamp? scheduledPostingDate;
     // String
-    final String? glJournalId;
+    String? glJournalId;
     // String
-    final String? glFiscalTypeId;
+    String? glFiscalTypeId;
     // String
-    final String? voucherRef;
+    String? voucherRef;
     // Input_google_protobuf_Timestamp
-    final Timestamp? voucherDate;
+    Timestamp? voucherDate;
     // String
-    final String? groupStatusId;
+    String? groupStatusId;
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? physicalInventoryId;
+    String? physicalInventoryId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? paymentId;
+    String? paymentId;
     // String
-    final String? finAccountTransId;
+    String? finAccountTransId;
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? receiptId;
+    String? receiptId;
     // String
-    final String? workEffortId;
+    String? workEffortId;
     // String
-    final String? theirAcctgTransId;
+    String? theirAcctgTransId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AcctgTransFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AcctgTransFlatData({
         this.acctgTransId,
         this.acctgTransTypeId,

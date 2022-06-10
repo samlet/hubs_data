@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_SecurityGroupList
 @JsonSerializable()
-class SecurityGroupList {
+class SecurityGroupList  {
     // List<Input_domain_SecurityGroupFlatData>
-    final List<SecurityGroupFlatData>? values;
+    List<SecurityGroupFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     SecurityGroupList({
         this.values,
         this.nextPageToken,

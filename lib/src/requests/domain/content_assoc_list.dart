@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ContentAssocList
 @JsonSerializable()
-class ContentAssocList {
+class ContentAssocList  {
     // List<Input_domain_ContentAssocData>
-    final List<ContentAssocData>? values;
+    List<ContentAssocData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ContentAssocList({
         this.values,
         this.nextPageToken,

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductFacilityAssocData
 @JsonSerializable()
-class ProductFacilityAssoc extends Equatable{
+class ProductFacilityAssoc extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -27,16 +27,16 @@ class ProductFacilityAssoc extends Equatable{
     final String? id;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
-    // domain_FacilityFlatData
-    final Facility? toFacility;
     // domain_ProductFlatData
     final Product? product;
-    // domain_FacilityFlatData
-    final Facility? fromFacility;
     // String
     final String? format;
+    // domain_FacilityFlatData
+    final Facility? fromFacility;
+    // domain_FacilityFlatData
+    final Facility? toFacility;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     ProductFacilityAssoc({
@@ -52,14 +52,16 @@ class ProductFacilityAssoc extends Equatable{
         this.createdTxStamp,
         this.id,
         this.model,
-        this.proto,
-        this.toFacility,
         this.product,
-        this.fromFacility,
         this.format,
+        this.fromFacility,
+        this.toFacility,
+        this.proto,
         this.cats, });
     factory ProductFacilityAssoc.fromJson(Map<String, dynamic> json) => _$ProductFacilityAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFacilityAssocToJson(this);
     @override
     List<Object?> get props => [productId, facilityId, facilityIdTo, facilityAssocTypeId, fromDate];
+    @override
+    String get key => id!;
 }

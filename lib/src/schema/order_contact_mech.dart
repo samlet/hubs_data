@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderContactMechData
 @JsonSerializable()
-class OrderContactMech extends Equatable{
+class OrderContactMech extends Equatable implements WithKey{
     // String
     final String? orderId;
     // String
@@ -15,18 +15,18 @@ class OrderContactMech extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? format;
     // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     OrderContactMech({
         this.orderId,
         this.contactMechPurposeTypeId,
@@ -34,14 +34,16 @@ class OrderContactMech extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.contactMech,
         this.orderHeader,
+        this.format,
         this.proto,
         this.model,
-        this.format, });
+        this.contactMech,
+        this.cats, });
     factory OrderContactMech.fromJson(Map<String, dynamic> json) => _$OrderContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$OrderContactMechToJson(this);
     @override
     List<Object?> get props => [orderId, contactMechPurposeTypeId, contactMechId];
+    @override
+    String get key => id!;
 }

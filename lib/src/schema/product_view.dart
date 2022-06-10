@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// fact_ProductView
 @JsonSerializable()
-class ProductView {
+class ProductView  {
     // String
     final String? productId;
     // String

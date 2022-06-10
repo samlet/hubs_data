@@ -2,57 +2,57 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderItemShipGroupData
 @JsonSerializable()
-class OrderItemShipGroupData {
+class OrderItemShipGroupData  {
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? shipGroupSeqId;
+    String? shipGroupSeqId;
     // String
-    final String? shipmentMethodTypeId;
+    String? shipmentMethodTypeId;
     // String
-    final String? supplierPartyId;
+    String? supplierPartyId;
     // String
-    final String? supplierAgreementId;
+    String? supplierAgreementId;
     // String
-    final String? vendorPartyId;
+    String? vendorPartyId;
     // String
-    final String? carrierPartyId;
+    String? carrierPartyId;
     // String
-    final String? carrierRoleTypeId;
+    String? carrierRoleTypeId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? telecomContactMechId;
+    String? telecomContactMechId;
     // String
-    final String? trackingNumber;
+    String? trackingNumber;
     // String
-    final String? shippingInstructions;
+    String? shippingInstructions;
     // routines_Indicator
-    final String? maySplit;
+    String? maySplit;
     // String
-    final String? giftMessage;
+    String? giftMessage;
     // routines_Indicator
-    final String? isGift;
+    String? isGift;
     // Input_google_protobuf_Timestamp
-    final Timestamp? shipAfterDate;
+    Timestamp? shipAfterDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? shipByDate;
+    Timestamp? shipByDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedShipDate;
+    Timestamp? estimatedShipDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedDeliveryDate;
+    Timestamp? estimatedDeliveryDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderItemShipGroupData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderItemShipGroupData({
         this.orderId,
         this.shipGroupSeqId,

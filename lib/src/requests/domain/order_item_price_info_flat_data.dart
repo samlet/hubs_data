@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderItemPriceInfoFlatData
 @JsonSerializable()
-class OrderItemPriceInfoFlatData {
+class OrderItemPriceInfoFlatData  {
     // String
-    final String? orderItemPriceInfoId;
+    String? orderItemPriceInfoId;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? productPriceRuleId;
+    String? productPriceRuleId;
     // String
-    final String? productPriceActionSeqId;
+    String? productPriceActionSeqId;
     // Input_routines_Currency
-    final Currency? modifyAmount;
+    Currency? modifyAmount;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? rateCode;
+    String? rateCode;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderItemPriceInfoFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderItemPriceInfoFlatData({
         this.orderItemPriceInfoId,
         this.orderId,

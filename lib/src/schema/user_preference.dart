@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserPreferenceData
 @JsonSerializable()
-class UserPreference {
+class UserPreference  {
     // String
     final String? userLoginId;
     // String
@@ -19,16 +19,16 @@ class UserPreference {
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
-    final String? format;
+    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     UserPreference({
         this.userLoginId,
         this.userPrefTypeId,
@@ -38,11 +38,11 @@ class UserPreference {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.format,
-        this.userLogin,
+        this.model,
         this.proto,
-        this.model, });
+        this.userLogin,
+        this.format,
+        this.cats, });
     factory UserPreference.fromJson(Map<String, dynamic> json) => _$UserPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$UserPreferenceToJson(this);
 }

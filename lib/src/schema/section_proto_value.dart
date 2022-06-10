@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// proto_SectionProto
 @JsonSerializable()
-class SectionProtoValue {
+class SectionProtoValue  {
     // String
     final String? name;
     // String

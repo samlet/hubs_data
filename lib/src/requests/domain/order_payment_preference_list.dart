@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderPaymentPreferenceList
 @JsonSerializable()
-class OrderPaymentPreferenceList {
+class OrderPaymentPreferenceList  {
     // List<Input_domain_OrderPaymentPreferenceFlatData>
-    final List<OrderPaymentPreferenceFlatData>? values;
+    List<OrderPaymentPreferenceFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     OrderPaymentPreferenceList({
         this.values,
         this.nextPageToken,

@@ -2,173 +2,173 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStoreFlatData
 @JsonSerializable()
-class ProductStoreFlatData {
+class ProductStoreFlatData  {
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? primaryStoreGroupId;
+    String? primaryStoreGroupId;
     // String
-    final String? storeName;
+    String? storeName;
     // String
-    final String? companyName;
+    String? companyName;
     // String
-    final String? title;
+    String? title;
     // String
-    final String? subtitle;
+    String? subtitle;
     // String
-    final String? payToPartyId;
+    String? payToPartyId;
     // Long
-    final int? daysToCancelNonPay;
+    int? daysToCancelNonPay;
     // routines_Indicator
-    final String? manualAuthIsCapture;
+    String? manualAuthIsCapture;
     // routines_Indicator
-    final String? prorateShipping;
+    String? prorateShipping;
     // routines_Indicator
-    final String? prorateTaxes;
+    String? prorateTaxes;
     // routines_Indicator
-    final String? viewCartOnAdd;
+    String? viewCartOnAdd;
     // routines_Indicator
-    final String? autoSaveCart;
+    String? autoSaveCart;
     // routines_Indicator
-    final String? autoApproveReviews;
+    String? autoApproveReviews;
     // routines_Indicator
-    final String? isDemoStore;
+    String? isDemoStore;
     // routines_Indicator
-    final String? isImmediatelyFulfilled;
+    String? isImmediatelyFulfilled;
     // String
-    final String? inventoryFacilityId;
+    String? inventoryFacilityId;
     // routines_Indicator
-    final String? oneInventoryFacility;
+    String? oneInventoryFacility;
     // routines_Indicator
-    final String? checkInventory;
+    String? checkInventory;
     // routines_Indicator
-    final String? reserveInventory;
+    String? reserveInventory;
     // String
-    final String? reserveOrderEnumId;
+    String? reserveOrderEnumId;
     // routines_Indicator
-    final String? requireInventory;
+    String? requireInventory;
     // routines_Indicator
-    final String? balanceResOnOrderCreation;
+    String? balanceResOnOrderCreation;
     // String
-    final String? requirementMethodEnumId;
+    String? requirementMethodEnumId;
     // String
-    final String? orderNumberPrefix;
+    String? orderNumberPrefix;
     // String
-    final String? defaultLocaleString;
+    String? defaultLocaleString;
     // String
-    final String? defaultCurrencyUomId;
+    String? defaultCurrencyUomId;
     // String
-    final String? defaultTimeZoneString;
+    String? defaultTimeZoneString;
     // String
-    final String? defaultSalesChannelEnumId;
+    String? defaultSalesChannelEnumId;
     // routines_Indicator
-    final String? allowPassword;
+    String? allowPassword;
     // String
-    final String? defaultPassword;
+    String? defaultPassword;
     // routines_Indicator
-    final String? explodeOrderItems;
+    String? explodeOrderItems;
     // routines_Indicator
-    final String? checkGcBalance;
+    String? checkGcBalance;
     // routines_Indicator
-    final String? retryFailedAuths;
+    String? retryFailedAuths;
     // String
-    final String? headerApprovedStatus;
+    String? headerApprovedStatus;
     // String
-    final String? itemApprovedStatus;
+    String? itemApprovedStatus;
     // String
-    final String? digitalItemApprovedStatus;
+    String? digitalItemApprovedStatus;
     // String
-    final String? headerDeclinedStatus;
+    String? headerDeclinedStatus;
     // String
-    final String? itemDeclinedStatus;
+    String? itemDeclinedStatus;
     // String
-    final String? headerCancelStatus;
+    String? headerCancelStatus;
     // String
-    final String? itemCancelStatus;
+    String? itemCancelStatus;
     // String
-    final String? authDeclinedMessage;
+    String? authDeclinedMessage;
     // String
-    final String? authFraudMessage;
+    String? authFraudMessage;
     // String
-    final String? authErrorMessage;
+    String? authErrorMessage;
     // String
-    final String? visualThemeId;
+    String? visualThemeId;
     // String
-    final String? storeCreditAccountEnumId;
+    String? storeCreditAccountEnumId;
     // routines_Indicator
-    final String? usePrimaryEmailUsername;
+    String? usePrimaryEmailUsername;
     // routines_Indicator
-    final String? requireCustomerRole;
+    String? requireCustomerRole;
     // routines_Indicator
-    final String? autoInvoiceDigitalItems;
+    String? autoInvoiceDigitalItems;
     // routines_Indicator
-    final String? reqShipAddrForDigItems;
+    String? reqShipAddrForDigItems;
     // routines_Indicator
-    final String? showCheckoutGiftOptions;
+    String? showCheckoutGiftOptions;
     // routines_Indicator
-    final String? selectPaymentTypePerItem;
+    String? selectPaymentTypePerItem;
     // routines_Indicator
-    final String? showPricesWithVatTax;
+    String? showPricesWithVatTax;
     // routines_Indicator
-    final String? showTaxIsExempt;
+    String? showTaxIsExempt;
     // String
-    final String? vatTaxAuthGeoId;
+    String? vatTaxAuthGeoId;
     // String
-    final String? vatTaxAuthPartyId;
+    String? vatTaxAuthPartyId;
     // routines_Indicator
-    final String? enableAutoSuggestionList;
+    String? enableAutoSuggestionList;
     // routines_Indicator
-    final String? enableDigProdUpload;
+    String? enableDigProdUpload;
     // routines_Indicator
-    final String? prodSearchExcludeVariants;
+    String? prodSearchExcludeVariants;
     // String
-    final String? digProdUploadCategoryId;
+    String? digProdUploadCategoryId;
     // routines_Indicator
-    final String? autoOrderCcTryExp;
+    String? autoOrderCcTryExp;
     // routines_Indicator
-    final String? autoOrderCcTryOtherCards;
+    String? autoOrderCcTryOtherCards;
     // routines_Indicator
-    final String? autoOrderCcTryLaterNsf;
+    String? autoOrderCcTryLaterNsf;
     // Long
-    final int? autoOrderCcTryLaterMax;
+    int? autoOrderCcTryLaterMax;
     // Long
-    final int? storeCreditValidDays;
+    int? storeCreditValidDays;
     // routines_Indicator
-    final String? autoApproveInvoice;
+    String? autoApproveInvoice;
     // routines_Indicator
-    final String? autoApproveOrder;
+    String? autoApproveOrder;
     // routines_Indicator
-    final String? shipIfCaptureFails;
+    String? shipIfCaptureFails;
     // routines_Indicator
-    final String? setOwnerUponIssuance;
+    String? setOwnerUponIssuance;
     // routines_Indicator
-    final String? reqReturnInventoryReceive;
+    String? reqReturnInventoryReceive;
     // routines_Indicator
-    final String? addToCartRemoveIncompat;
+    String? addToCartRemoveIncompat;
     // routines_Indicator
-    final String? addToCartReplaceUpsell;
+    String? addToCartReplaceUpsell;
     // routines_Indicator
-    final String? splitPayPrefPerShpGrp;
+    String? splitPayPrefPerShpGrp;
     // routines_Indicator
-    final String? managedByLot;
+    String? managedByLot;
     // routines_Indicator
-    final String? showOutOfStockProducts;
+    String? showOutOfStockProducts;
     // routines_Indicator
-    final String? orderDecimalQuantity;
+    String? orderDecimalQuantity;
     // routines_Indicator
-    final String? allowComment;
+    String? allowComment;
     // routines_Indicator
-    final String? allocateInventory;
+    String? allocateInventory;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductStoreFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductStoreFlatData({
         this.productStoreId,
         this.primaryStoreGroupId,

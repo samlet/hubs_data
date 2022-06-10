@@ -2,59 +2,59 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductPriceData
 @JsonSerializable()
-class ProductPriceData {
+class ProductPriceData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? productPriceTypeId;
+    String? productPriceTypeId;
     // String
-    final String? productPricePurposeId;
+    String? productPricePurposeId;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? productStoreGroupId;
+    String? productStoreGroupId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Input_routines_Currency
-    final Currency? price;
+    Currency? price;
     // String
-    final String? termUomId;
+    String? termUomId;
     // String
-    final String? customPriceCalcService;
+    String? customPriceCalcService;
     // Input_routines_Currency
-    final Currency? priceWithoutTax;
+    Currency? priceWithoutTax;
     // Input_routines_Currency
-    final Currency? priceWithTax;
+    Currency? priceWithTax;
     // Input_routines_Currency
-    final Currency? taxAmount;
+    Currency? taxAmount;
     // Input_routines_FixedPoint
-    final FixedPoint? taxPercentage;
+    FixedPoint? taxPercentage;
     // String
-    final String? taxAuthPartyId;
+    String? taxAuthPartyId;
     // String
-    final String? taxAuthGeoId;
+    String? taxAuthGeoId;
     // routines_Indicator
-    final String? taxInPrice;
+    String? taxInPrice;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductPriceData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductPriceData({
         this.productId,
         this.productPriceTypeId,

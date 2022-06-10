@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderTypeData
 @JsonSerializable()
-class OrderTypeData {
+class OrderTypeData  {
     // String
-    final String? orderTypeId;
+    String? orderTypeId;
     // String
-    final String? parentTypeId;
+    String? parentTypeId;
     // routines_Indicator
-    final String? hasTable;
+    String? hasTable;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderTypeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderTypeData({
         this.orderTypeId,
         this.parentTypeId,

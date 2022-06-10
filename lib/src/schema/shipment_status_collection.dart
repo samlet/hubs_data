@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentStatusList
 @JsonSerializable()
-class ShipmentStatusCollection {
+class ShipmentStatusCollection  {
     // List<domain_ShipmentStatusData>
     final List<ShipmentStatus>? values;
     // String

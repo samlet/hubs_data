@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:hubs_data/src/messages/converters.dart';
+import 'pubs.dart';
 
 part 'messages.g.dart';
 
@@ -269,8 +270,8 @@ part 'src/schema/party_geo_point_collection.dart';
 part 'src/schema/product_category_rollup_collection.dart';
 part 'src/schema/data_resource_with_text.dart';
 part 'src/schema/product_promo.dart';
-part 'src/schema/supplier_product_feature.dart';
 part 'src/schema/person.dart';
+part 'src/schema/supplier_product_feature.dart';
 part 'src/schema/product_feature_appl_collection.dart';
 part 'src/schema/supplier_product_collection.dart';
 part 'src/schema/order_role.dart';

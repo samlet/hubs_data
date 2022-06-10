@@ -2,89 +2,89 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentRouteSegmentData
 @JsonSerializable()
-class ShipmentRouteSegmentData {
+class ShipmentRouteSegmentData  {
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentRouteSegmentId;
+    String? shipmentRouteSegmentId;
     // String
-    final String? deliveryId;
+    String? deliveryId;
     // String
-    final String? originFacilityId;
+    String? originFacilityId;
     // String
-    final String? destFacilityId;
+    String? destFacilityId;
     // String
-    final String? originContactMechId;
+    String? originContactMechId;
     // String
-    final String? originTelecomNumberId;
+    String? originTelecomNumberId;
     // String
-    final String? destContactMechId;
+    String? destContactMechId;
     // String
-    final String? destTelecomNumberId;
+    String? destTelecomNumberId;
     // String
-    final String? carrierPartyId;
+    String? carrierPartyId;
     // String
-    final String? shipmentMethodTypeId;
+    String? shipmentMethodTypeId;
     // String
-    final String? carrierServiceStatusId;
+    String? carrierServiceStatusId;
     // String
-    final String? carrierDeliveryZone;
+    String? carrierDeliveryZone;
     // String
-    final String? carrierRestrictionCodes;
+    String? carrierRestrictionCodes;
     // String
-    final String? carrierRestrictionDesc;
+    String? carrierRestrictionDesc;
     // Input_routines_FixedPoint
-    final FixedPoint? billingWeight;
+    FixedPoint? billingWeight;
     // String
-    final String? billingWeightUomId;
+    String? billingWeightUomId;
     // Input_routines_Currency
-    final Currency? actualTransportCost;
+    Currency? actualTransportCost;
     // Input_routines_Currency
-    final Currency? actualServiceCost;
+    Currency? actualServiceCost;
     // Input_routines_Currency
-    final Currency? actualOtherCost;
+    Currency? actualOtherCost;
     // Input_routines_Currency
-    final Currency? actualCost;
+    Currency? actualCost;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? actualStartDate;
+    Timestamp? actualStartDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? actualArrivalDate;
+    Timestamp? actualArrivalDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedStartDate;
+    Timestamp? estimatedStartDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedArrivalDate;
+    Timestamp? estimatedArrivalDate;
     // String
-    final String? trackingIdNumber;
+    String? trackingIdNumber;
     // String
-    final String? trackingDigest;
+    String? trackingDigest;
     // String
-    final String? updatedByUserLoginId;
+    String? updatedByUserLoginId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedDate;
+    Timestamp? lastUpdatedDate;
     // String
-    final String? homeDeliveryType;
+    String? homeDeliveryType;
     // Input_google_protobuf_Timestamp
-    final Timestamp? homeDeliveryDate;
+    Timestamp? homeDeliveryDate;
     // String
-    final String? thirdPartyAccountNumber;
+    String? thirdPartyAccountNumber;
     // String
-    final String? thirdPartyPostalCode;
+    String? thirdPartyPostalCode;
     // String
-    final String? thirdPartyCountryGeoCode;
+    String? thirdPartyCountryGeoCode;
     // String
-    final String? upsHighValueReport;
+    String? upsHighValueReport;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShipmentRouteSegmentData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShipmentRouteSegmentData({
         this.shipmentId,
         this.shipmentRouteSegmentId,

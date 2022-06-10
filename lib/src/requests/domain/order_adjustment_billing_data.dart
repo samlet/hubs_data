@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderAdjustmentBillingData
 @JsonSerializable()
-class OrderAdjustmentBillingData {
+class OrderAdjustmentBillingData  {
     // String
-    final String? orderAdjustmentId;
+    String? orderAdjustmentId;
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? invoiceItemSeqId;
+    String? invoiceItemSeqId;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderAdjustmentBillingData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderAdjustmentBillingData({
         this.orderAdjustmentId,
         this.invoiceId,

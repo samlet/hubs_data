@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyContactMechPurposeData
 @JsonSerializable()
-class PartyContactMechPurposeData {
+class PartyContactMechPurposeData  {
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? contactMechPurposeTypeId;
+    String? contactMechPurposeTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyContactMechPurposeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyContactMechPurposeData({
         this.partyId,
         this.contactMechId,

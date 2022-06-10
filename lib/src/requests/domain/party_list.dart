@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyList
 @JsonSerializable()
-class PartyList {
+class PartyList  {
     // List<Input_domain_PartyFlatData>
-    final List<PartyFlatData>? values;
+    List<PartyFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     PartyList({
         this.values,
         this.nextPageToken,

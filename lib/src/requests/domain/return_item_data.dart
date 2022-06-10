@@ -2,47 +2,47 @@ part of '../../../requests.dart';
 
 /// Input_domain_ReturnItemData
 @JsonSerializable()
-class ReturnItemData {
+class ReturnItemData  {
     // String
-    final String? returnId;
+    String? returnId;
     // String
-    final String? returnItemSeqId;
+    String? returnItemSeqId;
     // String
-    final String? returnReasonId;
+    String? returnReasonId;
     // String
-    final String? returnTypeId;
+    String? returnTypeId;
     // String
-    final String? returnItemTypeId;
+    String? returnItemTypeId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? expectedItemStatus;
+    String? expectedItemStatus;
     // Input_routines_FixedPoint
-    final FixedPoint? returnQuantity;
+    FixedPoint? returnQuantity;
     // Input_routines_FixedPoint
-    final FixedPoint? receivedQuantity;
+    FixedPoint? receivedQuantity;
     // Input_routines_Currency
-    final Currency? returnPrice;
+    Currency? returnPrice;
     // String
-    final String? returnItemResponseId;
+    String? returnItemResponseId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ReturnItemData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ReturnItemData({
         this.returnId,
         this.returnItemSeqId,

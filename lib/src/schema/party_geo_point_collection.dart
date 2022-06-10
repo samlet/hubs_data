@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyGeoPointList
 @JsonSerializable()
-class PartyGeoPointCollection {
+class PartyGeoPointCollection  {
     // List<domain_PartyGeoPointData>
     final List<PartyGeoPoint>? values;
     // String

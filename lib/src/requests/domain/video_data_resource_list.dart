@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_VideoDataResourceList
 @JsonSerializable()
-class VideoDataResourceList {
+class VideoDataResourceList  {
     // List<Input_domain_VideoDataResourceData>
-    final List<VideoDataResourceData>? values;
+    List<VideoDataResourceData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     VideoDataResourceList({
         this.values,
         this.nextPageToken,

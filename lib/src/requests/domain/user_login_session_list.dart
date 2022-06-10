@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserLoginSessionList
 @JsonSerializable()
-class UserLoginSessionList {
+class UserLoginSessionList  {
     // List<Input_domain_UserLoginSessionData>
-    final List<UserLoginSessionData>? values;
+    List<UserLoginSessionData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     UserLoginSessionList({
         this.values,
         this.nextPageToken,

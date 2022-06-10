@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_DataResourceFlatData
 @JsonSerializable()
-class DataResource extends Equatable{
+class DataResource extends Equatable implements WithKey{
     // String
     final String? dataResourceId;
     // String
@@ -47,30 +47,30 @@ class DataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
     // data_resource_ImageProto
     final DataResourceWithImage? asImage;
-    // String
-    final String? format;
-    // data_resource_TextProto
-    final DataResourceWithText? asText;
-    // data_resource_VideoProto
-    final DataResourceWithVideo? asVideo;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
-    // data_resource_AudioProto
-    final DataResourceWithAudio? asAudio;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // String
-    final String? proto;
+    // data_resource_TextProto
+    final DataResourceWithText? asText;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // data_resource_AudioProto
+    final DataResourceWithAudio? asAudio;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // String
+    final String? proto;
+    // data_resource_VideoProto
+    final DataResourceWithVideo? asVideo;
     DataResource({
         this.dataResourceId,
         this.dataResourceTypeId,
@@ -94,20 +94,22 @@ class DataResource extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.createdbyuserlogin,
         this.asImage,
-        this.format,
-        this.asText,
-        this.asVideo,
-        this.subview,
         this.lastmodifiedbyuserlogin,
-        this.asAudio,
+        this.asText,
+        this.model,
         this.type,
+        this.cats,
+        this.subview,
+        this.format,
+        this.asAudio,
+        this.createdbyuserlogin,
         this.proto,
-        this.model, });
+        this.asVideo, });
     factory DataResource.fromJson(Map<String, dynamic> json) => _$DataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceToJson(this);
     @override
     List<Object?> get props => [dataResourceId];
+    @override
+    String get key => dataResourceId!;
 }

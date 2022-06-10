@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityPermissionFlatData
 @JsonSerializable()
-class SecurityPermission extends Equatable{
+class SecurityPermission extends Equatable implements WithKey{
     // String
     final String? permissionId;
     // String
@@ -13,29 +13,31 @@ class SecurityPermission extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     SecurityPermission({
         this.permissionId,
         this.description,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.subview,
-        this.cats,
         this.format,
-        this.proto, });
+        this.cats,
+        this.subview,
+        this.proto,
+        this.model, });
     factory SecurityPermission.fromJson(Map<String, dynamic> json) => _$SecurityPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityPermissionToJson(this);
     @override
     List<Object?> get props => [permissionId];
+    @override
+    String get key => permissionId!;
 }

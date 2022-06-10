@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreEmailSettingData
 @JsonSerializable()
-class ProductStoreEmailSetting extends Equatable{
+class ProductStoreEmailSetting extends Equatable implements WithKey{
     // String
     final String? productStoreId;
     // String
@@ -27,16 +27,16 @@ class ProductStoreEmailSetting extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductStoreEmailSetting({
         this.productStoreId,
         this.emailType,
@@ -50,13 +50,15 @@ class ProductStoreEmailSetting extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
+        this.productStore,
         this.model,
-        this.proto,
         this.format,
-        this.productStore, });
+        this.proto,
+        this.cats, });
     factory ProductStoreEmailSetting.fromJson(Map<String, dynamic> json) => _$ProductStoreEmailSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreEmailSettingToJson(this);
     @override
     List<Object?> get props => [productStoreId, emailType];
+    @override
+    String get key => id!;
 }

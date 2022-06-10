@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_ExampleStatusData
 @JsonSerializable()
-class ExampleStatusData {
+class ExampleStatusData  {
     // String
-    final String? exampleId;
+    String? exampleId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusDate;
+    Timestamp? statusDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusEndDate;
+    Timestamp? statusEndDate;
     // String
-    final String? changeByUserLoginId;
+    String? changeByUserLoginId;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ExampleStatusData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ExampleStatusData({
         this.exampleId,
         this.statusDate,

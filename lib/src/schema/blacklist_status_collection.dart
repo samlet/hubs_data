@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BlacklistStatusList
 @JsonSerializable()
-class BlacklistStatusCollection {
+class BlacklistStatusCollection  {
     // List<domain_BlacklistStatusData>
     final List<BlacklistStatus>? values;
     // String

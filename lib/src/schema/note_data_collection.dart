@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_NoteDataList
 @JsonSerializable()
-class NoteDataCollection {
+class NoteDataCollection  {
     // List<domain_NoteDataData>
     final List<NoteData>? values;
     // String

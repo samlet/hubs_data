@@ -2,29 +2,29 @@ part of '../../../requests.dart';
 
 /// Input_domain_BillingAccountTermData
 @JsonSerializable()
-class BillingAccountTermData {
+class BillingAccountTermData  {
     // String
-    final String? billingAccountTermId;
+    String? billingAccountTermId;
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // String
-    final String? termTypeId;
+    String? termTypeId;
     // Input_routines_Currency
-    final Currency? termValue;
+    Currency? termValue;
     // Long
-    final int? termDays;
+    int? termDays;
     // String
-    final String? uomId;
+    String? uomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_BillingAccountTermData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     BillingAccountTermData({
         this.billingAccountTermId,
         this.billingAccountId,

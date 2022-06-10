@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortAssocList
 @JsonSerializable()
-class WorkEffortAssocCollection {
+class WorkEffortAssocCollection  {
     // List<domain_WorkEffortAssocData>
     final List<WorkEffortAssoc>? values;
     // String

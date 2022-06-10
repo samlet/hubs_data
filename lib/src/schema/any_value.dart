@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// google_protobuf_Any
 @JsonSerializable()
-class AnyValue {
+class AnyValue  {
     // String
     final String? typeUrl;
     // String

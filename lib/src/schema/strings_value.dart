@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// routines_Strings
 @JsonSerializable()
-class StringsValue {
+class StringsValue  {
     // List<String>
     final List<String>? value;
     StringsValue({

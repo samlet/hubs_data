@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductConfigProductData
 @JsonSerializable()
-class ProductConfigProductData {
+class ProductConfigProductData  {
     // String
-    final String? configItemId;
+    String? configItemId;
     // String
-    final String? configOptionId;
+    String? configOptionId;
     // String
-    final String? productId;
+    String? productId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductConfigProductData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductConfigProductData({
         this.configItemId,
         this.configOptionId,

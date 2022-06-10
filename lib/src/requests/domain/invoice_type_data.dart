@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_InvoiceTypeData
 @JsonSerializable()
-class InvoiceTypeData {
+class InvoiceTypeData  {
     // String
-    final String? invoiceTypeId;
+    String? invoiceTypeId;
     // String
-    final String? parentTypeId;
+    String? parentTypeId;
     // routines_Indicator
-    final String? hasTable;
+    String? hasTable;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InvoiceTypeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InvoiceTypeData({
         this.invoiceTypeId,
         this.parentTypeId,

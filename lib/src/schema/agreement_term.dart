@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AgreementTermFlatData
 @JsonSerializable()
-class AgreementTerm extends Equatable{
+class AgreementTerm extends Equatable implements WithKey{
     // String
     final String? agreementTermId;
     // String
@@ -35,16 +35,16 @@ class AgreementTerm extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_AgreementFlatData
-    final Agreement? agreement;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_AgreementFlatData
+    final Agreement? agreement;
     AgreementTerm({
         this.agreementTermId,
         this.termTypeId,
@@ -62,13 +62,15 @@ class AgreementTerm extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.agreement,
+        this.cats,
         this.model,
-        this.proto,
         this.format,
-        this.cats, });
+        this.proto,
+        this.agreement, });
     factory AgreementTerm.fromJson(Map<String, dynamic> json) => _$AgreementTermFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementTermToJson(this);
     @override
     List<Object?> get props => [agreementTermId];
+    @override
+    String get key => agreementTermId!;
 }

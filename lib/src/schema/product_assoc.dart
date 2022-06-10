@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductAssocData
 @JsonSerializable()
-class ProductAssoc extends Equatable{
+class ProductAssoc extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -35,20 +35,20 @@ class ProductAssoc extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_WorkEffortFlatData
-    final WorkEffort? routingWorkEffort;
     // domain_ProductFlatData
     final Product? mainProduct;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_ProductFlatData
     final Product? assocProduct;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_WorkEffortFlatData
+    final WorkEffort? routingWorkEffort;
     ProductAssoc({
         this.productId,
         this.productIdTo,
@@ -66,15 +66,17 @@ class ProductAssoc extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.proto,
-        this.format,
-        this.routingWorkEffort,
         this.mainProduct,
+        this.proto,
         this.model,
-        this.assocProduct, });
+        this.assocProduct,
+        this.cats,
+        this.format,
+        this.routingWorkEffort, });
     factory ProductAssoc.fromJson(Map<String, dynamic> json) => _$ProductAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductAssocToJson(this);
     @override
     List<Object?> get props => [productId, productIdTo, productAssocTypeId, fromDate];
+    @override
+    String get key => id!;
 }

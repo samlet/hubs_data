@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortGoodStandardList
 @JsonSerializable()
-class WorkEffortGoodStandardCollection {
+class WorkEffortGoodStandardCollection  {
     // List<domain_WorkEffortGoodStandardData>
     final List<WorkEffortGoodStandard>? values;
     // String

@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderStatusFlatData
 @JsonSerializable()
-class OrderStatusFlatData {
+class OrderStatusFlatData  {
     // String
-    final String? orderStatusId;
+    String? orderStatusId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? orderPaymentPreferenceId;
+    String? orderPaymentPreferenceId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusDatetime;
+    Timestamp? statusDatetime;
     // String
-    final String? statusUserLogin;
+    String? statusUserLogin;
     // String
-    final String? changeReason;
+    String? changeReason;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderStatusFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderStatusFlatData({
         this.orderStatusId,
         this.statusId,

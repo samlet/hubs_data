@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ReturnAdjustmentList
 @JsonSerializable()
-class ReturnAdjustmentList {
+class ReturnAdjustmentList  {
     // List<Input_domain_ReturnAdjustmentData>
-    final List<ReturnAdjustmentData>? values;
+    List<ReturnAdjustmentData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ReturnAdjustmentList({
         this.values,
         this.nextPageToken,

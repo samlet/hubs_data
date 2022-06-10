@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyGroupFlatData
 @JsonSerializable()
-class PartyGroupFlatData {
+class PartyGroupFlatData  {
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? groupName;
+    String? groupName;
     // String
-    final String? groupNameLocal;
+    String? groupNameLocal;
     // String
-    final String? officeSiteName;
+    String? officeSiteName;
     // Input_routines_Currency
-    final Currency? annualRevenue;
+    Currency? annualRevenue;
     // Long
-    final int? numEmployees;
+    int? numEmployees;
     // String
-    final String? tickerSymbol;
+    String? tickerSymbol;
     // String
-    final String? comments;
+    String? comments;
     // String
-    final String? logoImageUrl;
+    String? logoImageUrl;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyGroupFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyGroupFlatData({
         this.partyId,
         this.groupName,

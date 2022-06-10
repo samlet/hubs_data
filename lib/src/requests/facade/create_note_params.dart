@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_facade_CreateNoteParams
 @JsonSerializable()
-class CreateNoteParams {
+class CreateNoteParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // Input_domain_NoteDataData
-    final NoteDataData? noteData;
+    NoteDataData? noteData;
     // String
-    final String? comment;
+    String? comment;
     CreateNoteParams({
         this.handle,
         this.noteData,

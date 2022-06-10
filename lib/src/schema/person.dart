@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PersonFlatData
 @JsonSerializable()
-class Person extends Equatable{
+class Person extends Equatable implements WithKey{
     // String
     final String? partyId;
     // String
@@ -75,14 +75,14 @@ class Person extends Equatable{
     final String? tenantId;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? party;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     Person({
         this.partyId,
         this.salutation,
@@ -120,12 +120,14 @@ class Person extends Equatable{
         this.createdTxStamp,
         this.tenantId,
         this.model,
-        this.proto,
-        this.format,
+        this.cats,
         this.party,
-        this.cats, });
+        this.format,
+        this.proto, });
     factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
     Map<String, dynamic> toJson() => _$PersonToJson(this);
     @override
     List<Object?> get props => [partyId];
+    @override
+    String get key => partyId!;
 }

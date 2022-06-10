@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_PaymentList
 @JsonSerializable()
-class PaymentList {
+class PaymentList  {
     // List<Input_domain_PaymentFlatData>
-    final List<PaymentFlatData>? values;
+    List<PaymentFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     PaymentList({
         this.values,
         this.nextPageToken,

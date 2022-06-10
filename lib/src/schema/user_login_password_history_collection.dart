@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginPasswordHistoryList
 @JsonSerializable()
-class UserLoginPasswordHistoryCollection {
+class UserLoginPasswordHistoryCollection  {
     // List<domain_UserLoginPasswordHistoryData>
     final List<UserLoginPasswordHistory>? values;
     // String

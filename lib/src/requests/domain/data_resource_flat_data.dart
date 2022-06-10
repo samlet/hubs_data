@@ -2,55 +2,55 @@ part of '../../../requests.dart';
 
 /// Input_domain_DataResourceFlatData
 @JsonSerializable()
-class DataResourceFlatData {
+class DataResourceFlatData  {
     // String
-    final String? dataResourceId;
+    String? dataResourceId;
     // String
-    final String? dataResourceTypeId;
+    String? dataResourceTypeId;
     // String
-    final String? dataTemplateTypeId;
+    String? dataTemplateTypeId;
     // String
-    final String? dataCategoryId;
+    String? dataCategoryId;
     // String
-    final String? dataSourceId;
+    String? dataSourceId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? dataResourceName;
+    String? dataResourceName;
     // String
-    final String? localeString;
+    String? localeString;
     // String
-    final String? mimeTypeId;
+    String? mimeTypeId;
     // String
-    final String? characterSetId;
+    String? characterSetId;
     // String
-    final String? objectInfo;
+    String? objectInfo;
     // String
-    final String? surveyId;
+    String? surveyId;
     // String
-    final String? surveyResponseId;
+    String? surveyResponseId;
     // String
-    final String? relatedDetailId;
+    String? relatedDetailId;
     // routines_Indicator
-    final String? isPublic;
+    String? isPublic;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_DataResourceFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     DataResourceFlatData({
         this.dataResourceId,
         this.dataResourceTypeId,

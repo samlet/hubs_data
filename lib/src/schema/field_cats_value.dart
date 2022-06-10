@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// proto_FieldCats
 @JsonSerializable()
-class FieldCatsValue {
+class FieldCatsValue  {
     // google_protobuf_Struct
     final StructValue? series;
     // google_protobuf_Struct

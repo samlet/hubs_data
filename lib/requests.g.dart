@@ -121,71 +121,6 @@ Map<String, dynamic> _$OrderPaymentPreferenceFlatDataToJson(
   return val;
 }
 
-PartyFlatData _$PartyFlatDataFromJson(Map<String, dynamic> json) =>
-    PartyFlatData(
-      partyId: json['partyId'] as String?,
-      partyTypeId: json['partyTypeId'] as String?,
-      externalId: json['externalId'] as String?,
-      preferredCurrencyUomId: json['preferredCurrencyUomId'] as String?,
-      description: json['description'] as String?,
-      statusId: json['statusId'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      dataSourceId: json['dataSourceId'] as String?,
-      isUnread: json['isUnread'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PartyFlatDataToJson(PartyFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('partyTypeId', instance.partyTypeId);
-  writeNotNull('externalId', instance.externalId);
-  writeNotNull('preferredCurrencyUomId', instance.preferredCurrencyUomId);
-  writeNotNull('description', instance.description);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('dataSourceId', instance.dataSourceId);
-  writeNotNull('isUnread', instance.isUnread);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductStoreRoleData _$ProductStoreRoleDataFromJson(
         Map<String, dynamic> json) =>
     ProductStoreRoleData(
@@ -237,82 +172,6 @@ Map<String, dynamic> _$ProductStoreRoleDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductStoreGroupMemberData _$ProductStoreGroupMemberDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreGroupMemberData(
-      productStoreId: json['productStoreId'] as String?,
-      productStoreGroupId: json['productStoreGroupId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStoreGroupMemberDataToJson(
-    ProductStoreGroupMemberData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('productStoreGroupId', instance.productStoreGroupId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-AgreementList _$AgreementListFromJson(Map<String, dynamic> json) =>
-    AgreementList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => AgreementFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$AgreementListToJson(AgreementList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -423,52 +282,6 @@ Map<String, dynamic> _$InvoiceItemListToJson(InvoiceItemList instance) {
   return val;
 }
 
-ShipmentStatusData _$ShipmentStatusDataFromJson(Map<String, dynamic> json) =>
-    ShipmentStatusData(
-      statusId: json['statusId'] as String?,
-      shipmentId: json['shipmentId'] as String?,
-      statusDate: json['statusDate'] == null
-          ? null
-          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
-      changeByUserLoginId: json['changeByUserLoginId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ShipmentStatusDataToJson(ShipmentStatusData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('statusDate', instance.statusDate?.toJson());
-  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 UserPreferenceData _$UserPreferenceDataFromJson(Map<String, dynamic> json) =>
     UserPreferenceData(
       userLoginId: json['userLoginId'] as String?,
@@ -527,170 +340,6 @@ OrderContactMechList _$OrderContactMechListFromJson(
 
 Map<String, dynamic> _$OrderContactMechListToJson(
     OrderContactMechList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductTypeList _$ProductTypeListFromJson(Map<String, dynamic> json) =>
-    ProductTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductTypeListToJson(ProductTypeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductAssocList _$ProductAssocListFromJson(Map<String, dynamic> json) =>
-    ProductAssocList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductAssocData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductAssocListToJson(ProductAssocList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductKeywordData _$ProductKeywordDataFromJson(Map<String, dynamic> json) =>
-    ProductKeywordData(
-      productId: json['productId'] as String?,
-      keyword: json['keyword'] as String?,
-      keywordTypeId: json['keywordTypeId'] as String?,
-      relevancyWeight: json['relevancyWeight'] as int?,
-      statusId: json['statusId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductKeywordDataToJson(ProductKeywordData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productId', instance.productId);
-  writeNotNull('keyword', instance.keyword);
-  writeNotNull('keywordTypeId', instance.keywordTypeId);
-  writeNotNull('relevancyWeight', instance.relevancyWeight);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-PartyStatusData _$PartyStatusDataFromJson(Map<String, dynamic> json) =>
-    PartyStatusData(
-      statusId: json['statusId'] as String?,
-      partyId: json['partyId'] as String?,
-      statusDate: json['statusDate'] == null
-          ? null
-          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
-      changeByUserLoginId: json['changeByUserLoginId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PartyStatusDataToJson(PartyStatusData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('statusDate', instance.statusDate?.toJson());
-  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-OrderHeaderNoteList _$OrderHeaderNoteListFromJson(Map<String, dynamic> json) =>
-    OrderHeaderNoteList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderHeaderNoteData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderHeaderNoteListToJson(OrderHeaderNoteList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -775,50 +424,6 @@ Map<String, dynamic> _$StructToJson(Struct instance) {
   return val;
 }
 
-ProductPromoRuleData _$ProductPromoRuleDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoRuleData(
-      productPromoId: json['productPromoId'] as String?,
-      productPromoRuleId: json['productPromoRuleId'] as String?,
-      ruleName: json['ruleName'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductPromoRuleDataToJson(
-    ProductPromoRuleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
-  writeNotNull('ruleName', instance.ruleName);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 StringValue _$StringValueFromJson(Map<String, dynamic> json) => StringValue(
       value: json['value'] as String?,
     );
@@ -846,33 +451,6 @@ ReturnItemList _$ReturnItemListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ReturnItemListToJson(ReturnItemList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-SecurityGroupPermissionList _$SecurityGroupPermissionListFromJson(
-        Map<String, dynamic> json) =>
-    SecurityGroupPermissionList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              SecurityGroupPermissionData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$SecurityGroupPermissionListToJson(
-    SecurityGroupPermissionList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -956,62 +534,6 @@ Map<String, dynamic> _$ImageDataResourceListToJson(
   return val;
 }
 
-ProductConfigOptionData _$ProductConfigOptionDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductConfigOptionData(
-      configItemId: json['configItemId'] as String?,
-      configOptionId: json['configOptionId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      configOptionName: json['configOptionName'] as String?,
-      description: json['description'] as String?,
-      sequenceNum: json['sequenceNum'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductConfigOptionDataToJson(
-    ProductConfigOptionData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('configItemId', instance.configItemId);
-  writeNotNull('configOptionId', instance.configOptionId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('configOptionName', instance.configOptionName);
-  writeNotNull('description', instance.description);
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 OrderFactStatusList _$OrderFactStatusListFromJson(Map<String, dynamic> json) =>
     OrderFactStatusList(
       values: (json['values'] as List<dynamic>?)
@@ -1087,120 +609,6 @@ Map<String, dynamic> _$InventoryItemStatusDataToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-InventoryItemFlatData _$InventoryItemFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    InventoryItemFlatData(
-      inventoryItemId: json['inventoryItemId'] as String?,
-      inventoryItemTypeId: json['inventoryItemTypeId'] as String?,
-      productId: json['productId'] as String?,
-      partyId: json['partyId'] as String?,
-      ownerPartyId: json['ownerPartyId'] as String?,
-      statusId: json['statusId'] as String?,
-      datetimeReceived: json['datetimeReceived'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['datetimeReceived'] as Map<String, dynamic>),
-      datetimeManufactured: json['datetimeManufactured'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['datetimeManufactured'] as Map<String, dynamic>),
-      expireDate: json['expireDate'] == null
-          ? null
-          : Timestamp.fromJson(json['expireDate'] as Map<String, dynamic>),
-      facilityId: json['facilityId'] as String?,
-      containerId: json['containerId'] as String?,
-      lotId: json['lotId'] as String?,
-      uomId: json['uomId'] as String?,
-      binNumber: json['binNumber'] as String?,
-      locationSeqId: json['locationSeqId'] as String?,
-      comments: json['comments'] as String?,
-      quantityOnHandTotal: json['quantityOnHandTotal'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['quantityOnHandTotal'] as Map<String, dynamic>),
-      availableToPromiseTotal: json['availableToPromiseTotal'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['availableToPromiseTotal'] as Map<String, dynamic>),
-      accountingQuantityTotal: json['accountingQuantityTotal'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['accountingQuantityTotal'] as Map<String, dynamic>),
-      serialNumber: json['serialNumber'] as String?,
-      softIdentifier: json['softIdentifier'] as String?,
-      activationNumber: json['activationNumber'] as String?,
-      activationValidThru: json['activationValidThru'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['activationValidThru'] as Map<String, dynamic>),
-      unitCost: json['unitCost'] == null
-          ? null
-          : FixedPoint.fromJson(json['unitCost'] as Map<String, dynamic>),
-      currencyUomId: json['currencyUomId'] as String?,
-      fixedAssetId: json['fixedAssetId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$InventoryItemFlatDataToJson(
-    InventoryItemFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('inventoryItemId', instance.inventoryItemId);
-  writeNotNull('inventoryItemTypeId', instance.inventoryItemTypeId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('ownerPartyId', instance.ownerPartyId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('datetimeReceived', instance.datetimeReceived?.toJson());
-  writeNotNull('datetimeManufactured', instance.datetimeManufactured?.toJson());
-  writeNotNull('expireDate', instance.expireDate?.toJson());
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('containerId', instance.containerId);
-  writeNotNull('lotId', instance.lotId);
-  writeNotNull('uomId', instance.uomId);
-  writeNotNull('binNumber', instance.binNumber);
-  writeNotNull('locationSeqId', instance.locationSeqId);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('quantityOnHandTotal', instance.quantityOnHandTotal?.toJson());
-  writeNotNull(
-      'availableToPromiseTotal', instance.availableToPromiseTotal?.toJson());
-  writeNotNull(
-      'accountingQuantityTotal', instance.accountingQuantityTotal?.toJson());
-  writeNotNull('serialNumber', instance.serialNumber);
-  writeNotNull('softIdentifier', instance.softIdentifier);
-  writeNotNull('activationNumber', instance.activationNumber);
-  writeNotNull('activationValidThru', instance.activationValidThru?.toJson());
-  writeNotNull('unitCost', instance.unitCost?.toJson());
-  writeNotNull('currencyUomId', instance.currencyUomId);
-  writeNotNull('fixedAssetId', instance.fixedAssetId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
@@ -1948,6 +1356,7782 @@ Map<String, dynamic> _$ShoppingListItemListToJson(
   return val;
 }
 
+SupplierProductList _$SupplierProductListFromJson(Map<String, dynamic> json) =>
+    SupplierProductList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => SupplierProductData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$SupplierProductListToJson(SupplierProductList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+InventoryTransferList _$InventoryTransferListFromJson(
+        Map<String, dynamic> json) =>
+    InventoryTransferList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => InventoryTransferData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$InventoryTransferListToJson(
+    InventoryTransferList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductStorePromoApplData _$ProductStorePromoApplDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStorePromoApplData(
+      productStoreId: json['productStoreId'] as String?,
+      productPromoId: json['productPromoId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      manualOnly: json['manualOnly'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStorePromoApplDataToJson(
+    ProductStorePromoApplData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('manualOnly', instance.manualOnly);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+BillingAccountTermData _$BillingAccountTermDataFromJson(
+        Map<String, dynamic> json) =>
+    BillingAccountTermData(
+      billingAccountTermId: json['billingAccountTermId'] as String?,
+      billingAccountId: json['billingAccountId'] as String?,
+      termTypeId: json['termTypeId'] as String?,
+      termValue: json['termValue'] == null
+          ? null
+          : Currency.fromJson(json['termValue'] as Map<String, dynamic>),
+      termDays: json['termDays'] as int?,
+      uomId: json['uomId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$BillingAccountTermDataToJson(
+    BillingAccountTermData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('billingAccountTermId', instance.billingAccountTermId);
+  writeNotNull('billingAccountId', instance.billingAccountId);
+  writeNotNull('termTypeId', instance.termTypeId);
+  writeNotNull('termValue', instance.termValue?.toJson());
+  writeNotNull('termDays', instance.termDays);
+  writeNotNull('uomId', instance.uomId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+WorkEffortGoodStandardList _$WorkEffortGoodStandardListFromJson(
+        Map<String, dynamic> json) =>
+    WorkEffortGoodStandardList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              WorkEffortGoodStandardData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$WorkEffortGoodStandardListToJson(
+    WorkEffortGoodStandardList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+WorkEffortList _$WorkEffortListFromJson(Map<String, dynamic> json) =>
+    WorkEffortList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => WorkEffortFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$WorkEffortListToJson(WorkEffortList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ModifyExampleTypeParams _$ModifyExampleTypeParamsFromJson(
+        Map<String, dynamic> json) =>
+    ModifyExampleTypeParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : ExampleTypeData.fromJson(json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$ModifyExampleTypeParamsToJson(
+    ModifyExampleTypeParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+FactProtoList _$FactProtoListFromJson(Map<String, dynamic> json) =>
+    FactProtoList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => FactProtoData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$FactProtoListToJson(FactProtoList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ReturnAdjustmentData _$ReturnAdjustmentDataFromJson(
+        Map<String, dynamic> json) =>
+    ReturnAdjustmentData(
+      returnAdjustmentId: json['returnAdjustmentId'] as String?,
+      returnAdjustmentTypeId: json['returnAdjustmentTypeId'] as String?,
+      returnId: json['returnId'] as String?,
+      returnItemSeqId: json['returnItemSeqId'] as String?,
+      shipGroupSeqId: json['shipGroupSeqId'] as String?,
+      comments: json['comments'] as String?,
+      description: json['description'] as String?,
+      returnTypeId: json['returnTypeId'] as String?,
+      orderAdjustmentId: json['orderAdjustmentId'] as String?,
+      amount: json['amount'] == null
+          ? null
+          : Currency.fromJson(json['amount'] as Map<String, dynamic>),
+      productPromoId: json['productPromoId'] as String?,
+      productPromoRuleId: json['productPromoRuleId'] as String?,
+      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
+      productFeatureId: json['productFeatureId'] as String?,
+      correspondingProductId: json['correspondingProductId'] as String?,
+      taxAuthorityRateSeqId: json['taxAuthorityRateSeqId'] as String?,
+      sourceReferenceId: json['sourceReferenceId'] as String?,
+      sourcePercentage: json['sourcePercentage'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['sourcePercentage'] as Map<String, dynamic>),
+      customerReferenceId: json['customerReferenceId'] as String?,
+      primaryGeoId: json['primaryGeoId'] as String?,
+      secondaryGeoId: json['secondaryGeoId'] as String?,
+      exemptAmount: json['exemptAmount'] == null
+          ? null
+          : Currency.fromJson(json['exemptAmount'] as Map<String, dynamic>),
+      taxAuthGeoId: json['taxAuthGeoId'] as String?,
+      taxAuthPartyId: json['taxAuthPartyId'] as String?,
+      overrideGlAccountId: json['overrideGlAccountId'] as String?,
+      includeInTax: json['includeInTax'] as String?,
+      includeInShipping: json['includeInShipping'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ReturnAdjustmentDataToJson(
+    ReturnAdjustmentData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('returnAdjustmentId', instance.returnAdjustmentId);
+  writeNotNull('returnAdjustmentTypeId', instance.returnAdjustmentTypeId);
+  writeNotNull('returnId', instance.returnId);
+  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
+  writeNotNull('shipGroupSeqId', instance.shipGroupSeqId);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('description', instance.description);
+  writeNotNull('returnTypeId', instance.returnTypeId);
+  writeNotNull('orderAdjustmentId', instance.orderAdjustmentId);
+  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
+  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
+  writeNotNull('productFeatureId', instance.productFeatureId);
+  writeNotNull('correspondingProductId', instance.correspondingProductId);
+  writeNotNull('taxAuthorityRateSeqId', instance.taxAuthorityRateSeqId);
+  writeNotNull('sourceReferenceId', instance.sourceReferenceId);
+  writeNotNull('sourcePercentage', instance.sourcePercentage?.toJson());
+  writeNotNull('customerReferenceId', instance.customerReferenceId);
+  writeNotNull('primaryGeoId', instance.primaryGeoId);
+  writeNotNull('secondaryGeoId', instance.secondaryGeoId);
+  writeNotNull('exemptAmount', instance.exemptAmount?.toJson());
+  writeNotNull('taxAuthGeoId', instance.taxAuthGeoId);
+  writeNotNull('taxAuthPartyId', instance.taxAuthPartyId);
+  writeNotNull('overrideGlAccountId', instance.overrideGlAccountId);
+  writeNotNull('includeInTax', instance.includeInTax);
+  writeNotNull('includeInShipping', instance.includeInShipping);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductStoreGroupRoleData _$ProductStoreGroupRoleDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreGroupRoleData(
+      productStoreGroupId: json['productStoreGroupId'] as String?,
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStoreGroupRoleDataToJson(
+    ProductStoreGroupRoleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreGroupId', instance.productStoreGroupId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductPromoList _$ProductPromoListFromJson(Map<String, dynamic> json) =>
+    ProductPromoList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductPromoFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductPromoListToJson(ProductPromoList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductCategoryRollupFlatData _$ProductCategoryRollupFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductCategoryRollupFlatData(
+      productCategoryId: json['productCategoryId'] as String?,
+      parentProductCategoryId: json['parentProductCategoryId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductCategoryRollupFlatDataToJson(
+    ProductCategoryRollupFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productCategoryId', instance.productCategoryId);
+  writeNotNull('parentProductCategoryId', instance.parentProductCategoryId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ReturnStatusData _$ReturnStatusDataFromJson(Map<String, dynamic> json) =>
+    ReturnStatusData(
+      returnStatusId: json['returnStatusId'] as String?,
+      statusId: json['statusId'] as String?,
+      returnId: json['returnId'] as String?,
+      returnItemSeqId: json['returnItemSeqId'] as String?,
+      changeByUserLoginId: json['changeByUserLoginId'] as String?,
+      statusDatetime: json['statusDatetime'] == null
+          ? null
+          : Timestamp.fromJson(json['statusDatetime'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ReturnStatusDataToJson(ReturnStatusData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('returnStatusId', instance.returnStatusId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('returnId', instance.returnId);
+  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
+  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
+  writeNotNull('statusDatetime', instance.statusDatetime?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PartyContactMechData _$PartyContactMechDataFromJson(
+        Map<String, dynamic> json) =>
+    PartyContactMechData(
+      partyId: json['partyId'] as String?,
+      contactMechId: json['contactMechId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      roleTypeId: json['roleTypeId'] as String?,
+      allowSolicitation: json['allowSolicitation'] as String?,
+      extension: json['extension'] as String?,
+      verified: json['verified'] as String?,
+      comments: json['comments'] as String?,
+      yearsWithContactMech: json['yearsWithContactMech'] as int?,
+      monthsWithContactMech: json['monthsWithContactMech'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyContactMechDataToJson(
+    PartyContactMechData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('contactMechId', instance.contactMechId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('allowSolicitation', instance.allowSolicitation);
+  writeNotNull('extension', instance.extension);
+  writeNotNull('verified', instance.verified);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('yearsWithContactMech', instance.yearsWithContactMech);
+  writeNotNull('monthsWithContactMech', instance.monthsWithContactMech);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderFactTypeData _$OrderFactTypeDataFromJson(Map<String, dynamic> json) =>
+    OrderFactTypeData(
+      orderFactTypeId: json['orderFactTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderFactTypeDataToJson(OrderFactTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderFactTypeId', instance.orderFactTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+WebSiteList _$WebSiteListFromJson(Map<String, dynamic> json) => WebSiteList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => WebSiteFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$WebSiteListToJson(WebSiteList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductStorePaymentSettingData _$ProductStorePaymentSettingDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStorePaymentSettingData(
+      productStoreId: json['productStoreId'] as String?,
+      paymentMethodTypeId: json['paymentMethodTypeId'] as String?,
+      paymentServiceTypeEnumId: json['paymentServiceTypeEnumId'] as String?,
+      paymentService: json['paymentService'] as String?,
+      paymentCustomMethodId: json['paymentCustomMethodId'] as String?,
+      paymentGatewayConfigId: json['paymentGatewayConfigId'] as String?,
+      paymentPropertiesPath: json['paymentPropertiesPath'] as String?,
+      applyToAllProducts: json['applyToAllProducts'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStorePaymentSettingDataToJson(
+    ProductStorePaymentSettingData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('paymentMethodTypeId', instance.paymentMethodTypeId);
+  writeNotNull('paymentServiceTypeEnumId', instance.paymentServiceTypeEnumId);
+  writeNotNull('paymentService', instance.paymentService);
+  writeNotNull('paymentCustomMethodId', instance.paymentCustomMethodId);
+  writeNotNull('paymentGatewayConfigId', instance.paymentGatewayConfigId);
+  writeNotNull('paymentPropertiesPath', instance.paymentPropertiesPath);
+  writeNotNull('applyToAllProducts', instance.applyToAllProducts);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+CreateNoteParams _$CreateNoteParamsFromJson(Map<String, dynamic> json) =>
+    CreateNoteParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      noteData: json['noteData'] == null
+          ? null
+          : NoteDataData.fromJson(json['noteData'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateNoteParamsToJson(CreateNoteParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('noteData', instance.noteData?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+UserLoginSessionData _$UserLoginSessionDataFromJson(
+        Map<String, dynamic> json) =>
+    UserLoginSessionData(
+      userLoginId: json['userLoginId'] as String?,
+      savedDate: json['savedDate'] == null
+          ? null
+          : Timestamp.fromJson(json['savedDate'] as Map<String, dynamic>),
+      sessionData: json['sessionData'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$UserLoginSessionDataToJson(
+    UserLoginSessionData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('userLoginId', instance.userLoginId);
+  writeNotNull('savedDate', instance.savedDate?.toJson());
+  writeNotNull('sessionData', instance.sessionData);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ListValue _$ListValueFromJson(Map<String, dynamic> json) => ListValue(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => Value.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ListValueToJson(ListValue instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderRoleData _$OrderRoleDataFromJson(Map<String, dynamic> json) =>
+    OrderRoleData(
+      orderId: json['orderId'] as String?,
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderRoleDataToJson(OrderRoleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderId', instance.orderId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderItemBillingList _$OrderItemBillingListFromJson(
+        Map<String, dynamic> json) =>
+    OrderItemBillingList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderItemBillingData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderItemBillingListToJson(
+    OrderItemBillingList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+AddFacilityContactMechParams _$AddFacilityContactMechParamsFromJson(
+        Map<String, dynamic> json) =>
+    AddFacilityContactMechParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : FacilityContactMechData.fromJson(
+              json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$AddFacilityContactMechParamsToJson(
+    AddFacilityContactMechParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+AgreementProductApplData _$AgreementProductApplDataFromJson(
+        Map<String, dynamic> json) =>
+    AgreementProductApplData(
+      agreementId: json['agreementId'] as String?,
+      agreementItemSeqId: json['agreementItemSeqId'] as String?,
+      productId: json['productId'] as String?,
+      price: json['price'] == null
+          ? null
+          : Currency.fromJson(json['price'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$AgreementProductApplDataToJson(
+    AgreementProductApplData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('agreementId', instance.agreementId);
+  writeNotNull('agreementItemSeqId', instance.agreementItemSeqId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('price', instance.price?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+BlacklistData _$BlacklistDataFromJson(Map<String, dynamic> json) =>
+    BlacklistData(
+      blacklistId: json['blacklistId'] as String?,
+      blacklistTypeId: json['blacklistTypeId'] as String?,
+      statusId: json['statusId'] as String?,
+      tenantId: json['tenantId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$BlacklistDataToJson(BlacklistData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('blacklistId', instance.blacklistId);
+  writeNotNull('blacklistTypeId', instance.blacklistTypeId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ShipmentPackageList _$ShipmentPackageListFromJson(Map<String, dynamic> json) =>
+    ShipmentPackageList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ShipmentPackageData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShipmentPackageListToJson(ShipmentPackageList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+AcctgTransFlatData _$AcctgTransFlatDataFromJson(Map<String, dynamic> json) =>
+    AcctgTransFlatData(
+      acctgTransId: json['acctgTransId'] as String?,
+      acctgTransTypeId: json['acctgTransTypeId'] as String?,
+      description: json['description'] as String?,
+      transactionDate: json['transactionDate'] == null
+          ? null
+          : Timestamp.fromJson(json['transactionDate'] as Map<String, dynamic>),
+      isPosted: json['isPosted'] as String?,
+      postedDate: json['postedDate'] == null
+          ? null
+          : Timestamp.fromJson(json['postedDate'] as Map<String, dynamic>),
+      scheduledPostingDate: json['scheduledPostingDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['scheduledPostingDate'] as Map<String, dynamic>),
+      glJournalId: json['glJournalId'] as String?,
+      glFiscalTypeId: json['glFiscalTypeId'] as String?,
+      voucherRef: json['voucherRef'] as String?,
+      voucherDate: json['voucherDate'] == null
+          ? null
+          : Timestamp.fromJson(json['voucherDate'] as Map<String, dynamic>),
+      groupStatusId: json['groupStatusId'] as String?,
+      fixedAssetId: json['fixedAssetId'] as String?,
+      inventoryItemId: json['inventoryItemId'] as String?,
+      physicalInventoryId: json['physicalInventoryId'] as String?,
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      invoiceId: json['invoiceId'] as String?,
+      paymentId: json['paymentId'] as String?,
+      finAccountTransId: json['finAccountTransId'] as String?,
+      shipmentId: json['shipmentId'] as String?,
+      receiptId: json['receiptId'] as String?,
+      workEffortId: json['workEffortId'] as String?,
+      theirAcctgTransId: json['theirAcctgTransId'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$AcctgTransFlatDataToJson(AcctgTransFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('acctgTransId', instance.acctgTransId);
+  writeNotNull('acctgTransTypeId', instance.acctgTransTypeId);
+  writeNotNull('description', instance.description);
+  writeNotNull('transactionDate', instance.transactionDate?.toJson());
+  writeNotNull('isPosted', instance.isPosted);
+  writeNotNull('postedDate', instance.postedDate?.toJson());
+  writeNotNull('scheduledPostingDate', instance.scheduledPostingDate?.toJson());
+  writeNotNull('glJournalId', instance.glJournalId);
+  writeNotNull('glFiscalTypeId', instance.glFiscalTypeId);
+  writeNotNull('voucherRef', instance.voucherRef);
+  writeNotNull('voucherDate', instance.voucherDate?.toJson());
+  writeNotNull('groupStatusId', instance.groupStatusId);
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('inventoryItemId', instance.inventoryItemId);
+  writeNotNull('physicalInventoryId', instance.physicalInventoryId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('invoiceId', instance.invoiceId);
+  writeNotNull('paymentId', instance.paymentId);
+  writeNotNull('finAccountTransId', instance.finAccountTransId);
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('receiptId', instance.receiptId);
+  writeNotNull('workEffortId', instance.workEffortId);
+  writeNotNull('theirAcctgTransId', instance.theirAcctgTransId);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+AgreementProductApplList _$AgreementProductApplListFromJson(
+        Map<String, dynamic> json) =>
+    AgreementProductApplList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              AgreementProductApplData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AgreementProductApplListToJson(
+    AgreementProductApplList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+SupplierProductFeatureData _$SupplierProductFeatureDataFromJson(
+        Map<String, dynamic> json) =>
+    SupplierProductFeatureData(
+      partyId: json['partyId'] as String?,
+      productFeatureId: json['productFeatureId'] as String?,
+      description: json['description'] as String?,
+      uomId: json['uomId'] as String?,
+      idCode: json['idCode'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$SupplierProductFeatureDataToJson(
+    SupplierProductFeatureData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('productFeatureId', instance.productFeatureId);
+  writeNotNull('description', instance.description);
+  writeNotNull('uomId', instance.uomId);
+  writeNotNull('idCode', instance.idCode);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+Timestamp _$TimestampFromJson(Map<String, dynamic> json) => Timestamp(
+      seconds: json['seconds'] as int?,
+      nanos: json['nanos'] as int?,
+    );
+
+Map<String, dynamic> _$TimestampToJson(Timestamp instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('seconds', instance.seconds);
+  writeNotNull('nanos', instance.nanos);
+  return val;
+}
+
+VideoDataResourceList _$VideoDataResourceListFromJson(
+        Map<String, dynamic> json) =>
+    VideoDataResourceList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => VideoDataResourceData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$VideoDataResourceListToJson(
+    VideoDataResourceList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+DataResourceTypeList _$DataResourceTypeListFromJson(
+        Map<String, dynamic> json) =>
+    DataResourceTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => DataResourceTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$DataResourceTypeListToJson(
+    DataResourceTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductList _$ProductListFromJson(Map<String, dynamic> json) => ProductList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductListToJson(ProductList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductPromoProductList _$ProductPromoProductListFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoProductList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductPromoProductData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductPromoProductListToJson(
+    ProductPromoProductList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+BlacklistStatusList _$BlacklistStatusListFromJson(Map<String, dynamic> json) =>
+    BlacklistStatusList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => BlacklistStatusData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$BlacklistStatusListToJson(BlacklistStatusList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+FixedAssetTypeData _$FixedAssetTypeDataFromJson(Map<String, dynamic> json) =>
+    FixedAssetTypeData(
+      fixedAssetTypeId: json['fixedAssetTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      hasTable: json['hasTable'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$FixedAssetTypeDataToJson(FixedAssetTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fixedAssetTypeId', instance.fixedAssetTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('hasTable', instance.hasTable);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PostalAddressFlatData _$PostalAddressFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    PostalAddressFlatData(
+      contactMechId: json['contactMechId'] as String?,
+      toName: json['toName'] as String?,
+      attnName: json['attnName'] as String?,
+      address1: json['address1'] as String?,
+      address2: json['address2'] as String?,
+      houseNumber: json['houseNumber'] as int?,
+      houseNumberExt: json['houseNumberExt'] as String?,
+      directions: json['directions'] as String?,
+      city: json['city'] as String?,
+      cityGeoId: json['cityGeoId'] as String?,
+      postalCode: json['postalCode'] as String?,
+      postalCodeExt: json['postalCodeExt'] as String?,
+      countryGeoId: json['countryGeoId'] as String?,
+      stateProvinceGeoId: json['stateProvinceGeoId'] as String?,
+      countyGeoId: json['countyGeoId'] as String?,
+      municipalityGeoId: json['municipalityGeoId'] as String?,
+      postalCodeGeoId: json['postalCodeGeoId'] as String?,
+      geoPointId: json['geoPointId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PostalAddressFlatDataToJson(
+    PostalAddressFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('contactMechId', instance.contactMechId);
+  writeNotNull('toName', instance.toName);
+  writeNotNull('attnName', instance.attnName);
+  writeNotNull('address1', instance.address1);
+  writeNotNull('address2', instance.address2);
+  writeNotNull('houseNumber', instance.houseNumber);
+  writeNotNull('houseNumberExt', instance.houseNumberExt);
+  writeNotNull('directions', instance.directions);
+  writeNotNull('city', instance.city);
+  writeNotNull('cityGeoId', instance.cityGeoId);
+  writeNotNull('postalCode', instance.postalCode);
+  writeNotNull('postalCodeExt', instance.postalCodeExt);
+  writeNotNull('countryGeoId', instance.countryGeoId);
+  writeNotNull('stateProvinceGeoId', instance.stateProvinceGeoId);
+  writeNotNull('countyGeoId', instance.countyGeoId);
+  writeNotNull('municipalityGeoId', instance.municipalityGeoId);
+  writeNotNull('postalCodeGeoId', instance.postalCodeGeoId);
+  writeNotNull('geoPointId', instance.geoPointId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PaymentTypeList _$PaymentTypeListFromJson(Map<String, dynamic> json) =>
+    PaymentTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PaymentTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PaymentTypeListToJson(PaymentTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductPromoActionData _$ProductPromoActionDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoActionData(
+      productPromoId: json['productPromoId'] as String?,
+      productPromoRuleId: json['productPromoRuleId'] as String?,
+      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
+      productPromoActionEnumId: json['productPromoActionEnumId'] as String?,
+      customMethodId: json['customMethodId'] as String?,
+      orderAdjustmentTypeId: json['orderAdjustmentTypeId'] as String?,
+      serviceName: json['serviceName'] as String?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      amount: json['amount'] == null
+          ? null
+          : FixedPoint.fromJson(json['amount'] as Map<String, dynamic>),
+      productId: json['productId'] as String?,
+      partyId: json['partyId'] as String?,
+      useCartQuantity: json['useCartQuantity'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductPromoActionDataToJson(
+    ProductPromoActionData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
+  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
+  writeNotNull('productPromoActionEnumId', instance.productPromoActionEnumId);
+  writeNotNull('customMethodId', instance.customMethodId);
+  writeNotNull('orderAdjustmentTypeId', instance.orderAdjustmentTypeId);
+  writeNotNull('serviceName', instance.serviceName);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('productId', instance.productId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('useCartQuantity', instance.useCartQuantity);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductPromoCategoryData _$ProductPromoCategoryDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoCategoryData(
+      productPromoId: json['productPromoId'] as String?,
+      productPromoRuleId: json['productPromoRuleId'] as String?,
+      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
+      productPromoCondSeqId: json['productPromoCondSeqId'] as String?,
+      productCategoryId: json['productCategoryId'] as String?,
+      andGroupId: json['andGroupId'] as String?,
+      productPromoApplEnumId: json['productPromoApplEnumId'] as String?,
+      includeSubCategories: json['includeSubCategories'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductPromoCategoryDataToJson(
+    ProductPromoCategoryData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
+  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
+  writeNotNull('productPromoCondSeqId', instance.productPromoCondSeqId);
+  writeNotNull('productCategoryId', instance.productCategoryId);
+  writeNotNull('andGroupId', instance.andGroupId);
+  writeNotNull('productPromoApplEnumId', instance.productPromoApplEnumId);
+  writeNotNull('includeSubCategories', instance.includeSubCategories);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+FixedAssetList _$FixedAssetListFromJson(Map<String, dynamic> json) =>
+    FixedAssetList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => FixedAssetFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$FixedAssetListToJson(FixedAssetList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ExampleItemData _$ExampleItemDataFromJson(Map<String, dynamic> json) =>
+    ExampleItemData(
+      exampleId: json['exampleId'] as String?,
+      exampleItemSeqId: json['exampleItemSeqId'] as String?,
+      description: json['description'] as String?,
+      amount: (json['amount'] as num?)?.toDouble(),
+      amountUomId: json['amountUomId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ExampleItemDataToJson(ExampleItemData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('exampleId', instance.exampleId);
+  writeNotNull('exampleItemSeqId', instance.exampleItemSeqId);
+  writeNotNull('description', instance.description);
+  writeNotNull('amount', instance.amount);
+  writeNotNull('amountUomId', instance.amountUomId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ReturnItemShipmentData _$ReturnItemShipmentDataFromJson(
+        Map<String, dynamic> json) =>
+    ReturnItemShipmentData(
+      returnId: json['returnId'] as String?,
+      returnItemSeqId: json['returnItemSeqId'] as String?,
+      shipmentId: json['shipmentId'] as String?,
+      shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ReturnItemShipmentDataToJson(
+    ReturnItemShipmentData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('returnId', instance.returnId);
+  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('shipmentItemSeqId', instance.shipmentItemSeqId);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductFacilityAssocData _$ProductFacilityAssocDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductFacilityAssocData(
+      productId: json['productId'] as String?,
+      facilityId: json['facilityId'] as String?,
+      facilityIdTo: json['facilityIdTo'] as String?,
+      facilityAssocTypeId: json['facilityAssocTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      transitTime: json['transitTime'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductFacilityAssocDataToJson(
+    ProductFacilityAssocData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productId', instance.productId);
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('facilityIdTo', instance.facilityIdTo);
+  writeNotNull('facilityAssocTypeId', instance.facilityAssocTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('transitTime', instance.transitTime);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+FixedAssetMaintData _$FixedAssetMaintDataFromJson(Map<String, dynamic> json) =>
+    FixedAssetMaintData(
+      fixedAssetId: json['fixedAssetId'] as String?,
+      maintHistSeqId: json['maintHistSeqId'] as String?,
+      statusId: json['statusId'] as String?,
+      productMaintTypeId: json['productMaintTypeId'] as String?,
+      productMaintSeqId: json['productMaintSeqId'] as String?,
+      scheduleWorkEffortId: json['scheduleWorkEffortId'] as String?,
+      intervalQuantity: json['intervalQuantity'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['intervalQuantity'] as Map<String, dynamic>),
+      intervalUomId: json['intervalUomId'] as String?,
+      intervalMeterTypeId: json['intervalMeterTypeId'] as String?,
+      purchaseOrderId: json['purchaseOrderId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$FixedAssetMaintDataToJson(FixedAssetMaintData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('maintHistSeqId', instance.maintHistSeqId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('productMaintTypeId', instance.productMaintTypeId);
+  writeNotNull('productMaintSeqId', instance.productMaintSeqId);
+  writeNotNull('scheduleWorkEffortId', instance.scheduleWorkEffortId);
+  writeNotNull('intervalQuantity', instance.intervalQuantity?.toJson());
+  writeNotNull('intervalUomId', instance.intervalUomId);
+  writeNotNull('intervalMeterTypeId', instance.intervalMeterTypeId);
+  writeNotNull('purchaseOrderId', instance.purchaseOrderId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+BillingAccountRoleData _$BillingAccountRoleDataFromJson(
+        Map<String, dynamic> json) =>
+    BillingAccountRoleData(
+      billingAccountId: json['billingAccountId'] as String?,
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$BillingAccountRoleDataToJson(
+    BillingAccountRoleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('billingAccountId', instance.billingAccountId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+UserLoginList _$UserLoginListFromJson(Map<String, dynamic> json) =>
+    UserLoginList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => UserLoginFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$UserLoginListToJson(UserLoginList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+BundleListRequest _$BundleListRequestFromJson(Map<String, dynamic> json) =>
+    BundleListRequest(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      pageSize: json['pageSize'] as int?,
+      pageToken: json['pageToken'] as String?,
+      tenantId: json['tenantId'] as String?,
+    );
+
+Map<String, dynamic> _$BundleListRequestToJson(BundleListRequest instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('pageSize', instance.pageSize);
+  writeNotNull('pageToken', instance.pageToken);
+  writeNotNull('tenantId', instance.tenantId);
+  return val;
+}
+
+PartyTypeList _$PartyTypeListFromJson(Map<String, dynamic> json) =>
+    PartyTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PartyTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PartyTypeListToJson(PartyTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductPromoFlatData _$ProductPromoFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoFlatData(
+      productPromoId: json['productPromoId'] as String?,
+      promoName: json['promoName'] as String?,
+      promoText: json['promoText'] as String?,
+      userEntered: json['userEntered'] as String?,
+      showToCustomer: json['showToCustomer'] as String?,
+      requireCode: json['requireCode'] as String?,
+      useLimitPerOrder: json['useLimitPerOrder'] as int?,
+      useLimitPerCustomer: json['useLimitPerCustomer'] as int?,
+      useLimitPerPromotion: json['useLimitPerPromotion'] as int?,
+      billbackFactor: json['billbackFactor'] == null
+          ? null
+          : FixedPoint.fromJson(json['billbackFactor'] as Map<String, dynamic>),
+      overrideOrgPartyId: json['overrideOrgPartyId'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductPromoFlatDataToJson(
+    ProductPromoFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('promoName', instance.promoName);
+  writeNotNull('promoText', instance.promoText);
+  writeNotNull('userEntered', instance.userEntered);
+  writeNotNull('showToCustomer', instance.showToCustomer);
+  writeNotNull('requireCode', instance.requireCode);
+  writeNotNull('useLimitPerOrder', instance.useLimitPerOrder);
+  writeNotNull('useLimitPerCustomer', instance.useLimitPerCustomer);
+  writeNotNull('useLimitPerPromotion', instance.useLimitPerPromotion);
+  writeNotNull('billbackFactor', instance.billbackFactor?.toJson());
+  writeNotNull('overrideOrgPartyId', instance.overrideOrgPartyId);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductStoreEmailSettingList _$ProductStoreEmailSettingListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreEmailSettingList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductStoreEmailSettingData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStoreEmailSettingListToJson(
+    ProductStoreEmailSettingList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ExampleTypeData _$ExampleTypeDataFromJson(Map<String, dynamic> json) =>
+    ExampleTypeData(
+      exampleTypeId: json['exampleTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ExampleTypeDataToJson(ExampleTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('exampleTypeId', instance.exampleTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductStoreFlatData _$ProductStoreFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreFlatData(
+      productStoreId: json['productStoreId'] as String?,
+      primaryStoreGroupId: json['primaryStoreGroupId'] as String?,
+      storeName: json['storeName'] as String?,
+      companyName: json['companyName'] as String?,
+      title: json['title'] as String?,
+      subtitle: json['subtitle'] as String?,
+      payToPartyId: json['payToPartyId'] as String?,
+      daysToCancelNonPay: json['daysToCancelNonPay'] as int?,
+      manualAuthIsCapture: json['manualAuthIsCapture'] as String?,
+      prorateShipping: json['prorateShipping'] as String?,
+      prorateTaxes: json['prorateTaxes'] as String?,
+      viewCartOnAdd: json['viewCartOnAdd'] as String?,
+      autoSaveCart: json['autoSaveCart'] as String?,
+      autoApproveReviews: json['autoApproveReviews'] as String?,
+      isDemoStore: json['isDemoStore'] as String?,
+      isImmediatelyFulfilled: json['isImmediatelyFulfilled'] as String?,
+      inventoryFacilityId: json['inventoryFacilityId'] as String?,
+      oneInventoryFacility: json['oneInventoryFacility'] as String?,
+      checkInventory: json['checkInventory'] as String?,
+      reserveInventory: json['reserveInventory'] as String?,
+      reserveOrderEnumId: json['reserveOrderEnumId'] as String?,
+      requireInventory: json['requireInventory'] as String?,
+      balanceResOnOrderCreation: json['balanceResOnOrderCreation'] as String?,
+      requirementMethodEnumId: json['requirementMethodEnumId'] as String?,
+      orderNumberPrefix: json['orderNumberPrefix'] as String?,
+      defaultLocaleString: json['defaultLocaleString'] as String?,
+      defaultCurrencyUomId: json['defaultCurrencyUomId'] as String?,
+      defaultTimeZoneString: json['defaultTimeZoneString'] as String?,
+      defaultSalesChannelEnumId: json['defaultSalesChannelEnumId'] as String?,
+      allowPassword: json['allowPassword'] as String?,
+      defaultPassword: json['defaultPassword'] as String?,
+      explodeOrderItems: json['explodeOrderItems'] as String?,
+      checkGcBalance: json['checkGcBalance'] as String?,
+      retryFailedAuths: json['retryFailedAuths'] as String?,
+      headerApprovedStatus: json['headerApprovedStatus'] as String?,
+      itemApprovedStatus: json['itemApprovedStatus'] as String?,
+      digitalItemApprovedStatus: json['digitalItemApprovedStatus'] as String?,
+      headerDeclinedStatus: json['headerDeclinedStatus'] as String?,
+      itemDeclinedStatus: json['itemDeclinedStatus'] as String?,
+      headerCancelStatus: json['headerCancelStatus'] as String?,
+      itemCancelStatus: json['itemCancelStatus'] as String?,
+      authDeclinedMessage: json['authDeclinedMessage'] as String?,
+      authFraudMessage: json['authFraudMessage'] as String?,
+      authErrorMessage: json['authErrorMessage'] as String?,
+      visualThemeId: json['visualThemeId'] as String?,
+      storeCreditAccountEnumId: json['storeCreditAccountEnumId'] as String?,
+      usePrimaryEmailUsername: json['usePrimaryEmailUsername'] as String?,
+      requireCustomerRole: json['requireCustomerRole'] as String?,
+      autoInvoiceDigitalItems: json['autoInvoiceDigitalItems'] as String?,
+      reqShipAddrForDigItems: json['reqShipAddrForDigItems'] as String?,
+      showCheckoutGiftOptions: json['showCheckoutGiftOptions'] as String?,
+      selectPaymentTypePerItem: json['selectPaymentTypePerItem'] as String?,
+      showPricesWithVatTax: json['showPricesWithVatTax'] as String?,
+      showTaxIsExempt: json['showTaxIsExempt'] as String?,
+      vatTaxAuthGeoId: json['vatTaxAuthGeoId'] as String?,
+      vatTaxAuthPartyId: json['vatTaxAuthPartyId'] as String?,
+      enableAutoSuggestionList: json['enableAutoSuggestionList'] as String?,
+      enableDigProdUpload: json['enableDigProdUpload'] as String?,
+      prodSearchExcludeVariants: json['prodSearchExcludeVariants'] as String?,
+      digProdUploadCategoryId: json['digProdUploadCategoryId'] as String?,
+      autoOrderCcTryExp: json['autoOrderCcTryExp'] as String?,
+      autoOrderCcTryOtherCards: json['autoOrderCcTryOtherCards'] as String?,
+      autoOrderCcTryLaterNsf: json['autoOrderCcTryLaterNsf'] as String?,
+      autoOrderCcTryLaterMax: json['autoOrderCcTryLaterMax'] as int?,
+      storeCreditValidDays: json['storeCreditValidDays'] as int?,
+      autoApproveInvoice: json['autoApproveInvoice'] as String?,
+      autoApproveOrder: json['autoApproveOrder'] as String?,
+      shipIfCaptureFails: json['shipIfCaptureFails'] as String?,
+      setOwnerUponIssuance: json['setOwnerUponIssuance'] as String?,
+      reqReturnInventoryReceive: json['reqReturnInventoryReceive'] as String?,
+      addToCartRemoveIncompat: json['addToCartRemoveIncompat'] as String?,
+      addToCartReplaceUpsell: json['addToCartReplaceUpsell'] as String?,
+      splitPayPrefPerShpGrp: json['splitPayPrefPerShpGrp'] as String?,
+      managedByLot: json['managedByLot'] as String?,
+      showOutOfStockProducts: json['showOutOfStockProducts'] as String?,
+      orderDecimalQuantity: json['orderDecimalQuantity'] as String?,
+      allowComment: json['allowComment'] as String?,
+      allocateInventory: json['allocateInventory'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStoreFlatDataToJson(
+    ProductStoreFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('primaryStoreGroupId', instance.primaryStoreGroupId);
+  writeNotNull('storeName', instance.storeName);
+  writeNotNull('companyName', instance.companyName);
+  writeNotNull('title', instance.title);
+  writeNotNull('subtitle', instance.subtitle);
+  writeNotNull('payToPartyId', instance.payToPartyId);
+  writeNotNull('daysToCancelNonPay', instance.daysToCancelNonPay);
+  writeNotNull('manualAuthIsCapture', instance.manualAuthIsCapture);
+  writeNotNull('prorateShipping', instance.prorateShipping);
+  writeNotNull('prorateTaxes', instance.prorateTaxes);
+  writeNotNull('viewCartOnAdd', instance.viewCartOnAdd);
+  writeNotNull('autoSaveCart', instance.autoSaveCart);
+  writeNotNull('autoApproveReviews', instance.autoApproveReviews);
+  writeNotNull('isDemoStore', instance.isDemoStore);
+  writeNotNull('isImmediatelyFulfilled', instance.isImmediatelyFulfilled);
+  writeNotNull('inventoryFacilityId', instance.inventoryFacilityId);
+  writeNotNull('oneInventoryFacility', instance.oneInventoryFacility);
+  writeNotNull('checkInventory', instance.checkInventory);
+  writeNotNull('reserveInventory', instance.reserveInventory);
+  writeNotNull('reserveOrderEnumId', instance.reserveOrderEnumId);
+  writeNotNull('requireInventory', instance.requireInventory);
+  writeNotNull('balanceResOnOrderCreation', instance.balanceResOnOrderCreation);
+  writeNotNull('requirementMethodEnumId', instance.requirementMethodEnumId);
+  writeNotNull('orderNumberPrefix', instance.orderNumberPrefix);
+  writeNotNull('defaultLocaleString', instance.defaultLocaleString);
+  writeNotNull('defaultCurrencyUomId', instance.defaultCurrencyUomId);
+  writeNotNull('defaultTimeZoneString', instance.defaultTimeZoneString);
+  writeNotNull('defaultSalesChannelEnumId', instance.defaultSalesChannelEnumId);
+  writeNotNull('allowPassword', instance.allowPassword);
+  writeNotNull('defaultPassword', instance.defaultPassword);
+  writeNotNull('explodeOrderItems', instance.explodeOrderItems);
+  writeNotNull('checkGcBalance', instance.checkGcBalance);
+  writeNotNull('retryFailedAuths', instance.retryFailedAuths);
+  writeNotNull('headerApprovedStatus', instance.headerApprovedStatus);
+  writeNotNull('itemApprovedStatus', instance.itemApprovedStatus);
+  writeNotNull('digitalItemApprovedStatus', instance.digitalItemApprovedStatus);
+  writeNotNull('headerDeclinedStatus', instance.headerDeclinedStatus);
+  writeNotNull('itemDeclinedStatus', instance.itemDeclinedStatus);
+  writeNotNull('headerCancelStatus', instance.headerCancelStatus);
+  writeNotNull('itemCancelStatus', instance.itemCancelStatus);
+  writeNotNull('authDeclinedMessage', instance.authDeclinedMessage);
+  writeNotNull('authFraudMessage', instance.authFraudMessage);
+  writeNotNull('authErrorMessage', instance.authErrorMessage);
+  writeNotNull('visualThemeId', instance.visualThemeId);
+  writeNotNull('storeCreditAccountEnumId', instance.storeCreditAccountEnumId);
+  writeNotNull('usePrimaryEmailUsername', instance.usePrimaryEmailUsername);
+  writeNotNull('requireCustomerRole', instance.requireCustomerRole);
+  writeNotNull('autoInvoiceDigitalItems', instance.autoInvoiceDigitalItems);
+  writeNotNull('reqShipAddrForDigItems', instance.reqShipAddrForDigItems);
+  writeNotNull('showCheckoutGiftOptions', instance.showCheckoutGiftOptions);
+  writeNotNull('selectPaymentTypePerItem', instance.selectPaymentTypePerItem);
+  writeNotNull('showPricesWithVatTax', instance.showPricesWithVatTax);
+  writeNotNull('showTaxIsExempt', instance.showTaxIsExempt);
+  writeNotNull('vatTaxAuthGeoId', instance.vatTaxAuthGeoId);
+  writeNotNull('vatTaxAuthPartyId', instance.vatTaxAuthPartyId);
+  writeNotNull('enableAutoSuggestionList', instance.enableAutoSuggestionList);
+  writeNotNull('enableDigProdUpload', instance.enableDigProdUpload);
+  writeNotNull('prodSearchExcludeVariants', instance.prodSearchExcludeVariants);
+  writeNotNull('digProdUploadCategoryId', instance.digProdUploadCategoryId);
+  writeNotNull('autoOrderCcTryExp', instance.autoOrderCcTryExp);
+  writeNotNull('autoOrderCcTryOtherCards', instance.autoOrderCcTryOtherCards);
+  writeNotNull('autoOrderCcTryLaterNsf', instance.autoOrderCcTryLaterNsf);
+  writeNotNull('autoOrderCcTryLaterMax', instance.autoOrderCcTryLaterMax);
+  writeNotNull('storeCreditValidDays', instance.storeCreditValidDays);
+  writeNotNull('autoApproveInvoice', instance.autoApproveInvoice);
+  writeNotNull('autoApproveOrder', instance.autoApproveOrder);
+  writeNotNull('shipIfCaptureFails', instance.shipIfCaptureFails);
+  writeNotNull('setOwnerUponIssuance', instance.setOwnerUponIssuance);
+  writeNotNull('reqReturnInventoryReceive', instance.reqReturnInventoryReceive);
+  writeNotNull('addToCartRemoveIncompat', instance.addToCartRemoveIncompat);
+  writeNotNull('addToCartReplaceUpsell', instance.addToCartReplaceUpsell);
+  writeNotNull('splitPayPrefPerShpGrp', instance.splitPayPrefPerShpGrp);
+  writeNotNull('managedByLot', instance.managedByLot);
+  writeNotNull('showOutOfStockProducts', instance.showOutOfStockProducts);
+  writeNotNull('orderDecimalQuantity', instance.orderDecimalQuantity);
+  writeNotNull('allowComment', instance.allowComment);
+  writeNotNull('allocateInventory', instance.allocateInventory);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderFactData _$OrderFactDataFromJson(Map<String, dynamic> json) =>
+    OrderFactData(
+      orderId: json['orderId'] as String?,
+      invoiceId: json['invoiceId'] as String?,
+      paymentId: json['paymentId'] as String?,
+      paymentGatewayResponseId: json['paymentGatewayResponseId'] as String?,
+      orderPaymentPreferenceId: json['orderPaymentPreferenceId'] as String?,
+      billingAccountId: json['billingAccountId'] as String?,
+      shipmentId: json['shipmentId'] as String?,
+      orderFactTypeId: json['orderFactTypeId'] as String?,
+      statusId: json['statusId'] as String?,
+      tenantId: json['tenantId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderFactDataToJson(OrderFactData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderId', instance.orderId);
+  writeNotNull('invoiceId', instance.invoiceId);
+  writeNotNull('paymentId', instance.paymentId);
+  writeNotNull('paymentGatewayResponseId', instance.paymentGatewayResponseId);
+  writeNotNull('orderPaymentPreferenceId', instance.orderPaymentPreferenceId);
+  writeNotNull('billingAccountId', instance.billingAccountId);
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('orderFactTypeId', instance.orderFactTypeId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductFeatureTypeList _$ProductFeatureTypeListFromJson(
+        Map<String, dynamic> json) =>
+    ProductFeatureTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => ProductFeatureTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductFeatureTypeListToJson(
+    ProductFeatureTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ShippingDocumentList _$ShippingDocumentListFromJson(
+        Map<String, dynamic> json) =>
+    ShippingDocumentList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ShippingDocumentData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShippingDocumentListToJson(
+    ShippingDocumentList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+WorkEffortGoodStandardData _$WorkEffortGoodStandardDataFromJson(
+        Map<String, dynamic> json) =>
+    WorkEffortGoodStandardData(
+      workEffortId: json['workEffortId'] as String?,
+      productId: json['productId'] as String?,
+      workEffortGoodStdTypeId: json['workEffortGoodStdTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      statusId: json['statusId'] as String?,
+      estimatedQuantity: (json['estimatedQuantity'] as num?)?.toDouble(),
+      estimatedCost: json['estimatedCost'] == null
+          ? null
+          : Currency.fromJson(json['estimatedCost'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$WorkEffortGoodStandardDataToJson(
+    WorkEffortGoodStandardData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('workEffortId', instance.workEffortId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('workEffortGoodStdTypeId', instance.workEffortGoodStdTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('estimatedQuantity', instance.estimatedQuantity);
+  writeNotNull('estimatedCost', instance.estimatedCost?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ShipmentItemBillingData _$ShipmentItemBillingDataFromJson(
+        Map<String, dynamic> json) =>
+    ShipmentItemBillingData(
+      shipmentId: json['shipmentId'] as String?,
+      shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
+      invoiceId: json['invoiceId'] as String?,
+      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ShipmentItemBillingDataToJson(
+    ShipmentItemBillingData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('shipmentItemSeqId', instance.shipmentItemSeqId);
+  writeNotNull('invoiceId', instance.invoiceId);
+  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+AgreementRoleData _$AgreementRoleDataFromJson(Map<String, dynamic> json) =>
+    AgreementRoleData(
+      agreementId: json['agreementId'] as String?,
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$AgreementRoleDataToJson(AgreementRoleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('agreementId', instance.agreementId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+TypesEntityStatusList _$TypesEntityStatusListFromJson(
+        Map<String, dynamic> json) =>
+    TypesEntityStatusList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => TypesEntityStatusData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$TypesEntityStatusListToJson(
+    TypesEntityStatusList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+DecimalMap _$DecimalMapFromJson(Map<String, dynamic> json) => DecimalMap(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => DecimalMapValuesEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$DecimalMapToJson(DecimalMap instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+NoteDataData _$NoteDataDataFromJson(Map<String, dynamic> json) => NoteDataData(
+      noteId: json['noteId'] as String?,
+      noteName: json['noteName'] as String?,
+      noteInfo: json['noteInfo'] as String?,
+      noteDateTime: json['noteDateTime'] == null
+          ? null
+          : Timestamp.fromJson(json['noteDateTime'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      noteParty: json['noteParty'] as String?,
+      moreInfoUrl: json['moreInfoUrl'] as String?,
+      moreInfoItemId: json['moreInfoItemId'] as String?,
+      moreInfoItemName: json['moreInfoItemName'] as String?,
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$NoteDataDataToJson(NoteDataData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('noteId', instance.noteId);
+  writeNotNull('noteName', instance.noteName);
+  writeNotNull('noteInfo', instance.noteInfo);
+  writeNotNull('noteDateTime', instance.noteDateTime?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('noteParty', instance.noteParty);
+  writeNotNull('moreInfoUrl', instance.moreInfoUrl);
+  writeNotNull('moreInfoItemId', instance.moreInfoItemId);
+  writeNotNull('moreInfoItemName', instance.moreInfoItemName);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PaymentGatewayResponseList _$PaymentGatewayResponseListFromJson(
+        Map<String, dynamic> json) =>
+    PaymentGatewayResponseList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PaymentGatewayResponseFlatData.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PaymentGatewayResponseListToJson(
+    PaymentGatewayResponseList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductStoreKeywordOvrdList _$ProductStoreKeywordOvrdListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreKeywordOvrdList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductStoreKeywordOvrdData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStoreKeywordOvrdListToJson(
+    ProductStoreKeywordOvrdList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ContactMechTypeData _$ContactMechTypeDataFromJson(Map<String, dynamic> json) =>
+    ContactMechTypeData(
+      contactMechTypeId: json['contactMechTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      hasTable: json['hasTable'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ContactMechTypeDataToJson(ContactMechTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('contactMechTypeId', instance.contactMechTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('hasTable', instance.hasTable);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ShipmentRouteSegmentList _$ShipmentRouteSegmentListFromJson(
+        Map<String, dynamic> json) =>
+    ShipmentRouteSegmentList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ShipmentRouteSegmentData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShipmentRouteSegmentListToJson(
+    ShipmentRouteSegmentList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+StructFieldsEntry _$StructFieldsEntryFromJson(Map<String, dynamic> json) =>
+    StructFieldsEntry(
+      key: json['key'] as String?,
+      value: json['value'] == null
+          ? null
+          : Value.fromJson(json['value'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$StructFieldsEntryToJson(StructFieldsEntry instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('key', instance.key);
+  writeNotNull('value', instance.value?.toJson());
+  return val;
+}
+
+ContactMechFlatData _$ContactMechFlatDataFromJson(Map<String, dynamic> json) =>
+    ContactMechFlatData(
+      contactMechId: json['contactMechId'] as String?,
+      contactMechTypeId: json['contactMechTypeId'] as String?,
+      infoString: json['infoString'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ContactMechFlatDataToJson(ContactMechFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('contactMechId', instance.contactMechId);
+  writeNotNull('contactMechTypeId', instance.contactMechTypeId);
+  writeNotNull('infoString', instance.infoString);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+FactProtoTypeData _$FactProtoTypeDataFromJson(Map<String, dynamic> json) =>
+    FactProtoTypeData(
+      factProtoTypeId: json['factProtoTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$FactProtoTypeDataToJson(FactProtoTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('factProtoTypeId', instance.factProtoTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+WorkEffortPartyAssignmentData _$WorkEffortPartyAssignmentDataFromJson(
+        Map<String, dynamic> json) =>
+    WorkEffortPartyAssignmentData(
+      workEffortId: json['workEffortId'] as String?,
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      assignedByUserLoginId: json['assignedByUserLoginId'] as String?,
+      statusId: json['statusId'] as String?,
+      statusDateTime: json['statusDateTime'] == null
+          ? null
+          : Timestamp.fromJson(json['statusDateTime'] as Map<String, dynamic>),
+      expectationEnumId: json['expectationEnumId'] as String?,
+      delegateReasonEnumId: json['delegateReasonEnumId'] as String?,
+      facilityId: json['facilityId'] as String?,
+      comments: json['comments'] as String?,
+      mustRsvp: json['mustRsvp'] as String?,
+      availabilityStatusId: json['availabilityStatusId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$WorkEffortPartyAssignmentDataToJson(
+    WorkEffortPartyAssignmentData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('workEffortId', instance.workEffortId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('assignedByUserLoginId', instance.assignedByUserLoginId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('statusDateTime', instance.statusDateTime?.toJson());
+  writeNotNull('expectationEnumId', instance.expectationEnumId);
+  writeNotNull('delegateReasonEnumId', instance.delegateReasonEnumId);
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('mustRsvp', instance.mustRsvp);
+  writeNotNull('availabilityStatusId', instance.availabilityStatusId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PartyNoteData _$PartyNoteDataFromJson(Map<String, dynamic> json) =>
+    PartyNoteData(
+      partyId: json['partyId'] as String?,
+      noteId: json['noteId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyNoteDataToJson(PartyNoteData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('noteId', instance.noteId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+RequirementList _$RequirementListFromJson(Map<String, dynamic> json) =>
+    RequirementList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => RequirementFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$RequirementListToJson(RequirementList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+FixedAssetProductData _$FixedAssetProductDataFromJson(
+        Map<String, dynamic> json) =>
+    FixedAssetProductData(
+      fixedAssetId: json['fixedAssetId'] as String?,
+      productId: json['productId'] as String?,
+      fixedAssetProductTypeId: json['fixedAssetProductTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      comments: json['comments'] as String?,
+      sequenceNum: json['sequenceNum'] as int?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      quantityUomId: json['quantityUomId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$FixedAssetProductDataToJson(
+    FixedAssetProductData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('fixedAssetProductTypeId', instance.fixedAssetProductTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('comments', instance.comments);
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('quantityUomId', instance.quantityUomId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+SecurityPermissionFlatData _$SecurityPermissionFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    SecurityPermissionFlatData(
+      permissionId: json['permissionId'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$SecurityPermissionFlatDataToJson(
+    SecurityPermissionFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('permissionId', instance.permissionId);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ExtractedToken _$ExtractedTokenFromJson(Map<String, dynamic> json) =>
+    ExtractedToken(
+      tokenString: json['tokenString'] as String?,
+      regionId: json['regionId'] as String?,
+      zoneId: json['zoneId'] as String?,
+      loginId: json['loginId'] as String?,
+      ownerId: json['ownerId'] as String?,
+      jwtId: json['jwtId'] as String?,
+    );
+
+Map<String, dynamic> _$ExtractedTokenToJson(ExtractedToken instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('tokenString', instance.tokenString);
+  writeNotNull('regionId', instance.regionId);
+  writeNotNull('zoneId', instance.zoneId);
+  writeNotNull('loginId', instance.loginId);
+  writeNotNull('ownerId', instance.ownerId);
+  writeNotNull('jwtId', instance.jwtId);
+  return val;
+}
+
+ProdCatalogCategoryFlatData _$ProdCatalogCategoryFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    ProdCatalogCategoryFlatData(
+      prodCatalogId: json['prodCatalogId'] as String?,
+      productCategoryId: json['productCategoryId'] as String?,
+      prodCatalogCategoryTypeId: json['prodCatalogCategoryTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProdCatalogCategoryFlatDataToJson(
+    ProdCatalogCategoryFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('prodCatalogId', instance.prodCatalogId);
+  writeNotNull('productCategoryId', instance.productCategoryId);
+  writeNotNull('prodCatalogCategoryTypeId', instance.prodCatalogCategoryTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PartyGroupList _$PartyGroupListFromJson(Map<String, dynamic> json) =>
+    PartyGroupList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PartyGroupFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PartyGroupListToJson(PartyGroupList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+UserLoginPasswordHistoryList _$UserLoginPasswordHistoryListFromJson(
+        Map<String, dynamic> json) =>
+    UserLoginPasswordHistoryList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              UserLoginPasswordHistoryData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$UserLoginPasswordHistoryListToJson(
+    UserLoginPasswordHistoryList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+UpdateNoteParams _$UpdateNoteParamsFromJson(Map<String, dynamic> json) =>
+    UpdateNoteParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      noteData: json['noteData'] == null
+          ? null
+          : NoteDataData.fromJson(json['noteData'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$UpdateNoteParamsToJson(UpdateNoteParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('noteData', instance.noteData?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+ShipmentStatusList _$ShipmentStatusListFromJson(Map<String, dynamic> json) =>
+    ShipmentStatusList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ShipmentStatusData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShipmentStatusListToJson(ShipmentStatusList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ShipmentFlatData _$ShipmentFlatDataFromJson(Map<String, dynamic> json) =>
+    ShipmentFlatData(
+      shipmentId: json['shipmentId'] as String?,
+      shipmentTypeId: json['shipmentTypeId'] as String?,
+      statusId: json['statusId'] as String?,
+      primaryOrderId: json['primaryOrderId'] as String?,
+      primaryReturnId: json['primaryReturnId'] as String?,
+      primaryShipGroupSeqId: json['primaryShipGroupSeqId'] as String?,
+      picklistBinId: json['picklistBinId'] as String?,
+      estimatedReadyDate: json['estimatedReadyDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedReadyDate'] as Map<String, dynamic>),
+      estimatedShipDate: json['estimatedShipDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedShipDate'] as Map<String, dynamic>),
+      estimatedShipWorkEffId: json['estimatedShipWorkEffId'] as String?,
+      estimatedArrivalDate: json['estimatedArrivalDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedArrivalDate'] as Map<String, dynamic>),
+      estimatedArrivalWorkEffId: json['estimatedArrivalWorkEffId'] as String?,
+      latestCancelDate: json['latestCancelDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['latestCancelDate'] as Map<String, dynamic>),
+      estimatedShipCost: json['estimatedShipCost'] == null
+          ? null
+          : Currency.fromJson(
+              json['estimatedShipCost'] as Map<String, dynamic>),
+      currencyUomId: json['currencyUomId'] as String?,
+      handlingInstructions: json['handlingInstructions'] as String?,
+      originFacilityId: json['originFacilityId'] as String?,
+      destinationFacilityId: json['destinationFacilityId'] as String?,
+      originContactMechId: json['originContactMechId'] as String?,
+      originTelecomNumberId: json['originTelecomNumberId'] as String?,
+      destinationContactMechId: json['destinationContactMechId'] as String?,
+      destinationTelecomNumberId: json['destinationTelecomNumberId'] as String?,
+      partyIdTo: json['partyIdTo'] as String?,
+      partyIdFrom: json['partyIdFrom'] as String?,
+      additionalShippingCharge: json['additionalShippingCharge'] == null
+          ? null
+          : Currency.fromJson(
+              json['additionalShippingCharge'] as Map<String, dynamic>),
+      addtlShippingChargeDesc: json['addtlShippingChargeDesc'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ShipmentFlatDataToJson(ShipmentFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('shipmentTypeId', instance.shipmentTypeId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('primaryOrderId', instance.primaryOrderId);
+  writeNotNull('primaryReturnId', instance.primaryReturnId);
+  writeNotNull('primaryShipGroupSeqId', instance.primaryShipGroupSeqId);
+  writeNotNull('picklistBinId', instance.picklistBinId);
+  writeNotNull('estimatedReadyDate', instance.estimatedReadyDate?.toJson());
+  writeNotNull('estimatedShipDate', instance.estimatedShipDate?.toJson());
+  writeNotNull('estimatedShipWorkEffId', instance.estimatedShipWorkEffId);
+  writeNotNull('estimatedArrivalDate', instance.estimatedArrivalDate?.toJson());
+  writeNotNull('estimatedArrivalWorkEffId', instance.estimatedArrivalWorkEffId);
+  writeNotNull('latestCancelDate', instance.latestCancelDate?.toJson());
+  writeNotNull('estimatedShipCost', instance.estimatedShipCost?.toJson());
+  writeNotNull('currencyUomId', instance.currencyUomId);
+  writeNotNull('handlingInstructions', instance.handlingInstructions);
+  writeNotNull('originFacilityId', instance.originFacilityId);
+  writeNotNull('destinationFacilityId', instance.destinationFacilityId);
+  writeNotNull('originContactMechId', instance.originContactMechId);
+  writeNotNull('originTelecomNumberId', instance.originTelecomNumberId);
+  writeNotNull('destinationContactMechId', instance.destinationContactMechId);
+  writeNotNull(
+      'destinationTelecomNumberId', instance.destinationTelecomNumberId);
+  writeNotNull('partyIdTo', instance.partyIdTo);
+  writeNotNull('partyIdFrom', instance.partyIdFrom);
+  writeNotNull(
+      'additionalShippingCharge', instance.additionalShippingCharge?.toJson());
+  writeNotNull('addtlShippingChargeDesc', instance.addtlShippingChargeDesc);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+TypesEntityList _$TypesEntityListFromJson(Map<String, dynamic> json) =>
+    TypesEntityList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => TypesEntityData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$TypesEntityListToJson(TypesEntityList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ReturnItemData _$ReturnItemDataFromJson(Map<String, dynamic> json) =>
+    ReturnItemData(
+      returnId: json['returnId'] as String?,
+      returnItemSeqId: json['returnItemSeqId'] as String?,
+      returnReasonId: json['returnReasonId'] as String?,
+      returnTypeId: json['returnTypeId'] as String?,
+      returnItemTypeId: json['returnItemTypeId'] as String?,
+      productId: json['productId'] as String?,
+      description: json['description'] as String?,
+      orderId: json['orderId'] as String?,
+      orderItemSeqId: json['orderItemSeqId'] as String?,
+      statusId: json['statusId'] as String?,
+      expectedItemStatus: json['expectedItemStatus'] as String?,
+      returnQuantity: json['returnQuantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['returnQuantity'] as Map<String, dynamic>),
+      receivedQuantity: json['receivedQuantity'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['receivedQuantity'] as Map<String, dynamic>),
+      returnPrice: json['returnPrice'] == null
+          ? null
+          : Currency.fromJson(json['returnPrice'] as Map<String, dynamic>),
+      returnItemResponseId: json['returnItemResponseId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ReturnItemDataToJson(ReturnItemData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('returnId', instance.returnId);
+  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
+  writeNotNull('returnReasonId', instance.returnReasonId);
+  writeNotNull('returnTypeId', instance.returnTypeId);
+  writeNotNull('returnItemTypeId', instance.returnItemTypeId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('description', instance.description);
+  writeNotNull('orderId', instance.orderId);
+  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('expectedItemStatus', instance.expectedItemStatus);
+  writeNotNull('returnQuantity', instance.returnQuantity?.toJson());
+  writeNotNull('receivedQuantity', instance.receivedQuantity?.toJson());
+  writeNotNull('returnPrice', instance.returnPrice?.toJson());
+  writeNotNull('returnItemResponseId', instance.returnItemResponseId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+UpdateSecurityGroupPermissionParams
+    _$UpdateSecurityGroupPermissionParamsFromJson(Map<String, dynamic> json) =>
+        UpdateSecurityGroupPermissionParams(
+          handle: json['handle'] == null
+              ? null
+              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+          mainId: json['mainId'] as String?,
+          data: json['data'] == null
+              ? null
+              : SecurityGroupPermissionData.fromJson(
+                  json['data'] as Map<String, dynamic>),
+          comment: json['comment'] as String?,
+        );
+
+Map<String, dynamic> _$UpdateSecurityGroupPermissionParamsToJson(
+    UpdateSecurityGroupPermissionParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+ItemIssuanceFlatData _$ItemIssuanceFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    ItemIssuanceFlatData(
+      itemIssuanceId: json['itemIssuanceId'] as String?,
+      orderId: json['orderId'] as String?,
+      orderItemSeqId: json['orderItemSeqId'] as String?,
+      shipGroupSeqId: json['shipGroupSeqId'] as String?,
+      inventoryItemId: json['inventoryItemId'] as String?,
+      shipmentId: json['shipmentId'] as String?,
+      shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
+      fixedAssetId: json['fixedAssetId'] as String?,
+      maintHistSeqId: json['maintHistSeqId'] as String?,
+      issuedDateTime: json['issuedDateTime'] == null
+          ? null
+          : Timestamp.fromJson(json['issuedDateTime'] as Map<String, dynamic>),
+      issuedByUserLoginId: json['issuedByUserLoginId'] as String?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      cancelQuantity: json['cancelQuantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['cancelQuantity'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ItemIssuanceFlatDataToJson(
+    ItemIssuanceFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('itemIssuanceId', instance.itemIssuanceId);
+  writeNotNull('orderId', instance.orderId);
+  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
+  writeNotNull('shipGroupSeqId', instance.shipGroupSeqId);
+  writeNotNull('inventoryItemId', instance.inventoryItemId);
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('shipmentItemSeqId', instance.shipmentItemSeqId);
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('maintHistSeqId', instance.maintHistSeqId);
+  writeNotNull('issuedDateTime', instance.issuedDateTime?.toJson());
+  writeNotNull('issuedByUserLoginId', instance.issuedByUserLoginId);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('cancelQuantity', instance.cancelQuantity?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+UserPreferenceList _$UserPreferenceListFromJson(Map<String, dynamic> json) =>
+    UserPreferenceList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => UserPreferenceData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$UserPreferenceListToJson(UserPreferenceList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductAssocData _$ProductAssocDataFromJson(Map<String, dynamic> json) =>
+    ProductAssocData(
+      productId: json['productId'] as String?,
+      productIdTo: json['productIdTo'] as String?,
+      productAssocTypeId: json['productAssocTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      reason: json['reason'] as String?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      scrapFactor: json['scrapFactor'] == null
+          ? null
+          : FixedPoint.fromJson(json['scrapFactor'] as Map<String, dynamic>),
+      instruction: json['instruction'] as String?,
+      routingWorkEffortId: json['routingWorkEffortId'] as String?,
+      estimateCalcMethod: json['estimateCalcMethod'] as String?,
+      recurrenceInfoId: json['recurrenceInfoId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductAssocDataToJson(ProductAssocData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productId', instance.productId);
+  writeNotNull('productIdTo', instance.productIdTo);
+  writeNotNull('productAssocTypeId', instance.productAssocTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('reason', instance.reason);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('scrapFactor', instance.scrapFactor?.toJson());
+  writeNotNull('instruction', instance.instruction);
+  writeNotNull('routingWorkEffortId', instance.routingWorkEffortId);
+  writeNotNull('estimateCalcMethod', instance.estimateCalcMethod);
+  writeNotNull('recurrenceInfoId', instance.recurrenceInfoId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductPromoRuleList _$ProductPromoRuleListFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoRuleList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductPromoRuleData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductPromoRuleListToJson(
+    ProductPromoRuleList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+InventoryItemList _$InventoryItemListFromJson(Map<String, dynamic> json) =>
+    InventoryItemList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => InventoryItemFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$InventoryItemListToJson(InventoryItemList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProdCatalogFlatData _$ProdCatalogFlatDataFromJson(Map<String, dynamic> json) =>
+    ProdCatalogFlatData(
+      prodCatalogId: json['prodCatalogId'] as String?,
+      catalogName: json['catalogName'] as String?,
+      useQuickAdd: json['useQuickAdd'] as String?,
+      styleSheet: json['styleSheet'] as String?,
+      headerLogo: json['headerLogo'] as String?,
+      contentPathPrefix: json['contentPathPrefix'] as String?,
+      templatePathPrefix: json['templatePathPrefix'] as String?,
+      viewAllowPermReqd: json['viewAllowPermReqd'] as String?,
+      purchaseAllowPermReqd: json['purchaseAllowPermReqd'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProdCatalogFlatDataToJson(ProdCatalogFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('prodCatalogId', instance.prodCatalogId);
+  writeNotNull('catalogName', instance.catalogName);
+  writeNotNull('useQuickAdd', instance.useQuickAdd);
+  writeNotNull('styleSheet', instance.styleSheet);
+  writeNotNull('headerLogo', instance.headerLogo);
+  writeNotNull('contentPathPrefix', instance.contentPathPrefix);
+  writeNotNull('templatePathPrefix', instance.templatePathPrefix);
+  writeNotNull('viewAllowPermReqd', instance.viewAllowPermReqd);
+  writeNotNull('purchaseAllowPermReqd', instance.purchaseAllowPermReqd);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderItemList _$OrderItemListFromJson(Map<String, dynamic> json) =>
+    OrderItemList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderItemFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderItemListToJson(OrderItemList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+AgreementFlatData _$AgreementFlatDataFromJson(Map<String, dynamic> json) =>
+    AgreementFlatData(
+      agreementId: json['agreementId'] as String?,
+      productId: json['productId'] as String?,
+      partyIdFrom: json['partyIdFrom'] as String?,
+      partyIdTo: json['partyIdTo'] as String?,
+      roleTypeIdFrom: json['roleTypeIdFrom'] as String?,
+      roleTypeIdTo: json['roleTypeIdTo'] as String?,
+      agreementTypeId: json['agreementTypeId'] as String?,
+      agreementDate: json['agreementDate'] == null
+          ? null
+          : Timestamp.fromJson(json['agreementDate'] as Map<String, dynamic>),
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      description: json['description'] as String?,
+      textData: json['textData'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$AgreementFlatDataToJson(AgreementFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('agreementId', instance.agreementId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('partyIdFrom', instance.partyIdFrom);
+  writeNotNull('partyIdTo', instance.partyIdTo);
+  writeNotNull('roleTypeIdFrom', instance.roleTypeIdFrom);
+  writeNotNull('roleTypeIdTo', instance.roleTypeIdTo);
+  writeNotNull('agreementTypeId', instance.agreementTypeId);
+  writeNotNull('agreementDate', instance.agreementDate?.toJson());
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('description', instance.description);
+  writeNotNull('textData', instance.textData);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductKeywordList _$ProductKeywordListFromJson(Map<String, dynamic> json) =>
+    ProductKeywordList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductKeywordData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductKeywordListToJson(ProductKeywordList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+UpdateFacilityContactMechParams _$UpdateFacilityContactMechParamsFromJson(
+        Map<String, dynamic> json) =>
+    UpdateFacilityContactMechParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : FacilityContactMechData.fromJson(
+              json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$UpdateFacilityContactMechParamsToJson(
+    UpdateFacilityContactMechParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+AddExampleItemParams _$AddExampleItemParamsFromJson(
+        Map<String, dynamic> json) =>
+    AddExampleItemParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : ExampleItemData.fromJson(json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$AddExampleItemParamsToJson(
+    AddExampleItemParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+DataResourceFlatData _$DataResourceFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    DataResourceFlatData(
+      dataResourceId: json['dataResourceId'] as String?,
+      dataResourceTypeId: json['dataResourceTypeId'] as String?,
+      dataTemplateTypeId: json['dataTemplateTypeId'] as String?,
+      dataCategoryId: json['dataCategoryId'] as String?,
+      dataSourceId: json['dataSourceId'] as String?,
+      statusId: json['statusId'] as String?,
+      dataResourceName: json['dataResourceName'] as String?,
+      localeString: json['localeString'] as String?,
+      mimeTypeId: json['mimeTypeId'] as String?,
+      characterSetId: json['characterSetId'] as String?,
+      objectInfo: json['objectInfo'] as String?,
+      surveyId: json['surveyId'] as String?,
+      surveyResponseId: json['surveyResponseId'] as String?,
+      relatedDetailId: json['relatedDetailId'] as String?,
+      isPublic: json['isPublic'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$DataResourceFlatDataToJson(
+    DataResourceFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('dataResourceId', instance.dataResourceId);
+  writeNotNull('dataResourceTypeId', instance.dataResourceTypeId);
+  writeNotNull('dataTemplateTypeId', instance.dataTemplateTypeId);
+  writeNotNull('dataCategoryId', instance.dataCategoryId);
+  writeNotNull('dataSourceId', instance.dataSourceId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('dataResourceName', instance.dataResourceName);
+  writeNotNull('localeString', instance.localeString);
+  writeNotNull('mimeTypeId', instance.mimeTypeId);
+  writeNotNull('characterSetId', instance.characterSetId);
+  writeNotNull('objectInfo', instance.objectInfo);
+  writeNotNull('surveyId', instance.surveyId);
+  writeNotNull('surveyResponseId', instance.surveyResponseId);
+  writeNotNull('relatedDetailId', instance.relatedDetailId);
+  writeNotNull('isPublic', instance.isPublic);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+BlacklistTypeList _$BlacklistTypeListFromJson(Map<String, dynamic> json) =>
+    BlacklistTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => BlacklistTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$BlacklistTypeListToJson(BlacklistTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+InvoiceStatusList _$InvoiceStatusListFromJson(Map<String, dynamic> json) =>
+    InvoiceStatusList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => InvoiceStatusData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$InvoiceStatusListToJson(InvoiceStatusList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+OrderFactStatusData _$OrderFactStatusDataFromJson(Map<String, dynamic> json) =>
+    OrderFactStatusData(
+      orderFactId: json['orderFactId'] as String?,
+      statusDate: json['statusDate'] == null
+          ? null
+          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
+      statusEndDate: json['statusEndDate'] == null
+          ? null
+          : Timestamp.fromJson(json['statusEndDate'] as Map<String, dynamic>),
+      changeByUserLoginId: json['changeByUserLoginId'] as String?,
+      statusId: json['statusId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderFactStatusDataToJson(OrderFactStatusData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderFactId', instance.orderFactId);
+  writeNotNull('statusDate', instance.statusDate?.toJson());
+  writeNotNull('statusEndDate', instance.statusEndDate?.toJson());
+  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductStorePromoApplList _$ProductStorePromoApplListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStorePromoApplList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductStorePromoApplData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStorePromoApplListToJson(
+    ProductStorePromoApplList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ReturnHeaderList _$ReturnHeaderListFromJson(Map<String, dynamic> json) =>
+    ReturnHeaderList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ReturnHeaderFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ReturnHeaderListToJson(ReturnHeaderList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PaymentList _$PaymentListFromJson(Map<String, dynamic> json) => PaymentList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PaymentFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PaymentListToJson(PaymentList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ImageDataResourceData _$ImageDataResourceDataFromJson(
+        Map<String, dynamic> json) =>
+    ImageDataResourceData(
+      dataResourceId: json['dataResourceId'] as String?,
+      imageData: json['imageData'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ImageDataResourceDataToJson(
+    ImageDataResourceData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('dataResourceId', instance.dataResourceId);
+  writeNotNull('imageData', instance.imageData);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ReturnStatusList _$ReturnStatusListFromJson(Map<String, dynamic> json) =>
+    ReturnStatusList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ReturnStatusData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ReturnStatusListToJson(ReturnStatusList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+BlacklistItemData _$BlacklistItemDataFromJson(Map<String, dynamic> json) =>
+    BlacklistItemData(
+      blacklistItemId: json['blacklistItemId'] as String?,
+      blacklistId: json['blacklistId'] as String?,
+      loginId: json['loginId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      reason: json['reason'] as String?,
+      blockBy: json['blockBy'] as String?,
+      blacklistItemTypeId: json['blacklistItemTypeId'] as String?,
+      statusId: json['statusId'] as String?,
+      tenantId: json['tenantId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$BlacklistItemDataToJson(BlacklistItemData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('blacklistItemId', instance.blacklistItemId);
+  writeNotNull('blacklistId', instance.blacklistId);
+  writeNotNull('loginId', instance.loginId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('reason', instance.reason);
+  writeNotNull('blockBy', instance.blockBy);
+  writeNotNull('blacklistItemTypeId', instance.blacklistItemTypeId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ElectronicTextList _$ElectronicTextListFromJson(Map<String, dynamic> json) =>
+    ElectronicTextList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => ElectronicTextFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ElectronicTextListToJson(ElectronicTextList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductCategoryMemberFlatData _$ProductCategoryMemberFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductCategoryMemberFlatData(
+      productCategoryId: json['productCategoryId'] as String?,
+      productId: json['productId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      comments: json['comments'] as String?,
+      sequenceNum: json['sequenceNum'] as int?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductCategoryMemberFlatDataToJson(
+    ProductCategoryMemberFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productCategoryId', instance.productCategoryId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('comments', instance.comments);
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+CreateCatalogParams _$CreateCatalogParamsFromJson(Map<String, dynamic> json) =>
+    CreateCatalogParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      prodCatalog: json['prodCatalog'] == null
+          ? null
+          : ProdCatalogFlatData.fromJson(
+              json['prodCatalog'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateCatalogParamsToJson(CreateCatalogParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('prodCatalog', instance.prodCatalog?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+ModifyFacilityTypeParams _$ModifyFacilityTypeParamsFromJson(
+        Map<String, dynamic> json) =>
+    ModifyFacilityTypeParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : FacilityTypeData.fromJson(json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$ModifyFacilityTypeParamsToJson(
+    ModifyFacilityTypeParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+InventoryTransferData _$InventoryTransferDataFromJson(
+        Map<String, dynamic> json) =>
+    InventoryTransferData(
+      inventoryTransferId: json['inventoryTransferId'] as String?,
+      statusId: json['statusId'] as String?,
+      inventoryItemId: json['inventoryItemId'] as String?,
+      facilityId: json['facilityId'] as String?,
+      locationSeqId: json['locationSeqId'] as String?,
+      containerId: json['containerId'] as String?,
+      facilityIdTo: json['facilityIdTo'] as String?,
+      locationSeqIdTo: json['locationSeqIdTo'] as String?,
+      containerIdTo: json['containerIdTo'] as String?,
+      itemIssuanceId: json['itemIssuanceId'] as String?,
+      sendDate: json['sendDate'] == null
+          ? null
+          : Timestamp.fromJson(json['sendDate'] as Map<String, dynamic>),
+      receiveDate: json['receiveDate'] == null
+          ? null
+          : Timestamp.fromJson(json['receiveDate'] as Map<String, dynamic>),
+      comments: json['comments'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$InventoryTransferDataToJson(
+    InventoryTransferData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('inventoryTransferId', instance.inventoryTransferId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('inventoryItemId', instance.inventoryItemId);
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('locationSeqId', instance.locationSeqId);
+  writeNotNull('containerId', instance.containerId);
+  writeNotNull('facilityIdTo', instance.facilityIdTo);
+  writeNotNull('locationSeqIdTo', instance.locationSeqIdTo);
+  writeNotNull('containerIdTo', instance.containerIdTo);
+  writeNotNull('itemIssuanceId', instance.itemIssuanceId);
+  writeNotNull('sendDate', instance.sendDate?.toJson());
+  writeNotNull('receiveDate', instance.receiveDate?.toJson());
+  writeNotNull('comments', instance.comments);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PartyContactMechPurposeData _$PartyContactMechPurposeDataFromJson(
+        Map<String, dynamic> json) =>
+    PartyContactMechPurposeData(
+      partyId: json['partyId'] as String?,
+      contactMechId: json['contactMechId'] as String?,
+      contactMechPurposeTypeId: json['contactMechPurposeTypeId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyContactMechPurposeDataToJson(
+    PartyContactMechPurposeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('contactMechId', instance.contactMechId);
+  writeNotNull('contactMechPurposeTypeId', instance.contactMechPurposeTypeId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ContentAssocList _$ContentAssocListFromJson(Map<String, dynamic> json) =>
+    ContentAssocList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ContentAssocData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ContentAssocListToJson(ContentAssocList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductStoreFacilityList _$ProductStoreFacilityListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreFacilityList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductStoreFacilityFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStoreFacilityListToJson(
+    ProductStoreFacilityList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+Any _$AnyFromJson(Map<String, dynamic> json) => Any(
+      typeUrl: json['typeUrl'] as String?,
+      value: json['value'] as String?,
+    );
+
+Map<String, dynamic> _$AnyToJson(Any instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('typeUrl', instance.typeUrl);
+  writeNotNull('value', instance.value);
+  return val;
+}
+
+OrderItemBillingData _$OrderItemBillingDataFromJson(
+        Map<String, dynamic> json) =>
+    OrderItemBillingData(
+      orderId: json['orderId'] as String?,
+      orderItemSeqId: json['orderItemSeqId'] as String?,
+      invoiceId: json['invoiceId'] as String?,
+      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
+      itemIssuanceId: json['itemIssuanceId'] as String?,
+      shipmentReceiptId: json['shipmentReceiptId'] as String?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      amount: json['amount'] == null
+          ? null
+          : Currency.fromJson(json['amount'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderItemBillingDataToJson(
+    OrderItemBillingData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderId', instance.orderId);
+  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
+  writeNotNull('invoiceId', instance.invoiceId);
+  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
+  writeNotNull('itemIssuanceId', instance.itemIssuanceId);
+  writeNotNull('shipmentReceiptId', instance.shipmentReceiptId);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ShipmentPackageData _$ShipmentPackageDataFromJson(Map<String, dynamic> json) =>
+    ShipmentPackageData(
+      shipmentId: json['shipmentId'] as String?,
+      shipmentPackageSeqId: json['shipmentPackageSeqId'] as String?,
+      shipmentBoxTypeId: json['shipmentBoxTypeId'] as String?,
+      dateCreated: json['dateCreated'] == null
+          ? null
+          : Timestamp.fromJson(json['dateCreated'] as Map<String, dynamic>),
+      boxLength: json['boxLength'] == null
+          ? null
+          : FixedPoint.fromJson(json['boxLength'] as Map<String, dynamic>),
+      boxHeight: json['boxHeight'] == null
+          ? null
+          : FixedPoint.fromJson(json['boxHeight'] as Map<String, dynamic>),
+      boxWidth: json['boxWidth'] == null
+          ? null
+          : FixedPoint.fromJson(json['boxWidth'] as Map<String, dynamic>),
+      dimensionUomId: json['dimensionUomId'] as String?,
+      weight: json['weight'] == null
+          ? null
+          : FixedPoint.fromJson(json['weight'] as Map<String, dynamic>),
+      weightUomId: json['weightUomId'] as String?,
+      insuredValue: json['insuredValue'] == null
+          ? null
+          : Currency.fromJson(json['insuredValue'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ShipmentPackageDataToJson(ShipmentPackageData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('shipmentPackageSeqId', instance.shipmentPackageSeqId);
+  writeNotNull('shipmentBoxTypeId', instance.shipmentBoxTypeId);
+  writeNotNull('dateCreated', instance.dateCreated?.toJson());
+  writeNotNull('boxLength', instance.boxLength?.toJson());
+  writeNotNull('boxHeight', instance.boxHeight?.toJson());
+  writeNotNull('boxWidth', instance.boxWidth?.toJson());
+  writeNotNull('dimensionUomId', instance.dimensionUomId);
+  writeNotNull('weight', instance.weight?.toJson());
+  writeNotNull('weightUomId', instance.weightUomId);
+  writeNotNull('insuredValue', instance.insuredValue?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ShoppingListTypeList _$ShoppingListTypeListFromJson(
+        Map<String, dynamic> json) =>
+    ShoppingListTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ShoppingListTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShoppingListTypeListToJson(
+    ShoppingListTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+WebSiteFlatData _$WebSiteFlatDataFromJson(Map<String, dynamic> json) =>
+    WebSiteFlatData(
+      webSiteId: json['webSiteId'] as String?,
+      siteName: json['siteName'] as String?,
+      httpHost: json['httpHost'] as String?,
+      httpPort: json['httpPort'] as String?,
+      httpsHost: json['httpsHost'] as String?,
+      httpsPort: json['httpsPort'] as String?,
+      enableHttps: json['enableHttps'] as String?,
+      webappPath: json['webappPath'] as String?,
+      standardContentPrefix: json['standardContentPrefix'] as String?,
+      secureContentPrefix: json['secureContentPrefix'] as String?,
+      cookieDomain: json['cookieDomain'] as String?,
+      visualThemeSetId: json['visualThemeSetId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      productStoreId: json['productStoreId'] as String?,
+      allowProductStoreChange: json['allowProductStoreChange'] as String?,
+      hostedPathAlias: json['hostedPathAlias'] as String?,
+      isDefault: json['isDefault'] as String?,
+      displayMaintenancePage: json['displayMaintenancePage'] as String?,
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$WebSiteFlatDataToJson(WebSiteFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('webSiteId', instance.webSiteId);
+  writeNotNull('siteName', instance.siteName);
+  writeNotNull('httpHost', instance.httpHost);
+  writeNotNull('httpPort', instance.httpPort);
+  writeNotNull('httpsHost', instance.httpsHost);
+  writeNotNull('httpsPort', instance.httpsPort);
+  writeNotNull('enableHttps', instance.enableHttps);
+  writeNotNull('webappPath', instance.webappPath);
+  writeNotNull('standardContentPrefix', instance.standardContentPrefix);
+  writeNotNull('secureContentPrefix', instance.secureContentPrefix);
+  writeNotNull('cookieDomain', instance.cookieDomain);
+  writeNotNull('visualThemeSetId', instance.visualThemeSetId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('allowProductStoreChange', instance.allowProductStoreChange);
+  writeNotNull('hostedPathAlias', instance.hostedPathAlias);
+  writeNotNull('isDefault', instance.isDefault);
+  writeNotNull('displayMaintenancePage', instance.displayMaintenancePage);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductStoreRoleList _$ProductStoreRoleListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreRoleList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductStoreRoleData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStoreRoleListToJson(
+    ProductStoreRoleList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductStoreGroupMemberList _$ProductStoreGroupMemberListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreGroupMemberList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductStoreGroupMemberData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStoreGroupMemberListToJson(
+    ProductStoreGroupMemberList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PaymentApplicationFlatData _$PaymentApplicationFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    PaymentApplicationFlatData(
+      paymentApplicationId: json['paymentApplicationId'] as String?,
+      paymentId: json['paymentId'] as String?,
+      invoiceId: json['invoiceId'] as String?,
+      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
+      billingAccountId: json['billingAccountId'] as String?,
+      overrideGlAccountId: json['overrideGlAccountId'] as String?,
+      toPaymentId: json['toPaymentId'] as String?,
+      taxAuthGeoId: json['taxAuthGeoId'] as String?,
+      amountApplied: json['amountApplied'] == null
+          ? null
+          : Currency.fromJson(json['amountApplied'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PaymentApplicationFlatDataToJson(
+    PaymentApplicationFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('paymentApplicationId', instance.paymentApplicationId);
+  writeNotNull('paymentId', instance.paymentId);
+  writeNotNull('invoiceId', instance.invoiceId);
+  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
+  writeNotNull('billingAccountId', instance.billingAccountId);
+  writeNotNull('overrideGlAccountId', instance.overrideGlAccountId);
+  writeNotNull('toPaymentId', instance.toPaymentId);
+  writeNotNull('taxAuthGeoId', instance.taxAuthGeoId);
+  writeNotNull('amountApplied', instance.amountApplied?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PartyRoleData _$PartyRoleDataFromJson(Map<String, dynamic> json) =>
+    PartyRoleData(
+      partyId: json['partyId'] as String?,
+      roleTypeId: json['roleTypeId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyRoleDataToJson(PartyRoleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('roleTypeId', instance.roleTypeId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+AddProdCatalogCategoryParams _$AddProdCatalogCategoryParamsFromJson(
+        Map<String, dynamic> json) =>
+    AddProdCatalogCategoryParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : ProdCatalogCategoryFlatData.fromJson(
+              json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$AddProdCatalogCategoryParamsToJson(
+    AddProdCatalogCategoryParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+FixedPoint _$FixedPointFromJson(Map<String, dynamic> json) => FixedPoint(
+      value: json['value'] as int?,
+      scalingPosition: json['scalingPosition'] as int?,
+    );
+
+Map<String, dynamic> _$FixedPointToJson(FixedPoint instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('value', instance.value);
+  writeNotNull('scalingPosition', instance.scalingPosition);
+  return val;
+}
+
+ProductStoreGroupRoleList _$ProductStoreGroupRoleListFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreGroupRoleList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductStoreGroupRoleData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductStoreGroupRoleListToJson(
+    ProductStoreGroupRoleList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PostalAddressList _$PostalAddressListFromJson(Map<String, dynamic> json) =>
+    PostalAddressList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => PostalAddressFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PostalAddressListToJson(PostalAddressList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PartyTypeData _$PartyTypeDataFromJson(Map<String, dynamic> json) =>
+    PartyTypeData(
+      partyTypeId: json['partyTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      hasTable: json['hasTable'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyTypeDataToJson(PartyTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyTypeId', instance.partyTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('hasTable', instance.hasTable);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderAdjustmentBillingData _$OrderAdjustmentBillingDataFromJson(
+        Map<String, dynamic> json) =>
+    OrderAdjustmentBillingData(
+      orderAdjustmentId: json['orderAdjustmentId'] as String?,
+      invoiceId: json['invoiceId'] as String?,
+      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
+      amount: json['amount'] == null
+          ? null
+          : Currency.fromJson(json['amount'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderAdjustmentBillingDataToJson(
+    OrderAdjustmentBillingData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderAdjustmentId', instance.orderAdjustmentId);
+  writeNotNull('invoiceId', instance.invoiceId);
+  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
+  writeNotNull('amount', instance.amount?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductFlatData _$ProductFlatDataFromJson(Map<String, dynamic> json) =>
+    ProductFlatData(
+      productId: json['productId'] as String?,
+      productTypeId: json['productTypeId'] as String?,
+      primaryProductCategoryId: json['primaryProductCategoryId'] as String?,
+      facilityId: json['facilityId'] as String?,
+      introductionDate: json['introductionDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['introductionDate'] as Map<String, dynamic>),
+      releaseDate: json['releaseDate'] == null
+          ? null
+          : Timestamp.fromJson(json['releaseDate'] as Map<String, dynamic>),
+      supportDiscontinuationDate: json['supportDiscontinuationDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['supportDiscontinuationDate'] as Map<String, dynamic>),
+      salesDiscontinuationDate: json['salesDiscontinuationDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['salesDiscontinuationDate'] as Map<String, dynamic>),
+      salesDiscWhenNotAvail: json['salesDiscWhenNotAvail'] as String?,
+      internalName: json['internalName'] as String?,
+      brandName: json['brandName'] as String?,
+      comments: json['comments'] as String?,
+      productName: json['productName'] as String?,
+      description: json['description'] as String?,
+      longDescription: json['longDescription'] as String?,
+      priceDetailText: json['priceDetailText'] as String?,
+      smallImageUrl: json['smallImageUrl'] as String?,
+      mediumImageUrl: json['mediumImageUrl'] as String?,
+      largeImageUrl: json['largeImageUrl'] as String?,
+      detailImageUrl: json['detailImageUrl'] as String?,
+      originalImageUrl: json['originalImageUrl'] as String?,
+      detailScreen: json['detailScreen'] as String?,
+      inventoryMessage: json['inventoryMessage'] as String?,
+      inventoryItemTypeId: json['inventoryItemTypeId'] as String?,
+      requireInventory: json['requireInventory'] as String?,
+      quantityUomId: json['quantityUomId'] as String?,
+      quantityIncluded: json['quantityIncluded'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['quantityIncluded'] as Map<String, dynamic>),
+      piecesIncluded: json['piecesIncluded'] as int?,
+      requireAmount: json['requireAmount'] as String?,
+      fixedAmount: json['fixedAmount'] == null
+          ? null
+          : Currency.fromJson(json['fixedAmount'] as Map<String, dynamic>),
+      amountUomTypeId: json['amountUomTypeId'] as String?,
+      weightUomId: json['weightUomId'] as String?,
+      shippingWeight: json['shippingWeight'] == null
+          ? null
+          : FixedPoint.fromJson(json['shippingWeight'] as Map<String, dynamic>),
+      productWeight: json['productWeight'] == null
+          ? null
+          : FixedPoint.fromJson(json['productWeight'] as Map<String, dynamic>),
+      heightUomId: json['heightUomId'] as String?,
+      productHeight: json['productHeight'] == null
+          ? null
+          : FixedPoint.fromJson(json['productHeight'] as Map<String, dynamic>),
+      shippingHeight: json['shippingHeight'] == null
+          ? null
+          : FixedPoint.fromJson(json['shippingHeight'] as Map<String, dynamic>),
+      widthUomId: json['widthUomId'] as String?,
+      productWidth: json['productWidth'] == null
+          ? null
+          : FixedPoint.fromJson(json['productWidth'] as Map<String, dynamic>),
+      shippingWidth: json['shippingWidth'] == null
+          ? null
+          : FixedPoint.fromJson(json['shippingWidth'] as Map<String, dynamic>),
+      depthUomId: json['depthUomId'] as String?,
+      productDepth: json['productDepth'] == null
+          ? null
+          : FixedPoint.fromJson(json['productDepth'] as Map<String, dynamic>),
+      shippingDepth: json['shippingDepth'] == null
+          ? null
+          : FixedPoint.fromJson(json['shippingDepth'] as Map<String, dynamic>),
+      diameterUomId: json['diameterUomId'] as String?,
+      productDiameter: json['productDiameter'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['productDiameter'] as Map<String, dynamic>),
+      productRating: json['productRating'] == null
+          ? null
+          : FixedPoint.fromJson(json['productRating'] as Map<String, dynamic>),
+      ratingTypeEnum: json['ratingTypeEnum'] as String?,
+      returnable: json['returnable'] as String?,
+      taxable: json['taxable'] as String?,
+      chargeShipping: json['chargeShipping'] as String?,
+      autoCreateKeywords: json['autoCreateKeywords'] as String?,
+      includeInPromotions: json['includeInPromotions'] as String?,
+      isVirtual: json['isVirtual'] as String?,
+      isVariant: json['isVariant'] as String?,
+      virtualVariantMethodEnum: json['virtualVariantMethodEnum'] as String?,
+      originGeoId: json['originGeoId'] as String?,
+      requirementMethodEnumId: json['requirementMethodEnumId'] as String?,
+      billOfMaterialLevel: json['billOfMaterialLevel'] as int?,
+      reservMaxPersons: json['reservMaxPersons'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['reservMaxPersons'] as Map<String, dynamic>),
+      reserv2ndPPPerc: json['reserv2ndPPPerc'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['reserv2ndPPPerc'] as Map<String, dynamic>),
+      reservNthPPPerc: json['reservNthPPPerc'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['reservNthPPPerc'] as Map<String, dynamic>),
+      configId: json['configId'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      inShippingBox: json['inShippingBox'] as String?,
+      defaultShipmentBoxTypeId: json['defaultShipmentBoxTypeId'] as String?,
+      lotIdFilledIn: json['lotIdFilledIn'] as String?,
+      orderDecimalQuantity: json['orderDecimalQuantity'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductFlatDataToJson(ProductFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productId', instance.productId);
+  writeNotNull('productTypeId', instance.productTypeId);
+  writeNotNull('primaryProductCategoryId', instance.primaryProductCategoryId);
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('introductionDate', instance.introductionDate?.toJson());
+  writeNotNull('releaseDate', instance.releaseDate?.toJson());
+  writeNotNull('supportDiscontinuationDate',
+      instance.supportDiscontinuationDate?.toJson());
+  writeNotNull(
+      'salesDiscontinuationDate', instance.salesDiscontinuationDate?.toJson());
+  writeNotNull('salesDiscWhenNotAvail', instance.salesDiscWhenNotAvail);
+  writeNotNull('internalName', instance.internalName);
+  writeNotNull('brandName', instance.brandName);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('productName', instance.productName);
+  writeNotNull('description', instance.description);
+  writeNotNull('longDescription', instance.longDescription);
+  writeNotNull('priceDetailText', instance.priceDetailText);
+  writeNotNull('smallImageUrl', instance.smallImageUrl);
+  writeNotNull('mediumImageUrl', instance.mediumImageUrl);
+  writeNotNull('largeImageUrl', instance.largeImageUrl);
+  writeNotNull('detailImageUrl', instance.detailImageUrl);
+  writeNotNull('originalImageUrl', instance.originalImageUrl);
+  writeNotNull('detailScreen', instance.detailScreen);
+  writeNotNull('inventoryMessage', instance.inventoryMessage);
+  writeNotNull('inventoryItemTypeId', instance.inventoryItemTypeId);
+  writeNotNull('requireInventory', instance.requireInventory);
+  writeNotNull('quantityUomId', instance.quantityUomId);
+  writeNotNull('quantityIncluded', instance.quantityIncluded?.toJson());
+  writeNotNull('piecesIncluded', instance.piecesIncluded);
+  writeNotNull('requireAmount', instance.requireAmount);
+  writeNotNull('fixedAmount', instance.fixedAmount?.toJson());
+  writeNotNull('amountUomTypeId', instance.amountUomTypeId);
+  writeNotNull('weightUomId', instance.weightUomId);
+  writeNotNull('shippingWeight', instance.shippingWeight?.toJson());
+  writeNotNull('productWeight', instance.productWeight?.toJson());
+  writeNotNull('heightUomId', instance.heightUomId);
+  writeNotNull('productHeight', instance.productHeight?.toJson());
+  writeNotNull('shippingHeight', instance.shippingHeight?.toJson());
+  writeNotNull('widthUomId', instance.widthUomId);
+  writeNotNull('productWidth', instance.productWidth?.toJson());
+  writeNotNull('shippingWidth', instance.shippingWidth?.toJson());
+  writeNotNull('depthUomId', instance.depthUomId);
+  writeNotNull('productDepth', instance.productDepth?.toJson());
+  writeNotNull('shippingDepth', instance.shippingDepth?.toJson());
+  writeNotNull('diameterUomId', instance.diameterUomId);
+  writeNotNull('productDiameter', instance.productDiameter?.toJson());
+  writeNotNull('productRating', instance.productRating?.toJson());
+  writeNotNull('ratingTypeEnum', instance.ratingTypeEnum);
+  writeNotNull('returnable', instance.returnable);
+  writeNotNull('taxable', instance.taxable);
+  writeNotNull('chargeShipping', instance.chargeShipping);
+  writeNotNull('autoCreateKeywords', instance.autoCreateKeywords);
+  writeNotNull('includeInPromotions', instance.includeInPromotions);
+  writeNotNull('isVirtual', instance.isVirtual);
+  writeNotNull('isVariant', instance.isVariant);
+  writeNotNull('virtualVariantMethodEnum', instance.virtualVariantMethodEnum);
+  writeNotNull('originGeoId', instance.originGeoId);
+  writeNotNull('requirementMethodEnumId', instance.requirementMethodEnumId);
+  writeNotNull('billOfMaterialLevel', instance.billOfMaterialLevel);
+  writeNotNull('reservMaxPersons', instance.reservMaxPersons?.toJson());
+  writeNotNull('reserv2ndPPPerc', instance.reserv2ndPPPerc?.toJson());
+  writeNotNull('reservNthPPPerc', instance.reservNthPPPerc?.toJson());
+  writeNotNull('configId', instance.configId);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('inShippingBox', instance.inShippingBox);
+  writeNotNull('defaultShipmentBoxTypeId', instance.defaultShipmentBoxTypeId);
+  writeNotNull('lotIdFilledIn', instance.lotIdFilledIn);
+  writeNotNull('orderDecimalQuantity', instance.orderDecimalQuantity);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+UpdateExampleStatusParams _$UpdateExampleStatusParamsFromJson(
+        Map<String, dynamic> json) =>
+    UpdateExampleStatusParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : ExampleStatusData.fromJson(json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$UpdateExampleStatusParamsToJson(
+    UpdateExampleStatusParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+BillingAccountRoleList _$BillingAccountRoleListFromJson(
+        Map<String, dynamic> json) =>
+    BillingAccountRoleList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => BillingAccountRoleData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$BillingAccountRoleListToJson(
+    BillingAccountRoleList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductFeatureCategoryList _$ProductFeatureCategoryListFromJson(
+        Map<String, dynamic> json) =>
+    ProductFeatureCategoryList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductFeatureCategoryFlatData.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductFeatureCategoryListToJson(
+    ProductFeatureCategoryList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductPromoProductData _$ProductPromoProductDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoProductData(
+      productPromoId: json['productPromoId'] as String?,
+      productPromoRuleId: json['productPromoRuleId'] as String?,
+      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
+      productPromoCondSeqId: json['productPromoCondSeqId'] as String?,
+      productId: json['productId'] as String?,
+      productPromoApplEnumId: json['productPromoApplEnumId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductPromoProductDataToJson(
+    ProductPromoProductData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
+  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
+  writeNotNull('productPromoCondSeqId', instance.productPromoCondSeqId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('productPromoApplEnumId', instance.productPromoApplEnumId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+Value _$ValueFromJson(Map<String, dynamic> json) => Value(
+      nullValue: json['nullValue'] as String?,
+      numberValue: (json['numberValue'] as num?)?.toDouble(),
+      stringValue: json['stringValue'] as String?,
+      boolValue: json['boolValue'] as bool?,
+      structValue: json['structValue'] == null
+          ? null
+          : Struct.fromJson(json['structValue'] as Map<String, dynamic>),
+      listValue: json['listValue'] == null
+          ? null
+          : ListValue.fromJson(json['listValue'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ValueToJson(Value instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('nullValue', instance.nullValue);
+  writeNotNull('numberValue', instance.numberValue);
+  writeNotNull('stringValue', instance.stringValue);
+  writeNotNull('boolValue', instance.boolValue);
+  writeNotNull('structValue', instance.structValue?.toJson());
+  writeNotNull('listValue', instance.listValue?.toJson());
+  return val;
+}
+
+PersonFlatData _$PersonFlatDataFromJson(Map<String, dynamic> json) =>
+    PersonFlatData(
+      partyId: json['partyId'] as String?,
+      salutation: json['salutation'] as String?,
+      firstName: json['firstName'] as String?,
+      middleName: json['middleName'] as String?,
+      lastName: json['lastName'] as String?,
+      personalTitle: json['personalTitle'] as String?,
+      suffix: json['suffix'] as String?,
+      nickname: json['nickname'] as String?,
+      firstNameLocal: json['firstNameLocal'] as String?,
+      middleNameLocal: json['middleNameLocal'] as String?,
+      lastNameLocal: json['lastNameLocal'] as String?,
+      otherLocal: json['otherLocal'] as String?,
+      memberId: json['memberId'] as String?,
+      gender: json['gender'] as String?,
+      birthDate: json['birthDate'] == null
+          ? null
+          : Date.fromJson(json['birthDate'] as Map<String, dynamic>),
+      deceasedDate: json['deceasedDate'] == null
+          ? null
+          : Date.fromJson(json['deceasedDate'] as Map<String, dynamic>),
+      height: (json['height'] as num?)?.toDouble(),
+      weight: (json['weight'] as num?)?.toDouble(),
+      mothersMaidenName: json['mothersMaidenName'] as String?,
+      maritalStatusEnumId: json['maritalStatusEnumId'] as String?,
+      socialSecurityNumber: json['socialSecurityNumber'] as String?,
+      passportNumber: json['passportNumber'] as String?,
+      passportExpireDate: json['passportExpireDate'] == null
+          ? null
+          : Date.fromJson(json['passportExpireDate'] as Map<String, dynamic>),
+      totalYearsWorkExperience:
+          (json['totalYearsWorkExperience'] as num?)?.toDouble(),
+      comments: json['comments'] as String?,
+      employmentStatusEnumId: json['employmentStatusEnumId'] as String?,
+      residenceStatusEnumId: json['residenceStatusEnumId'] as String?,
+      occupation: json['occupation'] as String?,
+      yearsWithEmployer: json['yearsWithEmployer'] as int?,
+      monthsWithEmployer: json['monthsWithEmployer'] as int?,
+      existingCustomer: json['existingCustomer'] as String?,
+      cardId: json['cardId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PersonFlatDataToJson(PersonFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('salutation', instance.salutation);
+  writeNotNull('firstName', instance.firstName);
+  writeNotNull('middleName', instance.middleName);
+  writeNotNull('lastName', instance.lastName);
+  writeNotNull('personalTitle', instance.personalTitle);
+  writeNotNull('suffix', instance.suffix);
+  writeNotNull('nickname', instance.nickname);
+  writeNotNull('firstNameLocal', instance.firstNameLocal);
+  writeNotNull('middleNameLocal', instance.middleNameLocal);
+  writeNotNull('lastNameLocal', instance.lastNameLocal);
+  writeNotNull('otherLocal', instance.otherLocal);
+  writeNotNull('memberId', instance.memberId);
+  writeNotNull('gender', instance.gender);
+  writeNotNull('birthDate', instance.birthDate?.toJson());
+  writeNotNull('deceasedDate', instance.deceasedDate?.toJson());
+  writeNotNull('height', instance.height);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('mothersMaidenName', instance.mothersMaidenName);
+  writeNotNull('maritalStatusEnumId', instance.maritalStatusEnumId);
+  writeNotNull('socialSecurityNumber', instance.socialSecurityNumber);
+  writeNotNull('passportNumber', instance.passportNumber);
+  writeNotNull('passportExpireDate', instance.passportExpireDate?.toJson());
+  writeNotNull('totalYearsWorkExperience', instance.totalYearsWorkExperience);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('employmentStatusEnumId', instance.employmentStatusEnumId);
+  writeNotNull('residenceStatusEnumId', instance.residenceStatusEnumId);
+  writeNotNull('occupation', instance.occupation);
+  writeNotNull('yearsWithEmployer', instance.yearsWithEmployer);
+  writeNotNull('monthsWithEmployer', instance.monthsWithEmployer);
+  writeNotNull('existingCustomer', instance.existingCustomer);
+  writeNotNull('cardId', instance.cardId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+FixedAssetGeoPointList _$FixedAssetGeoPointListFromJson(
+        Map<String, dynamic> json) =>
+    FixedAssetGeoPointList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => FixedAssetGeoPointData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$FixedAssetGeoPointListToJson(
+    FixedAssetGeoPointList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+CreateFacilityParams _$CreateFacilityParamsFromJson(
+        Map<String, dynamic> json) =>
+    CreateFacilityParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      facility: json['facility'] == null
+          ? null
+          : FacilityFlatData.fromJson(json['facility'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateFacilityParamsToJson(
+    CreateFacilityParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+ProductStoreGroupTypeData _$ProductStoreGroupTypeDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreGroupTypeData(
+      productStoreGroupTypeId: json['productStoreGroupTypeId'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStoreGroupTypeDataToJson(
+    ProductStoreGroupTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreGroupTypeId', instance.productStoreGroupTypeId);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+BundleIdsRequest _$BundleIdsRequestFromJson(Map<String, dynamic> json) =>
+    BundleIdsRequest(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    );
+
+Map<String, dynamic> _$BundleIdsRequestToJson(BundleIdsRequest instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('ids', instance.ids);
+  return val;
+}
+
+PartyGeoPointList _$PartyGeoPointListFromJson(Map<String, dynamic> json) =>
+    PartyGeoPointList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PartyGeoPointData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PartyGeoPointListToJson(PartyGeoPointList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ExampleData _$ExampleDataFromJson(Map<String, dynamic> json) => ExampleData(
+      exampleId: json['exampleId'] as String?,
+      exampleTypeId: json['exampleTypeId'] as String?,
+      statusId: json['statusId'] as String?,
+      exampleName: json['exampleName'] as String?,
+      description: json['description'] as String?,
+      longDescription: json['longDescription'] as String?,
+      comments: json['comments'] as String?,
+      exampleSize: json['exampleSize'] as int?,
+      exampleDate: json['exampleDate'] == null
+          ? null
+          : Timestamp.fromJson(json['exampleDate'] as Map<String, dynamic>),
+      anotherDate: json['anotherDate'] == null
+          ? null
+          : Timestamp.fromJson(json['anotherDate'] as Map<String, dynamic>),
+      anotherText: json['anotherText'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ExampleDataToJson(ExampleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('exampleId', instance.exampleId);
+  writeNotNull('exampleTypeId', instance.exampleTypeId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('exampleName', instance.exampleName);
+  writeNotNull('description', instance.description);
+  writeNotNull('longDescription', instance.longDescription);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('exampleSize', instance.exampleSize);
+  writeNotNull('exampleDate', instance.exampleDate?.toJson());
+  writeNotNull('anotherDate', instance.anotherDate?.toJson());
+  writeNotNull('anotherText', instance.anotherText);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+AgreementTermList _$AgreementTermListFromJson(Map<String, dynamic> json) =>
+    AgreementTermList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => AgreementTermFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AgreementTermListToJson(AgreementTermList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PersonList _$PersonListFromJson(Map<String, dynamic> json) => PersonList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PersonFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PersonListToJson(PersonList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ReturnItemShipmentList _$ReturnItemShipmentListFromJson(
+        Map<String, dynamic> json) =>
+    ReturnItemShipmentList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => ReturnItemShipmentData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ReturnItemShipmentListToJson(
+    ReturnItemShipmentList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+OrderFactList _$OrderFactListFromJson(Map<String, dynamic> json) =>
+    OrderFactList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderFactData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderFactListToJson(OrderFactList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductFacilityList _$ProductFacilityListFromJson(Map<String, dynamic> json) =>
+    ProductFacilityList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductFacilityData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductFacilityListToJson(ProductFacilityList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+Currency _$CurrencyFromJson(Map<String, dynamic> json) => Currency(
+      currencyUomId: json['currencyUomId'] as String?,
+      value: json['value'] as String?,
+    );
+
+Map<String, dynamic> _$CurrencyToJson(Currency instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('currencyUomId', instance.currencyUomId);
+  writeNotNull('value', instance.value);
+  return val;
+}
+
+ProdCatalogCategoryList _$ProdCatalogCategoryListFromJson(
+        Map<String, dynamic> json) =>
+    ProdCatalogCategoryList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProdCatalogCategoryFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProdCatalogCategoryListToJson(
+    ProdCatalogCategoryList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+SecurityPermissionList _$SecurityPermissionListFromJson(
+        Map<String, dynamic> json) =>
+    SecurityPermissionList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              SecurityPermissionFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$SecurityPermissionListToJson(
+    SecurityPermissionList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ExampleTypeList _$ExampleTypeListFromJson(Map<String, dynamic> json) =>
+    ExampleTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ExampleTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ExampleTypeListToJson(ExampleTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ShipmentItemList _$ShipmentItemListFromJson(Map<String, dynamic> json) =>
+    ShipmentItemList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ShipmentItemData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShipmentItemListToJson(ShipmentItemList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ReturnItemBillingList _$ReturnItemBillingListFromJson(
+        Map<String, dynamic> json) =>
+    ReturnItemBillingList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => ReturnItemBillingData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ReturnItemBillingListToJson(
+    ReturnItemBillingList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+TypesEntityStatusData _$TypesEntityStatusDataFromJson(
+        Map<String, dynamic> json) =>
+    TypesEntityStatusData(
+      typesEntityId: json['typesEntityId'] as String?,
+      statusDate: json['statusDate'] == null
+          ? null
+          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
+      statusEndDate: json['statusEndDate'] == null
+          ? null
+          : Timestamp.fromJson(json['statusEndDate'] as Map<String, dynamic>),
+      changeByUserLoginId: json['changeByUserLoginId'] as String?,
+      statusId: json['statusId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$TypesEntityStatusDataToJson(
+    TypesEntityStatusData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('typesEntityId', instance.typesEntityId);
+  writeNotNull('statusDate', instance.statusDate?.toJson());
+  writeNotNull('statusEndDate', instance.statusEndDate?.toJson());
+  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ContactMechTypeList _$ContactMechTypeListFromJson(Map<String, dynamic> json) =>
+    ContactMechTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ContactMechTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ContactMechTypeListToJson(ContactMechTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+FacilityFlatData _$FacilityFlatDataFromJson(Map<String, dynamic> json) =>
+    FacilityFlatData(
+      facilityId: json['facilityId'] as String?,
+      facilityTypeId: json['facilityTypeId'] as String?,
+      parentFacilityId: json['parentFacilityId'] as String?,
+      ownerPartyId: json['ownerPartyId'] as String?,
+      defaultInventoryItemTypeId: json['defaultInventoryItemTypeId'] as String?,
+      facilityName: json['facilityName'] as String?,
+      primaryFacilityGroupId: json['primaryFacilityGroupId'] as String?,
+      facilitySize: json['facilitySize'] == null
+          ? null
+          : FixedPoint.fromJson(json['facilitySize'] as Map<String, dynamic>),
+      facilitySizeUomId: json['facilitySizeUomId'] as String?,
+      productStoreId: json['productStoreId'] as String?,
+      defaultDaysToShip: json['defaultDaysToShip'] as int?,
+      openedDate: json['openedDate'] == null
+          ? null
+          : Timestamp.fromJson(json['openedDate'] as Map<String, dynamic>),
+      closedDate: json['closedDate'] == null
+          ? null
+          : Timestamp.fromJson(json['closedDate'] as Map<String, dynamic>),
+      description: json['description'] as String?,
+      defaultDimensionUomId: json['defaultDimensionUomId'] as String?,
+      defaultWeightUomId: json['defaultWeightUomId'] as String?,
+      geoPointId: json['geoPointId'] as String?,
+      facilityLevel: json['facilityLevel'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$FacilityFlatDataToJson(FacilityFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('facilityTypeId', instance.facilityTypeId);
+  writeNotNull('parentFacilityId', instance.parentFacilityId);
+  writeNotNull('ownerPartyId', instance.ownerPartyId);
+  writeNotNull(
+      'defaultInventoryItemTypeId', instance.defaultInventoryItemTypeId);
+  writeNotNull('facilityName', instance.facilityName);
+  writeNotNull('primaryFacilityGroupId', instance.primaryFacilityGroupId);
+  writeNotNull('facilitySize', instance.facilitySize?.toJson());
+  writeNotNull('facilitySizeUomId', instance.facilitySizeUomId);
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('defaultDaysToShip', instance.defaultDaysToShip);
+  writeNotNull('openedDate', instance.openedDate?.toJson());
+  writeNotNull('closedDate', instance.closedDate?.toJson());
+  writeNotNull('description', instance.description);
+  writeNotNull('defaultDimensionUomId', instance.defaultDimensionUomId);
+  writeNotNull('defaultWeightUomId', instance.defaultWeightUomId);
+  writeNotNull('geoPointId', instance.geoPointId);
+  writeNotNull('facilityLevel', instance.facilityLevel);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+AcctgTransList _$AcctgTransListFromJson(Map<String, dynamic> json) =>
+    AcctgTransList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => AcctgTransFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AcctgTransListToJson(AcctgTransList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ExampleStatusList _$ExampleStatusListFromJson(Map<String, dynamic> json) =>
+    ExampleStatusList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ExampleStatusData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ExampleStatusListToJson(ExampleStatusList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+AddFacilityContactMechPurposeParams
+    _$AddFacilityContactMechPurposeParamsFromJson(Map<String, dynamic> json) =>
+        AddFacilityContactMechPurposeParams(
+          handle: json['handle'] == null
+              ? null
+              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+          mainId: json['mainId'] as String?,
+          data: json['data'] == null
+              ? null
+              : FacilityContactMechPurposeData.fromJson(
+                  json['data'] as Map<String, dynamic>),
+          comment: json['comment'] as String?,
+        );
+
+Map<String, dynamic> _$AddFacilityContactMechPurposeParamsToJson(
+    AddFacilityContactMechPurposeParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+ProductFeatureTypeData _$ProductFeatureTypeDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductFeatureTypeData(
+      productFeatureTypeId: json['productFeatureTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      hasTable: json['hasTable'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductFeatureTypeDataToJson(
+    ProductFeatureTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productFeatureTypeId', instance.productFeatureTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('hasTable', instance.hasTable);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductPromoActionList _$ProductPromoActionListFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoActionList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => ProductPromoActionData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductPromoActionListToJson(
+    ProductPromoActionList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductStoreKeywordOvrdData _$ProductStoreKeywordOvrdDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreKeywordOvrdData(
+      productStoreId: json['productStoreId'] as String?,
+      keyword: json['keyword'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      target: json['target'] as String?,
+      targetTypeEnumId: json['targetTypeEnumId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStoreKeywordOvrdDataToJson(
+    ProductStoreKeywordOvrdData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('keyword', instance.keyword);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('target', instance.target);
+  writeNotNull('targetTypeEnumId', instance.targetTypeEnumId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+NoteDataList _$NoteDataListFromJson(Map<String, dynamic> json) => NoteDataList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => NoteDataData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$NoteDataListToJson(NoteDataList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+UpdateExampleItemParams _$UpdateExampleItemParamsFromJson(
+        Map<String, dynamic> json) =>
+    UpdateExampleItemParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : ExampleItemData.fromJson(json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$UpdateExampleItemParamsToJson(
+    UpdateExampleItemParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+PaymentApplicationList _$PaymentApplicationListFromJson(
+        Map<String, dynamic> json) =>
+    PaymentApplicationList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              PaymentApplicationFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PaymentApplicationListToJson(
+    PaymentApplicationList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductCategoryList _$ProductCategoryListFromJson(Map<String, dynamic> json) =>
+    ProductCategoryList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ProductCategoryFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductCategoryListToJson(ProductCategoryList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PartyNoteList _$PartyNoteListFromJson(Map<String, dynamic> json) =>
+    PartyNoteList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => PartyNoteData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$PartyNoteListToJson(PartyNoteList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+UserLoginSecurityGroupList _$UserLoginSecurityGroupListFromJson(
+        Map<String, dynamic> json) =>
+    UserLoginSecurityGroupList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              UserLoginSecurityGroupData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$UserLoginSecurityGroupListToJson(
+    UserLoginSecurityGroupList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+WorkEffortFlatData _$WorkEffortFlatDataFromJson(Map<String, dynamic> json) =>
+    WorkEffortFlatData(
+      workEffortId: json['workEffortId'] as String?,
+      workEffortTypeId: json['workEffortTypeId'] as String?,
+      currentStatusId: json['currentStatusId'] as String?,
+      lastStatusUpdate: json['lastStatusUpdate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastStatusUpdate'] as Map<String, dynamic>),
+      workEffortPurposeTypeId: json['workEffortPurposeTypeId'] as String?,
+      workEffortParentId: json['workEffortParentId'] as String?,
+      scopeEnumId: json['scopeEnumId'] as String?,
+      priority: json['priority'] as int?,
+      percentComplete: json['percentComplete'] as int?,
+      workEffortName: json['workEffortName'] as String?,
+      showAsEnumId: json['showAsEnumId'] as String?,
+      sendNotificationEmail: json['sendNotificationEmail'] as String?,
+      description: json['description'] as String?,
+      locationDesc: json['locationDesc'] as String?,
+      estimatedStartDate: json['estimatedStartDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedStartDate'] as Map<String, dynamic>),
+      estimatedCompletionDate: json['estimatedCompletionDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['estimatedCompletionDate'] as Map<String, dynamic>),
+      actualStartDate: json['actualStartDate'] == null
+          ? null
+          : Timestamp.fromJson(json['actualStartDate'] as Map<String, dynamic>),
+      actualCompletionDate: json['actualCompletionDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['actualCompletionDate'] as Map<String, dynamic>),
+      estimatedMilliSeconds:
+          (json['estimatedMilliSeconds'] as num?)?.toDouble(),
+      estimatedSetupMillis: (json['estimatedSetupMillis'] as num?)?.toDouble(),
+      estimateCalcMethod: json['estimateCalcMethod'] as String?,
+      actualMilliSeconds: (json['actualMilliSeconds'] as num?)?.toDouble(),
+      actualSetupMillis: (json['actualSetupMillis'] as num?)?.toDouble(),
+      totalMilliSecondsAllowed:
+          (json['totalMilliSecondsAllowed'] as num?)?.toDouble(),
+      totalMoneyAllowed: json['totalMoneyAllowed'] == null
+          ? null
+          : Currency.fromJson(
+              json['totalMoneyAllowed'] as Map<String, dynamic>),
+      moneyUomId: json['moneyUomId'] as String?,
+      specialTerms: json['specialTerms'] as String?,
+      timeTransparency: json['timeTransparency'] as int?,
+      universalId: json['universalId'] as String?,
+      sourceReferenceId: json['sourceReferenceId'] as String?,
+      fixedAssetId: json['fixedAssetId'] as String?,
+      facilityId: json['facilityId'] as String?,
+      infoUrl: json['infoUrl'] as String?,
+      recurrenceInfoId: json['recurrenceInfoId'] as String?,
+      tempExprId: json['tempExprId'] as String?,
+      runtimeDataId: json['runtimeDataId'] as String?,
+      noteId: json['noteId'] as String?,
+      serviceLoaderName: json['serviceLoaderName'] as String?,
+      quantityToProduce: json['quantityToProduce'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['quantityToProduce'] as Map<String, dynamic>),
+      quantityProduced: json['quantityProduced'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['quantityProduced'] as Map<String, dynamic>),
+      quantityRejected: json['quantityRejected'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['quantityRejected'] as Map<String, dynamic>),
+      reservPersons: json['reservPersons'] == null
+          ? null
+          : FixedPoint.fromJson(json['reservPersons'] as Map<String, dynamic>),
+      reserv2ndPPPerc: json['reserv2ndPPPerc'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['reserv2ndPPPerc'] as Map<String, dynamic>),
+      reservNthPPPerc: json['reservNthPPPerc'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['reservNthPPPerc'] as Map<String, dynamic>),
+      accommodationMapId: json['accommodationMapId'] as String?,
+      accommodationSpotId: json['accommodationSpotId'] as String?,
+      revisionNumber: json['revisionNumber'] as int?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$WorkEffortFlatDataToJson(WorkEffortFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('workEffortId', instance.workEffortId);
+  writeNotNull('workEffortTypeId', instance.workEffortTypeId);
+  writeNotNull('currentStatusId', instance.currentStatusId);
+  writeNotNull('lastStatusUpdate', instance.lastStatusUpdate?.toJson());
+  writeNotNull('workEffortPurposeTypeId', instance.workEffortPurposeTypeId);
+  writeNotNull('workEffortParentId', instance.workEffortParentId);
+  writeNotNull('scopeEnumId', instance.scopeEnumId);
+  writeNotNull('priority', instance.priority);
+  writeNotNull('percentComplete', instance.percentComplete);
+  writeNotNull('workEffortName', instance.workEffortName);
+  writeNotNull('showAsEnumId', instance.showAsEnumId);
+  writeNotNull('sendNotificationEmail', instance.sendNotificationEmail);
+  writeNotNull('description', instance.description);
+  writeNotNull('locationDesc', instance.locationDesc);
+  writeNotNull('estimatedStartDate', instance.estimatedStartDate?.toJson());
+  writeNotNull(
+      'estimatedCompletionDate', instance.estimatedCompletionDate?.toJson());
+  writeNotNull('actualStartDate', instance.actualStartDate?.toJson());
+  writeNotNull('actualCompletionDate', instance.actualCompletionDate?.toJson());
+  writeNotNull('estimatedMilliSeconds', instance.estimatedMilliSeconds);
+  writeNotNull('estimatedSetupMillis', instance.estimatedSetupMillis);
+  writeNotNull('estimateCalcMethod', instance.estimateCalcMethod);
+  writeNotNull('actualMilliSeconds', instance.actualMilliSeconds);
+  writeNotNull('actualSetupMillis', instance.actualSetupMillis);
+  writeNotNull('totalMilliSecondsAllowed', instance.totalMilliSecondsAllowed);
+  writeNotNull('totalMoneyAllowed', instance.totalMoneyAllowed?.toJson());
+  writeNotNull('moneyUomId', instance.moneyUomId);
+  writeNotNull('specialTerms', instance.specialTerms);
+  writeNotNull('timeTransparency', instance.timeTransparency);
+  writeNotNull('universalId', instance.universalId);
+  writeNotNull('sourceReferenceId', instance.sourceReferenceId);
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('infoUrl', instance.infoUrl);
+  writeNotNull('recurrenceInfoId', instance.recurrenceInfoId);
+  writeNotNull('tempExprId', instance.tempExprId);
+  writeNotNull('runtimeDataId', instance.runtimeDataId);
+  writeNotNull('noteId', instance.noteId);
+  writeNotNull('serviceLoaderName', instance.serviceLoaderName);
+  writeNotNull('quantityToProduce', instance.quantityToProduce?.toJson());
+  writeNotNull('quantityProduced', instance.quantityProduced?.toJson());
+  writeNotNull('quantityRejected', instance.quantityRejected?.toJson());
+  writeNotNull('reservPersons', instance.reservPersons?.toJson());
+  writeNotNull('reserv2ndPPPerc', instance.reserv2ndPPPerc?.toJson());
+  writeNotNull('reservNthPPPerc', instance.reservNthPPPerc?.toJson());
+  writeNotNull('accommodationMapId', instance.accommodationMapId);
+  writeNotNull('accommodationSpotId', instance.accommodationSpotId);
+  writeNotNull('revisionNumber', instance.revisionNumber);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderItemShipGroupAssocData _$OrderItemShipGroupAssocDataFromJson(
+        Map<String, dynamic> json) =>
+    OrderItemShipGroupAssocData(
+      orderId: json['orderId'] as String?,
+      orderItemSeqId: json['orderItemSeqId'] as String?,
+      shipGroupSeqId: json['shipGroupSeqId'] as String?,
+      quantity: json['quantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
+      cancelQuantity: json['cancelQuantity'] == null
+          ? null
+          : FixedPoint.fromJson(json['cancelQuantity'] as Map<String, dynamic>),
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$OrderItemShipGroupAssocDataToJson(
+    OrderItemShipGroupAssocData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('orderId', instance.orderId);
+  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
+  writeNotNull('shipGroupSeqId', instance.shipGroupSeqId);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('cancelQuantity', instance.cancelQuantity?.toJson());
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PaymentTypeData _$PaymentTypeDataFromJson(Map<String, dynamic> json) =>
+    PaymentTypeData(
+      paymentTypeId: json['paymentTypeId'] as String?,
+      parentTypeId: json['parentTypeId'] as String?,
+      hasTable: json['hasTable'] as String?,
+      description: json['description'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PaymentTypeDataToJson(PaymentTypeData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('paymentTypeId', instance.paymentTypeId);
+  writeNotNull('parentTypeId', instance.parentTypeId);
+  writeNotNull('hasTable', instance.hasTable);
+  writeNotNull('description', instance.description);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+FixedAssetProductList _$FixedAssetProductListFromJson(
+        Map<String, dynamic> json) =>
+    FixedAssetProductList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map(
+              (e) => FixedAssetProductData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$FixedAssetProductListToJson(
+    FixedAssetProductList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+AgreementItemList _$AgreementItemListFromJson(Map<String, dynamic> json) =>
+    AgreementItemList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => AgreementItemData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AgreementItemListToJson(AgreementItemList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ShipmentPackageContentList _$ShipmentPackageContentListFromJson(
+        Map<String, dynamic> json) =>
+    ShipmentPackageContentList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              ShipmentPackageContentData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ShipmentPackageContentListToJson(
+    ShipmentPackageContentList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+PartyFlatData _$PartyFlatDataFromJson(Map<String, dynamic> json) =>
+    PartyFlatData(
+      partyId: json['partyId'] as String?,
+      partyTypeId: json['partyTypeId'] as String?,
+      externalId: json['externalId'] as String?,
+      preferredCurrencyUomId: json['preferredCurrencyUomId'] as String?,
+      description: json['description'] as String?,
+      statusId: json['statusId'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
+      createdByUserLogin: json['createdByUserLogin'] as String?,
+      lastModifiedDate: json['lastModifiedDate'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastModifiedDate'] as Map<String, dynamic>),
+      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
+      dataSourceId: json['dataSourceId'] as String?,
+      isUnread: json['isUnread'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyFlatDataToJson(PartyFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('partyTypeId', instance.partyTypeId);
+  writeNotNull('externalId', instance.externalId);
+  writeNotNull('preferredCurrencyUomId', instance.preferredCurrencyUomId);
+  writeNotNull('description', instance.description);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('createdDate', instance.createdDate?.toJson());
+  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
+  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
+  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
+  writeNotNull('dataSourceId', instance.dataSourceId);
+  writeNotNull('isUnread', instance.isUnread);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+ProductStoreGroupMemberData _$ProductStoreGroupMemberDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductStoreGroupMemberData(
+      productStoreId: json['productStoreId'] as String?,
+      productStoreGroupId: json['productStoreGroupId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      sequenceNum: json['sequenceNum'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductStoreGroupMemberDataToJson(
+    ProductStoreGroupMemberData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productStoreId', instance.productStoreId);
+  writeNotNull('productStoreGroupId', instance.productStoreGroupId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+AgreementList _$AgreementListFromJson(Map<String, dynamic> json) =>
+    AgreementList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => AgreementFlatData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$AgreementListToJson(AgreementList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ShipmentStatusData _$ShipmentStatusDataFromJson(Map<String, dynamic> json) =>
+    ShipmentStatusData(
+      statusId: json['statusId'] as String?,
+      shipmentId: json['shipmentId'] as String?,
+      statusDate: json['statusDate'] == null
+          ? null
+          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
+      changeByUserLoginId: json['changeByUserLoginId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ShipmentStatusDataToJson(ShipmentStatusData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('shipmentId', instance.shipmentId);
+  writeNotNull('statusDate', instance.statusDate?.toJson());
+  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+RemoveFacilityContactMechParams _$RemoveFacilityContactMechParamsFromJson(
+        Map<String, dynamic> json) =>
+    RemoveFacilityContactMechParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      itemId: json['itemId'] as String?,
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$RemoveFacilityContactMechParamsToJson(
+    RemoveFacilityContactMechParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('itemId', instance.itemId);
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
+ProductTypeList _$ProductTypeListFromJson(Map<String, dynamic> json) =>
+    ProductTypeList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductTypeData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductTypeListToJson(ProductTypeList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductAssocList _$ProductAssocListFromJson(Map<String, dynamic> json) =>
+    ProductAssocList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => ProductAssocData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$ProductAssocListToJson(ProductAssocList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductKeywordData _$ProductKeywordDataFromJson(Map<String, dynamic> json) =>
+    ProductKeywordData(
+      productId: json['productId'] as String?,
+      keyword: json['keyword'] as String?,
+      keywordTypeId: json['keywordTypeId'] as String?,
+      relevancyWeight: json['relevancyWeight'] as int?,
+      statusId: json['statusId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductKeywordDataToJson(ProductKeywordData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productId', instance.productId);
+  writeNotNull('keyword', instance.keyword);
+  writeNotNull('keywordTypeId', instance.keywordTypeId);
+  writeNotNull('relevancyWeight', instance.relevancyWeight);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+PartyStatusData _$PartyStatusDataFromJson(Map<String, dynamic> json) =>
+    PartyStatusData(
+      statusId: json['statusId'] as String?,
+      partyId: json['partyId'] as String?,
+      statusDate: json['statusDate'] == null
+          ? null
+          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
+      changeByUserLoginId: json['changeByUserLoginId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PartyStatusDataToJson(PartyStatusData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('statusDate', instance.statusDate?.toJson());
+  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+OrderHeaderNoteList _$OrderHeaderNoteListFromJson(Map<String, dynamic> json) =>
+    OrderHeaderNoteList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => OrderHeaderNoteData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$OrderHeaderNoteListToJson(OrderHeaderNoteList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductPromoRuleData _$ProductPromoRuleDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductPromoRuleData(
+      productPromoId: json['productPromoId'] as String?,
+      productPromoRuleId: json['productPromoRuleId'] as String?,
+      ruleName: json['ruleName'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductPromoRuleDataToJson(
+    ProductPromoRuleData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productPromoId', instance.productPromoId);
+  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
+  writeNotNull('ruleName', instance.ruleName);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+SecurityGroupPermissionList _$SecurityGroupPermissionListFromJson(
+        Map<String, dynamic> json) =>
+    SecurityGroupPermissionList(
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) =>
+              SecurityGroupPermissionData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      nextPageToken: json['nextPageToken'] as String?,
+      regionId: json['regionId'] as String?,
+    );
+
+Map<String, dynamic> _$SecurityGroupPermissionListToJson(
+    SecurityGroupPermissionList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
+  writeNotNull('nextPageToken', instance.nextPageToken);
+  writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+ProductConfigOptionData _$ProductConfigOptionDataFromJson(
+        Map<String, dynamic> json) =>
+    ProductConfigOptionData(
+      configItemId: json['configItemId'] as String?,
+      configOptionId: json['configOptionId'] as String?,
+      fromDate: json['fromDate'] == null
+          ? null
+          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
+      thruDate: json['thruDate'] == null
+          ? null
+          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
+      configOptionName: json['configOptionName'] as String?,
+      description: json['description'] as String?,
+      sequenceNum: json['sequenceNum'] as int?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      id: json['id'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ProductConfigOptionDataToJson(
+    ProductConfigOptionData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('configItemId', instance.configItemId);
+  writeNotNull('configOptionId', instance.configOptionId);
+  writeNotNull('fromDate', instance.fromDate?.toJson());
+  writeNotNull('thruDate', instance.thruDate?.toJson());
+  writeNotNull('configOptionName', instance.configOptionName);
+  writeNotNull('description', instance.description);
+  writeNotNull('sequenceNum', instance.sequenceNum);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('id', instance.id);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+InventoryItemFlatData _$InventoryItemFlatDataFromJson(
+        Map<String, dynamic> json) =>
+    InventoryItemFlatData(
+      inventoryItemId: json['inventoryItemId'] as String?,
+      inventoryItemTypeId: json['inventoryItemTypeId'] as String?,
+      productId: json['productId'] as String?,
+      partyId: json['partyId'] as String?,
+      ownerPartyId: json['ownerPartyId'] as String?,
+      statusId: json['statusId'] as String?,
+      datetimeReceived: json['datetimeReceived'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['datetimeReceived'] as Map<String, dynamic>),
+      datetimeManufactured: json['datetimeManufactured'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['datetimeManufactured'] as Map<String, dynamic>),
+      expireDate: json['expireDate'] == null
+          ? null
+          : Timestamp.fromJson(json['expireDate'] as Map<String, dynamic>),
+      facilityId: json['facilityId'] as String?,
+      containerId: json['containerId'] as String?,
+      lotId: json['lotId'] as String?,
+      uomId: json['uomId'] as String?,
+      binNumber: json['binNumber'] as String?,
+      locationSeqId: json['locationSeqId'] as String?,
+      comments: json['comments'] as String?,
+      quantityOnHandTotal: json['quantityOnHandTotal'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['quantityOnHandTotal'] as Map<String, dynamic>),
+      availableToPromiseTotal: json['availableToPromiseTotal'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['availableToPromiseTotal'] as Map<String, dynamic>),
+      accountingQuantityTotal: json['accountingQuantityTotal'] == null
+          ? null
+          : FixedPoint.fromJson(
+              json['accountingQuantityTotal'] as Map<String, dynamic>),
+      serialNumber: json['serialNumber'] as String?,
+      softIdentifier: json['softIdentifier'] as String?,
+      activationNumber: json['activationNumber'] as String?,
+      activationValidThru: json['activationValidThru'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['activationValidThru'] as Map<String, dynamic>),
+      unitCost: json['unitCost'] == null
+          ? null
+          : FixedPoint.fromJson(json['unitCost'] as Map<String, dynamic>),
+      currencyUomId: json['currencyUomId'] as String?,
+      fixedAssetId: json['fixedAssetId'] as String?,
+      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(
+              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
+      createdTxStamp: json['createdTxStamp'] == null
+          ? null
+          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
+      tenantId: json['tenantId'] as String?,
+      extra: json['extra'] == null
+          ? null
+          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$InventoryItemFlatDataToJson(
+    InventoryItemFlatData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('inventoryItemId', instance.inventoryItemId);
+  writeNotNull('inventoryItemTypeId', instance.inventoryItemTypeId);
+  writeNotNull('productId', instance.productId);
+  writeNotNull('partyId', instance.partyId);
+  writeNotNull('ownerPartyId', instance.ownerPartyId);
+  writeNotNull('statusId', instance.statusId);
+  writeNotNull('datetimeReceived', instance.datetimeReceived?.toJson());
+  writeNotNull('datetimeManufactured', instance.datetimeManufactured?.toJson());
+  writeNotNull('expireDate', instance.expireDate?.toJson());
+  writeNotNull('facilityId', instance.facilityId);
+  writeNotNull('containerId', instance.containerId);
+  writeNotNull('lotId', instance.lotId);
+  writeNotNull('uomId', instance.uomId);
+  writeNotNull('binNumber', instance.binNumber);
+  writeNotNull('locationSeqId', instance.locationSeqId);
+  writeNotNull('comments', instance.comments);
+  writeNotNull('quantityOnHandTotal', instance.quantityOnHandTotal?.toJson());
+  writeNotNull(
+      'availableToPromiseTotal', instance.availableToPromiseTotal?.toJson());
+  writeNotNull(
+      'accountingQuantityTotal', instance.accountingQuantityTotal?.toJson());
+  writeNotNull('serialNumber', instance.serialNumber);
+  writeNotNull('softIdentifier', instance.softIdentifier);
+  writeNotNull('activationNumber', instance.activationNumber);
+  writeNotNull('activationValidThru', instance.activationValidThru?.toJson());
+  writeNotNull('unitCost', instance.unitCost?.toJson());
+  writeNotNull('currencyUomId', instance.currencyUomId);
+  writeNotNull('fixedAssetId', instance.fixedAssetId);
+  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
+  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
+  writeNotNull('tenantId', instance.tenantId);
+  writeNotNull('extra', instance.extra?.toJson());
+  writeNotNull(
+      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
 TimeOfDay _$TimeOfDayFromJson(Map<String, dynamic> json) => TimeOfDay(
       hours: json['hours'] as int?,
       minutes: json['minutes'] as int?,
@@ -2117,30 +9301,6 @@ Map<String, dynamic> _$ReturnHeaderFlatDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-SupplierProductList _$SupplierProductListFromJson(Map<String, dynamic> json) =>
-    SupplierProductList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => SupplierProductData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$SupplierProductListToJson(SupplierProductList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -2348,87 +9508,6 @@ Map<String, dynamic> _$RequirementFlatDataToJson(RequirementFlatData instance) {
   return val;
 }
 
-InventoryTransferList _$InventoryTransferListFromJson(
-        Map<String, dynamic> json) =>
-    InventoryTransferList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => InventoryTransferData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$InventoryTransferListToJson(
-    InventoryTransferList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStorePromoApplData _$ProductStorePromoApplDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStorePromoApplData(
-      productStoreId: json['productStoreId'] as String?,
-      productPromoId: json['productPromoId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      manualOnly: json['manualOnly'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStorePromoApplDataToJson(
-    ProductStorePromoApplData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('manualOnly', instance.manualOnly);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 OrderItemFlatData _$OrderItemFlatDataFromJson(Map<String, dynamic> json) =>
     OrderItemFlatData(
       orderId: json['orderId'] as String?,
@@ -2598,85 +9677,6 @@ Map<String, dynamic> _$OrderItemFlatDataToJson(OrderItemFlatData instance) {
   return val;
 }
 
-BillingAccountTermData _$BillingAccountTermDataFromJson(
-        Map<String, dynamic> json) =>
-    BillingAccountTermData(
-      billingAccountTermId: json['billingAccountTermId'] as String?,
-      billingAccountId: json['billingAccountId'] as String?,
-      termTypeId: json['termTypeId'] as String?,
-      termValue: json['termValue'] == null
-          ? null
-          : Currency.fromJson(json['termValue'] as Map<String, dynamic>),
-      termDays: json['termDays'] as int?,
-      uomId: json['uomId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$BillingAccountTermDataToJson(
-    BillingAccountTermData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('billingAccountTermId', instance.billingAccountTermId);
-  writeNotNull('billingAccountId', instance.billingAccountId);
-  writeNotNull('termTypeId', instance.termTypeId);
-  writeNotNull('termValue', instance.termValue?.toJson());
-  writeNotNull('termDays', instance.termDays);
-  writeNotNull('uomId', instance.uomId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-WorkEffortGoodStandardList _$WorkEffortGoodStandardListFromJson(
-        Map<String, dynamic> json) =>
-    WorkEffortGoodStandardList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              WorkEffortGoodStandardData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$WorkEffortGoodStandardListToJson(
-    WorkEffortGoodStandardList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 InvoiceStatusData _$InvoiceStatusDataFromJson(Map<String, dynamic> json) =>
     InvoiceStatusData(
       statusId: json['statusId'] as String?,
@@ -2717,166 +9717,6 @@ Map<String, dynamic> _$InvoiceStatusDataToJson(InvoiceStatusData instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-WorkEffortList _$WorkEffortListFromJson(Map<String, dynamic> json) =>
-    WorkEffortList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => WorkEffortFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$WorkEffortListToJson(WorkEffortList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-FactProtoList _$FactProtoListFromJson(Map<String, dynamic> json) =>
-    FactProtoList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => FactProtoData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$FactProtoListToJson(FactProtoList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ReturnAdjustmentData _$ReturnAdjustmentDataFromJson(
-        Map<String, dynamic> json) =>
-    ReturnAdjustmentData(
-      returnAdjustmentId: json['returnAdjustmentId'] as String?,
-      returnAdjustmentTypeId: json['returnAdjustmentTypeId'] as String?,
-      returnId: json['returnId'] as String?,
-      returnItemSeqId: json['returnItemSeqId'] as String?,
-      shipGroupSeqId: json['shipGroupSeqId'] as String?,
-      comments: json['comments'] as String?,
-      description: json['description'] as String?,
-      returnTypeId: json['returnTypeId'] as String?,
-      orderAdjustmentId: json['orderAdjustmentId'] as String?,
-      amount: json['amount'] == null
-          ? null
-          : Currency.fromJson(json['amount'] as Map<String, dynamic>),
-      productPromoId: json['productPromoId'] as String?,
-      productPromoRuleId: json['productPromoRuleId'] as String?,
-      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
-      productFeatureId: json['productFeatureId'] as String?,
-      correspondingProductId: json['correspondingProductId'] as String?,
-      taxAuthorityRateSeqId: json['taxAuthorityRateSeqId'] as String?,
-      sourceReferenceId: json['sourceReferenceId'] as String?,
-      sourcePercentage: json['sourcePercentage'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['sourcePercentage'] as Map<String, dynamic>),
-      customerReferenceId: json['customerReferenceId'] as String?,
-      primaryGeoId: json['primaryGeoId'] as String?,
-      secondaryGeoId: json['secondaryGeoId'] as String?,
-      exemptAmount: json['exemptAmount'] == null
-          ? null
-          : Currency.fromJson(json['exemptAmount'] as Map<String, dynamic>),
-      taxAuthGeoId: json['taxAuthGeoId'] as String?,
-      taxAuthPartyId: json['taxAuthPartyId'] as String?,
-      overrideGlAccountId: json['overrideGlAccountId'] as String?,
-      includeInTax: json['includeInTax'] as String?,
-      includeInShipping: json['includeInShipping'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ReturnAdjustmentDataToJson(
-    ReturnAdjustmentData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('returnAdjustmentId', instance.returnAdjustmentId);
-  writeNotNull('returnAdjustmentTypeId', instance.returnAdjustmentTypeId);
-  writeNotNull('returnId', instance.returnId);
-  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
-  writeNotNull('shipGroupSeqId', instance.shipGroupSeqId);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('description', instance.description);
-  writeNotNull('returnTypeId', instance.returnTypeId);
-  writeNotNull('orderAdjustmentId', instance.orderAdjustmentId);
-  writeNotNull('amount', instance.amount?.toJson());
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
-  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
-  writeNotNull('productFeatureId', instance.productFeatureId);
-  writeNotNull('correspondingProductId', instance.correspondingProductId);
-  writeNotNull('taxAuthorityRateSeqId', instance.taxAuthorityRateSeqId);
-  writeNotNull('sourceReferenceId', instance.sourceReferenceId);
-  writeNotNull('sourcePercentage', instance.sourcePercentage?.toJson());
-  writeNotNull('customerReferenceId', instance.customerReferenceId);
-  writeNotNull('primaryGeoId', instance.primaryGeoId);
-  writeNotNull('secondaryGeoId', instance.secondaryGeoId);
-  writeNotNull('exemptAmount', instance.exemptAmount?.toJson());
-  writeNotNull('taxAuthGeoId', instance.taxAuthGeoId);
-  writeNotNull('taxAuthPartyId', instance.taxAuthPartyId);
-  writeNotNull('overrideGlAccountId', instance.overrideGlAccountId);
-  writeNotNull('includeInTax', instance.includeInTax);
-  writeNotNull('includeInShipping', instance.includeInShipping);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
@@ -2981,50 +9821,6 @@ Map<String, dynamic> _$InvoiceFlatDataToJson(InvoiceFlatData instance) {
   return val;
 }
 
-ProductStoreGroupRoleData _$ProductStoreGroupRoleDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreGroupRoleData(
-      productStoreGroupId: json['productStoreGroupId'] as String?,
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStoreGroupRoleDataToJson(
-    ProductStoreGroupRoleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreGroupId', instance.productStoreGroupId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 AddSecurityGroupPermissionParams _$AddSecurityGroupPermissionParamsFromJson(
         Map<String, dynamic> json) =>
     AddSecurityGroupPermissionParams(
@@ -3056,84 +9852,6 @@ Map<String, dynamic> _$AddSecurityGroupPermissionParamsToJson(
   return val;
 }
 
-ProductPromoList _$ProductPromoListFromJson(Map<String, dynamic> json) =>
-    ProductPromoList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductPromoFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductPromoListToJson(ProductPromoList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductCategoryRollupFlatData _$ProductCategoryRollupFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductCategoryRollupFlatData(
-      productCategoryId: json['productCategoryId'] as String?,
-      parentProductCategoryId: json['parentProductCategoryId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductCategoryRollupFlatDataToJson(
-    ProductCategoryRollupFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productCategoryId', instance.productCategoryId);
-  writeNotNull('parentProductCategoryId', instance.parentProductCategoryId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 DecimalMapValuesEntry _$DecimalMapValuesEntryFromJson(
         Map<String, dynamic> json) =>
     DecimalMapValuesEntry(
@@ -3158,92 +9876,19 @@ Map<String, dynamic> _$DecimalMapValuesEntryToJson(
   return val;
 }
 
-ReturnStatusData _$ReturnStatusDataFromJson(Map<String, dynamic> json) =>
-    ReturnStatusData(
-      returnStatusId: json['returnStatusId'] as String?,
-      statusId: json['statusId'] as String?,
-      returnId: json['returnId'] as String?,
-      returnItemSeqId: json['returnItemSeqId'] as String?,
-      changeByUserLoginId: json['changeByUserLoginId'] as String?,
-      statusDatetime: json['statusDatetime'] == null
-          ? null
-          : Timestamp.fromJson(json['statusDatetime'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ReturnStatusDataToJson(ReturnStatusData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('returnStatusId', instance.returnStatusId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('returnId', instance.returnId);
-  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
-  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
-  writeNotNull('statusDatetime', instance.statusDatetime?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-PartyContactMechData _$PartyContactMechDataFromJson(
+RemoveExampleStatusParams _$RemoveExampleStatusParamsFromJson(
         Map<String, dynamic> json) =>
-    PartyContactMechData(
-      partyId: json['partyId'] as String?,
-      contactMechId: json['contactMechId'] as String?,
-      fromDate: json['fromDate'] == null
+    RemoveExampleStatusParams(
+      handle: json['handle'] == null
           ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      roleTypeId: json['roleTypeId'] as String?,
-      allowSolicitation: json['allowSolicitation'] as String?,
-      extension: json['extension'] as String?,
-      verified: json['verified'] as String?,
-      comments: json['comments'] as String?,
-      yearsWithContactMech: json['yearsWithContactMech'] as int?,
-      monthsWithContactMech: json['monthsWithContactMech'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      itemId: json['itemId'] as String?,
+      comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$PartyContactMechDataToJson(
-    PartyContactMechData instance) {
+Map<String, dynamic> _$RemoveExampleStatusParamsToJson(
+    RemoveExampleStatusParams instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -3252,65 +9897,10 @@ Map<String, dynamic> _$PartyContactMechDataToJson(
     }
   }
 
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('contactMechId', instance.contactMechId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('allowSolicitation', instance.allowSolicitation);
-  writeNotNull('extension', instance.extension);
-  writeNotNull('verified', instance.verified);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('yearsWithContactMech', instance.yearsWithContactMech);
-  writeNotNull('monthsWithContactMech', instance.monthsWithContactMech);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-OrderFactTypeData _$OrderFactTypeDataFromJson(Map<String, dynamic> json) =>
-    OrderFactTypeData(
-      orderFactTypeId: json['orderFactTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderFactTypeDataToJson(OrderFactTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderFactTypeId', instance.orderFactTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('itemId', instance.itemId);
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -3539,83 +10129,6 @@ Map<String, dynamic> _$InvoiceTypeDataToJson(InvoiceTypeData instance) {
   return val;
 }
 
-WebSiteList _$WebSiteListFromJson(Map<String, dynamic> json) => WebSiteList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => WebSiteFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$WebSiteListToJson(WebSiteList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStorePaymentSettingData _$ProductStorePaymentSettingDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStorePaymentSettingData(
-      productStoreId: json['productStoreId'] as String?,
-      paymentMethodTypeId: json['paymentMethodTypeId'] as String?,
-      paymentServiceTypeEnumId: json['paymentServiceTypeEnumId'] as String?,
-      paymentService: json['paymentService'] as String?,
-      paymentCustomMethodId: json['paymentCustomMethodId'] as String?,
-      paymentGatewayConfigId: json['paymentGatewayConfigId'] as String?,
-      paymentPropertiesPath: json['paymentPropertiesPath'] as String?,
-      applyToAllProducts: json['applyToAllProducts'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStorePaymentSettingDataToJson(
-    ProductStorePaymentSettingData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('paymentMethodTypeId', instance.paymentMethodTypeId);
-  writeNotNull('paymentServiceTypeEnumId', instance.paymentServiceTypeEnumId);
-  writeNotNull('paymentService', instance.paymentService);
-  writeNotNull('paymentCustomMethodId', instance.paymentCustomMethodId);
-  writeNotNull('paymentGatewayConfigId', instance.paymentGatewayConfigId);
-  writeNotNull('paymentPropertiesPath', instance.paymentPropertiesPath);
-  writeNotNull('applyToAllProducts', instance.applyToAllProducts);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductConfigItemFlatData _$ProductConfigItemFlatDataFromJson(
         Map<String, dynamic> json) =>
     ProductConfigItemFlatData(
@@ -3787,78 +10300,6 @@ Map<String, dynamic> _$ContentAssocDataToJson(ContentAssocData instance) {
   return val;
 }
 
-CreateNoteParams _$CreateNoteParamsFromJson(Map<String, dynamic> json) =>
-    CreateNoteParams(
-      handle: json['handle'] == null
-          ? null
-          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-      noteData: json['noteData'] == null
-          ? null
-          : NoteDataData.fromJson(json['noteData'] as Map<String, dynamic>),
-      comment: json['comment'] as String?,
-    );
-
-Map<String, dynamic> _$CreateNoteParamsToJson(CreateNoteParams instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('noteData', instance.noteData?.toJson());
-  writeNotNull('comment', instance.comment);
-  return val;
-}
-
-UserLoginSessionData _$UserLoginSessionDataFromJson(
-        Map<String, dynamic> json) =>
-    UserLoginSessionData(
-      userLoginId: json['userLoginId'] as String?,
-      savedDate: json['savedDate'] == null
-          ? null
-          : Timestamp.fromJson(json['savedDate'] as Map<String, dynamic>),
-      sessionData: json['sessionData'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$UserLoginSessionDataToJson(
-    UserLoginSessionData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('userLoginId', instance.userLoginId);
-  writeNotNull('savedDate', instance.savedDate?.toJson());
-  writeNotNull('sessionData', instance.sessionData);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductStoreGroupData _$ProductStoreGroupDataFromJson(
         Map<String, dynamic> json) =>
     ProductStoreGroupData(
@@ -3904,93 +10345,6 @@ Map<String, dynamic> _$ProductStoreGroupDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ListValue _$ListValueFromJson(Map<String, dynamic> json) => ListValue(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => Value.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ListValueToJson(ListValue instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-OrderRoleData _$OrderRoleDataFromJson(Map<String, dynamic> json) =>
-    OrderRoleData(
-      orderId: json['orderId'] as String?,
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderRoleDataToJson(OrderRoleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-OrderItemBillingList _$OrderItemBillingListFromJson(
-        Map<String, dynamic> json) =>
-    OrderItemBillingList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderItemBillingData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderItemBillingListToJson(
-    OrderItemBillingList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -4390,54 +10744,6 @@ Map<String, dynamic> _$ProductCategoryTypeDataToJson(
   return val;
 }
 
-AgreementProductApplData _$AgreementProductApplDataFromJson(
-        Map<String, dynamic> json) =>
-    AgreementProductApplData(
-      agreementId: json['agreementId'] as String?,
-      agreementItemSeqId: json['agreementItemSeqId'] as String?,
-      productId: json['productId'] as String?,
-      price: json['price'] == null
-          ? null
-          : Currency.fromJson(json['price'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$AgreementProductApplDataToJson(
-    AgreementProductApplData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('agreementId', instance.agreementId);
-  writeNotNull('agreementItemSeqId', instance.agreementItemSeqId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('price', instance.price?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductCategoryMemberList _$ProductCategoryMemberListFromJson(
         Map<String, dynamic> json) =>
     ProductCategoryMemberList(
@@ -4486,6 +10792,35 @@ Map<String, dynamic> _$ProductPriceListToJson(ProductPriceList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+RemoveFacilityContactMechPurposeParams
+    _$RemoveFacilityContactMechPurposeParamsFromJson(
+            Map<String, dynamic> json) =>
+        RemoveFacilityContactMechPurposeParams(
+          handle: json['handle'] == null
+              ? null
+              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+          mainId: json['mainId'] as String?,
+          itemId: json['itemId'] as String?,
+          comment: json['comment'] as String?,
+        );
+
+Map<String, dynamic> _$RemoveFacilityContactMechPurposeParamsToJson(
+    RemoveFacilityContactMechPurposeParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('itemId', instance.itemId);
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -4556,48 +10891,6 @@ Map<String, dynamic> _$ShoppingListTypeDataToJson(
   return val;
 }
 
-BlacklistData _$BlacklistDataFromJson(Map<String, dynamic> json) =>
-    BlacklistData(
-      blacklistId: json['blacklistId'] as String?,
-      blacklistTypeId: json['blacklistTypeId'] as String?,
-      statusId: json['statusId'] as String?,
-      tenantId: json['tenantId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$BlacklistDataToJson(BlacklistData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('blacklistId', instance.blacklistId);
-  writeNotNull('blacklistTypeId', instance.blacklistTypeId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 BillingAccountList _$BillingAccountListFromJson(Map<String, dynamic> json) =>
     BillingAccountList(
       values: (json['values'] as List<dynamic>?)
@@ -4609,30 +10902,6 @@ BillingAccountList _$BillingAccountListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$BillingAccountListToJson(BillingAccountList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ShipmentPackageList _$ShipmentPackageListFromJson(Map<String, dynamic> json) =>
-    ShipmentPackageList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ShipmentPackageData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShipmentPackageListToJson(ShipmentPackageList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -4707,139 +10976,6 @@ Map<String, dynamic> _$ProductCategoryFlatDataToJson(
   return val;
 }
 
-AcctgTransFlatData _$AcctgTransFlatDataFromJson(Map<String, dynamic> json) =>
-    AcctgTransFlatData(
-      acctgTransId: json['acctgTransId'] as String?,
-      acctgTransTypeId: json['acctgTransTypeId'] as String?,
-      description: json['description'] as String?,
-      transactionDate: json['transactionDate'] == null
-          ? null
-          : Timestamp.fromJson(json['transactionDate'] as Map<String, dynamic>),
-      isPosted: json['isPosted'] as String?,
-      postedDate: json['postedDate'] == null
-          ? null
-          : Timestamp.fromJson(json['postedDate'] as Map<String, dynamic>),
-      scheduledPostingDate: json['scheduledPostingDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['scheduledPostingDate'] as Map<String, dynamic>),
-      glJournalId: json['glJournalId'] as String?,
-      glFiscalTypeId: json['glFiscalTypeId'] as String?,
-      voucherRef: json['voucherRef'] as String?,
-      voucherDate: json['voucherDate'] == null
-          ? null
-          : Timestamp.fromJson(json['voucherDate'] as Map<String, dynamic>),
-      groupStatusId: json['groupStatusId'] as String?,
-      fixedAssetId: json['fixedAssetId'] as String?,
-      inventoryItemId: json['inventoryItemId'] as String?,
-      physicalInventoryId: json['physicalInventoryId'] as String?,
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      invoiceId: json['invoiceId'] as String?,
-      paymentId: json['paymentId'] as String?,
-      finAccountTransId: json['finAccountTransId'] as String?,
-      shipmentId: json['shipmentId'] as String?,
-      receiptId: json['receiptId'] as String?,
-      workEffortId: json['workEffortId'] as String?,
-      theirAcctgTransId: json['theirAcctgTransId'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$AcctgTransFlatDataToJson(AcctgTransFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('acctgTransId', instance.acctgTransId);
-  writeNotNull('acctgTransTypeId', instance.acctgTransTypeId);
-  writeNotNull('description', instance.description);
-  writeNotNull('transactionDate', instance.transactionDate?.toJson());
-  writeNotNull('isPosted', instance.isPosted);
-  writeNotNull('postedDate', instance.postedDate?.toJson());
-  writeNotNull('scheduledPostingDate', instance.scheduledPostingDate?.toJson());
-  writeNotNull('glJournalId', instance.glJournalId);
-  writeNotNull('glFiscalTypeId', instance.glFiscalTypeId);
-  writeNotNull('voucherRef', instance.voucherRef);
-  writeNotNull('voucherDate', instance.voucherDate?.toJson());
-  writeNotNull('groupStatusId', instance.groupStatusId);
-  writeNotNull('fixedAssetId', instance.fixedAssetId);
-  writeNotNull('inventoryItemId', instance.inventoryItemId);
-  writeNotNull('physicalInventoryId', instance.physicalInventoryId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('invoiceId', instance.invoiceId);
-  writeNotNull('paymentId', instance.paymentId);
-  writeNotNull('finAccountTransId', instance.finAccountTransId);
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('receiptId', instance.receiptId);
-  writeNotNull('workEffortId', instance.workEffortId);
-  writeNotNull('theirAcctgTransId', instance.theirAcctgTransId);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-AgreementProductApplList _$AgreementProductApplListFromJson(
-        Map<String, dynamic> json) =>
-    AgreementProductApplList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              AgreementProductApplData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$AgreementProductApplListToJson(
-    AgreementProductApplList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ProductStoreCatalogFlatData _$ProductStoreCatalogFlatDataFromJson(
         Map<String, dynamic> json) =>
     ProductStoreCatalogFlatData(
@@ -4891,73 +11027,6 @@ Map<String, dynamic> _$ProductStoreCatalogFlatDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-SupplierProductFeatureData _$SupplierProductFeatureDataFromJson(
-        Map<String, dynamic> json) =>
-    SupplierProductFeatureData(
-      partyId: json['partyId'] as String?,
-      productFeatureId: json['productFeatureId'] as String?,
-      description: json['description'] as String?,
-      uomId: json['uomId'] as String?,
-      idCode: json['idCode'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$SupplierProductFeatureDataToJson(
-    SupplierProductFeatureData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('productFeatureId', instance.productFeatureId);
-  writeNotNull('description', instance.description);
-  writeNotNull('uomId', instance.uomId);
-  writeNotNull('idCode', instance.idCode);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-Timestamp _$TimestampFromJson(Map<String, dynamic> json) => Timestamp(
-      seconds: json['seconds'] as int?,
-      nanos: json['nanos'] as int?,
-    );
-
-Map<String, dynamic> _$TimestampToJson(Timestamp instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('seconds', instance.seconds);
-  writeNotNull('nanos', instance.nanos);
   return val;
 }
 
@@ -5081,59 +11150,6 @@ Map<String, dynamic> _$ProductPriceDataToJson(ProductPriceData instance) {
   return val;
 }
 
-VideoDataResourceList _$VideoDataResourceListFromJson(
-        Map<String, dynamic> json) =>
-    VideoDataResourceList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => VideoDataResourceData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$VideoDataResourceListToJson(
-    VideoDataResourceList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-DataResourceTypeList _$DataResourceTypeListFromJson(
-        Map<String, dynamic> json) =>
-    DataResourceTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => DataResourceTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$DataResourceTypeListToJson(
-    DataResourceTypeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ProdCatalogList _$ProdCatalogListFromJson(Map<String, dynamic> json) =>
     ProdCatalogList(
       values: (json['values'] as List<dynamic>?)
@@ -5144,56 +11160,6 @@ ProdCatalogList _$ProdCatalogListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ProdCatalogListToJson(ProdCatalogList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductList _$ProductListFromJson(Map<String, dynamic> json) => ProductList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductListToJson(ProductList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductPromoProductList _$ProductPromoProductListFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoProductList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductPromoProductData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductPromoProductListToJson(
-    ProductPromoProductList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -5280,148 +11246,6 @@ Map<String, dynamic> _$ProductFacilityLocationListToJson(
   return val;
 }
 
-BlacklistStatusList _$BlacklistStatusListFromJson(Map<String, dynamic> json) =>
-    BlacklistStatusList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => BlacklistStatusData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$BlacklistStatusListToJson(BlacklistStatusList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-FixedAssetTypeData _$FixedAssetTypeDataFromJson(Map<String, dynamic> json) =>
-    FixedAssetTypeData(
-      fixedAssetTypeId: json['fixedAssetTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      hasTable: json['hasTable'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$FixedAssetTypeDataToJson(FixedAssetTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('fixedAssetTypeId', instance.fixedAssetTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('hasTable', instance.hasTable);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-PostalAddressFlatData _$PostalAddressFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    PostalAddressFlatData(
-      contactMechId: json['contactMechId'] as String?,
-      toName: json['toName'] as String?,
-      attnName: json['attnName'] as String?,
-      address1: json['address1'] as String?,
-      address2: json['address2'] as String?,
-      houseNumber: json['houseNumber'] as int?,
-      houseNumberExt: json['houseNumberExt'] as String?,
-      directions: json['directions'] as String?,
-      city: json['city'] as String?,
-      cityGeoId: json['cityGeoId'] as String?,
-      postalCode: json['postalCode'] as String?,
-      postalCodeExt: json['postalCodeExt'] as String?,
-      countryGeoId: json['countryGeoId'] as String?,
-      stateProvinceGeoId: json['stateProvinceGeoId'] as String?,
-      countyGeoId: json['countyGeoId'] as String?,
-      municipalityGeoId: json['municipalityGeoId'] as String?,
-      postalCodeGeoId: json['postalCodeGeoId'] as String?,
-      geoPointId: json['geoPointId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PostalAddressFlatDataToJson(
-    PostalAddressFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contactMechId', instance.contactMechId);
-  writeNotNull('toName', instance.toName);
-  writeNotNull('attnName', instance.attnName);
-  writeNotNull('address1', instance.address1);
-  writeNotNull('address2', instance.address2);
-  writeNotNull('houseNumber', instance.houseNumber);
-  writeNotNull('houseNumberExt', instance.houseNumberExt);
-  writeNotNull('directions', instance.directions);
-  writeNotNull('city', instance.city);
-  writeNotNull('cityGeoId', instance.cityGeoId);
-  writeNotNull('postalCode', instance.postalCode);
-  writeNotNull('postalCodeExt', instance.postalCodeExt);
-  writeNotNull('countryGeoId', instance.countryGeoId);
-  writeNotNull('stateProvinceGeoId', instance.stateProvinceGeoId);
-  writeNotNull('countyGeoId', instance.countyGeoId);
-  writeNotNull('municipalityGeoId', instance.municipalityGeoId);
-  writeNotNull('postalCodeGeoId', instance.postalCodeGeoId);
-  writeNotNull('geoPointId', instance.geoPointId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ContactMechList _$ContactMechListFromJson(Map<String, dynamic> json) =>
     ContactMechList(
       values: (json['values'] as List<dynamic>?)
@@ -5432,30 +11256,6 @@ ContactMechList _$ContactMechListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ContactMechListToJson(ContactMechList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PaymentTypeList _$PaymentTypeListFromJson(Map<String, dynamic> json) =>
-    PaymentTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PaymentTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PaymentTypeListToJson(PaymentTypeList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -5495,126 +11295,6 @@ Map<String, dynamic> _$TelecomNumberListToJson(TelecomNumberList instance) {
   return val;
 }
 
-ProductPromoActionData _$ProductPromoActionDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoActionData(
-      productPromoId: json['productPromoId'] as String?,
-      productPromoRuleId: json['productPromoRuleId'] as String?,
-      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
-      productPromoActionEnumId: json['productPromoActionEnumId'] as String?,
-      customMethodId: json['customMethodId'] as String?,
-      orderAdjustmentTypeId: json['orderAdjustmentTypeId'] as String?,
-      serviceName: json['serviceName'] as String?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      amount: json['amount'] == null
-          ? null
-          : FixedPoint.fromJson(json['amount'] as Map<String, dynamic>),
-      productId: json['productId'] as String?,
-      partyId: json['partyId'] as String?,
-      useCartQuantity: json['useCartQuantity'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductPromoActionDataToJson(
-    ProductPromoActionData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
-  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
-  writeNotNull('productPromoActionEnumId', instance.productPromoActionEnumId);
-  writeNotNull('customMethodId', instance.customMethodId);
-  writeNotNull('orderAdjustmentTypeId', instance.orderAdjustmentTypeId);
-  writeNotNull('serviceName', instance.serviceName);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('amount', instance.amount?.toJson());
-  writeNotNull('productId', instance.productId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('useCartQuantity', instance.useCartQuantity);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductPromoCategoryData _$ProductPromoCategoryDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoCategoryData(
-      productPromoId: json['productPromoId'] as String?,
-      productPromoRuleId: json['productPromoRuleId'] as String?,
-      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
-      productPromoCondSeqId: json['productPromoCondSeqId'] as String?,
-      productCategoryId: json['productCategoryId'] as String?,
-      andGroupId: json['andGroupId'] as String?,
-      productPromoApplEnumId: json['productPromoApplEnumId'] as String?,
-      includeSubCategories: json['includeSubCategories'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductPromoCategoryDataToJson(
-    ProductPromoCategoryData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
-  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
-  writeNotNull('productPromoCondSeqId', instance.productPromoCondSeqId);
-  writeNotNull('productCategoryId', instance.productCategoryId);
-  writeNotNull('andGroupId', instance.andGroupId);
-  writeNotNull('productPromoApplEnumId', instance.productPromoApplEnumId);
-  writeNotNull('includeSubCategories', instance.includeSubCategories);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 OrderAdjustmentBillingList _$OrderAdjustmentBillingListFromJson(
         Map<String, dynamic> json) =>
     OrderAdjustmentBillingList(
@@ -5628,30 +11308,6 @@ OrderAdjustmentBillingList _$OrderAdjustmentBillingListFromJson(
 
 Map<String, dynamic> _$OrderAdjustmentBillingListToJson(
     OrderAdjustmentBillingList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-FixedAssetList _$FixedAssetListFromJson(Map<String, dynamic> json) =>
-    FixedAssetList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => FixedAssetFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$FixedAssetListToJson(FixedAssetList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -5837,160 +11493,6 @@ Map<String, dynamic> _$FacilityContactMechDataToJson(
   return val;
 }
 
-ExampleItemData _$ExampleItemDataFromJson(Map<String, dynamic> json) =>
-    ExampleItemData(
-      exampleId: json['exampleId'] as String?,
-      exampleItemSeqId: json['exampleItemSeqId'] as String?,
-      description: json['description'] as String?,
-      amount: (json['amount'] as num?)?.toDouble(),
-      amountUomId: json['amountUomId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ExampleItemDataToJson(ExampleItemData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('exampleId', instance.exampleId);
-  writeNotNull('exampleItemSeqId', instance.exampleItemSeqId);
-  writeNotNull('description', instance.description);
-  writeNotNull('amount', instance.amount);
-  writeNotNull('amountUomId', instance.amountUomId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ReturnItemShipmentData _$ReturnItemShipmentDataFromJson(
-        Map<String, dynamic> json) =>
-    ReturnItemShipmentData(
-      returnId: json['returnId'] as String?,
-      returnItemSeqId: json['returnItemSeqId'] as String?,
-      shipmentId: json['shipmentId'] as String?,
-      shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ReturnItemShipmentDataToJson(
-    ReturnItemShipmentData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('returnId', instance.returnId);
-  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('shipmentItemSeqId', instance.shipmentItemSeqId);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductFacilityAssocData _$ProductFacilityAssocDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductFacilityAssocData(
-      productId: json['productId'] as String?,
-      facilityId: json['facilityId'] as String?,
-      facilityIdTo: json['facilityIdTo'] as String?,
-      facilityAssocTypeId: json['facilityAssocTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      transitTime: json['transitTime'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductFacilityAssocDataToJson(
-    ProductFacilityAssocData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productId', instance.productId);
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('facilityIdTo', instance.facilityIdTo);
-  writeNotNull('facilityAssocTypeId', instance.facilityAssocTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('transitTime', instance.transitTime);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 InventoryItemTypeData _$InventoryItemTypeDataFromJson(
         Map<String, dynamic> json) =>
     InventoryItemTypeData(
@@ -6037,65 +11539,6 @@ Map<String, dynamic> _$InventoryItemTypeDataToJson(
   return val;
 }
 
-FixedAssetMaintData _$FixedAssetMaintDataFromJson(Map<String, dynamic> json) =>
-    FixedAssetMaintData(
-      fixedAssetId: json['fixedAssetId'] as String?,
-      maintHistSeqId: json['maintHistSeqId'] as String?,
-      statusId: json['statusId'] as String?,
-      productMaintTypeId: json['productMaintTypeId'] as String?,
-      productMaintSeqId: json['productMaintSeqId'] as String?,
-      scheduleWorkEffortId: json['scheduleWorkEffortId'] as String?,
-      intervalQuantity: json['intervalQuantity'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['intervalQuantity'] as Map<String, dynamic>),
-      intervalUomId: json['intervalUomId'] as String?,
-      intervalMeterTypeId: json['intervalMeterTypeId'] as String?,
-      purchaseOrderId: json['purchaseOrderId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$FixedAssetMaintDataToJson(FixedAssetMaintData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('fixedAssetId', instance.fixedAssetId);
-  writeNotNull('maintHistSeqId', instance.maintHistSeqId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('productMaintTypeId', instance.productMaintTypeId);
-  writeNotNull('productMaintSeqId', instance.productMaintSeqId);
-  writeNotNull('scheduleWorkEffortId', instance.scheduleWorkEffortId);
-  writeNotNull('intervalQuantity', instance.intervalQuantity?.toJson());
-  writeNotNull('intervalUomId', instance.intervalUomId);
-  writeNotNull('intervalMeterTypeId', instance.intervalMeterTypeId);
-  writeNotNull('purchaseOrderId', instance.purchaseOrderId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ExampleList _$ExampleListFromJson(Map<String, dynamic> json) => ExampleList(
       values: (json['values'] as List<dynamic>?)
           ?.map((e) => ExampleData.fromJson(e as Map<String, dynamic>))
@@ -6116,58 +11559,6 @@ Map<String, dynamic> _$ExampleListToJson(ExampleList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-BillingAccountRoleData _$BillingAccountRoleDataFromJson(
-        Map<String, dynamic> json) =>
-    BillingAccountRoleData(
-      billingAccountId: json['billingAccountId'] as String?,
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$BillingAccountRoleDataToJson(
-    BillingAccountRoleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('billingAccountId', instance.billingAccountId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -6294,16 +11685,21 @@ Map<String, dynamic> _$OrderStatusFlatDataToJson(OrderStatusFlatData instance) {
   return val;
 }
 
-UserLoginList _$UserLoginListFromJson(Map<String, dynamic> json) =>
-    UserLoginList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => UserLoginFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
+AddExampleStatusParams _$AddExampleStatusParamsFromJson(
+        Map<String, dynamic> json) =>
+    AddExampleStatusParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      data: json['data'] == null
+          ? null
+          : ExampleStatusData.fromJson(json['data'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$UserLoginListToJson(UserLoginList instance) {
+Map<String, dynamic> _$AddExampleStatusParamsToJson(
+    AddExampleStatusParams instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -6312,9 +11708,10 @@ Map<String, dynamic> _$UserLoginListToJson(UserLoginList instance) {
     }
   }
 
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -6386,32 +11783,6 @@ Map<String, dynamic> _$StringsToJson(Strings instance) {
   return val;
 }
 
-BundleListRequest _$BundleListRequestFromJson(Map<String, dynamic> json) =>
-    BundleListRequest(
-      handle: json['handle'] == null
-          ? null
-          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-      pageSize: json['pageSize'] as int?,
-      pageToken: json['pageToken'] as String?,
-      tenantId: json['tenantId'] as String?,
-    );
-
-Map<String, dynamic> _$BundleListRequestToJson(BundleListRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('pageSize', instance.pageSize);
-  writeNotNull('pageToken', instance.pageToken);
-  writeNotNull('tenantId', instance.tenantId);
-  return val;
-}
-
 CreateShipmentParams _$CreateShipmentParamsFromJson(
         Map<String, dynamic> json) =>
     CreateShipmentParams(
@@ -6437,368 +11808,6 @@ Map<String, dynamic> _$CreateShipmentParamsToJson(
   writeNotNull('handle', instance.handle?.toJson());
   writeNotNull('shipment', instance.shipment?.toJson());
   writeNotNull('comment', instance.comment);
-  return val;
-}
-
-PartyTypeList _$PartyTypeListFromJson(Map<String, dynamic> json) =>
-    PartyTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PartyTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PartyTypeListToJson(PartyTypeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductPromoFlatData _$ProductPromoFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoFlatData(
-      productPromoId: json['productPromoId'] as String?,
-      promoName: json['promoName'] as String?,
-      promoText: json['promoText'] as String?,
-      userEntered: json['userEntered'] as String?,
-      showToCustomer: json['showToCustomer'] as String?,
-      requireCode: json['requireCode'] as String?,
-      useLimitPerOrder: json['useLimitPerOrder'] as int?,
-      useLimitPerCustomer: json['useLimitPerCustomer'] as int?,
-      useLimitPerPromotion: json['useLimitPerPromotion'] as int?,
-      billbackFactor: json['billbackFactor'] == null
-          ? null
-          : FixedPoint.fromJson(json['billbackFactor'] as Map<String, dynamic>),
-      overrideOrgPartyId: json['overrideOrgPartyId'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductPromoFlatDataToJson(
-    ProductPromoFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('promoName', instance.promoName);
-  writeNotNull('promoText', instance.promoText);
-  writeNotNull('userEntered', instance.userEntered);
-  writeNotNull('showToCustomer', instance.showToCustomer);
-  writeNotNull('requireCode', instance.requireCode);
-  writeNotNull('useLimitPerOrder', instance.useLimitPerOrder);
-  writeNotNull('useLimitPerCustomer', instance.useLimitPerCustomer);
-  writeNotNull('useLimitPerPromotion', instance.useLimitPerPromotion);
-  writeNotNull('billbackFactor', instance.billbackFactor?.toJson());
-  writeNotNull('overrideOrgPartyId', instance.overrideOrgPartyId);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductStoreEmailSettingList _$ProductStoreEmailSettingListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreEmailSettingList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductStoreEmailSettingData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductStoreEmailSettingListToJson(
-    ProductStoreEmailSettingList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ExampleTypeData _$ExampleTypeDataFromJson(Map<String, dynamic> json) =>
-    ExampleTypeData(
-      exampleTypeId: json['exampleTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ExampleTypeDataToJson(ExampleTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('exampleTypeId', instance.exampleTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductStoreFlatData _$ProductStoreFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreFlatData(
-      productStoreId: json['productStoreId'] as String?,
-      primaryStoreGroupId: json['primaryStoreGroupId'] as String?,
-      storeName: json['storeName'] as String?,
-      companyName: json['companyName'] as String?,
-      title: json['title'] as String?,
-      subtitle: json['subtitle'] as String?,
-      payToPartyId: json['payToPartyId'] as String?,
-      daysToCancelNonPay: json['daysToCancelNonPay'] as int?,
-      manualAuthIsCapture: json['manualAuthIsCapture'] as String?,
-      prorateShipping: json['prorateShipping'] as String?,
-      prorateTaxes: json['prorateTaxes'] as String?,
-      viewCartOnAdd: json['viewCartOnAdd'] as String?,
-      autoSaveCart: json['autoSaveCart'] as String?,
-      autoApproveReviews: json['autoApproveReviews'] as String?,
-      isDemoStore: json['isDemoStore'] as String?,
-      isImmediatelyFulfilled: json['isImmediatelyFulfilled'] as String?,
-      inventoryFacilityId: json['inventoryFacilityId'] as String?,
-      oneInventoryFacility: json['oneInventoryFacility'] as String?,
-      checkInventory: json['checkInventory'] as String?,
-      reserveInventory: json['reserveInventory'] as String?,
-      reserveOrderEnumId: json['reserveOrderEnumId'] as String?,
-      requireInventory: json['requireInventory'] as String?,
-      balanceResOnOrderCreation: json['balanceResOnOrderCreation'] as String?,
-      requirementMethodEnumId: json['requirementMethodEnumId'] as String?,
-      orderNumberPrefix: json['orderNumberPrefix'] as String?,
-      defaultLocaleString: json['defaultLocaleString'] as String?,
-      defaultCurrencyUomId: json['defaultCurrencyUomId'] as String?,
-      defaultTimeZoneString: json['defaultTimeZoneString'] as String?,
-      defaultSalesChannelEnumId: json['defaultSalesChannelEnumId'] as String?,
-      allowPassword: json['allowPassword'] as String?,
-      defaultPassword: json['defaultPassword'] as String?,
-      explodeOrderItems: json['explodeOrderItems'] as String?,
-      checkGcBalance: json['checkGcBalance'] as String?,
-      retryFailedAuths: json['retryFailedAuths'] as String?,
-      headerApprovedStatus: json['headerApprovedStatus'] as String?,
-      itemApprovedStatus: json['itemApprovedStatus'] as String?,
-      digitalItemApprovedStatus: json['digitalItemApprovedStatus'] as String?,
-      headerDeclinedStatus: json['headerDeclinedStatus'] as String?,
-      itemDeclinedStatus: json['itemDeclinedStatus'] as String?,
-      headerCancelStatus: json['headerCancelStatus'] as String?,
-      itemCancelStatus: json['itemCancelStatus'] as String?,
-      authDeclinedMessage: json['authDeclinedMessage'] as String?,
-      authFraudMessage: json['authFraudMessage'] as String?,
-      authErrorMessage: json['authErrorMessage'] as String?,
-      visualThemeId: json['visualThemeId'] as String?,
-      storeCreditAccountEnumId: json['storeCreditAccountEnumId'] as String?,
-      usePrimaryEmailUsername: json['usePrimaryEmailUsername'] as String?,
-      requireCustomerRole: json['requireCustomerRole'] as String?,
-      autoInvoiceDigitalItems: json['autoInvoiceDigitalItems'] as String?,
-      reqShipAddrForDigItems: json['reqShipAddrForDigItems'] as String?,
-      showCheckoutGiftOptions: json['showCheckoutGiftOptions'] as String?,
-      selectPaymentTypePerItem: json['selectPaymentTypePerItem'] as String?,
-      showPricesWithVatTax: json['showPricesWithVatTax'] as String?,
-      showTaxIsExempt: json['showTaxIsExempt'] as String?,
-      vatTaxAuthGeoId: json['vatTaxAuthGeoId'] as String?,
-      vatTaxAuthPartyId: json['vatTaxAuthPartyId'] as String?,
-      enableAutoSuggestionList: json['enableAutoSuggestionList'] as String?,
-      enableDigProdUpload: json['enableDigProdUpload'] as String?,
-      prodSearchExcludeVariants: json['prodSearchExcludeVariants'] as String?,
-      digProdUploadCategoryId: json['digProdUploadCategoryId'] as String?,
-      autoOrderCcTryExp: json['autoOrderCcTryExp'] as String?,
-      autoOrderCcTryOtherCards: json['autoOrderCcTryOtherCards'] as String?,
-      autoOrderCcTryLaterNsf: json['autoOrderCcTryLaterNsf'] as String?,
-      autoOrderCcTryLaterMax: json['autoOrderCcTryLaterMax'] as int?,
-      storeCreditValidDays: json['storeCreditValidDays'] as int?,
-      autoApproveInvoice: json['autoApproveInvoice'] as String?,
-      autoApproveOrder: json['autoApproveOrder'] as String?,
-      shipIfCaptureFails: json['shipIfCaptureFails'] as String?,
-      setOwnerUponIssuance: json['setOwnerUponIssuance'] as String?,
-      reqReturnInventoryReceive: json['reqReturnInventoryReceive'] as String?,
-      addToCartRemoveIncompat: json['addToCartRemoveIncompat'] as String?,
-      addToCartReplaceUpsell: json['addToCartReplaceUpsell'] as String?,
-      splitPayPrefPerShpGrp: json['splitPayPrefPerShpGrp'] as String?,
-      managedByLot: json['managedByLot'] as String?,
-      showOutOfStockProducts: json['showOutOfStockProducts'] as String?,
-      orderDecimalQuantity: json['orderDecimalQuantity'] as String?,
-      allowComment: json['allowComment'] as String?,
-      allocateInventory: json['allocateInventory'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStoreFlatDataToJson(
-    ProductStoreFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('primaryStoreGroupId', instance.primaryStoreGroupId);
-  writeNotNull('storeName', instance.storeName);
-  writeNotNull('companyName', instance.companyName);
-  writeNotNull('title', instance.title);
-  writeNotNull('subtitle', instance.subtitle);
-  writeNotNull('payToPartyId', instance.payToPartyId);
-  writeNotNull('daysToCancelNonPay', instance.daysToCancelNonPay);
-  writeNotNull('manualAuthIsCapture', instance.manualAuthIsCapture);
-  writeNotNull('prorateShipping', instance.prorateShipping);
-  writeNotNull('prorateTaxes', instance.prorateTaxes);
-  writeNotNull('viewCartOnAdd', instance.viewCartOnAdd);
-  writeNotNull('autoSaveCart', instance.autoSaveCart);
-  writeNotNull('autoApproveReviews', instance.autoApproveReviews);
-  writeNotNull('isDemoStore', instance.isDemoStore);
-  writeNotNull('isImmediatelyFulfilled', instance.isImmediatelyFulfilled);
-  writeNotNull('inventoryFacilityId', instance.inventoryFacilityId);
-  writeNotNull('oneInventoryFacility', instance.oneInventoryFacility);
-  writeNotNull('checkInventory', instance.checkInventory);
-  writeNotNull('reserveInventory', instance.reserveInventory);
-  writeNotNull('reserveOrderEnumId', instance.reserveOrderEnumId);
-  writeNotNull('requireInventory', instance.requireInventory);
-  writeNotNull('balanceResOnOrderCreation', instance.balanceResOnOrderCreation);
-  writeNotNull('requirementMethodEnumId', instance.requirementMethodEnumId);
-  writeNotNull('orderNumberPrefix', instance.orderNumberPrefix);
-  writeNotNull('defaultLocaleString', instance.defaultLocaleString);
-  writeNotNull('defaultCurrencyUomId', instance.defaultCurrencyUomId);
-  writeNotNull('defaultTimeZoneString', instance.defaultTimeZoneString);
-  writeNotNull('defaultSalesChannelEnumId', instance.defaultSalesChannelEnumId);
-  writeNotNull('allowPassword', instance.allowPassword);
-  writeNotNull('defaultPassword', instance.defaultPassword);
-  writeNotNull('explodeOrderItems', instance.explodeOrderItems);
-  writeNotNull('checkGcBalance', instance.checkGcBalance);
-  writeNotNull('retryFailedAuths', instance.retryFailedAuths);
-  writeNotNull('headerApprovedStatus', instance.headerApprovedStatus);
-  writeNotNull('itemApprovedStatus', instance.itemApprovedStatus);
-  writeNotNull('digitalItemApprovedStatus', instance.digitalItemApprovedStatus);
-  writeNotNull('headerDeclinedStatus', instance.headerDeclinedStatus);
-  writeNotNull('itemDeclinedStatus', instance.itemDeclinedStatus);
-  writeNotNull('headerCancelStatus', instance.headerCancelStatus);
-  writeNotNull('itemCancelStatus', instance.itemCancelStatus);
-  writeNotNull('authDeclinedMessage', instance.authDeclinedMessage);
-  writeNotNull('authFraudMessage', instance.authFraudMessage);
-  writeNotNull('authErrorMessage', instance.authErrorMessage);
-  writeNotNull('visualThemeId', instance.visualThemeId);
-  writeNotNull('storeCreditAccountEnumId', instance.storeCreditAccountEnumId);
-  writeNotNull('usePrimaryEmailUsername', instance.usePrimaryEmailUsername);
-  writeNotNull('requireCustomerRole', instance.requireCustomerRole);
-  writeNotNull('autoInvoiceDigitalItems', instance.autoInvoiceDigitalItems);
-  writeNotNull('reqShipAddrForDigItems', instance.reqShipAddrForDigItems);
-  writeNotNull('showCheckoutGiftOptions', instance.showCheckoutGiftOptions);
-  writeNotNull('selectPaymentTypePerItem', instance.selectPaymentTypePerItem);
-  writeNotNull('showPricesWithVatTax', instance.showPricesWithVatTax);
-  writeNotNull('showTaxIsExempt', instance.showTaxIsExempt);
-  writeNotNull('vatTaxAuthGeoId', instance.vatTaxAuthGeoId);
-  writeNotNull('vatTaxAuthPartyId', instance.vatTaxAuthPartyId);
-  writeNotNull('enableAutoSuggestionList', instance.enableAutoSuggestionList);
-  writeNotNull('enableDigProdUpload', instance.enableDigProdUpload);
-  writeNotNull('prodSearchExcludeVariants', instance.prodSearchExcludeVariants);
-  writeNotNull('digProdUploadCategoryId', instance.digProdUploadCategoryId);
-  writeNotNull('autoOrderCcTryExp', instance.autoOrderCcTryExp);
-  writeNotNull('autoOrderCcTryOtherCards', instance.autoOrderCcTryOtherCards);
-  writeNotNull('autoOrderCcTryLaterNsf', instance.autoOrderCcTryLaterNsf);
-  writeNotNull('autoOrderCcTryLaterMax', instance.autoOrderCcTryLaterMax);
-  writeNotNull('storeCreditValidDays', instance.storeCreditValidDays);
-  writeNotNull('autoApproveInvoice', instance.autoApproveInvoice);
-  writeNotNull('autoApproveOrder', instance.autoApproveOrder);
-  writeNotNull('shipIfCaptureFails', instance.shipIfCaptureFails);
-  writeNotNull('setOwnerUponIssuance', instance.setOwnerUponIssuance);
-  writeNotNull('reqReturnInventoryReceive', instance.reqReturnInventoryReceive);
-  writeNotNull('addToCartRemoveIncompat', instance.addToCartRemoveIncompat);
-  writeNotNull('addToCartReplaceUpsell', instance.addToCartReplaceUpsell);
-  writeNotNull('splitPayPrefPerShpGrp', instance.splitPayPrefPerShpGrp);
-  writeNotNull('managedByLot', instance.managedByLot);
-  writeNotNull('showOutOfStockProducts', instance.showOutOfStockProducts);
-  writeNotNull('orderDecimalQuantity', instance.orderDecimalQuantity);
-  writeNotNull('allowComment', instance.allowComment);
-  writeNotNull('allocateInventory', instance.allocateInventory);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -6933,60 +11942,6 @@ Map<String, dynamic> _$ProductFacilityDataToJson(ProductFacilityData instance) {
   return val;
 }
 
-OrderFactData _$OrderFactDataFromJson(Map<String, dynamic> json) =>
-    OrderFactData(
-      orderId: json['orderId'] as String?,
-      invoiceId: json['invoiceId'] as String?,
-      paymentId: json['paymentId'] as String?,
-      paymentGatewayResponseId: json['paymentGatewayResponseId'] as String?,
-      orderPaymentPreferenceId: json['orderPaymentPreferenceId'] as String?,
-      billingAccountId: json['billingAccountId'] as String?,
-      shipmentId: json['shipmentId'] as String?,
-      orderFactTypeId: json['orderFactTypeId'] as String?,
-      statusId: json['statusId'] as String?,
-      tenantId: json['tenantId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderFactDataToJson(OrderFactData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('invoiceId', instance.invoiceId);
-  writeNotNull('paymentId', instance.paymentId);
-  writeNotNull('paymentGatewayResponseId', instance.paymentGatewayResponseId);
-  writeNotNull('orderPaymentPreferenceId', instance.orderPaymentPreferenceId);
-  writeNotNull('billingAccountId', instance.billingAccountId);
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('orderFactTypeId', instance.orderFactTypeId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ShipmentPackageRouteSegList _$ShipmentPackageRouteSegListFromJson(
         Map<String, dynamic> json) =>
     ShipmentPackageRouteSegList(
@@ -7000,33 +11955,6 @@ ShipmentPackageRouteSegList _$ShipmentPackageRouteSegListFromJson(
 
 Map<String, dynamic> _$ShipmentPackageRouteSegListToJson(
     ShipmentPackageRouteSegList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductFeatureTypeList _$ProductFeatureTypeListFromJson(
-        Map<String, dynamic> json) =>
-    ProductFeatureTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => ProductFeatureTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductFeatureTypeListToJson(
-    ProductFeatureTypeList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -7091,32 +12019,6 @@ Map<String, dynamic> _$FactProtoStatusDataToJson(FactProtoStatusData instance) {
   return val;
 }
 
-ShippingDocumentList _$ShippingDocumentListFromJson(
-        Map<String, dynamic> json) =>
-    ShippingDocumentList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ShippingDocumentData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShippingDocumentListToJson(
-    ShippingDocumentList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 OrderTypeList _$OrderTypeListFromJson(Map<String, dynamic> json) =>
     OrderTypeList(
       values: (json['values'] as List<dynamic>?)
@@ -7138,66 +12040,6 @@ Map<String, dynamic> _$OrderTypeListToJson(OrderTypeList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-WorkEffortGoodStandardData _$WorkEffortGoodStandardDataFromJson(
-        Map<String, dynamic> json) =>
-    WorkEffortGoodStandardData(
-      workEffortId: json['workEffortId'] as String?,
-      productId: json['productId'] as String?,
-      workEffortGoodStdTypeId: json['workEffortGoodStdTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      statusId: json['statusId'] as String?,
-      estimatedQuantity: (json['estimatedQuantity'] as num?)?.toDouble(),
-      estimatedCost: json['estimatedCost'] == null
-          ? null
-          : Currency.fromJson(json['estimatedCost'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$WorkEffortGoodStandardDataToJson(
-    WorkEffortGoodStandardData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('workEffortId', instance.workEffortId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('workEffortGoodStdTypeId', instance.workEffortGoodStdTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('estimatedQuantity', instance.estimatedQuantity);
-  writeNotNull('estimatedCost', instance.estimatedCost?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -7247,6 +12089,32 @@ Map<String, dynamic> _$ContentAttributeDataToJson(
   return val;
 }
 
+CreateExampleParams _$CreateExampleParamsFromJson(Map<String, dynamic> json) =>
+    CreateExampleParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      example: json['example'] == null
+          ? null
+          : ExampleData.fromJson(json['example'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$CreateExampleParamsToJson(CreateExampleParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('example', instance.example?.toJson());
+  writeNotNull('comment', instance.comment);
+  return val;
+}
+
 VendorProductData _$VendorProductDataFromJson(Map<String, dynamic> json) =>
     VendorProductData(
       productId: json['productId'] as String?,
@@ -7280,94 +12148,6 @@ Map<String, dynamic> _$VendorProductDataToJson(VendorProductData instance) {
   writeNotNull('productId', instance.productId);
   writeNotNull('vendorPartyId', instance.vendorPartyId);
   writeNotNull('productStoreGroupId', instance.productStoreGroupId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ShipmentItemBillingData _$ShipmentItemBillingDataFromJson(
-        Map<String, dynamic> json) =>
-    ShipmentItemBillingData(
-      shipmentId: json['shipmentId'] as String?,
-      shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
-      invoiceId: json['invoiceId'] as String?,
-      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ShipmentItemBillingDataToJson(
-    ShipmentItemBillingData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('shipmentItemSeqId', instance.shipmentItemSeqId);
-  writeNotNull('invoiceId', instance.invoiceId);
-  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-AgreementRoleData _$AgreementRoleDataFromJson(Map<String, dynamic> json) =>
-    AgreementRoleData(
-      agreementId: json['agreementId'] as String?,
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$AgreementRoleDataToJson(AgreementRoleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('agreementId', instance.agreementId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
@@ -7542,33 +12322,6 @@ Map<String, dynamic> _$ReturnItemBillingDataToJson(
   return val;
 }
 
-TypesEntityStatusList _$TypesEntityStatusListFromJson(
-        Map<String, dynamic> json) =>
-    TypesEntityStatusList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => TypesEntityStatusData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$TypesEntityStatusListToJson(
-    TypesEntityStatusList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 FacilityTypeList _$FacilityTypeListFromJson(Map<String, dynamic> json) =>
     FacilityTypeList(
       values: (json['values'] as List<dynamic>?)
@@ -7593,79 +12346,6 @@ Map<String, dynamic> _$FacilityTypeListToJson(FacilityTypeList instance) {
   return val;
 }
 
-DecimalMap _$DecimalMapFromJson(Map<String, dynamic> json) => DecimalMap(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => DecimalMapValuesEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$DecimalMapToJson(DecimalMap instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-NoteDataData _$NoteDataDataFromJson(Map<String, dynamic> json) => NoteDataData(
-      noteId: json['noteId'] as String?,
-      noteName: json['noteName'] as String?,
-      noteInfo: json['noteInfo'] as String?,
-      noteDateTime: json['noteDateTime'] == null
-          ? null
-          : Timestamp.fromJson(json['noteDateTime'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      noteParty: json['noteParty'] as String?,
-      moreInfoUrl: json['moreInfoUrl'] as String?,
-      moreInfoItemId: json['moreInfoItemId'] as String?,
-      moreInfoItemName: json['moreInfoItemName'] as String?,
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$NoteDataDataToJson(NoteDataData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('noteId', instance.noteId);
-  writeNotNull('noteName', instance.noteName);
-  writeNotNull('noteInfo', instance.noteInfo);
-  writeNotNull('noteDateTime', instance.noteDateTime?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('noteParty', instance.noteParty);
-  writeNotNull('moreInfoUrl', instance.moreInfoUrl);
-  writeNotNull('moreInfoItemId', instance.moreInfoItemId);
-  writeNotNull('moreInfoItemName', instance.moreInfoItemName);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 SecurityGroupList _$SecurityGroupListFromJson(Map<String, dynamic> json) =>
     SecurityGroupList(
       values: (json['values'] as List<dynamic>?)
@@ -7677,131 +12357,6 @@ SecurityGroupList _$SecurityGroupListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$SecurityGroupListToJson(SecurityGroupList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PaymentGatewayResponseList _$PaymentGatewayResponseListFromJson(
-        Map<String, dynamic> json) =>
-    PaymentGatewayResponseList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PaymentGatewayResponseFlatData.fromJson(
-              e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PaymentGatewayResponseListToJson(
-    PaymentGatewayResponseList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStoreKeywordOvrdList _$ProductStoreKeywordOvrdListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreKeywordOvrdList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductStoreKeywordOvrdData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductStoreKeywordOvrdListToJson(
-    ProductStoreKeywordOvrdList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ContactMechTypeData _$ContactMechTypeDataFromJson(Map<String, dynamic> json) =>
-    ContactMechTypeData(
-      contactMechTypeId: json['contactMechTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      hasTable: json['hasTable'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ContactMechTypeDataToJson(ContactMechTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contactMechTypeId', instance.contactMechTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('hasTable', instance.hasTable);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ShipmentRouteSegmentList _$ShipmentRouteSegmentListFromJson(
-        Map<String, dynamic> json) =>
-    ShipmentRouteSegmentList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ShipmentRouteSegmentData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShipmentRouteSegmentListToJson(
-    ShipmentRouteSegmentList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -7866,224 +12421,6 @@ Map<String, dynamic> _$ExampleStatusDataToJson(ExampleStatusData instance) {
   return val;
 }
 
-StructFieldsEntry _$StructFieldsEntryFromJson(Map<String, dynamic> json) =>
-    StructFieldsEntry(
-      key: json['key'] as String?,
-      value: json['value'] == null
-          ? null
-          : Value.fromJson(json['value'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$StructFieldsEntryToJson(StructFieldsEntry instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('key', instance.key);
-  writeNotNull('value', instance.value?.toJson());
-  return val;
-}
-
-ContactMechFlatData _$ContactMechFlatDataFromJson(Map<String, dynamic> json) =>
-    ContactMechFlatData(
-      contactMechId: json['contactMechId'] as String?,
-      contactMechTypeId: json['contactMechTypeId'] as String?,
-      infoString: json['infoString'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ContactMechFlatDataToJson(ContactMechFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contactMechId', instance.contactMechId);
-  writeNotNull('contactMechTypeId', instance.contactMechTypeId);
-  writeNotNull('infoString', instance.infoString);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-FactProtoTypeData _$FactProtoTypeDataFromJson(Map<String, dynamic> json) =>
-    FactProtoTypeData(
-      factProtoTypeId: json['factProtoTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$FactProtoTypeDataToJson(FactProtoTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('factProtoTypeId', instance.factProtoTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-WorkEffortPartyAssignmentData _$WorkEffortPartyAssignmentDataFromJson(
-        Map<String, dynamic> json) =>
-    WorkEffortPartyAssignmentData(
-      workEffortId: json['workEffortId'] as String?,
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      assignedByUserLoginId: json['assignedByUserLoginId'] as String?,
-      statusId: json['statusId'] as String?,
-      statusDateTime: json['statusDateTime'] == null
-          ? null
-          : Timestamp.fromJson(json['statusDateTime'] as Map<String, dynamic>),
-      expectationEnumId: json['expectationEnumId'] as String?,
-      delegateReasonEnumId: json['delegateReasonEnumId'] as String?,
-      facilityId: json['facilityId'] as String?,
-      comments: json['comments'] as String?,
-      mustRsvp: json['mustRsvp'] as String?,
-      availabilityStatusId: json['availabilityStatusId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$WorkEffortPartyAssignmentDataToJson(
-    WorkEffortPartyAssignmentData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('workEffortId', instance.workEffortId);
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('assignedByUserLoginId', instance.assignedByUserLoginId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('statusDateTime', instance.statusDateTime?.toJson());
-  writeNotNull('expectationEnumId', instance.expectationEnumId);
-  writeNotNull('delegateReasonEnumId', instance.delegateReasonEnumId);
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('mustRsvp', instance.mustRsvp);
-  writeNotNull('availabilityStatusId', instance.availabilityStatusId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-PartyNoteData _$PartyNoteDataFromJson(Map<String, dynamic> json) =>
-    PartyNoteData(
-      partyId: json['partyId'] as String?,
-      noteId: json['noteId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PartyNoteDataToJson(PartyNoteData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('noteId', instance.noteId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductStoreCatalogList _$ProductStoreCatalogListFromJson(
         Map<String, dynamic> json) =>
     ProductStoreCatalogList(
@@ -8111,92 +12448,6 @@ Map<String, dynamic> _$ProductStoreCatalogListToJson(
   return val;
 }
 
-RequirementList _$RequirementListFromJson(Map<String, dynamic> json) =>
-    RequirementList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => RequirementFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$RequirementListToJson(RequirementList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-FixedAssetProductData _$FixedAssetProductDataFromJson(
-        Map<String, dynamic> json) =>
-    FixedAssetProductData(
-      fixedAssetId: json['fixedAssetId'] as String?,
-      productId: json['productId'] as String?,
-      fixedAssetProductTypeId: json['fixedAssetProductTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      comments: json['comments'] as String?,
-      sequenceNum: json['sequenceNum'] as int?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      quantityUomId: json['quantityUomId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$FixedAssetProductDataToJson(
-    FixedAssetProductData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('fixedAssetId', instance.fixedAssetId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('fixedAssetProductTypeId', instance.fixedAssetProductTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('comments', instance.comments);
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('quantityUomId', instance.quantityUomId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ItemIssuanceList _$ItemIssuanceListFromJson(Map<String, dynamic> json) =>
     ItemIssuanceList(
       values: (json['values'] as List<dynamic>?)
@@ -8218,48 +12469,6 @@ Map<String, dynamic> _$ItemIssuanceListToJson(ItemIssuanceList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-SecurityPermissionFlatData _$SecurityPermissionFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    SecurityPermissionFlatData(
-      permissionId: json['permissionId'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$SecurityPermissionFlatDataToJson(
-    SecurityPermissionFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('permissionId', instance.permissionId);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -8568,62 +12777,6 @@ Map<String, dynamic> _$ShipmentPackageContentDataToJson(
   return val;
 }
 
-ProdCatalogCategoryFlatData _$ProdCatalogCategoryFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    ProdCatalogCategoryFlatData(
-      prodCatalogId: json['prodCatalogId'] as String?,
-      productCategoryId: json['productCategoryId'] as String?,
-      prodCatalogCategoryTypeId: json['prodCatalogCategoryTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProdCatalogCategoryFlatDataToJson(
-    ProdCatalogCategoryFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('prodCatalogId', instance.prodCatalogId);
-  writeNotNull('productCategoryId', instance.productCategoryId);
-  writeNotNull('prodCatalogCategoryTypeId', instance.prodCatalogCategoryTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 UserLoginSecurityGroupData _$UserLoginSecurityGroupDataFromJson(
         Map<String, dynamic> json) =>
     UserLoginSecurityGroupData(
@@ -8815,30 +12968,6 @@ Map<String, dynamic> _$InventoryItemDetailDataToJson(
   return val;
 }
 
-PartyGroupList _$PartyGroupListFromJson(Map<String, dynamic> json) =>
-    PartyGroupList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PartyGroupFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PartyGroupListToJson(PartyGroupList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 OrderItemShipGroupList _$OrderItemShipGroupListFromJson(
         Map<String, dynamic> json) =>
     OrderItemShipGroupList(
@@ -8863,6 +12992,34 @@ Map<String, dynamic> _$OrderItemShipGroupListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
+  return val;
+}
+
+RemoveExampleItemParams _$RemoveExampleItemParamsFromJson(
+        Map<String, dynamic> json) =>
+    RemoveExampleItemParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      itemId: json['itemId'] as String?,
+      comment: json['comment'] as String?,
+    );
+
+Map<String, dynamic> _$RemoveExampleItemParamsToJson(
+    RemoveExampleItemParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('itemId', instance.itemId);
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -8938,33 +13095,6 @@ Map<String, dynamic> _$AgreementItemDataToJson(AgreementItemData instance) {
   return val;
 }
 
-UserLoginPasswordHistoryList _$UserLoginPasswordHistoryListFromJson(
-        Map<String, dynamic> json) =>
-    UserLoginPasswordHistoryList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              UserLoginPasswordHistoryData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$UserLoginPasswordHistoryListToJson(
-    UserLoginPasswordHistoryList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ProductCategoryTypeList _$ProductCategoryTypeListFromJson(
         Map<String, dynamic> json) =>
     ProductCategoryTypeList(
@@ -8989,34 +13119,6 @@ Map<String, dynamic> _$ProductCategoryTypeListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-UpdateNoteParams _$UpdateNoteParamsFromJson(Map<String, dynamic> json) =>
-    UpdateNoteParams(
-      handle: json['handle'] == null
-          ? null
-          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-      mainId: json['mainId'] as String?,
-      noteData: json['noteData'] == null
-          ? null
-          : NoteDataData.fromJson(json['noteData'] as Map<String, dynamic>),
-      comment: json['comment'] as String?,
-    );
-
-Map<String, dynamic> _$UpdateNoteParamsToJson(UpdateNoteParams instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('mainId', instance.mainId);
-  writeNotNull('noteData', instance.noteData?.toJson());
-  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -9083,175 +13185,6 @@ Map<String, dynamic> _$OrderHeaderNoteDataToJson(OrderHeaderNoteData instance) {
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ShipmentStatusList _$ShipmentStatusListFromJson(Map<String, dynamic> json) =>
-    ShipmentStatusList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ShipmentStatusData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShipmentStatusListToJson(ShipmentStatusList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ShipmentFlatData _$ShipmentFlatDataFromJson(Map<String, dynamic> json) =>
-    ShipmentFlatData(
-      shipmentId: json['shipmentId'] as String?,
-      shipmentTypeId: json['shipmentTypeId'] as String?,
-      statusId: json['statusId'] as String?,
-      primaryOrderId: json['primaryOrderId'] as String?,
-      primaryReturnId: json['primaryReturnId'] as String?,
-      primaryShipGroupSeqId: json['primaryShipGroupSeqId'] as String?,
-      picklistBinId: json['picklistBinId'] as String?,
-      estimatedReadyDate: json['estimatedReadyDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['estimatedReadyDate'] as Map<String, dynamic>),
-      estimatedShipDate: json['estimatedShipDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['estimatedShipDate'] as Map<String, dynamic>),
-      estimatedShipWorkEffId: json['estimatedShipWorkEffId'] as String?,
-      estimatedArrivalDate: json['estimatedArrivalDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['estimatedArrivalDate'] as Map<String, dynamic>),
-      estimatedArrivalWorkEffId: json['estimatedArrivalWorkEffId'] as String?,
-      latestCancelDate: json['latestCancelDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['latestCancelDate'] as Map<String, dynamic>),
-      estimatedShipCost: json['estimatedShipCost'] == null
-          ? null
-          : Currency.fromJson(
-              json['estimatedShipCost'] as Map<String, dynamic>),
-      currencyUomId: json['currencyUomId'] as String?,
-      handlingInstructions: json['handlingInstructions'] as String?,
-      originFacilityId: json['originFacilityId'] as String?,
-      destinationFacilityId: json['destinationFacilityId'] as String?,
-      originContactMechId: json['originContactMechId'] as String?,
-      originTelecomNumberId: json['originTelecomNumberId'] as String?,
-      destinationContactMechId: json['destinationContactMechId'] as String?,
-      destinationTelecomNumberId: json['destinationTelecomNumberId'] as String?,
-      partyIdTo: json['partyIdTo'] as String?,
-      partyIdFrom: json['partyIdFrom'] as String?,
-      additionalShippingCharge: json['additionalShippingCharge'] == null
-          ? null
-          : Currency.fromJson(
-              json['additionalShippingCharge'] as Map<String, dynamic>),
-      addtlShippingChargeDesc: json['addtlShippingChargeDesc'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ShipmentFlatDataToJson(ShipmentFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('shipmentTypeId', instance.shipmentTypeId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('primaryOrderId', instance.primaryOrderId);
-  writeNotNull('primaryReturnId', instance.primaryReturnId);
-  writeNotNull('primaryShipGroupSeqId', instance.primaryShipGroupSeqId);
-  writeNotNull('picklistBinId', instance.picklistBinId);
-  writeNotNull('estimatedReadyDate', instance.estimatedReadyDate?.toJson());
-  writeNotNull('estimatedShipDate', instance.estimatedShipDate?.toJson());
-  writeNotNull('estimatedShipWorkEffId', instance.estimatedShipWorkEffId);
-  writeNotNull('estimatedArrivalDate', instance.estimatedArrivalDate?.toJson());
-  writeNotNull('estimatedArrivalWorkEffId', instance.estimatedArrivalWorkEffId);
-  writeNotNull('latestCancelDate', instance.latestCancelDate?.toJson());
-  writeNotNull('estimatedShipCost', instance.estimatedShipCost?.toJson());
-  writeNotNull('currencyUomId', instance.currencyUomId);
-  writeNotNull('handlingInstructions', instance.handlingInstructions);
-  writeNotNull('originFacilityId', instance.originFacilityId);
-  writeNotNull('destinationFacilityId', instance.destinationFacilityId);
-  writeNotNull('originContactMechId', instance.originContactMechId);
-  writeNotNull('originTelecomNumberId', instance.originTelecomNumberId);
-  writeNotNull('destinationContactMechId', instance.destinationContactMechId);
-  writeNotNull(
-      'destinationTelecomNumberId', instance.destinationTelecomNumberId);
-  writeNotNull('partyIdTo', instance.partyIdTo);
-  writeNotNull('partyIdFrom', instance.partyIdFrom);
-  writeNotNull(
-      'additionalShippingCharge', instance.additionalShippingCharge?.toJson());
-  writeNotNull('addtlShippingChargeDesc', instance.addtlShippingChargeDesc);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-TypesEntityList _$TypesEntityListFromJson(Map<String, dynamic> json) =>
-    TypesEntityList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => TypesEntityData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$TypesEntityListToJson(TypesEntityList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -9341,79 +13274,6 @@ Map<String, dynamic> _$ProductTypeDataToJson(ProductTypeData instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ReturnItemData _$ReturnItemDataFromJson(Map<String, dynamic> json) =>
-    ReturnItemData(
-      returnId: json['returnId'] as String?,
-      returnItemSeqId: json['returnItemSeqId'] as String?,
-      returnReasonId: json['returnReasonId'] as String?,
-      returnTypeId: json['returnTypeId'] as String?,
-      returnItemTypeId: json['returnItemTypeId'] as String?,
-      productId: json['productId'] as String?,
-      description: json['description'] as String?,
-      orderId: json['orderId'] as String?,
-      orderItemSeqId: json['orderItemSeqId'] as String?,
-      statusId: json['statusId'] as String?,
-      expectedItemStatus: json['expectedItemStatus'] as String?,
-      returnQuantity: json['returnQuantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['returnQuantity'] as Map<String, dynamic>),
-      receivedQuantity: json['receivedQuantity'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['receivedQuantity'] as Map<String, dynamic>),
-      returnPrice: json['returnPrice'] == null
-          ? null
-          : Currency.fromJson(json['returnPrice'] as Map<String, dynamic>),
-      returnItemResponseId: json['returnItemResponseId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ReturnItemDataToJson(ReturnItemData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('returnId', instance.returnId);
-  writeNotNull('returnItemSeqId', instance.returnItemSeqId);
-  writeNotNull('returnReasonId', instance.returnReasonId);
-  writeNotNull('returnTypeId', instance.returnTypeId);
-  writeNotNull('returnItemTypeId', instance.returnItemTypeId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('description', instance.description);
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('expectedItemStatus', instance.expectedItemStatus);
-  writeNotNull('returnQuantity', instance.returnQuantity?.toJson());
-  writeNotNull('receivedQuantity', instance.receivedQuantity?.toJson());
-  writeNotNull('returnPrice', instance.returnPrice?.toJson());
-  writeNotNull('returnItemResponseId', instance.returnItemResponseId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
@@ -9542,37 +13402,6 @@ Map<String, dynamic> _$SupplierProductDataToJson(SupplierProductData instance) {
   return val;
 }
 
-UpdateSecurityGroupPermissionParams
-    _$UpdateSecurityGroupPermissionParamsFromJson(Map<String, dynamic> json) =>
-        UpdateSecurityGroupPermissionParams(
-          handle: json['handle'] == null
-              ? null
-              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-          mainId: json['mainId'] as String?,
-          data: json['data'] == null
-              ? null
-              : SecurityGroupPermissionData.fromJson(
-                  json['data'] as Map<String, dynamic>),
-          comment: json['comment'] as String?,
-        );
-
-Map<String, dynamic> _$UpdateSecurityGroupPermissionParamsToJson(
-    UpdateSecurityGroupPermissionParams instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('mainId', instance.mainId);
-  writeNotNull('data', instance.data?.toJson());
-  writeNotNull('comment', instance.comment);
-  return val;
-}
-
 AcctgTransEntryList _$AcctgTransEntryListFromJson(Map<String, dynamic> json) =>
     AcctgTransEntryList(
       values: (json['values'] as List<dynamic>?)
@@ -9642,76 +13471,6 @@ Map<String, dynamic> _$TypesEntityTypeListToJson(TypesEntityTypeList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ItemIssuanceFlatData _$ItemIssuanceFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    ItemIssuanceFlatData(
-      itemIssuanceId: json['itemIssuanceId'] as String?,
-      orderId: json['orderId'] as String?,
-      orderItemSeqId: json['orderItemSeqId'] as String?,
-      shipGroupSeqId: json['shipGroupSeqId'] as String?,
-      inventoryItemId: json['inventoryItemId'] as String?,
-      shipmentId: json['shipmentId'] as String?,
-      shipmentItemSeqId: json['shipmentItemSeqId'] as String?,
-      fixedAssetId: json['fixedAssetId'] as String?,
-      maintHistSeqId: json['maintHistSeqId'] as String?,
-      issuedDateTime: json['issuedDateTime'] == null
-          ? null
-          : Timestamp.fromJson(json['issuedDateTime'] as Map<String, dynamic>),
-      issuedByUserLoginId: json['issuedByUserLoginId'] as String?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      cancelQuantity: json['cancelQuantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['cancelQuantity'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ItemIssuanceFlatDataToJson(
-    ItemIssuanceFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('itemIssuanceId', instance.itemIssuanceId);
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
-  writeNotNull('shipGroupSeqId', instance.shipGroupSeqId);
-  writeNotNull('inventoryItemId', instance.inventoryItemId);
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('shipmentItemSeqId', instance.shipmentItemSeqId);
-  writeNotNull('fixedAssetId', instance.fixedAssetId);
-  writeNotNull('maintHistSeqId', instance.maintHistSeqId);
-  writeNotNull('issuedDateTime', instance.issuedDateTime?.toJson());
-  writeNotNull('issuedByUserLoginId', instance.issuedByUserLoginId);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('cancelQuantity', instance.cancelQuantity?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -9800,30 +13559,6 @@ Map<String, dynamic> _$ProductFeatureApplDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-UserPreferenceList _$UserPreferenceListFromJson(Map<String, dynamic> json) =>
-    UserPreferenceList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => UserPreferenceData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$UserPreferenceListToJson(UserPreferenceList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -9927,76 +13662,6 @@ Map<String, dynamic> _$FixedAssetFlatDataToJson(FixedAssetFlatData instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductAssocData _$ProductAssocDataFromJson(Map<String, dynamic> json) =>
-    ProductAssocData(
-      productId: json['productId'] as String?,
-      productIdTo: json['productIdTo'] as String?,
-      productAssocTypeId: json['productAssocTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      reason: json['reason'] as String?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      scrapFactor: json['scrapFactor'] == null
-          ? null
-          : FixedPoint.fromJson(json['scrapFactor'] as Map<String, dynamic>),
-      instruction: json['instruction'] as String?,
-      routingWorkEffortId: json['routingWorkEffortId'] as String?,
-      estimateCalcMethod: json['estimateCalcMethod'] as String?,
-      recurrenceInfoId: json['recurrenceInfoId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductAssocDataToJson(ProductAssocData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productId', instance.productId);
-  writeNotNull('productIdTo', instance.productIdTo);
-  writeNotNull('productAssocTypeId', instance.productAssocTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('reason', instance.reason);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('scrapFactor', instance.scrapFactor?.toJson());
-  writeNotNull('instruction', instance.instruction);
-  writeNotNull('routingWorkEffortId', instance.routingWorkEffortId);
-  writeNotNull('estimateCalcMethod', instance.estimateCalcMethod);
-  writeNotNull('recurrenceInfoId', instance.recurrenceInfoId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
@@ -10125,225 +13790,6 @@ Map<String, dynamic> _$OrderAdjustmentFlatDataToJson(
   return val;
 }
 
-ProductPromoRuleList _$ProductPromoRuleListFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoRuleList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductPromoRuleData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductPromoRuleListToJson(
-    ProductPromoRuleList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-InventoryItemList _$InventoryItemListFromJson(Map<String, dynamic> json) =>
-    InventoryItemList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => InventoryItemFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$InventoryItemListToJson(InventoryItemList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProdCatalogFlatData _$ProdCatalogFlatDataFromJson(Map<String, dynamic> json) =>
-    ProdCatalogFlatData(
-      prodCatalogId: json['prodCatalogId'] as String?,
-      catalogName: json['catalogName'] as String?,
-      useQuickAdd: json['useQuickAdd'] as String?,
-      styleSheet: json['styleSheet'] as String?,
-      headerLogo: json['headerLogo'] as String?,
-      contentPathPrefix: json['contentPathPrefix'] as String?,
-      templatePathPrefix: json['templatePathPrefix'] as String?,
-      viewAllowPermReqd: json['viewAllowPermReqd'] as String?,
-      purchaseAllowPermReqd: json['purchaseAllowPermReqd'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProdCatalogFlatDataToJson(ProdCatalogFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('prodCatalogId', instance.prodCatalogId);
-  writeNotNull('catalogName', instance.catalogName);
-  writeNotNull('useQuickAdd', instance.useQuickAdd);
-  writeNotNull('styleSheet', instance.styleSheet);
-  writeNotNull('headerLogo', instance.headerLogo);
-  writeNotNull('contentPathPrefix', instance.contentPathPrefix);
-  writeNotNull('templatePathPrefix', instance.templatePathPrefix);
-  writeNotNull('viewAllowPermReqd', instance.viewAllowPermReqd);
-  writeNotNull('purchaseAllowPermReqd', instance.purchaseAllowPermReqd);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-OrderItemList _$OrderItemListFromJson(Map<String, dynamic> json) =>
-    OrderItemList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderItemFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderItemListToJson(OrderItemList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-AgreementFlatData _$AgreementFlatDataFromJson(Map<String, dynamic> json) =>
-    AgreementFlatData(
-      agreementId: json['agreementId'] as String?,
-      productId: json['productId'] as String?,
-      partyIdFrom: json['partyIdFrom'] as String?,
-      partyIdTo: json['partyIdTo'] as String?,
-      roleTypeIdFrom: json['roleTypeIdFrom'] as String?,
-      roleTypeIdTo: json['roleTypeIdTo'] as String?,
-      agreementTypeId: json['agreementTypeId'] as String?,
-      agreementDate: json['agreementDate'] == null
-          ? null
-          : Timestamp.fromJson(json['agreementDate'] as Map<String, dynamic>),
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      description: json['description'] as String?,
-      textData: json['textData'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$AgreementFlatDataToJson(AgreementFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('agreementId', instance.agreementId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('partyIdFrom', instance.partyIdFrom);
-  writeNotNull('partyIdTo', instance.partyIdTo);
-  writeNotNull('roleTypeIdFrom', instance.roleTypeIdFrom);
-  writeNotNull('roleTypeIdTo', instance.roleTypeIdTo);
-  writeNotNull('agreementTypeId', instance.agreementTypeId);
-  writeNotNull('agreementDate', instance.agreementDate?.toJson());
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('description', instance.description);
-  writeNotNull('textData', instance.textData);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductKeywordList _$ProductKeywordListFromJson(Map<String, dynamic> json) =>
-    ProductKeywordList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductKeywordData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductKeywordListToJson(ProductKeywordList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ElectronicTextFlatData _$ElectronicTextFlatDataFromJson(
         Map<String, dynamic> json) =>
     ElectronicTextFlatData(
@@ -10383,6 +13829,38 @@ Map<String, dynamic> _$ElectronicTextFlatDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  return val;
+}
+
+UpdateFacilityContactMechPurposeParams
+    _$UpdateFacilityContactMechPurposeParamsFromJson(
+            Map<String, dynamic> json) =>
+        UpdateFacilityContactMechPurposeParams(
+          handle: json['handle'] == null
+              ? null
+              : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+          mainId: json['mainId'] as String?,
+          data: json['data'] == null
+              ? null
+              : FacilityContactMechPurposeData.fromJson(
+                  json['data'] as Map<String, dynamic>),
+          comment: json['comment'] as String?,
+        );
+
+Map<String, dynamic> _$UpdateFacilityContactMechPurposeParamsToJson(
+    UpdateFacilityContactMechPurposeParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('data', instance.data?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -10480,87 +13958,6 @@ Map<String, dynamic> _$FactProtoDataToJson(FactProtoData instance) {
   return val;
 }
 
-DataResourceFlatData _$DataResourceFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    DataResourceFlatData(
-      dataResourceId: json['dataResourceId'] as String?,
-      dataResourceTypeId: json['dataResourceTypeId'] as String?,
-      dataTemplateTypeId: json['dataTemplateTypeId'] as String?,
-      dataCategoryId: json['dataCategoryId'] as String?,
-      dataSourceId: json['dataSourceId'] as String?,
-      statusId: json['statusId'] as String?,
-      dataResourceName: json['dataResourceName'] as String?,
-      localeString: json['localeString'] as String?,
-      mimeTypeId: json['mimeTypeId'] as String?,
-      characterSetId: json['characterSetId'] as String?,
-      objectInfo: json['objectInfo'] as String?,
-      surveyId: json['surveyId'] as String?,
-      surveyResponseId: json['surveyResponseId'] as String?,
-      relatedDetailId: json['relatedDetailId'] as String?,
-      isPublic: json['isPublic'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$DataResourceFlatDataToJson(
-    DataResourceFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('dataResourceId', instance.dataResourceId);
-  writeNotNull('dataResourceTypeId', instance.dataResourceTypeId);
-  writeNotNull('dataTemplateTypeId', instance.dataTemplateTypeId);
-  writeNotNull('dataCategoryId', instance.dataCategoryId);
-  writeNotNull('dataSourceId', instance.dataSourceId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('dataResourceName', instance.dataResourceName);
-  writeNotNull('localeString', instance.localeString);
-  writeNotNull('mimeTypeId', instance.mimeTypeId);
-  writeNotNull('characterSetId', instance.characterSetId);
-  writeNotNull('objectInfo', instance.objectInfo);
-  writeNotNull('surveyId', instance.surveyId);
-  writeNotNull('surveyResponseId', instance.surveyResponseId);
-  writeNotNull('relatedDetailId', instance.relatedDetailId);
-  writeNotNull('isPublic', instance.isPublic);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 OrderItemPriceInfoFlatData _$OrderItemPriceInfoFlatDataFromJson(
         Map<String, dynamic> json) =>
     OrderItemPriceInfoFlatData(
@@ -10641,30 +14038,6 @@ Map<String, dynamic> _$RequirementTypeListToJson(RequirementTypeList instance) {
   return val;
 }
 
-BlacklistTypeList _$BlacklistTypeListFromJson(Map<String, dynamic> json) =>
-    BlacklistTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => BlacklistTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$BlacklistTypeListToJson(BlacklistTypeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 BillingAccountTermList _$BillingAccountTermListFromJson(
         Map<String, dynamic> json) =>
     BillingAccountTermList(
@@ -10702,154 +14075,6 @@ AgreementRoleList _$AgreementRoleListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AgreementRoleListToJson(AgreementRoleList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-InvoiceStatusList _$InvoiceStatusListFromJson(Map<String, dynamic> json) =>
-    InvoiceStatusList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => InvoiceStatusData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$InvoiceStatusListToJson(InvoiceStatusList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-OrderFactStatusData _$OrderFactStatusDataFromJson(Map<String, dynamic> json) =>
-    OrderFactStatusData(
-      orderFactId: json['orderFactId'] as String?,
-      statusDate: json['statusDate'] == null
-          ? null
-          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
-      statusEndDate: json['statusEndDate'] == null
-          ? null
-          : Timestamp.fromJson(json['statusEndDate'] as Map<String, dynamic>),
-      changeByUserLoginId: json['changeByUserLoginId'] as String?,
-      statusId: json['statusId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderFactStatusDataToJson(OrderFactStatusData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderFactId', instance.orderFactId);
-  writeNotNull('statusDate', instance.statusDate?.toJson());
-  writeNotNull('statusEndDate', instance.statusEndDate?.toJson());
-  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ProductStorePromoApplList _$ProductStorePromoApplListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStorePromoApplList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductStorePromoApplData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductStorePromoApplListToJson(
-    ProductStorePromoApplList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ReturnHeaderList _$ReturnHeaderListFromJson(Map<String, dynamic> json) =>
-    ReturnHeaderList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ReturnHeaderFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ReturnHeaderListToJson(ReturnHeaderList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PaymentList _$PaymentListFromJson(Map<String, dynamic> json) => PaymentList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PaymentFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PaymentListToJson(PaymentList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -10910,48 +14135,6 @@ Map<String, dynamic> _$WorkEffortAssocDataToJson(WorkEffortAssocData instance) {
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ImageDataResourceData _$ImageDataResourceDataFromJson(
-        Map<String, dynamic> json) =>
-    ImageDataResourceData(
-      dataResourceId: json['dataResourceId'] as String?,
-      imageData: json['imageData'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ImageDataResourceDataToJson(
-    ImageDataResourceData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('dataResourceId', instance.dataResourceId);
-  writeNotNull('imageData', instance.imageData);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
@@ -11029,88 +14212,6 @@ Map<String, dynamic> _$ShoppingListItemDataToJson(
   return val;
 }
 
-ReturnStatusList _$ReturnStatusListFromJson(Map<String, dynamic> json) =>
-    ReturnStatusList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ReturnStatusData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ReturnStatusListToJson(ReturnStatusList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-BlacklistItemData _$BlacklistItemDataFromJson(Map<String, dynamic> json) =>
-    BlacklistItemData(
-      blacklistItemId: json['blacklistItemId'] as String?,
-      blacklistId: json['blacklistId'] as String?,
-      loginId: json['loginId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      reason: json['reason'] as String?,
-      blockBy: json['blockBy'] as String?,
-      blacklistItemTypeId: json['blacklistItemTypeId'] as String?,
-      statusId: json['statusId'] as String?,
-      tenantId: json['tenantId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$BlacklistItemDataToJson(BlacklistItemData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('blacklistItemId', instance.blacklistItemId);
-  writeNotNull('blacklistId', instance.blacklistId);
-  writeNotNull('loginId', instance.loginId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('reason', instance.reason);
-  writeNotNull('blockBy', instance.blockBy);
-  writeNotNull('blacklistItemTypeId', instance.blacklistItemTypeId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 OrderFactTypeList _$OrderFactTypeListFromJson(Map<String, dynamic> json) =>
     OrderFactTypeList(
       values: (json['values'] as List<dynamic>?)
@@ -11132,118 +14233,6 @@ Map<String, dynamic> _$OrderFactTypeListToJson(OrderFactTypeList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ElectronicTextList _$ElectronicTextListFromJson(Map<String, dynamic> json) =>
-    ElectronicTextList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => ElectronicTextFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ElectronicTextListToJson(ElectronicTextList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductCategoryMemberFlatData _$ProductCategoryMemberFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductCategoryMemberFlatData(
-      productCategoryId: json['productCategoryId'] as String?,
-      productId: json['productId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      comments: json['comments'] as String?,
-      sequenceNum: json['sequenceNum'] as int?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductCategoryMemberFlatDataToJson(
-    ProductCategoryMemberFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productCategoryId', instance.productCategoryId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('comments', instance.comments);
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-CreateCatalogParams _$CreateCatalogParamsFromJson(Map<String, dynamic> json) =>
-    CreateCatalogParams(
-      handle: json['handle'] == null
-          ? null
-          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-      prodCatalog: json['prodCatalog'] == null
-          ? null
-          : ProdCatalogFlatData.fromJson(
-              json['prodCatalog'] as Map<String, dynamic>),
-      comment: json['comment'] as String?,
-    );
-
-Map<String, dynamic> _$CreateCatalogParamsToJson(CreateCatalogParams instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('prodCatalog', instance.prodCatalog?.toJson());
-  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -11293,74 +14282,6 @@ Map<String, dynamic> _$FacilityContactMechPurposeDataToJson(
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-InventoryTransferData _$InventoryTransferDataFromJson(
-        Map<String, dynamic> json) =>
-    InventoryTransferData(
-      inventoryTransferId: json['inventoryTransferId'] as String?,
-      statusId: json['statusId'] as String?,
-      inventoryItemId: json['inventoryItemId'] as String?,
-      facilityId: json['facilityId'] as String?,
-      locationSeqId: json['locationSeqId'] as String?,
-      containerId: json['containerId'] as String?,
-      facilityIdTo: json['facilityIdTo'] as String?,
-      locationSeqIdTo: json['locationSeqIdTo'] as String?,
-      containerIdTo: json['containerIdTo'] as String?,
-      itemIssuanceId: json['itemIssuanceId'] as String?,
-      sendDate: json['sendDate'] == null
-          ? null
-          : Timestamp.fromJson(json['sendDate'] as Map<String, dynamic>),
-      receiveDate: json['receiveDate'] == null
-          ? null
-          : Timestamp.fromJson(json['receiveDate'] as Map<String, dynamic>),
-      comments: json['comments'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$InventoryTransferDataToJson(
-    InventoryTransferData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('inventoryTransferId', instance.inventoryTransferId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('inventoryItemId', instance.inventoryItemId);
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('locationSeqId', instance.locationSeqId);
-  writeNotNull('containerId', instance.containerId);
-  writeNotNull('facilityIdTo', instance.facilityIdTo);
-  writeNotNull('locationSeqIdTo', instance.locationSeqIdTo);
-  writeNotNull('containerIdTo', instance.containerIdTo);
-  writeNotNull('itemIssuanceId', instance.itemIssuanceId);
-  writeNotNull('sendDate', instance.sendDate?.toJson());
-  writeNotNull('receiveDate', instance.receiveDate?.toJson());
-  writeNotNull('comments', instance.comments);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
@@ -11443,58 +14364,6 @@ Map<String, dynamic> _$ContentListToJson(ContentList instance) {
   return val;
 }
 
-PartyContactMechPurposeData _$PartyContactMechPurposeDataFromJson(
-        Map<String, dynamic> json) =>
-    PartyContactMechPurposeData(
-      partyId: json['partyId'] as String?,
-      contactMechId: json['contactMechId'] as String?,
-      contactMechPurposeTypeId: json['contactMechPurposeTypeId'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PartyContactMechPurposeDataToJson(
-    PartyContactMechPurposeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('contactMechId', instance.contactMechId);
-  writeNotNull('contactMechPurposeTypeId', instance.contactMechPurposeTypeId);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductStorePaymentSettingList _$ProductStorePaymentSettingListFromJson(
         Map<String, dynamic> json) =>
     ProductStorePaymentSettingList(
@@ -11572,30 +14441,6 @@ Map<String, dynamic> _$InventoryItemStatusListToJson(
   return val;
 }
 
-ContentAssocList _$ContentAssocListFromJson(Map<String, dynamic> json) =>
-    ContentAssocList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ContentAssocData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ContentAssocListToJson(ContentAssocList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ExampleItemList _$ExampleItemListFromJson(Map<String, dynamic> json) =>
     ExampleItemList(
       values: (json['values'] as List<dynamic>?)
@@ -11606,33 +14451,6 @@ ExampleItemList _$ExampleItemListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ExampleItemListToJson(ExampleItemList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStoreFacilityList _$ProductStoreFacilityListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreFacilityList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductStoreFacilityFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductStoreFacilityListToJson(
-    ProductStoreFacilityList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -11782,83 +14600,6 @@ Map<String, dynamic> _$UpdateSecurityGroupParamsToJson(
   return val;
 }
 
-Any _$AnyFromJson(Map<String, dynamic> json) => Any(
-      typeUrl: json['typeUrl'] as String?,
-      value: json['value'] as String?,
-    );
-
-Map<String, dynamic> _$AnyToJson(Any instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('typeUrl', instance.typeUrl);
-  writeNotNull('value', instance.value);
-  return val;
-}
-
-OrderItemBillingData _$OrderItemBillingDataFromJson(
-        Map<String, dynamic> json) =>
-    OrderItemBillingData(
-      orderId: json['orderId'] as String?,
-      orderItemSeqId: json['orderItemSeqId'] as String?,
-      invoiceId: json['invoiceId'] as String?,
-      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
-      itemIssuanceId: json['itemIssuanceId'] as String?,
-      shipmentReceiptId: json['shipmentReceiptId'] as String?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      amount: json['amount'] == null
-          ? null
-          : Currency.fromJson(json['amount'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderItemBillingDataToJson(
-    OrderItemBillingData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
-  writeNotNull('invoiceId', instance.invoiceId);
-  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
-  writeNotNull('itemIssuanceId', instance.itemIssuanceId);
-  writeNotNull('shipmentReceiptId', instance.shipmentReceiptId);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('amount', instance.amount?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 PartyContactMechList _$PartyContactMechListFromJson(
         Map<String, dynamic> json) =>
     PartyContactMechList(
@@ -11885,88 +14626,21 @@ Map<String, dynamic> _$PartyContactMechListToJson(
   return val;
 }
 
-ShipmentPackageData _$ShipmentPackageDataFromJson(Map<String, dynamic> json) =>
-    ShipmentPackageData(
-      shipmentId: json['shipmentId'] as String?,
-      shipmentPackageSeqId: json['shipmentPackageSeqId'] as String?,
-      shipmentBoxTypeId: json['shipmentBoxTypeId'] as String?,
-      dateCreated: json['dateCreated'] == null
-          ? null
-          : Timestamp.fromJson(json['dateCreated'] as Map<String, dynamic>),
-      boxLength: json['boxLength'] == null
-          ? null
-          : FixedPoint.fromJson(json['boxLength'] as Map<String, dynamic>),
-      boxHeight: json['boxHeight'] == null
-          ? null
-          : FixedPoint.fromJson(json['boxHeight'] as Map<String, dynamic>),
-      boxWidth: json['boxWidth'] == null
-          ? null
-          : FixedPoint.fromJson(json['boxWidth'] as Map<String, dynamic>),
-      dimensionUomId: json['dimensionUomId'] as String?,
-      weight: json['weight'] == null
-          ? null
-          : FixedPoint.fromJson(json['weight'] as Map<String, dynamic>),
-      weightUomId: json['weightUomId'] as String?,
-      insuredValue: json['insuredValue'] == null
-          ? null
-          : Currency.fromJson(json['insuredValue'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ShipmentPackageDataToJson(ShipmentPackageData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('shipmentId', instance.shipmentId);
-  writeNotNull('shipmentPackageSeqId', instance.shipmentPackageSeqId);
-  writeNotNull('shipmentBoxTypeId', instance.shipmentBoxTypeId);
-  writeNotNull('dateCreated', instance.dateCreated?.toJson());
-  writeNotNull('boxLength', instance.boxLength?.toJson());
-  writeNotNull('boxHeight', instance.boxHeight?.toJson());
-  writeNotNull('boxWidth', instance.boxWidth?.toJson());
-  writeNotNull('dimensionUomId', instance.dimensionUomId);
-  writeNotNull('weight', instance.weight?.toJson());
-  writeNotNull('weightUomId', instance.weightUomId);
-  writeNotNull('insuredValue', instance.insuredValue?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ShoppingListTypeList _$ShoppingListTypeListFromJson(
+UpdateFacilityParams _$UpdateFacilityParamsFromJson(
         Map<String, dynamic> json) =>
-    ShoppingListTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ShoppingListTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
+    UpdateFacilityParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      facility: json['facility'] == null
+          ? null
+          : FacilityFlatData.fromJson(json['facility'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$ShoppingListTypeListToJson(
-    ShoppingListTypeList instance) {
+Map<String, dynamic> _$UpdateFacilityParamsToJson(
+    UpdateFacilityParams instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -11975,9 +14649,10 @@ Map<String, dynamic> _$ShoppingListTypeListToJson(
     }
   }
 
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('facility', instance.facility?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -12005,76 +14680,6 @@ Map<String, dynamic> _$InvoiceTypeListToJson(InvoiceTypeList instance) {
   return val;
 }
 
-WebSiteFlatData _$WebSiteFlatDataFromJson(Map<String, dynamic> json) =>
-    WebSiteFlatData(
-      webSiteId: json['webSiteId'] as String?,
-      siteName: json['siteName'] as String?,
-      httpHost: json['httpHost'] as String?,
-      httpPort: json['httpPort'] as String?,
-      httpsHost: json['httpsHost'] as String?,
-      httpsPort: json['httpsPort'] as String?,
-      enableHttps: json['enableHttps'] as String?,
-      webappPath: json['webappPath'] as String?,
-      standardContentPrefix: json['standardContentPrefix'] as String?,
-      secureContentPrefix: json['secureContentPrefix'] as String?,
-      cookieDomain: json['cookieDomain'] as String?,
-      visualThemeSetId: json['visualThemeSetId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      productStoreId: json['productStoreId'] as String?,
-      allowProductStoreChange: json['allowProductStoreChange'] as String?,
-      hostedPathAlias: json['hostedPathAlias'] as String?,
-      isDefault: json['isDefault'] as String?,
-      displayMaintenancePage: json['displayMaintenancePage'] as String?,
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$WebSiteFlatDataToJson(WebSiteFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('webSiteId', instance.webSiteId);
-  writeNotNull('siteName', instance.siteName);
-  writeNotNull('httpHost', instance.httpHost);
-  writeNotNull('httpPort', instance.httpPort);
-  writeNotNull('httpsHost', instance.httpsHost);
-  writeNotNull('httpsPort', instance.httpsPort);
-  writeNotNull('enableHttps', instance.enableHttps);
-  writeNotNull('webappPath', instance.webappPath);
-  writeNotNull('standardContentPrefix', instance.standardContentPrefix);
-  writeNotNull('secureContentPrefix', instance.secureContentPrefix);
-  writeNotNull('cookieDomain', instance.cookieDomain);
-  writeNotNull('visualThemeSetId', instance.visualThemeSetId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('allowProductStoreChange', instance.allowProductStoreChange);
-  writeNotNull('hostedPathAlias', instance.hostedPathAlias);
-  writeNotNull('isDefault', instance.isDefault);
-  writeNotNull('displayMaintenancePage', instance.displayMaintenancePage);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 BundleGetRequest _$BundleGetRequestFromJson(Map<String, dynamic> json) =>
     BundleGetRequest(
       handle: json['handle'] == null
@@ -12097,18 +14702,19 @@ Map<String, dynamic> _$BundleGetRequestToJson(BundleGetRequest instance) {
   return val;
 }
 
-ProductStoreRoleList _$ProductStoreRoleListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreRoleList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductStoreRoleData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
+UpdateExampleParams _$UpdateExampleParamsFromJson(Map<String, dynamic> json) =>
+    UpdateExampleParams(
+      handle: json['handle'] == null
+          ? null
+          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
+      mainId: json['mainId'] as String?,
+      example: json['example'] == null
+          ? null
+          : ExampleData.fromJson(json['example'] as Map<String, dynamic>),
+      comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$ProductStoreRoleListToJson(
-    ProductStoreRoleList instance) {
+Map<String, dynamic> _$UpdateExampleParamsToJson(UpdateExampleParams instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -12117,134 +14723,10 @@ Map<String, dynamic> _$ProductStoreRoleListToJson(
     }
   }
 
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStoreGroupMemberList _$ProductStoreGroupMemberListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreGroupMemberList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductStoreGroupMemberData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductStoreGroupMemberListToJson(
-    ProductStoreGroupMemberList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PaymentApplicationFlatData _$PaymentApplicationFlatDataFromJson(
-        Map<String, dynamic> json) =>
-    PaymentApplicationFlatData(
-      paymentApplicationId: json['paymentApplicationId'] as String?,
-      paymentId: json['paymentId'] as String?,
-      invoiceId: json['invoiceId'] as String?,
-      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
-      billingAccountId: json['billingAccountId'] as String?,
-      overrideGlAccountId: json['overrideGlAccountId'] as String?,
-      toPaymentId: json['toPaymentId'] as String?,
-      taxAuthGeoId: json['taxAuthGeoId'] as String?,
-      amountApplied: json['amountApplied'] == null
-          ? null
-          : Currency.fromJson(json['amountApplied'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PaymentApplicationFlatDataToJson(
-    PaymentApplicationFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('paymentApplicationId', instance.paymentApplicationId);
-  writeNotNull('paymentId', instance.paymentId);
-  writeNotNull('invoiceId', instance.invoiceId);
-  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
-  writeNotNull('billingAccountId', instance.billingAccountId);
-  writeNotNull('overrideGlAccountId', instance.overrideGlAccountId);
-  writeNotNull('toPaymentId', instance.toPaymentId);
-  writeNotNull('taxAuthGeoId', instance.taxAuthGeoId);
-  writeNotNull('amountApplied', instance.amountApplied?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-PartyRoleData _$PartyRoleDataFromJson(Map<String, dynamic> json) =>
-    PartyRoleData(
-      partyId: json['partyId'] as String?,
-      roleTypeId: json['roleTypeId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PartyRoleDataToJson(PartyRoleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('roleTypeId', instance.roleTypeId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
+  writeNotNull('handle', instance.handle?.toJson());
+  writeNotNull('mainId', instance.mainId);
+  writeNotNull('example', instance.example?.toJson());
+  writeNotNull('comment', instance.comment);
   return val;
 }
 
@@ -12272,56 +14754,6 @@ Map<String, dynamic> _$ProductStoreGroupListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-AddProdCatalogCategoryParams _$AddProdCatalogCategoryParamsFromJson(
-        Map<String, dynamic> json) =>
-    AddProdCatalogCategoryParams(
-      handle: json['handle'] == null
-          ? null
-          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-      mainId: json['mainId'] as String?,
-      data: json['data'] == null
-          ? null
-          : ProdCatalogCategoryFlatData.fromJson(
-              json['data'] as Map<String, dynamic>),
-      comment: json['comment'] as String?,
-    );
-
-Map<String, dynamic> _$AddProdCatalogCategoryParamsToJson(
-    AddProdCatalogCategoryParams instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('mainId', instance.mainId);
-  writeNotNull('data', instance.data?.toJson());
-  writeNotNull('comment', instance.comment);
-  return val;
-}
-
-FixedPoint _$FixedPointFromJson(Map<String, dynamic> json) => FixedPoint(
-      value: json['value'] as int?,
-      scalingPosition: json['scalingPosition'] as int?,
-    );
-
-Map<String, dynamic> _$FixedPointToJson(FixedPoint instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('value', instance.value);
-  writeNotNull('scalingPosition', instance.scalingPosition);
   return val;
 }
 
@@ -12364,58 +14796,6 @@ ProductReviewList _$ProductReviewListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ProductReviewListToJson(ProductReviewList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStoreGroupRoleList _$ProductStoreGroupRoleListFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreGroupRoleList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductStoreGroupRoleData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductStoreGroupRoleListToJson(
-    ProductStoreGroupRoleList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PostalAddressList _$PostalAddressListFromJson(Map<String, dynamic> json) =>
-    PostalAddressList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => PostalAddressFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PostalAddressListToJson(PostalAddressList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -12504,98 +14884,6 @@ Map<String, dynamic> _$ContentPurposeListToJson(ContentPurposeList instance) {
   return val;
 }
 
-PartyTypeData _$PartyTypeDataFromJson(Map<String, dynamic> json) =>
-    PartyTypeData(
-      partyTypeId: json['partyTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      hasTable: json['hasTable'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PartyTypeDataToJson(PartyTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyTypeId', instance.partyTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('hasTable', instance.hasTable);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-OrderAdjustmentBillingData _$OrderAdjustmentBillingDataFromJson(
-        Map<String, dynamic> json) =>
-    OrderAdjustmentBillingData(
-      orderAdjustmentId: json['orderAdjustmentId'] as String?,
-      invoiceId: json['invoiceId'] as String?,
-      invoiceItemSeqId: json['invoiceItemSeqId'] as String?,
-      amount: json['amount'] == null
-          ? null
-          : Currency.fromJson(json['amount'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderAdjustmentBillingDataToJson(
-    OrderAdjustmentBillingData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderAdjustmentId', instance.orderAdjustmentId);
-  writeNotNull('invoiceId', instance.invoiceId);
-  writeNotNull('invoiceItemSeqId', instance.invoiceItemSeqId);
-  writeNotNull('amount', instance.amount?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 PartyList _$PartyListFromJson(Map<String, dynamic> json) => PartyList(
       values: (json['values'] as List<dynamic>?)
           ?.map((e) => PartyFlatData.fromJson(e as Map<String, dynamic>))
@@ -12641,235 +14929,6 @@ Map<String, dynamic> _$ProductFeatureListToJson(ProductFeatureList instance) {
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductFlatData _$ProductFlatDataFromJson(Map<String, dynamic> json) =>
-    ProductFlatData(
-      productId: json['productId'] as String?,
-      productTypeId: json['productTypeId'] as String?,
-      primaryProductCategoryId: json['primaryProductCategoryId'] as String?,
-      facilityId: json['facilityId'] as String?,
-      introductionDate: json['introductionDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['introductionDate'] as Map<String, dynamic>),
-      releaseDate: json['releaseDate'] == null
-          ? null
-          : Timestamp.fromJson(json['releaseDate'] as Map<String, dynamic>),
-      supportDiscontinuationDate: json['supportDiscontinuationDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['supportDiscontinuationDate'] as Map<String, dynamic>),
-      salesDiscontinuationDate: json['salesDiscontinuationDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['salesDiscontinuationDate'] as Map<String, dynamic>),
-      salesDiscWhenNotAvail: json['salesDiscWhenNotAvail'] as String?,
-      internalName: json['internalName'] as String?,
-      brandName: json['brandName'] as String?,
-      comments: json['comments'] as String?,
-      productName: json['productName'] as String?,
-      description: json['description'] as String?,
-      longDescription: json['longDescription'] as String?,
-      priceDetailText: json['priceDetailText'] as String?,
-      smallImageUrl: json['smallImageUrl'] as String?,
-      mediumImageUrl: json['mediumImageUrl'] as String?,
-      largeImageUrl: json['largeImageUrl'] as String?,
-      detailImageUrl: json['detailImageUrl'] as String?,
-      originalImageUrl: json['originalImageUrl'] as String?,
-      detailScreen: json['detailScreen'] as String?,
-      inventoryMessage: json['inventoryMessage'] as String?,
-      inventoryItemTypeId: json['inventoryItemTypeId'] as String?,
-      requireInventory: json['requireInventory'] as String?,
-      quantityUomId: json['quantityUomId'] as String?,
-      quantityIncluded: json['quantityIncluded'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['quantityIncluded'] as Map<String, dynamic>),
-      piecesIncluded: json['piecesIncluded'] as int?,
-      requireAmount: json['requireAmount'] as String?,
-      fixedAmount: json['fixedAmount'] == null
-          ? null
-          : Currency.fromJson(json['fixedAmount'] as Map<String, dynamic>),
-      amountUomTypeId: json['amountUomTypeId'] as String?,
-      weightUomId: json['weightUomId'] as String?,
-      shippingWeight: json['shippingWeight'] == null
-          ? null
-          : FixedPoint.fromJson(json['shippingWeight'] as Map<String, dynamic>),
-      productWeight: json['productWeight'] == null
-          ? null
-          : FixedPoint.fromJson(json['productWeight'] as Map<String, dynamic>),
-      heightUomId: json['heightUomId'] as String?,
-      productHeight: json['productHeight'] == null
-          ? null
-          : FixedPoint.fromJson(json['productHeight'] as Map<String, dynamic>),
-      shippingHeight: json['shippingHeight'] == null
-          ? null
-          : FixedPoint.fromJson(json['shippingHeight'] as Map<String, dynamic>),
-      widthUomId: json['widthUomId'] as String?,
-      productWidth: json['productWidth'] == null
-          ? null
-          : FixedPoint.fromJson(json['productWidth'] as Map<String, dynamic>),
-      shippingWidth: json['shippingWidth'] == null
-          ? null
-          : FixedPoint.fromJson(json['shippingWidth'] as Map<String, dynamic>),
-      depthUomId: json['depthUomId'] as String?,
-      productDepth: json['productDepth'] == null
-          ? null
-          : FixedPoint.fromJson(json['productDepth'] as Map<String, dynamic>),
-      shippingDepth: json['shippingDepth'] == null
-          ? null
-          : FixedPoint.fromJson(json['shippingDepth'] as Map<String, dynamic>),
-      diameterUomId: json['diameterUomId'] as String?,
-      productDiameter: json['productDiameter'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['productDiameter'] as Map<String, dynamic>),
-      productRating: json['productRating'] == null
-          ? null
-          : FixedPoint.fromJson(json['productRating'] as Map<String, dynamic>),
-      ratingTypeEnum: json['ratingTypeEnum'] as String?,
-      returnable: json['returnable'] as String?,
-      taxable: json['taxable'] as String?,
-      chargeShipping: json['chargeShipping'] as String?,
-      autoCreateKeywords: json['autoCreateKeywords'] as String?,
-      includeInPromotions: json['includeInPromotions'] as String?,
-      isVirtual: json['isVirtual'] as String?,
-      isVariant: json['isVariant'] as String?,
-      virtualVariantMethodEnum: json['virtualVariantMethodEnum'] as String?,
-      originGeoId: json['originGeoId'] as String?,
-      requirementMethodEnumId: json['requirementMethodEnumId'] as String?,
-      billOfMaterialLevel: json['billOfMaterialLevel'] as int?,
-      reservMaxPersons: json['reservMaxPersons'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['reservMaxPersons'] as Map<String, dynamic>),
-      reserv2ndPPPerc: json['reserv2ndPPPerc'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['reserv2ndPPPerc'] as Map<String, dynamic>),
-      reservNthPPPerc: json['reservNthPPPerc'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['reservNthPPPerc'] as Map<String, dynamic>),
-      configId: json['configId'] as String?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      inShippingBox: json['inShippingBox'] as String?,
-      defaultShipmentBoxTypeId: json['defaultShipmentBoxTypeId'] as String?,
-      lotIdFilledIn: json['lotIdFilledIn'] as String?,
-      orderDecimalQuantity: json['orderDecimalQuantity'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductFlatDataToJson(ProductFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productId', instance.productId);
-  writeNotNull('productTypeId', instance.productTypeId);
-  writeNotNull('primaryProductCategoryId', instance.primaryProductCategoryId);
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('introductionDate', instance.introductionDate?.toJson());
-  writeNotNull('releaseDate', instance.releaseDate?.toJson());
-  writeNotNull('supportDiscontinuationDate',
-      instance.supportDiscontinuationDate?.toJson());
-  writeNotNull(
-      'salesDiscontinuationDate', instance.salesDiscontinuationDate?.toJson());
-  writeNotNull('salesDiscWhenNotAvail', instance.salesDiscWhenNotAvail);
-  writeNotNull('internalName', instance.internalName);
-  writeNotNull('brandName', instance.brandName);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('productName', instance.productName);
-  writeNotNull('description', instance.description);
-  writeNotNull('longDescription', instance.longDescription);
-  writeNotNull('priceDetailText', instance.priceDetailText);
-  writeNotNull('smallImageUrl', instance.smallImageUrl);
-  writeNotNull('mediumImageUrl', instance.mediumImageUrl);
-  writeNotNull('largeImageUrl', instance.largeImageUrl);
-  writeNotNull('detailImageUrl', instance.detailImageUrl);
-  writeNotNull('originalImageUrl', instance.originalImageUrl);
-  writeNotNull('detailScreen', instance.detailScreen);
-  writeNotNull('inventoryMessage', instance.inventoryMessage);
-  writeNotNull('inventoryItemTypeId', instance.inventoryItemTypeId);
-  writeNotNull('requireInventory', instance.requireInventory);
-  writeNotNull('quantityUomId', instance.quantityUomId);
-  writeNotNull('quantityIncluded', instance.quantityIncluded?.toJson());
-  writeNotNull('piecesIncluded', instance.piecesIncluded);
-  writeNotNull('requireAmount', instance.requireAmount);
-  writeNotNull('fixedAmount', instance.fixedAmount?.toJson());
-  writeNotNull('amountUomTypeId', instance.amountUomTypeId);
-  writeNotNull('weightUomId', instance.weightUomId);
-  writeNotNull('shippingWeight', instance.shippingWeight?.toJson());
-  writeNotNull('productWeight', instance.productWeight?.toJson());
-  writeNotNull('heightUomId', instance.heightUomId);
-  writeNotNull('productHeight', instance.productHeight?.toJson());
-  writeNotNull('shippingHeight', instance.shippingHeight?.toJson());
-  writeNotNull('widthUomId', instance.widthUomId);
-  writeNotNull('productWidth', instance.productWidth?.toJson());
-  writeNotNull('shippingWidth', instance.shippingWidth?.toJson());
-  writeNotNull('depthUomId', instance.depthUomId);
-  writeNotNull('productDepth', instance.productDepth?.toJson());
-  writeNotNull('shippingDepth', instance.shippingDepth?.toJson());
-  writeNotNull('diameterUomId', instance.diameterUomId);
-  writeNotNull('productDiameter', instance.productDiameter?.toJson());
-  writeNotNull('productRating', instance.productRating?.toJson());
-  writeNotNull('ratingTypeEnum', instance.ratingTypeEnum);
-  writeNotNull('returnable', instance.returnable);
-  writeNotNull('taxable', instance.taxable);
-  writeNotNull('chargeShipping', instance.chargeShipping);
-  writeNotNull('autoCreateKeywords', instance.autoCreateKeywords);
-  writeNotNull('includeInPromotions', instance.includeInPromotions);
-  writeNotNull('isVirtual', instance.isVirtual);
-  writeNotNull('isVariant', instance.isVariant);
-  writeNotNull('virtualVariantMethodEnum', instance.virtualVariantMethodEnum);
-  writeNotNull('originGeoId', instance.originGeoId);
-  writeNotNull('requirementMethodEnumId', instance.requirementMethodEnumId);
-  writeNotNull('billOfMaterialLevel', instance.billOfMaterialLevel);
-  writeNotNull('reservMaxPersons', instance.reservMaxPersons?.toJson());
-  writeNotNull('reserv2ndPPPerc', instance.reserv2ndPPPerc?.toJson());
-  writeNotNull('reservNthPPPerc', instance.reservNthPPPerc?.toJson());
-  writeNotNull('configId', instance.configId);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('inShippingBox', instance.inShippingBox);
-  writeNotNull('defaultShipmentBoxTypeId', instance.defaultShipmentBoxTypeId);
-  writeNotNull('lotIdFilledIn', instance.lotIdFilledIn);
-  writeNotNull('orderDecimalQuantity', instance.orderDecimalQuantity);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -12983,60 +15042,6 @@ Map<String, dynamic> _$BlacklistListToJson(BlacklistList instance) {
   return val;
 }
 
-BillingAccountRoleList _$BillingAccountRoleListFromJson(
-        Map<String, dynamic> json) =>
-    BillingAccountRoleList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => BillingAccountRoleData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$BillingAccountRoleListToJson(
-    BillingAccountRoleList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductFeatureCategoryList _$ProductFeatureCategoryListFromJson(
-        Map<String, dynamic> json) =>
-    ProductFeatureCategoryList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductFeatureCategoryFlatData.fromJson(
-              e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductFeatureCategoryListToJson(
-    ProductFeatureCategoryList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 VideoDataResourceData _$VideoDataResourceDataFromJson(
         Map<String, dynamic> json) =>
     VideoDataResourceData(
@@ -13079,87 +15084,6 @@ Map<String, dynamic> _$VideoDataResourceDataToJson(
   return val;
 }
 
-ProductPromoProductData _$ProductPromoProductDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoProductData(
-      productPromoId: json['productPromoId'] as String?,
-      productPromoRuleId: json['productPromoRuleId'] as String?,
-      productPromoActionSeqId: json['productPromoActionSeqId'] as String?,
-      productPromoCondSeqId: json['productPromoCondSeqId'] as String?,
-      productId: json['productId'] as String?,
-      productPromoApplEnumId: json['productPromoApplEnumId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductPromoProductDataToJson(
-    ProductPromoProductData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productPromoId', instance.productPromoId);
-  writeNotNull('productPromoRuleId', instance.productPromoRuleId);
-  writeNotNull('productPromoActionSeqId', instance.productPromoActionSeqId);
-  writeNotNull('productPromoCondSeqId', instance.productPromoCondSeqId);
-  writeNotNull('productId', instance.productId);
-  writeNotNull('productPromoApplEnumId', instance.productPromoApplEnumId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-Value _$ValueFromJson(Map<String, dynamic> json) => Value(
-      nullValue: json['nullValue'] as String?,
-      numberValue: (json['numberValue'] as num?)?.toDouble(),
-      stringValue: json['stringValue'] as String?,
-      boolValue: json['boolValue'] as bool?,
-      structValue: json['structValue'] == null
-          ? null
-          : Struct.fromJson(json['structValue'] as Map<String, dynamic>),
-      listValue: json['listValue'] == null
-          ? null
-          : ListValue.fromJson(json['listValue'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$ValueToJson(Value instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('nullValue', instance.nullValue);
-  writeNotNull('numberValue', instance.numberValue);
-  writeNotNull('stringValue', instance.stringValue);
-  writeNotNull('boolValue', instance.boolValue);
-  writeNotNull('structValue', instance.structValue?.toJson());
-  writeNotNull('listValue', instance.listValue?.toJson());
-  return val;
-}
-
 FacilityContactMechList _$FacilityContactMechListFromJson(
         Map<String, dynamic> json) =>
     FacilityContactMechList(
@@ -13173,140 +15097,6 @@ FacilityContactMechList _$FacilityContactMechListFromJson(
 
 Map<String, dynamic> _$FacilityContactMechListToJson(
     FacilityContactMechList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PersonFlatData _$PersonFlatDataFromJson(Map<String, dynamic> json) =>
-    PersonFlatData(
-      partyId: json['partyId'] as String?,
-      salutation: json['salutation'] as String?,
-      firstName: json['firstName'] as String?,
-      middleName: json['middleName'] as String?,
-      lastName: json['lastName'] as String?,
-      personalTitle: json['personalTitle'] as String?,
-      suffix: json['suffix'] as String?,
-      nickname: json['nickname'] as String?,
-      firstNameLocal: json['firstNameLocal'] as String?,
-      middleNameLocal: json['middleNameLocal'] as String?,
-      lastNameLocal: json['lastNameLocal'] as String?,
-      otherLocal: json['otherLocal'] as String?,
-      memberId: json['memberId'] as String?,
-      gender: json['gender'] as String?,
-      birthDate: json['birthDate'] == null
-          ? null
-          : Date.fromJson(json['birthDate'] as Map<String, dynamic>),
-      deceasedDate: json['deceasedDate'] == null
-          ? null
-          : Date.fromJson(json['deceasedDate'] as Map<String, dynamic>),
-      height: (json['height'] as num?)?.toDouble(),
-      weight: (json['weight'] as num?)?.toDouble(),
-      mothersMaidenName: json['mothersMaidenName'] as String?,
-      maritalStatusEnumId: json['maritalStatusEnumId'] as String?,
-      socialSecurityNumber: json['socialSecurityNumber'] as String?,
-      passportNumber: json['passportNumber'] as String?,
-      passportExpireDate: json['passportExpireDate'] == null
-          ? null
-          : Date.fromJson(json['passportExpireDate'] as Map<String, dynamic>),
-      totalYearsWorkExperience:
-          (json['totalYearsWorkExperience'] as num?)?.toDouble(),
-      comments: json['comments'] as String?,
-      employmentStatusEnumId: json['employmentStatusEnumId'] as String?,
-      residenceStatusEnumId: json['residenceStatusEnumId'] as String?,
-      occupation: json['occupation'] as String?,
-      yearsWithEmployer: json['yearsWithEmployer'] as int?,
-      monthsWithEmployer: json['monthsWithEmployer'] as int?,
-      existingCustomer: json['existingCustomer'] as String?,
-      cardId: json['cardId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PersonFlatDataToJson(PersonFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('partyId', instance.partyId);
-  writeNotNull('salutation', instance.salutation);
-  writeNotNull('firstName', instance.firstName);
-  writeNotNull('middleName', instance.middleName);
-  writeNotNull('lastName', instance.lastName);
-  writeNotNull('personalTitle', instance.personalTitle);
-  writeNotNull('suffix', instance.suffix);
-  writeNotNull('nickname', instance.nickname);
-  writeNotNull('firstNameLocal', instance.firstNameLocal);
-  writeNotNull('middleNameLocal', instance.middleNameLocal);
-  writeNotNull('lastNameLocal', instance.lastNameLocal);
-  writeNotNull('otherLocal', instance.otherLocal);
-  writeNotNull('memberId', instance.memberId);
-  writeNotNull('gender', instance.gender);
-  writeNotNull('birthDate', instance.birthDate?.toJson());
-  writeNotNull('deceasedDate', instance.deceasedDate?.toJson());
-  writeNotNull('height', instance.height);
-  writeNotNull('weight', instance.weight);
-  writeNotNull('mothersMaidenName', instance.mothersMaidenName);
-  writeNotNull('maritalStatusEnumId', instance.maritalStatusEnumId);
-  writeNotNull('socialSecurityNumber', instance.socialSecurityNumber);
-  writeNotNull('passportNumber', instance.passportNumber);
-  writeNotNull('passportExpireDate', instance.passportExpireDate?.toJson());
-  writeNotNull('totalYearsWorkExperience', instance.totalYearsWorkExperience);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('employmentStatusEnumId', instance.employmentStatusEnumId);
-  writeNotNull('residenceStatusEnumId', instance.residenceStatusEnumId);
-  writeNotNull('occupation', instance.occupation);
-  writeNotNull('yearsWithEmployer', instance.yearsWithEmployer);
-  writeNotNull('monthsWithEmployer', instance.monthsWithEmployer);
-  writeNotNull('existingCustomer', instance.existingCustomer);
-  writeNotNull('cardId', instance.cardId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-FixedAssetGeoPointList _$FixedAssetGeoPointListFromJson(
-        Map<String, dynamic> json) =>
-    FixedAssetGeoPointList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => FixedAssetGeoPointData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$FixedAssetGeoPointListToJson(
-    FixedAssetGeoPointList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -13345,48 +15135,6 @@ Map<String, dynamic> _$ProductPromoCategoryListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStoreGroupTypeData _$ProductStoreGroupTypeDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreGroupTypeData(
-      productStoreGroupTypeId: json['productStoreGroupTypeId'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStoreGroupTypeDataToJson(
-    ProductStoreGroupTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreGroupTypeId', instance.productStoreGroupTypeId);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -13527,28 +15275,6 @@ Map<String, dynamic> _$AgreementTermFlatDataToJson(
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-BundleIdsRequest _$BundleIdsRequestFromJson(Map<String, dynamic> json) =>
-    BundleIdsRequest(
-      handle: json['handle'] == null
-          ? null
-          : BundleHandle.fromJson(json['handle'] as Map<String, dynamic>),
-      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    );
-
-Map<String, dynamic> _$BundleIdsRequestToJson(BundleIdsRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('handle', instance.handle?.toJson());
-  writeNotNull('ids', instance.ids);
   return val;
 }
 
@@ -13711,30 +15437,6 @@ Map<String, dynamic> _$InvoiceItemFlatDataToJson(InvoiceItemFlatData instance) {
   return val;
 }
 
-PartyGeoPointList _$PartyGeoPointListFromJson(Map<String, dynamic> json) =>
-    PartyGeoPointList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PartyGeoPointData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PartyGeoPointListToJson(PartyGeoPointList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ProductFeatureFlatData _$ProductFeatureFlatDataFromJson(
         Map<String, dynamic> json) =>
     ProductFeatureFlatData(
@@ -13789,67 +15491,6 @@ Map<String, dynamic> _$ProductFeatureFlatDataToJson(
   writeNotNull('defaultSequenceNum', instance.defaultSequenceNum);
   writeNotNull('abbrev', instance.abbrev);
   writeNotNull('idCode', instance.idCode);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ExampleData _$ExampleDataFromJson(Map<String, dynamic> json) => ExampleData(
-      exampleId: json['exampleId'] as String?,
-      exampleTypeId: json['exampleTypeId'] as String?,
-      statusId: json['statusId'] as String?,
-      exampleName: json['exampleName'] as String?,
-      description: json['description'] as String?,
-      longDescription: json['longDescription'] as String?,
-      comments: json['comments'] as String?,
-      exampleSize: json['exampleSize'] as int?,
-      exampleDate: json['exampleDate'] == null
-          ? null
-          : Timestamp.fromJson(json['exampleDate'] as Map<String, dynamic>),
-      anotherDate: json['anotherDate'] == null
-          ? null
-          : Timestamp.fromJson(json['anotherDate'] as Map<String, dynamic>),
-      anotherText: json['anotherText'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ExampleDataToJson(ExampleData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('exampleId', instance.exampleId);
-  writeNotNull('exampleTypeId', instance.exampleTypeId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('exampleName', instance.exampleName);
-  writeNotNull('description', instance.description);
-  writeNotNull('longDescription', instance.longDescription);
-  writeNotNull('comments', instance.comments);
-  writeNotNull('exampleSize', instance.exampleSize);
-  writeNotNull('exampleDate', instance.exampleDate?.toJson());
-  writeNotNull('anotherDate', instance.anotherDate?.toJson());
-  writeNotNull('anotherText', instance.anotherText);
   writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
   writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
   writeNotNull('tenantId', instance.tenantId);
@@ -13915,54 +15556,6 @@ Map<String, dynamic> _$ProductStoreEmailSettingDataToJson(
   return val;
 }
 
-AgreementTermList _$AgreementTermListFromJson(Map<String, dynamic> json) =>
-    AgreementTermList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => AgreementTermFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$AgreementTermListToJson(AgreementTermList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PersonList _$PersonListFromJson(Map<String, dynamic> json) => PersonList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PersonFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PersonListToJson(PersonList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 UpdateProdCatalogCategoryParams _$UpdateProdCatalogCategoryParamsFromJson(
         Map<String, dynamic> json) =>
     UpdateProdCatalogCategoryParams(
@@ -13994,33 +15587,6 @@ Map<String, dynamic> _$UpdateProdCatalogCategoryParamsToJson(
   return val;
 }
 
-ReturnItemShipmentList _$ReturnItemShipmentListFromJson(
-        Map<String, dynamic> json) =>
-    ReturnItemShipmentList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => ReturnItemShipmentData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ReturnItemShipmentListToJson(
-    ReturnItemShipmentList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ProductFacilityAssocList _$ProductFacilityAssocListFromJson(
         Map<String, dynamic> json) =>
     ProductFacilityAssocList(
@@ -14034,30 +15600,6 @@ ProductFacilityAssocList _$ProductFacilityAssocListFromJson(
 
 Map<String, dynamic> _$ProductFacilityAssocListToJson(
     ProductFacilityAssocList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-OrderFactList _$OrderFactListFromJson(Map<String, dynamic> json) =>
-    OrderFactList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => OrderFactData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$OrderFactListToJson(OrderFactList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -14172,76 +15714,6 @@ Map<String, dynamic> _$SupplierProductFeatureListToJson(
   return val;
 }
 
-ProductFacilityList _$ProductFacilityListFromJson(Map<String, dynamic> json) =>
-    ProductFacilityList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ProductFacilityData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductFacilityListToJson(ProductFacilityList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-Currency _$CurrencyFromJson(Map<String, dynamic> json) => Currency(
-      currencyUomId: json['currencyUomId'] as String?,
-      value: json['value'] as String?,
-    );
-
-Map<String, dynamic> _$CurrencyToJson(Currency instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('currencyUomId', instance.currencyUomId);
-  writeNotNull('value', instance.value);
-  return val;
-}
-
-ProdCatalogCategoryList _$ProdCatalogCategoryListFromJson(
-        Map<String, dynamic> json) =>
-    ProdCatalogCategoryList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProdCatalogCategoryFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProdCatalogCategoryListToJson(
-    ProdCatalogCategoryList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 RequirementTypeData _$RequirementTypeDataFromJson(Map<String, dynamic> json) =>
     RequirementTypeData(
       requirementTypeId: json['requirementTypeId'] as String?,
@@ -14286,57 +15758,6 @@ Map<String, dynamic> _$RequirementTypeDataToJson(RequirementTypeData instance) {
   return val;
 }
 
-SecurityPermissionList _$SecurityPermissionListFromJson(
-        Map<String, dynamic> json) =>
-    SecurityPermissionList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              SecurityPermissionFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$SecurityPermissionListToJson(
-    SecurityPermissionList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ExampleTypeList _$ExampleTypeListFromJson(Map<String, dynamic> json) =>
-    ExampleTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ExampleTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ExampleTypeListToJson(ExampleTypeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 AudioDataResourceList _$AudioDataResourceListFromJson(
         Map<String, dynamic> json) =>
     AudioDataResourceList(
@@ -14361,109 +15782,6 @@ Map<String, dynamic> _$AudioDataResourceListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ShipmentItemList _$ShipmentItemListFromJson(Map<String, dynamic> json) =>
-    ShipmentItemList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ShipmentItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShipmentItemListToJson(ShipmentItemList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ReturnItemBillingList _$ReturnItemBillingListFromJson(
-        Map<String, dynamic> json) =>
-    ReturnItemBillingList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => ReturnItemBillingData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ReturnItemBillingListToJson(
-    ReturnItemBillingList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-TypesEntityStatusData _$TypesEntityStatusDataFromJson(
-        Map<String, dynamic> json) =>
-    TypesEntityStatusData(
-      typesEntityId: json['typesEntityId'] as String?,
-      statusDate: json['statusDate'] == null
-          ? null
-          : Timestamp.fromJson(json['statusDate'] as Map<String, dynamic>),
-      statusEndDate: json['statusEndDate'] == null
-          ? null
-          : Timestamp.fromJson(json['statusEndDate'] as Map<String, dynamic>),
-      changeByUserLoginId: json['changeByUserLoginId'] as String?,
-      statusId: json['statusId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$TypesEntityStatusDataToJson(
-    TypesEntityStatusData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('typesEntityId', instance.typesEntityId);
-  writeNotNull('statusDate', instance.statusDate?.toJson());
-  writeNotNull('statusEndDate', instance.statusEndDate?.toJson());
-  writeNotNull('changeByUserLoginId', instance.changeByUserLoginId);
-  writeNotNull('statusId', instance.statusId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -14508,30 +15826,6 @@ Map<String, dynamic> _$FacilityTypeDataToJson(FacilityTypeData instance) {
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-ContactMechTypeList _$ContactMechTypeListFromJson(Map<String, dynamic> json) =>
-    ContactMechTypeList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ContactMechTypeData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ContactMechTypeListToJson(ContactMechTypeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -14673,85 +15967,6 @@ Map<String, dynamic> _$ShipmentRouteSegmentDataToJson(
   return val;
 }
 
-FacilityFlatData _$FacilityFlatDataFromJson(Map<String, dynamic> json) =>
-    FacilityFlatData(
-      facilityId: json['facilityId'] as String?,
-      facilityTypeId: json['facilityTypeId'] as String?,
-      parentFacilityId: json['parentFacilityId'] as String?,
-      ownerPartyId: json['ownerPartyId'] as String?,
-      defaultInventoryItemTypeId: json['defaultInventoryItemTypeId'] as String?,
-      facilityName: json['facilityName'] as String?,
-      primaryFacilityGroupId: json['primaryFacilityGroupId'] as String?,
-      facilitySize: json['facilitySize'] == null
-          ? null
-          : FixedPoint.fromJson(json['facilitySize'] as Map<String, dynamic>),
-      facilitySizeUomId: json['facilitySizeUomId'] as String?,
-      productStoreId: json['productStoreId'] as String?,
-      defaultDaysToShip: json['defaultDaysToShip'] as int?,
-      openedDate: json['openedDate'] == null
-          ? null
-          : Timestamp.fromJson(json['openedDate'] as Map<String, dynamic>),
-      closedDate: json['closedDate'] == null
-          ? null
-          : Timestamp.fromJson(json['closedDate'] as Map<String, dynamic>),
-      description: json['description'] as String?,
-      defaultDimensionUomId: json['defaultDimensionUomId'] as String?,
-      defaultWeightUomId: json['defaultWeightUomId'] as String?,
-      geoPointId: json['geoPointId'] as String?,
-      facilityLevel: json['facilityLevel'] as int?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$FacilityFlatDataToJson(FacilityFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('facilityTypeId', instance.facilityTypeId);
-  writeNotNull('parentFacilityId', instance.parentFacilityId);
-  writeNotNull('ownerPartyId', instance.ownerPartyId);
-  writeNotNull(
-      'defaultInventoryItemTypeId', instance.defaultInventoryItemTypeId);
-  writeNotNull('facilityName', instance.facilityName);
-  writeNotNull('primaryFacilityGroupId', instance.primaryFacilityGroupId);
-  writeNotNull('facilitySize', instance.facilitySize?.toJson());
-  writeNotNull('facilitySizeUomId', instance.facilitySizeUomId);
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('defaultDaysToShip', instance.defaultDaysToShip);
-  writeNotNull('openedDate', instance.openedDate?.toJson());
-  writeNotNull('closedDate', instance.closedDate?.toJson());
-  writeNotNull('description', instance.description);
-  writeNotNull('defaultDimensionUomId', instance.defaultDimensionUomId);
-  writeNotNull('defaultWeightUomId', instance.defaultWeightUomId);
-  writeNotNull('geoPointId', instance.geoPointId);
-  writeNotNull('facilityLevel', instance.facilityLevel);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 OrderTypeData _$OrderTypeDataFromJson(Map<String, dynamic> json) =>
     OrderTypeData(
       orderTypeId: json['orderTypeId'] as String?,
@@ -14793,54 +16008,6 @@ Map<String, dynamic> _$OrderTypeDataToJson(OrderTypeData instance) {
   writeNotNull('extra', instance.extra?.toJson());
   writeNotNull(
       'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-AcctgTransList _$AcctgTransListFromJson(Map<String, dynamic> json) =>
-    AcctgTransList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => AcctgTransFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$AcctgTransListToJson(AcctgTransList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ExampleStatusList _$ExampleStatusListFromJson(Map<String, dynamic> json) =>
-    ExampleStatusList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => ExampleStatusData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ExampleStatusListToJson(ExampleStatusList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -14926,52 +16093,6 @@ Map<String, dynamic> _$ShipmentPackageRouteSegDataToJson(
   return val;
 }
 
-ProductFeatureTypeData _$ProductFeatureTypeDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductFeatureTypeData(
-      productFeatureTypeId: json['productFeatureTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      hasTable: json['hasTable'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductFeatureTypeDataToJson(
-    ProductFeatureTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productFeatureTypeId', instance.productFeatureTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('hasTable', instance.hasTable);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 InvoiceList _$InvoiceListFromJson(Map<String, dynamic> json) => InvoiceList(
       values: (json['values'] as List<dynamic>?)
           ?.map((e) => InvoiceFlatData.fromJson(e as Map<String, dynamic>))
@@ -14981,33 +16102,6 @@ InvoiceList _$InvoiceListFromJson(Map<String, dynamic> json) => InvoiceList(
     );
 
 Map<String, dynamic> _$InvoiceListToJson(InvoiceList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductPromoActionList _$ProductPromoActionListFromJson(
-        Map<String, dynamic> json) =>
-    ProductPromoActionList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => ProductPromoActionData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductPromoActionListToJson(
-    ProductPromoActionList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -15046,60 +16140,6 @@ Map<String, dynamic> _$ShipmentItemBillingListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ProductStoreKeywordOvrdData _$ProductStoreKeywordOvrdDataFromJson(
-        Map<String, dynamic> json) =>
-    ProductStoreKeywordOvrdData(
-      productStoreId: json['productStoreId'] as String?,
-      keyword: json['keyword'] as String?,
-      fromDate: json['fromDate'] == null
-          ? null
-          : Timestamp.fromJson(json['fromDate'] as Map<String, dynamic>),
-      thruDate: json['thruDate'] == null
-          ? null
-          : Timestamp.fromJson(json['thruDate'] as Map<String, dynamic>),
-      target: json['target'] as String?,
-      targetTypeEnumId: json['targetTypeEnumId'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProductStoreKeywordOvrdDataToJson(
-    ProductStoreKeywordOvrdData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productStoreId', instance.productStoreId);
-  writeNotNull('keyword', instance.keyword);
-  writeNotNull('fromDate', instance.fromDate?.toJson());
-  writeNotNull('thruDate', instance.thruDate?.toJson());
-  writeNotNull('target', instance.target);
-  writeNotNull('targetTypeEnumId', instance.targetTypeEnumId);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -15199,29 +16239,6 @@ Map<String, dynamic> _$FactProtoStatusListToJson(FactProtoStatusList instance) {
   return val;
 }
 
-NoteDataList _$NoteDataListFromJson(Map<String, dynamic> json) => NoteDataList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => NoteDataData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$NoteDataListToJson(NoteDataList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ContentAttributeList _$ContentAttributeListFromJson(
         Map<String, dynamic> json) =>
     ContentAttributeList(
@@ -15234,33 +16251,6 @@ ContentAttributeList _$ContentAttributeListFromJson(
 
 Map<String, dynamic> _$ContentAttributeListToJson(
     ContentAttributeList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-PaymentApplicationList _$PaymentApplicationListFromJson(
-        Map<String, dynamic> json) =>
-    PaymentApplicationList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              PaymentApplicationFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PaymentApplicationListToJson(
-    PaymentApplicationList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -15585,31 +16575,6 @@ Map<String, dynamic> _$OrderStatusListToJson(OrderStatusList instance) {
   return val;
 }
 
-ProductCategoryList _$ProductCategoryListFromJson(Map<String, dynamic> json) =>
-    ProductCategoryList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ProductCategoryFlatData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ProductCategoryListToJson(ProductCategoryList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
 ProductConfigProductData _$ProductConfigProductDataFromJson(
         Map<String, dynamic> json) =>
     ProductConfigProductData(
@@ -15660,239 +16625,6 @@ Map<String, dynamic> _$ProductConfigProductDataToJson(
   return val;
 }
 
-PartyNoteList _$PartyNoteListFromJson(Map<String, dynamic> json) =>
-    PartyNoteList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => PartyNoteData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$PartyNoteListToJson(PartyNoteList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-UserLoginSecurityGroupList _$UserLoginSecurityGroupListFromJson(
-        Map<String, dynamic> json) =>
-    UserLoginSecurityGroupList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              UserLoginSecurityGroupData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$UserLoginSecurityGroupListToJson(
-    UserLoginSecurityGroupList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-WorkEffortFlatData _$WorkEffortFlatDataFromJson(Map<String, dynamic> json) =>
-    WorkEffortFlatData(
-      workEffortId: json['workEffortId'] as String?,
-      workEffortTypeId: json['workEffortTypeId'] as String?,
-      currentStatusId: json['currentStatusId'] as String?,
-      lastStatusUpdate: json['lastStatusUpdate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastStatusUpdate'] as Map<String, dynamic>),
-      workEffortPurposeTypeId: json['workEffortPurposeTypeId'] as String?,
-      workEffortParentId: json['workEffortParentId'] as String?,
-      scopeEnumId: json['scopeEnumId'] as String?,
-      priority: json['priority'] as int?,
-      percentComplete: json['percentComplete'] as int?,
-      workEffortName: json['workEffortName'] as String?,
-      showAsEnumId: json['showAsEnumId'] as String?,
-      sendNotificationEmail: json['sendNotificationEmail'] as String?,
-      description: json['description'] as String?,
-      locationDesc: json['locationDesc'] as String?,
-      estimatedStartDate: json['estimatedStartDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['estimatedStartDate'] as Map<String, dynamic>),
-      estimatedCompletionDate: json['estimatedCompletionDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['estimatedCompletionDate'] as Map<String, dynamic>),
-      actualStartDate: json['actualStartDate'] == null
-          ? null
-          : Timestamp.fromJson(json['actualStartDate'] as Map<String, dynamic>),
-      actualCompletionDate: json['actualCompletionDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['actualCompletionDate'] as Map<String, dynamic>),
-      estimatedMilliSeconds:
-          (json['estimatedMilliSeconds'] as num?)?.toDouble(),
-      estimatedSetupMillis: (json['estimatedSetupMillis'] as num?)?.toDouble(),
-      estimateCalcMethod: json['estimateCalcMethod'] as String?,
-      actualMilliSeconds: (json['actualMilliSeconds'] as num?)?.toDouble(),
-      actualSetupMillis: (json['actualSetupMillis'] as num?)?.toDouble(),
-      totalMilliSecondsAllowed:
-          (json['totalMilliSecondsAllowed'] as num?)?.toDouble(),
-      totalMoneyAllowed: json['totalMoneyAllowed'] == null
-          ? null
-          : Currency.fromJson(
-              json['totalMoneyAllowed'] as Map<String, dynamic>),
-      moneyUomId: json['moneyUomId'] as String?,
-      specialTerms: json['specialTerms'] as String?,
-      timeTransparency: json['timeTransparency'] as int?,
-      universalId: json['universalId'] as String?,
-      sourceReferenceId: json['sourceReferenceId'] as String?,
-      fixedAssetId: json['fixedAssetId'] as String?,
-      facilityId: json['facilityId'] as String?,
-      infoUrl: json['infoUrl'] as String?,
-      recurrenceInfoId: json['recurrenceInfoId'] as String?,
-      tempExprId: json['tempExprId'] as String?,
-      runtimeDataId: json['runtimeDataId'] as String?,
-      noteId: json['noteId'] as String?,
-      serviceLoaderName: json['serviceLoaderName'] as String?,
-      quantityToProduce: json['quantityToProduce'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['quantityToProduce'] as Map<String, dynamic>),
-      quantityProduced: json['quantityProduced'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['quantityProduced'] as Map<String, dynamic>),
-      quantityRejected: json['quantityRejected'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['quantityRejected'] as Map<String, dynamic>),
-      reservPersons: json['reservPersons'] == null
-          ? null
-          : FixedPoint.fromJson(json['reservPersons'] as Map<String, dynamic>),
-      reserv2ndPPPerc: json['reserv2ndPPPerc'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['reserv2ndPPPerc'] as Map<String, dynamic>),
-      reservNthPPPerc: json['reservNthPPPerc'] == null
-          ? null
-          : FixedPoint.fromJson(
-              json['reservNthPPPerc'] as Map<String, dynamic>),
-      accommodationMapId: json['accommodationMapId'] as String?,
-      accommodationSpotId: json['accommodationSpotId'] as String?,
-      revisionNumber: json['revisionNumber'] as int?,
-      createdDate: json['createdDate'] == null
-          ? null
-          : Timestamp.fromJson(json['createdDate'] as Map<String, dynamic>),
-      createdByUserLogin: json['createdByUserLogin'] as String?,
-      lastModifiedDate: json['lastModifiedDate'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastModifiedDate'] as Map<String, dynamic>),
-      lastModifiedByUserLogin: json['lastModifiedByUserLogin'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      sequenceNum: json['sequenceNum'] as int?,
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$WorkEffortFlatDataToJson(WorkEffortFlatData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('workEffortId', instance.workEffortId);
-  writeNotNull('workEffortTypeId', instance.workEffortTypeId);
-  writeNotNull('currentStatusId', instance.currentStatusId);
-  writeNotNull('lastStatusUpdate', instance.lastStatusUpdate?.toJson());
-  writeNotNull('workEffortPurposeTypeId', instance.workEffortPurposeTypeId);
-  writeNotNull('workEffortParentId', instance.workEffortParentId);
-  writeNotNull('scopeEnumId', instance.scopeEnumId);
-  writeNotNull('priority', instance.priority);
-  writeNotNull('percentComplete', instance.percentComplete);
-  writeNotNull('workEffortName', instance.workEffortName);
-  writeNotNull('showAsEnumId', instance.showAsEnumId);
-  writeNotNull('sendNotificationEmail', instance.sendNotificationEmail);
-  writeNotNull('description', instance.description);
-  writeNotNull('locationDesc', instance.locationDesc);
-  writeNotNull('estimatedStartDate', instance.estimatedStartDate?.toJson());
-  writeNotNull(
-      'estimatedCompletionDate', instance.estimatedCompletionDate?.toJson());
-  writeNotNull('actualStartDate', instance.actualStartDate?.toJson());
-  writeNotNull('actualCompletionDate', instance.actualCompletionDate?.toJson());
-  writeNotNull('estimatedMilliSeconds', instance.estimatedMilliSeconds);
-  writeNotNull('estimatedSetupMillis', instance.estimatedSetupMillis);
-  writeNotNull('estimateCalcMethod', instance.estimateCalcMethod);
-  writeNotNull('actualMilliSeconds', instance.actualMilliSeconds);
-  writeNotNull('actualSetupMillis', instance.actualSetupMillis);
-  writeNotNull('totalMilliSecondsAllowed', instance.totalMilliSecondsAllowed);
-  writeNotNull('totalMoneyAllowed', instance.totalMoneyAllowed?.toJson());
-  writeNotNull('moneyUomId', instance.moneyUomId);
-  writeNotNull('specialTerms', instance.specialTerms);
-  writeNotNull('timeTransparency', instance.timeTransparency);
-  writeNotNull('universalId', instance.universalId);
-  writeNotNull('sourceReferenceId', instance.sourceReferenceId);
-  writeNotNull('fixedAssetId', instance.fixedAssetId);
-  writeNotNull('facilityId', instance.facilityId);
-  writeNotNull('infoUrl', instance.infoUrl);
-  writeNotNull('recurrenceInfoId', instance.recurrenceInfoId);
-  writeNotNull('tempExprId', instance.tempExprId);
-  writeNotNull('runtimeDataId', instance.runtimeDataId);
-  writeNotNull('noteId', instance.noteId);
-  writeNotNull('serviceLoaderName', instance.serviceLoaderName);
-  writeNotNull('quantityToProduce', instance.quantityToProduce?.toJson());
-  writeNotNull('quantityProduced', instance.quantityProduced?.toJson());
-  writeNotNull('quantityRejected', instance.quantityRejected?.toJson());
-  writeNotNull('reservPersons', instance.reservPersons?.toJson());
-  writeNotNull('reserv2ndPPPerc', instance.reserv2ndPPPerc?.toJson());
-  writeNotNull('reservNthPPPerc', instance.reservNthPPPerc?.toJson());
-  writeNotNull('accommodationMapId', instance.accommodationMapId);
-  writeNotNull('accommodationSpotId', instance.accommodationSpotId);
-  writeNotNull('revisionNumber', instance.revisionNumber);
-  writeNotNull('createdDate', instance.createdDate?.toJson());
-  writeNotNull('createdByUserLogin', instance.createdByUserLogin);
-  writeNotNull('lastModifiedDate', instance.lastModifiedDate?.toJson());
-  writeNotNull('lastModifiedByUserLogin', instance.lastModifiedByUserLogin);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('sequenceNum', instance.sequenceNum);
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
 ProductFeatureApplList _$ProductFeatureApplListFromJson(
         Map<String, dynamic> json) =>
     ProductFeatureApplList(
@@ -15917,102 +16649,6 @@ Map<String, dynamic> _$ProductFeatureApplListToJson(
   writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   writeNotNull('nextPageToken', instance.nextPageToken);
   writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-OrderItemShipGroupAssocData _$OrderItemShipGroupAssocDataFromJson(
-        Map<String, dynamic> json) =>
-    OrderItemShipGroupAssocData(
-      orderId: json['orderId'] as String?,
-      orderItemSeqId: json['orderItemSeqId'] as String?,
-      shipGroupSeqId: json['shipGroupSeqId'] as String?,
-      quantity: json['quantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['quantity'] as Map<String, dynamic>),
-      cancelQuantity: json['cancelQuantity'] == null
-          ? null
-          : FixedPoint.fromJson(json['cancelQuantity'] as Map<String, dynamic>),
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$OrderItemShipGroupAssocDataToJson(
-    OrderItemShipGroupAssocData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('orderItemSeqId', instance.orderItemSeqId);
-  writeNotNull('shipGroupSeqId', instance.shipGroupSeqId);
-  writeNotNull('quantity', instance.quantity?.toJson());
-  writeNotNull('cancelQuantity', instance.cancelQuantity?.toJson());
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
-  return val;
-}
-
-PaymentTypeData _$PaymentTypeDataFromJson(Map<String, dynamic> json) =>
-    PaymentTypeData(
-      paymentTypeId: json['paymentTypeId'] as String?,
-      parentTypeId: json['parentTypeId'] as String?,
-      hasTable: json['hasTable'] as String?,
-      description: json['description'] as String?,
-      lastUpdatedTxStamp: json['lastUpdatedTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(
-              json['lastUpdatedTxStamp'] as Map<String, dynamic>),
-      createdTxStamp: json['createdTxStamp'] == null
-          ? null
-          : Timestamp.fromJson(json['createdTxStamp'] as Map<String, dynamic>),
-      tenantId: json['tenantId'] as String?,
-      extra: json['extra'] == null
-          ? null
-          : Struct.fromJson(json['extra'] as Map<String, dynamic>),
-      attachments: (json['attachments'] as List<dynamic>?)
-          ?.map((e) => AttachmentsEntry.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$PaymentTypeDataToJson(PaymentTypeData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('paymentTypeId', instance.paymentTypeId);
-  writeNotNull('parentTypeId', instance.parentTypeId);
-  writeNotNull('hasTable', instance.hasTable);
-  writeNotNull('description', instance.description);
-  writeNotNull('lastUpdatedTxStamp', instance.lastUpdatedTxStamp?.toJson());
-  writeNotNull('createdTxStamp', instance.createdTxStamp?.toJson());
-  writeNotNull('tenantId', instance.tenantId);
-  writeNotNull('extra', instance.extra?.toJson());
-  writeNotNull(
-      'attachments', instance.attachments?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -16041,57 +16677,6 @@ Map<String, dynamic> _$RemoveProdCatalogCategoryParamsToJson(
   writeNotNull('mainId', instance.mainId);
   writeNotNull('itemId', instance.itemId);
   writeNotNull('comment', instance.comment);
-  return val;
-}
-
-FixedAssetProductList _$FixedAssetProductListFromJson(
-        Map<String, dynamic> json) =>
-    FixedAssetProductList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map(
-              (e) => FixedAssetProductData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$FixedAssetProductListToJson(
-    FixedAssetProductList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-AgreementItemList _$AgreementItemListFromJson(Map<String, dynamic> json) =>
-    AgreementItemList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => AgreementItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$AgreementItemListToJson(AgreementItemList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
   return val;
 }
 
@@ -16233,33 +16818,6 @@ VendorProductList _$VendorProductListFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$VendorProductListToJson(VendorProductList instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  writeNotNull('nextPageToken', instance.nextPageToken);
-  writeNotNull('regionId', instance.regionId);
-  return val;
-}
-
-ShipmentPackageContentList _$ShipmentPackageContentListFromJson(
-        Map<String, dynamic> json) =>
-    ShipmentPackageContentList(
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              ShipmentPackageContentData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      nextPageToken: json['nextPageToken'] as String?,
-      regionId: json['regionId'] as String?,
-    );
-
-Map<String, dynamic> _$ShipmentPackageContentListToJson(
-    ShipmentPackageContentList instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

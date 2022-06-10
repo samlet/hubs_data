@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AcctgTransEntryData
 @JsonSerializable()
-class AcctgTransEntry extends Equatable{
+class AcctgTransEntry extends Equatable implements WithKey{
     // String
     final String? acctgTransId;
     // String
@@ -59,20 +59,20 @@ class AcctgTransEntry extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     // domain_PartyFlatData
     final Party? party;
     // String
-    final String? proto;
+    final String? format;
     // domain_AcctgTransFlatData
     final AcctgTrans? acctgTrans;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     AcctgTransEntry({
         this.acctgTransId,
         this.acctgTransEntrySeqId,
@@ -102,15 +102,17 @@ class AcctgTransEntry extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.inventoryItem,
         this.model,
-        this.cats,
-        this.format,
-        this.party,
         this.proto,
-        this.acctgTrans, });
+        this.inventoryItem,
+        this.party,
+        this.format,
+        this.acctgTrans,
+        this.cats, });
     factory AcctgTransEntry.fromJson(Map<String, dynamic> json) => _$AcctgTransEntryFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgTransEntryToJson(this);
     @override
     List<Object?> get props => [acctgTransId, acctgTransEntrySeqId];
+    @override
+    String get key => id!;
 }

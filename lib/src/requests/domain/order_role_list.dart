@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderRoleList
 @JsonSerializable()
-class OrderRoleList {
+class OrderRoleList  {
     // List<Input_domain_OrderRoleData>
-    final List<OrderRoleData>? values;
+    List<OrderRoleData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     OrderRoleList({
         this.values,
         this.nextPageToken,

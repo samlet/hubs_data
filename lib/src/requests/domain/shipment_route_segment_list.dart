@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentRouteSegmentList
 @JsonSerializable()
-class ShipmentRouteSegmentList {
+class ShipmentRouteSegmentList  {
     // List<Input_domain_ShipmentRouteSegmentData>
-    final List<ShipmentRouteSegmentData>? values;
+    List<ShipmentRouteSegmentData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ShipmentRouteSegmentList({
         this.values,
         this.nextPageToken,

@@ -2,49 +2,49 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentPackageRouteSegData
 @JsonSerializable()
-class ShipmentPackageRouteSegData {
+class ShipmentPackageRouteSegData  {
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentPackageSeqId;
+    String? shipmentPackageSeqId;
     // String
-    final String? shipmentRouteSegmentId;
+    String? shipmentRouteSegmentId;
     // String
-    final String? trackingCode;
+    String? trackingCode;
     // String
-    final String? boxNumber;
+    String? boxNumber;
     // String
-    final String? labelImage;
+    String? labelImage;
     // String
-    final String? labelIntlSignImage;
+    String? labelIntlSignImage;
     // String
-    final String? labelHtml;
+    String? labelHtml;
     // routines_Indicator
-    final String? labelPrinted;
+    String? labelPrinted;
     // String
-    final String? internationalInvoice;
+    String? internationalInvoice;
     // Input_routines_Currency
-    final Currency? packageTransportCost;
+    Currency? packageTransportCost;
     // Input_routines_Currency
-    final Currency? packageServiceCost;
+    Currency? packageServiceCost;
     // Input_routines_Currency
-    final Currency? packageOtherCost;
+    Currency? packageOtherCost;
     // Input_routines_Currency
-    final Currency? codAmount;
+    Currency? codAmount;
     // Input_routines_Currency
-    final Currency? insuredAmount;
+    Currency? insuredAmount;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShipmentPackageRouteSegData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShipmentPackageRouteSegData({
         this.shipmentId,
         this.shipmentPackageSeqId,

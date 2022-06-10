@@ -2,77 +2,77 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentFlatData
 @JsonSerializable()
-class ShipmentFlatData {
+class ShipmentFlatData  {
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentTypeId;
+    String? shipmentTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? primaryOrderId;
+    String? primaryOrderId;
     // String
-    final String? primaryReturnId;
+    String? primaryReturnId;
     // String
-    final String? primaryShipGroupSeqId;
+    String? primaryShipGroupSeqId;
     // String
-    final String? picklistBinId;
+    String? picklistBinId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedReadyDate;
+    Timestamp? estimatedReadyDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedShipDate;
+    Timestamp? estimatedShipDate;
     // String
-    final String? estimatedShipWorkEffId;
+    String? estimatedShipWorkEffId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedArrivalDate;
+    Timestamp? estimatedArrivalDate;
     // String
-    final String? estimatedArrivalWorkEffId;
+    String? estimatedArrivalWorkEffId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? latestCancelDate;
+    Timestamp? latestCancelDate;
     // Input_routines_Currency
-    final Currency? estimatedShipCost;
+    Currency? estimatedShipCost;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? handlingInstructions;
+    String? handlingInstructions;
     // String
-    final String? originFacilityId;
+    String? originFacilityId;
     // String
-    final String? destinationFacilityId;
+    String? destinationFacilityId;
     // String
-    final String? originContactMechId;
+    String? originContactMechId;
     // String
-    final String? originTelecomNumberId;
+    String? originTelecomNumberId;
     // String
-    final String? destinationContactMechId;
+    String? destinationContactMechId;
     // String
-    final String? destinationTelecomNumberId;
+    String? destinationTelecomNumberId;
     // String
-    final String? partyIdTo;
+    String? partyIdTo;
     // String
-    final String? partyIdFrom;
+    String? partyIdFrom;
     // Input_routines_Currency
-    final Currency? additionalShippingCharge;
+    Currency? additionalShippingCharge;
     // String
-    final String? addtlShippingChargeDesc;
+    String? addtlShippingChargeDesc;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShipmentFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShipmentFlatData({
         this.shipmentId,
         this.shipmentTypeId,

@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_FacilityContactMechPurposeData
 @JsonSerializable()
-class FacilityContactMechPurposeData {
+class FacilityContactMechPurposeData  {
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? contactMechPurposeTypeId;
+    String? contactMechPurposeTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FacilityContactMechPurposeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FacilityContactMechPurposeData({
         this.facilityId,
         this.contactMechId,

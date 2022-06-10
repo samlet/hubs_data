@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderAdjustmentBillingList
 @JsonSerializable()
-class OrderAdjustmentBillingList {
+class OrderAdjustmentBillingList  {
     // List<Input_domain_OrderAdjustmentBillingData>
-    final List<OrderAdjustmentBillingData>? values;
+    List<OrderAdjustmentBillingData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     OrderAdjustmentBillingList({
         this.values,
         this.nextPageToken,

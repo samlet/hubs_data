@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentRouteSegmentData
 @JsonSerializable()
-class ShipmentRouteSegment extends Equatable{
+class ShipmentRouteSegment extends Equatable implements WithKey{
     // String
     final String? shipmentId;
     // String
@@ -81,24 +81,24 @@ class ShipmentRouteSegment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
-    // String
-    final String? format;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_FacilityFlatData
+    final Facility? destFacility;
     // domain_PartyFlatData
     final Party? carrierParty;
     // domain_FacilityFlatData
     final Facility? originFacility;
-    // domain_FacilityFlatData
-    final Facility? destFacility;
     // domain_ShipmentFlatData
     final Shipment? shipment;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? destContactMech;
     // domain_ContactMechFlatData
     final ContactMech? originContactMech;
     ShipmentRouteSegment({
@@ -141,18 +141,20 @@ class ShipmentRouteSegment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.destContactMech,
-        this.format,
         this.proto,
-        this.model,
+        this.cats,
+        this.destFacility,
         this.carrierParty,
         this.originFacility,
-        this.destFacility,
         this.shipment,
-        this.cats,
+        this.model,
+        this.format,
+        this.destContactMech,
         this.originContactMech, });
     factory ShipmentRouteSegment.fromJson(Map<String, dynamic> json) => _$ShipmentRouteSegmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentRouteSegmentToJson(this);
     @override
     List<Object?> get props => [shipmentId, shipmentRouteSegmentId];
+    @override
+    String get key => id!;
 }

@@ -2,37 +2,37 @@ part of '../../../requests.dart';
 
 /// Input_domain_FixedAssetMaintData
 @JsonSerializable()
-class FixedAssetMaintData {
+class FixedAssetMaintData  {
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? maintHistSeqId;
+    String? maintHistSeqId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? productMaintTypeId;
+    String? productMaintTypeId;
     // String
-    final String? productMaintSeqId;
+    String? productMaintSeqId;
     // String
-    final String? scheduleWorkEffortId;
+    String? scheduleWorkEffortId;
     // Input_routines_FixedPoint
-    final FixedPoint? intervalQuantity;
+    FixedPoint? intervalQuantity;
     // String
-    final String? intervalUomId;
+    String? intervalUomId;
     // String
-    final String? intervalMeterTypeId;
+    String? intervalMeterTypeId;
     // String
-    final String? purchaseOrderId;
+    String? purchaseOrderId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FixedAssetMaintData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FixedAssetMaintData({
         this.fixedAssetId,
         this.maintHistSeqId,

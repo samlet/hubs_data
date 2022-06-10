@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentPurposeList
 @JsonSerializable()
-class ContentPurposeCollection {
+class ContentPurposeCollection  {
     // List<domain_ContentPurposeData>
     final List<ContentPurpose>? values;
     // String

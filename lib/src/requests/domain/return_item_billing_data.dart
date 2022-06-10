@@ -2,31 +2,31 @@ part of '../../../requests.dart';
 
 /// Input_domain_ReturnItemBillingData
 @JsonSerializable()
-class ReturnItemBillingData {
+class ReturnItemBillingData  {
     // String
-    final String? returnId;
+    String? returnId;
     // String
-    final String? returnItemSeqId;
+    String? returnItemSeqId;
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? invoiceItemSeqId;
+    String? invoiceItemSeqId;
     // String
-    final String? shipmentReceiptId;
+    String? shipmentReceiptId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ReturnItemBillingData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ReturnItemBillingData({
         this.returnId,
         this.returnItemSeqId,

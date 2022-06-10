@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_FixedAssetProductData
 @JsonSerializable()
-class FixedAssetProductData {
+class FixedAssetProductData  {
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? fixedAssetProductTypeId;
+    String? fixedAssetProductTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? comments;
+    String? comments;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // String
-    final String? quantityUomId;
+    String? quantityUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FixedAssetProductData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FixedAssetProductData({
         this.fixedAssetId,
         this.productId,

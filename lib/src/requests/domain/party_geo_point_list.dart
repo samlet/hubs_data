@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyGeoPointList
 @JsonSerializable()
-class PartyGeoPointList {
+class PartyGeoPointList  {
     // List<Input_domain_PartyGeoPointData>
-    final List<PartyGeoPointData>? values;
+    List<PartyGeoPointData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     PartyGeoPointList({
         this.values,
         this.nextPageToken,

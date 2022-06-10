@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderItemFlatData
 @JsonSerializable()
-class OrderItem extends Equatable{
+class OrderItem extends Equatable implements WithKey{
     // String
     final String? orderId;
     // String
@@ -105,26 +105,26 @@ class OrderItem extends Equatable{
     final String? id;
     // String
     final String? tenantId;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_ShoppingListFlatData
+    final ShoppingList? addSuggestionsToShoppingList;
+    // domain_InventoryItemFlatData
+    final InventoryItem? fromInventoryItem;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
-    // String
-    final String? format;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // domain_UserLoginFlatData
     final UserLogin? dontcancelsetuserlogin;
-    // domain_InventoryItemFlatData
-    final InventoryItem? fromInventoryItem;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFlatData
-    final Product? product;
     // String
     final String? proto;
-    // domain_ShoppingListFlatData
-    final ShoppingList? addSuggestionsToShoppingList;
     OrderItem({
         this.orderId,
         this.orderItemSeqId,
@@ -177,18 +177,20 @@ class OrderItem extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
+        this.orderHeader,
+        this.product,
+        this.addSuggestionsToShoppingList,
+        this.fromInventoryItem,
+        this.format,
+        this.cats,
         this.model,
         this.changeByUserLogin,
-        this.format,
-        this.orderHeader,
         this.dontcancelsetuserlogin,
-        this.fromInventoryItem,
-        this.cats,
-        this.product,
-        this.proto,
-        this.addSuggestionsToShoppingList, });
+        this.proto, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);
     @override
     List<Object?> get props => [orderId, orderItemSeqId];
+    @override
+    String get key => id!;
 }

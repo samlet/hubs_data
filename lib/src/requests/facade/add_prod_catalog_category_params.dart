@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_AddProdCatalogCategoryParams
 @JsonSerializable()
-class AddProdCatalogCategoryParams {
+class AddProdCatalogCategoryParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? mainId;
+    String? mainId;
     // Input_domain_ProdCatalogCategoryFlatData
-    final ProdCatalogCategoryFlatData? data;
+    ProdCatalogCategoryFlatData? data;
     // String
-    final String? comment;
+    String? comment;
     AddProdCatalogCategoryParams({
         this.handle,
         this.mainId,

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_RequirementTypeList
 @JsonSerializable()
-class RequirementTypeList {
+class RequirementTypeList  {
     // List<Input_domain_RequirementTypeData>
-    final List<RequirementTypeData>? values;
+    List<RequirementTypeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     RequirementTypeList({
         this.values,
         this.nextPageToken,

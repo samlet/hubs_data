@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FacilityContactMechData
 @JsonSerializable()
-class FacilityContactMech extends Equatable{
+class FacilityContactMech extends Equatable implements WithKey{
     // String
     final String? facilityId;
     // String
@@ -21,18 +21,18 @@ class FacilityContactMech extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // domain_FacilityFlatData
     final Facility? facility;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
     FacilityContactMech({
         this.facilityId,
         this.contactMechId,
@@ -43,14 +43,16 @@ class FacilityContactMech extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
         this.contactMech,
         this.proto,
-        this.cats,
+        this.format,
         this.facility,
-        this.model,
-        this.format, });
+        this.model, });
     factory FacilityContactMech.fromJson(Map<String, dynamic> json) => _$FacilityContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityContactMechToJson(this);
     @override
     List<Object?> get props => [facilityId, contactMechId, fromDate];
+    @override
+    String get key => id!;
 }

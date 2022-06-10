@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderHeaderNoteList
 @JsonSerializable()
-class OrderHeaderNoteCollection {
+class OrderHeaderNoteCollection  {
     // List<domain_OrderHeaderNoteData>
     final List<OrderHeaderNote>? values;
     // String

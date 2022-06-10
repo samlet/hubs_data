@@ -2,41 +2,41 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductPromoActionData
 @JsonSerializable()
-class ProductPromoActionData {
+class ProductPromoActionData  {
     // String
-    final String? productPromoId;
+    String? productPromoId;
     // String
-    final String? productPromoRuleId;
+    String? productPromoRuleId;
     // String
-    final String? productPromoActionSeqId;
+    String? productPromoActionSeqId;
     // String
-    final String? productPromoActionEnumId;
+    String? productPromoActionEnumId;
     // String
-    final String? customMethodId;
+    String? customMethodId;
     // String
-    final String? orderAdjustmentTypeId;
+    String? orderAdjustmentTypeId;
     // String
-    final String? serviceName;
+    String? serviceName;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_FixedPoint
-    final FixedPoint? amount;
+    FixedPoint? amount;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? partyId;
+    String? partyId;
     // routines_Indicator
-    final String? useCartQuantity;
+    String? useCartQuantity;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductPromoActionData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductPromoActionData({
         this.productPromoId,
         this.productPromoRuleId,

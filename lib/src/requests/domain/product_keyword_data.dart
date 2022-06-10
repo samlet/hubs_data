@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductKeywordData
 @JsonSerializable()
-class ProductKeywordData {
+class ProductKeywordData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? keyword;
+    String? keyword;
     // String
-    final String? keywordTypeId;
+    String? keywordTypeId;
     // Long
-    final int? relevancyWeight;
+    int? relevancyWeight;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductKeywordData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductKeywordData({
         this.productId,
         this.keyword,

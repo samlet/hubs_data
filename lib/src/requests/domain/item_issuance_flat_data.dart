@@ -2,43 +2,43 @@ part of '../../../requests.dart';
 
 /// Input_domain_ItemIssuanceFlatData
 @JsonSerializable()
-class ItemIssuanceFlatData {
+class ItemIssuanceFlatData  {
     // String
-    final String? itemIssuanceId;
+    String? itemIssuanceId;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? shipGroupSeqId;
+    String? shipGroupSeqId;
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentItemSeqId;
+    String? shipmentItemSeqId;
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? maintHistSeqId;
+    String? maintHistSeqId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? issuedDateTime;
+    Timestamp? issuedDateTime;
     // String
-    final String? issuedByUserLoginId;
+    String? issuedByUserLoginId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_FixedPoint
-    final FixedPoint? cancelQuantity;
+    FixedPoint? cancelQuantity;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ItemIssuanceFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ItemIssuanceFlatData({
         this.itemIssuanceId,
         this.orderId,

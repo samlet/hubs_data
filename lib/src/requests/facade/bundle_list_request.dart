@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_BundleListRequest
 @JsonSerializable()
-class BundleListRequest {
+class BundleListRequest  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // Int
-    final int? pageSize;
+    int? pageSize;
     // String
-    final String? pageToken;
+    String? pageToken;
     // String
-    final String? tenantId;
+    String? tenantId;
     BundleListRequest({
         this.handle,
         this.pageSize,

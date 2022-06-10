@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductCategoryFlatData
 @JsonSerializable()
-class ProductCategory extends Equatable{
+class ProductCategory extends Equatable implements WithKey{
     // String
     final String? productCategoryId;
     // String
@@ -31,28 +31,28 @@ class ProductCategory extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? primaryParentProductCategory;
-    // String
-    final String? format;
-    // domain_ProductCategoryRollupList
-    final ProductCategoryRollupCollection? currentProductCategoryRollups;
-    // domain_ProductCategoryMemberList
-    final ProductCategoryMemberCollection? productCategoryMembers;
-    // domain_ProductList
-    final ProductCollection? primaryProducts;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductPromoCategoryList
-    final ProductPromoCategoryCollection? productPromoCategories;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
+    // domain_ProductList
+    final ProductCollection? primaryProducts;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductCategoryRollupList
+    final ProductCategoryRollupCollection? currentProductCategoryRollups;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductCategoryMemberList
+    final ProductCategoryMemberCollection? productCategoryMembers;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // String
+    final String? proto;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? primaryParentProductCategory;
+    // domain_ProductPromoCategoryList
+    final ProductPromoCategoryCollection? productPromoCategories;
+    // String
+    final String? format;
     ProductCategory({
         this.productCategoryId,
         this.productCategoryTypeId,
@@ -68,19 +68,21 @@ class ProductCategory extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.primaryParentProductCategory,
-        this.format,
-        this.currentProductCategoryRollups,
-        this.productCategoryMembers,
-        this.primaryProducts,
-        this.subview,
-        this.cats,
-        this.productPromoCategories,
         this.model,
+        this.primaryProducts,
+        this.cats,
+        this.currentProductCategoryRollups,
+        this.subview,
+        this.productCategoryMembers,
+        this.type,
         this.proto,
-        this.type, });
+        this.primaryParentProductCategory,
+        this.productPromoCategories,
+        this.format, });
     factory ProductCategory.fromJson(Map<String, dynamic> json) => _$ProductCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryToJson(this);
     @override
     List<Object?> get props => [productCategoryId];
+    @override
+    String get key => productCategoryId!;
 }

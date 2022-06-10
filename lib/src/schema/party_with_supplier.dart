@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// party_SupplierProto
 @JsonSerializable()
-class PartyWithSupplier {
+class PartyWithSupplier  {
     // String
     final String? id;
     // domain_PartyFlatData

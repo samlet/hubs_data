@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_NoteDataData
 @JsonSerializable()
-class NoteData extends Equatable{
+class NoteData extends Equatable implements WithKey{
     // String
     final String? noteId;
     // String
@@ -25,18 +25,18 @@ class NoteData extends Equatable{
     final String? moreInfoItemName;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_PartyFlatData
     final Party? noteparty;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? proto;
     // String
     final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     NoteData({
         this.noteId,
         this.noteName,
@@ -49,14 +49,16 @@ class NoteData extends Equatable{
         this.moreInfoItemId,
         this.moreInfoItemName,
         this.tenantId,
-        this.cats,
-        this.subview,
         this.noteparty,
+        this.model,
         this.proto,
         this.format,
-        this.model, });
+        this.subview,
+        this.cats, });
     factory NoteData.fromJson(Map<String, dynamic> json) => _$NoteDataFromJson(json);
     Map<String, dynamic> toJson() => _$NoteDataToJson(this);
     @override
     List<Object?> get props => [noteId];
+    @override
+    String get key => noteId!;
 }

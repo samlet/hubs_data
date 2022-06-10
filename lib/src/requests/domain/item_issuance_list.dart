@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ItemIssuanceList
 @JsonSerializable()
-class ItemIssuanceList {
+class ItemIssuanceList  {
     // List<Input_domain_ItemIssuanceFlatData>
-    final List<ItemIssuanceFlatData>? values;
+    List<ItemIssuanceFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ItemIssuanceList({
         this.values,
         this.nextPageToken,

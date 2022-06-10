@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_OrderFactBlueprintData
 @JsonSerializable()
-class OrderFactBlueprint {
+class OrderFactBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp
@@ -14,8 +14,6 @@ class OrderFactBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_OrderFactBlueprintData
-    final OrderFactBlueprint? addOrderFactStatusList;
-    // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? updateOrderFactStatus;
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? addOrderFactStatus;
@@ -23,17 +21,19 @@ class OrderFactBlueprint {
     final OrderFactBlueprint? removeOrderFactStatus;
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? modifyOrderFactType;
+    // blueprint_OrderFactBlueprintData
+    final OrderFactBlueprint? addOrderFactStatusList;
     OrderFactBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addOrderFactStatusList,
         this.updateOrderFactStatus,
         this.addOrderFactStatus,
         this.removeOrderFactStatus,
-        this.modifyOrderFactType, });
+        this.modifyOrderFactType,
+        this.addOrderFactStatusList, });
     factory OrderFactBlueprint.fromJson(Map<String, dynamic> json) => _$OrderFactBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactBlueprintToJson(this);
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_VendorProductList
 @JsonSerializable()
-class VendorProductCollection {
+class VendorProductCollection  {
     // List<domain_VendorProductData>
     final List<VendorProduct>? values;
     // String

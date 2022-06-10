@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_google_type_TimeOfDay
 @JsonSerializable()
-class TimeOfDay {
+class TimeOfDay  {
     // Int
-    final int? hours;
+    int? hours;
     // Int
-    final int? minutes;
+    int? minutes;
     // Int
-    final int? seconds;
+    int? seconds;
     // Int
-    final int? nanos;
+    int? nanos;
     TimeOfDay({
         this.hours,
         this.minutes,

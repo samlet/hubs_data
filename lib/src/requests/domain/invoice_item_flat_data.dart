@@ -2,57 +2,57 @@ part of '../../../requests.dart';
 
 /// Input_domain_InvoiceItemFlatData
 @JsonSerializable()
-class InvoiceItemFlatData {
+class InvoiceItemFlatData  {
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? invoiceItemSeqId;
+    String? invoiceItemSeqId;
     // String
-    final String? invoiceItemTypeId;
+    String? invoiceItemTypeId;
     // String
-    final String? overrideGlAccountId;
+    String? overrideGlAccountId;
     // String
-    final String? overrideOrgPartyId;
+    String? overrideOrgPartyId;
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? productFeatureId;
+    String? productFeatureId;
     // String
-    final String? parentInvoiceId;
+    String? parentInvoiceId;
     // String
-    final String? parentInvoiceItemSeqId;
+    String? parentInvoiceItemSeqId;
     // String
-    final String? uomId;
+    String? uomId;
     // routines_Indicator
-    final String? taxableFlag;
+    String? taxableFlag;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? taxAuthPartyId;
+    String? taxAuthPartyId;
     // String
-    final String? taxAuthGeoId;
+    String? taxAuthGeoId;
     // String
-    final String? taxAuthorityRateSeqId;
+    String? taxAuthorityRateSeqId;
     // String
-    final String? salesOpportunityId;
+    String? salesOpportunityId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InvoiceItemFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InvoiceItemFlatData({
         this.invoiceId,
         this.invoiceItemSeqId,

@@ -2,41 +2,41 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyFlatData
 @JsonSerializable()
-class PartyFlatData {
+class PartyFlatData  {
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? partyTypeId;
+    String? partyTypeId;
     // String
-    final String? externalId;
+    String? externalId;
     // String
-    final String? preferredCurrencyUomId;
+    String? preferredCurrencyUomId;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // String
-    final String? dataSourceId;
+    String? dataSourceId;
     // routines_Indicator
-    final String? isUnread;
+    String? isUnread;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyFlatData({
         this.partyId,
         this.partyTypeId,

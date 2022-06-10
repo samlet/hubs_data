@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_routines_FixedPoint
 @JsonSerializable()
-class FixedPoint {
+class FixedPoint  {
     // Long
-    final int? value;
+    int? value;
     // Int
-    final int? scalingPosition;
+    int? scalingPosition;
     FixedPoint({
         this.value,
         this.scalingPosition, });

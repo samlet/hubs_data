@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderItemPriceInfoFlatData
 @JsonSerializable()
-class OrderItemPriceInfo extends Equatable{
+class OrderItemPriceInfo extends Equatable implements WithKey{
     // String
     final String? orderItemPriceInfoId;
     // String
@@ -25,16 +25,16 @@ class OrderItemPriceInfo extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     // String
     final String? proto;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     OrderItemPriceInfo({
         this.orderItemPriceInfoId,
         this.orderId,
@@ -47,13 +47,15 @@ class OrderItemPriceInfo extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.format,
         this.model,
-        this.cats,
         this.orderHeader,
         this.proto,
-        this.format, });
+        this.cats, });
     factory OrderItemPriceInfo.fromJson(Map<String, dynamic> json) => _$OrderItemPriceInfoFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemPriceInfoToJson(this);
     @override
     List<Object?> get props => [orderItemPriceInfoId];
+    @override
+    String get key => orderItemPriceInfoId!;
 }

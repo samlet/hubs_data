@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_google_protobuf_Struct_FieldsEntry
 @JsonSerializable()
-class StructFieldsEntry {
+class StructFieldsEntry  {
     // String
-    final String? key;
+    String? key;
     // Input_google_protobuf_Value
-    final Value? value;
+    Value? value;
     StructFieldsEntry({
         this.key,
         this.value, });

@@ -2,31 +2,31 @@ part of '../../../requests.dart';
 
 /// Input_domain_InventoryItemStatusData
 @JsonSerializable()
-class InventoryItemStatusData {
+class InventoryItemStatusData  {
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusDatetime;
+    Timestamp? statusDatetime;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusEndDatetime;
+    Timestamp? statusEndDatetime;
     // String
-    final String? changeByUserLoginId;
+    String? changeByUserLoginId;
     // String
-    final String? ownerPartyId;
+    String? ownerPartyId;
     // String
-    final String? productId;
+    String? productId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InventoryItemStatusData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InventoryItemStatusData({
         this.inventoryItemId,
         this.statusId,

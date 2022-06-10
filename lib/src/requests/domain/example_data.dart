@@ -2,39 +2,39 @@ part of '../../../requests.dart';
 
 /// Input_domain_ExampleData
 @JsonSerializable()
-class ExampleData {
+class ExampleData  {
     // String
-    final String? exampleId;
+    String? exampleId;
     // String
-    final String? exampleTypeId;
+    String? exampleTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? exampleName;
+    String? exampleName;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? longDescription;
+    String? longDescription;
     // String
-    final String? comments;
+    String? comments;
     // Long
-    final int? exampleSize;
+    int? exampleSize;
     // Input_google_protobuf_Timestamp
-    final Timestamp? exampleDate;
+    Timestamp? exampleDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? anotherDate;
+    Timestamp? anotherDate;
     // String
-    final String? anotherText;
+    String? anotherText;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ExampleData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ExampleData({
         this.exampleId,
         this.exampleTypeId,

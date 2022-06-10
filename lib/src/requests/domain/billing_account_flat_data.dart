@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_BillingAccountFlatData
 @JsonSerializable()
-class BillingAccountFlatData {
+class BillingAccountFlatData  {
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // Input_routines_Currency
-    final Currency? accountLimit;
+    Currency? accountLimit;
     // String
-    final String? accountCurrencyUomId;
+    String? accountCurrencyUomId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? externalAccountId;
+    String? externalAccountId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_BillingAccountFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     BillingAccountFlatData({
         this.billingAccountId,
         this.accountLimit,

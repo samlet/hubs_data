@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductReviewFlatData
 @JsonSerializable()
-class ProductReviewFlatData {
+class ProductReviewFlatData  {
     // String
-    final String? productReviewId;
+    String? productReviewId;
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? userLoginId;
+    String? userLoginId;
     // String
-    final String? statusId;
+    String? statusId;
     // routines_Indicator
-    final String? postedAnonymous;
+    String? postedAnonymous;
     // Input_google_protobuf_Timestamp
-    final Timestamp? postedDateTime;
+    Timestamp? postedDateTime;
     // Input_routines_FixedPoint
-    final FixedPoint? productRating;
+    FixedPoint? productRating;
     // String
-    final String? productReview;
+    String? productReview;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductReviewFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductReviewFlatData({
         this.productReviewId,
         this.productStoreId,

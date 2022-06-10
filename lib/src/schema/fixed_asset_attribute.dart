@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetAttributeData
 @JsonSerializable()
-class FixedAssetAttribute extends Equatable{
+class FixedAssetAttribute extends Equatable implements WithKey{
     // String
     final String? fixedAssetId;
     // String
@@ -19,14 +19,14 @@ class FixedAssetAttribute extends Equatable{
     final String? id;
     // String
     final String? proto;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
     FixedAssetAttribute({
         this.fixedAssetId,
         this.attrName,
@@ -36,12 +36,14 @@ class FixedAssetAttribute extends Equatable{
         this.createdTxStamp,
         this.id,
         this.proto,
-        this.fixedAsset,
-        this.format,
+        this.cats,
         this.model,
-        this.cats, });
+        this.format,
+        this.fixedAsset, });
     factory FixedAssetAttribute.fromJson(Map<String, dynamic> json) => _$FixedAssetAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetAttributeToJson(this);
     @override
     List<Object?> get props => [fixedAssetId, attrName];
+    @override
+    String get key => id!;
 }

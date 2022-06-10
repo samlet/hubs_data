@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_facade_BundleIdsRequest
 @JsonSerializable()
-class BundleIdsRequest {
+class BundleIdsRequest  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // List<String>
-    final List<String>? ids;
+    List<String>? ids;
     BundleIdsRequest({
         this.handle,
         this.ids, });

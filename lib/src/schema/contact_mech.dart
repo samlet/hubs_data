@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContactMechFlatData
 @JsonSerializable()
-class ContactMech extends Equatable{
+class ContactMech extends Equatable implements WithKey{
     // String
     final String? contactMechId;
     // String
@@ -19,20 +19,20 @@ class ContactMech extends Equatable{
     final ContactMechWithTelecomNumber? asTelecomNumber;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // contact_mech_PostalAddressProto
+    final ContactMechWithPostalAddress? asPostalAddress;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // contact_mech_EmailAddressProto
+    final ContactMechWithEmailAddress? asEmailAddress;
     // String
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // contact_mech_EmailAddressProto
-    final ContactMechWithEmailAddress? asEmailAddress;
-    // contact_mech_PostalAddressProto
-    final ContactMechWithPostalAddress? asPostalAddress;
     ContactMech({
         this.contactMechId,
         this.contactMechTypeId,
@@ -42,15 +42,17 @@ class ContactMech extends Equatable{
         this.tenantId,
         this.asTelecomNumber,
         this.type,
-        this.model,
         this.subview,
-        this.proto,
-        this.cats,
         this.format,
+        this.asPostalAddress,
+        this.model,
         this.asEmailAddress,
-        this.asPostalAddress, });
+        this.proto,
+        this.cats, });
     factory ContactMech.fromJson(Map<String, dynamic> json) => _$ContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechToJson(this);
     @override
     List<Object?> get props => [contactMechId];
+    @override
+    String get key => contactMechId!;
 }

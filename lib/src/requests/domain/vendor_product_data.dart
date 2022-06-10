@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_VendorProductData
 @JsonSerializable()
-class VendorProductData {
+class VendorProductData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? vendorPartyId;
+    String? vendorPartyId;
     // String
-    final String? productStoreGroupId;
+    String? productStoreGroupId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_VendorProductData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     VendorProductData({
         this.productId,
         this.vendorPartyId,

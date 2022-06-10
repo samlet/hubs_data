@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderRoleData
 @JsonSerializable()
-class OrderRole extends Equatable{
+class OrderRole extends Equatable implements WithKey{
     // String
     final String? orderId;
     // String
@@ -15,18 +15,18 @@ class OrderRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_PartyFlatData
     final Party? party;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderRole({
         this.orderId,
         this.partyId,
@@ -34,14 +34,16 @@ class OrderRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.party,
-        this.proto,
         this.format,
+        this.orderHeader,
         this.cats,
-        this.orderHeader, });
+        this.proto,
+        this.model, });
     factory OrderRole.fromJson(Map<String, dynamic> json) => _$OrderRoleFromJson(json);
     Map<String, dynamic> toJson() => _$OrderRoleToJson(this);
     @override
     List<Object?> get props => [orderId, partyId, roleTypeId];
+    @override
+    String get key => id!;
 }

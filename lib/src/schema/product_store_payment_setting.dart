@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStorePaymentSettingData
 @JsonSerializable()
-class ProductStorePaymentSetting extends Equatable{
+class ProductStorePaymentSetting extends Equatable implements WithKey{
     // String
     final String? productStoreId;
     // String
@@ -25,16 +25,16 @@ class ProductStorePaymentSetting extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // String
+    final String? format;
     ProductStorePaymentSetting({
         this.productStoreId,
         this.paymentMethodTypeId,
@@ -47,13 +47,15 @@ class ProductStorePaymentSetting extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.cats,
         this.productStore,
         this.model,
-        this.proto, });
+        this.cats,
+        this.proto,
+        this.format, });
     factory ProductStorePaymentSetting.fromJson(Map<String, dynamic> json) => _$ProductStorePaymentSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePaymentSettingToJson(this);
     @override
     List<Object?> get props => [productStoreId, paymentMethodTypeId, paymentServiceTypeEnumId];
+    @override
+    String get key => id!;
 }

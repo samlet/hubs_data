@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductCategoryRollupFlatData
 @JsonSerializable()
-class ProductCategoryRollup extends Equatable{
+class ProductCategoryRollup extends Equatable implements WithKey{
     // String
     final String? productCategoryId;
     // String
@@ -21,18 +21,18 @@ class ProductCategoryRollup extends Equatable{
     final String? id;
     // String
     final String? tenantId;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? parentProductCategory;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
     // domain_ProductCategoryFlatData
-    final ProductCategory? currentProductCategory;
+    final ProductCategory? parentProductCategory;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? currentProductCategory;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductCategoryRollup({
         this.productCategoryId,
         this.parentProductCategoryId,
@@ -43,14 +43,16 @@ class ProductCategoryRollup extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.parentProductCategory,
-        this.format,
-        this.cats,
         this.proto,
+        this.parentProductCategory,
+        this.model,
+        this.format,
         this.currentProductCategory,
-        this.model, });
+        this.cats, });
     factory ProductCategoryRollup.fromJson(Map<String, dynamic> json) => _$ProductCategoryRollupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryRollupToJson(this);
     @override
     List<Object?> get props => [productCategoryId, parentProductCategoryId, fromDate];
+    @override
+    String get key => id!;
 }

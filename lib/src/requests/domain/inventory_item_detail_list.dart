@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_InventoryItemDetailList
 @JsonSerializable()
-class InventoryItemDetailList {
+class InventoryItemDetailList  {
     // List<Input_domain_InventoryItemDetailData>
-    final List<InventoryItemDetailData>? values;
+    List<InventoryItemDetailData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     InventoryItemDetailList({
         this.values,
         this.nextPageToken,

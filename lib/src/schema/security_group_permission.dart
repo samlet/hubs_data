@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityGroupPermissionData
 @JsonSerializable()
-class SecurityGroupPermission extends Equatable{
+class SecurityGroupPermission extends Equatable implements WithKey{
     // String
     final String? groupId;
     // String
@@ -17,18 +17,18 @@ class SecurityGroupPermission extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_SecurityGroupFlatData
-    final SecurityGroup? securityGroup;
+    // domain_SecurityPermissionFlatData
+    final SecurityPermission? securityPermission;
     // String
     final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
-    // domain_SecurityPermissionFlatData
-    final SecurityPermission? securityPermission;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_SecurityGroupFlatData
+    final SecurityGroup? securityGroup;
+    // String
+    final String? proto;
     SecurityGroupPermission({
         this.groupId,
         this.permissionId,
@@ -37,14 +37,16 @@ class SecurityGroupPermission extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.securityGroup,
+        this.securityPermission,
         this.format,
         this.model,
-        this.proto,
-        this.securityPermission,
-        this.cats, });
+        this.cats,
+        this.securityGroup,
+        this.proto, });
     factory SecurityGroupPermission.fromJson(Map<String, dynamic> json) => _$SecurityGroupPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupPermissionToJson(this);
     @override
     List<Object?> get props => [groupId, permissionId, fromDate];
+    @override
+    String get key => id!;
 }

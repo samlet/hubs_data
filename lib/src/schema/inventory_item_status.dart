@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InventoryItemStatusData
 @JsonSerializable()
-class InventoryItemStatus extends Equatable{
+class InventoryItemStatus extends Equatable implements WithKey{
     // String
     final String? inventoryItemId;
     // String
@@ -23,18 +23,18 @@ class InventoryItemStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // String
     final String? format;
+    // String
+    final String? proto;
     InventoryItemStatus({
         this.inventoryItemId,
         this.statusId,
@@ -46,14 +46,16 @@ class InventoryItemStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.inventoryItem,
-        this.proto,
-        this.userLogin,
+        this.model,
         this.cats,
-        this.format, });
+        this.userLogin,
+        this.format,
+        this.proto, });
     factory InventoryItemStatus.fromJson(Map<String, dynamic> json) => _$InventoryItemStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemStatusToJson(this);
     @override
     List<Object?> get props => [inventoryItemId, statusId, statusDatetime];
+    @override
+    String get key => id!;
 }

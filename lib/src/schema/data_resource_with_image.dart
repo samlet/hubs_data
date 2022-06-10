@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// data_resource_ImageProto
 @JsonSerializable()
-class DataResourceWithImage {
+class DataResourceWithImage  {
     // String
     final String? id;
     // domain_DataResourceFlatData

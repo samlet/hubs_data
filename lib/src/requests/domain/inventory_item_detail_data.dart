@@ -2,61 +2,61 @@ part of '../../../requests.dart';
 
 /// Input_domain_InventoryItemDetailData
 @JsonSerializable()
-class InventoryItemDetailData {
+class InventoryItemDetailData  {
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? inventoryItemDetailSeqId;
+    String? inventoryItemDetailSeqId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? effectiveDate;
+    Timestamp? effectiveDate;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityOnHandDiff;
+    FixedPoint? quantityOnHandDiff;
     // Input_routines_FixedPoint
-    final FixedPoint? availableToPromiseDiff;
+    FixedPoint? availableToPromiseDiff;
     // Input_routines_FixedPoint
-    final FixedPoint? accountingQuantityDiff;
+    FixedPoint? accountingQuantityDiff;
     // Input_routines_FixedPoint
-    final FixedPoint? unitCost;
+    FixedPoint? unitCost;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? shipGroupSeqId;
+    String? shipGroupSeqId;
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentItemSeqId;
+    String? shipmentItemSeqId;
     // String
-    final String? returnId;
+    String? returnId;
     // String
-    final String? returnItemSeqId;
+    String? returnItemSeqId;
     // String
-    final String? workEffortId;
+    String? workEffortId;
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? maintHistSeqId;
+    String? maintHistSeqId;
     // String
-    final String? itemIssuanceId;
+    String? itemIssuanceId;
     // String
-    final String? receiptId;
+    String? receiptId;
     // String
-    final String? physicalInventoryId;
+    String? physicalInventoryId;
     // String
-    final String? reasonEnumId;
+    String? reasonEnumId;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InventoryItemDetailData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InventoryItemDetailData({
         this.inventoryItemId,
         this.inventoryItemDetailSeqId,

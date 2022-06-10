@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// google_protobuf_Struct
 @JsonSerializable()
-class StructValue {
+class StructValue  {
     // List<google_protobuf_Struct_FieldsEntry>
     final List<FieldsEntryValue>? fields;
     // String

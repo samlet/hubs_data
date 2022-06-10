@@ -2,121 +2,121 @@ part of '../../../requests.dart';
 
 /// Input_domain_WorkEffortFlatData
 @JsonSerializable()
-class WorkEffortFlatData {
+class WorkEffortFlatData  {
     // String
-    final String? workEffortId;
+    String? workEffortId;
     // String
-    final String? workEffortTypeId;
+    String? workEffortTypeId;
     // String
-    final String? currentStatusId;
+    String? currentStatusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastStatusUpdate;
+    Timestamp? lastStatusUpdate;
     // String
-    final String? workEffortPurposeTypeId;
+    String? workEffortPurposeTypeId;
     // String
-    final String? workEffortParentId;
+    String? workEffortParentId;
     // String
-    final String? scopeEnumId;
+    String? scopeEnumId;
     // Long
-    final int? priority;
+    int? priority;
     // Long
-    final int? percentComplete;
+    int? percentComplete;
     // String
-    final String? workEffortName;
+    String? workEffortName;
     // String
-    final String? showAsEnumId;
+    String? showAsEnumId;
     // routines_Indicator
-    final String? sendNotificationEmail;
+    String? sendNotificationEmail;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? locationDesc;
+    String? locationDesc;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedStartDate;
+    Timestamp? estimatedStartDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedCompletionDate;
+    Timestamp? estimatedCompletionDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? actualStartDate;
+    Timestamp? actualStartDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? actualCompletionDate;
+    Timestamp? actualCompletionDate;
     // Float
-    final double? estimatedMilliSeconds;
+    double? estimatedMilliSeconds;
     // Float
-    final double? estimatedSetupMillis;
+    double? estimatedSetupMillis;
     // String
-    final String? estimateCalcMethod;
+    String? estimateCalcMethod;
     // Float
-    final double? actualMilliSeconds;
+    double? actualMilliSeconds;
     // Float
-    final double? actualSetupMillis;
+    double? actualSetupMillis;
     // Float
-    final double? totalMilliSecondsAllowed;
+    double? totalMilliSecondsAllowed;
     // Input_routines_Currency
-    final Currency? totalMoneyAllowed;
+    Currency? totalMoneyAllowed;
     // String
-    final String? moneyUomId;
+    String? moneyUomId;
     // String
-    final String? specialTerms;
+    String? specialTerms;
     // Long
-    final int? timeTransparency;
+    int? timeTransparency;
     // String
-    final String? universalId;
+    String? universalId;
     // String
-    final String? sourceReferenceId;
+    String? sourceReferenceId;
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? infoUrl;
+    String? infoUrl;
     // String
-    final String? recurrenceInfoId;
+    String? recurrenceInfoId;
     // String
-    final String? tempExprId;
+    String? tempExprId;
     // String
-    final String? runtimeDataId;
+    String? runtimeDataId;
     // String
-    final String? noteId;
+    String? noteId;
     // String
-    final String? serviceLoaderName;
+    String? serviceLoaderName;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityToProduce;
+    FixedPoint? quantityToProduce;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityProduced;
+    FixedPoint? quantityProduced;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityRejected;
+    FixedPoint? quantityRejected;
     // Input_routines_FixedPoint
-    final FixedPoint? reservPersons;
+    FixedPoint? reservPersons;
     // Input_routines_FixedPoint
-    final FixedPoint? reserv2ndPPPerc;
+    FixedPoint? reserv2ndPPPerc;
     // Input_routines_FixedPoint
-    final FixedPoint? reservNthPPPerc;
+    FixedPoint? reservNthPPPerc;
     // String
-    final String? accommodationMapId;
+    String? accommodationMapId;
     // String
-    final String? accommodationSpotId;
+    String? accommodationSpotId;
     // Long
-    final int? revisionNumber;
+    int? revisionNumber;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_WorkEffortFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     WorkEffortFlatData({
         this.workEffortId,
         this.workEffortTypeId,

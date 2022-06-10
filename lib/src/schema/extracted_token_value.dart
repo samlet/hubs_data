@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// proto_ExtractedToken
 @JsonSerializable()
-class ExtractedTokenValue {
+class ExtractedTokenValue  {
     // String
     final String? tokenString;
     // String

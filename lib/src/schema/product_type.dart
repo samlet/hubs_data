@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductTypeData
 @JsonSerializable()
-class ProductType {
+class ProductType  {
     // String
     final String? productTypeId;
     // String
@@ -21,12 +21,12 @@ class ProductType {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     ProductType({
@@ -39,9 +39,9 @@ class ProductType {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.model,
         this.format,
         this.proto,
-        this.model,
         this.cats, });
     factory ProductType.fromJson(Map<String, dynamic> json) => _$ProductTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ProductTypeToJson(this);

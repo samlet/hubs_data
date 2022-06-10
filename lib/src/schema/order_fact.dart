@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderFactData
 @JsonSerializable()
-class OrderFact extends Equatable{
+class OrderFact extends Equatable implements WithKey{
     // String
     final String? orderId;
     // String
@@ -27,20 +27,20 @@ class OrderFact extends Equatable{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? proto;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_OrderFactStatusList
     final OrderFactStatusCollection? orderFactStatuses;
     // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_TypesEntityData
-    final TypesEntity? type;
+    final String? format;
     OrderFact({
         this.orderId,
         this.invoiceId,
@@ -54,15 +54,17 @@ class OrderFact extends Equatable{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.format,
         this.cats,
-        this.orderFactStatuses,
-        this.proto,
-        this.model,
         this.subview,
-        this.type, });
+        this.proto,
+        this.type,
+        this.model,
+        this.orderFactStatuses,
+        this.format, });
     factory OrderFact.fromJson(Map<String, dynamic> json) => _$OrderFactFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactToJson(this);
     @override
     List<Object?> get props => [orderId];
+    @override
+    String get key => orderId!;
 }

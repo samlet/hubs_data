@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductFacilityLocationData
 @JsonSerializable()
-class ProductFacilityLocation extends Equatable{
+class ProductFacilityLocation extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -19,18 +19,18 @@ class ProductFacilityLocation extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FacilityFlatData
-    final Facility? facility;
     // domain_ProductFlatData
     final Product? product;
-    // String
-    final String? format;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? format;
+    // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     ProductFacilityLocation({
         this.productId,
         this.facilityId,
@@ -40,14 +40,16 @@ class ProductFacilityLocation extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.facility,
         this.product,
-        this.format,
+        this.facility,
+        this.model,
         this.cats,
-        this.proto,
-        this.model, });
+        this.format,
+        this.proto, });
     factory ProductFacilityLocation.fromJson(Map<String, dynamic> json) => _$ProductFacilityLocationFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFacilityLocationToJson(this);
     @override
     List<Object?> get props => [productId, facilityId, locationSeqId];
+    @override
+    String get key => id!;
 }

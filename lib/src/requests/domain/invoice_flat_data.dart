@@ -2,49 +2,49 @@ part of '../../../requests.dart';
 
 /// Input_domain_InvoiceFlatData
 @JsonSerializable()
-class InvoiceFlatData {
+class InvoiceFlatData  {
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? invoiceTypeId;
+    String? invoiceTypeId;
     // String
-    final String? partyIdFrom;
+    String? partyIdFrom;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? invoiceDate;
+    Timestamp? invoiceDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? dueDate;
+    Timestamp? dueDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? paidDate;
+    Timestamp? paidDate;
     // String
-    final String? invoiceMessage;
+    String? invoiceMessage;
     // String
-    final String? referenceNumber;
+    String? referenceNumber;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? recurrenceInfoId;
+    String? recurrenceInfoId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InvoiceFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InvoiceFlatData({
         this.invoiceId,
         this.invoiceTypeId,

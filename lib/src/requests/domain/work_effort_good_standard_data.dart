@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_WorkEffortGoodStandardData
 @JsonSerializable()
-class WorkEffortGoodStandardData {
+class WorkEffortGoodStandardData  {
     // String
-    final String? workEffortId;
+    String? workEffortId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? workEffortGoodStdTypeId;
+    String? workEffortGoodStdTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? statusId;
+    String? statusId;
     // Float
-    final double? estimatedQuantity;
+    double? estimatedQuantity;
     // Input_routines_Currency
-    final Currency? estimatedCost;
+    Currency? estimatedCost;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_WorkEffortGoodStandardData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     WorkEffortGoodStandardData({
         this.workEffortId,
         this.productId,

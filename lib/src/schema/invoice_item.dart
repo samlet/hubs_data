@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InvoiceItemFlatData
 @JsonSerializable()
-class InvoiceItem extends Equatable{
+class InvoiceItem extends Equatable implements WithKey{
     // String
     final String? invoiceId;
     // String
@@ -49,26 +49,26 @@ class InvoiceItem extends Equatable{
     final String? id;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
-    // domain_ProductFeatureFlatData
-    final ProductFeature? productFeature;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     // domain_PartyFlatData
     final Party? overrideOrgParty;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
+    // String
+    final String? proto;
     // domain_InvoiceFlatData
     final Invoice? invoice;
+    // String
+    final String? format;
+    // domain_ProductFeatureFlatData
+    final ProductFeature? productFeature;
     InvoiceItem({
         this.invoiceId,
         this.invoiceItemSeqId,
@@ -93,18 +93,20 @@ class InvoiceItem extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.proto,
-        this.product,
-        this.taxAuthorityParty,
-        this.model,
-        this.format,
-        this.inventoryItem,
-        this.productFeature,
         this.cats,
+        this.product,
+        this.model,
+        this.inventoryItem,
         this.overrideOrgParty,
-        this.invoice, });
+        this.taxAuthorityParty,
+        this.proto,
+        this.invoice,
+        this.format,
+        this.productFeature, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
     @override
     List<Object?> get props => [invoiceId, invoiceItemSeqId];
+    @override
+    String get key => id!;
 }

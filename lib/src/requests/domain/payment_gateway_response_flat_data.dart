@@ -2,61 +2,61 @@ part of '../../../requests.dart';
 
 /// Input_domain_PaymentGatewayResponseFlatData
 @JsonSerializable()
-class PaymentGatewayResponseFlatData {
+class PaymentGatewayResponseFlatData  {
     // String
-    final String? paymentGatewayResponseId;
+    String? paymentGatewayResponseId;
     // String
-    final String? paymentServiceTypeEnumId;
+    String? paymentServiceTypeEnumId;
     // String
-    final String? orderPaymentPreferenceId;
+    String? orderPaymentPreferenceId;
     // String
-    final String? paymentMethodTypeId;
+    String? paymentMethodTypeId;
     // String
-    final String? paymentMethodId;
+    String? paymentMethodId;
     // String
-    final String? transCodeEnumId;
+    String? transCodeEnumId;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? referenceNum;
+    String? referenceNum;
     // String
-    final String? altReference;
+    String? altReference;
     // String
-    final String? subReference;
+    String? subReference;
     // String
-    final String? gatewayCode;
+    String? gatewayCode;
     // String
-    final String? gatewayFlag;
+    String? gatewayFlag;
     // String
-    final String? gatewayAvsResult;
+    String? gatewayAvsResult;
     // String
-    final String? gatewayCvResult;
+    String? gatewayCvResult;
     // String
-    final String? gatewayScoreResult;
+    String? gatewayScoreResult;
     // String
-    final String? gatewayMessage;
+    String? gatewayMessage;
     // Input_google_protobuf_Timestamp
-    final Timestamp? transactionDate;
+    Timestamp? transactionDate;
     // routines_Indicator
-    final String? resultDeclined;
+    String? resultDeclined;
     // routines_Indicator
-    final String? resultNsf;
+    String? resultNsf;
     // routines_Indicator
-    final String? resultBadExpire;
+    String? resultBadExpire;
     // routines_Indicator
-    final String? resultBadCardNumber;
+    String? resultBadCardNumber;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PaymentGatewayResponseFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PaymentGatewayResponseFlatData({
         this.paymentGatewayResponseId,
         this.paymentServiceTypeEnumId,

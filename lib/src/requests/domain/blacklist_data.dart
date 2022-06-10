@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_BlacklistData
 @JsonSerializable()
-class BlacklistData {
+class BlacklistData  {
     // String
-    final String? blacklistId;
+    String? blacklistId;
     // String
-    final String? blacklistTypeId;
+    String? blacklistTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_BlacklistData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     BlacklistData({
         this.blacklistId,
         this.blacklistTypeId,

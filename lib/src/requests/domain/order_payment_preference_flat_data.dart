@@ -2,65 +2,65 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderPaymentPreferenceFlatData
 @JsonSerializable()
-class OrderPaymentPreferenceFlatData {
+class OrderPaymentPreferenceFlatData  {
     // String
-    final String? orderPaymentPreferenceId;
+    String? orderPaymentPreferenceId;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? shipGroupSeqId;
+    String? shipGroupSeqId;
     // String
-    final String? productPricePurposeId;
+    String? productPricePurposeId;
     // String
-    final String? paymentMethodTypeId;
+    String? paymentMethodTypeId;
     // String
-    final String? paymentMethodId;
+    String? paymentMethodId;
     // String
-    final String? finAccountId;
+    String? finAccountId;
     // String
-    final String? securityCode;
+    String? securityCode;
     // String
-    final String? track2;
+    String? track2;
     // routines_Indicator
-    final String? presentFlag;
+    String? presentFlag;
     // routines_Indicator
-    final String? swipedFlag;
+    String? swipedFlag;
     // routines_Indicator
-    final String? overflowFlag;
+    String? overflowFlag;
     // Input_routines_Currency
-    final Currency? maxAmount;
+    Currency? maxAmount;
     // Long
-    final int? processAttempt;
+    int? processAttempt;
     // String
-    final String? billingPostalCode;
+    String? billingPostalCode;
     // String
-    final String? manualAuthCode;
+    String? manualAuthCode;
     // String
-    final String? manualRefNum;
+    String? manualRefNum;
     // String
-    final String? statusId;
+    String? statusId;
     // routines_Indicator
-    final String? needsNsfRetry;
+    String? needsNsfRetry;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderPaymentPreferenceFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderPaymentPreferenceFlatData({
         this.orderPaymentPreferenceId,
         this.orderId,

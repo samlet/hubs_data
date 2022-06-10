@@ -2,39 +2,39 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductCategoryFlatData
 @JsonSerializable()
-class ProductCategoryFlatData {
+class ProductCategoryFlatData  {
     // String
-    final String? productCategoryId;
+    String? productCategoryId;
     // String
-    final String? productCategoryTypeId;
+    String? productCategoryTypeId;
     // String
-    final String? primaryParentCategoryId;
+    String? primaryParentCategoryId;
     // String
-    final String? categoryName;
+    String? categoryName;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? longDescription;
+    String? longDescription;
     // String
-    final String? categoryImageUrl;
+    String? categoryImageUrl;
     // String
-    final String? linkOneImageUrl;
+    String? linkOneImageUrl;
     // String
-    final String? linkTwoImageUrl;
+    String? linkTwoImageUrl;
     // String
-    final String? detailScreen;
+    String? detailScreen;
     // routines_Indicator
-    final String? showInSelect;
+    String? showInSelect;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductCategoryFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductCategoryFlatData({
         this.productCategoryId,
         this.productCategoryTypeId,

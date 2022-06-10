@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_SecurityGroupBlueprintData
 @JsonSerializable()
-class SecurityGroupBlueprint {
+class SecurityGroupBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp
@@ -14,23 +14,23 @@ class SecurityGroupBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_SecurityGroupBlueprintData
-    final SecurityGroupBlueprint? updateSecurityGroupPermission;
+    final SecurityGroupBlueprint? removeSecurityGroupPermission;
     // blueprint_SecurityGroupBlueprintData
     final SecurityGroupBlueprint? addSecurityGroupPermission;
     // blueprint_SecurityGroupBlueprintData
-    final SecurityGroupBlueprint? removeSecurityGroupPermission;
-    // blueprint_SecurityGroupBlueprintData
     final SecurityGroupBlueprint? addSecurityGroupPermissionList;
+    // blueprint_SecurityGroupBlueprintData
+    final SecurityGroupBlueprint? updateSecurityGroupPermission;
     SecurityGroupBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateSecurityGroupPermission,
-        this.addSecurityGroupPermission,
         this.removeSecurityGroupPermission,
-        this.addSecurityGroupPermissionList, });
+        this.addSecurityGroupPermission,
+        this.addSecurityGroupPermissionList,
+        this.updateSecurityGroupPermission, });
     factory SecurityGroupBlueprint.fromJson(Map<String, dynamic> json) => _$SecurityGroupBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupBlueprintToJson(this);
 }

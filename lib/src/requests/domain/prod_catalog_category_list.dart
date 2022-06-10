@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProdCatalogCategoryList
 @JsonSerializable()
-class ProdCatalogCategoryList {
+class ProdCatalogCategoryList  {
     // List<Input_domain_ProdCatalogCategoryFlatData>
-    final List<ProdCatalogCategoryFlatData>? values;
+    List<ProdCatalogCategoryFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ProdCatalogCategoryList({
         this.values,
         this.nextPageToken,

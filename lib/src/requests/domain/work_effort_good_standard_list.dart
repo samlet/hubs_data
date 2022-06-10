@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_WorkEffortGoodStandardList
 @JsonSerializable()
-class WorkEffortGoodStandardList {
+class WorkEffortGoodStandardList  {
     // List<Input_domain_WorkEffortGoodStandardData>
-    final List<WorkEffortGoodStandardData>? values;
+    List<WorkEffortGoodStandardData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     WorkEffortGoodStandardList({
         this.values,
         this.nextPageToken,

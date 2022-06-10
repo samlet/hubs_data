@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ItemIssuanceFlatData
 @JsonSerializable()
-class ItemIssuance extends Equatable{
+class ItemIssuance extends Equatable implements WithKey{
     // String
     final String? itemIssuanceId;
     // String
@@ -35,22 +35,22 @@ class ItemIssuance extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? issuedByUserLogin;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_ShipmentFlatData
     final Shipment? shipment;
-    // String
-    final String? format;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
+    // domain_UserLoginFlatData
+    final UserLogin? issuedByUserLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     ItemIssuance({
         this.itemIssuanceId,
         this.orderId,
@@ -68,16 +68,18 @@ class ItemIssuance extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.orderHeader,
-        this.model,
         this.cats,
-        this.issuedByUserLogin,
+        this.orderHeader,
         this.shipment,
-        this.format,
-        this.inventoryItem, });
+        this.inventoryItem,
+        this.issuedByUserLogin,
+        this.model,
+        this.proto,
+        this.format, });
     factory ItemIssuance.fromJson(Map<String, dynamic> json) => _$ItemIssuanceFromJson(json);
     Map<String, dynamic> toJson() => _$ItemIssuanceToJson(this);
     @override
     List<Object?> get props => [itemIssuanceId];
+    @override
+    String get key => itemIssuanceId!;
 }

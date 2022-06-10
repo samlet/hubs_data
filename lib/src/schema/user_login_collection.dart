@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginList
 @JsonSerializable()
-class UserLoginCollection {
+class UserLoginCollection  {
     // List<domain_UserLoginFlatData>
     final List<UserLogin>? values;
     // String

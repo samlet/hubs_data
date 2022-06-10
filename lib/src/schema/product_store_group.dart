@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreGroupData
 @JsonSerializable()
-class ProductStoreGroup {
+class ProductStoreGroup  {
     // String
     final String? productStoreGroupId;
     // String
@@ -19,28 +19,28 @@ class ProductStoreGroup {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_VendorProductList
-    final VendorProductCollection? vendorProducts;
+    // domain_ProductStoreGroupRoleList
+    final ProductStoreGroupRoleCollection? productStoreGroupRoles;
+    // String
+    final String? format;
     // domain_ProductStoreList
     final ProductStoreCollection? primaryProductStores;
     // String
-    final String? format;
-    // domain_ProductStoreGroupRoleList
-    final ProductStoreGroupRoleCollection? productStoreGroupRoles;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? primaryParentProductStoreGroup;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
     final String? proto;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_ProductStoreGroupMemberList
-    final ProductStoreGroupMemberCollection? productStoreGroupMembers;
+    // domain_VendorProductList
+    final VendorProductCollection? vendorProducts;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? primaryParentProductStoreGroup;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductStoreGroupMemberList
+    final ProductStoreGroupMemberCollection? productStoreGroupMembers;
     ProductStoreGroup({
         this.productStoreGroupId,
         this.productStoreGroupTypeId,
@@ -50,17 +50,17 @@ class ProductStoreGroup {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.vendorProducts,
-        this.primaryProductStores,
-        this.format,
         this.productStoreGroupRoles,
-        this.primaryParentProductStoreGroup,
-        this.model,
+        this.format,
+        this.primaryProductStores,
         this.proto,
-        this.type,
-        this.productStoreGroupMembers,
+        this.vendorProducts,
         this.subview,
-        this.cats, });
+        this.type,
+        this.model,
+        this.primaryParentProductStoreGroup,
+        this.cats,
+        this.productStoreGroupMembers, });
     factory ProductStoreGroup.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupToJson(this);
 }

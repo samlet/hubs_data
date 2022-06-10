@@ -2,157 +2,157 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductFlatData
 @JsonSerializable()
-class ProductFlatData {
+class ProductFlatData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? productTypeId;
+    String? productTypeId;
     // String
-    final String? primaryProductCategoryId;
+    String? primaryProductCategoryId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? introductionDate;
+    Timestamp? introductionDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? releaseDate;
+    Timestamp? releaseDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? supportDiscontinuationDate;
+    Timestamp? supportDiscontinuationDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? salesDiscontinuationDate;
+    Timestamp? salesDiscontinuationDate;
     // routines_Indicator
-    final String? salesDiscWhenNotAvail;
+    String? salesDiscWhenNotAvail;
     // String
-    final String? internalName;
+    String? internalName;
     // String
-    final String? brandName;
+    String? brandName;
     // String
-    final String? comments;
+    String? comments;
     // String
-    final String? productName;
+    String? productName;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? longDescription;
+    String? longDescription;
     // String
-    final String? priceDetailText;
+    String? priceDetailText;
     // String
-    final String? smallImageUrl;
+    String? smallImageUrl;
     // String
-    final String? mediumImageUrl;
+    String? mediumImageUrl;
     // String
-    final String? largeImageUrl;
+    String? largeImageUrl;
     // String
-    final String? detailImageUrl;
+    String? detailImageUrl;
     // String
-    final String? originalImageUrl;
+    String? originalImageUrl;
     // String
-    final String? detailScreen;
+    String? detailScreen;
     // String
-    final String? inventoryMessage;
+    String? inventoryMessage;
     // String
-    final String? inventoryItemTypeId;
+    String? inventoryItemTypeId;
     // routines_Indicator
-    final String? requireInventory;
+    String? requireInventory;
     // String
-    final String? quantityUomId;
+    String? quantityUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityIncluded;
+    FixedPoint? quantityIncluded;
     // Long
-    final int? piecesIncluded;
+    int? piecesIncluded;
     // routines_Indicator
-    final String? requireAmount;
+    String? requireAmount;
     // Input_routines_Currency
-    final Currency? fixedAmount;
+    Currency? fixedAmount;
     // String
-    final String? amountUomTypeId;
+    String? amountUomTypeId;
     // String
-    final String? weightUomId;
+    String? weightUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? shippingWeight;
+    FixedPoint? shippingWeight;
     // Input_routines_FixedPoint
-    final FixedPoint? productWeight;
+    FixedPoint? productWeight;
     // String
-    final String? heightUomId;
+    String? heightUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? productHeight;
+    FixedPoint? productHeight;
     // Input_routines_FixedPoint
-    final FixedPoint? shippingHeight;
+    FixedPoint? shippingHeight;
     // String
-    final String? widthUomId;
+    String? widthUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? productWidth;
+    FixedPoint? productWidth;
     // Input_routines_FixedPoint
-    final FixedPoint? shippingWidth;
+    FixedPoint? shippingWidth;
     // String
-    final String? depthUomId;
+    String? depthUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? productDepth;
+    FixedPoint? productDepth;
     // Input_routines_FixedPoint
-    final FixedPoint? shippingDepth;
+    FixedPoint? shippingDepth;
     // String
-    final String? diameterUomId;
+    String? diameterUomId;
     // Input_routines_FixedPoint
-    final FixedPoint? productDiameter;
+    FixedPoint? productDiameter;
     // Input_routines_FixedPoint
-    final FixedPoint? productRating;
+    FixedPoint? productRating;
     // String
-    final String? ratingTypeEnum;
+    String? ratingTypeEnum;
     // routines_Indicator
-    final String? returnable;
+    String? returnable;
     // routines_Indicator
-    final String? taxable;
+    String? taxable;
     // routines_Indicator
-    final String? chargeShipping;
+    String? chargeShipping;
     // routines_Indicator
-    final String? autoCreateKeywords;
+    String? autoCreateKeywords;
     // routines_Indicator
-    final String? includeInPromotions;
+    String? includeInPromotions;
     // routines_Indicator
-    final String? isVirtual;
+    String? isVirtual;
     // routines_Indicator
-    final String? isVariant;
+    String? isVariant;
     // String
-    final String? virtualVariantMethodEnum;
+    String? virtualVariantMethodEnum;
     // String
-    final String? originGeoId;
+    String? originGeoId;
     // String
-    final String? requirementMethodEnumId;
+    String? requirementMethodEnumId;
     // Long
-    final int? billOfMaterialLevel;
+    int? billOfMaterialLevel;
     // Input_routines_FixedPoint
-    final FixedPoint? reservMaxPersons;
+    FixedPoint? reservMaxPersons;
     // Input_routines_FixedPoint
-    final FixedPoint? reserv2ndPPPerc;
+    FixedPoint? reserv2ndPPPerc;
     // Input_routines_FixedPoint
-    final FixedPoint? reservNthPPPerc;
+    FixedPoint? reservNthPPPerc;
     // String
-    final String? configId;
+    String? configId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // routines_Indicator
-    final String? inShippingBox;
+    String? inShippingBox;
     // String
-    final String? defaultShipmentBoxTypeId;
+    String? defaultShipmentBoxTypeId;
     // String
-    final String? lotIdFilledIn;
+    String? lotIdFilledIn;
     // routines_Indicator
-    final String? orderDecimalQuantity;
+    String? orderDecimalQuantity;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductFlatData({
         this.productId,
         this.productTypeId,

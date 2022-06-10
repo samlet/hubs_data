@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_FixedAssetGeoPointList
 @JsonSerializable()
-class FixedAssetGeoPointList {
+class FixedAssetGeoPointList  {
     // List<Input_domain_FixedAssetGeoPointData>
-    final List<FixedAssetGeoPointData>? values;
+    List<FixedAssetGeoPointData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     FixedAssetGeoPointList({
         this.values,
         this.nextPageToken,

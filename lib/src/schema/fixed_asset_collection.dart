@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetList
 @JsonSerializable()
-class FixedAssetCollection {
+class FixedAssetCollection  {
     // List<domain_FixedAssetFlatData>
     final List<FixedAsset>? values;
     // String

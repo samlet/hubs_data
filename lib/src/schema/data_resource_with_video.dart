@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// data_resource_VideoProto
 @JsonSerializable()
-class DataResourceWithVideo {
+class DataResourceWithVideo  {
     // String
     final String? id;
     // domain_DataResourceFlatData

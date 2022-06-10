@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_WebSiteList
 @JsonSerializable()
-class WebSiteList {
+class WebSiteList  {
     // List<Input_domain_WebSiteFlatData>
-    final List<WebSiteFlatData>? values;
+    List<WebSiteFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     WebSiteList({
         this.values,
         this.nextPageToken,

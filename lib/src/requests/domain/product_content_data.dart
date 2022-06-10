@@ -2,41 +2,41 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductContentData
 @JsonSerializable()
-class ProductContentData {
+class ProductContentData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? contentId;
+    String? contentId;
     // String
-    final String? productContentTypeId;
+    String? productContentTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? purchaseFromDate;
+    Timestamp? purchaseFromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? purchaseThruDate;
+    Timestamp? purchaseThruDate;
     // Long
-    final int? useCountLimit;
+    int? useCountLimit;
     // Long
-    final int? useTime;
+    int? useTime;
     // String
-    final String? useTimeUomId;
+    String? useTimeUomId;
     // String
-    final String? useRoleTypeId;
+    String? useRoleTypeId;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductContentData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductContentData({
         this.productId,
         this.contentId,

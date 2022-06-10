@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderPaymentPreferenceFlatData
 @JsonSerializable()
-class OrderPaymentPreference extends Equatable{
+class OrderPaymentPreference extends Equatable implements WithKey{
     // String
     final String? orderPaymentPreferenceId;
     // String
@@ -59,16 +59,16 @@ class OrderPaymentPreference extends Equatable{
     final String? tenantId;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     OrderPaymentPreference({
         this.orderPaymentPreferenceId,
         this.orderId,
@@ -98,13 +98,15 @@ class OrderPaymentPreference extends Equatable{
         this.createdTxStamp,
         this.tenantId,
         this.model,
-        this.orderHeader,
         this.format,
-        this.cats,
         this.userLogin,
-        this.proto, });
+        this.proto,
+        this.cats,
+        this.orderHeader, });
     factory OrderPaymentPreference.fromJson(Map<String, dynamic> json) => _$OrderPaymentPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$OrderPaymentPreferenceToJson(this);
     @override
     List<Object?> get props => [orderPaymentPreferenceId];
+    @override
+    String get key => orderPaymentPreferenceId!;
 }

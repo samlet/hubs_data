@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_FixedAssetMaintList
 @JsonSerializable()
-class FixedAssetMaintList {
+class FixedAssetMaintList  {
     // List<Input_domain_FixedAssetMaintData>
-    final List<FixedAssetMaintData>? values;
+    List<FixedAssetMaintData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     FixedAssetMaintList({
         this.values,
         this.nextPageToken,

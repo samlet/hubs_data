@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_google_protobuf_Any
 @JsonSerializable()
-class Any {
+class Any  {
     // String
-    final String? typeUrl;
+    String? typeUrl;
     // String
-    final String? value;
+    String? value;
     Any({
         this.typeUrl,
         this.value, });

@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_routines_Currency
 @JsonSerializable()
-class Currency {
+class Currency  {
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? value;
+    String? value;
     Currency({
         this.currencyUomId,
         this.value, });

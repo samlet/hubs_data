@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShippingDocumentData
 @JsonSerializable()
-class ShippingDocument extends Equatable{
+class ShippingDocument extends Equatable implements WithKey{
     // String
     final String? documentId;
     // String
@@ -19,14 +19,14 @@ class ShippingDocument extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ShippingDocument({
         this.documentId,
         this.shipmentId,
@@ -36,12 +36,14 @@ class ShippingDocument extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.cats,
+        this.proto,
         this.format,
-        this.proto, });
+        this.cats,
+        this.model, });
     factory ShippingDocument.fromJson(Map<String, dynamic> json) => _$ShippingDocumentFromJson(json);
     Map<String, dynamic> toJson() => _$ShippingDocumentToJson(this);
     @override
     List<Object?> get props => [documentId];
+    @override
+    String get key => documentId!;
 }

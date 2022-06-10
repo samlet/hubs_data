@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityGroupFlatData
 @JsonSerializable()
-class SecurityGroup extends Equatable{
+class SecurityGroup extends Equatable implements WithKey{
     // String
     final String? groupId;
     // String
@@ -15,18 +15,18 @@ class SecurityGroup extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
     // domain_SecurityGroupPermissionList
     final SecurityGroupPermissionCollection? securityGroupPermissions;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     SecurityGroup({
         this.groupId,
         this.groupName,
@@ -34,14 +34,16 @@ class SecurityGroup extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
         this.subview,
-        this.model,
-        this.cats,
+        this.proto,
+        this.securityGroupPermissions,
         this.format,
-        this.securityGroupPermissions, });
+        this.cats,
+        this.model, });
     factory SecurityGroup.fromJson(Map<String, dynamic> json) => _$SecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupToJson(this);
     @override
     List<Object?> get props => [groupId];
+    @override
+    String get key => groupId!;
 }

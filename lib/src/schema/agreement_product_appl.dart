@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AgreementProductApplData
 @JsonSerializable()
-class AgreementProductAppl extends Equatable{
+class AgreementProductAppl extends Equatable implements WithKey{
     // String
     final String? agreementId;
     // String
@@ -17,18 +17,18 @@ class AgreementProductAppl extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // domain_AgreementFlatData
+    final Agreement? agreement;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // domain_ProductFlatData
     final Product? product;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_AgreementFlatData
-    final Agreement? agreement;
-    // String
-    final String? proto;
     AgreementProductAppl({
         this.agreementId,
         this.agreementItemSeqId,
@@ -37,14 +37,16 @@ class AgreementProductAppl extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.product,
         this.model,
-        this.cats,
+        this.proto,
         this.agreement,
-        this.proto, });
+        this.cats,
+        this.format,
+        this.product, });
     factory AgreementProductAppl.fromJson(Map<String, dynamic> json) => _$AgreementProductApplFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementProductApplToJson(this);
     @override
     List<Object?> get props => [agreementId, agreementItemSeqId, productId];
+    @override
+    String get key => id!;
 }

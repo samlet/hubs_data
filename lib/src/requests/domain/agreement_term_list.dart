@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_AgreementTermList
 @JsonSerializable()
-class AgreementTermList {
+class AgreementTermList  {
     // List<Input_domain_AgreementTermFlatData>
-    final List<AgreementTermFlatData>? values;
+    List<AgreementTermFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     AgreementTermList({
         this.values,
         this.nextPageToken,

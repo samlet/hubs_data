@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FactProtoList
 @JsonSerializable()
-class FactProtoCollection {
+class FactProtoCollection  {
     // List<domain_FactProtoData>
     final List<FactProto>? values;
     // String

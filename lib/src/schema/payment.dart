@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PaymentFlatData
 @JsonSerializable()
-class Payment extends Equatable{
+class Payment extends Equatable implements WithKey{
     // String
     final String? paymentId;
     // String
@@ -48,23 +48,23 @@ class Payment extends Equatable{
     // String
     final String? tenantId;
     // String
+    final String? format;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_PaymentApplicationList
     final PaymentApplicationCollection? paymentApplications;
     // domain_PartyFlatData
     final Party? toParty;
-    // domain_PartyFlatData
-    final Party? fromParty;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     Payment({
         this.paymentId,
         this.paymentTypeId,
@@ -88,17 +88,19 @@ class Payment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.format,
+        this.fromParty,
         this.proto,
-        this.cats,
-        this.model,
-        this.type,
-        this.subview,
         this.paymentApplications,
         this.toParty,
-        this.fromParty,
-        this.format, });
+        this.cats,
+        this.type,
+        this.model,
+        this.subview, });
     factory Payment.fromJson(Map<String, dynamic> json) => _$PaymentFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentToJson(this);
     @override
     List<Object?> get props => [paymentId];
+    @override
+    String get key => paymentId!;
 }

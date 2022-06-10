@@ -2,43 +2,43 @@ part of '../../../requests.dart';
 
 /// Input_domain_AgreementTermFlatData
 @JsonSerializable()
-class AgreementTermFlatData {
+class AgreementTermFlatData  {
     // String
-    final String? agreementTermId;
+    String? agreementTermId;
     // String
-    final String? termTypeId;
+    String? termTypeId;
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? agreementItemSeqId;
+    String? agreementItemSeqId;
     // String
-    final String? invoiceItemTypeId;
+    String? invoiceItemTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Input_routines_Currency
-    final Currency? termValue;
+    Currency? termValue;
     // Long
-    final int? termDays;
+    int? termDays;
     // String
-    final String? textValue;
+    String? textValue;
     // Float
-    final double? minQuantity;
+    double? minQuantity;
     // Float
-    final double? maxQuantity;
+    double? maxQuantity;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AgreementTermFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AgreementTermFlatData({
         this.agreementTermId,
         this.termTypeId,

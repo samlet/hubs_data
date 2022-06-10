@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_AudioDataResourceList
 @JsonSerializable()
-class AudioDataResourceList {
+class AudioDataResourceList  {
     // List<Input_domain_AudioDataResourceData>
-    final List<AudioDataResourceData>? values;
+    List<AudioDataResourceData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     AudioDataResourceList({
         this.values,
         this.nextPageToken,

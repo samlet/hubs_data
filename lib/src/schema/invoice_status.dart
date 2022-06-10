@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InvoiceStatusData
 @JsonSerializable()
-class InvoiceStatus extends Equatable{
+class InvoiceStatus extends Equatable implements WithKey{
     // String
     final String? statusId;
     // String
@@ -17,18 +17,18 @@ class InvoiceStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
     // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
     InvoiceStatus({
         this.statusId,
         this.invoiceId,
@@ -37,14 +37,16 @@ class InvoiceStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.changeByUserLogin,
-        this.proto,
-        this.model,
         this.format,
-        this.invoice, });
+        this.cats,
+        this.invoice,
+        this.proto,
+        this.model, });
     factory InvoiceStatus.fromJson(Map<String, dynamic> json) => _$InvoiceStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceStatusToJson(this);
     @override
     List<Object?> get props => [statusId, invoiceId, statusDate];
+    @override
+    String get key => id!;
 }

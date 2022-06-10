@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_facade_BundleHandle
 @JsonSerializable()
-class BundleHandle {
+class BundleHandle  {
     // String
-    final String? bundleName;
+    String? bundleName;
     // String
-    final String? regionId;
+    String? regionId;
     // Input_google_protobuf_Any
-    final Any? data;
+    Any? data;
     BundleHandle({
         this.bundleName,
         this.regionId,

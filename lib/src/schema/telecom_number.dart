@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TelecomNumberFlatData
 @JsonSerializable()
-class TelecomNumber extends Equatable{
+class TelecomNumber extends Equatable implements WithKey{
     // String
     final String? contactMechId;
     // String
@@ -19,16 +19,16 @@ class TelecomNumber extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
-    // String
-    final String? proto;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     TelecomNumber({
         this.contactMechId,
         this.countryCode,
@@ -38,13 +38,15 @@ class TelecomNumber extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.cats,
         this.format,
-        this.proto,
         this.contactMech,
         this.model,
-        this.cats, });
+        this.proto, });
     factory TelecomNumber.fromJson(Map<String, dynamic> json) => _$TelecomNumberFromJson(json);
     Map<String, dynamic> toJson() => _$TelecomNumberToJson(this);
     @override
     List<Object?> get props => [contactMechId];
+    @override
+    String get key => contactMechId!;
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_FactBlueprintData
 @JsonSerializable()
-class FactBlueprint {
+class FactBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp
@@ -16,11 +16,11 @@ class FactBlueprint {
     // blueprint_FactBlueprintData
     final FactBlueprint? addFactProtoStatus;
     // blueprint_FactBlueprintData
-    final FactBlueprint? updateFactProtoStatus;
-    // blueprint_FactBlueprintData
     final FactBlueprint? addFactProtoStatusList;
     // blueprint_FactBlueprintData
     final FactBlueprint? removeFactProtoStatus;
+    // blueprint_FactBlueprintData
+    final FactBlueprint? updateFactProtoStatus;
     // blueprint_FactBlueprintData
     final FactBlueprint? modifyFactProtoType;
     FactBlueprint({
@@ -30,9 +30,9 @@ class FactBlueprint {
         this.entity,
         this.response,
         this.addFactProtoStatus,
-        this.updateFactProtoStatus,
         this.addFactProtoStatusList,
         this.removeFactProtoStatus,
+        this.updateFactProtoStatus,
         this.modifyFactProtoType, });
     factory FactBlueprint.fromJson(Map<String, dynamic> json) => _$FactBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$FactBlueprintToJson(this);

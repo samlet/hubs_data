@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginFlatData
 @JsonSerializable()
-class UserLogin extends Equatable{
+class UserLogin extends Equatable implements WithKey{
     // String
     final String? userLoginId;
     // String
@@ -41,24 +41,24 @@ class UserLogin extends Equatable{
     final String? partyId;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_PartyFlatData
-    final Party? party;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_UserLoginSecurityGroupList
-    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
     // domain_UserPreferenceList
     final UserPreferenceCollection? userPreferences;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_UserLoginPasswordHistoryList
     final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_UserLoginSecurityGroupList
+    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
+    // String
+    final String? proto;
     UserLogin({
         this.userLoginId,
         this.currentPassword,
@@ -79,17 +79,19 @@ class UserLogin extends Equatable{
         this.createdTxStamp,
         this.partyId,
         this.tenantId,
-        this.subview,
-        this.party,
         this.model,
-        this.userLoginSecurityGroups,
         this.userPreferences,
-        this.cats,
-        this.proto,
         this.format,
-        this.userLoginPasswordHistories, });
+        this.subview,
+        this.cats,
+        this.userLoginPasswordHistories,
+        this.party,
+        this.userLoginSecurityGroups,
+        this.proto, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
     @override
     List<Object?> get props => [userLoginId];
+    @override
+    String get key => userLoginId!;
 }

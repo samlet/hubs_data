@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyContactMechData
 @JsonSerializable()
-class PartyContactMech extends Equatable{
+class PartyContactMech extends Equatable implements WithKey{
     // String
     final String? partyId;
     // String
@@ -31,18 +31,18 @@ class PartyContactMech extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? party;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
+    // String
+    final String? proto;
     PartyContactMech({
         this.partyId,
         this.contactMechId,
@@ -58,14 +58,16 @@ class PartyContactMech extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.model,
+        this.contactMech,
         this.cats,
         this.party,
-        this.contactMech,
-        this.format, });
+        this.model,
+        this.format,
+        this.proto, });
     factory PartyContactMech.fromJson(Map<String, dynamic> json) => _$PartyContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$PartyContactMechToJson(this);
     @override
     List<Object?> get props => [partyId, contactMechId, fromDate];
+    @override
+    String get key => id!;
 }

@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_TelecomNumberFlatData
 @JsonSerializable()
-class TelecomNumberFlatData {
+class TelecomNumberFlatData  {
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? countryCode;
+    String? countryCode;
     // String
-    final String? areaCode;
+    String? areaCode;
     // String
-    final String? contactNumber;
+    String? contactNumber;
     // String
-    final String? askForName;
+    String? askForName;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_TelecomNumberFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     TelecomNumberFlatData({
         this.contactMechId,
         this.countryCode,

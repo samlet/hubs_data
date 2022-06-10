@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductFacilityLocationData
 @JsonSerializable()
-class ProductFacilityLocationData {
+class ProductFacilityLocationData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? locationSeqId;
+    String? locationSeqId;
     // Input_routines_FixedPoint
-    final FixedPoint? minimumStock;
+    FixedPoint? minimumStock;
     // Input_routines_FixedPoint
-    final FixedPoint? moveQuantity;
+    FixedPoint? moveQuantity;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductFacilityLocationData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductFacilityLocationData({
         this.productId,
         this.facilityId,

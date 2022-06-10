@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderFactData
 @JsonSerializable()
-class OrderFactData {
+class OrderFactData  {
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? paymentId;
+    String? paymentId;
     // String
-    final String? paymentGatewayResponseId;
+    String? paymentGatewayResponseId;
     // String
-    final String? orderPaymentPreferenceId;
+    String? orderPaymentPreferenceId;
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? orderFactTypeId;
+    String? orderFactTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderFactData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderFactData({
         this.orderId,
         this.invoiceId,

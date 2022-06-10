@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_google_protobuf_Timestamp
 @JsonSerializable()
-class Timestamp {
+class Timestamp  {
     // Long
-    final int? seconds;
+    int? seconds;
     // Int
-    final int? nanos;
+    int? nanos;
     Timestamp({
         this.seconds,
         this.nanos, });

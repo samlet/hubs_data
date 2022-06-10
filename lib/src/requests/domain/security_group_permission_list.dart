@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_SecurityGroupPermissionList
 @JsonSerializable()
-class SecurityGroupPermissionList {
+class SecurityGroupPermissionList  {
     // List<Input_domain_SecurityGroupPermissionData>
-    final List<SecurityGroupPermissionData>? values;
+    List<SecurityGroupPermissionData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     SecurityGroupPermissionList({
         this.values,
         this.nextPageToken,

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentAttributeData
 @JsonSerializable()
-class ContentAttribute extends Equatable{
+class ContentAttribute extends Equatable implements WithKey{
     // String
     final String? contentId;
     // String
@@ -17,14 +17,14 @@ class ContentAttribute extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContentFlatData
-    final Content? content;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ContentFlatData
+    final Content? content;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     ContentAttribute({
@@ -35,13 +35,15 @@ class ContentAttribute extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.content,
-        this.model,
-        this.proto,
         this.cats,
+        this.content,
+        this.proto,
+        this.model,
         this.format, });
     factory ContentAttribute.fromJson(Map<String, dynamic> json) => _$ContentAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAttributeToJson(this);
     @override
     List<Object?> get props => [contentId, attrName];
+    @override
+    String get key => id!;
 }

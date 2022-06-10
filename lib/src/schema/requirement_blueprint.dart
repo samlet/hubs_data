@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_RequirementBlueprintData
 @JsonSerializable()
-class RequirementBlueprint {
+class RequirementBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp

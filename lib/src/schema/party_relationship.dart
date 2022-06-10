@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyRelationshipFlatData
 @JsonSerializable()
-class PartyRelationship extends Equatable{
+class PartyRelationship extends Equatable implements WithKey{
     // String
     final String? partyIdFrom;
     // String
@@ -39,20 +39,20 @@ class PartyRelationship extends Equatable{
     final String? id;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? fromParty;
     // String
     final String? format;
-    // domain_PartyFlatData
-    final Party? toParty;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
+    // domain_PartyFlatData
+    final Party? toParty;
     // String
     final String? proto;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     PartyRelationship({
         this.partyIdFrom,
         this.partyIdTo,
@@ -72,15 +72,17 @@ class PartyRelationship extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.model,
-        this.cats,
-        this.fromParty,
         this.format,
-        this.toParty,
+        this.model,
         this.securityGroup,
-        this.proto, });
+        this.toParty,
+        this.proto,
+        this.fromParty,
+        this.cats, });
     factory PartyRelationship.fromJson(Map<String, dynamic> json) => _$PartyRelationshipFromJson(json);
     Map<String, dynamic> toJson() => _$PartyRelationshipToJson(this);
     @override
     List<Object?> get props => [partyIdFrom, partyIdTo, roleTypeIdFrom, roleTypeIdTo, fromDate];
+    @override
+    String get key => id!;
 }

@@ -2,619 +2,619 @@ part of '../../../requests.dart';
 
 /// Input_domain_TypesEntityData
 @JsonSerializable()
-class TypesEntityData {
+class TypesEntityData  {
     // String
-    final String? entityId;
+    String? entityId;
     // String
-    final String? entity;
+    String? entity;
     // String
-    final String? partyContentTypeId;
+    String? partyContentTypeId;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // String
-    final String? enumCode;
+    String? enumCode;
     // String
-    final String? mimeTypeId;
+    String? mimeTypeId;
     // String
-    final String? returnTypeId;
+    String? returnTypeId;
     // String
-    final String? contactMechTypeId;
+    String? contactMechTypeId;
     // String
-    final String? customerClassification;
+    String? customerClassification;
     // String
-    final String? planTypeId;
+    String? planTypeId;
     // String
-    final String? acctgTransEntryTypeId;
+    String? acctgTransEntryTypeId;
     // String
-    final String? facilityGroupName;
+    String? facilityGroupName;
     // String
-    final String? finAccountTypeId;
+    String? finAccountTypeId;
     // String
-    final String? shipmentGatewayConfigId;
+    String? shipmentGatewayConfigId;
     // String
-    final String? defaultPackagingType;
+    String? defaultPackagingType;
     // String
-    final String? productCategoryTypeId;
+    String? productCategoryTypeId;
     // String
-    final String? productMeterTypeId;
+    String? productMeterTypeId;
     // String
-    final String? langCode3b;
+    String? langCode3b;
     // String
-    final String? glFiscalTypeId;
+    String? glFiscalTypeId;
     // String
-    final String? glJournalId;
+    String? glJournalId;
     // Long
-    final int? termValue;
+    int? termValue;
     // String
-    final String? supplierPrefOrderId;
+    String? supplierPrefOrderId;
     // String
-    final String? langCode3t;
+    String? langCode3t;
     // String
-    final String? perfReviewItemTypeId;
+    String? perfReviewItemTypeId;
     // String
-    final String? contentOperationId;
+    String? contentOperationId;
     // String
-    final String? glAccountClassId;
+    String? glAccountClassId;
     // String
-    final String? fixedAssetProductTypeId;
+    String? fixedAssetProductTypeId;
     // String
-    final String? orderItemAssocTypeId;
+    String? orderItemAssocTypeId;
     // String
-    final String? fixedAssetIdentTypeId;
+    String? fixedAssetIdentTypeId;
     // String
-    final String? agreementContentTypeId;
+    String? agreementContentTypeId;
     // String
-    final String? statusCode;
+    String? statusCode;
     // String
-    final String? geoName;
+    String? geoName;
     // Float
-    final double? employerPaidPercentage;
+    double? employerPaidPercentage;
     // String
-    final String? statusTypeId;
+    String? statusTypeId;
     // String
-    final String? labelImageFormat;
+    String? labelImageFormat;
     // String
-    final String? contactListTypeId;
+    String? contactListTypeId;
     // String
-    final String? partyRelationshipName;
+    String? partyRelationshipName;
     // String
-    final String? costCustomMethodId;
+    String? costCustomMethodId;
     // String
-    final String? workEffortContentTypeId;
+    String? workEffortContentTypeId;
     // String
-    final String? invoiceItemAssocTypeId;
+    String? invoiceItemAssocTypeId;
     // String
-    final String? langName;
+    String? langName;
     // String
-    final String? visualThemeSetId;
+    String? visualThemeSetId;
     // String
-    final String? inventoryItemTypeId;
+    String? inventoryItemTypeId;
     // String
-    final String? surveyQuestionTypeId;
+    String? surveyQuestionTypeId;
     // String
-    final String? productFeatureTypeId;
+    String? productFeatureTypeId;
     // String
-    final String? postalCodeRegex;
+    String? postalCodeRegex;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // String
-    final String? requireStateProvinceId;
+    String? requireStateProvinceId;
     // String
-    final String? parentTypeId;
+    String? parentTypeId;
     // routines_Indicator
-    final String? hasPostalCodeExt;
+    String? hasPostalCodeExt;
     // String
-    final String? addressFormat;
+    String? addressFormat;
     // String
-    final String? periodTypeId;
+    String? periodTypeId;
     // String
-    final String? glReconciliationName;
+    String? glReconciliationName;
     // Input_google_protobuf_Timestamp
-    final Timestamp? reconciledDate;
+    Timestamp? reconciledDate;
     // String
-    final String? abbreviation;
+    String? abbreviation;
     // String
-    final String? uomIdTo;
+    String? uomIdTo;
     // String
-    final String? costComponentCalcId;
+    String? costComponentCalcId;
     // String
-    final String? teleCode;
+    String? teleCode;
     // String
-    final String? userLoginId;
+    String? userLoginId;
     // String
-    final String? invoiceItemMapKey;
+    String? invoiceItemMapKey;
     // String
-    final String? roundingMode;
+    String? roundingMode;
     // String
-    final String? skillTypeId;
+    String? skillTypeId;
     // String
-    final String? prodCatalogCategoryTypeId;
+    String? prodCatalogCategoryTypeId;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // routines_Indicator
-    final String? isClosed;
+    String? isClosed;
     // String
-    final String? returnItemTypeId;
+    String? returnItemTypeId;
     // String
-    final String? organizationPartyId;
+    String? organizationPartyId;
     // String
-    final String? entityGroupId;
+    String? entityGroupId;
     // String
-    final String? entityGroupName;
+    String? entityGroupName;
     // String
-    final String? productPriceTypeId;
+    String? productPriceTypeId;
     // String
-    final String? defaultReturnLabelMemo;
+    String? defaultReturnLabelMemo;
     // Input_routines_FixedPoint
-    final FixedPoint? amountPercentage;
+    FixedPoint? amountPercentage;
     // String
-    final String? accessMeterNumber;
+    String? accessMeterNumber;
     // String
-    final String? budgetTypeId;
+    String? budgetTypeId;
     // String
-    final String? accessUserKey;
+    String? accessUserKey;
     // String
-    final String? sequenceId;
+    String? sequenceId;
     // String
-    final String? geoSecCode;
+    String? geoSecCode;
     // String
-    final String? codSurchargeCurrencyUomId;
+    String? codSurchargeCurrencyUomId;
     // Long
-    final int? numericCode;
+    int? numericCode;
     // String
-    final String? privilegeEnumId;
+    String? privilegeEnumId;
     // String
-    final String? returnAdjustmentTypeId;
+    String? returnAdjustmentTypeId;
     // String
-    final String? contentAssocPredicateId;
+    String? contentAssocPredicateId;
     // routines_Indicator
-    final String? isPosted;
+    String? isPosted;
     // routines_Indicator
-    final String? hasTable;
+    String? hasTable;
     // String
-    final String? webSiteContentTypeId;
+    String? webSiteContentTypeId;
     // String
-    final String? dataSourceTypeId;
+    String? dataSourceTypeId;
     // String
-    final String? userPrefValue;
+    String? userPrefValue;
     // String
-    final String? defaultGlAccountId;
+    String? defaultGlAccountId;
     // String
-    final String? terminationTypeId;
+    String? terminationTypeId;
     // String
-    final String? userPrefDataType;
+    String? userPrefDataType;
     // String
-    final String? termName;
+    String? termName;
     // String
-    final String? dataResourceTypeId;
+    String? dataResourceTypeId;
     // String
-    final String? parentGlXbrlClassId;
+    String? parentGlXbrlClassId;
     // String
-    final String? test;
+    String? test;
     // String
-    final String? fixedAssetTypeId;
+    String? fixedAssetTypeId;
     // String
-    final String? workEffortPurposeTypeId;
+    String? workEffortPurposeTypeId;
     // String
-    final String? billShipperAccountNumber;
+    String? billShipperAccountNumber;
     // String
-    final String? glAccountCategoryTypeId;
+    String? glAccountCategoryTypeId;
     // String
-    final String? orderAdjustmentTypeId;
+    String? orderAdjustmentTypeId;
     // String
-    final String? settlementTermId;
+    String? settlementTermId;
     // String
-    final String? goodIdentificationTypeId;
+    String? goodIdentificationTypeId;
     // String
-    final String? paymentMethodTypeId;
+    String? paymentMethodTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? returnItemMapKey;
+    String? returnItemMapKey;
     // routines_Indicator
-    final String? requirePostalCode;
+    String? requirePostalCode;
     // String
-    final String? entityOrPackage;
+    String? entityOrPackage;
     // String
-    final String? finAccountTransTypeId;
+    String? finAccountTransTypeId;
     // String
-    final String? contactMechPurposeTypeId;
+    String? contactMechPurposeTypeId;
     // String
-    final String? glAccountGroupTypeId;
+    String? glAccountGroupTypeId;
     // Long
-    final int? periodLength;
+    int? periodLength;
     // String
-    final String? countryName;
+    String? countryName;
     // String
-    final String? glXbrlClassId;
+    String? glXbrlClassId;
     // String
-    final String? segmentGroupTypeId;
+    String? segmentGroupTypeId;
     // String
-    final String? trainingClassTypeId;
+    String? trainingClassTypeId;
     // String
-    final String? wellKnownText;
+    String? wellKnownText;
     // String
-    final String? productStoreGroupTypeId;
+    String? productStoreGroupTypeId;
     // String
-    final String? replenishEnumId;
+    String? replenishEnumId;
     // String
-    final String? hitTypeId;
+    String? hitTypeId;
     // String
-    final String? benefitTypeId;
+    String? benefitTypeId;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? statusIdTo;
+    String? statusIdTo;
     // String
-    final String? uomTypeId;
+    String? uomTypeId;
     // String
-    final String? productStoreGroupId;
+    String? productStoreGroupId;
     // String
-    final String? enumTypeId;
+    String? enumTypeId;
     // String
-    final String? workEffortGoodStdTypeId;
+    String? workEffortGoodStdTypeId;
     // Input_routines_Currency
-    final Currency? reconciledBalance;
+    Currency? reconciledBalance;
     // String
-    final String? quoteTypeId;
+    String? quoteTypeId;
     // String
-    final String? paymentTypeId;
+    String? paymentTypeId;
     // String
-    final String? connectSoapUrl;
+    String? connectSoapUrl;
     // String
-    final String? geoIdTo;
+    String? geoIdTo;
     // String
-    final String? countryNumber;
+    String? countryNumber;
     // routines_Indicator
-    final String? requirePostalCodeExt;
+    String? requirePostalCodeExt;
     // String
-    final String? glReconciliationId;
+    String? glReconciliationId;
     // String
-    final String? workEffortAssocTypeId;
+    String? workEffortAssocTypeId;
     // routines_Indicator
-    final String? isRefundable;
+    String? isRefundable;
     // String
-    final String? varianceReasonId;
+    String? varianceReasonId;
     // String
-    final String? rejectionId;
+    String? rejectionId;
     // String
-    final String? codFundsCode;
+    String? codFundsCode;
     // String
-    final String? benefitName;
+    String? benefitName;
     // String
-    final String? employmentAppSourceTypeId;
+    String? employmentAppSourceTypeId;
     // String
-    final String? glAccountCategoryId;
+    String? glAccountCategoryId;
     // String
-    final String? invoiceTypeId;
+    String? invoiceTypeId;
     // String
-    final String? metaDataPredicateId;
+    String? metaDataPredicateId;
     // String
-    final String? periodName;
+    String? periodName;
     // String
-    final String? agreementTypeId;
+    String? agreementTypeId;
     // String
-    final String? shipperNumber;
+    String? shipperNumber;
     // String
-    final String? communicationEventTypeId;
+    String? communicationEventTypeId;
     // String
-    final String? transitionName;
+    String? transitionName;
     // String
-    final String? requirementTypeId;
+    String? requirementTypeId;
     // String
-    final String? partyTypeId;
+    String? partyTypeId;
     // String
-    final String? countryAbbr;
+    String? countryAbbr;
     // String
-    final String? contentAssocTypeId;
+    String? contentAssocTypeId;
     // String
-    final String? orderDenylistTypeId;
+    String? orderDenylistTypeId;
     // Input_routines_FixedPoint
-    final FixedPoint? minEstimateWeight;
+    FixedPoint? minEstimateWeight;
     // String
-    final String? productFeatureApplTypeId;
+    String? productFeatureApplTypeId;
     // String
-    final String? productPriceActionTypeId;
+    String? productPriceActionTypeId;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // String
-    final String? partyClassificationTypeId;
+    String? partyClassificationTypeId;
     // String
-    final String? saveCertPath;
+    String? saveCertPath;
     // String
-    final String? standardLanguageId;
+    String? standardLanguageId;
     // String
-    final String? telecomMethodTypeId;
+    String? telecomMethodTypeId;
     // String
-    final String? labelImageType;
+    String? labelImageType;
     // String
-    final String? uomId;
+    String? uomId;
     // String
-    final String? applEnumId;
+    String? applEnumId;
     // String
-    final String? headVersion;
+    String? headVersion;
     // Long
-    final int? perMilliSecond;
+    int? perMilliSecond;
     // String
-    final String? customMethodTypeId;
+    String? customMethodTypeId;
     // String
-    final String? prodCatContentTypeId;
+    String? prodCatContentTypeId;
     // String
-    final String? shipperPickupType;
+    String? shipperPickupType;
     // String
-    final String? userPrefGroupTypeId;
+    String? userPrefGroupTypeId;
     // String
-    final String? glAccountTypeId;
+    String? glAccountTypeId;
     // String
-    final String? customScreenTypeId;
+    String? customScreenTypeId;
     // String
-    final String? templateLocation;
+    String? templateLocation;
     // String
-    final String? budgetItemTypeId;
+    String? budgetItemTypeId;
     // String
-    final String? rateTypeId;
+    String? rateTypeId;
     // String
-    final String? roleTypeIdValidFrom;
+    String? roleTypeIdValidFrom;
     // String
-    final String? extension;
+    String? extension;
     // String
-    final String? communicationEventPrpTypId;
+    String? communicationEventPrpTypId;
     // Long
-    final int? decimalScale;
+    int? decimalScale;
     // String
-    final String? rateEstimateTemplate;
+    String? rateEstimateTemplate;
     // String
-    final String? contentTypeId;
+    String? contentTypeId;
     // String
-    final String? glAccountId;
+    String? glAccountId;
     // String
-    final String? termTypeId;
+    String? termTypeId;
     // String
-    final String? webAnalyticsTypeId;
+    String? webAnalyticsTypeId;
     // String
-    final String? templateSubscription;
+    String? templateSubscription;
     // String
-    final String? fileExtensionId;
+    String? fileExtensionId;
     // String
-    final String? dataSourceId;
+    String? dataSourceId;
     // String
-    final String? langCode2;
+    String? langCode2;
     // String
-    final String? parentClassId;
+    String? parentClassId;
     // String
-    final String? jobInterviewTypeId;
+    String? jobInterviewTypeId;
     // String
-    final String? returnReasonId;
+    String? returnReasonId;
     // String
-    final String? countryCode;
+    String? countryCode;
     // String
-    final String? responsibilityTypeId;
+    String? responsibilityTypeId;
     // String
-    final String? quantityBreakTypeId;
+    String? quantityBreakTypeId;
     // String
-    final String? accessAccountNbr;
+    String? accessAccountNbr;
     // String
-    final String? productAssocTypeId;
+    String? productAssocTypeId;
     // String
-    final String? offsettingGlAccountTypeId;
+    String? offsettingGlAccountTypeId;
     // String
-    final String? accessLicenseNumber;
+    String? accessLicenseNumber;
     // String
-    final String? roleTypeIdValidTo;
+    String? roleTypeIdValidTo;
     // String
-    final String? workReqFulfTypeId;
+    String? workReqFulfTypeId;
     // String
-    final String? custRequestResolutionId;
+    String? custRequestResolutionId;
     // String
-    final String? enumId;
+    String? enumId;
     // String
-    final String? conditionExpression;
+    String? conditionExpression;
     // String
-    final String? defaultUomId;
+    String? defaultUomId;
     // String
-    final String? costComponentTypeId;
+    String? costComponentTypeId;
     // String
-    final String? budgetReviewResultTypeId;
+    String? budgetReviewResultTypeId;
     // String
-    final String? facilityGroupId;
+    String? facilityGroupId;
     // String
-    final String? templateShipment;
+    String? templateShipment;
     // String
-    final String? productContentTypeId;
+    String? productContentTypeId;
     // String
-    final String? invoiceContentTypeId;
+    String? invoiceContentTypeId;
     // String
-    final String? accessUserPwd;
+    String? accessUserPwd;
     // String
-    final String? userPrefTypeId;
+    String? userPrefTypeId;
     // String
-    final String? parentCategoryId;
+    String? parentCategoryId;
     // String
-    final String? custRequestTypeId;
+    String? custRequestTypeId;
     // String
-    final String? shipmentTypeId;
+    String? shipmentTypeId;
     // String
-    final String? accessUserId;
+    String? accessUserId;
     // String
-    final String? mrpEventTypeId;
+    String? mrpEventTypeId;
     // String
-    final String? facilityGroupTypeId;
+    String? facilityGroupTypeId;
     // String
-    final String? workEffortTypeId;
+    String? workEffortTypeId;
     // String
-    final String? productFeatureIactnTypeId;
+    String? productFeatureIactnTypeId;
     // String
-    final String? partyQualTypeId;
+    String? partyQualTypeId;
     // String
-    final String? glJournalName;
+    String? glJournalName;
     // String
-    final String? dataCategoryId;
+    String? dataCategoryId;
     // String
-    final String? agreementItemTypeId;
+    String? agreementItemTypeId;
     // String
-    final String? shipmentGatewayConfTypeId;
+    String? shipmentGatewayConfTypeId;
     // String
-    final String? returnHeaderTypeId;
+    String? returnHeaderTypeId;
     // String
-    final String? geoId;
+    String? geoId;
     // Long
-    final int? connectTimeout;
+    int? connectTimeout;
     // String
-    final String? deductionTypeId;
+    String? deductionTypeId;
     // Input_routines_Currency
-    final Currency? openingBalance;
+    Currency? openingBalance;
     // String
-    final String? glAccountGroupId;
+    String? glAccountGroupId;
     // String
-    final String? headAction;
+    String? headAction;
     // String
-    final String? perfRatingTypeId;
+    String? perfRatingTypeId;
     // String
-    final String? fixedAssetStdCostTypeId;
+    String? fixedAssetStdCostTypeId;
     // String
-    final String? acctgTransTypeId;
+    String? acctgTransTypeId;
     // String
-    final String? taxAuthorityAssocTypeId;
+    String? taxAuthorityAssocTypeId;
     // String
-    final String? productMaintTypeId;
+    String? productMaintTypeId;
     // String
-    final String? invoiceItemTypeId;
+    String? invoiceItemTypeId;
     // String
-    final String? codSurchargeApplyToPackage;
+    String? codSurchargeApplyToPackage;
     // String
-    final String? saveCertInfo;
+    String? saveCertInfo;
     // String
-    final String? countryCapital;
+    String? countryCapital;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // String
-    final String? partyRelationshipTypeId;
+    String? partyRelationshipTypeId;
     // String
-    final String? accessShippingKey;
+    String? accessShippingKey;
     // String
-    final String? emplLeaveReasonTypeId;
+    String? emplLeaveReasonTypeId;
     // String
-    final String? langFamily;
+    String? langFamily;
     // Input_routines_FixedPoint
-    final FixedPoint? codSurchargeAmount;
+    FixedPoint? codSurchargeAmount;
     // String
-    final String? leaveTypeId;
+    String? leaveTypeId;
     // String
-    final String? taxAuthorityRateTypeId;
+    String? taxAuthorityRateTypeId;
     // String
-    final String? customTimePeriodId;
+    String? customTimePeriodId;
     // Long
-    final int? periodNum;
+    int? periodNum;
     // String
-    final String? geoTypeId;
+    String? geoTypeId;
     // Float
-    final double? conversionFactor;
+    double? conversionFactor;
     // String
-    final String? documentTypeId;
+    String? documentTypeId;
     // String
-    final String? defaultDropoffType;
+    String? defaultDropoffType;
     // String
-    final String? orderTypeId;
+    String? orderTypeId;
     // String
-    final String? subscriptionTypeId;
+    String? subscriptionTypeId;
     // String
-    final String? parentPeriodId;
+    String? parentPeriodId;
     // String
-    final String? categoryName;
+    String? categoryName;
     // String
-    final String? shipmentContactMechTypeId;
+    String? shipmentContactMechTypeId;
     // String
-    final String? connectUrlLabels;
+    String? connectUrlLabels;
     // String
-    final String? shoppingListTypeId;
+    String? shoppingListTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? postedDate;
+    Timestamp? postedDate;
     // String
-    final String? primaryParentGroupId;
+    String? primaryParentGroupId;
     // String
-    final String? contentPurposeTypeId;
+    String? contentPurposeTypeId;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // String
-    final String? trackingCodeTypeId;
+    String? trackingCodeTypeId;
     // Input_routines_Currency
-    final Currency? variableCost;
+    Currency? variableCost;
     // String
-    final String? costGlAccountTypeId;
+    String? costGlAccountTypeId;
     // String
-    final String? facilityTypeId;
+    String? facilityTypeId;
     // String
-    final String? productPricePurposeId;
+    String? productPricePurposeId;
     // String
-    final String? accessPassword;
+    String? accessPassword;
     // String
-    final String? orderItemTypeId;
+    String? orderItemTypeId;
     // String
-    final String? confItemContentTypeId;
+    String? confItemContentTypeId;
     // String
-    final String? connectUrl;
+    String? connectUrl;
     // routines_Indicator
-    final String? isPhysical;
+    String? isPhysical;
     // String
-    final String? productStoreGroupName;
+    String? productStoreGroupName;
     // String
-    final String? dataTemplateTypeId;
+    String? dataTemplateTypeId;
     // String
-    final String? comments;
+    String? comments;
     // routines_Indicator
-    final String? isDigital;
+    String? isDigital;
     // String
-    final String? productAverageCostTypeId;
+    String? productAverageCostTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // Input_routines_Currency
-    final Currency? fixedCost;
+    Currency? fixedCost;
     // String
-    final String? cardType;
+    String? cardType;
     // String
-    final String? geoCode;
+    String? geoCode;
     // String
-    final String? paymentGatewayConfigTypeId;
+    String? paymentGatewayConfigTypeId;
     // String
-    final String? defaultReturnLabelSubject;
+    String? defaultReturnLabelSubject;
     // String
-    final String? langCharset;
+    String? langCharset;
     // Long
-    final int? maxEstimateWeight;
+    int? maxEstimateWeight;
     // String
-    final String? characterSetId;
+    String? characterSetId;
     // String
-    final String? customMethodId;
+    String? customMethodId;
     // String
-    final String? paymentGroupTypeId;
+    String? paymentGroupTypeId;
     // String
-    final String? productTypeId;
+    String? productTypeId;
     // String
-    final String? glResourceTypeId;
+    String? glResourceTypeId;
     // String
-    final String? codAllowCod;
+    String? codAllowCod;
     // String
-    final String? geoAssocTypeId;
+    String? geoAssocTypeId;
     // routines_Indicator
-    final String? isAssetClass;
+    String? isAssetClass;
     // String
-    final String? facilityAssocTypeId;
+    String? facilityAssocTypeId;
     // String
-    final String? typesEntityTypeId;
+    String? typesEntityTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_TypesEntityData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     TypesEntityData({
         this.entityId,
         this.entity,

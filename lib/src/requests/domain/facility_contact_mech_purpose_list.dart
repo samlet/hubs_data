@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_FacilityContactMechPurposeList
 @JsonSerializable()
-class FacilityContactMechPurposeList {
+class FacilityContactMechPurposeList  {
     // List<Input_domain_FacilityContactMechPurposeData>
-    final List<FacilityContactMechPurposeData>? values;
+    List<FacilityContactMechPurposeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     FacilityContactMechPurposeList({
         this.values,
         this.nextPageToken,

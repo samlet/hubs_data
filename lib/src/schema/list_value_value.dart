@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// google_protobuf_ListValue
 @JsonSerializable()
-class ListValueValue {
+class ListValueValue  {
     // List<google_protobuf_Value>
     final List<TypedValue>? values;
     ListValueValue({

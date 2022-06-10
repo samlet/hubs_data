@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderItemShipGroupList
 @JsonSerializable()
-class OrderItemShipGroupList {
+class OrderItemShipGroupList  {
     // List<Input_domain_OrderItemShipGroupData>
-    final List<OrderItemShipGroupData>? values;
+    List<OrderItemShipGroupData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     OrderItemShipGroupList({
         this.values,
         this.nextPageToken,

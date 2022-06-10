@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductCategoryTypeData
 @JsonSerializable()
-class ProductCategoryTypeData {
+class ProductCategoryTypeData  {
     // String
-    final String? productCategoryTypeId;
+    String? productCategoryTypeId;
     // String
-    final String? parentTypeId;
+    String? parentTypeId;
     // routines_Indicator
-    final String? hasTable;
+    String? hasTable;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductCategoryTypeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductCategoryTypeData({
         this.productCategoryTypeId,
         this.parentTypeId,

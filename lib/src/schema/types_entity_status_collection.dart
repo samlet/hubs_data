@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TypesEntityStatusList
 @JsonSerializable()
-class TypesEntityStatusCollection {
+class TypesEntityStatusCollection  {
     // List<domain_TypesEntityStatusData>
     final List<TypesEntityStatus>? values;
     // String

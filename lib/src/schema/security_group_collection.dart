@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SecurityGroupList
 @JsonSerializable()
-class SecurityGroupCollection {
+class SecurityGroupCollection  {
     // List<domain_SecurityGroupFlatData>
     final List<SecurityGroup>? values;
     // String

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FacilityContactMechPurposeData
 @JsonSerializable()
-class FacilityContactMechPurpose extends Equatable{
+class FacilityContactMechPurpose extends Equatable implements WithKey{
     // String
     final String? facilityId;
     // String
@@ -19,18 +19,18 @@ class FacilityContactMechPurpose extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_FacilityFlatData
     final Facility? facility;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // String
     final String? proto;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     FacilityContactMechPurpose({
         this.facilityId,
         this.contactMechId,
@@ -40,14 +40,16 @@ class FacilityContactMechPurpose extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.facility,
-        this.cats,
-        this.format,
         this.proto,
-        this.contactMech, });
+        this.contactMech,
+        this.cats,
+        this.model,
+        this.format, });
     factory FacilityContactMechPurpose.fromJson(Map<String, dynamic> json) => _$FacilityContactMechPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityContactMechPurposeToJson(this);
     @override
     List<Object?> get props => [facilityId, contactMechId, contactMechPurposeTypeId, fromDate];
+    @override
+    String get key => id!;
 }

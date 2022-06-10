@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// google_protobuf_Value
 @JsonSerializable()
-class TypedValue {
+class TypedValue  {
     // google_protobuf_NullValue
     final String? nullValue;
     // Float

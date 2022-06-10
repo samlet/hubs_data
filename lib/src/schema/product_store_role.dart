@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreRoleData
 @JsonSerializable()
-class ProductStoreRole extends Equatable{
+class ProductStoreRole extends Equatable implements WithKey{
     // String
     final String? partyId;
     // String
@@ -21,18 +21,18 @@ class ProductStoreRole extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_PartyFlatData
+    final Party? party;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     // String
     final String? proto;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? party;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     ProductStoreRole({
         this.partyId,
         this.roleTypeId,
@@ -43,14 +43,16 @@ class ProductStoreRole extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.party,
+        this.model,
         this.format,
         this.proto,
-        this.productStore,
         this.cats,
-        this.model,
-        this.party, });
+        this.productStore, });
     factory ProductStoreRole.fromJson(Map<String, dynamic> json) => _$ProductStoreRoleFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreRoleToJson(this);
     @override
     List<Object?> get props => [partyId, roleTypeId, productStoreId, fromDate];
+    @override
+    String get key => id!;
 }

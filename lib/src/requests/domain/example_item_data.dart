@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_ExampleItemData
 @JsonSerializable()
-class ExampleItemData {
+class ExampleItemData  {
     // String
-    final String? exampleId;
+    String? exampleId;
     // String
-    final String? exampleItemSeqId;
+    String? exampleItemSeqId;
     // String
-    final String? description;
+    String? description;
     // Float
-    final double? amount;
+    double? amount;
     // String
-    final String? amountUomId;
+    String? amountUomId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ExampleItemData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ExampleItemData({
         this.exampleId,
         this.exampleItemSeqId,

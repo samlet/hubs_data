@@ -2,69 +2,69 @@ part of '../../../requests.dart';
 
 /// Input_domain_InventoryItemFlatData
 @JsonSerializable()
-class InventoryItemFlatData {
+class InventoryItemFlatData  {
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? inventoryItemTypeId;
+    String? inventoryItemTypeId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? ownerPartyId;
+    String? ownerPartyId;
     // String
-    final String? statusId;
+    String? statusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? datetimeReceived;
+    Timestamp? datetimeReceived;
     // Input_google_protobuf_Timestamp
-    final Timestamp? datetimeManufactured;
+    Timestamp? datetimeManufactured;
     // Input_google_protobuf_Timestamp
-    final Timestamp? expireDate;
+    Timestamp? expireDate;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? containerId;
+    String? containerId;
     // String
-    final String? lotId;
+    String? lotId;
     // String
-    final String? uomId;
+    String? uomId;
     // String
-    final String? binNumber;
+    String? binNumber;
     // String
-    final String? locationSeqId;
+    String? locationSeqId;
     // String
-    final String? comments;
+    String? comments;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityOnHandTotal;
+    FixedPoint? quantityOnHandTotal;
     // Input_routines_FixedPoint
-    final FixedPoint? availableToPromiseTotal;
+    FixedPoint? availableToPromiseTotal;
     // Input_routines_FixedPoint
-    final FixedPoint? accountingQuantityTotal;
+    FixedPoint? accountingQuantityTotal;
     // String
-    final String? serialNumber;
+    String? serialNumber;
     // String
-    final String? softIdentifier;
+    String? softIdentifier;
     // String
-    final String? activationNumber;
+    String? activationNumber;
     // Input_google_protobuf_Timestamp
-    final Timestamp? activationValidThru;
+    Timestamp? activationValidThru;
     // Input_routines_FixedPoint
-    final FixedPoint? unitCost;
+    FixedPoint? unitCost;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InventoryItemFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InventoryItemFlatData({
         this.inventoryItemId,
         this.inventoryItemTypeId,

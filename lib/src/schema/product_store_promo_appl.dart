@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStorePromoApplData
 @JsonSerializable()
-class ProductStorePromoAppl extends Equatable{
+class ProductStorePromoAppl extends Equatable implements WithKey{
     // String
     final String? productStoreId;
     // String
@@ -21,18 +21,18 @@ class ProductStorePromoAppl extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // String
     final String? format;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
     ProductStorePromoAppl({
         this.productStoreId,
         this.productPromoId,
@@ -43,14 +43,16 @@ class ProductStorePromoAppl extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.productStore,
         this.format,
-        this.productPromo,
-        this.model,
+        this.proto,
         this.cats,
-        this.proto, });
+        this.productStore,
+        this.model,
+        this.productPromo, });
     factory ProductStorePromoAppl.fromJson(Map<String, dynamic> json) => _$ProductStorePromoApplFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePromoApplToJson(this);
     @override
     List<Object?> get props => [productStoreId, productPromoId, fromDate];
+    @override
+    String get key => id!;
 }

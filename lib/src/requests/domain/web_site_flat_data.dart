@@ -2,51 +2,51 @@ part of '../../../requests.dart';
 
 /// Input_domain_WebSiteFlatData
 @JsonSerializable()
-class WebSiteFlatData {
+class WebSiteFlatData  {
     // String
-    final String? webSiteId;
+    String? webSiteId;
     // String
-    final String? siteName;
+    String? siteName;
     // String
-    final String? httpHost;
+    String? httpHost;
     // String
-    final String? httpPort;
+    String? httpPort;
     // String
-    final String? httpsHost;
+    String? httpsHost;
     // String
-    final String? httpsPort;
+    String? httpsPort;
     // routines_Indicator
-    final String? enableHttps;
+    String? enableHttps;
     // String
-    final String? webappPath;
+    String? webappPath;
     // String
-    final String? standardContentPrefix;
+    String? standardContentPrefix;
     // String
-    final String? secureContentPrefix;
+    String? secureContentPrefix;
     // String
-    final String? cookieDomain;
+    String? cookieDomain;
     // String
-    final String? visualThemeSetId;
+    String? visualThemeSetId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // routines_Indicator
-    final String? allowProductStoreChange;
+    String? allowProductStoreChange;
     // String
-    final String? hostedPathAlias;
+    String? hostedPathAlias;
     // routines_Indicator
-    final String? isDefault;
+    String? isDefault;
     // routines_Indicator
-    final String? displayMaintenancePage;
+    String? displayMaintenancePage;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_WebSiteFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     WebSiteFlatData({
         this.webSiteId,
         this.siteName,

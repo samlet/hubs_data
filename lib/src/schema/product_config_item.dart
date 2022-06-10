@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductConfigItemFlatData
 @JsonSerializable()
-class ProductConfigItem extends Equatable{
+class ProductConfigItem extends Equatable implements WithKey{
     // String
     final String? configItemId;
     // String
@@ -21,18 +21,18 @@ class ProductConfigItem extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductConfigOptionList
-    final ProductConfigOptionCollection? configItemProductConfigOptions;
+    // String
+    final String? format;
     // domain_ProductConfigProductList
     final ProductConfigProductCollection? configItemProductConfigProducts;
+    // domain_ProductConfigOptionList
+    final ProductConfigOptionCollection? configItemProductConfigOptions;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     ProductConfigItem({
@@ -45,15 +45,17 @@ class ProductConfigItem extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
         this.model,
-        this.cats,
-        this.configItemProductConfigOptions,
+        this.format,
         this.configItemProductConfigProducts,
+        this.configItemProductConfigOptions,
         this.subview,
+        this.cats,
         this.proto, });
     factory ProductConfigItem.fromJson(Map<String, dynamic> json) => _$ProductConfigItemFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemToJson(this);
     @override
     List<Object?> get props => [configItemId];
+    @override
+    String get key => configItemId!;
 }

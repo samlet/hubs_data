@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_ContactMechFlatData
 @JsonSerializable()
-class ContactMechFlatData {
+class ContactMechFlatData  {
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // String
-    final String? contactMechTypeId;
+    String? contactMechTypeId;
     // String
-    final String? infoString;
+    String? infoString;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ContactMechFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ContactMechFlatData({
         this.contactMechId,
         this.contactMechTypeId,

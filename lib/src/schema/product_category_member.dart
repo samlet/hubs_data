@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductCategoryMemberFlatData
 @JsonSerializable()
-class ProductCategoryMember extends Equatable{
+class ProductCategoryMember extends Equatable implements WithKey{
     // String
     final String? productCategoryId;
     // String
@@ -25,18 +25,18 @@ class ProductCategoryMember extends Equatable{
     final String? id;
     // String
     final String? tenantId;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? productCategory;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ProductFlatData
     final Product? product;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? productCategory;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     ProductCategoryMember({
         this.productCategoryId,
         this.productId,
@@ -49,14 +49,16 @@ class ProductCategoryMember extends Equatable{
         this.createdTxStamp,
         this.id,
         this.tenantId,
+        this.productCategory,
+        this.model,
         this.product,
         this.proto,
-        this.format,
-        this.model,
-        this.productCategory,
-        this.cats, });
+        this.cats,
+        this.format, });
     factory ProductCategoryMember.fromJson(Map<String, dynamic> json) => _$ProductCategoryMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryMemberToJson(this);
     @override
     List<Object?> get props => [productCategoryId, productId, fromDate];
+    @override
+    String get key => id!;
 }

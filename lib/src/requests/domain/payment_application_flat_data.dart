@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_PaymentApplicationFlatData
 @JsonSerializable()
-class PaymentApplicationFlatData {
+class PaymentApplicationFlatData  {
     // String
-    final String? paymentApplicationId;
+    String? paymentApplicationId;
     // String
-    final String? paymentId;
+    String? paymentId;
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? invoiceItemSeqId;
+    String? invoiceItemSeqId;
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // String
-    final String? overrideGlAccountId;
+    String? overrideGlAccountId;
     // String
-    final String? toPaymentId;
+    String? toPaymentId;
     // String
-    final String? taxAuthGeoId;
+    String? taxAuthGeoId;
     // Input_routines_Currency
-    final Currency? amountApplied;
+    Currency? amountApplied;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PaymentApplicationFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PaymentApplicationFlatData({
         this.paymentApplicationId,
         this.paymentId,

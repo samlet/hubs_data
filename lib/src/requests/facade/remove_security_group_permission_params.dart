@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_RemoveSecurityGroupPermissionParams
 @JsonSerializable()
-class RemoveSecurityGroupPermissionParams {
+class RemoveSecurityGroupPermissionParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? mainId;
+    String? mainId;
     // String
-    final String? itemId;
+    String? itemId;
     // String
-    final String? comment;
+    String? comment;
     RemoveSecurityGroupPermissionParams({
         this.handle,
         this.mainId,

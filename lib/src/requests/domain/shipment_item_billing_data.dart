@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentItemBillingData
 @JsonSerializable()
-class ShipmentItemBillingData {
+class ShipmentItemBillingData  {
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentItemSeqId;
+    String? shipmentItemSeqId;
     // String
-    final String? invoiceId;
+    String? invoiceId;
     // String
-    final String? invoiceItemSeqId;
+    String? invoiceItemSeqId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShipmentItemBillingData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShipmentItemBillingData({
         this.shipmentId,
         this.shipmentItemSeqId,

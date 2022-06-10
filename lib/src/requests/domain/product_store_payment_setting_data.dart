@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStorePaymentSettingData
 @JsonSerializable()
-class ProductStorePaymentSettingData {
+class ProductStorePaymentSettingData  {
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? paymentMethodTypeId;
+    String? paymentMethodTypeId;
     // String
-    final String? paymentServiceTypeEnumId;
+    String? paymentServiceTypeEnumId;
     // String
-    final String? paymentService;
+    String? paymentService;
     // String
-    final String? paymentCustomMethodId;
+    String? paymentCustomMethodId;
     // String
-    final String? paymentGatewayConfigId;
+    String? paymentGatewayConfigId;
     // String
-    final String? paymentPropertiesPath;
+    String? paymentPropertiesPath;
     // routines_Indicator
-    final String? applyToAllProducts;
+    String? applyToAllProducts;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductStorePaymentSettingData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductStorePaymentSettingData({
         this.productStoreId,
         this.paymentMethodTypeId,

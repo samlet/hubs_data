@@ -2,21 +2,21 @@ part of '../../../requests.dart';
 
 /// Input_domain_ElectronicTextFlatData
 @JsonSerializable()
-class ElectronicTextFlatData {
+class ElectronicTextFlatData  {
     // String
-    final String? dataResourceId;
+    String? dataResourceId;
     // String
-    final String? textData;
+    String? textData;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ElectronicTextFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ElectronicTextFlatData({
         this.dataResourceId,
         this.textData,

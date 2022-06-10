@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreGroupMemberData
 @JsonSerializable()
-class ProductStoreGroupMember extends Equatable{
+class ProductStoreGroupMember extends Equatable implements WithKey{
     // String
     final String? productStoreId;
     // String
@@ -19,18 +19,18 @@ class ProductStoreGroupMember extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ProductStoreGroupMember({
         this.productStoreId,
         this.productStoreGroupId,
@@ -40,14 +40,16 @@ class ProductStoreGroupMember extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.productStore,
-        this.proto,
-        this.model,
-        this.cats,
         this.productStoreGroup,
-        this.format, });
+        this.format,
+        this.proto,
+        this.productStore,
+        this.cats,
+        this.model, });
     factory ProductStoreGroupMember.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupMemberToJson(this);
     @override
     List<Object?> get props => [productStoreId, productStoreGroupId, fromDate];
+    @override
+    String get key => id!;
 }

@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_UpdateCatalogParams
 @JsonSerializable()
-class UpdateCatalogParams {
+class UpdateCatalogParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? mainId;
+    String? mainId;
     // Input_domain_ProdCatalogFlatData
-    final ProdCatalogFlatData? prodCatalog;
+    ProdCatalogFlatData? prodCatalog;
     // String
-    final String? comment;
+    String? comment;
     UpdateCatalogParams({
         this.handle,
         this.mainId,

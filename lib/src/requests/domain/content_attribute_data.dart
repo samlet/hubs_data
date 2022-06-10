@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_ContentAttributeData
 @JsonSerializable()
-class ContentAttributeData {
+class ContentAttributeData  {
     // String
-    final String? contentId;
+    String? contentId;
     // String
-    final String? attrName;
+    String? attrName;
     // String
-    final String? attrValue;
+    String? attrValue;
     // String
-    final String? attrDescription;
+    String? attrDescription;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ContentAttributeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ContentAttributeData({
         this.contentId,
         this.attrName,

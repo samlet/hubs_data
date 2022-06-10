@@ -2,63 +2,63 @@ part of '../../../requests.dart';
 
 /// Input_domain_ContentFlatData
 @JsonSerializable()
-class ContentFlatData {
+class ContentFlatData  {
     // String
-    final String? contentId;
+    String? contentId;
     // String
-    final String? contentTypeId;
+    String? contentTypeId;
     // String
-    final String? ownerContentId;
+    String? ownerContentId;
     // String
-    final String? decoratorContentId;
+    String? decoratorContentId;
     // String
-    final String? instanceOfContentId;
+    String? instanceOfContentId;
     // String
-    final String? dataResourceId;
+    String? dataResourceId;
     // String
-    final String? templateDataResourceId;
+    String? templateDataResourceId;
     // String
-    final String? dataSourceId;
+    String? dataSourceId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? privilegeEnumId;
+    String? privilegeEnumId;
     // String
-    final String? serviceName;
+    String? serviceName;
     // String
-    final String? customMethodId;
+    String? customMethodId;
     // String
-    final String? contentName;
+    String? contentName;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? localeString;
+    String? localeString;
     // String
-    final String? mimeTypeId;
+    String? mimeTypeId;
     // String
-    final String? characterSetId;
+    String? characterSetId;
     // Long
-    final int? childLeafCount;
+    int? childLeafCount;
     // Long
-    final int? childBranchCount;
+    int? childBranchCount;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ContentFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ContentFlatData({
         this.contentId,
         this.contentTypeId,

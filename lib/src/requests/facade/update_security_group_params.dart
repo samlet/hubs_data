@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_UpdateSecurityGroupParams
 @JsonSerializable()
-class UpdateSecurityGroupParams {
+class UpdateSecurityGroupParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? mainId;
+    String? mainId;
     // Input_domain_SecurityGroupFlatData
-    final SecurityGroupFlatData? securityGroup;
+    SecurityGroupFlatData? securityGroup;
     // String
-    final String? comment;
+    String? comment;
     UpdateSecurityGroupParams({
         this.handle,
         this.mainId,

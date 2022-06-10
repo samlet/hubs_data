@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InventoryTransferList
 @JsonSerializable()
-class InventoryTransferCollection {
+class InventoryTransferCollection  {
     // List<domain_InventoryTransferData>
     final List<InventoryTransfer>? values;
     // String

@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserLoginSessionData
 @JsonSerializable()
-class UserLoginSessionData {
+class UserLoginSessionData  {
     // String
-    final String? userLoginId;
+    String? userLoginId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? savedDate;
+    Timestamp? savedDate;
     // String
-    final String? sessionData;
+    String? sessionData;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_UserLoginSessionData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     UserLoginSessionData({
         this.userLoginId,
         this.savedDate,

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserLoginPasswordHistoryList
 @JsonSerializable()
-class UserLoginPasswordHistoryList {
+class UserLoginPasswordHistoryList  {
     // List<Input_domain_UserLoginPasswordHistoryData>
-    final List<UserLoginPasswordHistoryData>? values;
+    List<UserLoginPasswordHistoryData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     UserLoginPasswordHistoryList({
         this.values,
         this.nextPageToken,

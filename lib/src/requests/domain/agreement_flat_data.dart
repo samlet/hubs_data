@@ -2,41 +2,41 @@ part of '../../../requests.dart';
 
 /// Input_domain_AgreementFlatData
 @JsonSerializable()
-class AgreementFlatData {
+class AgreementFlatData  {
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? partyIdFrom;
+    String? partyIdFrom;
     // String
-    final String? partyIdTo;
+    String? partyIdTo;
     // String
-    final String? roleTypeIdFrom;
+    String? roleTypeIdFrom;
     // String
-    final String? roleTypeIdTo;
+    String? roleTypeIdTo;
     // String
-    final String? agreementTypeId;
+    String? agreementTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? agreementDate;
+    Timestamp? agreementDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? textData;
+    String? textData;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AgreementFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AgreementFlatData({
         this.agreementId,
         this.productId,

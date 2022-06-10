@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserLoginPasswordHistoryData
 @JsonSerializable()
-class UserLoginPasswordHistoryData {
+class UserLoginPasswordHistoryData  {
     // String
-    final String? userLoginId;
+    String? userLoginId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? currentPassword;
+    String? currentPassword;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_UserLoginPasswordHistoryData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     UserLoginPasswordHistoryData({
         this.userLoginId,
         this.fromDate,

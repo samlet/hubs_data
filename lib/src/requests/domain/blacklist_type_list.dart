@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_BlacklistTypeList
 @JsonSerializable()
-class BlacklistTypeList {
+class BlacklistTypeList  {
     // List<Input_domain_BlacklistTypeData>
-    final List<BlacklistTypeData>? values;
+    List<BlacklistTypeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     BlacklistTypeList({
         this.values,
         this.nextPageToken,

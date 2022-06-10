@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShoppingListFlatData
 @JsonSerializable()
-class ShoppingList extends Equatable{
+class ShoppingList extends Equatable implements WithKey{
     // String
     final String? shoppingListId;
     // String
@@ -49,28 +49,28 @@ class ShoppingList extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_ShoppingListItemList
-    final ShoppingListItemCollection? shoppingListItems;
-    // domain_ShoppingListFlatData
-    final ShoppingList? parentShoppingList;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // domain_ShoppingListFlatData
+    final ShoppingList? parentShoppingList;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
+    // domain_ShoppingListItemList
+    final ShoppingListItemCollection? shoppingListItems;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -95,19 +95,21 @@ class ShoppingList extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.party,
-        this.productStore,
-        this.contactMech,
-        this.cats,
-        this.type,
-        this.shoppingListItems,
-        this.parentShoppingList,
-        this.proto,
         this.format,
-        this.subview, });
+        this.parentShoppingList,
+        this.contactMech,
+        this.model,
+        this.productStore,
+        this.subview,
+        this.type,
+        this.proto,
+        this.shoppingListItems,
+        this.cats,
+        this.party, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
     @override
     List<Object?> get props => [shoppingListId];
+    @override
+    String get key => shoppingListId!;
 }

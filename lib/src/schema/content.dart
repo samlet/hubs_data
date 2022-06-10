@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentFlatData
 @JsonSerializable()
-class Content extends Equatable{
+class Content extends Equatable implements WithKey{
     // String
     final String? contentId;
     // String
@@ -55,36 +55,36 @@ class Content extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_ContentFlatData
-    final Content? instanceOfContent;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ContentFlatData
-    final Content? decoratorContent;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
+    // domain_ContentAssocList
+    final ContentAssocCollection? toContentAssocs;
     // domain_ContentAttributeList
     final ContentAttributeCollection? contentAttributes;
     // domain_ContentFlatData
-    final Content? ownerContent;
-    // String
-    final String? proto;
-    // domain_ContentAssocList
-    final ContentAssocCollection? toContentAssocs;
+    final Content? instanceOfContent;
     // domain_ContentPurposeList
     final ContentPurposeCollection? contentPurposes;
+    // domain_ContentFlatData
+    final Content? decoratorContent;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
+    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_DataResourceFlatData
     final DataResource? templateDataResource;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // domain_ContentFlatData
+    final Content? ownerContent;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -112,23 +112,25 @@ class Content extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.instanceOfContent,
-        this.cats,
-        this.decoratorContent,
-        this.dataResource,
-        this.contentAttributes,
-        this.ownerContent,
-        this.proto,
         this.toContentAssocs,
+        this.contentAttributes,
+        this.instanceOfContent,
         this.contentPurposes,
-        this.format,
-        this.createdbyuserlogin,
+        this.decoratorContent,
+        this.cats,
+        this.proto,
         this.lastmodifiedbyuserlogin,
         this.model,
-        this.templateDataResource, });
+        this.templateDataResource,
+        this.subview,
+        this.format,
+        this.ownerContent,
+        this.dataResource,
+        this.createdbyuserlogin, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
     @override
     List<Object?> get props => [contentId];
+    @override
+    String get key => contentId!;
 }

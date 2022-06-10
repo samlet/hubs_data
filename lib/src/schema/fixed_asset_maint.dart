@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetMaintData
 @JsonSerializable()
-class FixedAssetMaint extends Equatable{
+class FixedAssetMaint extends Equatable implements WithKey{
     // String
     final String? fixedAssetId;
     // String
@@ -29,20 +29,20 @@ class FixedAssetMaint extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? purchaseOrderHeader;
+    // domain_WorkEffortFlatData
+    final WorkEffort? scheduleWorkEffort;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? purchaseOrderHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
     final String? proto;
-    // domain_WorkEffortFlatData
-    final WorkEffort? scheduleWorkEffort;
+    // String
+    final String? format;
     FixedAssetMaint({
         this.fixedAssetId,
         this.maintHistSeqId,
@@ -57,15 +57,17 @@ class FixedAssetMaint extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.format,
-        this.fixedAsset,
         this.purchaseOrderHeader,
+        this.scheduleWorkEffort,
         this.cats,
+        this.fixedAsset,
+        this.model,
         this.proto,
-        this.scheduleWorkEffort, });
+        this.format, });
     factory FixedAssetMaint.fromJson(Map<String, dynamic> json) => _$FixedAssetMaintFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetMaintToJson(this);
     @override
     List<Object?> get props => [fixedAssetId, maintHistSeqId];
+    @override
+    String get key => id!;
 }

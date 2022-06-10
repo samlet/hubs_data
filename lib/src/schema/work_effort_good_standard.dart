@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortGoodStandardData
 @JsonSerializable()
-class WorkEffortGoodStandard extends Equatable{
+class WorkEffortGoodStandard extends Equatable implements WithKey{
     // String
     final String? workEffortId;
     // String
@@ -25,18 +25,18 @@ class WorkEffortGoodStandard extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // domain_ProductFlatData
-    final Product? product;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
     // domain_WorkEffortFlatData
     final WorkEffort? workEffort;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
     WorkEffortGoodStandard({
         this.workEffortId,
         this.productId,
@@ -49,14 +49,16 @@ class WorkEffortGoodStandard extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.product,
-        this.cats,
         this.model,
+        this.workEffort,
+        this.format,
         this.proto,
-        this.workEffort, });
+        this.cats,
+        this.product, });
     factory WorkEffortGoodStandard.fromJson(Map<String, dynamic> json) => _$WorkEffortGoodStandardFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortGoodStandardToJson(this);
     @override
     List<Object?> get props => [workEffortId, productId, workEffortGoodStdTypeId, fromDate];
+    @override
+    String get key => id!;
 }

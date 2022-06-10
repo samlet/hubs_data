@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductPromoProductData
 @JsonSerializable()
-class ProductPromoProduct extends Equatable{
+class ProductPromoProduct extends Equatable implements WithKey{
     // String
     final String? productPromoId;
     // String
@@ -21,18 +21,18 @@ class ProductPromoProduct extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? product;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // domain_ProductFlatData
+    final Product? product;
     ProductPromoProduct({
         this.productPromoId,
         this.productPromoRuleId,
@@ -43,14 +43,16 @@ class ProductPromoProduct extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.product,
         this.productPromo,
+        this.cats,
         this.proto,
         this.model,
-        this.cats,
-        this.format, });
+        this.format,
+        this.product, });
     factory ProductPromoProduct.fromJson(Map<String, dynamic> json) => _$ProductPromoProductFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoProductToJson(this);
     @override
     List<Object?> get props => [productPromoId, productPromoRuleId, productPromoActionSeqId, productPromoCondSeqId, productId];
+    @override
+    String get key => id!;
 }

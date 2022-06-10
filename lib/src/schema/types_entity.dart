@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TypesEntityData
 @JsonSerializable()
-class TypesEntity extends Equatable{
+class TypesEntity extends Equatable implements WithKey{
     // String
     final String? entityId;
     // String
@@ -611,22 +611,22 @@ class TypesEntity extends Equatable{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductTypeData
-    final ProductType? asProductType;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // domain_TypesEntityStatusList
     final TypesEntityStatusCollection? typesEntityStatuses;
-    // String
-    final String? format;
+    // domain_ProductTypeData
+    final ProductType? asProductType;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     TypesEntity({
         this.entityId,
         this.entity,
@@ -932,16 +932,18 @@ class TypesEntity extends Equatable{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.cats,
-        this.asProductType,
         this.subview,
         this.typesEntityStatuses,
-        this.format,
+        this.asProductType,
+        this.cats,
         this.proto,
-        this.model,
-        this.type, });
+        this.type,
+        this.format,
+        this.model, });
     factory TypesEntity.fromJson(Map<String, dynamic> json) => _$TypesEntityFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityToJson(this);
     @override
     List<Object?> get props => [entityId];
+    @override
+    String get key => entityId!;
 }

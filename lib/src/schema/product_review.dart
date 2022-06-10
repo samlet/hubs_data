@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductReviewFlatData
 @JsonSerializable()
-class ProductReview extends Equatable{
+class ProductReview extends Equatable implements WithKey{
     // String
     final String? productReviewId;
     // String
@@ -27,22 +27,22 @@ class ProductReview extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ProductFlatData
-    final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // String
     final String? proto;
+    // domain_ProductFlatData
+    final Product? product;
     ProductReview({
         this.productReviewId,
         this.productStoreId,
@@ -56,16 +56,18 @@ class ProductReview extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.userLogin,
         this.format,
-        this.cats,
-        this.model,
-        this.productStore,
         this.subview,
-        this.product,
-        this.proto, });
+        this.model,
+        this.userLogin,
+        this.cats,
+        this.productStore,
+        this.proto,
+        this.product, });
     factory ProductReview.fromJson(Map<String, dynamic> json) => _$ProductReviewFromJson(json);
     Map<String, dynamic> toJson() => _$ProductReviewToJson(this);
     @override
     List<Object?> get props => [productReviewId];
+    @override
+    String get key => productReviewId!;
 }

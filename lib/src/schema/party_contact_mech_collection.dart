@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyContactMechList
 @JsonSerializable()
-class PartyContactMechCollection {
+class PartyContactMechCollection  {
     // List<domain_PartyContactMechData>
     final List<PartyContactMech>? values;
     // String

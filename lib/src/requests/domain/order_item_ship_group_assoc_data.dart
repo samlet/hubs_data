@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderItemShipGroupAssocData
 @JsonSerializable()
-class OrderItemShipGroupAssocData {
+class OrderItemShipGroupAssocData  {
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? shipGroupSeqId;
+    String? shipGroupSeqId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_FixedPoint
-    final FixedPoint? cancelQuantity;
+    FixedPoint? cancelQuantity;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderItemShipGroupAssocData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderItemShipGroupAssocData({
         this.orderId,
         this.orderItemSeqId,

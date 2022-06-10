@@ -2,47 +2,47 @@ part of '../../../requests.dart';
 
 /// Input_domain_ContentAssocData
 @JsonSerializable()
-class ContentAssocData {
+class ContentAssocData  {
     // String
-    final String? contentId;
+    String? contentId;
     // String
-    final String? contentIdTo;
+    String? contentIdTo;
     // String
-    final String? contentAssocTypeId;
+    String? contentAssocTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? contentAssocPredicateId;
+    String? contentAssocPredicateId;
     // String
-    final String? dataSourceId;
+    String? dataSourceId;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // String
-    final String? mapKey;
+    String? mapKey;
     // Long
-    final int? upperCoordinate;
+    int? upperCoordinate;
     // Long
-    final int? leftCoordinate;
+    int? leftCoordinate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ContentAssocData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ContentAssocData({
         this.contentId,
         this.contentIdTo,

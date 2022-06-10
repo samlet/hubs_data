@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderContactMechData
 @JsonSerializable()
-class OrderContactMechData {
+class OrderContactMechData  {
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? contactMechPurposeTypeId;
+    String? contactMechPurposeTypeId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderContactMechData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderContactMechData({
         this.orderId,
         this.contactMechPurposeTypeId,

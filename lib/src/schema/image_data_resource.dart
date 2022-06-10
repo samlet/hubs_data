@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ImageDataResourceData
 @JsonSerializable()
-class ImageDataResource extends Equatable{
+class ImageDataResource extends Equatable implements WithKey{
     // String
     final String? dataResourceId;
     // String
@@ -13,10 +13,10 @@ class ImageDataResource extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
@@ -29,8 +29,8 @@ class ImageDataResource extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.format,
+        this.cats,
         this.model,
         this.proto,
         this.dataResource, });
@@ -38,4 +38,6 @@ class ImageDataResource extends Equatable{
     Map<String, dynamic> toJson() => _$ImageDataResourceToJson(this);
     @override
     List<Object?> get props => [dataResourceId];
+    @override
+    String get key => dataResourceId!;
 }

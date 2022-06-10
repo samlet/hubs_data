@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductPromoRuleList
 @JsonSerializable()
-class ProductPromoRuleList {
+class ProductPromoRuleList  {
     // List<Input_domain_ProductPromoRuleData>
-    final List<ProductPromoRuleData>? values;
+    List<ProductPromoRuleData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ProductPromoRuleList({
         this.values,
         this.nextPageToken,

@@ -2,11 +2,11 @@ part of '../../../requests.dart';
 
 /// Input_facade_BundleDeleteRequest
 @JsonSerializable()
-class BundleDeleteRequest {
+class BundleDeleteRequest  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? id;
+    String? id;
     BundleDeleteRequest({
         this.handle,
         this.id, });

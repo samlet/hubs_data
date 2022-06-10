@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_BillingAccountTermList
 @JsonSerializable()
-class BillingAccountTermList {
+class BillingAccountTermList  {
     // List<Input_domain_BillingAccountTermData>
-    final List<BillingAccountTermData>? values;
+    List<BillingAccountTermData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     BillingAccountTermList({
         this.values,
         this.nextPageToken,

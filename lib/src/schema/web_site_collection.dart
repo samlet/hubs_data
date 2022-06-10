@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WebSiteList
 @JsonSerializable()
-class WebSiteCollection {
+class WebSiteCollection  {
     // List<domain_WebSiteFlatData>
     final List<WebSite>? values;
     // String

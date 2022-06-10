@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnItemBillingData
 @JsonSerializable()
-class ReturnItemBilling extends Equatable{
+class ReturnItemBilling extends Equatable implements WithKey{
     // String
     final String? returnId;
     // String
@@ -23,18 +23,18 @@ class ReturnItemBilling extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
     // domain_InvoiceFlatData
     final Invoice? invoice;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ReturnItemBilling({
         this.returnId,
         this.returnItemSeqId,
@@ -46,14 +46,16 @@ class ReturnItemBilling extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.model,
         this.returnHeader,
         this.invoice,
-        this.model,
-        this.cats,
+        this.format,
         this.proto,
-        this.format, });
+        this.cats, });
     factory ReturnItemBilling.fromJson(Map<String, dynamic> json) => _$ReturnItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemBillingToJson(this);
     @override
     List<Object?> get props => [returnId, returnItemSeqId, invoiceId, invoiceItemSeqId];
+    @override
+    String get key => id!;
 }

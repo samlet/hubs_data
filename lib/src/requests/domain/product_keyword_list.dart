@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductKeywordList
 @JsonSerializable()
-class ProductKeywordList {
+class ProductKeywordList  {
     // List<Input_domain_ProductKeywordData>
-    final List<ProductKeywordData>? values;
+    List<ProductKeywordData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ProductKeywordList({
         this.values,
         this.nextPageToken,

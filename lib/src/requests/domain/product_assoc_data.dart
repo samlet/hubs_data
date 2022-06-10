@@ -2,43 +2,43 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductAssocData
 @JsonSerializable()
-class ProductAssocData {
+class ProductAssocData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? productIdTo;
+    String? productIdTo;
     // String
-    final String? productAssocTypeId;
+    String? productAssocTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // String
-    final String? reason;
+    String? reason;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_FixedPoint
-    final FixedPoint? scrapFactor;
+    FixedPoint? scrapFactor;
     // String
-    final String? instruction;
+    String? instruction;
     // String
-    final String? routingWorkEffortId;
+    String? routingWorkEffortId;
     // String
-    final String? estimateCalcMethod;
+    String? estimateCalcMethod;
     // String
-    final String? recurrenceInfoId;
+    String? recurrenceInfoId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductAssocData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductAssocData({
         this.productId,
         this.productIdTo,

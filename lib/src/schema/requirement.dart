@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_RequirementFlatData
 @JsonSerializable()
-class Requirement extends Equatable{
+class Requirement extends Equatable implements WithKey{
     // String
     final String? requirementId;
     // String
@@ -49,22 +49,22 @@ class Requirement extends Equatable{
     final String? tenantId;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? proto;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
     Requirement({
         this.requirementId,
         this.requirementTypeId,
@@ -89,16 +89,18 @@ class Requirement extends Equatable{
         this.createdTxStamp,
         this.tenantId,
         this.model,
+        this.format,
         this.cats,
-        this.product,
         this.facility,
-        this.type,
         this.subview,
-        this.proto,
+        this.product,
         this.fixedAsset,
-        this.format, });
+        this.type,
+        this.proto, });
     factory Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementToJson(this);
     @override
     List<Object?> get props => [requirementId];
+    @override
+    String get key => requirementId!;
 }

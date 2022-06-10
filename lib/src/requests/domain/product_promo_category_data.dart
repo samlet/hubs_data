@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductPromoCategoryData
 @JsonSerializable()
-class ProductPromoCategoryData {
+class ProductPromoCategoryData  {
     // String
-    final String? productPromoId;
+    String? productPromoId;
     // String
-    final String? productPromoRuleId;
+    String? productPromoRuleId;
     // String
-    final String? productPromoActionSeqId;
+    String? productPromoActionSeqId;
     // String
-    final String? productPromoCondSeqId;
+    String? productPromoCondSeqId;
     // String
-    final String? productCategoryId;
+    String? productCategoryId;
     // String
-    final String? andGroupId;
+    String? andGroupId;
     // String
-    final String? productPromoApplEnumId;
+    String? productPromoApplEnumId;
     // routines_Indicator
-    final String? includeSubCategories;
+    String? includeSubCategories;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductPromoCategoryData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductPromoCategoryData({
         this.productPromoId,
         this.productPromoRuleId,

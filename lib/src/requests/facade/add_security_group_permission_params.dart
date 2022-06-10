@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_AddSecurityGroupPermissionParams
 @JsonSerializable()
-class AddSecurityGroupPermissionParams {
+class AddSecurityGroupPermissionParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? mainId;
+    String? mainId;
     // Input_domain_SecurityGroupPermissionData
-    final SecurityGroupPermissionData? data;
+    SecurityGroupPermissionData? data;
     // String
-    final String? comment;
+    String? comment;
     AddSecurityGroupPermissionParams({
         this.handle,
         this.mainId,

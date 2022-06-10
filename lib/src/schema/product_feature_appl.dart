@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductFeatureApplData
 @JsonSerializable()
-class ProductFeatureAppl extends Equatable{
+class ProductFeatureAppl extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -25,10 +25,6 @@ class ProductFeatureAppl extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ProductFlatData
-    final Product? product;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
@@ -37,6 +33,10 @@ class ProductFeatureAppl extends Equatable{
     final ProductFeature? productFeature;
     // String
     final String? proto;
+    // domain_ProductFlatData
+    final Product? product;
+    // String
+    final String? format;
     ProductFeatureAppl({
         this.productId,
         this.productFeatureId,
@@ -49,14 +49,16 @@ class ProductFeatureAppl extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.product,
-        this.format,
         this.cats,
         this.model,
         this.productFeature,
-        this.proto, });
+        this.proto,
+        this.product,
+        this.format, });
     factory ProductFeatureAppl.fromJson(Map<String, dynamic> json) => _$ProductFeatureApplFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureApplToJson(this);
     @override
     List<Object?> get props => [productId, productFeatureId, fromDate];
+    @override
+    String get key => id!;
 }

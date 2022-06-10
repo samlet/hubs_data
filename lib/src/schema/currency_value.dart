@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// routines_Currency
 @JsonSerializable()
-class CurrencyValue {
+class CurrencyValue  {
     // String
     final String? currencyUomId;
     // String

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortPartyAssignmentData
 @JsonSerializable()
-class WorkEffortPartyAssignment extends Equatable{
+class WorkEffortPartyAssignment extends Equatable implements WithKey{
     // String
     final String? workEffortId;
     // String
@@ -37,22 +37,22 @@ class WorkEffortPartyAssignment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? assignedByUserLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_PartyFlatData
-    final Party? party;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? assignedByUserLogin;
     // domain_WorkEffortFlatData
     final WorkEffort? workEffort;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // String
+    final String? format;
+    // domain_PartyFlatData
+    final Party? party;
     WorkEffortPartyAssignment({
         this.workEffortId,
         this.partyId,
@@ -71,16 +71,18 @@ class WorkEffortPartyAssignment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.assignedByUserLogin,
-        this.cats,
-        this.format,
-        this.facility,
-        this.party,
         this.model,
-        this.workEffort, });
+        this.proto,
+        this.cats,
+        this.assignedByUserLogin,
+        this.workEffort,
+        this.facility,
+        this.format,
+        this.party, });
     factory WorkEffortPartyAssignment.fromJson(Map<String, dynamic> json) => _$WorkEffortPartyAssignmentFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortPartyAssignmentToJson(this);
     @override
     List<Object?> get props => [workEffortId, partyId, roleTypeId, fromDate];
+    @override
+    String get key => id!;
 }

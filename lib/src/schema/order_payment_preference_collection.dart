@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderPaymentPreferenceList
 @JsonSerializable()
-class OrderPaymentPreferenceCollection {
+class OrderPaymentPreferenceCollection  {
     // List<domain_OrderPaymentPreferenceFlatData>
     final List<OrderPaymentPreference>? values;
     // String

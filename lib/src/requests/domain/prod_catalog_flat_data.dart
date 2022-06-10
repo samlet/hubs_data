@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProdCatalogFlatData
 @JsonSerializable()
-class ProdCatalogFlatData {
+class ProdCatalogFlatData  {
     // String
-    final String? prodCatalogId;
+    String? prodCatalogId;
     // String
-    final String? catalogName;
+    String? catalogName;
     // routines_Indicator
-    final String? useQuickAdd;
+    String? useQuickAdd;
     // String
-    final String? styleSheet;
+    String? styleSheet;
     // String
-    final String? headerLogo;
+    String? headerLogo;
     // String
-    final String? contentPathPrefix;
+    String? contentPathPrefix;
     // String
-    final String? templatePathPrefix;
+    String? templatePathPrefix;
     // routines_Indicator
-    final String? viewAllowPermReqd;
+    String? viewAllowPermReqd;
     // routines_Indicator
-    final String? purchaseAllowPermReqd;
+    String? purchaseAllowPermReqd;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProdCatalogFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProdCatalogFlatData({
         this.prodCatalogId,
         this.catalogName,

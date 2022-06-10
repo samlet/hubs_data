@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InvoiceFlatData
 @JsonSerializable()
-class Invoice extends Equatable{
+class Invoice extends Equatable implements WithKey{
     // String
     final String? invoiceId;
     // String
@@ -41,34 +41,34 @@ class Invoice extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // domain_PartyFlatData
-    final Party? fromParty;
-    // String
-    final String? proto;
-    // domain_OrderAdjustmentBillingList
-    final OrderAdjustmentBillingCollection? orderAdjustmentBillings;
     // domain_InvoiceStatusList
     final InvoiceStatusCollection? invoiceStatuses;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_OrderItemBillingList
-    final OrderItemBillingCollection? orderItemBillings;
     // String
     final String? format;
-    // domain_PartyFlatData
-    final Party? party;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_InvoiceItemList
     final InvoiceItemCollection? invoiceItems;
+    // domain_OrderAdjustmentBillingList
+    final OrderAdjustmentBillingCollection? orderAdjustmentBillings;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_OrderItemBillingList
+    final OrderItemBillingCollection? orderItemBillings;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // String
+    final String? proto;
     Invoice({
         this.invoiceId,
         this.invoiceTypeId,
@@ -89,22 +89,24 @@ class Invoice extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.billingAccount,
-        this.contactMech,
-        this.fromParty,
-        this.proto,
-        this.orderAdjustmentBillings,
         this.invoiceStatuses,
-        this.model,
-        this.orderItemBillings,
         this.format,
-        this.party,
-        this.cats,
-        this.subview,
         this.invoiceItems,
-        this.type, });
+        this.orderAdjustmentBillings,
+        this.subview,
+        this.orderItemBillings,
+        this.cats,
+        this.party,
+        this.contactMech,
+        this.type,
+        this.model,
+        this.fromParty,
+        this.billingAccount,
+        this.proto, });
     factory Invoice.fromJson(Map<String, dynamic> json) => _$InvoiceFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceToJson(this);
     @override
     List<Object?> get props => [invoiceId];
+    @override
+    String get key => invoiceId!;
 }

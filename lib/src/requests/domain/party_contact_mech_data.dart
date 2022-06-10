@@ -2,39 +2,39 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyContactMechData
 @JsonSerializable()
-class PartyContactMechData {
+class PartyContactMechData  {
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? contactMechId;
+    String? contactMechId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // routines_Indicator
-    final String? allowSolicitation;
+    String? allowSolicitation;
     // String
-    final String? extension;
+    String? extension;
     // routines_Indicator
-    final String? verified;
+    String? verified;
     // String
-    final String? comments;
+    String? comments;
     // Long
-    final int? yearsWithContactMech;
+    int? yearsWithContactMech;
     // Long
-    final int? monthsWithContactMech;
+    int? monthsWithContactMech;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyContactMechData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyContactMechData({
         this.partyId,
         this.contactMechId,

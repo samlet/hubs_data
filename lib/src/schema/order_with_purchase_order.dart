@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// order_PurchaseOrderProto
 @JsonSerializable()
-class OrderWithPurchaseOrder {
+class OrderWithPurchaseOrder  {
     // String
     final String? id;
     // domain_OrderHeaderFlatData

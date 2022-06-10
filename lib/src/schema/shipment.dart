@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentFlatData
 @JsonSerializable()
-class Shipment extends Equatable{
+class Shipment extends Equatable implements WithKey{
     // String
     final String? shipmentId;
     // String
@@ -69,56 +69,56 @@ class Shipment extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ShipmentReceiptList
-    final ShipmentReceiptCollection? shipmentReceipts;
-    // domain_ContactMechFlatData
-    final ContactMech? originContactMech;
-    // domain_ShipmentRouteSegmentList
-    final ShipmentRouteSegmentCollection? shipmentRouteSegments;
-    // domain_ShipmentPackageList
-    final ShipmentPackageCollection? shipmentPackages;
-    // domain_WorkEffortFlatData
-    final WorkEffort? estimatedArrivalWorkEffort;
-    // String
-    final String? format;
-    // domain_ShipmentStatusList
-    final ShipmentStatusCollection? shipmentStatuses;
-    // domain_FacilityFlatData
-    final Facility? destinationFacility;
-    // domain_PartyFlatData
-    final Party? fromParty;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_ItemIssuanceList
     final ItemIssuanceCollection? itemIssuances;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ShippingDocumentList
-    final ShippingDocumentCollection? shippingDocuments;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? primaryOrderHeader;
-    // domain_ShipmentPackageContentList
-    final ShipmentPackageContentCollection? shipmentPackageContents;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ShipmentItemList
-    final ShipmentItemCollection? shipmentItems;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // domain_ReturnHeaderFlatData
-    final ReturnHeader? primaryReturnHeader;
     // domain_FacilityFlatData
     final Facility? originFacility;
-    // domain_ShipmentPackageRouteSegList
-    final ShipmentPackageRouteSegCollection? shipmentPackageRouteSegs;
+    // String
+    final String? format;
+    // domain_ReturnHeaderFlatData
+    final ReturnHeader? primaryReturnHeader;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // domain_WorkEffortFlatData
+    final WorkEffort? estimatedShipWorkEffort;
+    // domain_PartyFlatData
+    final Party? toParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ShipmentItemBillingList
     final ShipmentItemBillingCollection? shipmentItemBillings;
     // domain_WorkEffortFlatData
-    final WorkEffort? estimatedShipWorkEffort;
+    final WorkEffort? estimatedArrivalWorkEffort;
+    // domain_ShipmentStatusList
+    final ShipmentStatusCollection? shipmentStatuses;
+    // domain_ShipmentItemList
+    final ShipmentItemCollection? shipmentItems;
+    // domain_ShipmentPackageRouteSegList
+    final ShipmentPackageRouteSegCollection? shipmentPackageRouteSegs;
+    // domain_FacilityFlatData
+    final Facility? destinationFacility;
+    // domain_ContactMechFlatData
+    final ContactMech? originContactMech;
+    // domain_ShipmentPackageList
+    final ShipmentPackageCollection? shipmentPackages;
+    // domain_ShipmentPackageContentList
+    final ShipmentPackageContentCollection? shipmentPackageContents;
+    // domain_ShippingDocumentList
+    final ShippingDocumentCollection? shippingDocuments;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? primaryOrderHeader;
+    // domain_ShipmentRouteSegmentList
+    final ShipmentRouteSegmentCollection? shipmentRouteSegments;
+    // domain_ContactMechFlatData
+    final ContactMech? destContactMech;
+    // String
+    final String? proto;
+    // domain_ShipmentReceiptList
+    final ShipmentReceiptCollection? shipmentReceipts;
     Shipment({
         this.shipmentId,
         this.shipmentTypeId,
@@ -153,33 +153,35 @@ class Shipment extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.shipmentReceipts,
-        this.originContactMech,
-        this.shipmentRouteSegments,
-        this.shipmentPackages,
-        this.estimatedArrivalWorkEffort,
-        this.format,
-        this.shipmentStatuses,
-        this.destinationFacility,
-        this.fromParty,
-        this.proto,
-        this.subview,
         this.itemIssuances,
-        this.destContactMech,
-        this.model,
-        this.shippingDocuments,
-        this.primaryOrderHeader,
-        this.shipmentPackageContents,
-        this.cats,
-        this.shipmentItems,
-        this.toParty,
-        this.primaryReturnHeader,
         this.originFacility,
-        this.shipmentPackageRouteSegs,
+        this.format,
+        this.primaryReturnHeader,
+        this.fromParty,
+        this.estimatedShipWorkEffort,
+        this.toParty,
+        this.cats,
+        this.model,
         this.shipmentItemBillings,
-        this.estimatedShipWorkEffort, });
+        this.estimatedArrivalWorkEffort,
+        this.shipmentStatuses,
+        this.shipmentItems,
+        this.shipmentPackageRouteSegs,
+        this.destinationFacility,
+        this.originContactMech,
+        this.shipmentPackages,
+        this.shipmentPackageContents,
+        this.shippingDocuments,
+        this.subview,
+        this.primaryOrderHeader,
+        this.shipmentRouteSegments,
+        this.destContactMech,
+        this.proto,
+        this.shipmentReceipts, });
     factory Shipment.fromJson(Map<String, dynamic> json) => _$ShipmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentToJson(this);
     @override
     List<Object?> get props => [shipmentId];
+    @override
+    String get key => shipmentId!;
 }

@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyStatusData
 @JsonSerializable()
-class PartyStatusData {
+class PartyStatusData  {
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? partyId;
+    String? partyId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? statusDate;
+    Timestamp? statusDate;
     // String
-    final String? changeByUserLoginId;
+    String? changeByUserLoginId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyStatusData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyStatusData({
         this.statusId,
         this.partyId,

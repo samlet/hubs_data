@@ -2,49 +2,49 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserLoginFlatData
 @JsonSerializable()
-class UserLoginFlatData {
+class UserLoginFlatData  {
     // String
-    final String? userLoginId;
+    String? userLoginId;
     // String
-    final String? currentPassword;
+    String? currentPassword;
     // String
-    final String? passwordHint;
+    String? passwordHint;
     // routines_Indicator
-    final String? isSystem;
+    String? isSystem;
     // routines_Indicator
-    final String? enabled;
+    String? enabled;
     // routines_Indicator
-    final String? hasLoggedOut;
+    String? hasLoggedOut;
     // routines_Indicator
-    final String? requirePasswordChange;
+    String? requirePasswordChange;
     // String
-    final String? lastCurrencyUom;
+    String? lastCurrencyUom;
     // String
-    final String? lastLocale;
+    String? lastLocale;
     // String
-    final String? lastTimeZone;
+    String? lastTimeZone;
     // Input_google_protobuf_Timestamp
-    final Timestamp? disabledDateTime;
+    Timestamp? disabledDateTime;
     // Long
-    final int? successiveFailedLogins;
+    int? successiveFailedLogins;
     // String
-    final String? externalAuthId;
+    String? externalAuthId;
     // String
-    final String? userLdapDn;
+    String? userLdapDn;
     // String
-    final String? disabledBy;
+    String? disabledBy;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_UserLoginFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     UserLoginFlatData({
         this.userLoginId,
         this.currentPassword,

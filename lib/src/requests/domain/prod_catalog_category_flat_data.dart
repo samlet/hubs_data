@@ -2,31 +2,31 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProdCatalogCategoryFlatData
 @JsonSerializable()
-class ProdCatalogCategoryFlatData {
+class ProdCatalogCategoryFlatData  {
     // String
-    final String? prodCatalogId;
+    String? prodCatalogId;
     // String
-    final String? productCategoryId;
+    String? productCategoryId;
     // String
-    final String? prodCatalogCategoryTypeId;
+    String? prodCatalogCategoryTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProdCatalogCategoryFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProdCatalogCategoryFlatData({
         this.prodCatalogId,
         this.productCategoryId,

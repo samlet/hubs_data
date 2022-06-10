@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_SupplierProductFeatureData
 @JsonSerializable()
-class SupplierProductFeature extends Equatable{
+class SupplierProductFeature extends Equatable implements WithKey{
     // String
     final String? partyId;
     // String
@@ -19,18 +19,18 @@ class SupplierProductFeature extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
+    // domain_ProductFeatureFlatData
+    final ProductFeature? productFeature;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? party;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // domain_ProductFeatureFlatData
-    final ProductFeature? productFeature;
-    // domain_PartyFlatData
-    final Party? party;
     SupplierProductFeature({
         this.partyId,
         this.productFeatureId,
@@ -40,14 +40,16 @@ class SupplierProductFeature extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.cats,
         this.proto,
-        this.format,
         this.productFeature,
-        this.party, });
+        this.model,
+        this.party,
+        this.cats,
+        this.format, });
     factory SupplierProductFeature.fromJson(Map<String, dynamic> json) => _$SupplierProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$SupplierProductFeatureToJson(this);
     @override
     List<Object?> get props => [partyId, productFeatureId];
+    @override
+    String get key => id!;
 }

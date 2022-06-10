@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductFeatureCategoryFlatData
 @JsonSerializable()
-class ProductFeatureCategoryFlatData {
+class ProductFeatureCategoryFlatData  {
     // String
-    final String? productFeatureCategoryId;
+    String? productFeatureCategoryId;
     // String
-    final String? parentCategoryId;
+    String? parentCategoryId;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductFeatureCategoryFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductFeatureCategoryFlatData({
         this.productFeatureCategoryId,
         this.parentCategoryId,

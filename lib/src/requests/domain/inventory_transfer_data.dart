@@ -2,43 +2,43 @@ part of '../../../requests.dart';
 
 /// Input_domain_InventoryTransferData
 @JsonSerializable()
-class InventoryTransferData {
+class InventoryTransferData  {
     // String
-    final String? inventoryTransferId;
+    String? inventoryTransferId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? locationSeqId;
+    String? locationSeqId;
     // String
-    final String? containerId;
+    String? containerId;
     // String
-    final String? facilityIdTo;
+    String? facilityIdTo;
     // String
-    final String? locationSeqIdTo;
+    String? locationSeqIdTo;
     // String
-    final String? containerIdTo;
+    String? containerIdTo;
     // String
-    final String? itemIssuanceId;
+    String? itemIssuanceId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? sendDate;
+    Timestamp? sendDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? receiveDate;
+    Timestamp? receiveDate;
     // String
-    final String? comments;
+    String? comments;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_InventoryTransferData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     InventoryTransferData({
         this.inventoryTransferId,
         this.statusId,

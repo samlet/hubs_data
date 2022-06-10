@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AcctgTransFlatData
 @JsonSerializable()
-class AcctgTrans extends Equatable{
+class AcctgTrans extends Equatable implements WithKey{
     // String
     final String? acctgTransId;
     // String
@@ -107,4 +107,6 @@ class AcctgTrans extends Equatable{
     Map<String, dynamic> toJson() => _$AcctgTransToJson(this);
     @override
     List<Object?> get props => [acctgTransId];
+    @override
+    String get key => acctgTransId!;
 }

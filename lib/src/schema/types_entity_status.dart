@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_TypesEntityStatusData
 @JsonSerializable()
-class TypesEntityStatus extends Equatable{
+class TypesEntityStatus extends Equatable implements WithKey{
     // String
     final String? typesEntityId;
     // google_protobuf_Timestamp
@@ -19,18 +19,18 @@ class TypesEntityStatus extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_TypesEntityData
     final TypesEntity? typesEntity;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     TypesEntityStatus({
         this.typesEntityId,
         this.statusDate,
@@ -40,14 +40,16 @@ class TypesEntityStatus extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.userLogin,
+        this.format,
+        this.proto,
         this.model,
         this.cats,
-        this.typesEntity,
-        this.proto,
-        this.format,
-        this.userLogin, });
+        this.typesEntity, });
     factory TypesEntityStatus.fromJson(Map<String, dynamic> json) => _$TypesEntityStatusFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityStatusToJson(this);
     @override
     List<Object?> get props => [typesEntityId, statusDate];
+    @override
+    String get key => id!;
 }

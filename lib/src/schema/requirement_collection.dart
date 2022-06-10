@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_RequirementList
 @JsonSerializable()
-class RequirementCollection {
+class RequirementCollection  {
     // List<domain_RequirementFlatData>
     final List<Requirement>? values;
     // String

@@ -2,47 +2,47 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductPromoFlatData
 @JsonSerializable()
-class ProductPromoFlatData {
+class ProductPromoFlatData  {
     // String
-    final String? productPromoId;
+    String? productPromoId;
     // String
-    final String? promoName;
+    String? promoName;
     // String
-    final String? promoText;
+    String? promoText;
     // routines_Indicator
-    final String? userEntered;
+    String? userEntered;
     // routines_Indicator
-    final String? showToCustomer;
+    String? showToCustomer;
     // routines_Indicator
-    final String? requireCode;
+    String? requireCode;
     // Long
-    final int? useLimitPerOrder;
+    int? useLimitPerOrder;
     // Long
-    final int? useLimitPerCustomer;
+    int? useLimitPerCustomer;
     // Long
-    final int? useLimitPerPromotion;
+    int? useLimitPerPromotion;
     // Input_routines_FixedPoint
-    final FixedPoint? billbackFactor;
+    FixedPoint? billbackFactor;
     // String
-    final String? overrideOrgPartyId;
+    String? overrideOrgPartyId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdDate;
+    Timestamp? createdDate;
     // String
-    final String? createdByUserLogin;
+    String? createdByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastModifiedDate;
+    Timestamp? lastModifiedDate;
     // String
-    final String? lastModifiedByUserLogin;
+    String? lastModifiedByUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductPromoFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductPromoFlatData({
         this.productPromoId,
         this.promoName,

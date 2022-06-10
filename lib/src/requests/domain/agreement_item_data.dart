@@ -2,29 +2,29 @@ part of '../../../requests.dart';
 
 /// Input_domain_AgreementItemData
 @JsonSerializable()
-class AgreementItemData {
+class AgreementItemData  {
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? agreementItemSeqId;
+    String? agreementItemSeqId;
     // String
-    final String? agreementItemTypeId;
+    String? agreementItemTypeId;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? agreementText;
+    String? agreementText;
     // String
-    final String? agreementImage;
+    String? agreementImage;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AgreementItemData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AgreementItemData({
         this.agreementId,
         this.agreementItemSeqId,

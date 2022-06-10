@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_AcctgBlueprintData
 @JsonSerializable()
-class AcctgBlueprint {
+class AcctgBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_OrderItemShipGroupAssocData
 @JsonSerializable()
-class OrderItemShipGroupAssoc extends Equatable{
+class OrderItemShipGroupAssoc extends Equatable implements WithKey{
     // String
     final String? orderId;
     // String
@@ -19,16 +19,16 @@ class OrderItemShipGroupAssoc extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderItemShipGroupAssoc({
         this.orderId,
         this.orderItemSeqId,
@@ -38,13 +38,15 @@ class OrderItemShipGroupAssoc extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.proto,
-        this.format,
         this.cats,
-        this.orderHeader, });
+        this.orderHeader,
+        this.format,
+        this.model, });
     factory OrderItemShipGroupAssoc.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupAssocFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupAssocToJson(this);
     @override
     List<Object?> get props => [orderId, orderItemSeqId, shipGroupSeqId];
+    @override
+    String get key => id!;
 }

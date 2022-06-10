@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ElectronicTextFlatData
 @JsonSerializable()
-class ElectronicText extends Equatable{
+class ElectronicText extends Equatable implements WithKey{
     // String
     final String? dataResourceId;
     // String
@@ -13,29 +13,31 @@ class ElectronicText extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
     ElectronicText({
         this.dataResourceId,
         this.textData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.dataResource,
+        this.proto,
         this.format,
+        this.model,
         this.cats,
-        this.proto, });
+        this.dataResource, });
     factory ElectronicText.fromJson(Map<String, dynamic> json) => _$ElectronicTextFromJson(json);
     Map<String, dynamic> toJson() => _$ElectronicTextToJson(this);
     @override
     List<Object?> get props => [dataResourceId];
+    @override
+    String get key => dataResourceId!;
 }

@@ -2,25 +2,25 @@ part of '../../../requests.dart';
 
 /// Input_domain_FixedAssetGeoPointData
 @JsonSerializable()
-class FixedAssetGeoPointData {
+class FixedAssetGeoPointData  {
     // String
-    final String? fixedAssetId;
+    String? fixedAssetId;
     // String
-    final String? geoPointId;
+    String? geoPointId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FixedAssetGeoPointData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FixedAssetGeoPointData({
         this.fixedAssetId,
         this.geoPointId,

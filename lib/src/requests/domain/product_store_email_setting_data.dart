@@ -2,35 +2,35 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStoreEmailSettingData
 @JsonSerializable()
-class ProductStoreEmailSettingData {
+class ProductStoreEmailSettingData  {
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? emailType;
+    String? emailType;
     // String
-    final String? bodyScreenLocation;
+    String? bodyScreenLocation;
     // String
-    final String? xslfoAttachScreenLocation;
+    String? xslfoAttachScreenLocation;
     // String
-    final String? fromAddress;
+    String? fromAddress;
     // String
-    final String? ccAddress;
+    String? ccAddress;
     // String
-    final String? bccAddress;
+    String? bccAddress;
     // String
-    final String? subject;
+    String? subject;
     // String
-    final String? contentType;
+    String? contentType;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductStoreEmailSettingData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductStoreEmailSettingData({
         this.productStoreId,
         this.emailType,

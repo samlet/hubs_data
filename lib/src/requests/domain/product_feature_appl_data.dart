@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductFeatureApplData
 @JsonSerializable()
-class ProductFeatureApplData {
+class ProductFeatureApplData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? productFeatureId;
+    String? productFeatureId;
     // String
-    final String? productFeatureApplTypeId;
+    String? productFeatureApplTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // Input_routines_Currency
-    final Currency? recurringAmount;
+    Currency? recurringAmount;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductFeatureApplData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductFeatureApplData({
         this.productId,
         this.productFeatureId,

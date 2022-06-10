@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_InventoryItemDetailData
 @JsonSerializable()
-class InventoryItemDetail extends Equatable{
+class InventoryItemDetail extends Equatable implements WithKey{
     // String
     final String? inventoryItemId;
     // String
@@ -53,18 +53,18 @@ class InventoryItemDetail extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
     InventoryItemDetail({
         this.inventoryItemId,
         this.inventoryItemDetailSeqId,
@@ -91,14 +91,16 @@ class InventoryItemDetail extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.workEffort,
-        this.inventoryItem,
         this.cats,
+        this.inventoryItem,
+        this.proto,
+        this.format,
         this.model,
-        this.proto, });
+        this.workEffort, });
     factory InventoryItemDetail.fromJson(Map<String, dynamic> json) => _$InventoryItemDetailFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemDetailToJson(this);
     @override
     List<Object?> get props => [inventoryItemId, inventoryItemDetailSeqId];
+    @override
+    String get key => id!;
 }

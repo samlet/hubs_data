@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// proto_StringMap
 @JsonSerializable()
-class StringMapValue {
+class StringMapValue  {
     // List<proto_StringMap_ValuesEntry>
     final List<MapEntry>? values;
     // String

@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ElectronicTextList
 @JsonSerializable()
-class ElectronicTextList {
+class ElectronicTextList  {
     // List<Input_domain_ElectronicTextFlatData>
-    final List<ElectronicTextFlatData>? values;
+    List<ElectronicTextFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ElectronicTextList({
         this.values,
         this.nextPageToken,

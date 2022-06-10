@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// proto_ListItemProto
 @JsonSerializable()
-class ListItemProtoValue {
+class ListItemProtoValue  {
     // String
     final String? key;
     // String

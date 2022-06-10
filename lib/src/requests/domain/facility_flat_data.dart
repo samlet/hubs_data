@@ -2,53 +2,53 @@ part of '../../../requests.dart';
 
 /// Input_domain_FacilityFlatData
 @JsonSerializable()
-class FacilityFlatData {
+class FacilityFlatData  {
     // String
-    final String? facilityId;
+    String? facilityId;
     // String
-    final String? facilityTypeId;
+    String? facilityTypeId;
     // String
-    final String? parentFacilityId;
+    String? parentFacilityId;
     // String
-    final String? ownerPartyId;
+    String? ownerPartyId;
     // String
-    final String? defaultInventoryItemTypeId;
+    String? defaultInventoryItemTypeId;
     // String
-    final String? facilityName;
+    String? facilityName;
     // String
-    final String? primaryFacilityGroupId;
+    String? primaryFacilityGroupId;
     // Input_routines_FixedPoint
-    final FixedPoint? facilitySize;
+    FixedPoint? facilitySize;
     // String
-    final String? facilitySizeUomId;
+    String? facilitySizeUomId;
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // Long
-    final int? defaultDaysToShip;
+    int? defaultDaysToShip;
     // Input_google_protobuf_Timestamp
-    final Timestamp? openedDate;
+    Timestamp? openedDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? closedDate;
+    Timestamp? closedDate;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? defaultDimensionUomId;
+    String? defaultDimensionUomId;
     // String
-    final String? defaultWeightUomId;
+    String? defaultWeightUomId;
     // String
-    final String? geoPointId;
+    String? geoPointId;
     // Long
-    final int? facilityLevel;
+    int? facilityLevel;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FacilityFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FacilityFlatData({
         this.facilityId,
         this.facilityTypeId,

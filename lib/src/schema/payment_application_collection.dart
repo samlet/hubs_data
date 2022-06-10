@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PaymentApplicationList
 @JsonSerializable()
-class PaymentApplicationCollection {
+class PaymentApplicationCollection  {
     // List<domain_PaymentApplicationFlatData>
     final List<PaymentApplication>? values;
     // String

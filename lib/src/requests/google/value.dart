@@ -2,19 +2,19 @@ part of '../../../requests.dart';
 
 /// Input_google_protobuf_Value
 @JsonSerializable()
-class Value {
+class Value  {
     // google_protobuf_NullValue
-    final String? nullValue;
+    String? nullValue;
     // Float
-    final double? numberValue;
+    double? numberValue;
     // String
-    final String? stringValue;
+    String? stringValue;
     // Boolean
-    final bool? boolValue;
+    bool? boolValue;
     // Input_google_protobuf_Struct
-    final Struct? structValue;
+    Struct? structValue;
     // Input_google_protobuf_ListValue
-    final ListValue? listValue;
+    ListValue? listValue;
     Value({
         this.nullValue,
         this.numberValue,

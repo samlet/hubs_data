@@ -2,113 +2,113 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderItemFlatData
 @JsonSerializable()
-class OrderItemFlatData {
+class OrderItemFlatData  {
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? externalId;
+    String? externalId;
     // String
-    final String? orderItemTypeId;
+    String? orderItemTypeId;
     // String
-    final String? orderItemGroupSeqId;
+    String? orderItemGroupSeqId;
     // routines_Indicator
-    final String? isItemGroupPrimary;
+    String? isItemGroupPrimary;
     // String
-    final String? fromInventoryItemId;
+    String? fromInventoryItemId;
     // String
-    final String? budgetId;
+    String? budgetId;
     // String
-    final String? budgetItemSeqId;
+    String? budgetItemSeqId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? supplierProductId;
+    String? supplierProductId;
     // String
-    final String? productFeatureId;
+    String? productFeatureId;
     // String
-    final String? prodCatalogId;
+    String? prodCatalogId;
     // String
-    final String? productCategoryId;
+    String? productCategoryId;
     // routines_Indicator
-    final String? isPromo;
+    String? isPromo;
     // String
-    final String? quoteId;
+    String? quoteId;
     // String
-    final String? quoteItemSeqId;
+    String? quoteItemSeqId;
     // String
-    final String? shoppingListId;
+    String? shoppingListId;
     // String
-    final String? shoppingListItemSeqId;
+    String? shoppingListItemSeqId;
     // String
-    final String? subscriptionId;
+    String? subscriptionId;
     // String
-    final String? deploymentId;
+    String? deploymentId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_FixedPoint
-    final FixedPoint? cancelQuantity;
+    FixedPoint? cancelQuantity;
     // Input_routines_FixedPoint
-    final FixedPoint? selectedAmount;
+    FixedPoint? selectedAmount;
     // Input_routines_Currency
-    final Currency? unitPrice;
+    Currency? unitPrice;
     // Input_routines_Currency
-    final Currency? unitListPrice;
+    Currency? unitListPrice;
     // Input_routines_Currency
-    final Currency? unitAverageCost;
+    Currency? unitAverageCost;
     // Input_routines_Currency
-    final Currency? unitRecurringPrice;
+    Currency? unitRecurringPrice;
     // routines_Indicator
-    final String? isModifiedPrice;
+    String? isModifiedPrice;
     // String
-    final String? recurringFreqUomId;
+    String? recurringFreqUomId;
     // String
-    final String? itemDescription;
+    String? itemDescription;
     // String
-    final String? comments;
+    String? comments;
     // String
-    final String? correspondingPoId;
+    String? correspondingPoId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? syncStatusId;
+    String? syncStatusId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedShipDate;
+    Timestamp? estimatedShipDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? estimatedDeliveryDate;
+    Timestamp? estimatedDeliveryDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? autoCancelDate;
+    Timestamp? autoCancelDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? dontCancelSetDate;
+    Timestamp? dontCancelSetDate;
     // String
-    final String? dontCancelSetUserLogin;
+    String? dontCancelSetUserLogin;
     // Input_google_protobuf_Timestamp
-    final Timestamp? shipBeforeDate;
+    Timestamp? shipBeforeDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? shipAfterDate;
+    Timestamp? shipAfterDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? reserveAfterDate;
+    Timestamp? reserveAfterDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? cancelBackOrderDate;
+    Timestamp? cancelBackOrderDate;
     // String
-    final String? overrideGlAccountId;
+    String? overrideGlAccountId;
     // String
-    final String? salesOpportunityId;
+    String? salesOpportunityId;
     // String
-    final String? changeByUserLoginId;
+    String? changeByUserLoginId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderItemFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderItemFlatData({
         this.orderId,
         this.orderItemSeqId,

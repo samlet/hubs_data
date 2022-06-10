@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductKeywordData
 @JsonSerializable()
-class ProductKeyword extends Equatable{
+class ProductKeyword extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -19,16 +19,16 @@ class ProductKeyword extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
+    // domain_ProductFlatData
+    final Product? product;
     ProductKeyword({
         this.productId,
         this.keyword,
@@ -38,13 +38,15 @@ class ProductKeyword extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.cats,
         this.proto,
-        this.product,
-        this.format, });
+        this.cats,
+        this.model,
+        this.format,
+        this.product, });
     factory ProductKeyword.fromJson(Map<String, dynamic> json) => _$ProductKeywordFromJson(json);
     Map<String, dynamic> toJson() => _$ProductKeywordToJson(this);
     @override
     List<Object?> get props => [productId, keyword, keywordTypeId];
+    @override
+    String get key => id!;
 }

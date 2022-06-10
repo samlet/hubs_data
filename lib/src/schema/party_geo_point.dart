@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_PartyGeoPointData
 @JsonSerializable()
-class PartyGeoPoint extends Equatable{
+class PartyGeoPoint extends Equatable implements WithKey{
     // String
     final String? partyId;
     // String
@@ -21,12 +21,12 @@ class PartyGeoPoint extends Equatable{
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? format;
-    // domain_PartyFlatData
-    final Party? party;
     PartyGeoPoint({
         this.partyId,
         this.geoPointId,
@@ -37,11 +37,13 @@ class PartyGeoPoint extends Equatable{
         this.id,
         this.proto,
         this.cats,
+        this.party,
         this.model,
-        this.format,
-        this.party, });
+        this.format, });
     factory PartyGeoPoint.fromJson(Map<String, dynamic> json) => _$PartyGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$PartyGeoPointToJson(this);
     @override
     List<Object?> get props => [partyId, geoPointId, fromDate];
+    @override
+    String get key => id!;
 }

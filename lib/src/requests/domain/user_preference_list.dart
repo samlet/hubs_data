@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_UserPreferenceList
 @JsonSerializable()
-class UserPreferenceList {
+class UserPreferenceList  {
     // List<Input_domain_UserPreferenceData>
-    final List<UserPreferenceData>? values;
+    List<UserPreferenceData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     UserPreferenceList({
         this.values,
         this.nextPageToken,

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductFeatureCategoryFlatData
 @JsonSerializable()
-class ProductFeatureCategory extends Equatable{
+class ProductFeatureCategory extends Equatable implements WithKey{
     // String
     final String? productFeatureCategoryId;
     // String
@@ -15,22 +15,22 @@ class ProductFeatureCategory extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // domain_ProductFeatureCategoryFlatData
-    final ProductFeatureCategory? parentProductFeatureCategory;
     // domain_ProductFeatureCategoryList
     final ProductFeatureCategoryCollection? childProductFeatureCategories;
-    // domain_ProductFeatureList
-    final ProductFeatureCollection? productFeatures;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductFeatureList
+    final ProductFeatureCollection? productFeatures;
+    // String
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_ProductFeatureCategoryFlatData
+    final ProductFeatureCategory? parentProductFeatureCategory;
     ProductFeatureCategory({
         this.productFeatureCategoryId,
         this.parentCategoryId,
@@ -38,16 +38,18 @@ class ProductFeatureCategory extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.model,
-        this.format,
-        this.proto,
-        this.parentProductFeatureCategory,
         this.childProductFeatureCategories,
+        this.subview,
+        this.model,
         this.productFeatures,
-        this.subview, });
+        this.proto,
+        this.cats,
+        this.format,
+        this.parentProductFeatureCategory, });
     factory ProductFeatureCategory.fromJson(Map<String, dynamic> json) => _$ProductFeatureCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureCategoryToJson(this);
     @override
     List<Object?> get props => [productFeatureCategoryId];
+    @override
+    String get key => productFeatureCategoryId!;
 }

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentAttributeList
 @JsonSerializable()
-class ContentAttributeCollection {
+class ContentAttributeCollection  {
     // List<domain_ContentAttributeData>
     final List<ContentAttribute>? values;
     // String

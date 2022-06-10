@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BillingAccountList
 @JsonSerializable()
-class BillingAccountCollection {
+class BillingAccountCollection  {
     // List<domain_BillingAccountFlatData>
     final List<BillingAccount>? values;
     // String

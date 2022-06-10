@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnHeaderList
 @JsonSerializable()
-class ReturnHeaderCollection {
+class ReturnHeaderCollection  {
     // List<domain_ReturnHeaderFlatData>
     final List<ReturnHeader>? values;
     // String

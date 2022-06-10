@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderHeaderList
 @JsonSerializable()
-class OrderHeaderList {
+class OrderHeaderList  {
     // List<Input_domain_OrderHeaderFlatData>
-    final List<OrderHeaderFlatData>? values;
+    List<OrderHeaderFlatData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     OrderHeaderList({
         this.values,
         this.nextPageToken,

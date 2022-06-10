@@ -2,21 +2,21 @@ part of '../../../requests.dart';
 
 /// Input_domain_SecurityPermissionFlatData
 @JsonSerializable()
-class SecurityPermissionFlatData {
+class SecurityPermissionFlatData  {
     // String
-    final String? permissionId;
+    String? permissionId;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_SecurityPermissionFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     SecurityPermissionFlatData({
         this.permissionId,
         this.description,

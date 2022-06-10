@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_FactProtoTypeData
 @JsonSerializable()
-class FactProtoTypeData {
+class FactProtoTypeData  {
     // String
-    final String? factProtoTypeId;
+    String? factProtoTypeId;
     // String
-    final String? parentTypeId;
+    String? parentTypeId;
     // String
-    final String? description;
+    String? description;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_FactProtoTypeData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     FactProtoTypeData({
         this.factProtoTypeId,
         this.parentTypeId,

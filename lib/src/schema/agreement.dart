@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AgreementFlatData
 @JsonSerializable()
-class Agreement extends Equatable{
+class Agreement extends Equatable implements WithKey{
     // String
     final String? agreementId;
     // String
@@ -33,28 +33,28 @@ class Agreement extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? fromParty;
-    // domain_AgreementItemList
-    final AgreementItemCollection? agreementItems;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ProductFlatData
-    final Product? product;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // String
-    final String? proto;
-    // domain_AgreementTermList
-    final AgreementTermCollection? agreementTerms;
-    // String
-    final String? format;
     // domain_AgreementProductApplList
     final AgreementProductApplCollection? agreementProductAppls;
+    // domain_PartyFlatData
+    final Party? toParty;
+    // domain_AgreementItemList
+    final AgreementItemCollection? agreementItems;
+    // domain_AgreementTermList
+    final AgreementTermCollection? agreementTerms;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     Agreement({
         this.agreementId,
         this.productId,
@@ -71,19 +71,21 @@ class Agreement extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.fromParty,
-        this.agreementItems,
         this.subview,
-        this.product,
-        this.model,
+        this.agreementProductAppls,
         this.toParty,
-        this.proto,
+        this.agreementItems,
         this.agreementTerms,
-        this.format,
-        this.agreementProductAppls, });
+        this.fromParty,
+        this.cats,
+        this.product,
+        this.proto,
+        this.model,
+        this.format, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
     @override
     List<Object?> get props => [agreementId];
+    @override
+    String get key => agreementId!;
 }

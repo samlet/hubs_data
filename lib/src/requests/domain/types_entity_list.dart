@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_TypesEntityList
 @JsonSerializable()
-class TypesEntityList {
+class TypesEntityList  {
     // List<Input_domain_TypesEntityData>
-    final List<TypesEntityData>? values;
+    List<TypesEntityData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     TypesEntityList({
         this.values,
         this.nextPageToken,

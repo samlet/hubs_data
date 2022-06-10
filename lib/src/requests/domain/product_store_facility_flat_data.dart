@@ -2,29 +2,29 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStoreFacilityFlatData
 @JsonSerializable()
-class ProductStoreFacilityFlatData {
+class ProductStoreFacilityFlatData  {
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? facilityId;
+    String? facilityId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductStoreFacilityFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductStoreFacilityFlatData({
         this.productStoreId,
         this.facilityId,

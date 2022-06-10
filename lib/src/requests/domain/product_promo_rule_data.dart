@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductPromoRuleData
 @JsonSerializable()
-class ProductPromoRuleData {
+class ProductPromoRuleData  {
     // String
-    final String? productPromoId;
+    String? productPromoId;
     // String
-    final String? productPromoRuleId;
+    String? productPromoRuleId;
     // String
-    final String? ruleName;
+    String? ruleName;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductPromoRuleData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductPromoRuleData({
         this.productPromoId,
         this.productPromoRuleId,

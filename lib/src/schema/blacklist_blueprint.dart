@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// blueprint_BlacklistBlueprintData
 @JsonSerializable()
-class BlacklistBlueprint {
+class BlacklistBlueprint  {
     // String
     final String? id;
     // google_protobuf_Timestamp
@@ -14,38 +14,38 @@ class BlacklistBlueprint {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistItem;
+    final BlacklistBlueprint? removeBlacklistItem;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistItemList;
+    final BlacklistBlueprint? addBlacklistItem;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? modifyBlacklistType;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? removeBlacklistStatus;
+    final BlacklistBlueprint? addBlacklistStatusList;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? addBlacklistStatus;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? addBlacklistItemList;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? updateBlacklistStatus;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? updateBlacklistItem;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistStatusList;
-    // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? removeBlacklistItem;
+    final BlacklistBlueprint? removeBlacklistStatus;
     BlacklistBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
+        this.removeBlacklistItem,
         this.addBlacklistItem,
-        this.addBlacklistItemList,
         this.modifyBlacklistType,
-        this.removeBlacklistStatus,
+        this.addBlacklistStatusList,
         this.addBlacklistStatus,
+        this.addBlacklistItemList,
         this.updateBlacklistStatus,
         this.updateBlacklistItem,
-        this.addBlacklistStatusList,
-        this.removeBlacklistItem, });
+        this.removeBlacklistStatus, });
     factory BlacklistBlueprint.fromJson(Map<String, dynamic> json) => _$BlacklistBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistBlueprintToJson(this);
 }

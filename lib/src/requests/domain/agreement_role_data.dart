@@ -2,23 +2,23 @@ part of '../../../requests.dart';
 
 /// Input_domain_AgreementRoleData
 @JsonSerializable()
-class AgreementRoleData {
+class AgreementRoleData  {
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AgreementRoleData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AgreementRoleData({
         this.agreementId,
         this.partyId,

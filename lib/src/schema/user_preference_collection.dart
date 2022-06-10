@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserPreferenceList
 @JsonSerializable()
-class UserPreferenceCollection {
+class UserPreferenceCollection  {
     // List<domain_UserPreferenceData>
     final List<UserPreference>? values;
     // String

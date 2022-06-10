@@ -2,37 +2,37 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShoppingListItemData
 @JsonSerializable()
-class ShoppingListItemData {
+class ShoppingListItemData  {
     // String
-    final String? shoppingListId;
+    String? shoppingListId;
     // String
-    final String? shoppingListItemSeqId;
+    String? shoppingListItemSeqId;
     // String
-    final String? productId;
+    String? productId;
     // Input_routines_FixedPoint
-    final FixedPoint? quantity;
+    FixedPoint? quantity;
     // Input_routines_Currency
-    final Currency? modifiedPrice;
+    Currency? modifiedPrice;
     // Input_google_protobuf_Timestamp
-    final Timestamp? reservStart;
+    Timestamp? reservStart;
     // Input_routines_FixedPoint
-    final FixedPoint? reservLength;
+    FixedPoint? reservLength;
     // Input_routines_FixedPoint
-    final FixedPoint? reservPersons;
+    FixedPoint? reservPersons;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityPurchased;
+    FixedPoint? quantityPurchased;
     // String
-    final String? configId;
+    String? configId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShoppingListItemData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShoppingListItemData({
         this.shoppingListId,
         this.shoppingListItemSeqId,

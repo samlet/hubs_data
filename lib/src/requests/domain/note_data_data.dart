@@ -2,33 +2,33 @@ part of '../../../requests.dart';
 
 /// Input_domain_NoteDataData
 @JsonSerializable()
-class NoteDataData {
+class NoteDataData  {
     // String
-    final String? noteId;
+    String? noteId;
     // String
-    final String? noteName;
+    String? noteName;
     // String
-    final String? noteInfo;
+    String? noteInfo;
     // Input_google_protobuf_Timestamp
-    final Timestamp? noteDateTime;
+    Timestamp? noteDateTime;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? noteParty;
+    String? noteParty;
     // String
-    final String? moreInfoUrl;
+    String? moreInfoUrl;
     // String
-    final String? moreInfoItemId;
+    String? moreInfoItemId;
     // String
-    final String? moreInfoItemName;
+    String? moreInfoItemName;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_NoteDataData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     NoteDataData({
         this.noteId,
         this.noteName,

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_AcctgTransList
 @JsonSerializable()
-class AcctgTransCollection {
+class AcctgTransCollection  {
     // List<domain_AcctgTransFlatData>
     final List<AcctgTrans>? values;
     // String

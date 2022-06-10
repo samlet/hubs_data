@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductFeatureFlatData
 @JsonSerializable()
-class ProductFeature extends Equatable{
+class ProductFeature extends Equatable implements WithKey{
     // String
     final String? productFeatureId;
     // String
@@ -29,20 +29,20 @@ class ProductFeature extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFeatureCategoryFlatData
-    final ProductFeatureCategory? productFeatureCategory;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? proto;
     // String
     final String? format;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductFeatureCategoryFlatData
+    final ProductFeatureCategory? productFeatureCategory;
     ProductFeature({
         this.productFeatureId,
         this.productFeatureTypeId,
@@ -57,15 +57,17 @@ class ProductFeature extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.cats,
-        this.productFeatureCategory,
+        this.subview,
         this.model,
+        this.proto,
         this.format,
         this.type,
-        this.subview, });
+        this.cats,
+        this.productFeatureCategory, });
     factory ProductFeature.fromJson(Map<String, dynamic> json) => _$ProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureToJson(this);
     @override
     List<Object?> get props => [productFeatureId];
+    @override
+    String get key => productFeatureId!;
 }

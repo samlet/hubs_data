@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductPriceData
 @JsonSerializable()
-class ProductPrice extends Equatable{
+class ProductPrice extends Equatable implements WithKey{
     // String
     final String? productId;
     // String
@@ -51,26 +51,26 @@ class ProductPrice extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? productStoreGroup;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? desc;
     // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
     // domain_ProductFlatData
     final Product? product;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? productStoreGroup;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
     // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? desc;
     ProductPrice({
         this.productId,
         this.productPriceTypeId,
@@ -96,18 +96,20 @@ class ProductPrice extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.taxAuthorityParty,
-        this.productStoreGroup,
         this.format,
+        this.cats,
+        this.proto,
         this.lastmodifiedbyuserlogin,
-        this.model,
-        this.desc,
         this.createdbyuserlogin,
         this.product,
-        this.proto,
-        this.cats, });
+        this.productStoreGroup,
+        this.model,
+        this.taxAuthorityParty,
+        this.desc, });
     factory ProductPrice.fromJson(Map<String, dynamic> json) => _$ProductPriceFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPriceToJson(this);
     @override
     List<Object?> get props => [productId, productPriceTypeId, productPricePurposeId, currencyUomId, productStoreGroupId, fromDate];
+    @override
+    String get key => id!;
 }

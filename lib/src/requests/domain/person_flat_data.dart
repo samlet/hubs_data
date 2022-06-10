@@ -2,81 +2,81 @@ part of '../../../requests.dart';
 
 /// Input_domain_PersonFlatData
 @JsonSerializable()
-class PersonFlatData {
+class PersonFlatData  {
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? salutation;
+    String? salutation;
     // String
-    final String? firstName;
+    String? firstName;
     // String
-    final String? middleName;
+    String? middleName;
     // String
-    final String? lastName;
+    String? lastName;
     // String
-    final String? personalTitle;
+    String? personalTitle;
     // String
-    final String? suffix;
+    String? suffix;
     // String
-    final String? nickname;
+    String? nickname;
     // String
-    final String? firstNameLocal;
+    String? firstNameLocal;
     // String
-    final String? middleNameLocal;
+    String? middleNameLocal;
     // String
-    final String? lastNameLocal;
+    String? lastNameLocal;
     // String
-    final String? otherLocal;
+    String? otherLocal;
     // String
-    final String? memberId;
+    String? memberId;
     // routines_Indicator
-    final String? gender;
+    String? gender;
     // Input_google_type_Date
-    final Date? birthDate;
+    Date? birthDate;
     // Input_google_type_Date
-    final Date? deceasedDate;
+    Date? deceasedDate;
     // Float
-    final double? height;
+    double? height;
     // Float
-    final double? weight;
+    double? weight;
     // String
-    final String? mothersMaidenName;
+    String? mothersMaidenName;
     // String
-    final String? maritalStatusEnumId;
+    String? maritalStatusEnumId;
     // String
-    final String? socialSecurityNumber;
+    String? socialSecurityNumber;
     // String
-    final String? passportNumber;
+    String? passportNumber;
     // Input_google_type_Date
-    final Date? passportExpireDate;
+    Date? passportExpireDate;
     // Float
-    final double? totalYearsWorkExperience;
+    double? totalYearsWorkExperience;
     // String
-    final String? comments;
+    String? comments;
     // String
-    final String? employmentStatusEnumId;
+    String? employmentStatusEnumId;
     // String
-    final String? residenceStatusEnumId;
+    String? residenceStatusEnumId;
     // String
-    final String? occupation;
+    String? occupation;
     // Long
-    final int? yearsWithEmployer;
+    int? yearsWithEmployer;
     // Long
-    final int? monthsWithEmployer;
+    int? monthsWithEmployer;
     // routines_Indicator
-    final String? existingCustomer;
+    String? existingCustomer;
     // String
-    final String? cardId;
+    String? cardId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PersonFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PersonFlatData({
         this.partyId,
         this.salutation,

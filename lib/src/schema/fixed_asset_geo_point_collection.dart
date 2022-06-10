@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetGeoPointList
 @JsonSerializable()
-class FixedAssetGeoPointCollection {
+class FixedAssetGeoPointCollection  {
     // List<domain_FixedAssetGeoPointData>
     final List<FixedAssetGeoPoint>? values;
     // String

@@ -2,77 +2,77 @@ part of '../../../requests.dart';
 
 /// Input_domain_OrderHeaderFlatData
 @JsonSerializable()
-class OrderHeaderFlatData {
+class OrderHeaderFlatData  {
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderTypeId;
+    String? orderTypeId;
     // String
-    final String? orderName;
+    String? orderName;
     // String
-    final String? externalId;
+    String? externalId;
     // String
-    final String? salesChannelEnumId;
+    String? salesChannelEnumId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? orderDate;
+    Timestamp? orderDate;
     // routines_Indicator
-    final String? priority;
+    String? priority;
     // Input_google_protobuf_Timestamp
-    final Timestamp? entryDate;
+    Timestamp? entryDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? pickSheetPrintedDate;
+    Timestamp? pickSheetPrintedDate;
     // String
-    final String? visitId;
+    String? visitId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? createdBy;
+    String? createdBy;
     // String
-    final String? firstAttemptOrderId;
+    String? firstAttemptOrderId;
     // String
-    final String? currencyUom;
+    String? currencyUom;
     // String
-    final String? syncStatusId;
+    String? syncStatusId;
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // String
-    final String? originFacilityId;
+    String? originFacilityId;
     // String
-    final String? webSiteId;
+    String? webSiteId;
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? terminalId;
+    String? terminalId;
     // String
-    final String? transactionId;
+    String? transactionId;
     // String
-    final String? autoOrderShoppingListId;
+    String? autoOrderShoppingListId;
     // routines_Indicator
-    final String? needsInventoryIssuance;
+    String? needsInventoryIssuance;
     // routines_Indicator
-    final String? isRushOrder;
+    String? isRushOrder;
     // String
-    final String? internalCode;
+    String? internalCode;
     // Input_routines_Currency
-    final Currency? remainingSubTotal;
+    Currency? remainingSubTotal;
     // Input_routines_Currency
-    final Currency? grandTotal;
+    Currency? grandTotal;
     // routines_Indicator
-    final String? isViewed;
+    String? isViewed;
     // routines_Indicator
-    final String? invoicePerShipment;
+    String? invoicePerShipment;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_OrderHeaderFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     OrderHeaderFlatData({
         this.orderId,
         this.orderTypeId,

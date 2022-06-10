@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ContentAssocData
 @JsonSerializable()
-class ContentAssoc extends Equatable{
+class ContentAssoc extends Equatable implements WithKey{
     // String
     final String? contentId;
     // String
@@ -39,20 +39,20 @@ class ContentAssoc extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
+    // domain_ContentFlatData
+    final Content? toContent;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_ContentFlatData
-    final Content? toContent;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final UserLogin? createdbyuserlogin;
     // domain_ContentFlatData
     final Content? fromContent;
+    // String
+    final String? proto;
     // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
+    final UserLogin? lastmodifiedbyuserlogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     ContentAssoc({
@@ -74,16 +74,18 @@ class ContentAssoc extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.model,
-        this.lastmodifiedbyuserlogin,
         this.toContent,
-        this.cats,
-        this.fromContent,
+        this.model,
         this.createdbyuserlogin,
+        this.fromContent,
+        this.proto,
+        this.lastmodifiedbyuserlogin,
+        this.cats,
         this.format, });
     factory ContentAssoc.fromJson(Map<String, dynamic> json) => _$ContentAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAssocToJson(this);
     @override
     List<Object?> get props => [contentId, contentIdTo, contentAssocTypeId, fromDate];
+    @override
+    String get key => id!;
 }

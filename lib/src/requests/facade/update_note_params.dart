@@ -2,15 +2,15 @@ part of '../../../requests.dart';
 
 /// Input_facade_UpdateNoteParams
 @JsonSerializable()
-class UpdateNoteParams {
+class UpdateNoteParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // String
-    final String? mainId;
+    String? mainId;
     // Input_domain_NoteDataData
-    final NoteDataData? noteData;
+    NoteDataData? noteData;
     // String
-    final String? comment;
+    String? comment;
     UpdateNoteParams({
         this.handle,
         this.mainId,

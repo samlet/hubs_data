@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ExampleData
 @JsonSerializable()
-class Example extends Equatable{
+class Example extends Equatable implements WithKey{
     // String
     final String? exampleId;
     // String
@@ -31,22 +31,22 @@ class Example extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // domain_ExampleItemList
-    final ExampleItemCollection? exampleItems;
-    // domain_ExampleStatusList
-    final ExampleStatusCollection? exampleStatuses;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
+    // domain_ExampleStatusList
+    final ExampleStatusCollection? exampleStatuses;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_ExampleItemList
+    final ExampleItemCollection? exampleItems;
     Example({
         this.exampleId,
         this.exampleTypeId,
@@ -62,16 +62,18 @@ class Example extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.type,
-        this.cats,
-        this.proto,
-        this.exampleItems,
-        this.exampleStatuses,
         this.subview,
-        this.model, });
+        this.model,
+        this.type,
+        this.proto,
+        this.exampleStatuses,
+        this.cats,
+        this.format,
+        this.exampleItems, });
     factory Example.fromJson(Map<String, dynamic> json) => _$ExampleFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleToJson(this);
     @override
     List<Object?> get props => [exampleId];
+    @override
+    String get key => exampleId!;
 }

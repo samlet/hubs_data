@@ -2,21 +2,21 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyNoteData
 @JsonSerializable()
-class PartyNoteData {
+class PartyNoteData  {
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? noteId;
+    String? noteId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyNoteData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyNoteData({
         this.partyId,
         this.noteId,

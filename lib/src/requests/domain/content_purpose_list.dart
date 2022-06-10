@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ContentPurposeList
 @JsonSerializable()
-class ContentPurposeList {
+class ContentPurposeList  {
     // List<Input_domain_ContentPurposeData>
-    final List<ContentPurposeData>? values;
+    List<ContentPurposeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ContentPurposeList({
         this.values,
         this.nextPageToken,

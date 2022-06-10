@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ExampleList
 @JsonSerializable()
-class ExampleList {
+class ExampleList  {
     // List<Input_domain_ExampleData>
-    final List<ExampleData>? values;
+    List<ExampleData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ExampleList({
         this.values,
         this.nextPageToken,

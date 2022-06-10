@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductConfigProductList
 @JsonSerializable()
-class ProductConfigProductList {
+class ProductConfigProductList  {
     // List<Input_domain_ProductConfigProductData>
-    final List<ProductConfigProductData>? values;
+    List<ProductConfigProductData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     ProductConfigProductList({
         this.values,
         this.nextPageToken,

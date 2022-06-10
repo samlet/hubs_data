@@ -2,47 +2,47 @@ part of '../../../requests.dart';
 
 /// Input_domain_ReturnHeaderFlatData
 @JsonSerializable()
-class ReturnHeaderFlatData {
+class ReturnHeaderFlatData  {
     // String
-    final String? returnId;
+    String? returnId;
     // String
-    final String? returnHeaderTypeId;
+    String? returnHeaderTypeId;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? createdBy;
+    String? createdBy;
     // String
-    final String? fromPartyId;
+    String? fromPartyId;
     // String
-    final String? toPartyId;
+    String? toPartyId;
     // String
-    final String? paymentMethodId;
+    String? paymentMethodId;
     // String
-    final String? finAccountId;
+    String? finAccountId;
     // String
-    final String? billingAccountId;
+    String? billingAccountId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? entryDate;
+    Timestamp? entryDate;
     // String
-    final String? originContactMechId;
+    String? originContactMechId;
     // String
-    final String? destinationFacilityId;
+    String? destinationFacilityId;
     // routines_Indicator
-    final String? needsInventoryReceive;
+    String? needsInventoryReceive;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? supplierRmaId;
+    String? supplierRmaId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ReturnHeaderFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ReturnHeaderFlatData({
         this.returnId,
         this.returnHeaderTypeId,

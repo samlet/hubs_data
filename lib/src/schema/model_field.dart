@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// facade_ModelField
 @JsonSerializable()
-class ModelField {
+class ModelField  {
     // String
     final String? name;
     // String

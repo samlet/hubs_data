@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductStoreFlatData
 @JsonSerializable()
-class ProductStore extends Equatable{
+class ProductStore extends Equatable implements WithKey{
     // String
     final String? productStoreId;
     // String
@@ -165,44 +165,44 @@ class ProductStore extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductStoreEmailSettingList
-    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_ProductStorePromoApplList
-    final ProductStorePromoApplCollection? productStorePromoAppls;
-    // domain_TelecomNumberFlatData
-    final TelecomNumber? primaryPhone;
-    // domain_PostalAddressFlatData
-    final PostalAddress? primaryAddress;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? primaryProductStoreGroup;
-    // domain_WebSiteList
-    final WebSiteCollection? webSites;
-    // domain_ProductStoreKeywordOvrdList
-    final ProductStoreKeywordOvrdCollection? productStoreKeywordOvrds;
-    // domain_ProductStoreCatalogList
-    final ProductStoreCatalogCollection? productStoreCatalogs;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductStorePaymentSettingList
-    final ProductStorePaymentSettingCollection? productStorePaymentSettings;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
     // domain_ProductStoreRoleList
     final ProductStoreRoleCollection? productStoreRoles;
+    // domain_ProductStoreEmailSettingList
+    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? primaryProductStoreGroup;
+    // domain_ProductStorePromoApplList
+    final ProductStorePromoApplCollection? productStorePromoAppls;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ProductStoreKeywordOvrdList
+    final ProductStoreKeywordOvrdCollection? productStoreKeywordOvrds;
+    // domain_PostalAddressFlatData
+    final PostalAddress? primaryAddress;
+    // domain_PartyFlatData
+    final Party? party;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductStoreCatalogList
+    final ProductStoreCatalogCollection? productStoreCatalogs;
+    // String
+    final String? proto;
     // domain_ProductStoreFacilityList
     final ProductStoreFacilityCollection? productStoreFacilities;
     // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_FacilityFlatData
-    final Facility? facility;
+    final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_TelecomNumberFlatData
+    final TelecomNumber? primaryPhone;
+    // domain_WebSiteList
+    final WebSiteCollection? webSites;
+    // domain_ProductStorePaymentSettingList
+    final ProductStorePaymentSettingCollection? productStorePaymentSettings;
     ProductStore({
         this.productStoreId,
         this.primaryStoreGroupId,
@@ -285,27 +285,29 @@ class ProductStore extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productStoreEmailSettings,
-        this.party,
-        this.productStorePromoAppls,
-        this.primaryPhone,
-        this.primaryAddress,
-        this.cats,
-        this.format,
-        this.primaryProductStoreGroup,
-        this.webSites,
-        this.productStoreKeywordOvrds,
-        this.productStoreCatalogs,
-        this.model,
-        this.productStorePaymentSettings,
-        this.contactMech,
         this.productStoreRoles,
-        this.productStoreFacilities,
-        this.proto,
+        this.productStoreEmailSettings,
+        this.primaryProductStoreGroup,
+        this.productStorePromoAppls,
+        this.cats,
+        this.model,
+        this.facility,
+        this.productStoreKeywordOvrds,
+        this.primaryAddress,
+        this.party,
         this.subview,
-        this.facility, });
+        this.productStoreCatalogs,
+        this.proto,
+        this.productStoreFacilities,
+        this.format,
+        this.contactMech,
+        this.primaryPhone,
+        this.webSites,
+        this.productStorePaymentSettings, });
     factory ProductStore.fromJson(Map<String, dynamic> json) => _$ProductStoreFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreToJson(this);
     @override
     List<Object?> get props => [productStoreId];
+    @override
+    String get key => productStoreId!;
 }

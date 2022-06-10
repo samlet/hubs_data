@@ -2,27 +2,27 @@ part of '../../../requests.dart';
 
 /// Input_domain_ProductStoreGroupMemberData
 @JsonSerializable()
-class ProductStoreGroupMemberData {
+class ProductStoreGroupMemberData  {
     // String
-    final String? productStoreId;
+    String? productStoreId;
     // String
-    final String? productStoreGroupId;
+    String? productStoreGroupId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // Long
-    final int? sequenceNum;
+    int? sequenceNum;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ProductStoreGroupMemberData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ProductStoreGroupMemberData({
         this.productStoreId,
         this.productStoreGroupId,

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetProductData
 @JsonSerializable()
-class FixedAssetProduct extends Equatable{
+class FixedAssetProduct extends Equatable implements WithKey{
     // String
     final String? fixedAssetId;
     // String
@@ -27,18 +27,18 @@ class FixedAssetProduct extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductFlatData
-    final Product? product;
     // String
     final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // domain_ProductFlatData
+    final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
     FixedAssetProduct({
         this.fixedAssetId,
         this.productId,
@@ -52,14 +52,16 @@ class FixedAssetProduct extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fixedAsset,
-        this.model,
-        this.product,
         this.proto,
+        this.cats,
         this.format,
-        this.cats, });
+        this.fixedAsset,
+        this.product,
+        this.model, });
     factory FixedAssetProduct.fromJson(Map<String, dynamic> json) => _$FixedAssetProductFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetProductToJson(this);
     @override
     List<Object?> get props => [fixedAssetId, productId, fixedAssetProductTypeId, fromDate];
+    @override
+    String get key => id!;
 }

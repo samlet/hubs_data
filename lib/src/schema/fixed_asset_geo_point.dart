@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_FixedAssetGeoPointData
 @JsonSerializable()
-class FixedAssetGeoPoint extends Equatable{
+class FixedAssetGeoPoint extends Equatable implements WithKey{
     // String
     final String? fixedAssetId;
     // String
@@ -17,16 +17,16 @@ class FixedAssetGeoPoint extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
+    // String
+    final String? proto;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
     FixedAssetGeoPoint({
         this.fixedAssetId,
         this.geoPointId,
@@ -35,13 +35,15 @@ class FixedAssetGeoPoint extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fixedAsset,
+        this.proto,
         this.format,
         this.cats,
         this.model,
-        this.proto, });
+        this.fixedAsset, });
     factory FixedAssetGeoPoint.fromJson(Map<String, dynamic> json) => _$FixedAssetGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetGeoPointToJson(this);
     @override
     List<Object?> get props => [fixedAssetId, geoPointId, fromDate];
+    @override
+    String get key => id!;
 }

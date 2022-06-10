@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_domain_FacilityTypeList
 @JsonSerializable()
-class FacilityTypeList {
+class FacilityTypeList  {
     // List<Input_domain_FacilityTypeData>
-    final List<FacilityTypeData>? values;
+    List<FacilityTypeData>? values;
     // String
-    final String? nextPageToken;
+    String? nextPageToken;
     // String
-    final String? regionId;
+    String? regionId;
     FacilityTypeList({
         this.values,
         this.nextPageToken,

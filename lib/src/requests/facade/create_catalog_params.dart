@@ -2,13 +2,13 @@ part of '../../../requests.dart';
 
 /// Input_facade_CreateCatalogParams
 @JsonSerializable()
-class CreateCatalogParams {
+class CreateCatalogParams  {
     // Input_facade_BundleHandle
-    final BundleHandle? handle;
+    BundleHandle? handle;
     // Input_domain_ProdCatalogFlatData
-    final ProdCatalogFlatData? prodCatalog;
+    ProdCatalogFlatData? prodCatalog;
     // String
-    final String? comment;
+    String? comment;
     CreateCatalogParams({
         this.handle,
         this.prodCatalog,

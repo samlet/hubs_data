@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ShipmentReceiptFlatData
 @JsonSerializable()
-class ShipmentReceipt extends Equatable{
+class ShipmentReceipt extends Equatable implements WithKey{
     // String
     final String? receiptId;
     // String
@@ -41,24 +41,24 @@ class ShipmentReceipt extends Equatable{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // String
-    final String? format;
-    // domain_ProductFlatData
-    final Product? product;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
     // String
-    final String? proto;
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // String
+    final String? proto;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductFlatData
+    final Product? product;
     ShipmentReceipt({
         this.receiptId,
         this.inventoryItemId,
@@ -79,17 +79,19 @@ class ShipmentReceipt extends Equatable{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.shipment,
-        this.orderHeader,
-        this.format,
-        this.product,
-        this.model,
-        this.cats,
         this.inventoryItem,
+        this.format,
+        this.cats,
+        this.userLogin,
+        this.shipment,
         this.proto,
-        this.userLogin, });
+        this.orderHeader,
+        this.model,
+        this.product, });
     factory ShipmentReceipt.fromJson(Map<String, dynamic> json) => _$ShipmentReceiptFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentReceiptToJson(this);
     @override
     List<Object?> get props => [receiptId];
+    @override
+    String get key => receiptId!;
 }

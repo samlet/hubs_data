@@ -2,57 +2,57 @@ part of '../../../requests.dart';
 
 /// Input_domain_SupplierProductData
 @JsonSerializable()
-class SupplierProductData {
+class SupplierProductData  {
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? partyId;
+    String? partyId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? availableFromDate;
+    Timestamp? availableFromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? availableThruDate;
+    Timestamp? availableThruDate;
     // String
-    final String? supplierPrefOrderId;
+    String? supplierPrefOrderId;
     // String
-    final String? supplierRatingTypeId;
+    String? supplierRatingTypeId;
     // Input_routines_FixedPoint
-    final FixedPoint? standardLeadTimeDays;
+    FixedPoint? standardLeadTimeDays;
     // Input_routines_FixedPoint
-    final FixedPoint? minimumOrderQuantity;
+    FixedPoint? minimumOrderQuantity;
     // Input_routines_FixedPoint
-    final FixedPoint? orderQtyIncrements;
+    FixedPoint? orderQtyIncrements;
     // Input_routines_FixedPoint
-    final FixedPoint? unitsIncluded;
+    FixedPoint? unitsIncluded;
     // String
-    final String? quantityUomId;
+    String? quantityUomId;
     // String
-    final String? agreementId;
+    String? agreementId;
     // String
-    final String? agreementItemSeqId;
+    String? agreementItemSeqId;
     // Input_routines_Currency
-    final Currency? lastPrice;
+    Currency? lastPrice;
     // Input_routines_Currency
-    final Currency? shippingPrice;
+    Currency? shippingPrice;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // String
-    final String? supplierProductName;
+    String? supplierProductName;
     // String
-    final String? supplierProductId;
+    String? supplierProductId;
     // routines_Indicator
-    final String? canDropShip;
+    String? canDropShip;
     // String
-    final String? comments;
+    String? comments;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_SupplierProductData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     SupplierProductData({
         this.productId,
         this.partyId,

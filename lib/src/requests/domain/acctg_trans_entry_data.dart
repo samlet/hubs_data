@@ -2,67 +2,67 @@ part of '../../../requests.dart';
 
 /// Input_domain_AcctgTransEntryData
 @JsonSerializable()
-class AcctgTransEntryData {
+class AcctgTransEntryData  {
     // String
-    final String? acctgTransId;
+    String? acctgTransId;
     // String
-    final String? acctgTransEntrySeqId;
+    String? acctgTransEntrySeqId;
     // String
-    final String? acctgTransEntryTypeId;
+    String? acctgTransEntryTypeId;
     // String
-    final String? description;
+    String? description;
     // String
-    final String? voucherRef;
+    String? voucherRef;
     // String
-    final String? partyId;
+    String? partyId;
     // String
-    final String? roleTypeId;
+    String? roleTypeId;
     // String
-    final String? theirPartyId;
+    String? theirPartyId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? theirProductId;
+    String? theirProductId;
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? glAccountTypeId;
+    String? glAccountTypeId;
     // String
-    final String? glAccountId;
+    String? glAccountId;
     // String
-    final String? organizationPartyId;
+    String? organizationPartyId;
     // Input_routines_Currency
-    final Currency? amount;
+    Currency? amount;
     // String
-    final String? currencyUomId;
+    String? currencyUomId;
     // Input_routines_Currency
-    final Currency? origAmount;
+    Currency? origAmount;
     // String
-    final String? origCurrencyUomId;
+    String? origCurrencyUomId;
     // routines_Indicator
-    final String? debitCreditFlag;
+    String? debitCreditFlag;
     // Input_google_type_Date
-    final Date? dueDate;
+    Date? dueDate;
     // String
-    final String? groupId;
+    String? groupId;
     // String
-    final String? taxId;
+    String? taxId;
     // String
-    final String? reconcileStatusId;
+    String? reconcileStatusId;
     // String
-    final String? settlementTermId;
+    String? settlementTermId;
     // routines_Indicator
-    final String? isSummary;
+    String? isSummary;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_AcctgTransEntryData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     AcctgTransEntryData({
         this.acctgTransId,
         this.acctgTransEntrySeqId,

@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ReturnAdjustmentList
 @JsonSerializable()
-class ReturnAdjustmentCollection {
+class ReturnAdjustmentCollection  {
     // List<domain_ReturnAdjustmentData>
     final List<ReturnAdjustment>? values;
     // String

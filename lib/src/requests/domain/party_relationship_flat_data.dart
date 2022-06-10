@@ -2,47 +2,47 @@ part of '../../../requests.dart';
 
 /// Input_domain_PartyRelationshipFlatData
 @JsonSerializable()
-class PartyRelationshipFlatData {
+class PartyRelationshipFlatData  {
     // String
-    final String? partyIdFrom;
+    String? partyIdFrom;
     // String
-    final String? partyIdTo;
+    String? partyIdTo;
     // String
-    final String? roleTypeIdFrom;
+    String? roleTypeIdFrom;
     // String
-    final String? roleTypeIdTo;
+    String? roleTypeIdTo;
     // Input_google_protobuf_Timestamp
-    final Timestamp? fromDate;
+    Timestamp? fromDate;
     // Input_google_protobuf_Timestamp
-    final Timestamp? thruDate;
+    Timestamp? thruDate;
     // String
-    final String? statusId;
+    String? statusId;
     // String
-    final String? relationshipName;
+    String? relationshipName;
     // String
-    final String? securityGroupId;
+    String? securityGroupId;
     // String
-    final String? priorityTypeId;
+    String? priorityTypeId;
     // String
-    final String? partyRelationshipTypeId;
+    String? partyRelationshipTypeId;
     // String
-    final String? permissionsEnumId;
+    String? permissionsEnumId;
     // String
-    final String? positionTitle;
+    String? positionTitle;
     // String
-    final String? comments;
+    String? comments;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? id;
+    String? id;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_PartyRelationshipFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     PartyRelationshipFlatData({
         this.partyIdFrom,
         this.partyIdTo,

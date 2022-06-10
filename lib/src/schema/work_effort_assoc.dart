@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_WorkEffortAssocData
 @JsonSerializable()
-class WorkEffortAssoc extends Equatable{
+class WorkEffortAssoc extends Equatable implements WithKey{
     // String
     final String? workEffortIdFrom;
     // String
@@ -23,16 +23,16 @@ class WorkEffortAssoc extends Equatable{
     final String? id;
     // domain_WorkEffortFlatData
     final WorkEffort? toWorkEffort;
+    // String
+    final String? format;
     // domain_WorkEffortFlatData
     final WorkEffort? fromWorkEffort;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
-    // String
-    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     WorkEffortAssoc({
         this.workEffortIdFrom,
         this.workEffortIdTo,
@@ -44,13 +44,15 @@ class WorkEffortAssoc extends Equatable{
         this.createdTxStamp,
         this.id,
         this.toWorkEffort,
+        this.format,
         this.fromWorkEffort,
         this.cats,
-        this.model,
         this.proto,
-        this.format, });
+        this.model, });
     factory WorkEffortAssoc.fromJson(Map<String, dynamic> json) => _$WorkEffortAssocFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortAssocToJson(this);
     @override
     List<Object?> get props => [workEffortIdFrom, workEffortIdTo, workEffortAssocTypeId, fromDate];
+    @override
+    String get key => id!;
 }

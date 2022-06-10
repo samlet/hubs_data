@@ -2,49 +2,49 @@ part of '../../../requests.dart';
 
 /// Input_domain_ShipmentReceiptFlatData
 @JsonSerializable()
-class ShipmentReceiptFlatData {
+class ShipmentReceiptFlatData  {
     // String
-    final String? receiptId;
+    String? receiptId;
     // String
-    final String? inventoryItemId;
+    String? inventoryItemId;
     // String
-    final String? productId;
+    String? productId;
     // String
-    final String? shipmentId;
+    String? shipmentId;
     // String
-    final String? shipmentItemSeqId;
+    String? shipmentItemSeqId;
     // String
-    final String? shipmentPackageSeqId;
+    String? shipmentPackageSeqId;
     // String
-    final String? orderId;
+    String? orderId;
     // String
-    final String? orderItemSeqId;
+    String? orderItemSeqId;
     // String
-    final String? returnId;
+    String? returnId;
     // String
-    final String? returnItemSeqId;
+    String? returnItemSeqId;
     // String
-    final String? rejectionId;
+    String? rejectionId;
     // String
-    final String? receivedByUserLoginId;
+    String? receivedByUserLoginId;
     // Input_google_protobuf_Timestamp
-    final Timestamp? datetimeReceived;
+    Timestamp? datetimeReceived;
     // String
-    final String? itemDescription;
+    String? itemDescription;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityAccepted;
+    FixedPoint? quantityAccepted;
     // Input_routines_FixedPoint
-    final FixedPoint? quantityRejected;
+    FixedPoint? quantityRejected;
     // Input_google_protobuf_Timestamp
-    final Timestamp? lastUpdatedTxStamp;
+    Timestamp? lastUpdatedTxStamp;
     // Input_google_protobuf_Timestamp
-    final Timestamp? createdTxStamp;
+    Timestamp? createdTxStamp;
     // String
-    final String? tenantId;
+    String? tenantId;
     // Input_google_protobuf_Struct
-    final Struct? extra;
+    Struct? extra;
     // List<Input_domain_ShipmentReceiptFlatData_AttachmentsEntry>
-    final List<AttachmentsEntry>? attachments;
+    List<AttachmentsEntry>? attachments;
     ShipmentReceiptFlatData({
         this.receiptId,
         this.inventoryItemId,

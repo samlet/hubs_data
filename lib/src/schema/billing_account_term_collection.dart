@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_BillingAccountTermList
 @JsonSerializable()
-class BillingAccountTermCollection {
+class BillingAccountTermCollection  {
     // List<domain_BillingAccountTermData>
     final List<BillingAccountTerm>? values;
     // String

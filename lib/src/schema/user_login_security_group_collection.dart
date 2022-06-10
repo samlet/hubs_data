@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_UserLoginSecurityGroupList
 @JsonSerializable()
-class UserLoginSecurityGroupCollection {
+class UserLoginSecurityGroupCollection  {
     // List<domain_UserLoginSecurityGroupData>
     final List<UserLoginSecurityGroup>? values;
     // String
