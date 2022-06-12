@@ -31,16 +31,16 @@ class OrderFact extends Equatable implements WithKey{
     final ListItemProtoValue? subview;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
+    // domain_OrderFactStatusList
+    final OrderFactStatusCollection? orderFactStatuses;
     // domain_TypesEntityData
     final TypesEntity? type;
     // String
     final String? format;
-    // domain_OrderFactStatusList
-    final OrderFactStatusCollection? orderFactStatuses;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     OrderFact({
         this.orderId,
         this.invoiceId,
@@ -56,11 +56,11 @@ class OrderFact extends Equatable implements WithKey{
         this.createdTxStamp,
         this.subview,
         this.cats,
-        this.model,
-        this.proto,
+        this.orderFactStatuses,
         this.type,
         this.format,
-        this.orderFactStatuses, });
+        this.model,
+        this.proto, });
     factory OrderFact.fromJson(Map<String, dynamic> json) => _$OrderFactFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactToJson(this);
     @override

@@ -15,22 +15,22 @@ class ProductFeatureCategory extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // domain_ProductFeatureCategoryList
+    final ProductFeatureCategoryCollection? childProductFeatureCategories;
     // domain_ProductFeatureList
     final ProductFeatureCollection? productFeatures;
     // domain_ProductFeatureCategoryFlatData
     final ProductFeatureCategory? parentProductFeatureCategory;
-    // domain_ProductFeatureCategoryList
-    final ProductFeatureCategoryCollection? childProductFeatureCategories;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ProductFeatureCategory({
         this.productFeatureCategoryId,
         this.parentCategoryId,
@@ -38,14 +38,14 @@ class ProductFeatureCategory extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.subview,
         this.proto,
+        this.childProductFeatureCategories,
         this.productFeatures,
         this.parentProductFeatureCategory,
-        this.childProductFeatureCategories,
-        this.subview,
-        this.model,
         this.cats,
-        this.format, });
+        this.format,
+        this.model, });
     factory ProductFeatureCategory.fromJson(Map<String, dynamic> json) => _$ProductFeatureCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureCategoryToJson(this);
     @override

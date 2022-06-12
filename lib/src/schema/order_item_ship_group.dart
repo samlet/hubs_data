@@ -49,28 +49,28 @@ class OrderItemShipGroup extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // String
+    final String? proto;
+    // domain_ContactMechFlatData
+    final ContactMech? telecomContactMech;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     // domain_PartyFlatData
     final Party? supplierParty;
     // domain_FacilityFlatData
     final Facility? facility;
     // domain_PartyFlatData
     final Party? vendorParty;
-    // domain_ContactMechFlatData
-    final ContactMech? telecomContactMech;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
-    final String? proto;
     // String
     final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // domain_PartyFlatData
     final Party? carrierParty;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_AgreementFlatData
     final Agreement? supplierAgreement;
     OrderItemShipGroup({
@@ -97,17 +97,17 @@ class OrderItemShipGroup extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.proto,
+        this.telecomContactMech,
+        this.contactMech,
         this.supplierParty,
         this.facility,
         this.vendorParty,
-        this.telecomContactMech,
-        this.contactMech,
-        this.proto,
         this.format,
-        this.model,
         this.cats,
-        this.orderHeader,
         this.carrierParty,
+        this.model,
+        this.orderHeader,
         this.supplierAgreement, });
     factory OrderItemShipGroup.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemShipGroupToJson(this);

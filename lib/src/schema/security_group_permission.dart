@@ -17,18 +17,18 @@ class SecurityGroupPermission extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // domain_SecurityPermissionFlatData
-    final SecurityPermission? securityPermission;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_SecurityGroupFlatData
-    final SecurityGroup? securityGroup;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_SecurityPermissionFlatData
+    final SecurityPermission? securityPermission;
+    // domain_SecurityGroupFlatData
+    final SecurityGroup? securityGroup;
     SecurityGroupPermission({
         this.groupId,
         this.permissionId,
@@ -37,12 +37,12 @@ class SecurityGroupPermission extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.securityPermission,
-        this.model,
-        this.securityGroup,
         this.cats,
-        this.proto, });
+        this.proto,
+        this.format,
+        this.model,
+        this.securityPermission,
+        this.securityGroup, });
     factory SecurityGroupPermission.fromJson(Map<String, dynamic> json) => _$SecurityGroupPermissionFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupPermissionToJson(this);
     @override

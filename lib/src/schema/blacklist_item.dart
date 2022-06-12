@@ -27,20 +27,20 @@ class BlacklistItem extends Equatable implements WithKey{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // domain_BlacklistData
-    final Blacklist? blacklist;
     // String
-    final String? format;
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? blockByLogin;
     // domain_UserLoginFlatData
     final UserLogin? login;
+    // domain_BlacklistData
+    final Blacklist? blacklist;
+    // domain_UserLoginFlatData
+    final UserLogin? blockByLogin;
+    // String
+    final String? format;
     BlacklistItem({
         this.blacklistItemId,
         this.blacklistId,
@@ -54,13 +54,13 @@ class BlacklistItem extends Equatable implements WithKey{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.blacklist,
-        this.format,
+        this.proto,
         this.cats,
         this.model,
-        this.proto,
+        this.login,
+        this.blacklist,
         this.blockByLogin,
-        this.login, });
+        this.format, });
     factory BlacklistItem.fromJson(Map<String, dynamic> json) => _$BlacklistItemFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistItemToJson(this);
     @override

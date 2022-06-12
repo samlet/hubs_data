@@ -13,27 +13,27 @@ class VideoDataResource extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
     // String
     final String? proto;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     VideoDataResource({
         this.dataResourceId,
         this.videoData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.format,
-        this.model,
+        this.proto,
         this.dataResource,
-        this.proto, });
+        this.model,
+        this.cats, });
     factory VideoDataResource.fromJson(Map<String, dynamic> json) => _$VideoDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$VideoDataResourceToJson(this);
     @override

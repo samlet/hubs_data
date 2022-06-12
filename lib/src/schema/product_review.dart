@@ -27,22 +27,22 @@ class ProductReview extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // domain_ProductFlatData
-    final Product? product;
     ProductReview({
         this.productReviewId,
         this.productStoreId,
@@ -56,14 +56,14 @@ class ProductReview extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.userLogin,
-        this.format,
         this.cats,
-        this.proto,
-        this.model,
+        this.format,
+        this.subview,
+        this.product,
+        this.userLogin,
         this.productStore,
-        this.product, });
+        this.proto,
+        this.model, });
     factory ProductReview.fromJson(Map<String, dynamic> json) => _$ProductReviewFromJson(json);
     Map<String, dynamic> toJson() => _$ProductReviewToJson(this);
     @override

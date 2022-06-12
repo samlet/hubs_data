@@ -14,35 +14,35 @@ class TemporalBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_TemporalBlueprintData
-    final TemporalBlueprint? removeToTemporalExpressionAssoc;
-    // blueprint_TemporalBlueprintData
     final TemporalBlueprint? addFromTemporalExpressionAssocList;
-    // blueprint_TemporalBlueprintData
-    final TemporalBlueprint? addFromTemporalExpressionAssoc;
-    // blueprint_TemporalBlueprintData
-    final TemporalBlueprint? updateToTemporalExpressionAssoc;
     // blueprint_TemporalBlueprintData
     final TemporalBlueprint? removeFromTemporalExpressionAssoc;
     // blueprint_TemporalBlueprintData
-    final TemporalBlueprint? addToTemporalExpressionAssocList;
-    // blueprint_TemporalBlueprintData
     final TemporalBlueprint? updateFromTemporalExpressionAssoc;
     // blueprint_TemporalBlueprintData
+    final TemporalBlueprint? addFromTemporalExpressionAssoc;
+    // blueprint_TemporalBlueprintData
+    final TemporalBlueprint? removeToTemporalExpressionAssoc;
+    // blueprint_TemporalBlueprintData
     final TemporalBlueprint? addToTemporalExpressionAssoc;
+    // blueprint_TemporalBlueprintData
+    final TemporalBlueprint? updateToTemporalExpressionAssoc;
+    // blueprint_TemporalBlueprintData
+    final TemporalBlueprint? addToTemporalExpressionAssocList;
     TemporalBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.removeToTemporalExpressionAssoc,
         this.addFromTemporalExpressionAssocList,
-        this.addFromTemporalExpressionAssoc,
-        this.updateToTemporalExpressionAssoc,
         this.removeFromTemporalExpressionAssoc,
-        this.addToTemporalExpressionAssocList,
         this.updateFromTemporalExpressionAssoc,
-        this.addToTemporalExpressionAssoc, });
+        this.addFromTemporalExpressionAssoc,
+        this.removeToTemporalExpressionAssoc,
+        this.addToTemporalExpressionAssoc,
+        this.updateToTemporalExpressionAssoc,
+        this.addToTemporalExpressionAssocList, });
     factory TemporalBlueprint.fromJson(Map<String, dynamic> json) => _$TemporalBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$TemporalBlueprintToJson(this);
 }

@@ -47,24 +47,24 @@ class Facility extends Equatable implements WithKey{
     final String? tenantId;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // String
-    final String? format;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // routines_Response
-    final ResponseValue? pickInventory;
-    // domain_PartyFlatData
-    final Party? ownerParty;
-    // domain_FacilityContactMechPurposeList
-    final FacilityContactMechPurposeCollection? facilityContactMechPurposes;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? ownerParty;
+    // String
+    final String? format;
+    // routines_Response
+    final ResponseValue? pickInventory;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // String
     final String? proto;
+    // domain_FacilityContactMechPurposeList
+    final FacilityContactMechPurposeCollection? facilityContactMechPurposes;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_FacilityFlatData
     final Facility? parentFacility;
     // domain_FacilityContactMechList
@@ -92,15 +92,15 @@ class Facility extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.subview,
-        this.format,
         this.productStore,
-        this.model,
-        this.type,
-        this.pickInventory,
-        this.ownerParty,
-        this.facilityContactMechPurposes,
         this.cats,
+        this.ownerParty,
+        this.format,
+        this.pickInventory,
+        this.type,
         this.proto,
+        this.facilityContactMechPurposes,
+        this.model,
         this.parentFacility,
         this.facilityContactMeches, });
     factory Facility.fromJson(Map<String, dynamic> json) => _$FacilityFromJson(json);

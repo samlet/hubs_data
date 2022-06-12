@@ -42,23 +42,23 @@ class ShipmentReceipt extends Equatable implements WithKey{
     // String
     final String? tenantId;
     // String
-    final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // String
+    final String? proto;
     // domain_ShipmentFlatData
     final Shipment? shipment;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
+    // domain_ProductFlatData
+    final Product? product;
     ShipmentReceipt({
         this.receiptId,
         this.inventoryItemId,
@@ -79,15 +79,15 @@ class ShipmentReceipt extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.product,
-        this.inventoryItem,
         this.format,
-        this.cats,
-        this.model,
+        this.proto,
         this.shipment,
+        this.userLogin,
+        this.inventoryItem,
+        this.model,
+        this.cats,
         this.orderHeader,
-        this.userLogin, });
+        this.product, });
     factory ShipmentReceipt.fromJson(Map<String, dynamic> json) => _$ShipmentReceiptFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentReceiptToJson(this);
     @override

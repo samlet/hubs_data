@@ -14,50 +14,50 @@ class StoreGroupBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? removeProductStoreGroupRole;
-    // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? addProductStoreGroupRole;
+    final StoreGroupBlueprint? updateProductStoreGroupRole;
     // blueprint_StoreGroupBlueprintData
     final StoreGroupBlueprint? removeVendorProduct;
     // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? updateProductStoreGroupRole;
-    // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? addProductStoreGroupMemberList;
-    // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? updateVendorProduct;
-    // blueprint_StoreGroupBlueprintData
     final StoreGroupBlueprint? addProductStoreGroupRoleList;
-    // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? updateProductStoreGroupMember;
     // blueprint_StoreGroupBlueprintData
     final StoreGroupBlueprint? removeProductStoreGroupMember;
     // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? addVendorProductList;
+    final StoreGroupBlueprint? addProductStoreGroupMemberList;
     // blueprint_StoreGroupBlueprintData
-    final StoreGroupBlueprint? modifyProductStoreGroupType;
+    final StoreGroupBlueprint? removeProductStoreGroupRole;
+    // blueprint_StoreGroupBlueprintData
+    final StoreGroupBlueprint? updateProductStoreGroupMember;
+    // blueprint_StoreGroupBlueprintData
+    final StoreGroupBlueprint? addVendorProductList;
     // blueprint_StoreGroupBlueprintData
     final StoreGroupBlueprint? addVendorProduct;
     // blueprint_StoreGroupBlueprintData
+    final StoreGroupBlueprint? modifyProductStoreGroupType;
+    // blueprint_StoreGroupBlueprintData
+    final StoreGroupBlueprint? addProductStoreGroupRole;
+    // blueprint_StoreGroupBlueprintData
     final StoreGroupBlueprint? addProductStoreGroupMember;
+    // blueprint_StoreGroupBlueprintData
+    final StoreGroupBlueprint? updateVendorProduct;
     StoreGroupBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.removeProductStoreGroupRole,
-        this.addProductStoreGroupRole,
-        this.removeVendorProduct,
         this.updateProductStoreGroupRole,
-        this.addProductStoreGroupMemberList,
-        this.updateVendorProduct,
+        this.removeVendorProduct,
         this.addProductStoreGroupRoleList,
-        this.updateProductStoreGroupMember,
         this.removeProductStoreGroupMember,
+        this.addProductStoreGroupMemberList,
+        this.removeProductStoreGroupRole,
+        this.updateProductStoreGroupMember,
         this.addVendorProductList,
-        this.modifyProductStoreGroupType,
         this.addVendorProduct,
-        this.addProductStoreGroupMember, });
+        this.modifyProductStoreGroupType,
+        this.addProductStoreGroupRole,
+        this.addProductStoreGroupMember,
+        this.updateVendorProduct, });
     factory StoreGroupBlueprint.fromJson(Map<String, dynamic> json) => _$StoreGroupBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$StoreGroupBlueprintToJson(this);
 }

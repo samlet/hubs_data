@@ -15,18 +15,18 @@ class AgreementRole extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_AgreementFlatData
     final Agreement? agreement;
-    // String
-    final String? proto;
     // domain_PartyFlatData
     final Party? party;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     AgreementRole({
         this.agreementId,
         this.partyId,
@@ -34,12 +34,12 @@ class AgreementRole extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.model,
         this.agreement,
-        this.proto,
         this.party,
-        this.cats, });
+        this.proto,
+        this.model,
+        this.cats,
+        this.format, });
     factory AgreementRole.fromJson(Map<String, dynamic> json) => _$AgreementRoleFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementRoleToJson(this);
     @override

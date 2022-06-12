@@ -165,44 +165,44 @@ class ProductStore extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_PostalAddressFlatData
-    final PostalAddress? primaryAddress;
-    // domain_ProductStorePaymentSettingList
-    final ProductStorePaymentSettingCollection? productStorePaymentSettings;
-    // domain_ProductStoreKeywordOvrdList
-    final ProductStoreKeywordOvrdCollection? productStoreKeywordOvrds;
     // domain_ProductStoreRoleList
     final ProductStoreRoleCollection? productStoreRoles;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_WebSiteList
-    final WebSiteCollection? webSites;
-    // domain_ProductStoreCatalogList
-    final ProductStoreCatalogCollection? productStoreCatalogs;
-    // String
-    final String? proto;
+    // domain_PostalAddressFlatData
+    final PostalAddress? primaryAddress;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_ProductStorePromoApplList
-    final ProductStorePromoApplCollection? productStorePromoAppls;
-    // domain_ProductStoreEmailSettingList
-    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
-    final String? format;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? primaryProductStoreGroup;
-    // domain_ProductStoreFacilityList
-    final ProductStoreFacilityCollection? productStoreFacilities;
     // domain_TelecomNumberFlatData
     final TelecomNumber? primaryPhone;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProductStoreEmailSettingList
+    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? primaryProductStoreGroup;
+    // domain_ProductStorePromoApplList
+    final ProductStorePromoApplCollection? productStorePromoAppls;
+    // domain_ProductStoreFacilityList
+    final ProductStoreFacilityCollection? productStoreFacilities;
+    // domain_ProductStoreCatalogList
+    final ProductStoreCatalogCollection? productStoreCatalogs;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_PartyFlatData
     final Party? party;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_ProductStorePaymentSettingList
+    final ProductStorePaymentSettingCollection? productStorePaymentSettings;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // String
+    final String? format;
+    // domain_ProductStoreKeywordOvrdList
+    final ProductStoreKeywordOvrdCollection? productStoreKeywordOvrds;
+    // domain_WebSiteList
+    final WebSiteCollection? webSites;
+    // String
+    final String? proto;
     ProductStore({
         this.productStoreId,
         this.primaryStoreGroupId,
@@ -285,25 +285,25 @@ class ProductStore extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.facility,
-        this.primaryAddress,
-        this.productStorePaymentSettings,
-        this.productStoreKeywordOvrds,
         this.productStoreRoles,
-        this.model,
-        this.webSites,
-        this.productStoreCatalogs,
-        this.proto,
+        this.primaryAddress,
         this.subview,
-        this.productStorePromoAppls,
-        this.productStoreEmailSettings,
-        this.contactMech,
-        this.format,
-        this.primaryProductStoreGroup,
-        this.productStoreFacilities,
         this.primaryPhone,
         this.cats,
-        this.party, });
+        this.productStoreEmailSettings,
+        this.primaryProductStoreGroup,
+        this.productStorePromoAppls,
+        this.productStoreFacilities,
+        this.productStoreCatalogs,
+        this.model,
+        this.party,
+        this.contactMech,
+        this.productStorePaymentSettings,
+        this.facility,
+        this.format,
+        this.productStoreKeywordOvrds,
+        this.webSites,
+        this.proto, });
     factory ProductStore.fromJson(Map<String, dynamic> json) => _$ProductStoreFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreToJson(this);
     @override

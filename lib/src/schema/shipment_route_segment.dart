@@ -81,26 +81,26 @@ class ShipmentRouteSegment extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_FacilityFlatData
-    final Facility? destFacility;
-    // String
-    final String? format;
-    // domain_ContactMechFlatData
-    final ContactMech? originContactMech;
-    // domain_PartyFlatData
-    final Party? carrierParty;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // domain_FacilityFlatData
-    final Facility? originFacility;
     // String
     final String? proto;
+    // domain_FacilityFlatData
+    final Facility? originFacility;
+    // domain_ContactMechFlatData
+    final ContactMech? destContactMech;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // domain_PartyFlatData
+    final Party? carrierParty;
+    // String
+    final String? format;
+    // domain_FacilityFlatData
+    final Facility? destFacility;
+    // domain_ContactMechFlatData
+    final ContactMech? originContactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ShipmentRouteSegment({
         this.shipmentId,
         this.shipmentRouteSegmentId,
@@ -141,16 +141,16 @@ class ShipmentRouteSegment extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.destFacility,
-        this.format,
-        this.originContactMech,
-        this.carrierParty,
-        this.destContactMech,
         this.model,
-        this.cats,
-        this.shipment,
+        this.proto,
         this.originFacility,
-        this.proto, });
+        this.destContactMech,
+        this.shipment,
+        this.carrierParty,
+        this.format,
+        this.destFacility,
+        this.originContactMech,
+        this.cats, });
     factory ShipmentRouteSegment.fromJson(Map<String, dynamic> json) => _$ShipmentRouteSegmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentRouteSegmentToJson(this);
     @override

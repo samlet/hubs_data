@@ -47,24 +47,24 @@ class Payment extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? format;
+    // domain_PartyFlatData
+    final Party? fromParty;
+    // String
+    final String? proto;
     // domain_PartyFlatData
     final Party? toParty;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? fromParty;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_PaymentApplicationList
     final PaymentApplicationCollection? paymentApplications;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // String
-    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     Payment({
         this.paymentId,
         this.paymentTypeId,
@@ -88,15 +88,15 @@ class Payment extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.format,
+        this.fromParty,
+        this.proto,
         this.toParty,
         this.type,
-        this.proto,
-        this.model,
-        this.fromParty,
         this.cats,
         this.paymentApplications,
         this.subview,
-        this.format, });
+        this.model, });
     factory Payment.fromJson(Map<String, dynamic> json) => _$PaymentFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentToJson(this);
     @override

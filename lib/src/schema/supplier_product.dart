@@ -49,14 +49,14 @@ class SupplierProduct extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_ProductFlatData
     final Product? product;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
     // domain_PartyFlatData
@@ -85,10 +85,10 @@ class SupplierProduct extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
         this.format,
         this.model,
         this.product,
-        this.cats,
         this.proto,
         this.party, });
     factory SupplierProduct.fromJson(Map<String, dynamic> json) => _$SupplierProductFromJson(json);

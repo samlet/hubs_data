@@ -29,14 +29,14 @@ class ProductStoreEmailSetting extends Equatable implements WithKey{
     final String? id;
     // String
     final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // String
-    final String? format;
     ProductStoreEmailSetting({
         this.productStoreId,
         this.emailType,
@@ -51,10 +51,10 @@ class ProductStoreEmailSetting extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.proto,
+        this.format,
         this.cats,
         this.model,
-        this.productStore,
-        this.format, });
+        this.productStore, });
     factory ProductStoreEmailSetting.fromJson(Map<String, dynamic> json) => _$ProductStoreEmailSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreEmailSettingToJson(this);
     @override

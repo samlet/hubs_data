@@ -15,18 +15,18 @@ class OrderRole extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     // String
-    final String? proto;
+    final String? format;
     // domain_PartyFlatData
     final Party? party;
+    // String
+    final String? proto;
     OrderRole({
         this.orderId,
         this.partyId,
@@ -34,12 +34,12 @@ class OrderRole extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.format,
         this.cats,
+        this.model,
         this.orderHeader,
-        this.proto,
-        this.party, });
+        this.format,
+        this.party,
+        this.proto, });
     factory OrderRole.fromJson(Map<String, dynamic> json) => _$OrderRoleFromJson(json);
     Map<String, dynamic> toJson() => _$OrderRoleToJson(this);
     @override

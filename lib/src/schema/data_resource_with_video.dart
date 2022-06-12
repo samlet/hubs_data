@@ -9,16 +9,16 @@ class DataResourceWithVideo  {
     final DataResource? dataResource;
     // domain_VideoDataResourceData
     final VideoDataResource? videoDataResource;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     DataResourceWithVideo({
         this.id,
         this.dataResource,
         this.videoDataResource,
-        this.proto,
-        this.subview, });
+        this.subview,
+        this.proto, });
     factory DataResourceWithVideo.fromJson(Map<String, dynamic> json) => _$DataResourceWithVideoFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceWithVideoToJson(this);
 }

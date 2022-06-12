@@ -113,36 +113,40 @@ class WorkEffort extends Equatable implements WithKey{
     final int? sequenceNum;
     // String
     final String? tenantId;
-    // String
-    final String? format;
+    // domain_WorkEffortAssocList
+    final WorkEffortAssocCollection? toWorkEffortAssocs;
+    // domain_WorkEffortFixedAssetAssignList
+    final WorkEffortFixedAssetAssignCollection? workEffortFixedAssetAssigns;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_WorkEffortPartyAssignmentList
+    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
+    // domain_TemporalExpressionFlatData
+    final TemporalExpression? temporalExpression;
+    // domain_WorkEffortStatusList
+    final WorkEffortStatusCollection? workEffortStatuses;
+    // domain_NoteDataData
+    final NoteData? noteData;
     // domain_WorkEffortFlatData
     final WorkEffort? parentWorkEffort;
     // String
     final String? proto;
-    // domain_TemporalExpressionFlatData
-    final TemporalExpression? temporalExpression;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_WorkEffortPartyAssignmentList
-    final WorkEffortPartyAssignmentCollection? workEffortPartyAssignments;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // domain_WorkEffortAssocList
-    final WorkEffortAssocCollection? toWorkEffortAssocs;
-    // domain_WorkEffortSkillStandardList
-    final WorkEffortSkillStandardCollection? workEffortSkillStandards;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // domain_WorkEffortAssocList
     final WorkEffortAssocCollection? fromWorkEffortAssocs;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // domain_WorkEffortSkillStandardList
+    final WorkEffortSkillStandardCollection? workEffortSkillStandards;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
-    // domain_NoteDataData
-    final NoteData? noteData;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_WorkEffortFixedAssetAssignList
-    final WorkEffortFixedAssetAssignCollection? workEffortFixedAssetAssigns;
+    // String
+    final String? format;
     WorkEffort({
         this.workEffortId,
         this.workEffortTypeId,
@@ -199,21 +203,23 @@ class WorkEffort extends Equatable implements WithKey{
         this.createdTxStamp,
         this.sequenceNum,
         this.tenantId,
-        this.format,
+        this.toWorkEffortAssocs,
+        this.workEffortFixedAssetAssigns,
+        this.facility,
+        this.workEffortPartyAssignments,
+        this.temporalExpression,
+        this.workEffortStatuses,
+        this.noteData,
         this.parentWorkEffort,
         this.proto,
-        this.temporalExpression,
-        this.model,
-        this.workEffortPartyAssignments,
-        this.facility,
-        this.toWorkEffortAssocs,
-        this.workEffortSkillStandards,
+        this.type,
         this.fromWorkEffortAssocs,
-        this.subview,
+        this.workEffortSkillStandards,
         this.fixedAsset,
-        this.noteData,
+        this.subview,
+        this.model,
         this.cats,
-        this.workEffortFixedAssetAssigns, });
+        this.format, });
     factory WorkEffort.fromJson(Map<String, dynamic> json) => _$WorkEffortFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortToJson(this);
     @override

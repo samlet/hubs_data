@@ -14,26 +14,26 @@ class FactBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_FactBlueprintData
-    final FactBlueprint? removeFactProtoStatus;
+    final FactBlueprint? modifyFactProtoType;
     // blueprint_FactBlueprintData
     final FactBlueprint? addFactProtoStatus;
     // blueprint_FactBlueprintData
-    final FactBlueprint? updateFactProtoStatus;
-    // blueprint_FactBlueprintData
     final FactBlueprint? addFactProtoStatusList;
     // blueprint_FactBlueprintData
-    final FactBlueprint? modifyFactProtoType;
+    final FactBlueprint? removeFactProtoStatus;
+    // blueprint_FactBlueprintData
+    final FactBlueprint? updateFactProtoStatus;
     FactBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.removeFactProtoStatus,
+        this.modifyFactProtoType,
         this.addFactProtoStatus,
-        this.updateFactProtoStatus,
         this.addFactProtoStatusList,
-        this.modifyFactProtoType, });
+        this.removeFactProtoStatus,
+        this.updateFactProtoStatus, });
     factory FactBlueprint.fromJson(Map<String, dynamic> json) => _$FactBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$FactBlueprintToJson(this);
 }

@@ -14,35 +14,35 @@ class ProductConfigItemBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ProductConfigItemBlueprintData
-    final ProductConfigItemBlueprint? updateConfigItemProductConfigOption;
-    // blueprint_ProductConfigItemBlueprintData
     final ProductConfigItemBlueprint? removeConfigItemProductConfigProduct;
     // blueprint_ProductConfigItemBlueprintData
-    final ProductConfigItemBlueprint? updateConfigItemProductConfigProduct;
+    final ProductConfigItemBlueprint? addConfigItemProductConfigProduct;
     // blueprint_ProductConfigItemBlueprintData
-    final ProductConfigItemBlueprint? addConfigItemProductConfigProductList;
+    final ProductConfigItemBlueprint? removeConfigItemProductConfigOption;
     // blueprint_ProductConfigItemBlueprintData
     final ProductConfigItemBlueprint? addConfigItemProductConfigOptionList;
     // blueprint_ProductConfigItemBlueprintData
     final ProductConfigItemBlueprint? addConfigItemProductConfigOption;
     // blueprint_ProductConfigItemBlueprintData
-    final ProductConfigItemBlueprint? removeConfigItemProductConfigOption;
+    final ProductConfigItemBlueprint? updateConfigItemProductConfigProduct;
     // blueprint_ProductConfigItemBlueprintData
-    final ProductConfigItemBlueprint? addConfigItemProductConfigProduct;
+    final ProductConfigItemBlueprint? updateConfigItemProductConfigOption;
+    // blueprint_ProductConfigItemBlueprintData
+    final ProductConfigItemBlueprint? addConfigItemProductConfigProductList;
     ProductConfigItemBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateConfigItemProductConfigOption,
         this.removeConfigItemProductConfigProduct,
-        this.updateConfigItemProductConfigProduct,
-        this.addConfigItemProductConfigProductList,
+        this.addConfigItemProductConfigProduct,
+        this.removeConfigItemProductConfigOption,
         this.addConfigItemProductConfigOptionList,
         this.addConfigItemProductConfigOption,
-        this.removeConfigItemProductConfigOption,
-        this.addConfigItemProductConfigProduct, });
+        this.updateConfigItemProductConfigProduct,
+        this.updateConfigItemProductConfigOption,
+        this.addConfigItemProductConfigProductList, });
     factory ProductConfigItemBlueprint.fromJson(Map<String, dynamic> json) => _$ProductConfigItemBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemBlueprintToJson(this);
 }

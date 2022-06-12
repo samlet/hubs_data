@@ -14,35 +14,35 @@ class ProductPromoBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? addProductPromoAction;
-    // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? updateProductPromoRule;
-    // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? updateProductPromoAction;
+    final ProductPromoBlueprint? addProductPromoRule;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? addProductPromoActionList;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? removeProductPromoRule;
+    final ProductPromoBlueprint? removeProductPromoAction;
+    // blueprint_ProductPromoBlueprintData
+    final ProductPromoBlueprint? updateProductPromoAction;
+    // blueprint_ProductPromoBlueprintData
+    final ProductPromoBlueprint? updateProductPromoRule;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? addProductPromoRuleList;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? removeProductPromoAction;
+    final ProductPromoBlueprint? removeProductPromoRule;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? addProductPromoRule;
+    final ProductPromoBlueprint? addProductPromoAction;
     ProductPromoBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addProductPromoAction,
-        this.updateProductPromoRule,
-        this.updateProductPromoAction,
+        this.addProductPromoRule,
         this.addProductPromoActionList,
-        this.removeProductPromoRule,
-        this.addProductPromoRuleList,
         this.removeProductPromoAction,
-        this.addProductPromoRule, });
+        this.updateProductPromoAction,
+        this.updateProductPromoRule,
+        this.addProductPromoRuleList,
+        this.removeProductPromoRule,
+        this.addProductPromoAction, });
     factory ProductPromoBlueprint.fromJson(Map<String, dynamic> json) => _$ProductPromoBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoBlueprintToJson(this);
 }

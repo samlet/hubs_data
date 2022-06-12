@@ -49,28 +49,28 @@ class ShoppingList extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // domain_ShoppingListFlatData
     final ShoppingList? parentShoppingList;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? proto;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_ShoppingListItemList
     final ShoppingListItemCollection? shoppingListItems;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
     // String
     final String? format;
     // domain_PartyFlatData
     final Party? party;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -95,17 +95,17 @@ class ShoppingList extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.type,
-        this.productStore,
         this.parentShoppingList,
-        this.subview,
+        this.model,
         this.proto,
+        this.productStore,
+        this.contactMech,
+        this.type,
         this.cats,
         this.shoppingListItems,
-        this.model,
-        this.contactMech,
         this.format,
-        this.party, });
+        this.party,
+        this.subview, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
     @override

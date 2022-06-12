@@ -19,8 +19,6 @@ class ExampleItem extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_ExampleData
@@ -29,6 +27,8 @@ class ExampleItem extends Equatable implements WithKey{
     final String? format;
     // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ExampleItem({
         this.exampleId,
         this.exampleItemSeqId,
@@ -38,11 +38,11 @@ class ExampleItem extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.cats,
         this.example,
         this.format,
-        this.proto, });
+        this.proto,
+        this.model, });
     factory ExampleItem.fromJson(Map<String, dynamic> json) => _$ExampleItemFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleItemToJson(this);
     @override

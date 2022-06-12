@@ -105,24 +105,24 @@ class OrderItem extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? dontcancelsetuserlogin;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ShoppingListFlatData
-    final ShoppingList? addSuggestionsToShoppingList;
-    // domain_InventoryItemFlatData
-    final InventoryItem? fromInventoryItem;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
     // domain_ProductFlatData
     final Product? product;
+    // domain_UserLoginFlatData
+    final UserLogin? dontcancelsetuserlogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_InventoryItemFlatData
+    final InventoryItem? fromInventoryItem;
+    // domain_ShoppingListFlatData
+    final ShoppingList? addSuggestionsToShoppingList;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     OrderItem({
@@ -177,15 +177,15 @@ class OrderItem extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.model,
-        this.format,
-        this.dontcancelsetuserlogin,
-        this.proto,
-        this.cats,
-        this.addSuggestionsToShoppingList,
-        this.fromInventoryItem,
         this.changeByUserLogin,
         this.product,
+        this.dontcancelsetuserlogin,
+        this.model,
+        this.fromInventoryItem,
+        this.addSuggestionsToShoppingList,
+        this.proto,
+        this.format,
+        this.cats,
         this.orderHeader, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);

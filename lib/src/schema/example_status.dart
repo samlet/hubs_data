@@ -19,10 +19,10 @@ class ExampleStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_ExampleData
     final Example? example;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
@@ -40,8 +40,8 @@ class ExampleStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.example,
+        this.model,
         this.userLogin,
         this.proto,
         this.format,

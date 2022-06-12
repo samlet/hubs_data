@@ -19,16 +19,16 @@ class TelecomNumber extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
     // String
     final String? format;
+    // String
+    final String? proto;
     TelecomNumber({
         this.contactMechId,
         this.countryCode,
@@ -38,11 +38,11 @@ class TelecomNumber extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
+        this.contactMech,
         this.cats,
         this.model,
-        this.contactMech,
-        this.format, });
+        this.format,
+        this.proto, });
     factory TelecomNumber.fromJson(Map<String, dynamic> json) => _$TelecomNumberFromJson(json);
     Map<String, dynamic> toJson() => _$TelecomNumberToJson(this);
     @override

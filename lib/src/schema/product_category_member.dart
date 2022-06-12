@@ -29,14 +29,14 @@ class ProductCategoryMember extends Equatable implements WithKey{
     final ModelEntity? model;
     // String
     final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? productCategory;
     // String
     final String? format;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? productCategory;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductFlatData
+    final Product? product;
     ProductCategoryMember({
         this.productCategoryId,
         this.productId,
@@ -51,10 +51,10 @@ class ProductCategoryMember extends Equatable implements WithKey{
         this.tenantId,
         this.model,
         this.proto,
-        this.product,
-        this.cats,
+        this.format,
         this.productCategory,
-        this.format, });
+        this.cats,
+        this.product, });
     factory ProductCategoryMember.fromJson(Map<String, dynamic> json) => _$ProductCategoryMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryMemberToJson(this);
     @override

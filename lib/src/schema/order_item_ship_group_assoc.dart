@@ -21,10 +21,10 @@ class OrderItemShipGroupAssoc extends Equatable implements WithKey{
     final String? id;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // String
     final String? proto;
     // String
@@ -39,8 +39,8 @@ class OrderItemShipGroupAssoc extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.cats,
-        this.orderHeader,
         this.model,
+        this.orderHeader,
         this.proto,
         this.format, });
     factory OrderItemShipGroupAssoc.fromJson(Map<String, dynamic> json) => _$OrderItemShipGroupAssocFromJson(json);

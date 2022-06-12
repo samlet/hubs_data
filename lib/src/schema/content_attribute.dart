@@ -18,15 +18,15 @@ class ContentAttribute extends Equatable implements WithKey{
     // String
     final String? id;
     // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ContentFlatData
     final Content? content;
+    // String
+    final String? proto;
     ContentAttribute({
         this.contentId,
         this.attrName,
@@ -35,11 +35,11 @@ class ContentAttribute extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.cats,
-        this.model,
         this.format,
-        this.content, });
+        this.model,
+        this.cats,
+        this.content,
+        this.proto, });
     factory ContentAttribute.fromJson(Map<String, dynamic> json) => _$ContentAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAttributeToJson(this);
     @override

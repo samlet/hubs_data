@@ -19,16 +19,16 @@ class UserPreference extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
     UserPreference({
         this.userLoginId,
         this.userPrefTypeId,
@@ -38,11 +38,11 @@ class UserPreference extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.cats,
-        this.proto,
         this.userLogin,
-        this.model, });
+        this.format,
+        this.model,
+        this.cats,
+        this.proto, });
     factory UserPreference.fromJson(Map<String, dynamic> json) => _$UserPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$UserPreferenceToJson(this);
     @override

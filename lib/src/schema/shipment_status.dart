@@ -17,16 +17,16 @@ class ShipmentStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? format;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
     // domain_UserLoginFlatData
     final UserLogin? changeByUserLogin;
     // String
     final String? proto;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     ShipmentStatus({
@@ -37,11 +37,11 @@ class ShipmentStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.shipment,
         this.cats,
-        this.format,
+        this.shipment,
         this.changeByUserLogin,
         this.proto,
+        this.format,
         this.model, });
     factory ShipmentStatus.fromJson(Map<String, dynamic> json) => _$ShipmentStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentStatusToJson(this);

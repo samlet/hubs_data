@@ -35,20 +35,20 @@ class InventoryTransfer extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? format;
     // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_FacilityFlatData
     final Facility? toFacility;
-    // String
-    final String? proto;
     InventoryTransfer({
         this.inventoryTransferId,
         this.statusId,
@@ -66,13 +66,13 @@ class InventoryTransfer extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.facility,
-        this.model,
         this.inventoryItem,
+        this.proto,
+        this.model,
         this.cats,
         this.format,
-        this.toFacility,
-        this.proto, });
+        this.facility,
+        this.toFacility, });
     factory InventoryTransfer.fromJson(Map<String, dynamic> json) => _$InventoryTransferFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryTransferToJson(this);
     @override

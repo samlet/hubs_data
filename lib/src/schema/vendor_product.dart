@@ -15,20 +15,20 @@ class VendorProduct extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? productStoreGroup;
     // String
-    final String? format;
+    final String? proto;
     // domain_PartyFlatData
     final Party? vendorParty;
     // domain_ProductFlatData
     final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
+    final String? format;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? productStoreGroup;
     VendorProduct({
         this.productId,
         this.vendorPartyId,
@@ -36,13 +36,13 @@ class VendorProduct extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.productStoreGroup,
-        this.format,
+        this.proto,
         this.vendorParty,
         this.product,
+        this.model,
         this.cats,
-        this.proto, });
+        this.format,
+        this.productStoreGroup, });
     factory VendorProduct.fromJson(Map<String, dynamic> json) => _$VendorProductFromJson(json);
     Map<String, dynamic> toJson() => _$VendorProductToJson(this);
     @override

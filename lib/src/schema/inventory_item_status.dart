@@ -24,17 +24,17 @@ class InventoryItemStatus extends Equatable implements WithKey{
     // String
     final String? id;
     // String
-    final String? format;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
-    // String
     final String? proto;
+    // String
+    final String? format;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     InventoryItemStatus({
         this.inventoryItemId,
         this.statusId,
@@ -46,12 +46,12 @@ class InventoryItemStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.inventoryItem,
         this.proto,
+        this.format,
         this.userLogin,
-        this.cats,
-        this.model, });
+        this.inventoryItem,
+        this.model,
+        this.cats, });
     factory InventoryItemStatus.fromJson(Map<String, dynamic> json) => _$InventoryItemStatusFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemStatusToJson(this);
     @override

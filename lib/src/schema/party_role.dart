@@ -13,27 +13,27 @@ class PartyRole extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_PartyFlatData
-    final Party? party;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? party;
     PartyRole({
         this.partyId,
         this.roleTypeId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.party,
+        this.model,
+        this.cats,
         this.proto,
         this.format,
-        this.cats,
-        this.model, });
+        this.party, });
     factory PartyRole.fromJson(Map<String, dynamic> json) => _$PartyRoleFromJson(json);
     Map<String, dynamic> toJson() => _$PartyRoleToJson(this);
     @override
