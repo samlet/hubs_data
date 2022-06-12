@@ -27,14 +27,14 @@ class ProductStorePaymentSetting extends Equatable implements WithKey{
     final String? id;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     ProductStorePaymentSetting({
         this.productStoreId,
         this.paymentMethodTypeId,
@@ -48,10 +48,10 @@ class ProductStorePaymentSetting extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.productStore,
-        this.model,
-        this.cats,
+        this.format,
         this.proto,
-        this.format, });
+        this.model,
+        this.cats, });
     factory ProductStorePaymentSetting.fromJson(Map<String, dynamic> json) => _$ProductStorePaymentSettingFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePaymentSettingToJson(this);
     @override

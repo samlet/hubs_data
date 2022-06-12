@@ -17,16 +17,16 @@ class FixedAssetGeoPoint extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
     FixedAssetGeoPoint({
         this.fixedAssetId,
         this.geoPointId,
@@ -35,11 +35,11 @@ class FixedAssetGeoPoint extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.fixedAsset,
+        this.cats,
         this.proto,
         this.format,
-        this.cats,
-        this.model,
-        this.fixedAsset, });
+        this.model, });
     factory FixedAssetGeoPoint.fromJson(Map<String, dynamic> json) => _$FixedAssetGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetGeoPointToJson(this);
     @override

@@ -73,16 +73,16 @@ class Person extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // domain_PartyFlatData
+    final Party? party;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     Person({
         this.partyId,
         this.salutation,
@@ -119,11 +119,11 @@ class Person extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
         this.cats,
+        this.proto,
         this.party,
-        this.format,
-        this.proto, });
+        this.model,
+        this.format, });
     factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
     Map<String, dynamic> toJson() => _$PersonToJson(this);
     @override

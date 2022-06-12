@@ -14,19 +14,19 @@ class BillingAccountBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? addBillingAccountTerm;
-    // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? removeBillingAccountTerm;
-    // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? addBillingAccountRole;
-    // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? removeBillingAccountRole;
-    // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? updateBillingAccountRole;
+    // blueprint_BillingAccountBlueprintData
+    final BillingAccountBlueprint? addBillingAccountTermList;
     // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? updateBillingAccountTerm;
     // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? addBillingAccountTermList;
+    final BillingAccountBlueprint? removeBillingAccountRole;
+    // blueprint_BillingAccountBlueprintData
+    final BillingAccountBlueprint? addBillingAccountTerm;
+    // blueprint_BillingAccountBlueprintData
+    final BillingAccountBlueprint? addBillingAccountRole;
+    // blueprint_BillingAccountBlueprintData
+    final BillingAccountBlueprint? removeBillingAccountTerm;
     // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? addBillingAccountRoleList;
     BillingAccountBlueprint({
@@ -35,13 +35,13 @@ class BillingAccountBlueprint  {
         this.token,
         this.entity,
         this.response,
-        this.addBillingAccountTerm,
-        this.removeBillingAccountTerm,
-        this.addBillingAccountRole,
-        this.removeBillingAccountRole,
         this.updateBillingAccountRole,
-        this.updateBillingAccountTerm,
         this.addBillingAccountTermList,
+        this.updateBillingAccountTerm,
+        this.removeBillingAccountRole,
+        this.addBillingAccountTerm,
+        this.addBillingAccountRole,
+        this.removeBillingAccountTerm,
         this.addBillingAccountRoleList, });
     factory BillingAccountBlueprint.fromJson(Map<String, dynamic> json) => _$BillingAccountBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountBlueprintToJson(this);

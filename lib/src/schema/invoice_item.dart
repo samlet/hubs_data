@@ -49,26 +49,26 @@ class InvoiceItem extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFlatData
-    final Product? product;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
-    // domain_PartyFlatData
-    final Party? overrideOrgParty;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // String
-    final String? proto;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
+    // domain_PartyFlatData
+    final Party? overrideOrgParty;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_ProductFeatureFlatData
     final ProductFeature? productFeature;
+    // String
+    final String? proto;
     InvoiceItem({
         this.invoiceId,
         this.invoiceItemSeqId,
@@ -93,16 +93,16 @@ class InvoiceItem extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.cats,
-        this.product,
         this.model,
-        this.inventoryItem,
-        this.overrideOrgParty,
-        this.taxAuthorityParty,
-        this.proto,
-        this.invoice,
+        this.cats,
         this.format,
-        this.productFeature, });
+        this.inventoryItem,
+        this.invoice,
+        this.taxAuthorityParty,
+        this.overrideOrgParty,
+        this.product,
+        this.productFeature,
+        this.proto, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
     @override

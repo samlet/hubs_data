@@ -25,14 +25,14 @@ class ProductConfigOption extends Equatable implements WithKey{
     final String? id;
     // domain_ProductConfigItemFlatData
     final ProductConfigItem? configItemProductConfigItem;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductConfigOption({
         this.configItemId,
         this.configOptionId,
@@ -45,10 +45,10 @@ class ProductConfigOption extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.configItemProductConfigItem,
-        this.cats,
+        this.format,
         this.proto,
         this.model,
-        this.format, });
+        this.cats, });
     factory ProductConfigOption.fromJson(Map<String, dynamic> json) => _$ProductConfigOptionFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigOptionToJson(this);
     @override

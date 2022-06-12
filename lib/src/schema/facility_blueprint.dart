@@ -14,38 +14,38 @@ class FacilityBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_FacilityBlueprintData
-    final FacilityBlueprint? addFacilityContactMech;
+    final FacilityBlueprint? modifyFacilityType;
+    // blueprint_FacilityBlueprintData
+    final FacilityBlueprint? addFacilityContactMechPurposeList;
     // blueprint_FacilityBlueprintData
     final FacilityBlueprint? updateFacilityContactMechPurpose;
     // blueprint_FacilityBlueprintData
-    final FacilityBlueprint? updateFacilityContactMech;
+    final FacilityBlueprint? addFacilityContactMechPurpose;
     // blueprint_FacilityBlueprintData
     final FacilityBlueprint? addFacilityContactMechList;
     // blueprint_FacilityBlueprintData
-    final FacilityBlueprint? modifyFacilityType;
-    // blueprint_FacilityBlueprintData
     final FacilityBlueprint? removeFacilityContactMech;
     // blueprint_FacilityBlueprintData
+    final FacilityBlueprint? updateFacilityContactMech;
+    // blueprint_FacilityBlueprintData
+    final FacilityBlueprint? addFacilityContactMech;
+    // blueprint_FacilityBlueprintData
     final FacilityBlueprint? removeFacilityContactMechPurpose;
-    // blueprint_FacilityBlueprintData
-    final FacilityBlueprint? addFacilityContactMechPurpose;
-    // blueprint_FacilityBlueprintData
-    final FacilityBlueprint? addFacilityContactMechPurposeList;
     FacilityBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addFacilityContactMech,
-        this.updateFacilityContactMechPurpose,
-        this.updateFacilityContactMech,
-        this.addFacilityContactMechList,
         this.modifyFacilityType,
-        this.removeFacilityContactMech,
-        this.removeFacilityContactMechPurpose,
+        this.addFacilityContactMechPurposeList,
+        this.updateFacilityContactMechPurpose,
         this.addFacilityContactMechPurpose,
-        this.addFacilityContactMechPurposeList, });
+        this.addFacilityContactMechList,
+        this.removeFacilityContactMech,
+        this.updateFacilityContactMech,
+        this.addFacilityContactMech,
+        this.removeFacilityContactMechPurpose, });
     factory FacilityBlueprint.fromJson(Map<String, dynamic> json) => _$FacilityBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityBlueprintToJson(this);
 }

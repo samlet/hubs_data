@@ -27,16 +27,16 @@ class FixedAssetProduct extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     FixedAssetProduct({
@@ -52,11 +52,11 @@ class FixedAssetProduct extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.cats,
-        this.format,
-        this.fixedAsset,
         this.product,
+        this.format,
+        this.proto,
+        this.fixedAsset,
+        this.cats,
         this.model, });
     factory FixedAssetProduct.fromJson(Map<String, dynamic> json) => _$FixedAssetProductFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetProductToJson(this);

@@ -13,16 +13,16 @@ class PartyNote extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
     // domain_PartyFlatData
     final Party? party;
     // String
-    final String? format;
+    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_NoteDataData
     final NoteData? noteData;
     PartyNote({
@@ -31,11 +31,11 @@ class PartyNote extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.model,
-        this.proto,
-        this.party,
         this.format,
+        this.model,
+        this.party,
+        this.proto,
+        this.cats,
         this.noteData, });
     factory PartyNote.fromJson(Map<String, dynamic> json) => _$PartyNoteFromJson(json);
     Map<String, dynamic> toJson() => _$PartyNoteToJson(this);

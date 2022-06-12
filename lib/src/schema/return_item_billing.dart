@@ -23,18 +23,18 @@ class ReturnItemBilling extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
     // domain_InvoiceFlatData
     final Invoice? invoice;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     ReturnItemBilling({
         this.returnId,
         this.returnItemSeqId,
@@ -46,12 +46,12 @@ class ReturnItemBilling extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.cats,
         this.model,
-        this.returnHeader,
-        this.invoice,
-        this.format,
         this.proto,
-        this.cats, });
+        this.format,
+        this.returnHeader,
+        this.invoice, });
     factory ReturnItemBilling.fromJson(Map<String, dynamic> json) => _$ReturnItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemBillingToJson(this);
     @override

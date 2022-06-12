@@ -19,18 +19,18 @@ class FactProtoStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_FactProtoData
     final FactProto? factProto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // String
+    final String? proto;
     FactProtoStatus({
         this.factProtoId,
         this.statusDate,
@@ -40,12 +40,12 @@ class FactProtoStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
-        this.model,
         this.factProto,
         this.cats,
-        this.proto,
-        this.format, });
+        this.model,
+        this.format,
+        this.userLogin,
+        this.proto, });
     factory FactProtoStatus.fromJson(Map<String, dynamic> json) => _$FactProtoStatusFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoStatusToJson(this);
     @override

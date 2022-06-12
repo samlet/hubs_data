@@ -14,38 +14,38 @@ class BlacklistBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? removeBlacklistItem;
-    // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistItem;
-    // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? modifyBlacklistType;
-    // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? addBlacklistStatusList;
-    // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistStatus;
-    // blueprint_BlacklistBlueprintData
-    final BlacklistBlueprint? addBlacklistItemList;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? updateBlacklistStatus;
     // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? updateBlacklistItem;
     // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? addBlacklistStatus;
+    // blueprint_BlacklistBlueprintData
     final BlacklistBlueprint? removeBlacklistStatus;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? modifyBlacklistType;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? removeBlacklistItem;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? addBlacklistItemList;
+    // blueprint_BlacklistBlueprintData
+    final BlacklistBlueprint? addBlacklistItem;
     BlacklistBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.removeBlacklistItem,
-        this.addBlacklistItem,
-        this.modifyBlacklistType,
         this.addBlacklistStatusList,
-        this.addBlacklistStatus,
-        this.addBlacklistItemList,
         this.updateBlacklistStatus,
         this.updateBlacklistItem,
-        this.removeBlacklistStatus, });
+        this.addBlacklistStatus,
+        this.removeBlacklistStatus,
+        this.modifyBlacklistType,
+        this.removeBlacklistItem,
+        this.addBlacklistItemList,
+        this.addBlacklistItem, });
     factory BlacklistBlueprint.fromJson(Map<String, dynamic> json) => _$BlacklistBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistBlueprintToJson(this);
 }

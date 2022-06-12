@@ -2,7 +2,7 @@ part of '../../messages.dart';
 
 /// domain_ProductTypeData
 @JsonSerializable()
-class ProductType  {
+class ProductType extends Equatable implements WithKey{
     // String
     final String? productTypeId;
     // String
@@ -21,14 +21,14 @@ class ProductType  {
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
     ProductType({
         this.productTypeId,
         this.parentTypeId,
@@ -39,10 +39,14 @@ class ProductType  {
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.cats,
         this.model,
-        this.format,
         this.proto,
-        this.cats, });
+        this.format, });
     factory ProductType.fromJson(Map<String, dynamic> json) => _$ProductTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ProductTypeToJson(this);
+    @override
+    List<Object?> get props => [productTypeId];
+    @override
+    String get key => productTypeId!;
 }

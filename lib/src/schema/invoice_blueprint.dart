@@ -14,74 +14,74 @@ class InvoiceBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? removeOrderAdjustmentBilling;
+    final InvoiceBlueprint? removeInvoiceItem;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? modifyInvoiceType;
+    final InvoiceBlueprint? addInvoiceItemList;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? addOrderItemBillingList;
+    final InvoiceBlueprint? updateAcctgTrans;
     // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? addInvoiceItem;
     // blueprint_InvoiceBlueprintData
+    final InvoiceBlueprint? removeOrderItemBilling;
+    // blueprint_InvoiceBlueprintData
+    final InvoiceBlueprint? updateOrderAdjustmentBilling;
+    // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? removeInvoiceStatus;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? removeInvoiceItem;
+    final InvoiceBlueprint? updateInvoiceStatus;
     // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? addOrderItemBilling;
     // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? addOrderAdjustmentBillingList;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? addInvoiceStatus;
+    final InvoiceBlueprint? addAcctgTrans;
     // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? addInvoiceStatusList;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? removeOrderItemBilling;
-    // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? updateOrderItemBilling;
-    // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? addAcctgTrans;
-    // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? updateInvoiceItem;
-    // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? addAcctgTransList;
-    // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? updateAcctgTrans;
     // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? removeAcctgTrans;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? addInvoiceItemList;
+    final InvoiceBlueprint? addInvoiceStatus;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? updateInvoiceStatus;
+    final InvoiceBlueprint? removeOrderAdjustmentBilling;
     // blueprint_InvoiceBlueprintData
     final InvoiceBlueprint? addOrderAdjustmentBilling;
     // blueprint_InvoiceBlueprintData
-    final InvoiceBlueprint? updateOrderAdjustmentBilling;
+    final InvoiceBlueprint? modifyInvoiceType;
+    // blueprint_InvoiceBlueprintData
+    final InvoiceBlueprint? updateOrderItemBilling;
+    // blueprint_InvoiceBlueprintData
+    final InvoiceBlueprint? addOrderItemBillingList;
+    // blueprint_InvoiceBlueprintData
+    final InvoiceBlueprint? addAcctgTransList;
     InvoiceBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.removeOrderAdjustmentBilling,
-        this.modifyInvoiceType,
-        this.addOrderItemBillingList,
-        this.addInvoiceItem,
-        this.removeInvoiceStatus,
         this.removeInvoiceItem,
+        this.addInvoiceItemList,
+        this.updateAcctgTrans,
+        this.addInvoiceItem,
+        this.removeOrderItemBilling,
+        this.updateOrderAdjustmentBilling,
+        this.removeInvoiceStatus,
+        this.updateInvoiceStatus,
         this.addOrderItemBilling,
         this.addOrderAdjustmentBillingList,
-        this.addInvoiceStatus,
-        this.addInvoiceStatusList,
-        this.removeOrderItemBilling,
-        this.updateOrderItemBilling,
         this.addAcctgTrans,
+        this.addInvoiceStatusList,
         this.updateInvoiceItem,
-        this.addAcctgTransList,
-        this.updateAcctgTrans,
         this.removeAcctgTrans,
-        this.addInvoiceItemList,
-        this.updateInvoiceStatus,
+        this.addInvoiceStatus,
+        this.removeOrderAdjustmentBilling,
         this.addOrderAdjustmentBilling,
-        this.updateOrderAdjustmentBilling, });
+        this.modifyInvoiceType,
+        this.updateOrderItemBilling,
+        this.addOrderItemBillingList,
+        this.addAcctgTransList, });
     factory InvoiceBlueprint.fromJson(Map<String, dynamic> json) => _$InvoiceBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceBlueprintToJson(this);
 }

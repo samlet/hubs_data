@@ -15,10 +15,10 @@ class DataResourceCollection  {
     final List<DataResourceWithAudio>? matchAudio;
     // List<data_resource_VideoProto>
     final List<DataResourceWithVideo>? matchVideo;
-    // List<data_resource_ImageProto>
-    final List<DataResourceWithImage>? matchImage;
     // List<data_resource_TextProto>
     final List<DataResourceWithText>? matchText;
+    // List<data_resource_ImageProto>
+    final List<DataResourceWithImage>? matchImage;
     DataResourceCollection({
         this.values,
         this.nextPageToken,
@@ -26,8 +26,8 @@ class DataResourceCollection  {
         this.filter,
         this.matchAudio,
         this.matchVideo,
-        this.matchImage,
-        this.matchText, });
+        this.matchText,
+        this.matchImage, });
     factory DataResourceCollection.fromJson(Map<String, dynamic> json) => _$DataResourceCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceCollectionToJson(this);
 }

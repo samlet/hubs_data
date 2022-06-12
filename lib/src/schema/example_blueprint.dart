@@ -14,38 +14,38 @@ class ExampleBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ExampleBlueprintData
-    final ExampleBlueprint? addExampleItemList;
-    // blueprint_ExampleBlueprintData
-    final ExampleBlueprint? addExampleItem;
-    // blueprint_ExampleBlueprintData
     final ExampleBlueprint? updateExampleStatus;
-    // blueprint_ExampleBlueprintData
-    final ExampleBlueprint? addExampleStatus;
     // blueprint_ExampleBlueprintData
     final ExampleBlueprint? removeExampleItem;
     // blueprint_ExampleBlueprintData
+    final ExampleBlueprint? updateExampleItem;
+    // blueprint_ExampleBlueprintData
+    final ExampleBlueprint? removeExampleStatus;
+    // blueprint_ExampleBlueprintData
     final ExampleBlueprint? modifyExampleType;
     // blueprint_ExampleBlueprintData
-    final ExampleBlueprint? updateExampleItem;
+    final ExampleBlueprint? addExampleStatus;
     // blueprint_ExampleBlueprintData
     final ExampleBlueprint? addExampleStatusList;
     // blueprint_ExampleBlueprintData
-    final ExampleBlueprint? removeExampleStatus;
+    final ExampleBlueprint? addExampleItem;
+    // blueprint_ExampleBlueprintData
+    final ExampleBlueprint? addExampleItemList;
     ExampleBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addExampleItemList,
-        this.addExampleItem,
         this.updateExampleStatus,
-        this.addExampleStatus,
         this.removeExampleItem,
-        this.modifyExampleType,
         this.updateExampleItem,
+        this.removeExampleStatus,
+        this.modifyExampleType,
+        this.addExampleStatus,
         this.addExampleStatusList,
-        this.removeExampleStatus, });
+        this.addExampleItem,
+        this.addExampleItemList, });
     factory ExampleBlueprint.fromJson(Map<String, dynamic> json) => _$ExampleBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleBlueprintToJson(this);
 }

@@ -16,23 +16,23 @@ class PaymentBlueprint  {
     // blueprint_PaymentBlueprintData
     final PaymentBlueprint? addPaymentApplication;
     // blueprint_PaymentBlueprintData
+    final PaymentBlueprint? removePaymentApplication;
+    // blueprint_PaymentBlueprintData
+    final PaymentBlueprint? updateAcctgTrans;
+    // blueprint_PaymentBlueprintData
+    final PaymentBlueprint? addAcctgTrans;
+    // blueprint_PaymentBlueprintData
     final PaymentBlueprint? modifyPaymentGatewayResponse;
     // blueprint_PaymentBlueprintData
     final PaymentBlueprint? modifyPaymentType;
     // blueprint_PaymentBlueprintData
-    final PaymentBlueprint? updatePaymentApplication;
-    // blueprint_PaymentBlueprintData
-    final PaymentBlueprint? updateAcctgTrans;
-    // blueprint_PaymentBlueprintData
-    final PaymentBlueprint? addPaymentApplicationList;
+    final PaymentBlueprint? addAcctgTransList;
     // blueprint_PaymentBlueprintData
     final PaymentBlueprint? removeAcctgTrans;
     // blueprint_PaymentBlueprintData
-    final PaymentBlueprint? addAcctgTransList;
+    final PaymentBlueprint? addPaymentApplicationList;
     // blueprint_PaymentBlueprintData
-    final PaymentBlueprint? addAcctgTrans;
-    // blueprint_PaymentBlueprintData
-    final PaymentBlueprint? removePaymentApplication;
+    final PaymentBlueprint? updatePaymentApplication;
     PaymentBlueprint({
         this.id,
         this.startTs,
@@ -40,15 +40,15 @@ class PaymentBlueprint  {
         this.entity,
         this.response,
         this.addPaymentApplication,
+        this.removePaymentApplication,
+        this.updateAcctgTrans,
+        this.addAcctgTrans,
         this.modifyPaymentGatewayResponse,
         this.modifyPaymentType,
-        this.updatePaymentApplication,
-        this.updateAcctgTrans,
-        this.addPaymentApplicationList,
-        this.removeAcctgTrans,
         this.addAcctgTransList,
-        this.addAcctgTrans,
-        this.removePaymentApplication, });
+        this.removeAcctgTrans,
+        this.addPaymentApplicationList,
+        this.updatePaymentApplication, });
     factory PaymentBlueprint.fromJson(Map<String, dynamic> json) => _$PaymentBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentBlueprintToJson(this);
 }

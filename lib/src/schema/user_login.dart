@@ -41,24 +41,24 @@ class UserLogin extends Equatable implements WithKey{
     final String? partyId;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserPreferenceList
-    final UserPreferenceCollection? userPreferences;
-    // String
-    final String? format;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginPasswordHistoryList
-    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_UserLoginSecurityGroupList
-    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
     // String
     final String? proto;
+    // domain_PartyFlatData
+    final Party? party;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_UserPreferenceList
+    final UserPreferenceCollection? userPreferences;
+    // domain_UserLoginPasswordHistoryList
+    final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginSecurityGroupList
+    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     UserLogin({
         this.userLoginId,
         this.currentPassword,
@@ -79,15 +79,15 @@ class UserLogin extends Equatable implements WithKey{
         this.createdTxStamp,
         this.partyId,
         this.tenantId,
-        this.model,
-        this.userPreferences,
-        this.format,
-        this.subview,
-        this.cats,
-        this.userLoginPasswordHistories,
+        this.proto,
         this.party,
+        this.subview,
+        this.userPreferences,
+        this.userLoginPasswordHistories,
+        this.format,
+        this.model,
         this.userLoginSecurityGroups,
-        this.proto, });
+        this.cats, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
     @override

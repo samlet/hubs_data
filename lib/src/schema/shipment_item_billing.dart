@@ -19,16 +19,16 @@ class ShipmentItemBilling extends Equatable implements WithKey{
     final String? id;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_ShipmentFlatData
     final Shipment? shipment;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ShipmentItemBilling({
         this.shipmentId,
         this.shipmentItemSeqId,
@@ -38,11 +38,11 @@ class ShipmentItemBilling extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.proto,
-        this.model,
+        this.shipment,
         this.invoice,
-        this.cats,
+        this.model,
         this.format,
-        this.shipment, });
+        this.cats, });
     factory ShipmentItemBilling.fromJson(Map<String, dynamic> json) => _$ShipmentItemBillingFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentItemBillingToJson(this);
     @override

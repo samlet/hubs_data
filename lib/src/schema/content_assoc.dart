@@ -39,22 +39,22 @@ class ContentAssoc extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContentFlatData
-    final Content? toContent;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_ContentFlatData
-    final Content? fromContent;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_ContentFlatData
+    final Content? fromContent;
+    // String
     final String? format;
+    // domain_ContentFlatData
+    final Content? toContent;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     ContentAssoc({
         this.contentId,
         this.contentIdTo,
@@ -74,14 +74,14 @@ class ContentAssoc extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.toContent,
-        this.model,
-        this.createdbyuserlogin,
-        this.fromContent,
-        this.proto,
-        this.lastmodifiedbyuserlogin,
         this.cats,
-        this.format, });
+        this.proto,
+        this.model,
+        this.lastmodifiedbyuserlogin,
+        this.fromContent,
+        this.format,
+        this.toContent,
+        this.createdbyuserlogin, });
     factory ContentAssoc.fromJson(Map<String, dynamic> json) => _$ContentAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAssocToJson(this);
     @override

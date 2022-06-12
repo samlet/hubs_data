@@ -29,14 +29,14 @@ class WorkEffortGoodStandard extends Equatable implements WithKey{
     final ModelEntity? model;
     // domain_WorkEffortFlatData
     final WorkEffort? workEffort;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     // domain_ProductFlatData
     final Product? product;
+    // String
+    final String? proto;
     WorkEffortGoodStandard({
         this.workEffortId,
         this.productId,
@@ -51,10 +51,10 @@ class WorkEffortGoodStandard extends Equatable implements WithKey{
         this.id,
         this.model,
         this.workEffort,
-        this.format,
-        this.proto,
         this.cats,
-        this.product, });
+        this.format,
+        this.product,
+        this.proto, });
     factory WorkEffortGoodStandard.fromJson(Map<String, dynamic> json) => _$WorkEffortGoodStandardFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortGoodStandardToJson(this);
     @override

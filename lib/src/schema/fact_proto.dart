@@ -23,14 +23,14 @@ class FactProto extends Equatable implements WithKey{
     final String? format;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_FactProtoStatusList
-    final FactProtoStatusCollection? factProtoStatuses;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // domain_FactProtoStatusList
+    final FactProtoStatusCollection? factProtoStatuses;
     FactProto({
         this.factId,
         this.data,
@@ -42,10 +42,10 @@ class FactProto extends Equatable implements WithKey{
         this.model,
         this.format,
         this.subview,
-        this.cats,
         this.proto,
-        this.factProtoStatuses,
-        this.type, });
+        this.cats,
+        this.type,
+        this.factProtoStatuses, });
     factory FactProto.fromJson(Map<String, dynamic> json) => _$FactProtoFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoToJson(this);
     @override

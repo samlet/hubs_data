@@ -35,14 +35,14 @@ class AgreementTerm extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_AgreementFlatData
     final Agreement? agreement;
     AgreementTerm({
@@ -62,10 +62,10 @@ class AgreementTerm extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.model,
         this.format,
+        this.cats,
         this.proto,
+        this.model,
         this.agreement, });
     factory AgreementTerm.fromJson(Map<String, dynamic> json) => _$AgreementTermFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementTermToJson(this);

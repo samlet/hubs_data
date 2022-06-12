@@ -17,18 +17,18 @@ class AgreementProductAppl extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
     // domain_AgreementFlatData
     final Agreement? agreement;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
     // domain_ProductFlatData
     final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     AgreementProductAppl({
         this.agreementId,
         this.agreementItemSeqId,
@@ -37,12 +37,12 @@ class AgreementProductAppl extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
         this.proto,
         this.agreement,
+        this.product,
         this.cats,
-        this.format,
-        this.product, });
+        this.model,
+        this.format, });
     factory AgreementProductAppl.fromJson(Map<String, dynamic> json) => _$AgreementProductApplFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementProductApplToJson(this);
     @override

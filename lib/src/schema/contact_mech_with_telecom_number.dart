@@ -9,16 +9,16 @@ class ContactMechWithTelecomNumber  {
     final ContactMech? contactMech;
     // domain_TelecomNumberFlatData
     final TelecomNumber? telecomNumber;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     ContactMechWithTelecomNumber({
         this.id,
         this.contactMech,
         this.telecomNumber,
-        this.proto,
-        this.subview, });
+        this.subview,
+        this.proto, });
     factory ContactMechWithTelecomNumber.fromJson(Map<String, dynamic> json) => _$ContactMechWithTelecomNumberFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechWithTelecomNumberToJson(this);
 }

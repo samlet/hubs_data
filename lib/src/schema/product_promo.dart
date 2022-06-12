@@ -39,26 +39,26 @@ class ProductPromo extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductPromoActionList
-    final ProductPromoActionCollection? productPromoActions;
-    // domain_ProductPromoRuleList
-    final ProductPromoRuleCollection? productPromoRules;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_ProductPromoRuleList
+    final ProductPromoRuleCollection? productPromoRules;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
     // String
     final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? format;
     // domain_PartyFlatData
     final Party? party;
+    // domain_ProductPromoActionList
+    final ProductPromoActionCollection? productPromoActions;
     ProductPromo({
         this.productPromoId,
         this.promoName,
@@ -78,16 +78,16 @@ class ProductPromo extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productPromoActions,
-        this.productPromoRules,
+        this.cats,
         this.model,
+        this.productPromoRules,
+        this.format,
+        this.createdbyuserlogin,
         this.lastmodifiedbyuserlogin,
         this.proto,
         this.subview,
-        this.cats,
-        this.createdbyuserlogin,
-        this.format,
-        this.party, });
+        this.party,
+        this.productPromoActions, });
     factory ProductPromo.fromJson(Map<String, dynamic> json) => _$ProductPromoFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoToJson(this);
     @override

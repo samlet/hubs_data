@@ -11,12 +11,12 @@ class PartyCollection  {
     final String? regionId;
     // List<party_SupplierProto>
     final List<PartyWithSupplier>? matchSupplier;
+    // List<party_PersonProto>
+    final List<PartyWithPerson>? matchPerson;
     // List<party_PartyGroupProto>
     final List<PartyWithPartyGroup>? matchPartyGroup;
     // domain_PartyList
     final PartyCollection? filter;
-    // List<party_PersonProto>
-    final List<PartyWithPerson>? matchPerson;
     // List<party_CorporationProto>
     final List<PartyWithCorporation>? matchCorporation;
     PartyCollection({
@@ -24,9 +24,9 @@ class PartyCollection  {
         this.nextPageToken,
         this.regionId,
         this.matchSupplier,
+        this.matchPerson,
         this.matchPartyGroup,
         this.filter,
-        this.matchPerson,
         this.matchCorporation, });
     factory PartyCollection.fromJson(Map<String, dynamic> json) => _$PartyCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$PartyCollectionToJson(this);
