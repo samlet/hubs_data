@@ -41,24 +41,24 @@ class UserLogin extends Equatable implements WithKey{
     final String? partyId;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // domain_UserPreferenceList
-    final UserPreferenceCollection? userPreferences;
-    // domain_UserLoginSecurityGroupList
-    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
-    final String? format;
     // domain_UserLoginPasswordHistoryList
     final UserLoginPasswordHistoryCollection? userLoginPasswordHistories;
+    // String
+    final String? format;
+    // domain_UserLoginSecurityGroupList
+    final UserLoginSecurityGroupCollection? userLoginSecurityGroups;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_UserPreferenceList
+    final UserPreferenceCollection? userPreferences;
     UserLogin({
         this.userLoginId,
         this.currentPassword,
@@ -79,15 +79,15 @@ class UserLogin extends Equatable implements WithKey{
         this.createdTxStamp,
         this.partyId,
         this.tenantId,
-        this.proto,
-        this.userPreferences,
-        this.userLoginSecurityGroups,
         this.subview,
-        this.model,
-        this.cats,
-        this.party,
+        this.userLoginPasswordHistories,
         this.format,
-        this.userLoginPasswordHistories, });
+        this.userLoginSecurityGroups,
+        this.cats,
+        this.proto,
+        this.model,
+        this.party,
+        this.userPreferences, });
     factory UserLogin.fromJson(Map<String, dynamic> json) => _$UserLoginFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginToJson(this);
     @override

@@ -9,16 +9,16 @@ class DataResourceWithText  {
     final DataResource? dataResource;
     // domain_ElectronicTextFlatData
     final ElectronicText? electronicText;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     DataResourceWithText({
         this.id,
         this.dataResource,
         this.electronicText,
-        this.subview,
-        this.proto, });
+        this.proto,
+        this.subview, });
     factory DataResourceWithText.fromJson(Map<String, dynamic> json) => _$DataResourceWithTextFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceWithTextToJson(this);
 }

@@ -19,18 +19,18 @@ class TypesEntityStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? typesEntity;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
     final String? proto;
-    // domain_TypesEntityData
-    final TypesEntity? typesEntity;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     TypesEntityStatus({
         this.typesEntityId,
         this.statusDate,
@@ -40,12 +40,12 @@ class TypesEntityStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.format,
+        this.typesEntity,
         this.cats,
         this.userLogin,
         this.proto,
-        this.typesEntity, });
+        this.format,
+        this.model, });
     factory TypesEntityStatus.fromJson(Map<String, dynamic> json) => _$TypesEntityStatusFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityStatusToJson(this);
     @override

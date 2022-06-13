@@ -33,8 +33,6 @@ class ProductFeature extends Equatable implements WithKey{
     final FieldCatsValue? cats;
     // String
     final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_ProductFeatureCategoryFlatData
     final ProductFeatureCategory? productFeatureCategory;
     // String
@@ -43,6 +41,8 @@ class ProductFeature extends Equatable implements WithKey{
     final ListItemProtoValue? subview;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ProductFeature({
         this.productFeatureId,
         this.productFeatureTypeId,
@@ -59,11 +59,11 @@ class ProductFeature extends Equatable implements WithKey{
         this.tenantId,
         this.cats,
         this.format,
-        this.model,
         this.productFeatureCategory,
         this.proto,
         this.subview,
-        this.type, });
+        this.type,
+        this.model, });
     factory ProductFeature.fromJson(Map<String, dynamic> json) => _$ProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureToJson(this);
     @override

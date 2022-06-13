@@ -21,18 +21,18 @@ class WorkEffortAssoc extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     // String
     final String? format;
-    // domain_WorkEffortFlatData
-    final WorkEffort? fromWorkEffort;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_WorkEffortFlatData
     final WorkEffort? toWorkEffort;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_WorkEffortFlatData
+    final WorkEffort? fromWorkEffort;
     WorkEffortAssoc({
         this.workEffortIdFrom,
         this.workEffortIdTo,
@@ -43,12 +43,12 @@ class WorkEffortAssoc extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.model,
+        this.proto,
         this.format,
-        this.fromWorkEffort,
         this.cats,
         this.toWorkEffort,
-        this.proto,
-        this.model, });
+        this.fromWorkEffort, });
     factory WorkEffortAssoc.fromJson(Map<String, dynamic> json) => _$WorkEffortAssocFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortAssocToJson(this);
     @override

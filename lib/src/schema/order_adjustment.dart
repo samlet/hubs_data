@@ -75,20 +75,20 @@ class OrderAdjustment extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? proto;
     // String
     final String? format;
+    // String
+    final String? proto;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderAdjustment({
         this.orderAdjustmentId,
         this.orderAdjustmentTypeId,
@@ -126,13 +126,13 @@ class OrderAdjustment extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productPromo,
-        this.model,
-        this.userLogin,
-        this.proto,
         this.format,
+        this.proto,
         this.orderHeader,
-        this.cats, });
+        this.userLogin,
+        this.productPromo,
+        this.cats,
+        this.model, });
     factory OrderAdjustment.fromJson(Map<String, dynamic> json) => _$OrderAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$OrderAdjustmentToJson(this);
     @override

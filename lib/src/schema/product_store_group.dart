@@ -19,28 +19,28 @@ class ProductStoreGroup extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? primaryParentProductStoreGroup;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ProductStoreGroupMemberList
+    final ProductStoreGroupMemberCollection? productStoreGroupMembers;
+    // domain_ProductStoreGroupRoleList
+    final ProductStoreGroupRoleCollection? productStoreGroupRoles;
+    // domain_VendorProductList
+    final VendorProductCollection? vendorProducts;
     // String
     final String? format;
     // String
     final String? proto;
-    // domain_TypesEntityData
-    final TypesEntity? type;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_ProductStoreGroupMemberList
-    final ProductStoreGroupMemberCollection? productStoreGroupMembers;
-    // domain_VendorProductList
-    final VendorProductCollection? vendorProducts;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? primaryParentProductStoreGroup;
-    // domain_ProductStoreList
-    final ProductStoreCollection? primaryProductStores;
-    // domain_ProductStoreGroupRoleList
-    final ProductStoreGroupRoleCollection? productStoreGroupRoles;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_ProductStoreList
+    final ProductStoreCollection? primaryProductStores;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductStoreGroup({
         this.productStoreGroupId,
         this.productStoreGroupTypeId,
@@ -50,17 +50,17 @@ class ProductStoreGroup extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.primaryParentProductStoreGroup,
+        this.type,
+        this.productStoreGroupMembers,
+        this.productStoreGroupRoles,
+        this.vendorProducts,
         this.format,
         this.proto,
-        this.type,
         this.model,
-        this.productStoreGroupMembers,
-        this.vendorProducts,
-        this.primaryParentProductStoreGroup,
+        this.subview,
         this.primaryProductStores,
-        this.productStoreGroupRoles,
-        this.cats,
-        this.subview, });
+        this.cats, });
     factory ProductStoreGroup.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupToJson(this);
     @override

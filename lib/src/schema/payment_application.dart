@@ -27,20 +27,20 @@ class PaymentApplication extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // domain_BillingAccountFlatData
     final BillingAccount? billingAccount;
     // domain_PaymentFlatData
     final Payment? payment;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     // domain_PaymentFlatData
     final Payment? toPayment;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_InvoiceFlatData
     final Invoice? invoice;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     PaymentApplication({
@@ -56,13 +56,13 @@ class PaymentApplication extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.proto,
+        this.format,
         this.billingAccount,
         this.payment,
-        this.format,
-        this.proto,
         this.toPayment,
-        this.model,
         this.invoice,
+        this.model,
         this.cats, });
     factory PaymentApplication.fromJson(Map<String, dynamic> json) => _$PaymentApplicationFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentApplicationToJson(this);

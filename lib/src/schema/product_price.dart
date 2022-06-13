@@ -51,26 +51,26 @@ class ProductPrice extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
+    // String
+    final String? format;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
     // String
     final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? desc;
     // domain_UserLoginFlatData
     final UserLogin? lastmodifiedbyuserlogin;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // String
-    final String? format;
+    // domain_PartyFlatData
+    final Party? taxAuthorityParty;
     ProductPrice({
         this.productId,
         this.productPriceTypeId,
@@ -96,16 +96,16 @@ class ProductPrice extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.createdbyuserlogin,
         this.model,
-        this.taxAuthorityParty,
+        this.format,
+        this.product,
         this.productStoreGroup,
         this.proto,
-        this.product,
         this.cats,
         this.desc,
         this.lastmodifiedbyuserlogin,
-        this.createdbyuserlogin,
-        this.format, });
+        this.taxAuthorityParty, });
     factory ProductPrice.fromJson(Map<String, dynamic> json) => _$ProductPriceFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPriceToJson(this);
     @override

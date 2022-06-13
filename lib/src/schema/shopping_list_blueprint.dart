@@ -13,30 +13,30 @@ class ShoppingListBlueprint  {
     final ShoppingList? entity;
     // List<routines_Response>
     final List<ResponseValue>? response;
-    // blueprint_ShoppingListBlueprintData
-    final ShoppingListBlueprint? removeShoppingListItem;
-    // blueprint_ShoppingListBlueprintData
-    final ShoppingListBlueprint? updateShoppingListItem;
     // routines_Currency
     final CurrencyValue? grandTotal;
+    // blueprint_ShoppingListBlueprintData
+    final ShoppingListBlueprint? modifyShoppingListType;
+    // blueprint_ShoppingListBlueprintData
+    final ShoppingListBlueprint? updateShoppingListItem;
+    // blueprint_ShoppingListBlueprintData
+    final ShoppingListBlueprint? removeShoppingListItem;
     // blueprint_ShoppingListBlueprintData
     final ShoppingListBlueprint? addShoppingListItemList;
     // blueprint_ShoppingListBlueprintData
     final ShoppingListBlueprint? addShoppingListItem;
-    // blueprint_ShoppingListBlueprintData
-    final ShoppingListBlueprint? modifyShoppingListType;
     ShoppingListBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.removeShoppingListItem,
-        this.updateShoppingListItem,
         this.grandTotal,
+        this.modifyShoppingListType,
+        this.updateShoppingListItem,
+        this.removeShoppingListItem,
         this.addShoppingListItemList,
-        this.addShoppingListItem,
-        this.modifyShoppingListType, });
+        this.addShoppingListItem, });
     factory ShoppingListBlueprint.fromJson(Map<String, dynamic> json) => _$ShoppingListBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListBlueprintToJson(this);
 }

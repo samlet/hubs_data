@@ -55,36 +55,36 @@ class Content extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ContentFlatData
-    final Content? instanceOfContent;
-    // domain_ContentPurposeList
-    final ContentPurposeCollection? contentPurposes;
-    // String
-    final String? format;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ContentFlatData
-    final Content? ownerContent;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_DataResourceFlatData
-    final DataResource? templateDataResource;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_DataResourceFlatData
-    final DataResource? dataResource;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
     // domain_ContentAttributeList
     final ContentAttributeCollection? contentAttributes;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ContentAssocList
-    final ContentAssocCollection? toContentAssocs;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ContentPurposeList
+    final ContentPurposeCollection? contentPurposes;
     // domain_ContentFlatData
     final Content? decoratorContent;
+    // String
+    final String? format;
+    // domain_ContentFlatData
+    final Content? instanceOfContent;
+    // domain_ContentFlatData
+    final Content? ownerContent;
+    // domain_DataResourceFlatData
+    final DataResource? dataResource;
+    // String
+    final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_DataResourceFlatData
+    final DataResource? templateDataResource;
+    // domain_ContentAssocList
+    final ContentAssocCollection? toContentAssocs;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -112,21 +112,21 @@ class Content extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.instanceOfContent,
-        this.contentPurposes,
-        this.format,
-        this.proto,
-        this.cats,
-        this.ownerContent,
-        this.createdbyuserlogin,
-        this.templateDataResource,
-        this.subview,
-        this.dataResource,
-        this.lastmodifiedbyuserlogin,
         this.contentAttributes,
-        this.model,
+        this.subview,
+        this.contentPurposes,
+        this.decoratorContent,
+        this.format,
+        this.instanceOfContent,
+        this.ownerContent,
+        this.dataResource,
+        this.proto,
+        this.createdbyuserlogin,
+        this.lastmodifiedbyuserlogin,
+        this.templateDataResource,
         this.toContentAssocs,
-        this.decoratorContent, });
+        this.model,
+        this.cats, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
     @override

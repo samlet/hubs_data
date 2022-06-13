@@ -14,21 +14,21 @@ class ContentBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ContentBlueprintData
-    final ContentBlueprint? updateToContentAssoc;
-    // blueprint_ContentBlueprintData
-    final ContentBlueprint? addToContentAssocList;
-    // blueprint_ContentBlueprintData
     final ContentBlueprint? removeContentAttribute;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? updateToContentAssoc;
     // blueprint_ContentBlueprintData
     final ContentBlueprint? removeContentPurpose;
     // blueprint_ContentBlueprintData
-    final ContentBlueprint? addContentPurpose;
-    // blueprint_ContentBlueprintData
     final ContentBlueprint? addContentPurposeList;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? addContentPurpose;
     // blueprint_ContentBlueprintData
     final ContentBlueprint? removeToContentAssoc;
     // blueprint_ContentBlueprintData
     final ContentBlueprint? addContentAttributeList;
+    // blueprint_ContentBlueprintData
+    final ContentBlueprint? addToContentAssocList;
     // blueprint_ContentBlueprintData
     final ContentBlueprint? updateContentAttribute;
     // blueprint_ContentBlueprintData
@@ -43,14 +43,14 @@ class ContentBlueprint  {
         this.token,
         this.entity,
         this.response,
-        this.updateToContentAssoc,
-        this.addToContentAssocList,
         this.removeContentAttribute,
+        this.updateToContentAssoc,
         this.removeContentPurpose,
-        this.addContentPurpose,
         this.addContentPurposeList,
+        this.addContentPurpose,
         this.removeToContentAssoc,
         this.addContentAttributeList,
+        this.addToContentAssocList,
         this.updateContentAttribute,
         this.addToContentAssoc,
         this.updateContentPurpose,

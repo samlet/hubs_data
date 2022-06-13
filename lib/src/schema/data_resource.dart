@@ -51,24 +51,24 @@ class DataResource extends Equatable implements WithKey{
     final UserLogin? createdbyuserlogin;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // data_resource_VideoProto
-    final DataResourceWithVideo? asVideo;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // data_resource_AudioProto
-    final DataResourceWithAudio? asAudio;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // data_resource_TextProto
-    final DataResourceWithText? asText;
     // domain_TypesEntityData
     final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // String
+    final String? proto;
+    // data_resource_VideoProto
+    final DataResourceWithVideo? asVideo;
+    // data_resource_TextProto
+    final DataResourceWithText? asText;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // data_resource_AudioProto
+    final DataResourceWithAudio? asAudio;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // data_resource_ImageProto
     final DataResourceWithImage? asImage;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     DataResource({
@@ -96,15 +96,15 @@ class DataResource extends Equatable implements WithKey{
         this.tenantId,
         this.createdbyuserlogin,
         this.cats,
-        this.asVideo,
-        this.subview,
-        this.asAudio,
-        this.proto,
-        this.lastmodifiedbyuserlogin,
-        this.asText,
         this.type,
-        this.model,
+        this.proto,
+        this.asVideo,
+        this.asText,
+        this.lastmodifiedbyuserlogin,
+        this.asAudio,
+        this.subview,
         this.asImage,
+        this.model,
         this.format, });
     factory DataResource.fromJson(Map<String, dynamic> json) => _$DataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceToJson(this);

@@ -27,18 +27,18 @@ class ProductFacilityAssoc extends Equatable implements WithKey{
     final String? id;
     // String
     final String? proto;
+    // domain_FacilityFlatData
+    final Facility? fromFacility;
+    // domain_ProductFlatData
+    final Product? product;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_FacilityFlatData
-    final Facility? fromFacility;
-    // domain_FacilityFlatData
     final Facility? toFacility;
-    // domain_ProductFlatData
-    final Product? product;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     ProductFacilityAssoc({
         this.productId,
         this.facilityId,
@@ -52,12 +52,12 @@ class ProductFacilityAssoc extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.proto,
-        this.format,
-        this.model,
         this.fromFacility,
-        this.toFacility,
         this.product,
-        this.cats, });
+        this.format,
+        this.cats,
+        this.model,
+        this.toFacility, });
     factory ProductFacilityAssoc.fromJson(Map<String, dynamic> json) => _$ProductFacilityAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFacilityAssocToJson(this);
     @override

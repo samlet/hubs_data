@@ -13,14 +13,14 @@ class ElectronicText extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     ElectronicText({
@@ -29,10 +29,10 @@ class ElectronicText extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.cats,
         this.dataResource,
         this.proto,
+        this.cats,
+        this.format,
         this.model, });
     factory ElectronicText.fromJson(Map<String, dynamic> json) => _$ElectronicTextFromJson(json);
     Map<String, dynamic> toJson() => _$ElectronicTextToJson(this);

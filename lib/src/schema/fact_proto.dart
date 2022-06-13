@@ -17,20 +17,20 @@ class FactProto extends Equatable implements WithKey{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_FactProtoStatusList
-    final FactProtoStatusCollection? factProtoStatuses;
     // domain_TypesEntityData
     final TypesEntity? type;
     // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final String? proto;
+    // domain_FactProtoStatusList
+    final FactProtoStatusCollection? factProtoStatuses;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     FactProto({
         this.factId,
         this.data,
@@ -39,13 +39,13 @@ class FactProto extends Equatable implements WithKey{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.proto,
-        this.cats,
-        this.factProtoStatuses,
         this.type,
-        this.format,
+        this.proto,
+        this.factProtoStatuses,
+        this.subview,
         this.model,
-        this.subview, });
+        this.cats,
+        this.format, });
     factory FactProto.fromJson(Map<String, dynamic> json) => _$FactProtoFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoToJson(this);
     @override

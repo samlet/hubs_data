@@ -27,14 +27,14 @@ class ProdCatalog extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // domain_ProdCatalogCategoryList
-    final ProdCatalogCategoryCollection? prodCatalogCategories;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_ProdCatalogCategoryList
+    final ProdCatalogCategoryCollection? prodCatalogCategories;
     // String
     final String? format;
     // proto_ListItemProto
@@ -52,10 +52,10 @@ class ProdCatalog extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.prodCatalogCategories,
         this.model,
+        this.proto,
         this.cats,
+        this.prodCatalogCategories,
         this.format,
         this.subview, });
     factory ProdCatalog.fromJson(Map<String, dynamic> json) => _$ProdCatalogFromJson(json);

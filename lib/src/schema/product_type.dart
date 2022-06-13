@@ -23,12 +23,12 @@ class ProductType extends Equatable implements WithKey{
     final String? tenantId;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
     ProductType({
         this.productTypeId,
         this.parentTypeId,
@@ -40,9 +40,9 @@ class ProductType extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.format,
+        this.model,
         this.proto,
-        this.cats,
-        this.model, });
+        this.cats, });
     factory ProductType.fromJson(Map<String, dynamic> json) => _$ProductTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ProductTypeToJson(this);
     @override

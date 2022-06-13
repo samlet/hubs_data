@@ -33,52 +33,52 @@ class Party extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_PartyNoteList
-    final PartyNoteCollection? partyNotes;
-    // party_PartyGroupProto
-    final PartyWithPartyGroup? asPartyGroup;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_PartyGeoPointList
-    final PartyGeoPointCollection? partyGeoPoints;
-    // party_SupplierProto
-    final PartyWithSupplier? asSupplier;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // domain_PartyRelationshipList
-    final PartyRelationshipCollection? fromPartyRelationships;
-    // domain_SupplierProductFeatureList
-    final SupplierProductFeatureCollection? supplierProductFeatures;
-    // String
-    final String? format;
-    // domain_PartyRoleList
-    final PartyRoleCollection? partyRoles;
-    // party_CorporationProto
-    final PartyWithCorporation? asCorporation;
-    // party_PersonProto
-    final PartyWithPerson? asPerson;
-    // domain_PartyStatusList
-    final PartyStatusCollection? partyStatuses;
-    // domain_AgreementRoleList
-    final AgreementRoleCollection? agreementRoles;
-    // String
-    final String? proto;
-    // domain_PartyContactMechList
-    final PartyContactMechCollection? partyContactMeches;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
     // domain_PartyContactMechPurposeList
     final PartyContactMechPurposeCollection? partyContactMechPurposes;
+    // domain_PartyRoleList
+    final PartyRoleCollection? partyRoles;
+    // party_PersonProto
+    final PartyWithPerson? asPerson;
+    // domain_AgreementRoleList
+    final AgreementRoleCollection? agreementRoles;
+    // domain_PartyContactMechList
+    final PartyContactMechCollection? partyContactMeches;
+    // domain_PartyStatusList
+    final PartyStatusCollection? partyStatuses;
+    // domain_PartyRelationshipList
+    final PartyRelationshipCollection? fromPartyRelationships;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // party_CorporationProto
+    final PartyWithCorporation? asCorporation;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
+    // domain_SupplierProductFeatureList
+    final SupplierProductFeatureCollection? supplierProductFeatures;
+    // party_SupplierProto
+    final PartyWithSupplier? asSupplier;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
+    // party_PartyGroupProto
+    final PartyWithPartyGroup? asPartyGroup;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // String
+    final String? format;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // domain_SupplierProductList
     final SupplierProductCollection? supplierProducts;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // domain_PartyGeoPointList
+    final PartyGeoPointCollection? partyGeoPoints;
+    // domain_PartyNoteList
+    final PartyNoteCollection? partyNotes;
     Party({
         this.partyId,
         this.partyTypeId,
@@ -95,29 +95,29 @@ class Party extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.partyNotes,
-        this.asPartyGroup,
-        this.lastmodifiedbyuserlogin,
-        this.partyGeoPoints,
-        this.asSupplier,
-        this.contactMech,
-        this.fromPartyRelationships,
-        this.supplierProductFeatures,
-        this.format,
-        this.partyRoles,
-        this.asCorporation,
-        this.asPerson,
-        this.partyStatuses,
-        this.agreementRoles,
-        this.proto,
-        this.partyContactMeches,
-        this.model,
-        this.subview,
-        this.createdbyuserlogin,
         this.partyContactMechPurposes,
+        this.partyRoles,
+        this.asPerson,
+        this.agreementRoles,
+        this.partyContactMeches,
+        this.partyStatuses,
+        this.fromPartyRelationships,
+        this.cats,
+        this.lastmodifiedbyuserlogin,
+        this.asCorporation,
+        this.createdbyuserlogin,
+        this.supplierProductFeatures,
+        this.asSupplier,
+        this.model,
+        this.proto,
+        this.asPartyGroup,
+        this.contactMech,
+        this.format,
+        this.subview,
         this.supplierProducts,
-        this.type, });
+        this.type,
+        this.partyGeoPoints,
+        this.partyNotes, });
     factory Party.fromJson(Map<String, dynamic> json) => _$PartyFromJson(json);
     Map<String, dynamic> toJson() => _$PartyToJson(this);
     @override

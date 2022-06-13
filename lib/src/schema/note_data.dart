@@ -25,14 +25,14 @@ class NoteData extends Equatable implements WithKey{
     final String? moreInfoItemName;
     // String
     final String? tenantId;
-    // domain_PartyFlatData
-    final Party? noteparty;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? noteparty;
     // String
     final String? format;
     // proto_FieldCats
@@ -49,10 +49,10 @@ class NoteData extends Equatable implements WithKey{
         this.moreInfoItemId,
         this.moreInfoItemName,
         this.tenantId,
-        this.noteparty,
-        this.model,
         this.subview,
         this.proto,
+        this.model,
+        this.noteparty,
         this.format,
         this.cats, });
     factory NoteData.fromJson(Map<String, dynamic> json) => _$NoteDataFromJson(json);

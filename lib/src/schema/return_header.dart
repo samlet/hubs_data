@@ -39,38 +39,38 @@ class ReturnHeader extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ReturnStatusList
-    final ReturnStatusCollection? returnStatuses;
-    // domain_ReturnItemBillingList
-    final ReturnItemBillingCollection? returnItemBillings;
-    // domain_ReturnItemShipmentList
-    final ReturnItemShipmentCollection? returnItemShipments;
-    // String
-    final String? proto;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ReturnItemList
-    final ReturnItemCollection? returnItems;
-    // domain_ReturnAdjustmentList
-    final ReturnAdjustmentCollection? returnAdjustments;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // domain_ReturnItemList
+    final ReturnItemCollection? returnItems;
+    // domain_ReturnStatusList
+    final ReturnStatusCollection? returnStatuses;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? party;
     // String
     final String? format;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ReturnItemBillingList
+    final ReturnItemBillingCollection? returnItemBillings;
     // domain_PartyFlatData
     final Party? toParty;
+    // domain_ReturnAdjustmentList
+    final ReturnAdjustmentCollection? returnAdjustments;
+    // domain_ReturnItemShipmentList
+    final ReturnItemShipmentCollection? returnItemShipments;
     ReturnHeader({
         this.returnId,
         this.returnHeaderTypeId,
@@ -90,22 +90,22 @@ class ReturnHeader extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.returnStatuses,
-        this.returnItemBillings,
-        this.returnItemShipments,
-        this.proto,
-        this.facility,
-        this.cats,
-        this.returnItems,
-        this.returnAdjustments,
-        this.subview,
+        this.userLogin,
         this.model,
+        this.billingAccount,
+        this.returnItems,
+        this.returnStatuses,
+        this.cats,
+        this.party,
         this.format,
         this.contactMech,
-        this.billingAccount,
-        this.party,
-        this.userLogin,
-        this.toParty, });
+        this.facility,
+        this.proto,
+        this.subview,
+        this.returnItemBillings,
+        this.toParty,
+        this.returnAdjustments,
+        this.returnItemShipments, });
     factory ReturnHeader.fromJson(Map<String, dynamic> json) => _$ReturnHeaderFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnHeaderToJson(this);
     @override

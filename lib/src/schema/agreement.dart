@@ -33,28 +33,28 @@ class Agreement extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_AgreementItemList
+    final AgreementItemCollection? agreementItems;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_AgreementTermList
-    final AgreementTermCollection? agreementTerms;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_AgreementItemList
-    final AgreementItemCollection? agreementItems;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_PartyFlatData
     final Party? fromParty;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // domain_PartyFlatData
-    final Party? toParty;
+    // String
+    final String? format;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_AgreementTermList
+    final AgreementTermCollection? agreementTerms;
     // domain_AgreementProductApplList
     final AgreementProductApplCollection? agreementProductAppls;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? toParty;
     Agreement({
         this.agreementId,
         this.productId,
@@ -71,17 +71,17 @@ class Agreement extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.agreementItems,
         this.subview,
         this.model,
-        this.agreementTerms,
-        this.product,
-        this.agreementItems,
-        this.cats,
         this.fromParty,
-        this.format,
         this.proto,
-        this.toParty,
-        this.agreementProductAppls, });
+        this.format,
+        this.product,
+        this.agreementTerms,
+        this.agreementProductAppls,
+        this.cats,
+        this.toParty, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
     @override

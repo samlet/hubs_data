@@ -15,24 +15,24 @@ class ContactMech extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // contact_mech_PostalAddressProto
-    final ContactMechWithPostalAddress? asPostalAddress;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_TypesEntityData
     final TypesEntity? type;
     // contact_mech_TelecomNumberProto
     final ContactMechWithTelecomNumber? asTelecomNumber;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // contact_mech_EmailAddressProto
     final ContactMechWithEmailAddress? asEmailAddress;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
+    // contact_mech_PostalAddressProto
+    final ContactMechWithPostalAddress? asPostalAddress;
     ContactMech({
         this.contactMechId,
         this.contactMechTypeId,
@@ -40,15 +40,15 @@ class ContactMech extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.asPostalAddress,
+        this.format,
+        this.proto,
         this.subview,
-        this.cats,
         this.type,
         this.asTelecomNumber,
-        this.format,
+        this.cats,
         this.asEmailAddress,
         this.model,
-        this.proto, });
+        this.asPostalAddress, });
     factory ContactMech.fromJson(Map<String, dynamic> json) => _$ContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechToJson(this);
     @override

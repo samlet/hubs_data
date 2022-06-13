@@ -21,12 +21,12 @@ class ProductStoreKeywordOvrd extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
@@ -41,9 +41,9 @@ class ProductStoreKeywordOvrd extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.model,
         this.productStore,
+        this.model,
+        this.format,
         this.cats,
         this.proto, });
     factory ProductStoreKeywordOvrd.fromJson(Map<String, dynamic> json) => _$ProductStoreKeywordOvrdFromJson(json);

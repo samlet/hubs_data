@@ -23,10 +23,10 @@ class FixedAssetAttribute extends Equatable implements WithKey{
     final ModelEntity? model;
     // String
     final String? proto;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
     // String
     final String? format;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
     FixedAssetAttribute({
         this.fixedAssetId,
         this.attrName,
@@ -38,8 +38,8 @@ class FixedAssetAttribute extends Equatable implements WithKey{
         this.cats,
         this.model,
         this.proto,
-        this.fixedAsset,
-        this.format, });
+        this.format,
+        this.fixedAsset, });
     factory FixedAssetAttribute.fromJson(Map<String, dynamic> json) => _$FixedAssetAttributeFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetAttributeToJson(this);
     @override

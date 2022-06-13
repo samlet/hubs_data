@@ -17,10 +17,10 @@ class UserLoginPasswordHistory extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
@@ -35,8 +35,8 @@ class UserLoginPasswordHistory extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
         this.proto,
+        this.cats,
         this.userLogin,
         this.format,
         this.model, });

@@ -14,62 +14,62 @@ class FixedAssetBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? updateFixedAssetAttribute;
+    final FixedAssetBlueprint? removeFixedAssetProduct;
     // blueprint_FixedAssetBlueprintData
     final FixedAssetBlueprint? addFixedAssetGeoPointList;
     // blueprint_FixedAssetBlueprintData
     final FixedAssetBlueprint? modifyFixedAssetType;
     // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? addFixedAssetMaintList;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? removeFixedAssetAttribute;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? removeFixedAssetProduct;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? addFixedAssetGeoPoint;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? addFixedAssetMaint;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? addFixedAssetProductList;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? updateFixedAssetProduct;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? addFixedAssetAttributeList;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? updateFixedAssetGeoPoint;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? removeFixedAssetMaint;
-    // blueprint_FixedAssetBlueprintData
     final FixedAssetBlueprint? addFixedAssetProduct;
-    // blueprint_FixedAssetBlueprintData
-    final FixedAssetBlueprint? updateFixedAssetMaint;
     // blueprint_FixedAssetBlueprintData
     final FixedAssetBlueprint? addFixedAssetAttribute;
     // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? updateFixedAssetProduct;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? updateFixedAssetGeoPoint;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? updateFixedAssetMaint;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? updateFixedAssetAttribute;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? removeFixedAssetAttribute;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? addFixedAssetAttributeList;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? removeFixedAssetMaint;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? addFixedAssetGeoPoint;
+    // blueprint_FixedAssetBlueprintData
     final FixedAssetBlueprint? removeFixedAssetGeoPoint;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? addFixedAssetMaintList;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? addFixedAssetProductList;
+    // blueprint_FixedAssetBlueprintData
+    final FixedAssetBlueprint? addFixedAssetMaint;
     FixedAssetBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateFixedAssetAttribute,
+        this.removeFixedAssetProduct,
         this.addFixedAssetGeoPointList,
         this.modifyFixedAssetType,
-        this.addFixedAssetMaintList,
-        this.removeFixedAssetAttribute,
-        this.removeFixedAssetProduct,
-        this.addFixedAssetGeoPoint,
-        this.addFixedAssetMaint,
-        this.addFixedAssetProductList,
-        this.updateFixedAssetProduct,
-        this.addFixedAssetAttributeList,
-        this.updateFixedAssetGeoPoint,
-        this.removeFixedAssetMaint,
         this.addFixedAssetProduct,
-        this.updateFixedAssetMaint,
         this.addFixedAssetAttribute,
-        this.removeFixedAssetGeoPoint, });
+        this.updateFixedAssetProduct,
+        this.updateFixedAssetGeoPoint,
+        this.updateFixedAssetMaint,
+        this.updateFixedAssetAttribute,
+        this.removeFixedAssetAttribute,
+        this.addFixedAssetAttributeList,
+        this.removeFixedAssetMaint,
+        this.addFixedAssetGeoPoint,
+        this.removeFixedAssetGeoPoint,
+        this.addFixedAssetMaintList,
+        this.addFixedAssetProductList,
+        this.addFixedAssetMaint, });
     factory FixedAssetBlueprint.fromJson(Map<String, dynamic> json) => _$FixedAssetBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetBlueprintToJson(this);
 }

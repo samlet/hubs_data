@@ -47,24 +47,24 @@ class Payment extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_PaymentApplicationList
+    final PaymentApplicationCollection? paymentApplications;
     // String
-    final String? format;
+    final String? proto;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // domain_PartyFlatData
     final Party? fromParty;
     // String
-    final String? proto;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // domain_TypesEntityData
-    final TypesEntity? type;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_PaymentApplicationList
-    final PaymentApplicationCollection? paymentApplications;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? toParty;
     Payment({
         this.paymentId,
         this.paymentTypeId,
@@ -88,15 +88,15 @@ class Payment extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.fromParty,
-        this.proto,
-        this.toParty,
-        this.type,
-        this.cats,
-        this.paymentApplications,
+        this.model,
         this.subview,
-        this.model, });
+        this.paymentApplications,
+        this.proto,
+        this.type,
+        this.fromParty,
+        this.format,
+        this.cats,
+        this.toParty, });
     factory Payment.fromJson(Map<String, dynamic> json) => _$PaymentFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentToJson(this);
     @override

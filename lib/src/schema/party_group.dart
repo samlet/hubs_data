@@ -27,16 +27,16 @@ class PartyGroup extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? party;
     // String
-    final String? format;
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // domain_PartyFlatData
-    final Party? party;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final String? format;
     PartyGroup({
         this.partyId,
         this.groupName,
@@ -50,11 +50,11 @@ class PartyGroup extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.cats,
-        this.proto,
+        this.model,
         this.party,
-        this.model, });
+        this.proto,
+        this.cats,
+        this.format, });
     factory PartyGroup.fromJson(Map<String, dynamic> json) => _$PartyGroupFromJson(json);
     Map<String, dynamic> toJson() => _$PartyGroupToJson(this);
     @override

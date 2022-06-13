@@ -14,23 +14,23 @@ class CatalogBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_CatalogBlueprintData
-    final CatalogBlueprint? updateProdCatalogCategory;
-    // blueprint_CatalogBlueprintData
-    final CatalogBlueprint? removeProdCatalogCategory;
-    // blueprint_CatalogBlueprintData
     final CatalogBlueprint? addProdCatalogCategoryList;
     // blueprint_CatalogBlueprintData
     final CatalogBlueprint? addProdCatalogCategory;
+    // blueprint_CatalogBlueprintData
+    final CatalogBlueprint? updateProdCatalogCategory;
+    // blueprint_CatalogBlueprintData
+    final CatalogBlueprint? removeProdCatalogCategory;
     CatalogBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateProdCatalogCategory,
-        this.removeProdCatalogCategory,
         this.addProdCatalogCategoryList,
-        this.addProdCatalogCategory, });
+        this.addProdCatalogCategory,
+        this.updateProdCatalogCategory,
+        this.removeProdCatalogCategory, });
     factory CatalogBlueprint.fromJson(Map<String, dynamic> json) => _$CatalogBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$CatalogBlueprintToJson(this);
 }

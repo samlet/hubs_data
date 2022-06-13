@@ -18,17 +18,17 @@ class UserLoginSecurityGroup extends Equatable implements WithKey{
     // String
     final String? id;
     // String
-    final String? proto;
-    // String
     final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_SecurityGroupFlatData
     final SecurityGroup? securityGroup;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     UserLoginSecurityGroup({
         this.userLoginId,
         this.groupId,
@@ -37,12 +37,12 @@ class UserLoginSecurityGroup extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
         this.format,
-        this.cats,
         this.userLogin,
+        this.cats,
+        this.securityGroup,
         this.model,
-        this.securityGroup, });
+        this.proto, });
     factory UserLoginSecurityGroup.fromJson(Map<String, dynamic> json) => _$UserLoginSecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginSecurityGroupToJson(this);
     @override

@@ -25,18 +25,18 @@ class WorkEffortGoodStandard extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // domain_ProductFlatData
     final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     WorkEffortGoodStandard({
         this.workEffortId,
         this.productId,
@@ -49,12 +49,12 @@ class WorkEffortGoodStandard extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.workEffort,
-        this.model,
-        this.proto,
         this.product,
-        this.cats, });
+        this.model,
+        this.cats,
+        this.workEffort,
+        this.format,
+        this.proto, });
     factory WorkEffortGoodStandard.fromJson(Map<String, dynamic> json) => _$WorkEffortGoodStandardFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortGoodStandardToJson(this);
     @override

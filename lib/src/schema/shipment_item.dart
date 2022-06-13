@@ -21,16 +21,16 @@ class ShipmentItem extends Equatable implements WithKey{
     final String? id;
     // String
     final String? proto;
-    // String
-    final String? format;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductFlatData
-    final Product? product;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
     ShipmentItem({
         this.shipmentId,
         this.shipmentItemSeqId,
@@ -41,11 +41,11 @@ class ShipmentItem extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.proto,
-        this.format,
-        this.shipment,
+        this.cats,
         this.model,
+        this.format,
         this.product,
-        this.cats, });
+        this.shipment, });
     factory ShipmentItem.fromJson(Map<String, dynamic> json) => _$ShipmentItemFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentItemToJson(this);
     @override

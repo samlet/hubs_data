@@ -27,18 +27,18 @@ class TemporalExpression extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_TemporalExpressionAssocList
-    final TemporalExpressionAssocCollection? fromTemporalExpressionAssocs;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // domain_TemporalExpressionAssocList
     final TemporalExpressionAssocCollection? toTemporalExpressionAssocs;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // domain_TemporalExpressionAssocList
+    final TemporalExpressionAssocCollection? fromTemporalExpressionAssocs;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     TemporalExpression({
@@ -54,12 +54,12 @@ class TemporalExpression extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.fromTemporalExpressionAssocs,
-        this.proto,
-        this.model,
         this.toTemporalExpressionAssocs,
+        this.format,
         this.cats,
+        this.proto,
+        this.fromTemporalExpressionAssocs,
+        this.model,
         this.subview, });
     factory TemporalExpression.fromJson(Map<String, dynamic> json) => _$TemporalExpressionFromJson(json);
     Map<String, dynamic> toJson() => _$TemporalExpressionToJson(this);

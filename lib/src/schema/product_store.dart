@@ -165,42 +165,42 @@ class ProductStore extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductStoreRoleList
-    final ProductStoreRoleCollection? productStoreRoles;
-    // domain_PostalAddressFlatData
-    final PostalAddress? primaryAddress;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_TelecomNumberFlatData
-    final TelecomNumber? primaryPhone;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductStoreEmailSettingList
-    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
-    // domain_ProductStoreGroupData
-    final ProductStoreGroup? primaryProductStoreGroup;
-    // domain_ProductStorePromoApplList
-    final ProductStorePromoApplCollection? productStorePromoAppls;
-    // domain_ProductStoreFacilityList
-    final ProductStoreFacilityCollection? productStoreFacilities;
-    // domain_ProductStoreCatalogList
-    final ProductStoreCatalogCollection? productStoreCatalogs;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? party;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
     // domain_ProductStorePaymentSettingList
     final ProductStorePaymentSettingCollection? productStorePaymentSettings;
+    // domain_PartyFlatData
+    final Party? party;
+    // domain_ProductStoreGroupData
+    final ProductStoreGroup? primaryProductStoreGroup;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_FacilityFlatData
     final Facility? facility;
-    // String
-    final String? format;
+    // domain_ProductStoreFacilityList
+    final ProductStoreFacilityCollection? productStoreFacilities;
     // domain_ProductStoreKeywordOvrdList
     final ProductStoreKeywordOvrdCollection? productStoreKeywordOvrds;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_ProductStoreRoleList
+    final ProductStoreRoleCollection? productStoreRoles;
+    // domain_ProductStoreCatalogList
+    final ProductStoreCatalogCollection? productStoreCatalogs;
+    // domain_TelecomNumberFlatData
+    final TelecomNumber? primaryPhone;
     // domain_WebSiteList
     final WebSiteCollection? webSites;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // domain_PostalAddressFlatData
+    final PostalAddress? primaryAddress;
+    // domain_ProductStoreEmailSettingList
+    final ProductStoreEmailSettingCollection? productStoreEmailSettings;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_ProductStorePromoApplList
+    final ProductStorePromoApplCollection? productStorePromoAppls;
     // String
     final String? proto;
     ProductStore({
@@ -285,24 +285,24 @@ class ProductStore extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.productStoreRoles,
-        this.primaryAddress,
-        this.subview,
-        this.primaryPhone,
-        this.cats,
-        this.productStoreEmailSettings,
-        this.primaryProductStoreGroup,
-        this.productStorePromoAppls,
-        this.productStoreFacilities,
-        this.productStoreCatalogs,
-        this.model,
-        this.party,
-        this.contactMech,
         this.productStorePaymentSettings,
+        this.party,
+        this.primaryProductStoreGroup,
+        this.cats,
         this.facility,
-        this.format,
+        this.productStoreFacilities,
         this.productStoreKeywordOvrds,
+        this.model,
+        this.format,
+        this.productStoreRoles,
+        this.productStoreCatalogs,
+        this.primaryPhone,
         this.webSites,
+        this.contactMech,
+        this.primaryAddress,
+        this.productStoreEmailSettings,
+        this.subview,
+        this.productStorePromoAppls,
         this.proto, });
     factory ProductStore.fromJson(Map<String, dynamic> json) => _$ProductStoreFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreToJson(this);

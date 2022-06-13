@@ -21,16 +21,16 @@ class ProductStoreGroupMember extends Equatable implements WithKey{
     final String? id;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
     // domain_ProductStoreGroupData
     final ProductStoreGroup? productStoreGroup;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     ProductStoreGroupMember({
         this.productStoreId,
         this.productStoreGroupId,
@@ -41,11 +41,11 @@ class ProductStoreGroupMember extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.model,
-        this.cats,
         this.proto,
-        this.productStore,
         this.productStoreGroup,
-        this.format, });
+        this.format,
+        this.cats,
+        this.productStore, });
     factory ProductStoreGroupMember.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupMemberFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupMemberToJson(this);
     @override

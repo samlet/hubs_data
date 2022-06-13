@@ -14,26 +14,26 @@ class OrderFactBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_OrderFactBlueprintData
-    final OrderFactBlueprint? addOrderFactStatus;
-    // blueprint_OrderFactBlueprintData
-    final OrderFactBlueprint? removeOrderFactStatus;
+    final OrderFactBlueprint? addOrderFactStatusList;
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? updateOrderFactStatus;
     // blueprint_OrderFactBlueprintData
-    final OrderFactBlueprint? addOrderFactStatusList;
+    final OrderFactBlueprint? addOrderFactStatus;
     // blueprint_OrderFactBlueprintData
     final OrderFactBlueprint? modifyOrderFactType;
+    // blueprint_OrderFactBlueprintData
+    final OrderFactBlueprint? removeOrderFactStatus;
     OrderFactBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addOrderFactStatus,
-        this.removeOrderFactStatus,
-        this.updateOrderFactStatus,
         this.addOrderFactStatusList,
-        this.modifyOrderFactType, });
+        this.updateOrderFactStatus,
+        this.addOrderFactStatus,
+        this.modifyOrderFactType,
+        this.removeOrderFactStatus, });
     factory OrderFactBlueprint.fromJson(Map<String, dynamic> json) => _$OrderFactBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$OrderFactBlueprintToJson(this);
 }

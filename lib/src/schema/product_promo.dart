@@ -39,26 +39,26 @@ class ProductPromo extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_ProductPromoRuleList
-    final ProductPromoRuleCollection? productPromoRules;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_ProductPromoActionList
     final ProductPromoActionCollection? productPromoActions;
+    // domain_ProductPromoRuleList
+    final ProductPromoRuleCollection? productPromoRules;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // String
+    final String? format;
     // domain_PartyFlatData
     final Party? party;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     ProductPromo({
         this.productPromoId,
         this.promoName,
@@ -78,16 +78,16 @@ class ProductPromo extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.productPromoRules,
-        this.proto,
-        this.lastmodifiedbyuserlogin,
-        this.cats,
-        this.createdbyuserlogin,
-        this.subview,
         this.productPromoActions,
+        this.productPromoRules,
+        this.createdbyuserlogin,
         this.model,
-        this.party, });
+        this.lastmodifiedbyuserlogin,
+        this.format,
+        this.party,
+        this.cats,
+        this.proto,
+        this.subview, });
     factory ProductPromo.fromJson(Map<String, dynamic> json) => _$ProductPromoFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoToJson(this);
     @override

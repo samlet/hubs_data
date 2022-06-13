@@ -65,10 +65,10 @@ class AcctgTrans extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_AcctgTransEntryList
-    final AcctgTransEntryCollection? acctgTransEntries;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // domain_AcctgTransEntryList
+    final AcctgTransEntryCollection? acctgTransEntries;
     AcctgTrans({
         this.acctgTransId,
         this.acctgTransTypeId,
@@ -101,8 +101,8 @@ class AcctgTrans extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.acctgTransEntries,
-        this.subview, });
+        this.subview,
+        this.acctgTransEntries, });
     factory AcctgTrans.fromJson(Map<String, dynamic> json) => _$AcctgTransFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgTransToJson(this);
     @override

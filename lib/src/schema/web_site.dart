@@ -43,16 +43,16 @@ class WebSite extends Equatable implements WithKey{
     final String? displayMaintenancePage;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // facade_ModelEntity
     final ModelEntity? model;
     WebSite({
@@ -76,11 +76,11 @@ class WebSite extends Equatable implements WithKey{
         this.isDefault,
         this.displayMaintenancePage,
         this.tenantId,
-        this.subview,
         this.productStore,
-        this.proto,
-        this.format,
         this.cats,
+        this.format,
+        this.proto,
+        this.subview,
         this.model, });
     factory WebSite.fromJson(Map<String, dynamic> json) => _$WebSiteFromJson(json);
     Map<String, dynamic> toJson() => _$WebSiteToJson(this);

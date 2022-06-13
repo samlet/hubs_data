@@ -59,16 +59,16 @@ class AcctgTransEntry extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_AcctgTransFlatData
-    final AcctgTrans? acctgTrans;
+    // String
+    final String? proto;
     // String
     final String? format;
+    // domain_AcctgTransFlatData
+    final AcctgTrans? acctgTrans;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_PartyFlatData
     final Party? party;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_InventoryItemFlatData
@@ -102,11 +102,11 @@ class AcctgTransEntry extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.acctgTrans,
+        this.proto,
         this.format,
+        this.acctgTrans,
         this.model,
         this.party,
-        this.proto,
         this.cats,
         this.inventoryItem, });
     factory AcctgTransEntry.fromJson(Map<String, dynamic> json) => _$AcctgTransEntryFromJson(json);
