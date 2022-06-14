@@ -105,26 +105,26 @@ class OrderItem extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
-    // domain_ShoppingListFlatData
-    final ShoppingList? addSuggestionsToShoppingList;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
+    // domain_InventoryItemFlatData
+    final InventoryItem? fromInventoryItem;
     // domain_ProductFlatData
     final Product? product;
+    // domain_ShoppingListFlatData
+    final ShoppingList? addSuggestionsToShoppingList;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_UserLoginFlatData
     final UserLogin? dontcancelsetuserlogin;
     // String
-    final String? format;
-    // domain_InventoryItemFlatData
-    final InventoryItem? fromInventoryItem;
-    // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
     OrderItem({
         this.orderId,
         this.orderItemSeqId,
@@ -177,16 +177,16 @@ class OrderItem extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.changeByUserLogin,
-        this.addSuggestionsToShoppingList,
         this.cats,
-        this.orderHeader,
-        this.product,
-        this.dontcancelsetuserlogin,
-        this.format,
         this.fromInventoryItem,
+        this.product,
+        this.addSuggestionsToShoppingList,
+        this.model,
+        this.orderHeader,
+        this.dontcancelsetuserlogin,
         this.proto,
-        this.model, });
+        this.format,
+        this.changeByUserLogin, });
     factory OrderItem.fromJson(Map<String, dynamic> json) => _$OrderItemFromJson(json);
     Map<String, dynamic> toJson() => _$OrderItemToJson(this);
     @override

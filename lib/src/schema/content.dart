@@ -55,36 +55,36 @@ class Content extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ContentAttributeList
-    final ContentAttributeCollection? contentAttributes;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
+    // domain_UserLoginFlatData
+    final UserLogin? createdbyuserlogin;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ContentAssocList
+    final ContentAssocCollection? toContentAssocs;
+    // String
+    final String? proto;
+    // domain_ContentFlatData
+    final Content? ownerContent;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ContentAttributeList
+    final ContentAttributeCollection? contentAttributes;
+    // String
+    final String? format;
+    // domain_DataResourceFlatData
+    final DataResource? templateDataResource;
     // domain_ContentPurposeList
     final ContentPurposeCollection? contentPurposes;
     // domain_ContentFlatData
-    final Content? decoratorContent;
-    // String
-    final String? format;
-    // domain_ContentFlatData
     final Content? instanceOfContent;
-    // domain_ContentFlatData
-    final Content? ownerContent;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? createdbyuserlogin;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // domain_DataResourceFlatData
-    final DataResource? templateDataResource;
-    // domain_ContentAssocList
-    final ContentAssocCollection? toContentAssocs;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_ContentFlatData
+    final Content? decoratorContent;
     Content({
         this.contentId,
         this.contentTypeId,
@@ -112,21 +112,21 @@ class Content extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.contentAttributes,
-        this.subview,
-        this.contentPurposes,
-        this.decoratorContent,
-        this.format,
-        this.instanceOfContent,
-        this.ownerContent,
-        this.dataResource,
-        this.proto,
-        this.createdbyuserlogin,
         this.lastmodifiedbyuserlogin,
-        this.templateDataResource,
+        this.createdbyuserlogin,
+        this.subview,
+        this.cats,
         this.toContentAssocs,
+        this.proto,
+        this.ownerContent,
         this.model,
-        this.cats, });
+        this.contentAttributes,
+        this.format,
+        this.templateDataResource,
+        this.contentPurposes,
+        this.instanceOfContent,
+        this.dataResource,
+        this.decoratorContent, });
     factory Content.fromJson(Map<String, dynamic> json) => _$ContentFromJson(json);
     Map<String, dynamic> toJson() => _$ContentToJson(this);
     @override

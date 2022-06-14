@@ -23,18 +23,18 @@ class ProdCatalogCategory extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_ProductCategoryFlatData
+    final ProductCategory? productCategory;
     // domain_ProdCatalogFlatData
     final ProdCatalog? prodCatalog;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // domain_ProductCategoryFlatData
-    final ProductCategory? productCategory;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProdCatalogCategory({
         this.prodCatalogId,
         this.productCategoryId,
@@ -46,12 +46,12 @@ class ProdCatalogCategory extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.cats,
+        this.format,
+        this.productCategory,
         this.prodCatalog,
         this.model,
-        this.format,
         this.proto,
-        this.productCategory, });
+        this.cats, });
     factory ProdCatalogCategory.fromJson(Map<String, dynamic> json) => _$ProdCatalogCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProdCatalogCategoryToJson(this);
     @override

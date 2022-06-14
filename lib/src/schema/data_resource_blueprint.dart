@@ -16,13 +16,13 @@ class DataResourceBlueprint  {
     // blueprint_DataResourceBlueprintData
     final DataResourceBlueprint? modifyElectronicText;
     // blueprint_DataResourceBlueprintData
-    final DataResourceBlueprint? modifyDataResourceType;
-    // blueprint_DataResourceBlueprintData
     final DataResourceBlueprint? modifyImageDataResource;
     // blueprint_DataResourceBlueprintData
     final DataResourceBlueprint? modifyAudioDataResource;
     // blueprint_DataResourceBlueprintData
     final DataResourceBlueprint? modifyVideoDataResource;
+    // blueprint_DataResourceBlueprintData
+    final DataResourceBlueprint? modifyDataResourceType;
     DataResourceBlueprint({
         this.id,
         this.startTs,
@@ -30,10 +30,10 @@ class DataResourceBlueprint  {
         this.entity,
         this.response,
         this.modifyElectronicText,
-        this.modifyDataResourceType,
         this.modifyImageDataResource,
         this.modifyAudioDataResource,
-        this.modifyVideoDataResource, });
+        this.modifyVideoDataResource,
+        this.modifyDataResourceType, });
     factory DataResourceBlueprint.fromJson(Map<String, dynamic> json) => _$DataResourceBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceBlueprintToJson(this);
 }

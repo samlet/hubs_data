@@ -16,13 +16,13 @@ class FactProtoType extends Equatable implements WithKey{
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     FactProtoType({
         this.factProtoTypeId,
         this.parentTypeId,
@@ -30,10 +30,10 @@ class FactProtoType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.cats,
         this.proto,
-        this.model, });
+        this.model,
+        this.format,
+        this.cats, });
     factory FactProtoType.fromJson(Map<String, dynamic> json) => _$FactProtoTypeFromJson(json);
     Map<String, dynamic> toJson() => _$FactProtoTypeToJson(this);
     @override

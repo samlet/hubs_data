@@ -14,35 +14,35 @@ class BillingAccountBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? updateBillingAccountTerm;
-    // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? addBillingAccountTerm;
+    final BillingAccountBlueprint? removeBillingAccountTerm;
     // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? addBillingAccountRole;
     // blueprint_BillingAccountBlueprintData
+    final BillingAccountBlueprint? addBillingAccountTermList;
+    // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? updateBillingAccountRole;
     // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? addBillingAccountTermList;
+    final BillingAccountBlueprint? updateBillingAccountTerm;
     // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? addBillingAccountRoleList;
     // blueprint_BillingAccountBlueprintData
     final BillingAccountBlueprint? removeBillingAccountRole;
     // blueprint_BillingAccountBlueprintData
-    final BillingAccountBlueprint? removeBillingAccountTerm;
+    final BillingAccountBlueprint? addBillingAccountTerm;
     BillingAccountBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.updateBillingAccountTerm,
-        this.addBillingAccountTerm,
+        this.removeBillingAccountTerm,
         this.addBillingAccountRole,
-        this.updateBillingAccountRole,
         this.addBillingAccountTermList,
+        this.updateBillingAccountRole,
+        this.updateBillingAccountTerm,
         this.addBillingAccountRoleList,
         this.removeBillingAccountRole,
-        this.removeBillingAccountTerm, });
+        this.addBillingAccountTerm, });
     factory BillingAccountBlueprint.fromJson(Map<String, dynamic> json) => _$BillingAccountBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountBlueprintToJson(this);
 }

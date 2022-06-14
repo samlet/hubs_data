@@ -19,18 +19,18 @@ class BillingAccountRole extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
-    // domain_BillingAccountFlatData
-    final BillingAccount? billingAccount;
-    // domain_PartyFlatData
-    final Party? party;
     // String
     final String? format;
+    // domain_BillingAccountFlatData
+    final BillingAccount? billingAccount;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? party;
     BillingAccountRole({
         this.billingAccountId,
         this.partyId,
@@ -40,12 +40,12 @@ class BillingAccountRole extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.model,
-        this.proto,
-        this.billingAccount,
-        this.party,
         this.format,
-        this.cats, });
+        this.billingAccount,
+        this.proto,
+        this.cats,
+        this.model,
+        this.party, });
     factory BillingAccountRole.fromJson(Map<String, dynamic> json) => _$BillingAccountRoleFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountRoleToJson(this);
     @override

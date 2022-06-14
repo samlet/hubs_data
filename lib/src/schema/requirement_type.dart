@@ -17,14 +17,14 @@ class RequirementType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
-    // String
-    final String? proto;
     RequirementType({
         this.requirementTypeId,
         this.parentTypeId,
@@ -33,10 +33,10 @@ class RequirementType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.model,
+        this.proto,
         this.format,
-        this.proto, });
+        this.cats,
+        this.model, });
     factory RequirementType.fromJson(Map<String, dynamic> json) => _$RequirementTypeFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementTypeToJson(this);
     @override

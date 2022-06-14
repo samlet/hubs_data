@@ -49,20 +49,20 @@ class Requirement extends Equatable implements WithKey{
     final String? tenantId;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
-    // String
-    final String? format;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // String
-    final String? proto;
-    // domain_ProductFlatData
-    final Product? product;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ProductFlatData
+    final Product? product;
     // domain_FacilityFlatData
     final Facility? facility;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
     Requirement({
@@ -89,13 +89,13 @@ class Requirement extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.fixedAsset,
-        this.format,
-        this.type,
-        this.proto,
-        this.product,
         this.model,
+        this.type,
+        this.product,
         this.facility,
         this.subview,
+        this.proto,
+        this.format,
         this.cats, });
     factory Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementToJson(this);

@@ -31,18 +31,18 @@ class ProductFeature extends Equatable implements WithKey{
     final String? tenantId;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? proto;
     // String
     final String? format;
     // domain_ProductFeatureCategoryFlatData
     final ProductFeatureCategory? productFeatureCategory;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
     ProductFeature({
         this.productFeatureId,
         this.productFeatureTypeId,
@@ -58,12 +58,12 @@ class ProductFeature extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.cats,
+        this.model,
+        this.type,
+        this.proto,
         this.format,
         this.productFeatureCategory,
-        this.proto,
-        this.subview,
-        this.type,
-        this.model, });
+        this.subview, });
     factory ProductFeature.fromJson(Map<String, dynamic> json) => _$ProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFeatureToJson(this);
     @override

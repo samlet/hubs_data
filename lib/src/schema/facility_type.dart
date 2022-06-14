@@ -17,12 +17,12 @@ class FacilityType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     FacilityType({
@@ -33,9 +33,9 @@ class FacilityType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.proto,
         this.cats,
+        this.proto,
+        this.model,
         this.format, });
     factory FacilityType.fromJson(Map<String, dynamic> json) => _$FacilityTypeFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityTypeToJson(this);

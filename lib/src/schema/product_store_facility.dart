@@ -21,18 +21,18 @@ class ProductStoreFacility extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
+    // String
+    final String? format;
     // String
     final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
     ProductStoreFacility({
         this.productStoreId,
         this.facilityId,
@@ -43,12 +43,12 @@ class ProductStoreFacility extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.format,
         this.cats,
-        this.facility,
+        this.format,
+        this.proto,
         this.model,
-        this.productStore,
-        this.proto, });
+        this.facility,
+        this.productStore, });
     factory ProductStoreFacility.fromJson(Map<String, dynamic> json) => _$ProductStoreFacilityFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreFacilityToJson(this);
     @override

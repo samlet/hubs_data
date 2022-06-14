@@ -17,14 +17,14 @@ class PaymentType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? format;
+    // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     PaymentType({
         this.paymentTypeId,
         this.parentTypeId,
@@ -33,10 +33,10 @@ class PaymentType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
+        this.model,
         this.cats,
-        this.proto,
-        this.model, });
+        this.format,
+        this.proto, });
     factory PaymentType.fromJson(Map<String, dynamic> json) => _$PaymentTypeFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentTypeToJson(this);
     @override

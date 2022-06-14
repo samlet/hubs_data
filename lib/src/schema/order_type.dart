@@ -17,14 +17,14 @@ class OrderType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     OrderType({
         this.orderTypeId,
         this.parentTypeId,
@@ -33,10 +33,10 @@ class OrderType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
         this.cats,
-        this.model,
-        this.format, });
+        this.format,
+        this.proto,
+        this.model, });
     factory OrderType.fromJson(Map<String, dynamic> json) => _$OrderTypeFromJson(json);
     Map<String, dynamic> toJson() => _$OrderTypeToJson(this);
     @override

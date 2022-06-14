@@ -41,18 +41,18 @@ class ReturnItem extends Equatable implements WithKey{
     final String? id;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ProductFlatData
     final Product? product;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
     // String
     final String? proto;
     // String
     final String? format;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     ReturnItem({
         this.returnId,
         this.returnItemSeqId,
@@ -73,12 +73,12 @@ class ReturnItem extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.returnHeader,
+        this.cats,
         this.product,
         this.model,
-        this.cats,
-        this.orderHeader,
         this.proto,
-        this.format, });
+        this.format,
+        this.orderHeader, });
     factory ReturnItem.fromJson(Map<String, dynamic> json) => _$ReturnItemFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnItemToJson(this);
     @override

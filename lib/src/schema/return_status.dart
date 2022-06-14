@@ -21,18 +21,18 @@ class ReturnStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
     // String
     final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
     ReturnStatus({
         this.returnStatusId,
         this.statusId,
@@ -43,12 +43,12 @@ class ReturnStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
+        this.cats,
         this.returnHeader,
         this.proto,
-        this.changeByUserLogin,
+        this.format,
         this.model,
-        this.cats, });
+        this.changeByUserLogin, });
     factory ReturnStatus.fromJson(Map<String, dynamic> json) => _$ReturnStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnStatusToJson(this);
     @override

@@ -13,24 +13,24 @@ class ShoppingListType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     ShoppingListType({
         this.shoppingListTypeId,
         this.description,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.cats,
         this.proto,
-        this.format,
         this.model,
-        this.cats, });
+        this.format, });
     factory ShoppingListType.fromJson(Map<String, dynamic> json) => _$ShoppingListTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListTypeToJson(this);
     @override

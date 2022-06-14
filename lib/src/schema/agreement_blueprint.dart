@@ -16,27 +16,27 @@ class AgreementBlueprint  {
     // blueprint_AgreementBlueprintData
     final AgreementBlueprint? addAgreementItemList;
     // blueprint_AgreementBlueprintData
-    final AgreementBlueprint? addAgreementTerm;
+    final AgreementBlueprint? removeAgreementProductAppl;
     // blueprint_AgreementBlueprintData
-    final AgreementBlueprint? removeAgreementItem;
+    final AgreementBlueprint? updateAgreementItem;
     // blueprint_AgreementBlueprintData
     final AgreementBlueprint? updateAgreementProductAppl;
     // blueprint_AgreementBlueprintData
     final AgreementBlueprint? addAgreementItem;
     // blueprint_AgreementBlueprintData
+    final AgreementBlueprint? addAgreementTerm;
+    // blueprint_AgreementBlueprintData
+    final AgreementBlueprint? addAgreementTermList;
+    // blueprint_AgreementBlueprintData
+    final AgreementBlueprint? removeAgreementItem;
+    // blueprint_AgreementBlueprintData
     final AgreementBlueprint? addAgreementProductApplList;
     // blueprint_AgreementBlueprintData
     final AgreementBlueprint? updateAgreementTerm;
     // blueprint_AgreementBlueprintData
-    final AgreementBlueprint? addAgreementTermList;
-    // blueprint_AgreementBlueprintData
-    final AgreementBlueprint? addAgreementProductAppl;
-    // blueprint_AgreementBlueprintData
     final AgreementBlueprint? removeAgreementTerm;
     // blueprint_AgreementBlueprintData
-    final AgreementBlueprint? removeAgreementProductAppl;
-    // blueprint_AgreementBlueprintData
-    final AgreementBlueprint? updateAgreementItem;
+    final AgreementBlueprint? addAgreementProductAppl;
     AgreementBlueprint({
         this.id,
         this.startTs,
@@ -44,17 +44,17 @@ class AgreementBlueprint  {
         this.entity,
         this.response,
         this.addAgreementItemList,
-        this.addAgreementTerm,
-        this.removeAgreementItem,
+        this.removeAgreementProductAppl,
+        this.updateAgreementItem,
         this.updateAgreementProductAppl,
         this.addAgreementItem,
+        this.addAgreementTerm,
+        this.addAgreementTermList,
+        this.removeAgreementItem,
         this.addAgreementProductApplList,
         this.updateAgreementTerm,
-        this.addAgreementTermList,
-        this.addAgreementProductAppl,
         this.removeAgreementTerm,
-        this.removeAgreementProductAppl,
-        this.updateAgreementItem, });
+        this.addAgreementProductAppl, });
     factory AgreementBlueprint.fromJson(Map<String, dynamic> json) => _$AgreementBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementBlueprintToJson(this);
 }

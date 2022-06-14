@@ -17,14 +17,14 @@ class PartyType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     PartyType({
         this.partyTypeId,
         this.parentTypeId,
@@ -33,10 +33,10 @@ class PartyType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
         this.format,
-        this.proto,
-        this.cats, });
+        this.cats,
+        this.model,
+        this.proto, });
     factory PartyType.fromJson(Map<String, dynamic> json) => _$PartyTypeFromJson(json);
     Map<String, dynamic> toJson() => _$PartyTypeToJson(this);
     @override

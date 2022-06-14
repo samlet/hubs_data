@@ -21,20 +21,20 @@ class ProductConfigItem extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // domain_ProductConfigOptionList
+    final ProductConfigOptionCollection? configItemProductConfigOptions;
+    // domain_ProductConfigProductList
+    final ProductConfigProductCollection? configItemProductConfigProducts;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // String
     final String? format;
-    // domain_ProductConfigProductList
-    final ProductConfigProductCollection? configItemProductConfigProducts;
-    // String
-    final String? proto;
-    // domain_ProductConfigOptionList
-    final ProductConfigOptionCollection? configItemProductConfigOptions;
-    // facade_ModelEntity
-    final ModelEntity? model;
     ProductConfigItem({
         this.configItemId,
         this.configItemTypeId,
@@ -45,13 +45,13 @@ class ProductConfigItem extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.subview,
-        this.format,
+        this.configItemProductConfigOptions,
         this.configItemProductConfigProducts,
         this.proto,
-        this.configItemProductConfigOptions,
-        this.model, });
+        this.model,
+        this.cats,
+        this.subview,
+        this.format, });
     factory ProductConfigItem.fromJson(Map<String, dynamic> json) => _$ProductConfigItemFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemToJson(this);
     @override

@@ -45,16 +45,16 @@ class PostalAddress extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     // String
     final String? format;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     PostalAddress({
         this.contactMechId,
         this.toName,
@@ -77,11 +77,11 @@ class PostalAddress extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.contactMech,
         this.cats,
+        this.model,
         this.proto,
-        this.model, });
+        this.format,
+        this.contactMech, });
     factory PostalAddress.fromJson(Map<String, dynamic> json) => _$PostalAddressFromJson(json);
     Map<String, dynamic> toJson() => _$PostalAddressToJson(this);
     @override

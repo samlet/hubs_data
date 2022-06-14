@@ -27,18 +27,18 @@ class BillingAccount extends Equatable implements WithKey{
     final String? tenantId;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? format;
     // domain_BillingAccountTermList
     final BillingAccountTermCollection? billingAccountTerms;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     // domain_BillingAccountRoleList
     final BillingAccountRoleCollection? billingAccountRoles;
     BillingAccount({
@@ -54,12 +54,12 @@ class BillingAccount extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.cats,
-        this.contactMech,
-        this.proto,
-        this.subview,
-        this.format,
         this.billingAccountTerms,
+        this.subview,
         this.model,
+        this.proto,
+        this.format,
+        this.contactMech,
         this.billingAccountRoles, });
     factory BillingAccount.fromJson(Map<String, dynamic> json) => _$BillingAccountFromJson(json);
     Map<String, dynamic> toJson() => _$BillingAccountToJson(this);

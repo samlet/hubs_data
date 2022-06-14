@@ -15,10 +15,10 @@ class PartyWithSupplier  {
     final SupplierProductFeatureCollection? supplierProductFeatures;
     // domain_PartyGroupFlatData
     final PartyGroup? partyGroup;
-    // String
-    final String? proto;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
+    // String
+    final String? proto;
     PartyWithSupplier({
         this.id,
         this.party,
@@ -26,8 +26,8 @@ class PartyWithSupplier  {
         this.agreementRoles,
         this.supplierProductFeatures,
         this.partyGroup,
-        this.proto,
-        this.subview, });
+        this.subview,
+        this.proto, });
     factory PartyWithSupplier.fromJson(Map<String, dynamic> json) => _$PartyWithSupplierFromJson(json);
     Map<String, dynamic> toJson() => _$PartyWithSupplierToJson(this);
 }

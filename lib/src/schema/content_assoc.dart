@@ -39,20 +39,20 @@ class ContentAssoc extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_ContentFlatData
-    final Content? fromContent;
-    // domain_ContentFlatData
-    final Content? toContent;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
     // String
     final String? proto;
+    // domain_ContentFlatData
+    final Content? fromContent;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ContentFlatData
+    final Content? toContent;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
     // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
     ContentAssoc({
@@ -74,13 +74,13 @@ class ContentAssoc extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.fromContent,
-        this.toContent,
-        this.lastmodifiedbyuserlogin,
-        this.cats,
-        this.model,
-        this.format,
         this.proto,
+        this.fromContent,
+        this.model,
+        this.toContent,
+        this.cats,
+        this.format,
+        this.lastmodifiedbyuserlogin,
         this.createdbyuserlogin, });
     factory ContentAssoc.fromJson(Map<String, dynamic> json) => _$ContentAssocFromJson(json);
     Map<String, dynamic> toJson() => _$ContentAssocToJson(this);

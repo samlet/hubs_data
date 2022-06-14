@@ -19,10 +19,10 @@ class WorkEffortType extends Equatable implements WithKey{
     final String? tenantId;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
     WorkEffortType({
@@ -34,8 +34,8 @@ class WorkEffortType extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.model,
-        this.cats,
         this.format,
+        this.cats,
         this.proto, });
     factory WorkEffortType.fromJson(Map<String, dynamic> json) => _$WorkEffortTypeFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortTypeToJson(this);

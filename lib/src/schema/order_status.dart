@@ -26,17 +26,17 @@ class OrderStatus extends Equatable implements WithKey{
     // String
     final String? tenantId;
     // String
-    final String? proto;
+    final String? format;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
     // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
     OrderStatus({
         this.orderStatusId,
         this.statusId,
@@ -49,12 +49,12 @@ class OrderStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.orderHeader,
         this.format,
-        this.userLogin,
+        this.orderHeader,
+        this.proto,
         this.cats,
-        this.model, });
+        this.model,
+        this.userLogin, });
     factory OrderStatus.fromJson(Map<String, dynamic> json) => _$OrderStatusFromJson(json);
     Map<String, dynamic> toJson() => _$OrderStatusToJson(this);
     @override

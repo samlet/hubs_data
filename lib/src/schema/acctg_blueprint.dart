@@ -14,23 +14,23 @@ class AcctgBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_AcctgBlueprintData
-    final AcctgBlueprint? addAcctgTransEntry;
+    final AcctgBlueprint? addAcctgTransEntryList;
     // blueprint_AcctgBlueprintData
     final AcctgBlueprint? removeAcctgTransEntry;
     // blueprint_AcctgBlueprintData
     final AcctgBlueprint? updateAcctgTransEntry;
     // blueprint_AcctgBlueprintData
-    final AcctgBlueprint? addAcctgTransEntryList;
+    final AcctgBlueprint? addAcctgTransEntry;
     AcctgBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addAcctgTransEntry,
+        this.addAcctgTransEntryList,
         this.removeAcctgTransEntry,
         this.updateAcctgTransEntry,
-        this.addAcctgTransEntryList, });
+        this.addAcctgTransEntry, });
     factory AcctgBlueprint.fromJson(Map<String, dynamic> json) => _$AcctgBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$AcctgBlueprintToJson(this);
 }

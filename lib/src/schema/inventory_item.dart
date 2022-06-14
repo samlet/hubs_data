@@ -61,34 +61,34 @@ class InventoryItem extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
+    // domain_PartyFlatData
+    final Party? ownerParty;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAssetFixedAsset;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
     // domain_PartyFlatData
-    final Party? ownerParty;
-    // domain_PartyFlatData
     final Party? party;
-    // domain_TypesEntityData
-    final TypesEntity? type;
     // domain_InventoryItemDetailList
     final InventoryItemDetailCollection? inventoryItemDetails;
     // domain_InventoryItemStatusList
     final InventoryItemStatusCollection? inventoryItemStatuses;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? type;
     // domain_InventoryTransferList
     final InventoryTransferCollection? inventoryTransfers;
     // domain_FacilityFlatData
     final Facility? facility;
-    // String
-    final String? proto;
     // domain_ProductFlatData
     final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
     InventoryItem({
         this.inventoryItemId,
         this.inventoryItemTypeId,
@@ -119,20 +119,20 @@ class InventoryItem extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.format,
+        this.ownerParty,
+        this.cats,
         this.fixedAssetFixedAsset,
         this.subview,
-        this.ownerParty,
         this.party,
-        this.type,
         this.inventoryItemDetails,
         this.inventoryItemStatuses,
-        this.cats,
+        this.proto,
+        this.format,
+        this.type,
         this.inventoryTransfers,
         this.facility,
-        this.proto,
-        this.product, });
+        this.product,
+        this.model, });
     factory InventoryItem.fromJson(Map<String, dynamic> json) => _$InventoryItemFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemToJson(this);
     @override

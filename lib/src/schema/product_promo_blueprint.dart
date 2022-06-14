@@ -14,35 +14,35 @@ class ProductPromoBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? addProductPromoAction;
-    // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? addProductPromoRuleList;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? removeProductPromoAction;
+    final ProductPromoBlueprint? addProductPromoRule;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? removeProductPromoRule;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? updateProductPromoAction;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? updateProductPromoRule;
+    final ProductPromoBlueprint? removeProductPromoAction;
     // blueprint_ProductPromoBlueprintData
     final ProductPromoBlueprint? addProductPromoActionList;
     // blueprint_ProductPromoBlueprintData
-    final ProductPromoBlueprint? addProductPromoRule;
+    final ProductPromoBlueprint? addProductPromoAction;
+    // blueprint_ProductPromoBlueprintData
+    final ProductPromoBlueprint? updateProductPromoRule;
     ProductPromoBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addProductPromoAction,
         this.addProductPromoRuleList,
-        this.removeProductPromoAction,
+        this.addProductPromoRule,
         this.removeProductPromoRule,
         this.updateProductPromoAction,
-        this.updateProductPromoRule,
+        this.removeProductPromoAction,
         this.addProductPromoActionList,
-        this.addProductPromoRule, });
+        this.addProductPromoAction,
+        this.updateProductPromoRule, });
     factory ProductPromoBlueprint.fromJson(Map<String, dynamic> json) => _$ProductPromoBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoBlueprintToJson(this);
 }

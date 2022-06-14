@@ -49,28 +49,28 @@ class ShoppingList extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ShoppingListFlatData
-    final ShoppingList? parentShoppingList;
-    // String
-    final String? proto;
-    // domain_ShoppingListItemList
-    final ShoppingListItemCollection? shoppingListItems;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? format;
-    // domain_TypesEntityData
-    final TypesEntity? type;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? party;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ShoppingListFlatData
+    final ShoppingList? parentShoppingList;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? proto;
     // domain_ProductStoreFlatData
     final ProductStore? productStore;
+    // domain_ShoppingListItemList
+    final ShoppingListItemCollection? shoppingListItems;
+    // domain_PartyFlatData
+    final Party? party;
+    // String
+    final String? format;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -95,17 +95,17 @@ class ShoppingList extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.parentShoppingList,
-        this.proto,
-        this.shoppingListItems,
-        this.cats,
-        this.format,
-        this.type,
         this.subview,
-        this.model,
-        this.party,
         this.contactMech,
-        this.productStore, });
+        this.cats,
+        this.type,
+        this.parentShoppingList,
+        this.model,
+        this.proto,
+        this.productStore,
+        this.shoppingListItems,
+        this.party,
+        this.format, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
     @override

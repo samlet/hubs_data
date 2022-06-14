@@ -17,16 +17,16 @@ class OrderContactMech extends Equatable implements WithKey{
     final String? id;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // String
-    final String? proto;
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
+    final String? proto;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
     OrderContactMech({
         this.orderId,
         this.contactMechPurposeTypeId,
@@ -35,11 +35,11 @@ class OrderContactMech extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.cats,
-        this.contactMech,
-        this.proto,
-        this.model,
+        this.orderHeader,
         this.format,
-        this.orderHeader, });
+        this.model,
+        this.proto,
+        this.contactMech, });
     factory OrderContactMech.fromJson(Map<String, dynamic> json) => _$OrderContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$OrderContactMechToJson(this);
     @override

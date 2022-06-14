@@ -23,12 +23,12 @@ class InventoryItemStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
     // String
     final String? format;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
@@ -46,9 +46,9 @@ class InventoryItemStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.inventoryItem,
         this.userLogin,
         this.format,
-        this.inventoryItem,
         this.cats,
         this.proto,
         this.model, });

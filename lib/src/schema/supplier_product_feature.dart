@@ -23,14 +23,14 @@ class SupplierProductFeature extends Equatable implements WithKey{
     final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
-    // domain_PartyFlatData
-    final Party? party;
     // String
-    final String? format;
+    final String? proto;
     // domain_ProductFeatureFlatData
     final ProductFeature? productFeature;
     // String
-    final String? proto;
+    final String? format;
+    // domain_PartyFlatData
+    final Party? party;
     SupplierProductFeature({
         this.partyId,
         this.productFeatureId,
@@ -42,10 +42,10 @@ class SupplierProductFeature extends Equatable implements WithKey{
         this.id,
         this.cats,
         this.model,
-        this.party,
-        this.format,
+        this.proto,
         this.productFeature,
-        this.proto, });
+        this.format,
+        this.party, });
     factory SupplierProductFeature.fromJson(Map<String, dynamic> json) => _$SupplierProductFeatureFromJson(json);
     Map<String, dynamic> toJson() => _$SupplierProductFeatureToJson(this);
     @override

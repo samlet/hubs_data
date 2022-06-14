@@ -16,29 +16,29 @@ class ProductCategoryBlueprint  {
     // blueprint_ProductCategoryBlueprintData
     final ProductCategoryBlueprint? addCurrentProductCategoryRollup;
     // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? addProductCategoryMember;
+    final ProductCategoryBlueprint? addCurrentProductCategoryRollupList;
     // blueprint_ProductCategoryBlueprintData
     final ProductCategoryBlueprint? removeProductCategoryMember;
     // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? updateProductPromoCategory;
-    // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? addCurrentProductCategoryRollupList;
-    // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? modifyProductCategoryType;
-    // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? removeCurrentProductCategoryRollup;
+    final ProductCategoryBlueprint? updateProductCategoryMember;
     // blueprint_ProductCategoryBlueprintData
     final ProductCategoryBlueprint? removeProductPromoCategory;
     // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? updateProductCategoryMember;
+    final ProductCategoryBlueprint? addProductCategoryMember;
+    // blueprint_ProductCategoryBlueprintData
+    final ProductCategoryBlueprint? removeCurrentProductCategoryRollup;
     // blueprint_ProductCategoryBlueprintData
     final ProductCategoryBlueprint? addProductPromoCategoryList;
+    // blueprint_ProductCategoryBlueprintData
+    final ProductCategoryBlueprint? updateCurrentProductCategoryRollup;
+    // blueprint_ProductCategoryBlueprintData
+    final ProductCategoryBlueprint? updateProductPromoCategory;
     // blueprint_ProductCategoryBlueprintData
     final ProductCategoryBlueprint? addProductCategoryMemberList;
     // blueprint_ProductCategoryBlueprintData
     final ProductCategoryBlueprint? addProductPromoCategory;
     // blueprint_ProductCategoryBlueprintData
-    final ProductCategoryBlueprint? updateCurrentProductCategoryRollup;
+    final ProductCategoryBlueprint? modifyProductCategoryType;
     ProductCategoryBlueprint({
         this.id,
         this.startTs,
@@ -46,18 +46,18 @@ class ProductCategoryBlueprint  {
         this.entity,
         this.response,
         this.addCurrentProductCategoryRollup,
-        this.addProductCategoryMember,
-        this.removeProductCategoryMember,
-        this.updateProductPromoCategory,
         this.addCurrentProductCategoryRollupList,
-        this.modifyProductCategoryType,
-        this.removeCurrentProductCategoryRollup,
-        this.removeProductPromoCategory,
+        this.removeProductCategoryMember,
         this.updateProductCategoryMember,
+        this.removeProductPromoCategory,
+        this.addProductCategoryMember,
+        this.removeCurrentProductCategoryRollup,
         this.addProductPromoCategoryList,
+        this.updateCurrentProductCategoryRollup,
+        this.updateProductPromoCategory,
         this.addProductCategoryMemberList,
         this.addProductPromoCategory,
-        this.updateCurrentProductCategoryRollup, });
+        this.modifyProductCategoryType, });
     factory ProductCategoryBlueprint.fromJson(Map<String, dynamic> json) => _$ProductCategoryBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryBlueprintToJson(this);
 }

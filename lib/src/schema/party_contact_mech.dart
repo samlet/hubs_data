@@ -32,17 +32,17 @@ class PartyContactMech extends Equatable implements WithKey{
     // String
     final String? id;
     // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
     final String? proto;
+    // String
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_PartyFlatData
+    final Party? party;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
+    // facade_ModelEntity
+    final ModelEntity? model;
     PartyContactMech({
         this.partyId,
         this.contactMechId,
@@ -58,12 +58,12 @@ class PartyContactMech extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.party,
         this.proto,
+        this.format,
         this.cats,
-        this.model,
-        this.contactMech, });
+        this.party,
+        this.contactMech,
+        this.model, });
     factory PartyContactMech.fromJson(Map<String, dynamic> json) => _$PartyContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$PartyContactMechToJson(this);
     @override

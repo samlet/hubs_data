@@ -16,23 +16,23 @@ class ContactMech extends Equatable implements WithKey{
     // String
     final String? tenantId;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // contact_mech_TelecomNumberProto
-    final ContactMechWithTelecomNumber? asTelecomNumber;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // contact_mech_EmailAddressProto
     final ContactMechWithEmailAddress? asEmailAddress;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // contact_mech_TelecomNumberProto
+    final ContactMechWithTelecomNumber? asTelecomNumber;
     // facade_ModelEntity
     final ModelEntity? model;
     // contact_mech_PostalAddressProto
     final ContactMechWithPostalAddress? asPostalAddress;
+    // String
+    final String? format;
     ContactMech({
         this.contactMechId,
         this.contactMechTypeId,
@@ -40,15 +40,15 @@ class ContactMech extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
         this.proto,
-        this.subview,
-        this.type,
-        this.asTelecomNumber,
-        this.cats,
         this.asEmailAddress,
+        this.type,
+        this.subview,
+        this.cats,
+        this.asTelecomNumber,
         this.model,
-        this.asPostalAddress, });
+        this.asPostalAddress,
+        this.format, });
     factory ContactMech.fromJson(Map<String, dynamic> json) => _$ContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechToJson(this);
     @override

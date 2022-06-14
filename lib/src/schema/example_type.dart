@@ -17,12 +17,12 @@ class ExampleType extends Equatable implements WithKey{
     final String? tenantId;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? format;
-    // String
-    final String? proto;
     ExampleType({
         this.exampleTypeId,
         this.parentTypeId,
@@ -31,9 +31,9 @@ class ExampleType extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.cats,
+        this.proto,
         this.model,
-        this.format,
-        this.proto, });
+        this.format, });
     factory ExampleType.fromJson(Map<String, dynamic> json) => _$ExampleTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleTypeToJson(this);
     @override

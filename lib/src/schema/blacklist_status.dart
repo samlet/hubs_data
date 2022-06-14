@@ -19,14 +19,14 @@ class BlacklistStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
     // domain_BlacklistData
     final Blacklist? blacklist;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_FieldCats
@@ -40,10 +40,10 @@ class BlacklistStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
         this.blacklist,
-        this.format,
         this.proto,
+        this.userLogin,
+        this.format,
         this.model,
         this.cats, });
     factory BlacklistStatus.fromJson(Map<String, dynamic> json) => _$BlacklistStatusFromJson(json);

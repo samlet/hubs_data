@@ -14,11 +14,11 @@ class SecurityGroupBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_SecurityGroupBlueprintData
-    final SecurityGroupBlueprint? addSecurityGroupPermission;
-    // blueprint_SecurityGroupBlueprintData
     final SecurityGroupBlueprint? removeSecurityGroupPermission;
     // blueprint_SecurityGroupBlueprintData
     final SecurityGroupBlueprint? updateSecurityGroupPermission;
+    // blueprint_SecurityGroupBlueprintData
+    final SecurityGroupBlueprint? addSecurityGroupPermission;
     // blueprint_SecurityGroupBlueprintData
     final SecurityGroupBlueprint? addSecurityGroupPermissionList;
     SecurityGroupBlueprint({
@@ -27,9 +27,9 @@ class SecurityGroupBlueprint  {
         this.token,
         this.entity,
         this.response,
-        this.addSecurityGroupPermission,
         this.removeSecurityGroupPermission,
         this.updateSecurityGroupPermission,
+        this.addSecurityGroupPermission,
         this.addSecurityGroupPermissionList, });
     factory SecurityGroupBlueprint.fromJson(Map<String, dynamic> json) => _$SecurityGroupBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupBlueprintToJson(this);

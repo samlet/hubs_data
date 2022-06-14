@@ -19,10 +19,10 @@ class ContactMechType extends Equatable implements WithKey{
     final String? tenantId;
     // String
     final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     ContactMechType({
@@ -34,8 +34,8 @@ class ContactMechType extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.proto,
-        this.format,
         this.cats,
+        this.format,
         this.model, });
     factory ContactMechType.fromJson(Map<String, dynamic> json) => _$ContactMechTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechTypeToJson(this);
