@@ -37,20 +37,20 @@ class ItemIssuance extends Equatable implements WithKey{
     final String? tenantId;
     // String
     final String? format;
-    // domain_ShipmentFlatData
-    final Shipment? shipment;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // String
     final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? issuedByUserLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ShipmentFlatData
+    final Shipment? shipment;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // domain_UserLoginFlatData
+    final UserLogin? issuedByUserLogin;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
     ItemIssuance({
         this.itemIssuanceId,
         this.orderId,
@@ -69,13 +69,13 @@ class ItemIssuance extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.format,
-        this.shipment,
-        this.model,
-        this.cats,
-        this.inventoryItem,
         this.proto,
+        this.model,
+        this.shipment,
+        this.cats,
+        this.orderHeader,
         this.issuedByUserLogin,
-        this.orderHeader, });
+        this.inventoryItem, });
     factory ItemIssuance.fromJson(Map<String, dynamic> json) => _$ItemIssuanceFromJson(json);
     Map<String, dynamic> toJson() => _$ItemIssuanceToJson(this);
     @override

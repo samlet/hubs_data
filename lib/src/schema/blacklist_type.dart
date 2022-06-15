@@ -15,14 +15,14 @@ class BlacklistType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
-    // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     BlacklistType({
         this.blacklistTypeId,
         this.parentTypeId,
@@ -30,10 +30,10 @@ class BlacklistType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
+        this.cats,
         this.format,
-        this.proto,
-        this.cats, });
+        this.model,
+        this.proto, });
     factory BlacklistType.fromJson(Map<String, dynamic> json) => _$BlacklistTypeFromJson(json);
     Map<String, dynamic> toJson() => _$BlacklistTypeToJson(this);
     @override

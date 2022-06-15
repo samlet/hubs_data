@@ -25,18 +25,18 @@ class WorkEffortFixedAssetAssign extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_FixedAssetFlatData
     final FixedAsset? fixedAsset;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
-    final String? format;
+    final String? proto;
     WorkEffortFixedAssetAssign({
         this.workEffortId,
         this.fixedAssetId,
@@ -49,12 +49,12 @@ class WorkEffortFixedAssetAssign extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
+        this.workEffort,
         this.cats,
         this.fixedAsset,
-        this.workEffort,
+        this.format,
         this.model,
-        this.format, });
+        this.proto, });
     factory WorkEffortFixedAssetAssign.fromJson(Map<String, dynamic> json) => _$WorkEffortFixedAssetAssignFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortFixedAssetAssignToJson(this);
     @override

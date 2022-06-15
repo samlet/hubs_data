@@ -19,14 +19,14 @@ class PartyGeoPoint extends Equatable implements WithKey{
     final String? id;
     // String
     final String? format;
+    // domain_PartyFlatData
+    final Party? party;
     // String
     final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // domain_PartyFlatData
-    final Party? party;
     PartyGeoPoint({
         this.partyId,
         this.geoPointId,
@@ -36,10 +36,10 @@ class PartyGeoPoint extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.format,
+        this.party,
         this.proto,
         this.model,
-        this.cats,
-        this.party, });
+        this.cats, });
     factory PartyGeoPoint.fromJson(Map<String, dynamic> json) => _$PartyGeoPointFromJson(json);
     Map<String, dynamic> toJson() => _$PartyGeoPointToJson(this);
     @override

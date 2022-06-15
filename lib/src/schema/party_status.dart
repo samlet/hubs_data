@@ -17,18 +17,18 @@ class PartyStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? changeByUserLogin;
-    // String
-    final String? format;
     // domain_PartyFlatData
     final Party? party;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // String
+    final String? format;
     // String
     final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? changeByUserLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     PartyStatus({
         this.statusId,
         this.partyId,
@@ -37,12 +37,12 @@ class PartyStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.changeByUserLogin,
-        this.format,
         this.party,
-        this.cats,
+        this.format,
+        this.proto,
+        this.changeByUserLogin,
         this.model,
-        this.proto, });
+        this.cats, });
     factory PartyStatus.fromJson(Map<String, dynamic> json) => _$PartyStatusFromJson(json);
     Map<String, dynamic> toJson() => _$PartyStatusToJson(this);
     @override

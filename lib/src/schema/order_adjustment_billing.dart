@@ -17,16 +17,16 @@ class OrderAdjustmentBilling extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // String
-    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
     // String
     final String? format;
+    // String
+    final String? proto;
     OrderAdjustmentBilling({
         this.orderAdjustmentId,
         this.invoiceId,
@@ -35,11 +35,11 @@ class OrderAdjustmentBilling extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.invoice,
-        this.model,
         this.cats,
-        this.proto,
-        this.format, });
+        this.model,
+        this.invoice,
+        this.format,
+        this.proto, });
     factory OrderAdjustmentBilling.fromJson(Map<String, dynamic> json) => _$OrderAdjustmentBillingFromJson(json);
     Map<String, dynamic> toJson() => _$OrderAdjustmentBillingToJson(this);
     @override

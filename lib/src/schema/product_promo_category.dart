@@ -28,15 +28,15 @@ class ProductPromoCategory extends Equatable implements WithKey{
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     // String
-    final String? format;
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
     // domain_ProductCategoryFlatData
     final ProductCategory? productCategory;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     ProductPromoCategory({
         this.productPromoId,
         this.productPromoRuleId,
@@ -50,11 +50,11 @@ class ProductPromoCategory extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.productPromo,
-        this.format,
-        this.model,
         this.proto,
+        this.model,
         this.productCategory,
-        this.cats, });
+        this.cats,
+        this.format, });
     factory ProductPromoCategory.fromJson(Map<String, dynamic> json) => _$ProductPromoCategoryFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoCategoryToJson(this);
     @override

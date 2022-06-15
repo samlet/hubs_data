@@ -7,15 +7,15 @@ class ContactMechWithEmailAddress  {
     final String? id;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     ContactMechWithEmailAddress({
         this.id,
         this.contactMech,
-        this.subview,
-        this.proto, });
+        this.proto,
+        this.subview, });
     factory ContactMechWithEmailAddress.fromJson(Map<String, dynamic> json) => _$ContactMechWithEmailAddressFromJson(json);
     Map<String, dynamic> toJson() => _$ContactMechWithEmailAddressToJson(this);
 }

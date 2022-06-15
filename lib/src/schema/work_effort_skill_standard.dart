@@ -19,16 +19,16 @@ class WorkEffortSkillStandard extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
+    // String
+    final String? format;
+    // String
+    final String? proto;
     WorkEffortSkillStandard({
         this.workEffortId,
         this.skillTypeId,
@@ -38,11 +38,11 @@ class WorkEffortSkillStandard extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.workEffort,
+        this.cats,
         this.model,
-        this.proto,
+        this.workEffort,
         this.format,
-        this.cats, });
+        this.proto, });
     factory WorkEffortSkillStandard.fromJson(Map<String, dynamic> json) => _$WorkEffortSkillStandardFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortSkillStandardToJson(this);
     @override

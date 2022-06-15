@@ -13,21 +13,21 @@ class DataResourceCollection  {
     final List<DataResourceWithVideo>? matchVideo;
     // List<data_resource_TextProto>
     final List<DataResourceWithText>? matchText;
+    // domain_DataResourceList
+    final DataResourceCollection? filter;
     // List<data_resource_AudioProto>
     final List<DataResourceWithAudio>? matchAudio;
     // List<data_resource_ImageProto>
     final List<DataResourceWithImage>? matchImage;
-    // domain_DataResourceList
-    final DataResourceCollection? filter;
     DataResourceCollection({
         this.values,
         this.nextPageToken,
         this.regionId,
         this.matchVideo,
         this.matchText,
+        this.filter,
         this.matchAudio,
-        this.matchImage,
-        this.filter, });
+        this.matchImage, });
     factory DataResourceCollection.fromJson(Map<String, dynamic> json) => _$DataResourceCollectionFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceCollectionToJson(this);
 }

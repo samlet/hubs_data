@@ -22,17 +22,17 @@ class ProductStorePromoAppl extends Equatable implements WithKey{
     // String
     final String? id;
     // String
-    final String? proto;
-    // domain_ProductPromoFlatData
-    final ProductPromo? productPromo;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // domain_ProductPromoFlatData
+    final ProductPromo? productPromo;
     // String
-    final String? format;
+    final String? proto;
     ProductStorePromoAppl({
         this.productStoreId,
         this.productPromoId,
@@ -43,12 +43,12 @@ class ProductStorePromoAppl extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.productPromo,
-        this.productStore,
-        this.model,
+        this.format,
         this.cats,
-        this.format, });
+        this.model,
+        this.productStore,
+        this.productPromo,
+        this.proto, });
     factory ProductStorePromoAppl.fromJson(Map<String, dynamic> json) => _$ProductStorePromoApplFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStorePromoApplToJson(this);
     @override

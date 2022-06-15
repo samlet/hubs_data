@@ -9,16 +9,16 @@ class OrderWithSalesOrder  {
     final OrderHeader? orderHeader;
     // domain_OrderHeaderNoteList
     final OrderHeaderNoteCollection? orderHeaderNotes;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     OrderWithSalesOrder({
         this.id,
         this.orderHeader,
         this.orderHeaderNotes,
-        this.subview,
-        this.proto, });
+        this.proto,
+        this.subview, });
     factory OrderWithSalesOrder.fromJson(Map<String, dynamic> json) => _$OrderWithSalesOrderFromJson(json);
     Map<String, dynamic> toJson() => _$OrderWithSalesOrderToJson(this);
 }

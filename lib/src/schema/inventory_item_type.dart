@@ -17,14 +17,14 @@ class InventoryItemType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
     final String? format;
+    // String
+    final String? proto;
     InventoryItemType({
         this.inventoryItemTypeId,
         this.parentTypeId,
@@ -33,10 +33,10 @@ class InventoryItemType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
-        this.proto,
         this.model,
-        this.format, });
+        this.cats,
+        this.format,
+        this.proto, });
     factory InventoryItemType.fromJson(Map<String, dynamic> json) => _$InventoryItemTypeFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemTypeToJson(this);
     @override

@@ -47,24 +47,24 @@ class Requirement extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_FixedAssetFlatData
-    final FixedAsset? fixedAsset;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_FacilityFlatData
-    final Facility? facility;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // String
     final String? proto;
     // String
     final String? format;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // domain_ProductFlatData
+    final Product? product;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_FixedAssetFlatData
+    final FixedAsset? fixedAsset;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     Requirement({
         this.requirementId,
         this.requirementTypeId,
@@ -88,15 +88,15 @@ class Requirement extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.fixedAsset,
-        this.model,
-        this.type,
-        this.product,
-        this.facility,
-        this.subview,
         this.proto,
         this.format,
-        this.cats, });
+        this.type,
+        this.facility,
+        this.product,
+        this.model,
+        this.cats,
+        this.fixedAsset,
+        this.subview, });
     factory Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
     Map<String, dynamic> toJson() => _$RequirementToJson(this);
     @override

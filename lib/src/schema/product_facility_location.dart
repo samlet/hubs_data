@@ -19,18 +19,18 @@ class ProductFacilityLocation extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? format;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFlatData
-    final Product? product;
-    // String
-    final String? proto;
-    // domain_FacilityFlatData
-    final Facility? facility;
     // facade_ModelEntity
     final ModelEntity? model;
+    // domain_FacilityFlatData
+    final Facility? facility;
+    // String
+    final String? proto;
+    // domain_ProductFlatData
+    final Product? product;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // String
+    final String? format;
     ProductFacilityLocation({
         this.productId,
         this.facilityId,
@@ -40,12 +40,12 @@ class ProductFacilityLocation extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.format,
-        this.cats,
-        this.product,
-        this.proto,
+        this.model,
         this.facility,
-        this.model, });
+        this.proto,
+        this.product,
+        this.cats,
+        this.format, });
     factory ProductFacilityLocation.fromJson(Map<String, dynamic> json) => _$ProductFacilityLocationFromJson(json);
     Map<String, dynamic> toJson() => _$ProductFacilityLocationToJson(this);
     @override

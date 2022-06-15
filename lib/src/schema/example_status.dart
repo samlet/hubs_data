@@ -19,18 +19,18 @@ class ExampleStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // domain_ExampleData
+    final Example? example;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? proto;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // domain_ExampleData
-    final Example? example;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ExampleStatus({
         this.exampleId,
         this.statusDate,
@@ -40,12 +40,12 @@ class ExampleStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.example,
         this.model,
         this.proto,
         this.userLogin,
-        this.example,
-        this.cats,
-        this.format, });
+        this.format,
+        this.cats, });
     factory ExampleStatus.fromJson(Map<String, dynamic> json) => _$ExampleStatusFromJson(json);
     Map<String, dynamic> toJson() => _$ExampleStatusToJson(this);
     @override

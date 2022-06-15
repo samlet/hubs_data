@@ -31,12 +31,12 @@ class ShipmentPackage extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_ShipmentFlatData
     final Shipment? shipment;
+    // String
+    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
@@ -56,9 +56,9 @@ class ShipmentPackage extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
         this.model,
         this.shipment,
+        this.proto,
         this.cats,
         this.format, });
     factory ShipmentPackage.fromJson(Map<String, dynamic> json) => _$ShipmentPackageFromJson(json);

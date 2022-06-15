@@ -19,12 +19,12 @@ class ContentPurpose extends Equatable implements WithKey{
     final FieldCatsValue? cats;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ContentFlatData
-    final Content? content;
     // String
     final String? format;
+    // domain_ContentFlatData
+    final Content? content;
+    // facade_ModelEntity
+    final ModelEntity? model;
     ContentPurpose({
         this.contentId,
         this.contentPurposeTypeId,
@@ -34,9 +34,9 @@ class ContentPurpose extends Equatable implements WithKey{
         this.id,
         this.cats,
         this.proto,
-        this.model,
+        this.format,
         this.content,
-        this.format, });
+        this.model, });
     factory ContentPurpose.fromJson(Map<String, dynamic> json) => _$ContentPurposeFromJson(json);
     Map<String, dynamic> toJson() => _$ContentPurposeToJson(this);
     @override

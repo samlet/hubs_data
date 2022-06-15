@@ -53,14 +53,14 @@ class PaymentGatewayResponse extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
     final String? format;
+    // String
+    final String? proto;
+    // facade_ModelEntity
+    final ModelEntity? model;
     PaymentGatewayResponse({
         this.paymentGatewayResponseId,
         this.paymentServiceTypeEnumId,
@@ -87,10 +87,10 @@ class PaymentGatewayResponse extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
-        this.proto,
         this.cats,
-        this.format, });
+        this.format,
+        this.proto,
+        this.model, });
     factory PaymentGatewayResponse.fromJson(Map<String, dynamic> json) => _$PaymentGatewayResponseFromJson(json);
     Map<String, dynamic> toJson() => _$PaymentGatewayResponseToJson(this);
     @override

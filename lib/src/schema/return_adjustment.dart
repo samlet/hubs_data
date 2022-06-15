@@ -73,6 +73,8 @@ class ReturnAdjustment extends Equatable implements WithKey{
     final String? tenantId;
     // domain_ReturnHeaderFlatData
     final ReturnHeader? returnHeader;
+    // String
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
@@ -83,8 +85,6 @@ class ReturnAdjustment extends Equatable implements WithKey{
     final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
-    // String
-    final String? proto;
     ReturnAdjustment({
         this.returnAdjustmentId,
         this.returnAdjustmentTypeId,
@@ -121,12 +121,12 @@ class ReturnAdjustment extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.returnHeader,
+        this.proto,
         this.model,
         this.format,
         this.productPromo,
         this.cats,
-        this.userLogin,
-        this.proto, });
+        this.userLogin, });
     factory ReturnAdjustment.fromJson(Map<String, dynamic> json) => _$ReturnAdjustmentFromJson(json);
     Map<String, dynamic> toJson() => _$ReturnAdjustmentToJson(this);
     @override

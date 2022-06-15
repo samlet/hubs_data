@@ -7,21 +7,21 @@ class TimestampValue  {
     final int? seconds;
     // Int
     final int? nanos;
-    // Boolean
-    final bool? afterNow;
     // String
     final String? china;
     // String
     final String? iso;
     // String
     final String? localTime;
+    // Boolean
+    final bool? afterNow;
     TimestampValue({
         this.seconds,
         this.nanos,
-        this.afterNow,
         this.china,
         this.iso,
-        this.localTime, });
+        this.localTime,
+        this.afterNow, });
     factory TimestampValue.fromJson(Map<String, dynamic> json) => _$TimestampValueFromJson(json);
     Map<String, dynamic> toJson() => _$TimestampValueToJson(this);
 }

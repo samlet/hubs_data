@@ -39,26 +39,26 @@ class ProductPromo extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_PartyFlatData
-    final Party? party;
-    // String
-    final String? proto;
-    // domain_UserLoginFlatData
-    final UserLogin? lastmodifiedbyuserlogin;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
     // domain_UserLoginFlatData
     final UserLogin? createdbyuserlogin;
-    // domain_ProductPromoActionList
-    final ProductPromoActionCollection? productPromoActions;
+    // String
+    final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // String
+    final String? format;
+    // domain_PartyFlatData
+    final Party? party;
     // domain_ProductPromoRuleList
     final ProductPromoRuleCollection? productPromoRules;
+    // domain_ProductPromoActionList
+    final ProductPromoActionCollection? productPromoActions;
+    // domain_UserLoginFlatData
+    final UserLogin? lastmodifiedbyuserlogin;
     ProductPromo({
         this.productPromoId,
         this.promoName,
@@ -78,16 +78,16 @@ class ProductPromo extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.party,
-        this.proto,
-        this.lastmodifiedbyuserlogin,
         this.model,
         this.cats,
-        this.subview,
         this.createdbyuserlogin,
+        this.proto,
+        this.subview,
+        this.format,
+        this.party,
+        this.productPromoRules,
         this.productPromoActions,
-        this.productPromoRules, });
+        this.lastmodifiedbyuserlogin, });
     factory ProductPromo.fromJson(Map<String, dynamic> json) => _$ProductPromoFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoToJson(this);
     @override

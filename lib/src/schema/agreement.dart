@@ -33,28 +33,28 @@ class Agreement extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? fromParty;
     // String
     final String? format;
-    // domain_AgreementProductApplList
-    final AgreementProductApplCollection? agreementProductAppls;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_PartyFlatData
+    final Party? toParty;
     // domain_AgreementItemList
     final AgreementItemCollection? agreementItems;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_PartyFlatData
-    final Party? toParty;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // domain_AgreementProductApplList
+    final AgreementProductApplCollection? agreementProductAppls;
+    // String
+    final String? proto;
     // domain_ProductFlatData
     final Product? product;
-    // domain_PartyFlatData
-    final Party? fromParty;
     // domain_AgreementTermList
     final AgreementTermCollection? agreementTerms;
+    // facade_ModelEntity
+    final ModelEntity? model;
     Agreement({
         this.agreementId,
         this.productId,
@@ -71,17 +71,17 @@ class Agreement extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.proto,
-        this.cats,
+        this.fromParty,
         this.format,
-        this.agreementProductAppls,
+        this.cats,
+        this.toParty,
         this.agreementItems,
         this.subview,
-        this.toParty,
-        this.model,
+        this.agreementProductAppls,
+        this.proto,
         this.product,
-        this.fromParty,
-        this.agreementTerms, });
+        this.agreementTerms,
+        this.model, });
     factory Agreement.fromJson(Map<String, dynamic> json) => _$AgreementFromJson(json);
     Map<String, dynamic> toJson() => _$AgreementToJson(this);
     @override

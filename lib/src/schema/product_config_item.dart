@@ -21,20 +21,20 @@ class ProductConfigItem extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // domain_ProductConfigOptionList
-    final ProductConfigOptionCollection? configItemProductConfigOptions;
+    // String
+    final String? proto;
     // domain_ProductConfigProductList
     final ProductConfigProductCollection? configItemProductConfigProducts;
     // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // String
-    final String? format;
+    // domain_ProductConfigOptionList
+    final ProductConfigOptionCollection? configItemProductConfigOptions;
     ProductConfigItem({
         this.configItemId,
         this.configItemTypeId,
@@ -45,13 +45,13 @@ class ProductConfigItem extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.configItemProductConfigOptions,
-        this.configItemProductConfigProducts,
         this.proto,
-        this.model,
+        this.configItemProductConfigProducts,
+        this.format,
         this.cats,
+        this.model,
         this.subview,
-        this.format, });
+        this.configItemProductConfigOptions, });
     factory ProductConfigItem.fromJson(Map<String, dynamic> json) => _$ProductConfigItemFromJson(json);
     Map<String, dynamic> toJson() => _$ProductConfigItemToJson(this);
     @override

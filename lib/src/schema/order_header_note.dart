@@ -15,14 +15,14 @@ class OrderHeaderNote extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_OrderHeaderFlatData
-    final OrderHeader? orderHeader;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_OrderHeaderFlatData
+    final OrderHeader? orderHeader;
     // domain_NoteDataData
     final NoteData? noteData;
     // String
@@ -34,10 +34,10 @@ class OrderHeaderNote extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.orderHeader,
-        this.cats,
         this.model,
         this.proto,
+        this.cats,
+        this.orderHeader,
         this.noteData,
         this.format, });
     factory OrderHeaderNote.fromJson(Map<String, dynamic> json) => _$OrderHeaderNoteFromJson(json);

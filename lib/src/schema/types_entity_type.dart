@@ -17,10 +17,10 @@ class TypesEntityType extends Equatable implements WithKey{
     final String? tenantId;
     // String
     final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     TypesEntityType({
@@ -31,8 +31,8 @@ class TypesEntityType extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.proto,
-        this.cats,
         this.model,
+        this.cats,
         this.format, });
     factory TypesEntityType.fromJson(Map<String, dynamic> json) => _$TypesEntityTypeFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityTypeToJson(this);

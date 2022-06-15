@@ -19,10 +19,10 @@ class TelecomNumber extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
     // facade_ModelEntity
@@ -38,8 +38,8 @@ class TelecomNumber extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
         this.cats,
+        this.format,
         this.contactMech,
         this.model,
         this.proto, });

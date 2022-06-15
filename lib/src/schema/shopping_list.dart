@@ -49,28 +49,28 @@ class ShoppingList extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // domain_ContactMechFlatData
-    final ContactMech? contactMech;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // domain_ShoppingListItemList
+    final ShoppingListItemCollection? shoppingListItems;
     // domain_TypesEntityData
     final TypesEntity? type;
+    // String
+    final String? format;
     // domain_ShoppingListFlatData
     final ShoppingList? parentShoppingList;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
-    // domain_ProductStoreFlatData
-    final ProductStore? productStore;
-    // domain_ShoppingListItemList
-    final ShoppingListItemCollection? shoppingListItems;
     // domain_PartyFlatData
     final Party? party;
+    // domain_ProductStoreFlatData
+    final ProductStore? productStore;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
     // String
-    final String? format;
+    final String? proto;
+    // domain_ContactMechFlatData
+    final ContactMech? contactMech;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ShoppingList({
         this.shoppingListId,
         this.shoppingListTypeId,
@@ -95,17 +95,17 @@ class ShoppingList extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.subview,
-        this.contactMech,
-        this.cats,
+        this.shoppingListItems,
         this.type,
+        this.format,
         this.parentShoppingList,
         this.model,
-        this.proto,
-        this.productStore,
-        this.shoppingListItems,
         this.party,
-        this.format, });
+        this.productStore,
+        this.subview,
+        this.proto,
+        this.contactMech,
+        this.cats, });
     factory ShoppingList.fromJson(Map<String, dynamic> json) => _$ShoppingListFromJson(json);
     Map<String, dynamic> toJson() => _$ShoppingListToJson(this);
     @override

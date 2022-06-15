@@ -57,18 +57,18 @@ class OrderPaymentPreference extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // String
-    final String? proto;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // facade_ModelEntity
     final ModelEntity? model;
+    // String
+    final String? proto;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_OrderHeaderFlatData
     final OrderHeader? orderHeader;
+    // String
+    final String? format;
     OrderPaymentPreference({
         this.orderPaymentPreferenceId,
         this.orderId,
@@ -97,12 +97,12 @@ class OrderPaymentPreference extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.format,
-        this.userLogin,
-        this.proto,
-        this.cats,
         this.model,
-        this.orderHeader, });
+        this.proto,
+        this.userLogin,
+        this.cats,
+        this.orderHeader,
+        this.format, });
     factory OrderPaymentPreference.fromJson(Map<String, dynamic> json) => _$OrderPaymentPreferenceFromJson(json);
     Map<String, dynamic> toJson() => _$OrderPaymentPreferenceToJson(this);
     @override

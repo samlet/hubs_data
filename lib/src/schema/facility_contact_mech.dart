@@ -21,16 +21,16 @@ class FacilityContactMech extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
     // domain_FacilityFlatData
     final Facility? facility;
     // domain_ContactMechFlatData
     final ContactMech? contactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
     // String
     final String? proto;
     FacilityContactMech({
@@ -43,11 +43,11 @@ class FacilityContactMech extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.model,
         this.cats,
+        this.format,
         this.facility,
         this.contactMech,
-        this.model,
-        this.format,
         this.proto, });
     factory FacilityContactMech.fromJson(Map<String, dynamic> json) => _$FacilityContactMechFromJson(json);
     Map<String, dynamic> toJson() => _$FacilityContactMechToJson(this);

@@ -81,26 +81,26 @@ class ShipmentRouteSegment extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
+    // String
+    final String? proto;
     // domain_ShipmentFlatData
     final Shipment? shipment;
     // domain_FacilityFlatData
     final Facility? originFacility;
-    // domain_PartyFlatData
-    final Party? carrierParty;
-    // String
-    final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // domain_ContactMechFlatData
+    final ContactMech? originContactMech;
+    // domain_ContactMechFlatData
+    final ContactMech? destContactMech;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // String
     final String? format;
     // domain_FacilityFlatData
     final Facility? destFacility;
-    // domain_ContactMechFlatData
-    final ContactMech? originContactMech;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_ContactMechFlatData
-    final ContactMech? destContactMech;
+    // domain_PartyFlatData
+    final Party? carrierParty;
     ShipmentRouteSegment({
         this.shipmentId,
         this.shipmentRouteSegmentId,
@@ -141,16 +141,16 @@ class ShipmentRouteSegment extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
+        this.proto,
         this.shipment,
         this.originFacility,
-        this.carrierParty,
-        this.proto,
+        this.cats,
+        this.originContactMech,
+        this.destContactMech,
+        this.model,
         this.format,
         this.destFacility,
-        this.originContactMech,
-        this.model,
-        this.destContactMech, });
+        this.carrierParty, });
     factory ShipmentRouteSegment.fromJson(Map<String, dynamic> json) => _$ShipmentRouteSegmentFromJson(json);
     Map<String, dynamic> toJson() => _$ShipmentRouteSegmentToJson(this);
     @override

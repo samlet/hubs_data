@@ -29,6 +29,10 @@ class FixedAssetMaint extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // String
+    final String? format;
     // domain_WorkEffortFlatData
     final WorkEffort? scheduleWorkEffort;
     // domain_FixedAssetFlatData
@@ -37,10 +41,6 @@ class FixedAssetMaint extends Equatable implements WithKey{
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? format;
     // domain_OrderHeaderFlatData
     final OrderHeader? purchaseOrderHeader;
     FixedAssetMaint({
@@ -57,12 +57,12 @@ class FixedAssetMaint extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
+        this.model,
+        this.format,
         this.scheduleWorkEffort,
         this.fixedAsset,
         this.proto,
         this.cats,
-        this.model,
-        this.format,
         this.purchaseOrderHeader, });
     factory FixedAssetMaint.fromJson(Map<String, dynamic> json) => _$FixedAssetMaintFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetMaintToJson(this);

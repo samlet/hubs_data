@@ -13,27 +13,27 @@ class AudioDataResource extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
+    // String
+    final String? format;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_DataResourceFlatData
     final DataResource? dataResource;
     // String
-    final String? format;
+    final String? proto;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // String
-    final String? proto;
     AudioDataResource({
         this.dataResourceId,
         this.audioData,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.dataResource,
         this.format,
-        this.model,
         this.cats,
-        this.proto, });
+        this.dataResource,
+        this.proto,
+        this.model, });
     factory AudioDataResource.fromJson(Map<String, dynamic> json) => _$AudioDataResourceFromJson(json);
     Map<String, dynamic> toJson() => _$AudioDataResourceToJson(this);
     @override

@@ -17,14 +17,14 @@ class DataResourceType extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? proto;
     // String
     final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
     DataResourceType({
         this.dataResourceTypeId,
         this.parentTypeId,
@@ -33,10 +33,10 @@ class DataResourceType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.model,
         this.proto,
         this.format,
-        this.cats, });
+        this.cats,
+        this.model, });
     factory DataResourceType.fromJson(Map<String, dynamic> json) => _$DataResourceTypeFromJson(json);
     Map<String, dynamic> toJson() => _$DataResourceTypeToJson(this);
     @override

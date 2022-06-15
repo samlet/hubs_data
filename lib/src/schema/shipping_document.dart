@@ -19,14 +19,14 @@ class ShippingDocument extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
     // String
     final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ShippingDocument({
         this.documentId,
         this.shipmentId,
@@ -36,10 +36,10 @@ class ShippingDocument extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.proto,
+        this.format,
         this.model,
-        this.format, });
+        this.cats, });
     factory ShippingDocument.fromJson(Map<String, dynamic> json) => _$ShippingDocumentFromJson(json);
     Map<String, dynamic> toJson() => _$ShippingDocumentToJson(this);
     @override

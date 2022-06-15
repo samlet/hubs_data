@@ -15,16 +15,16 @@ class UserLoginSession extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? tenantId;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? format;
     // String
     final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // domain_UserLoginFlatData
     final UserLogin? userLogin;
+    // facade_ModelEntity
+    final ModelEntity? model;
     UserLoginSession({
         this.userLoginId,
         this.savedDate,
@@ -32,11 +32,11 @@ class UserLoginSession extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
-        this.cats,
         this.format,
         this.proto,
-        this.model,
-        this.userLogin, });
+        this.cats,
+        this.userLogin,
+        this.model, });
     factory UserLoginSession.fromJson(Map<String, dynamic> json) => _$UserLoginSessionFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginSessionToJson(this);
     @override

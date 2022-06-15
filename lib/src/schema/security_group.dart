@@ -19,14 +19,14 @@ class SecurityGroup extends Equatable implements WithKey{
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_SecurityGroupPermissionList
+    final SecurityGroupPermissionCollection? securityGroupPermissions;
     // String
     final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // proto_ListItemProto
     final ListItemProtoValue? subview;
-    // domain_SecurityGroupPermissionList
-    final SecurityGroupPermissionCollection? securityGroupPermissions;
     SecurityGroup({
         this.groupId,
         this.groupName,
@@ -36,10 +36,10 @@ class SecurityGroup extends Equatable implements WithKey{
         this.tenantId,
         this.proto,
         this.cats,
+        this.securityGroupPermissions,
         this.format,
         this.model,
-        this.subview,
-        this.securityGroupPermissions, });
+        this.subview, });
     factory SecurityGroup.fromJson(Map<String, dynamic> json) => _$SecurityGroupFromJson(json);
     Map<String, dynamic> toJson() => _$SecurityGroupToJson(this);
     @override

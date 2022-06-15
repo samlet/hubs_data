@@ -14,26 +14,26 @@ class TypesEntityBlueprint  {
     // List<routines_Response>
     final List<ResponseValue>? response;
     // blueprint_TypesEntityBlueprintData
-    final TypesEntityBlueprint? addTypesEntityStatus;
-    // blueprint_TypesEntityBlueprintData
-    final TypesEntityBlueprint? addTypesEntityStatusList;
-    // blueprint_TypesEntityBlueprintData
-    final TypesEntityBlueprint? removeTypesEntityStatus;
+    final TypesEntityBlueprint? modifyTypesEntityType;
     // blueprint_TypesEntityBlueprintData
     final TypesEntityBlueprint? updateTypesEntityStatus;
     // blueprint_TypesEntityBlueprintData
-    final TypesEntityBlueprint? modifyTypesEntityType;
+    final TypesEntityBlueprint? addTypesEntityStatusList;
+    // blueprint_TypesEntityBlueprintData
+    final TypesEntityBlueprint? addTypesEntityStatus;
+    // blueprint_TypesEntityBlueprintData
+    final TypesEntityBlueprint? removeTypesEntityStatus;
     TypesEntityBlueprint({
         this.id,
         this.startTs,
         this.token,
         this.entity,
         this.response,
-        this.addTypesEntityStatus,
-        this.addTypesEntityStatusList,
-        this.removeTypesEntityStatus,
+        this.modifyTypesEntityType,
         this.updateTypesEntityStatus,
-        this.modifyTypesEntityType, });
+        this.addTypesEntityStatusList,
+        this.addTypesEntityStatus,
+        this.removeTypesEntityStatus, });
     factory TypesEntityBlueprint.fromJson(Map<String, dynamic> json) => _$TypesEntityBlueprintFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityBlueprintToJson(this);
 }

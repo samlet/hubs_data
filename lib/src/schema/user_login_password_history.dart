@@ -17,14 +17,14 @@ class UserLoginPasswordHistory extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_UserLoginFlatData
-    final UserLogin? userLogin;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_UserLoginFlatData
+    final UserLogin? userLogin;
+    // String
+    final String? proto;
     // String
     final String? format;
     UserLoginPasswordHistory({
@@ -35,10 +35,10 @@ class UserLoginPasswordHistory extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.userLogin,
-        this.model,
-        this.proto,
         this.cats,
+        this.model,
+        this.userLogin,
+        this.proto,
         this.format, });
     factory UserLoginPasswordHistory.fromJson(Map<String, dynamic> json) => _$UserLoginPasswordHistoryFromJson(json);
     Map<String, dynamic> toJson() => _$UserLoginPasswordHistoryToJson(this);

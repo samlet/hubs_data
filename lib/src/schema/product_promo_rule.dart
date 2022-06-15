@@ -15,16 +15,16 @@ class ProductPromoRule extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
-    final String? format;
+    final String? proto;
     // domain_ProductPromoFlatData
     final ProductPromo? productPromo;
     // String
-    final String? proto;
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     ProductPromoRule({
         this.productPromoId,
         this.productPromoRuleId,
@@ -32,11 +32,11 @@ class ProductPromoRule extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.cats,
-        this.format,
-        this.productPromo,
         this.proto,
-        this.model, });
+        this.productPromo,
+        this.format,
+        this.model,
+        this.cats, });
     factory ProductPromoRule.fromJson(Map<String, dynamic> json) => _$ProductPromoRuleFromJson(json);
     Map<String, dynamic> toJson() => _$ProductPromoRuleToJson(this);
     @override

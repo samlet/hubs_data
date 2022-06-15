@@ -53,18 +53,18 @@ class InventoryItemDetail extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // domain_InventoryItemFlatData
-    final InventoryItem? inventoryItem;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? format;
+    // domain_WorkEffortFlatData
+    final WorkEffort? workEffort;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
+    final String? format;
+    // domain_InventoryItemFlatData
+    final InventoryItem? inventoryItem;
+    // String
     final String? proto;
-    // domain_WorkEffortFlatData
-    final WorkEffort? workEffort;
     InventoryItemDetail({
         this.inventoryItemId,
         this.inventoryItemDetailSeqId,
@@ -91,12 +91,12 @@ class InventoryItemDetail extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.inventoryItem,
         this.model,
-        this.format,
+        this.workEffort,
         this.cats,
-        this.proto,
-        this.workEffort, });
+        this.format,
+        this.inventoryItem,
+        this.proto, });
     factory InventoryItemDetail.fromJson(Map<String, dynamic> json) => _$InventoryItemDetailFromJson(json);
     Map<String, dynamic> toJson() => _$InventoryItemDetailToJson(this);
     @override

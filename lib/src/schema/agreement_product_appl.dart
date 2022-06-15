@@ -20,9 +20,9 @@ class AgreementProductAppl extends Equatable implements WithKey{
     // proto_FieldCats
     final FieldCatsValue? cats;
     // String
-    final String? format;
-    // String
     final String? proto;
+    // String
+    final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
     // domain_ProductFlatData
@@ -38,8 +38,8 @@ class AgreementProductAppl extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.cats,
-        this.format,
         this.proto,
+        this.format,
         this.model,
         this.product,
         this.agreement, });

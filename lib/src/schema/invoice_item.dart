@@ -49,26 +49,26 @@ class InvoiceItem extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // String
-    final String? format;
-    // domain_ProductFlatData
-    final Product? product;
-    // domain_ProductFeatureFlatData
-    final ProductFeature? productFeature;
-    // String
-    final String? proto;
-    // domain_PartyFlatData
-    final Party? taxAuthorityParty;
-    // domain_InvoiceFlatData
-    final Invoice? invoice;
     // proto_FieldCats
     final FieldCatsValue? cats;
     // domain_PartyFlatData
-    final Party? overrideOrgParty;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final Party? taxAuthorityParty;
+    // String
+    final String? proto;
+    // String
+    final String? format;
     // domain_InventoryItemFlatData
     final InventoryItem? inventoryItem;
+    // domain_ProductFeatureFlatData
+    final ProductFeature? productFeature;
+    // domain_PartyFlatData
+    final Party? overrideOrgParty;
+    // domain_ProductFlatData
+    final Product? product;
+    // domain_InvoiceFlatData
+    final Invoice? invoice;
+    // facade_ModelEntity
+    final ModelEntity? model;
     InvoiceItem({
         this.invoiceId,
         this.invoiceItemSeqId,
@@ -93,16 +93,16 @@ class InvoiceItem extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.format,
-        this.product,
-        this.productFeature,
-        this.proto,
-        this.taxAuthorityParty,
-        this.invoice,
         this.cats,
+        this.taxAuthorityParty,
+        this.proto,
+        this.format,
+        this.inventoryItem,
+        this.productFeature,
         this.overrideOrgParty,
-        this.model,
-        this.inventoryItem, });
+        this.product,
+        this.invoice,
+        this.model, });
     factory InvoiceItem.fromJson(Map<String, dynamic> json) => _$InvoiceItemFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceItemToJson(this);
     @override

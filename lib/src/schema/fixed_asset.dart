@@ -61,34 +61,34 @@ class FixedAsset extends Equatable implements WithKey{
     final String? tenantId;
     // domain_PartyFlatData
     final Party? party;
-    // domain_FixedAssetProductList
-    final FixedAssetProductCollection? fixedAssetProducts;
-    // domain_FixedAssetGeoPointList
-    final FixedAssetGeoPointCollection? fixedAssetGeoPoints;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
-    // domain_ProductFlatData
-    final Product? instanceOfProduct;
-    // String
-    final String? format;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // domain_FixedAssetFlatData
-    final FixedAsset? parentFixedAsset;
     // domain_FacilityFlatData
     final Facility? locatedAtFacility;
-    // domain_FixedAssetMaintList
-    final FixedAssetMaintCollection? fixedAssetMaints;
-    // String
-    final String? proto;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
+    // domain_FixedAssetGeoPointList
+    final FixedAssetGeoPointCollection? fixedAssetGeoPoints;
     // domain_OrderHeaderFlatData
     final OrderHeader? acquireOrderHeader;
     // domain_FixedAssetAttributeList
     final FixedAssetAttributeCollection? fixedAssetAttributes;
+    // String
+    final String? proto;
+    // domain_FixedAssetProductList
+    final FixedAssetProductCollection? fixedAssetProducts;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_FixedAssetMaintList
+    final FixedAssetMaintCollection? fixedAssetMaints;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // domain_ProductFlatData
+    final Product? instanceOfProduct;
+    // domain_FixedAssetFlatData
+    final FixedAsset? parentFixedAsset;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     FixedAsset({
         this.fixedAssetId,
         this.fixedAssetTypeId,
@@ -119,20 +119,20 @@ class FixedAsset extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.party,
-        this.fixedAssetProducts,
-        this.fixedAssetGeoPoints,
-        this.cats,
-        this.instanceOfProduct,
-        this.format,
-        this.model,
-        this.type,
-        this.parentFixedAsset,
         this.locatedAtFacility,
-        this.fixedAssetMaints,
-        this.proto,
-        this.subview,
+        this.fixedAssetGeoPoints,
         this.acquireOrderHeader,
-        this.fixedAssetAttributes, });
+        this.fixedAssetAttributes,
+        this.proto,
+        this.fixedAssetProducts,
+        this.cats,
+        this.subview,
+        this.fixedAssetMaints,
+        this.type,
+        this.instanceOfProduct,
+        this.parentFixedAsset,
+        this.format,
+        this.model, });
     factory FixedAsset.fromJson(Map<String, dynamic> json) => _$FixedAssetFromJson(json);
     Map<String, dynamic> toJson() => _$FixedAssetToJson(this);
     @override

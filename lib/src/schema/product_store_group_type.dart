@@ -15,10 +15,10 @@ class ProductStoreGroupType extends Equatable implements WithKey{
     final String? tenantId;
     // facade_ModelEntity
     final ModelEntity? model;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? format;
     ProductStoreGroupType({
@@ -28,8 +28,8 @@ class ProductStoreGroupType extends Equatable implements WithKey{
         this.createdTxStamp,
         this.tenantId,
         this.model,
-        this.cats,
         this.proto,
+        this.cats,
         this.format, });
     factory ProductStoreGroupType.fromJson(Map<String, dynamic> json) => _$ProductStoreGroupTypeFromJson(json);
     Map<String, dynamic> toJson() => _$ProductStoreGroupTypeToJson(this);

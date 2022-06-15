@@ -611,22 +611,22 @@ class TypesEntity extends Equatable implements WithKey{
     final TimestampValue? lastUpdatedTxStamp;
     // google_protobuf_Timestamp
     final TimestampValue? createdTxStamp;
-    // proto_ListItemProto
-    final ListItemProtoValue? subview;
-    // String
-    final String? format;
-    // domain_TypesEntityData
-    final TypesEntity? type;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_TypesEntityStatusList
-    final TypesEntityStatusCollection? typesEntityStatuses;
-    // proto_FieldCats
-    final FieldCatsValue? cats;
     // domain_ProductTypeData
     final ProductType? asProductType;
+    // proto_FieldCats
+    final FieldCatsValue? cats;
     // String
     final String? proto;
+    // proto_ListItemProto
+    final ListItemProtoValue? subview;
+    // domain_TypesEntityStatusList
+    final TypesEntityStatusCollection? typesEntityStatuses;
+    // facade_ModelEntity
+    final ModelEntity? model;
+    // domain_TypesEntityData
+    final TypesEntity? type;
+    // String
+    final String? format;
     TypesEntity({
         this.entityId,
         this.entity,
@@ -932,14 +932,14 @@ class TypesEntity extends Equatable implements WithKey{
         this.tenantId,
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
-        this.subview,
-        this.format,
-        this.type,
-        this.model,
-        this.typesEntityStatuses,
-        this.cats,
         this.asProductType,
-        this.proto, });
+        this.cats,
+        this.proto,
+        this.subview,
+        this.typesEntityStatuses,
+        this.model,
+        this.type,
+        this.format, });
     factory TypesEntity.fromJson(Map<String, dynamic> json) => _$TypesEntityFromJson(json);
     Map<String, dynamic> toJson() => _$TypesEntityToJson(this);
     @override

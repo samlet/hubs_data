@@ -18,11 +18,11 @@ class InvoiceType extends Equatable implements WithKey{
     // String
     final String? tenantId;
     // String
+    final String? proto;
+    // String
     final String? format;
     // facade_ModelEntity
     final ModelEntity? model;
-    // String
-    final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
     InvoiceType({
@@ -33,9 +33,9 @@ class InvoiceType extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.tenantId,
+        this.proto,
         this.format,
         this.model,
-        this.proto,
         this.cats, });
     factory InvoiceType.fromJson(Map<String, dynamic> json) => _$InvoiceTypeFromJson(json);
     Map<String, dynamic> toJson() => _$InvoiceTypeToJson(this);

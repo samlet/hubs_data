@@ -19,18 +19,18 @@ class WorkEffortStatus extends Equatable implements WithKey{
     final TimestampValue? createdTxStamp;
     // String
     final String? id;
-    // String
-    final String? proto;
-    // facade_ModelEntity
-    final ModelEntity? model;
-    // domain_UserLoginFlatData
-    final UserLogin? setbyuserlogin;
-    // String
-    final String? format;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // domain_UserLoginFlatData
+    final UserLogin? setbyuserlogin;
     // domain_WorkEffortFlatData
     final WorkEffort? workEffort;
+    // String
+    final String? proto;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     WorkEffortStatus({
         this.workEffortId,
         this.statusId,
@@ -40,12 +40,12 @@ class WorkEffortStatus extends Equatable implements WithKey{
         this.lastUpdatedTxStamp,
         this.createdTxStamp,
         this.id,
-        this.proto,
-        this.model,
-        this.setbyuserlogin,
-        this.format,
         this.cats,
-        this.workEffort, });
+        this.setbyuserlogin,
+        this.workEffort,
+        this.proto,
+        this.format,
+        this.model, });
     factory WorkEffortStatus.fromJson(Map<String, dynamic> json) => _$WorkEffortStatusFromJson(json);
     Map<String, dynamic> toJson() => _$WorkEffortStatusToJson(this);
     @override

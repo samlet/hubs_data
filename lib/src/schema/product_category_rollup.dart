@@ -21,18 +21,18 @@ class ProductCategoryRollup extends Equatable implements WithKey{
     final String? id;
     // String
     final String? tenantId;
-    // String
-    final String? format;
     // domain_ProductCategoryFlatData
-    final ProductCategory? parentProductCategory;
-    // facade_ModelEntity
-    final ModelEntity? model;
+    final ProductCategory? currentProductCategory;
     // String
     final String? proto;
     // proto_FieldCats
     final FieldCatsValue? cats;
+    // String
+    final String? format;
+    // facade_ModelEntity
+    final ModelEntity? model;
     // domain_ProductCategoryFlatData
-    final ProductCategory? currentProductCategory;
+    final ProductCategory? parentProductCategory;
     ProductCategoryRollup({
         this.productCategoryId,
         this.parentProductCategoryId,
@@ -43,12 +43,12 @@ class ProductCategoryRollup extends Equatable implements WithKey{
         this.createdTxStamp,
         this.id,
         this.tenantId,
-        this.format,
-        this.parentProductCategory,
-        this.model,
+        this.currentProductCategory,
         this.proto,
         this.cats,
-        this.currentProductCategory, });
+        this.format,
+        this.model,
+        this.parentProductCategory, });
     factory ProductCategoryRollup.fromJson(Map<String, dynamic> json) => _$ProductCategoryRollupFromJson(json);
     Map<String, dynamic> toJson() => _$ProductCategoryRollupToJson(this);
     @override
